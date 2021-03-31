@@ -1,0 +1,7 @@
+f57876558e5b6732ef0206b4616dbaa9
+jest.mock('./src/RNGestureHandlerModule', function () {return require('./src/mocks');});
+jest.mock('./lib/commonjs/RNGestureHandlerModule', function () {return (
+    require('./lib/commonjs/mocks'));});
+
+jest.mock('./lib/module/RNGestureHandlerModule', function () {return (
+    require('./lib/module/mocks'));});

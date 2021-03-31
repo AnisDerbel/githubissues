@@ -1,0 +1,33 @@
+863651c0c6801a36485d5f74d8950401
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+var _registerGeneratedViewConfig = _interopRequireDefault(require("../../Utilities/registerGeneratedViewConfig"));
+var _requireNativeComponent = _interopRequireDefault(require("../../ReactNative/requireNativeComponent"));
+var _ScrollViewViewConfig = _interopRequireDefault(require("./ScrollViewViewConfig"));
+
+
+
+
+
+
+var ScrollViewNativeComponent;
+if (global.RN$Bridgeless) {
+  (0, _registerGeneratedViewConfig.default)('RCTScrollView', _ScrollViewViewConfig.default);
+  ScrollViewNativeComponent = 'RCTScrollView';
+} else {
+  ScrollViewNativeComponent = (0, _requireNativeComponent.default)(
+  'RCTScrollView');
+
+}var _default =
+
+ScrollViewNativeComponent;exports.default = _default;

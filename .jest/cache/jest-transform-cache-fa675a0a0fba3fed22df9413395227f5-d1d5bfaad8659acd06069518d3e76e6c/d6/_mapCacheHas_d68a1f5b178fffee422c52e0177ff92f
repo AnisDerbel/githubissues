@@ -1,0 +1,17 @@
+e2320f47d6964dbe5826e03212286628
+
+
+
+
+
+
+
+
+
+
+
+function mapCacheHas(key) {
+  return require('./_getMapData')(this, key).has(key);
+}
+
+module.exports = mapCacheHas;

@@ -1,0 +1,226 @@
+48c77b4ab7d9cbe2af274a8be08dc612
+"use strict";var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.getFlashMessageStatusBarHeight = getFlashMessageStatusBarHeight;exports.styleWithInset = styleWithInset;exports.styleWithInsetMargin = styleWithInsetMargin;exports.default = void 0;var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));var _react = _interopRequireWildcard(require("react"));
+var _reactNative = require("react-native");
+var _reactNativeIphoneXHelper = require("react-native-iphone-x-helper");
+var _propTypes = _interopRequireDefault(require("prop-types"));function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = (0, _getPrototypeOf2.default)(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = (0, _getPrototypeOf2.default)(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return (0, _possibleConstructorReturn2.default)(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {(0, _defineProperty2.default)(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+
+
+
+
+
+var PAD_WIDTH = 768;
+var PAD_HEIGHT = 1024;var _Dimensions$get =
+
+_reactNative.Dimensions.get("window"),D_HEIGHT = _Dimensions$get.height,D_WIDTH = _Dimensions$get.width;
+
+var isAndroid = _reactNative.Platform.OS === "android";
+
+var isIPhoneX = (0, _reactNativeIphoneXHelper.isIphoneX)();
+
+var isIPad = function () {
+  if (_reactNative.Platform.OS !== "ios" || isIPhoneX) return false;
+
+
+  if (D_HEIGHT > D_WIDTH && D_WIDTH < PAD_WIDTH) {
+    return false;
+  }
+
+
+  if (D_WIDTH > D_HEIGHT && D_HEIGHT < PAD_WIDTH) {
+    return false;
+  }
+
+  return true;
+}();
+
+var isOrientationLandscape = function isOrientationLandscape(_ref) {var width = _ref.width,height = _ref.height;return width > height;};
+
+
+
+
+function getFlashMessageStatusBarHeight() {var isLandscape = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;var _customStatusBarHeight = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  if (_customStatusBarHeight !== null && _customStatusBarHeight !== false) {
+    return typeof _customStatusBarHeight === "function" ? _customStatusBarHeight(isLandscape) : +_customStatusBarHeight;
+  }
+
+
+
+
+
+
+
+  if (isAndroid) {
+    if (!!global && !!global.Expo) {
+      return +_reactNative.StatusBar.currentHeight + 6;
+    }
+
+    return 6;
+  }
+
+  if (isIPhoneX) {
+    return isLandscape ? 0 : (0, _reactNativeIphoneXHelper.getStatusBarHeight)(true);
+  }
+
+  if (isIPad) {
+    return 20;
+  }
+
+  return isLandscape ? 0 : 20;
+}
+
+var doubleFromPercentString = function doubleFromPercentString(percent) {
+  if (!percent || !percent.includes("%")) {
+    return 0;
+  }
+
+  var dbl = parseFloat(percent) / 100;
+
+  if (isNaN(dbl)) return 0;
+
+  return dbl;
+};
+
+
+
+
+function styleWithInset(style, wrapperInset) {var hideStatusBar = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;var prop = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "padding";
+  if (prop === "margin") {
+    return styleWithInsetMargin(style, wrapperInset, hideStatusBar);
+  }var _Dimensions$get2 =
+
+  _reactNative.Dimensions.get("window"),viewWidth = _Dimensions$get2.width;var _StyleSheet$flatten =
+
+
+
+
+
+
+
+
+
+
+  _reactNative.StyleSheet.flatten(style || {}),_StyleSheet$flatten$p = _StyleSheet$flatten.padding,padding = _StyleSheet$flatten$p === void 0 ? 0 : _StyleSheet$flatten$p,_StyleSheet$flatten$p2 = _StyleSheet$flatten.paddingVertical,paddingVertical = _StyleSheet$flatten$p2 === void 0 ? padding : _StyleSheet$flatten$p2,_StyleSheet$flatten$p3 = _StyleSheet$flatten.paddingHorizontal,paddingHorizontal = _StyleSheet$flatten$p3 === void 0 ? padding : _StyleSheet$flatten$p3,_StyleSheet$flatten$p4 = _StyleSheet$flatten.paddingTop,paddingTop = _StyleSheet$flatten$p4 === void 0 ? paddingVertical : _StyleSheet$flatten$p4,_StyleSheet$flatten$p5 = _StyleSheet$flatten.paddingBottom,paddingBottom = _StyleSheet$flatten$p5 === void 0 ? paddingVertical : _StyleSheet$flatten$p5,_StyleSheet$flatten$p6 = _StyleSheet$flatten.paddingLeft,paddingLeft = _StyleSheet$flatten$p6 === void 0 ? paddingHorizontal : _StyleSheet$flatten$p6,_StyleSheet$flatten$p7 = _StyleSheet$flatten.paddingRight,paddingRight = _StyleSheet$flatten$p7 === void 0 ? paddingHorizontal : _StyleSheet$flatten$p7,viewStyle = (0, _objectWithoutProperties2.default)(_StyleSheet$flatten, ["padding", "paddingVertical", "paddingHorizontal", "paddingTop", "paddingBottom", "paddingLeft", "paddingRight"]);
+
+  if (typeof paddingTop !== "number") {
+    paddingTop = doubleFromPercentString(paddingTop) * viewWidth;
+  }
+
+  if (typeof paddingBottom !== "number") {
+    paddingBottom = doubleFromPercentString(paddingBottom) * viewWidth;
+  }
+
+  if (typeof paddingLeft !== "number") {
+    paddingLeft = doubleFromPercentString(paddingLeft) * viewWidth;
+  }
+
+  if (typeof paddingRight !== "number") {
+    paddingRight = doubleFromPercentString(paddingRight) * viewWidth;
+  }
+
+  return _objectSpread(_objectSpread({},
+  viewStyle), {}, {
+    paddingTop: !!wrapperInset.isIPhoneX || !hideStatusBar ? paddingTop + wrapperInset.insetTop : paddingTop,
+    paddingBottom: paddingBottom + wrapperInset.insetBottom,
+    paddingLeft: paddingLeft + wrapperInset.insetLeft,
+    paddingRight: paddingRight + wrapperInset.insetRight });
+
+}
+
+
+
+
+function styleWithInsetMargin(style, wrapperInset) {var hideStatusBar = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;var _Dimensions$get3 =
+  _reactNative.Dimensions.get("window"),viewWidth = _Dimensions$get3.width;var _StyleSheet$flatten2 =
+
+
+
+
+
+
+
+
+
+
+  _reactNative.StyleSheet.flatten(style || {}),_StyleSheet$flatten2$ = _StyleSheet$flatten2.margin,margin = _StyleSheet$flatten2$ === void 0 ? 0 : _StyleSheet$flatten2$,_StyleSheet$flatten2$2 = _StyleSheet$flatten2.marginVertical,marginVertical = _StyleSheet$flatten2$2 === void 0 ? margin : _StyleSheet$flatten2$2,_StyleSheet$flatten2$3 = _StyleSheet$flatten2.marginHorizontal,marginHorizontal = _StyleSheet$flatten2$3 === void 0 ? margin : _StyleSheet$flatten2$3,_StyleSheet$flatten2$4 = _StyleSheet$flatten2.marginTop,marginTop = _StyleSheet$flatten2$4 === void 0 ? marginVertical : _StyleSheet$flatten2$4,_StyleSheet$flatten2$5 = _StyleSheet$flatten2.marginBottom,marginBottom = _StyleSheet$flatten2$5 === void 0 ? marginVertical : _StyleSheet$flatten2$5,_StyleSheet$flatten2$6 = _StyleSheet$flatten2.marginLeft,marginLeft = _StyleSheet$flatten2$6 === void 0 ? marginHorizontal : _StyleSheet$flatten2$6,_StyleSheet$flatten2$7 = _StyleSheet$flatten2.marginRight,marginRight = _StyleSheet$flatten2$7 === void 0 ? marginHorizontal : _StyleSheet$flatten2$7,viewStyle = (0, _objectWithoutProperties2.default)(_StyleSheet$flatten2, ["margin", "marginVertical", "marginHorizontal", "marginTop", "marginBottom", "marginLeft", "marginRight"]);
+
+  if (typeof marginTop !== "number") {
+    marginTop = doubleFromPercentString(marginTop) * viewWidth;
+  }
+
+  if (typeof marginBottom !== "number") {
+    marginBottom = doubleFromPercentString(marginBottom) * viewWidth;
+  }
+
+  if (typeof marginLeft !== "number") {
+    marginLeft = doubleFromPercentString(marginLeft) * viewWidth;
+  }
+
+  if (typeof marginRight !== "number") {
+    marginRight = doubleFromPercentString(marginRight) * viewWidth;
+  }
+
+  return _objectSpread(_objectSpread({},
+  viewStyle), {}, {
+    marginTop: !!wrapperInset.isIPhoneX || !hideStatusBar ? marginTop + wrapperInset.insetTop : marginTop,
+    marginBottom: marginBottom + wrapperInset.insetBottom,
+    marginLeft: marginLeft + wrapperInset.insetLeft,
+    marginRight: marginRight + wrapperInset.insetRight });
+
+}var
+
+
+
+
+FlashMessageWrapper = function (_Component) {(0, _inherits2.default)(FlashMessageWrapper, _Component);var _super = _createSuper(FlashMessageWrapper);
+
+
+
+
+
+
+
+
+
+
+
+  function FlashMessageWrapper() {var _this;(0, _classCallCheck2.default)(this, FlashMessageWrapper);
+    _this = _super.call(this);
+
+    _this.handleOrientationChange = _this.handleOrientationChange.bind((0, _assertThisInitialized2.default)(_this));
+
+    var isLandscape = isOrientationLandscape(_reactNative.Dimensions.get("window"));
+    _this.state = { isLandscape: isLandscape };return _this;
+  }(0, _createClass2.default)(FlashMessageWrapper, [{ key: "componentDidMount", value:
+    function componentDidMount() {
+      _reactNative.Dimensions.addEventListener("change", this.handleOrientationChange);
+    } }, { key: "componentWillUnmount", value:
+    function componentWillUnmount() {
+      _reactNative.Dimensions.removeEventListener("change", this.handleOrientationChange);
+    } }, { key: "handleOrientationChange", value:
+    function handleOrientationChange(_ref2) {var window = _ref2.window;
+      var isLandscape = isOrientationLandscape(window);
+      this.setState({ isLandscape: isLandscape });
+    } }, { key: "render", value:
+    function render() {var _this$props =
+      this.props,position = _this$props.position,_this$props$statusBar = _this$props.statusBarHeight,statusBarHeight = _this$props$statusBar === void 0 ? null : _this$props$statusBar,children = _this$props.children;var
+      isLandscape = this.state.isLandscape;
+
+      var _statusBarHeight = getFlashMessageStatusBarHeight(isLandscape, statusBarHeight);
+
+
+
+
+      var wrapper = {
+        isLandscape: isLandscape,
+        isIPhoneX: isIPhoneX,
+        isIPad: isIPad,
+        statusBarHeight: _statusBarHeight,
+        insetTop: position === "top" ? _statusBarHeight : 0,
+        insetLeft: (position === "top" || position === "bottom") && isLandscape ? isIPhoneX ? 21 : 0 : 0,
+        insetRight: (position === "top" || position === "bottom") && isLandscape ? isIPhoneX ? 21 : 0 : 0,
+        insetBottom: isIPhoneX && position === "bottom" ? isLandscape ? 24 : 34 : isAndroid ? 2 : 0 };
+
+
+      return children(wrapper);
+    } }]);return FlashMessageWrapper;}(_react.Component);exports.default = FlashMessageWrapper;FlashMessageWrapper.defaultProps = { position: "top" };FlashMessageWrapper.propTypes = { position: _propTypes.default.string, children: _propTypes.default.func.isRequired };

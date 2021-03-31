@@ -1,0 +1,150 @@
+6e7e09e033518b899fc35a6b190a75b1
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {(0, _defineProperty2.default)(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TextExtraction = function () {
+
+
+
+
+
+  function TextExtraction(text, patterns) {(0, _classCallCheck2.default)(this, TextExtraction);
+    this.text = text;
+    this.patterns = patterns || [];
+  }(0, _createClass2.default)(TextExtraction, [{ key: "parse", value:
+
+
+
+
+
+
+    function parse() {var _this = this;
+      var parsedTexts = [{ children: this.text }];
+      this.patterns.forEach(function (pattern) {
+        var newParts = [];
+
+        var tmp = pattern.nonExhaustiveModeMaxMatchCount || 0;
+        var numberOfMatchesPermitted = Math.min(
+        Math.max(Number.isInteger(tmp) ? tmp : 0, 0) ||
+        Number.POSITIVE_INFINITY,
+        Number.POSITIVE_INFINITY);
+
+
+        var currentMatches = 0;
+
+        parsedTexts.forEach(function (parsedText) {
+
+          if (parsedText._matched) {
+            newParts.push(parsedText);
+            return;
+          }
+
+          var parts = [];
+          var textLeft = parsedText.children;
+          var indexOfMatchedString = 0;
+
+
+          var matches;
+
+
+          pattern.pattern.lastIndex = 0;
+          while (textLeft && (matches = pattern.pattern.exec(textLeft))) {
+            var previousText = textLeft.substr(0, matches.index);
+            indexOfMatchedString = matches.index;
+
+            if (++currentMatches > numberOfMatchesPermitted) {
+
+              break;
+            }
+
+            parts.push({ children: previousText });
+
+            parts.push(
+            _this.getMatchedPart(
+            pattern,
+            matches[0],
+            matches,
+            indexOfMatchedString));
+
+
+
+            textLeft = textLeft.substr(matches.index + matches[0].length);
+            indexOfMatchedString += matches[0].length - 1;
+
+            pattern.pattern.lastIndex = 0;
+          }
+
+          parts.push({ children: textLeft });
+
+          newParts.push.apply(newParts, parts);
+        });
+
+        parsedTexts = newParts;
+      });
+
+
+      parsedTexts.forEach(function (parsedText) {return delete parsedText._matched;});
+
+      return parsedTexts.filter(function (t) {return !!t.children;});
+    } }, { key: "getMatchedPart", value:
+
+
+
+
+
+
+
+
+
+
+
+    function getMatchedPart(matchedPattern, text, matches, index) {
+      var props = {};
+
+      Object.keys(matchedPattern).forEach(function (key) {
+        if (
+        key === 'pattern' ||
+        key === 'renderText' ||
+        key === 'nonExhaustiveModeMaxMatchCount')
+        {
+          return;
+        }
+
+        if (typeof matchedPattern[key] === 'function') {
+
+          props[key] = function () {return matchedPattern[key](text, index);};
+        } else {
+
+          props[key] = matchedPattern[key];
+        }
+      });
+
+      var children = text;
+      if (
+      matchedPattern.renderText &&
+      typeof matchedPattern.renderText === 'function')
+      {
+        children = matchedPattern.renderText(text, matches);
+      }
+
+      return _objectSpread(_objectSpread({},
+      props), {}, {
+        children: children,
+        _matched: true });
+
+    } }]);return TextExtraction;}();var _default =
+
+
+TextExtraction;exports.default = _default;

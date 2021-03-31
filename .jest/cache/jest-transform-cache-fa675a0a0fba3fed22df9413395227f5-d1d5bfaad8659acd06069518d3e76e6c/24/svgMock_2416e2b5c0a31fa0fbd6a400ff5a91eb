@@ -1,0 +1,11 @@
+a8a2cd7a99f83a90dd86017e155aa1ac
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ReactComponent = void 0;
+var exported = 'SvgMock';
+exports.ReactComponent = exported;
+exports.default = exported;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvX19tb2Nrc19fL3N2Z01vY2sudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEsSUFBTSxRQUFRLEdBQUcsU0FBakI7QUFDYSxPQUFBLENBQUEsY0FBQSxHQUFpQixRQUFqQjtBQUNiLE9BQUEsQ0FBQSxPQUFBLEdBQWUsUUFBZiIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGV4cG9ydGVkID0gJ1N2Z01vY2snO1xuZXhwb3J0IGNvbnN0IFJlYWN0Q29tcG9uZW50ID0gZXhwb3J0ZWQ7XG5leHBvcnQgZGVmYXVsdCBleHBvcnRlZDtcbiJdfQ==

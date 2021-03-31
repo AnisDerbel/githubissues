@@ -1,0 +1,49 @@
+c60e2c12f0f9a8a630825fcc2e421df9
+"use strict";
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getText = exports.getInnerHTML = exports.getOuterHTML = void 0;
+
+var dom_serializer_1 = __importDefault(require("dom-serializer"));
+
+
+
+
+
+
+function getOuterHTML(node, options) {
+  return dom_serializer_1.default(node, options);
+}
+exports.getOuterHTML = getOuterHTML;
+
+
+
+
+
+
+function getInnerHTML(node, options) {
+  return require("./tagtypes").hasChildren(node) ?
+  node.children.map(function (node) {return getOuterHTML(node, options);}).join("") :
+  "";
+}
+exports.getInnerHTML = getInnerHTML;
+
+
+
+
+
+
+function getText(node) {
+  if (Array.isArray(node))
+  return node.map(getText).join("");
+  if (require("./tagtypes").isTag(node))
+  return node.name === "br" ? "\n" : getText(node.children);
+  if (require("./tagtypes").isCDATA(node))
+  return getText(node.children);
+  if (require("./tagtypes").isText(node))
+  return node.data;
+  return "";
+}
+exports.getText = getText;

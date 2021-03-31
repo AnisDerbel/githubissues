@@ -1,0 +1,34 @@
+db295c0fe47a5dd71635c8c7b532abee
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function get(object, path, defaultValue) {
+  var result = object == null ? undefined : require('./_baseGet')(object, path);
+  return result === undefined ? defaultValue : result;
+}
+
+module.exports = get;

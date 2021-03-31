@@ -1,0 +1,21 @@
+e5d1e003dc0bc61454ca528741cbeec6
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var React = _interopRequireWildcard(require("react"));
+
+
+
+
+
+
+module.exports = require('../createAnimatedComponent')(require('../../Text/Text'));

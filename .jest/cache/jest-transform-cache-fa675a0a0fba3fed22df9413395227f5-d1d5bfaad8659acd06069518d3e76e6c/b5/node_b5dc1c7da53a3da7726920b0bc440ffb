@@ -1,0 +1,344 @@
+f56cd12867ea2577f14d86823d91009e
+"use strict";
+var __extends = this && this.__extends || function () {
+  var _extendStatics = function extendStatics(d, b) {
+    _extendStatics = Object.setPrototypeOf ||
+    { __proto__: [] } instanceof Array && function (d, b) {d.__proto__ = b;} ||
+    function (d, b) {for (var p in b) {if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];}};
+    return _extendStatics(d, b);
+  };
+  return function (d, b) {
+    _extendStatics(d, b);
+    function __() {this.constructor = d;}
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+  };
+}();
+var __assign = this && this.__assign || function () {
+  __assign = Object.assign || function (t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+      s = arguments[i];
+      for (var p in s) {if (Object.prototype.hasOwnProperty.call(s, p))
+        t[p] = s[p];}
+    }
+    return t;
+  };
+  return __assign.apply(this, arguments);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.cloneNode = exports.Element = exports.Document = exports.NodeWithChildren = exports.ProcessingInstruction = exports.Comment = exports.Text = exports.DataNode = exports.Node = void 0;
+var nodeTypes = new Map([
+["tag", 1],
+["script", 1],
+["style", 1],
+["directive", 1],
+["text", 3],
+["cdata", 4],
+["comment", 8],
+["root", 9]]);
+
+
+
+
+
+var Node = function () {
+
+
+
+
+  function Node(type) {
+    this.type = type;
+
+    this.parent = null;
+
+    this.prev = null;
+
+    this.next = null;
+
+    this.startIndex = null;
+
+    this.endIndex = null;
+  }
+  Object.defineProperty(Node.prototype, "nodeType", {
+
+    get: function get() {
+      var _a;
+      return (_a = nodeTypes.get(this.type)) !== null && _a !== void 0 ? _a : 1;
+    },
+    enumerable: false,
+    configurable: true });
+
+  Object.defineProperty(Node.prototype, "parentNode", {
+
+    get: function get() {
+      return this.parent;
+    },
+    set: function set(parent) {
+      this.parent = parent;
+    },
+    enumerable: false,
+    configurable: true });
+
+  Object.defineProperty(Node.prototype, "previousSibling", {
+    get: function get() {
+      return this.prev;
+    },
+    set: function set(prev) {
+      this.prev = prev;
+    },
+    enumerable: false,
+    configurable: true });
+
+  Object.defineProperty(Node.prototype, "nextSibling", {
+    get: function get() {
+      return this.next;
+    },
+    set: function set(next) {
+      this.next = next;
+    },
+    enumerable: false,
+    configurable: true });
+
+
+
+
+
+
+
+  Node.prototype.cloneNode = function (recursive) {
+    if (recursive === void 0) {recursive = false;}
+    return cloneNode(this, recursive);
+  };
+  return Node;
+}();
+exports.Node = Node;
+var DataNode = function (_super) {
+  __extends(DataNode, _super);
+
+
+
+
+  function DataNode(type, data) {
+    var _this = _super.call(this, type) || this;
+    _this.data = data;
+    return _this;
+  }
+  Object.defineProperty(DataNode.prototype, "nodeValue", {
+    get: function get() {
+      return this.data;
+    },
+    set: function set(data) {
+      this.data = data;
+    },
+    enumerable: false,
+    configurable: true });
+
+  return DataNode;
+}(Node);
+exports.DataNode = DataNode;
+var Text = function (_super) {
+  __extends(Text, _super);
+  function Text(data) {
+    return _super.call(this, "text", data) || this;
+  }
+  return Text;
+}(DataNode);
+exports.Text = Text;
+var Comment = function (_super) {
+  __extends(Comment, _super);
+  function Comment(data) {
+    return _super.call(this, "comment", data) || this;
+  }
+  return Comment;
+}(DataNode);
+exports.Comment = Comment;
+var ProcessingInstruction = function (_super) {
+  __extends(ProcessingInstruction, _super);
+  function ProcessingInstruction(name, data) {
+    var _this = _super.call(this, "directive", data) || this;
+    _this.name = name;
+    return _this;
+  }
+  return ProcessingInstruction;
+}(DataNode);
+exports.ProcessingInstruction = ProcessingInstruction;
+
+
+
+var NodeWithChildren = function (_super) {
+  __extends(NodeWithChildren, _super);
+
+
+
+
+  function NodeWithChildren(type, children) {
+    var _this = _super.call(this, type) || this;
+    _this.children = children;
+    return _this;
+  }
+  Object.defineProperty(NodeWithChildren.prototype, "firstChild", {
+
+    get: function get() {
+      var _a;
+      return (_a = this.children[0]) !== null && _a !== void 0 ? _a : null;
+    },
+    enumerable: false,
+    configurable: true });
+
+  Object.defineProperty(NodeWithChildren.prototype, "lastChild", {
+    get: function get() {
+      return this.children.length > 0 ?
+      this.children[this.children.length - 1] :
+      null;
+    },
+    enumerable: false,
+    configurable: true });
+
+  Object.defineProperty(NodeWithChildren.prototype, "childNodes", {
+    get: function get() {
+      return this.children;
+    },
+    set: function set(children) {
+      this.children = children;
+    },
+    enumerable: false,
+    configurable: true });
+
+  return NodeWithChildren;
+}(Node);
+exports.NodeWithChildren = NodeWithChildren;
+var Document = function (_super) {
+  __extends(Document, _super);
+  function Document(children) {
+    return _super.call(this, "root", children) || this;
+  }
+  return Document;
+}(NodeWithChildren);
+exports.Document = Document;
+var Element = function (_super) {
+  __extends(Element, _super);
+
+
+
+
+
+  function Element(name, attribs, children) {
+    if (children === void 0) {children = [];}
+    var _this = _super.call(this, name === "script" ?
+    "script" :
+    name === "style" ?
+    "style" :
+    "tag", children) || this;
+    _this.name = name;
+    _this.attribs = attribs;
+    _this.attribs = attribs;
+    return _this;
+  }
+  Object.defineProperty(Element.prototype, "tagName", {
+
+    get: function get() {
+      return this.name;
+    },
+    set: function set(name) {
+      this.name = name;
+    },
+    enumerable: false,
+    configurable: true });
+
+  Object.defineProperty(Element.prototype, "attributes", {
+    get: function get() {
+      var _this = this;
+      return Object.keys(this.attribs).map(function (name) {
+        var _a, _b;
+        return {
+          name: name,
+          value: _this.attribs[name],
+          namespace: (_a = _this["x-attribsNamespace"]) === null || _a === void 0 ? void 0 : _a[name],
+          prefix: (_b = _this["x-attribsPrefix"]) === null || _b === void 0 ? void 0 : _b[name] };
+
+      });
+    },
+    enumerable: false,
+    configurable: true });
+
+  return Element;
+}(NodeWithChildren);
+exports.Element = Element;
+
+
+
+
+
+
+function cloneNode(node, recursive) {
+  if (recursive === void 0) {recursive = false;}
+  var result;
+  switch (node.type) {
+    case "text":
+      result = new Text(node.data);
+      break;
+    case "directive":{
+        var instr = node;
+        result = new ProcessingInstruction(instr.name, instr.data);
+        if (instr["x-name"] != null) {
+          result["x-name"] = instr["x-name"];
+          result["x-publicId"] = instr["x-publicId"];
+          result["x-systemId"] = instr["x-systemId"];
+        }
+        break;
+      }
+    case "comment":
+      result = new Comment(node.data);
+      break;
+    case "tag":
+    case "script":
+    case "style":{
+        var elem = node;
+        var children = recursive ? cloneChildren(elem.children) : [];
+        var clone_1 = new Element(elem.name, __assign({}, elem.attribs), children);
+        children.forEach(function (child) {return child.parent = clone_1;});
+        if (elem["x-attribsNamespace"]) {
+          clone_1["x-attribsNamespace"] = __assign({}, elem["x-attribsNamespace"]);
+        }
+        if (elem["x-attribsPrefix"]) {
+          clone_1["x-attribsPrefix"] = __assign({}, elem["x-attribsPrefix"]);
+        }
+        result = clone_1;
+        break;
+      }
+    case "cdata":{
+        var cdata = node;
+        var children = recursive ? cloneChildren(cdata.children) : [];
+        var clone_2 = new NodeWithChildren(node.type, children);
+        children.forEach(function (child) {return child.parent = clone_2;});
+        result = clone_2;
+        break;
+      }
+    case "root":{
+        var doc = node;
+        var children = recursive ? cloneChildren(doc.children) : [];
+        var clone_3 = new Document(children);
+        children.forEach(function (child) {return child.parent = clone_3;});
+        if (doc["x-mode"]) {
+          clone_3["x-mode"] = doc["x-mode"];
+        }
+        result = clone_3;
+        break;
+      }
+    case "doctype":{
+
+        throw new Error("Not implemented yet: ElementType.Doctype case");
+      }}
+
+  result.startIndex = node.startIndex;
+  result.endIndex = node.endIndex;
+  return result;
+}
+exports.cloneNode = cloneNode;
+function cloneChildren(childs) {
+  var children = childs.map(function (child) {return cloneNode(child, true);});
+  for (var i = 1; i < children.length; i++) {
+    children[i].prev = children[i - 1];
+    children[i - 1].next = children[i];
+  }
+  return children;
+}

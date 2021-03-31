@@ -1,0 +1,132 @@
+0d75094ec74909ceb8b8a61b77fd04c7
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _GithubIssuesScreen = _interopRequireDefault(require("../screens/GithubIssuesScreen"));
+
+var _stack = require("@react-navigation/stack");
+
+var _WelcomeScreen = _interopRequireDefault(require("../screens/WelcomeScreen"));
+
+var _ = require(".");
+
+function cov_20a7t3kmy2() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/routes/routes.tsx";
+  var hash = "2bbd2f97eb541c2cde2a76552d381599a2f494ed";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/routes/routes.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 8,
+          column: 18
+        },
+        end: {
+          line: 8,
+          column: 40
+        }
+      },
+      "1": {
+        start: {
+          line: 10,
+          column: 15
+        },
+        end: {
+          line: 21,
+          column: 1
+        }
+      },
+      "2": {
+        start: {
+          line: 11,
+          column: 2
+        },
+        end: {
+          line: 20,
+          column: 5
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 10,
+            column: 15
+          },
+          end: {
+            line: 10,
+            column: 16
+          }
+        },
+        loc: {
+          start: {
+            line: 11,
+            column: 2
+          },
+          end: {
+            line: 20,
+            column: 5
+          }
+        },
+        line: 11
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "2bbd2f97eb541c2cde2a76552d381599a2f494ed"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_20a7t3kmy2 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_20a7t3kmy2();
+var RootStack = (cov_20a7t3kmy2().s[0]++, (0, _stack.createStackNavigator)());
+cov_20a7t3kmy2().s[1]++;
+
+var Routes = function Routes() {
+  cov_20a7t3kmy2().f[0]++;
+  cov_20a7t3kmy2().s[2]++;
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(RootStack.Navigator, {
+    initialRouteName: _.ROUTES.WELCOME
+  }, _react.default.createElement(RootStack.Screen, {
+    name: _.ROUTES.WELCOME,
+    component: _WelcomeScreen.default
+  }), _react.default.createElement(RootStack.Screen, {
+    name: _.ROUTES.GITHUB_ISSUES,
+    component: _GithubIssuesScreen.default
+  })));
+};
+
+var _default = Routes;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJvdXRlcy50c3giXSwibmFtZXMiOlsiUm9vdFN0YWNrIiwiUm91dGVzIiwiUk9VVEVTIiwiV0VMQ09NRSIsIldlbGNvbWVTY3JlZW4iLCJHSVRIVUJfSVNTVUVTIiwiR2l0aHViSXNzdWVzU2NyZWVuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBRUE7O0FBQ0E7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUVBLElBQU1BLFNBQVMsNkJBQUcsa0NBQUgsQ0FBZjs7O0FBRUEsSUFBTUMsTUFBTSxHQUFHLFNBQVRBLE1BQVMsR0FDYjtBQUFBO0FBQUE7QUFBQSxxRUFDRSw2QkFBQyxTQUFELENBQVcsU0FBWDtBQUFxQixJQUFBLGdCQUFnQixFQUFFQyxTQUFPQztBQUE5QyxLQUVFLDZCQUFDLFNBQUQsQ0FBVyxNQUFYO0FBQWtCLElBQUEsSUFBSSxFQUFFRCxTQUFPQyxPQUEvQjtBQUF3QyxJQUFBLFNBQVMsRUFBRUM7QUFBbkQsSUFGRixFQUdFLDZCQUFDLFNBQUQsQ0FBVyxNQUFYO0FBQ0UsSUFBQSxJQUFJLEVBQUVGLFNBQU9HLGFBRGY7QUFFRSxJQUFBLFNBQVMsRUFBRUM7QUFGYixJQUhGLENBREY7QUFTRyxDQVZMOztlQWFlTCxNIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBHaXRodWJJc3N1ZXNTY3JlZW4gZnJvbSAnLi4vc2NyZWVucy9HaXRodWJJc3N1ZXNTY3JlZW4nO1xuaW1wb3J0IHtjcmVhdGVTdGFja05hdmlnYXRvcn0gZnJvbSAnQHJlYWN0LW5hdmlnYXRpb24vc3RhY2snO1xuLy8gaW1wb3J0IFRlc3RTY3JlZW4gZnJvbSAnLi4vc2NyZWVucy9UZXN0U2NyZWVuJztcbmltcG9ydCBXZWxjb21lU2NyZWVuIGZyb20gJy4uL3NjcmVlbnMvV2VsY29tZVNjcmVlbic7XG5pbXBvcnQge1JPVVRFU30gZnJvbSAnLic7XG5cbmNvbnN0IFJvb3RTdGFjayA9IGNyZWF0ZVN0YWNrTmF2aWdhdG9yKCk7XG5cbmNvbnN0IFJvdXRlcyA9ICgpID0+IChcbiAgPD5cbiAgICA8Um9vdFN0YWNrLk5hdmlnYXRvciBpbml0aWFsUm91dGVOYW1lPXtST1VURVMuV0VMQ09NRX0+XG4gICAgICB7LyogPFJvb3RTdGFjay5TY3JlZW4gbmFtZT1cInRlc3RcIiBjb21wb25lbnQ9e1Rlc3RTY3JlZW59IC8+ICovfVxuICAgICAgPFJvb3RTdGFjay5TY3JlZW4gbmFtZT17Uk9VVEVTLldFTENPTUV9IGNvbXBvbmVudD17V2VsY29tZVNjcmVlbn0gLz5cbiAgICAgIDxSb290U3RhY2suU2NyZWVuXG4gICAgICAgIG5hbWU9e1JPVVRFUy5HSVRIVUJfSVNTVUVTfVxuICAgICAgICBjb21wb25lbnQ9e0dpdGh1Yklzc3Vlc1NjcmVlbn1cbiAgICAgIC8+XG4gICAgPC9Sb290U3RhY2suTmF2aWdhdG9yPlxuICA8Lz5cbik7XG5cbmV4cG9ydCBkZWZhdWx0IFJvdXRlcztcbiJdfQ==

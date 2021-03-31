@@ -1,0 +1,37 @@
+3b1b3ed836574d7e213e25ca6f33d9c7
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+var TurboModuleRegistry = _interopRequireWildcard(require("../TurboModule/TurboModuleRegistry"));var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TurboModuleRegistry.get('Appearance');exports.default = _default;

@@ -1,0 +1,4 @@
+bbb611a34843e6b5c6853a12ac581ee5
+
+var gt = function gt(a, b, loose) {return require('./compare')(a, b, loose) > 0;};
+module.exports = gt;

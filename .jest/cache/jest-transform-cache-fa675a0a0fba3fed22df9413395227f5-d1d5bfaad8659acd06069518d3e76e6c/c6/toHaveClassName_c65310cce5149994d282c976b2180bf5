@@ -1,0 +1,65 @@
+6d9b93307647238d1e82bc2f0bca5f88
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = toHaveClassName;
+
+var _name = _interopRequireDefault(require("../utils/name"));
+
+var _html = _interopRequireDefault(require("../utils/html"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+
+
+
+
+
+function toHaveClassName(enzymeWrapper, className) {
+  var normalizedClassName = className.split(' ').join('.');
+  var actualClassName = '(none)';
+  var pass = false;
+
+  if (normalizedClassName[0] !== '.') {
+    normalizedClassName = "." + normalizedClassName;
+  }
+
+
+  switch (enzymeWrapper.getElements().length) {
+    case 0:
+      break;
+
+
+    case 1:
+      pass = enzymeWrapper.is(normalizedClassName);
+      actualClassName = enzymeWrapper.prop('className');
+      break;
+
+    default:
+      var allMatch = true;
+      enzymeWrapper.forEach(function (node) {
+        if (!node.is(normalizedClassName)) {
+          allMatch = false;
+        }
+
+        actualClassName = node.prop('className');
+      });
+      pass = allMatch;}
+
+
+  return {
+    pass: pass,
+    message: "Expected <" + (0, _name.default)(enzymeWrapper) + "> to have className of \"" + normalizedClassName + "\" but instead found \"" + actualClassName + "\"",
+
+    negatedMessage: "Expected <" + (0, _name.default)(enzymeWrapper) + "> not to contain \"" + normalizedClassName + "\" in its className",
+    contextualInformation: {
+      actual: "Found node output: " + (0, _html.default)(enzymeWrapper) } };
+
+
+}
+
+module.exports = exports.default;

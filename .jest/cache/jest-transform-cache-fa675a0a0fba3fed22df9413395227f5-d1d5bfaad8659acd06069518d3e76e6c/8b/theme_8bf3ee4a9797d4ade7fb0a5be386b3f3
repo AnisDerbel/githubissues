@@ -1,0 +1,335 @@
+4f1f48133f005506fc385ae47df79040
+"use strict";
+
+/* istanbul ignore next */
+function cov_1led1vdmde() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/theme.ts";
+  var hash = "a21383d38d135dfe2d1b0e5187497095e219628e";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/theme.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 29
+        },
+        end: {
+          line: 3,
+          column: 84
+        }
+      },
+      "1": {
+        start: {
+          line: 5,
+          column: 16
+        },
+        end: {
+          line: 5,
+          column: 81
+        }
+      },
+      "2": {
+        start: {
+          line: 7,
+          column: 0
+        },
+        end: {
+          line: 9,
+          column: 3
+        }
+      },
+      "3": {
+        start: {
+          line: 11,
+          column: 21
+        },
+        end: {
+          line: 11,
+          column: 44
+        }
+      },
+      "4": {
+        start: {
+          line: 13,
+          column: 27
+        },
+        end: {
+          line: 13,
+          column: 56
+        }
+      },
+      "5": {
+        start: {
+          line: 15,
+          column: 15
+        },
+        end: {
+          line: 15,
+          column: 50
+        }
+      },
+      "6": {
+        start: {
+          line: 17,
+          column: 15
+        },
+        end: {
+          line: 34,
+          column: 1
+        }
+      },
+      "7": {
+        start: {
+          line: 35,
+          column: 13
+        },
+        end: {
+          line: 40,
+          column: 1
+        }
+      },
+      "8": {
+        start: {
+          line: 41,
+          column: 14
+        },
+        end: {
+          line: 47,
+          column: 1
+        }
+      },
+      "9": {
+        start: {
+          line: 48,
+          column: 27
+        },
+        end: {
+          line: 57,
+          column: 2
+        }
+      },
+      "10": {
+        start: {
+          line: 58,
+          column: 24
+        },
+        end: {
+          line: 67,
+          column: 2
+        }
+      },
+      "11": {
+        start: {
+          line: 68,
+          column: 18
+        },
+        end: {
+          line: 68,
+          column: 60
+        }
+      },
+      "12": {
+        start: {
+          line: 69,
+          column: 18
+        },
+        end: {
+          line: 69,
+          column: 40
+        }
+      },
+      "13": {
+        start: {
+          line: 70,
+          column: 0
+        },
+        end: {
+          line: 70,
+          column: 73
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 70,
+            column: 18
+          },
+          end: {
+            line: 70,
+            column: 72
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 70,
+            column: 32
+          },
+          end: {
+            line: 70,
+            column: 49
+          }
+        }, {
+          start: {
+            line: 70,
+            column: 52
+          },
+          end: {
+            line: 70,
+            column: 72
+          }
+        }],
+        line: 70
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0
+    },
+    f: {},
+    b: {
+      "0": [0, 0]
+    },
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/theme.ts"],
+      names: [],
+      mappings: ";;;;;;;;;;AAAA,IAAA,cAAA,GAAA,OAAA,CAAA,cAAA,CAAA;;AAEA,IAAA,oBAAA,GAAA,OAAA,CAAA,oBAAA,CAAA;;AAIA,IAAA,QAAA,GAAA,OAAA,CAAA,0BAAA,CAAA;;AAwBA,IAAM,QAAQ,GAAiB;AAC7B,EAAA,EAAE,EAAE;AACF,IAAA,QAAQ,EAAE,EADR;AAEF,IAAA,UAAU,EAAE;AAFV,GADyB;AAK7B,EAAA,KAAK,EAAE;AACL,IAAA,QAAQ,EAAE;AADL,GALsB;AAQ7B,EAAA,IAAI,EAAE;AACJ,IAAA,QAAQ,EAAE;AADN,GARuB;AAW7B,EAAA,GAAG,EAAE;AACH,IAAA,QAAQ,EAAE;AADP,GAXwB;AAc7B,EAAA,IAAI,EAAE;AACJ,IAAA,QAAQ,EAAE;AADN;AAduB,CAA/B;AAmBA,IAAM,MAAM,GAAG;AACb,EAAA,KAAK,EAAE,SADM;AAEb,EAAA,KAAK,EAAE,SAFM;AAGb,EAAA,IAAI,EAAE,MAHO;AAIb,EAAA,SAAS,EAAE;AAJE,CAAf;AAMA,IAAM,OAAO,GAAiB;AAC5B,EAAA,EAAE,EAAE,CADwB;AAE5B,EAAA,CAAC,EAAE,CAFyB;AAG5B,EAAA,CAAC,EAAE,EAHyB;AAI5B,EAAA,CAAC,EAAE,EAJyB;AAK5B,EAAA,EAAE,EAAE;AALwB,CAA9B;AAOA,IAAM,oBAAoB,8BACrB,oBAAA,CAAA,YADqB,EAErB,QAAA,CAAA,YAFqB;AAGxB,EAAA,MAAM,6BACD,oBAAA,CAAA,YAAA,CAAkB,MADjB,EAED,QAAA,CAAA,YAAA,CAAuB,MAFtB;AAGJ,IAAA,OAAO,EAAE,MAAM,CAAC,KAHZ;AAIJ,IAAA,MAAM,EAAE,MAAM,CAAC,SAJX;AAKJ,IAAA,OAAO,EAAE,MAAM,CAAC,IALZ;AAMJ,IAAA,KAAK,EAAE,MAAM,CAAC;AANV,IAHkB;AAWxB,EAAA,QAAQ,EAAR,QAXwB;AAYxB,EAAA,OAAO,EAAP;AAZwB,EAA1B;AAcA,IAAM,iBAAiB,8BAClB,oBAAA,CAAA,SADkB,EAElB,QAAA,CAAA,SAFkB;AAGrB,EAAA,MAAM,6BACD,oBAAA,CAAA,SAAA,CAAe,MADd,EAED,QAAA,CAAA,SAAA,CAAoB,MAFnB;AAGJ,IAAA,OAAO,EAAE,MAAM,CAAC,KAHZ;AAIJ,IAAA,MAAM,EAAE,MAAM,CAAC,KAJX;AAKJ,IAAA,KAAK,EAAE,MAAM,CAAC,KALV;AAMJ,IAAA,OAAO,EAAE,MAAM,CAAC;AANZ,IAHe;AAWrB,EAAA,QAAQ,EAAR,QAXqB;AAYrB,EAAA,OAAO,EAAP;AAZqB,EAAvB;AAeA,IAAM,WAAW,GAAG,cAAA,CAAA,UAAA,CAAW,cAAX,EAApB;AACA,IAAM,WAAW,GAAG,WAAW,KAAK,MAApC;AAEA,OAAA,CAAA,OAAA,GAAe,WAAW,GAAG,iBAAH,GAAuB,oBAAjD",
+      sourcesContent: ["import {Appearance, TextStyle} from 'react-native';\n\nimport {\n  DarkTheme as PaperDarkTheme,\n  DefaultTheme as PaperDefaultTheme,\n} from 'react-native-paper';\nimport {\n  DarkTheme as NavigationDarkTheme,\n  DefaultTheme as NavigationDefaultTheme,\n} from '@react-navigation/native';\n\ninterface VariantProps {\n  [key: string]: TextStyle;\n}\ninterface SpacingProps {\n  [key: string]: number;\n}\ndeclare global {\n  namespace ReactNativePaper {\n    interface ThemeColors {\n      badge: string;\n      divider: string;\n    }\n    interface Theme {\n      variants: VariantProps;\n      spacing: SpacingProps;\n    }\n  }\n}\n\nconst variants: VariantProps = {\n  h1: {\n    fontSize: 22,\n    fontWeight: 'bold',\n  },\n  title: {\n    fontSize: 20,\n  },\n  body: {\n    fontSize: 16,\n  },\n  tag: {\n    fontSize: 14,\n  },\n  info: {\n    fontSize: 12,\n  },\n};\n\nconst colors = {\n  black: '#000000',\n  white: '#FFFFFF',\n  grey: 'grey',\n  lightGrey: '#d3d3d3',\n};\nconst spacing: SpacingProps = {\n  xs: 4,\n  s: 8,\n  m: 16,\n  l: 24,\n  xl: 32,\n};\nconst CombinedDefaultTheme = {\n  ...PaperDefaultTheme,\n  ...NavigationDefaultTheme,\n  colors: {\n    ...PaperDefaultTheme.colors,\n    ...NavigationDefaultTheme.colors,\n    primary: colors.black,\n    accent: colors.lightGrey,\n    divider: colors.grey,\n    badge: colors.black,\n  },\n  variants,\n  spacing,\n};\nconst CombinedDarkTheme = {\n  ...PaperDarkTheme,\n  ...NavigationDarkTheme,\n  colors: {\n    ...PaperDarkTheme.colors,\n    ...NavigationDarkTheme.colors,\n    primary: colors.white,\n    accent: colors.white,\n    badge: colors.black,\n    divider: colors.white,\n  },\n  variants,\n  spacing,\n};\n\nconst colorScheme = Appearance.getColorScheme();\nconst isThemeDark = colorScheme === 'dark';\n\nexport default isThemeDark ? CombinedDarkTheme : CombinedDefaultTheme;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "a21383d38d135dfe2d1b0e5187497095e219628e"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1led1vdmde = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1led1vdmde();
+
+var _interopRequireDefault =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[0]++, require("@babel/runtime/helpers/interopRequireDefault"));
+
+var _extends2 =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[1]++, _interopRequireDefault(require("@babel/runtime/helpers/extends")));
+
+/* istanbul ignore next */
+cov_1led1vdmde().s[2]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var react_native_1 =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[3]++, require("react-native"));
+var react_native_paper_1 =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[4]++, require("react-native-paper"));
+var native_1 =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[5]++, require("@react-navigation/native"));
+var variants =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[6]++, {
+  h1: {
+    fontSize: 22,
+    fontWeight: 'bold'
+  },
+  title: {
+    fontSize: 20
+  },
+  body: {
+    fontSize: 16
+  },
+  tag: {
+    fontSize: 14
+  },
+  info: {
+    fontSize: 12
+  }
+});
+var colors =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[7]++, {
+  black: '#000000',
+  white: '#FFFFFF',
+  grey: 'grey',
+  lightGrey: '#d3d3d3'
+});
+var spacing =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[8]++, {
+  xs: 4,
+  s: 8,
+  m: 16,
+  l: 24,
+  xl: 32
+});
+var CombinedDefaultTheme =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[9]++, (0, _extends2.default)({}, react_native_paper_1.DefaultTheme, native_1.DefaultTheme, {
+  colors: (0, _extends2.default)({}, react_native_paper_1.DefaultTheme.colors, native_1.DefaultTheme.colors, {
+    primary: colors.black,
+    accent: colors.lightGrey,
+    divider: colors.grey,
+    badge: colors.black
+  }),
+  variants: variants,
+  spacing: spacing
+}));
+var CombinedDarkTheme =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[10]++, (0, _extends2.default)({}, react_native_paper_1.DarkTheme, native_1.DarkTheme, {
+  colors: (0, _extends2.default)({}, react_native_paper_1.DarkTheme.colors, native_1.DarkTheme.colors, {
+    primary: colors.white,
+    accent: colors.white,
+    badge: colors.black,
+    divider: colors.white
+  }),
+  variants: variants,
+  spacing: spacing
+}));
+var colorScheme =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[11]++, react_native_1.Appearance.getColorScheme());
+var isThemeDark =
+/* istanbul ignore next */
+(cov_1led1vdmde().s[12]++, colorScheme === 'dark');
+
+/* istanbul ignore next */
+cov_1led1vdmde().s[13]++;
+exports.default = isThemeDark ?
+/* istanbul ignore next */
+(cov_1led1vdmde().b[0][0]++, CombinedDarkTheme) :
+/* istanbul ignore next */
+(cov_1led1vdmde().b[0][1]++, CombinedDefaultTheme);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3RoZW1lLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLElBQUEsY0FBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLGNBQUEsQ0FBQSxDQUFBO0FBRUEsSUFBQSxvQkFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLG9CQUFBLENBQUEsQ0FBQTtBQUlBLElBQUEsUUFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLDBCQUFBLENBQUEsQ0FBQTtBQXdCQSxJQUFNLFFBQVE7QUFBQTtBQUFBLDBCQUFpQjtBQUM3QixFQUFBLEVBQUUsRUFBRTtBQUNGLElBQUEsUUFBUSxFQUROLEVBQUE7QUFFRixJQUFBLFVBQVUsRUFBRTtBQUZWLEdBRHlCO0FBSzdCLEVBQUEsS0FBSyxFQUFFO0FBQ0wsSUFBQSxRQUFRLEVBQUU7QUFETCxHQUxzQjtBQVE3QixFQUFBLElBQUksRUFBRTtBQUNKLElBQUEsUUFBUSxFQUFFO0FBRE4sR0FSdUI7QUFXN0IsRUFBQSxHQUFHLEVBQUU7QUFDSCxJQUFBLFFBQVEsRUFBRTtBQURQLEdBWHdCO0FBYzdCLEVBQUEsSUFBSSxFQUFFO0FBQ0osSUFBQSxRQUFRLEVBQUU7QUFETjtBQWR1QixDQUFqQixDQUFkO0FBbUJBLElBQU0sTUFBTTtBQUFBO0FBQUEsMEJBQUc7QUFDYixFQUFBLEtBQUssRUFEUSxTQUFBO0FBRWIsRUFBQSxLQUFLLEVBRlEsU0FBQTtBQUdiLEVBQUEsSUFBSSxFQUhTLE1BQUE7QUFJYixFQUFBLFNBQVMsRUFBRTtBQUpFLENBQUgsQ0FBWjtBQU1BLElBQU0sT0FBTztBQUFBO0FBQUEsMEJBQWlCO0FBQzVCLEVBQUEsRUFBRSxFQUQwQixDQUFBO0FBRTVCLEVBQUEsQ0FBQyxFQUYyQixDQUFBO0FBRzVCLEVBQUEsQ0FBQyxFQUgyQixFQUFBO0FBSTVCLEVBQUEsQ0FBQyxFQUoyQixFQUFBO0FBSzVCLEVBQUEsRUFBRSxFQUFFO0FBTHdCLENBQWpCLENBQWI7QUFPQSxJQUFNLG9CQUFvQjtBQUFBO0FBQUEsMEJBQUEsQ0FBQSxHQUFBLFNBQUEsQ0FBQSxPQUFBLEVBQUEsRUFBQSxFQUNyQixvQkFBQSxDQURxQixZQUFBLEVBRXJCLFFBQUEsQ0FGcUIsWUFBQSxFQUFBO0FBR3hCLEVBQUEsTUFBTSxFQUFBLENBQUEsR0FBQSxTQUFBLENBQUEsT0FBQSxFQUFBLEVBQUEsRUFDRCxvQkFBQSxDQUFBLFlBQUEsQ0FEQyxNQUFBLEVBRUQsUUFBQSxDQUFBLFlBQUEsQ0FGQyxNQUFBLEVBQUE7QUFHSixJQUFBLE9BQU8sRUFBRSxNQUFNLENBSFgsS0FBQTtBQUlKLElBQUEsTUFBTSxFQUFFLE1BQU0sQ0FKVixTQUFBO0FBS0osSUFBQSxPQUFPLEVBQUUsTUFBTSxDQUxYLElBQUE7QUFNSixJQUFBLEtBQUssRUFBRSxNQUFNLENBQUM7QUFOVixHQUFBLENBSGtCO0FBV3hCLEVBQUEsUUFBUSxFQVhnQixRQUFBO0FBWXhCLEVBQUEsT0FBTyxFQUFQO0FBWndCLENBQUEsQ0FBQSxDQUExQjtBQWNBLElBQU0saUJBQWlCO0FBQUE7QUFBQSwyQkFBQSxDQUFBLEdBQUEsU0FBQSxDQUFBLE9BQUEsRUFBQSxFQUFBLEVBQ2xCLG9CQUFBLENBRGtCLFNBQUEsRUFFbEIsUUFBQSxDQUZrQixTQUFBLEVBQUE7QUFHckIsRUFBQSxNQUFNLEVBQUEsQ0FBQSxHQUFBLFNBQUEsQ0FBQSxPQUFBLEVBQUEsRUFBQSxFQUNELG9CQUFBLENBQUEsU0FBQSxDQURDLE1BQUEsRUFFRCxRQUFBLENBQUEsU0FBQSxDQUZDLE1BQUEsRUFBQTtBQUdKLElBQUEsT0FBTyxFQUFFLE1BQU0sQ0FIWCxLQUFBO0FBSUosSUFBQSxNQUFNLEVBQUUsTUFBTSxDQUpWLEtBQUE7QUFLSixJQUFBLEtBQUssRUFBRSxNQUFNLENBTFQsS0FBQTtBQU1KLElBQUEsT0FBTyxFQUFFLE1BQU0sQ0FBQztBQU5aLEdBQUEsQ0FIZTtBQVdyQixFQUFBLFFBQVEsRUFYYSxRQUFBO0FBWXJCLEVBQUEsT0FBTyxFQUFQO0FBWnFCLENBQUEsQ0FBQSxDQUF2QjtBQWVBLElBQU0sV0FBVztBQUFBO0FBQUEsMkJBQUcsY0FBQSxDQUFBLFVBQUEsQ0FBcEIsY0FBb0IsRUFBSCxDQUFqQjtBQUNBLElBQU0sV0FBVztBQUFBO0FBQUEsMkJBQUcsV0FBVyxLQUEvQixNQUFpQixDQUFqQjs7OztBQUVBLE9BQUEsQ0FBQSxPQUFBLEdBQWUsV0FBVztBQUFBO0FBQUEsNkJBQUEsaUJBQUE7QUFBQTtBQUFBLDZCQUExQixvQkFBMEIsQ0FBMUIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge0FwcGVhcmFuY2UsIFRleHRTdHlsZX0gZnJvbSAncmVhY3QtbmF0aXZlJztcblxuaW1wb3J0IHtcbiAgRGFya1RoZW1lIGFzIFBhcGVyRGFya1RoZW1lLFxuICBEZWZhdWx0VGhlbWUgYXMgUGFwZXJEZWZhdWx0VGhlbWUsXG59IGZyb20gJ3JlYWN0LW5hdGl2ZS1wYXBlcic7XG5pbXBvcnQge1xuICBEYXJrVGhlbWUgYXMgTmF2aWdhdGlvbkRhcmtUaGVtZSxcbiAgRGVmYXVsdFRoZW1lIGFzIE5hdmlnYXRpb25EZWZhdWx0VGhlbWUsXG59IGZyb20gJ0ByZWFjdC1uYXZpZ2F0aW9uL25hdGl2ZSc7XG5cbmludGVyZmFjZSBWYXJpYW50UHJvcHMge1xuICBba2V5OiBzdHJpbmddOiBUZXh0U3R5bGU7XG59XG5pbnRlcmZhY2UgU3BhY2luZ1Byb3BzIHtcbiAgW2tleTogc3RyaW5nXTogbnVtYmVyO1xufVxuZGVjbGFyZSBnbG9iYWwge1xuICBuYW1lc3BhY2UgUmVhY3ROYXRpdmVQYXBlciB7XG4gICAgaW50ZXJmYWNlIFRoZW1lQ29sb3JzIHtcbiAgICAgIGJhZGdlOiBzdHJpbmc7XG4gICAgICBkaXZpZGVyOiBzdHJpbmc7XG4gICAgfVxuICAgIGludGVyZmFjZSBUaGVtZSB7XG4gICAgICB2YXJpYW50czogVmFyaWFudFByb3BzO1xuICAgICAgc3BhY2luZzogU3BhY2luZ1Byb3BzO1xuICAgIH1cbiAgfVxufVxuXG5jb25zdCB2YXJpYW50czogVmFyaWFudFByb3BzID0ge1xuICBoMToge1xuICAgIGZvbnRTaXplOiAyMixcbiAgICBmb250V2VpZ2h0OiAnYm9sZCcsXG4gIH0sXG4gIHRpdGxlOiB7XG4gICAgZm9udFNpemU6IDIwLFxuICB9LFxuICBib2R5OiB7XG4gICAgZm9udFNpemU6IDE2LFxuICB9LFxuICB0YWc6IHtcbiAgICBmb250U2l6ZTogMTQsXG4gIH0sXG4gIGluZm86IHtcbiAgICBmb250U2l6ZTogMTIsXG4gIH0sXG59O1xuXG5jb25zdCBjb2xvcnMgPSB7XG4gIGJsYWNrOiAnIzAwMDAwMCcsXG4gIHdoaXRlOiAnI0ZGRkZGRicsXG4gIGdyZXk6ICdncmV5JyxcbiAgbGlnaHRHcmV5OiAnI2QzZDNkMycsXG59O1xuY29uc3Qgc3BhY2luZzogU3BhY2luZ1Byb3BzID0ge1xuICB4czogNCxcbiAgczogOCxcbiAgbTogMTYsXG4gIGw6IDI0LFxuICB4bDogMzIsXG59O1xuY29uc3QgQ29tYmluZWREZWZhdWx0VGhlbWUgPSB7XG4gIC4uLlBhcGVyRGVmYXVsdFRoZW1lLFxuICAuLi5OYXZpZ2F0aW9uRGVmYXVsdFRoZW1lLFxuICBjb2xvcnM6IHtcbiAgICAuLi5QYXBlckRlZmF1bHRUaGVtZS5jb2xvcnMsXG4gICAgLi4uTmF2aWdhdGlvbkRlZmF1bHRUaGVtZS5jb2xvcnMsXG4gICAgcHJpbWFyeTogY29sb3JzLmJsYWNrLFxuICAgIGFjY2VudDogY29sb3JzLmxpZ2h0R3JleSxcbiAgICBkaXZpZGVyOiBjb2xvcnMuZ3JleSxcbiAgICBiYWRnZTogY29sb3JzLmJsYWNrLFxuICB9LFxuICB2YXJpYW50cyxcbiAgc3BhY2luZyxcbn07XG5jb25zdCBDb21iaW5lZERhcmtUaGVtZSA9IHtcbiAgLi4uUGFwZXJEYXJrVGhlbWUsXG4gIC4uLk5hdmlnYXRpb25EYXJrVGhlbWUsXG4gIGNvbG9yczoge1xuICAgIC4uLlBhcGVyRGFya1RoZW1lLmNvbG9ycyxcbiAgICAuLi5OYXZpZ2F0aW9uRGFya1RoZW1lLmNvbG9ycyxcbiAgICBwcmltYXJ5OiBjb2xvcnMud2hpdGUsXG4gICAgYWNjZW50OiBjb2xvcnMud2hpdGUsXG4gICAgYmFkZ2U6IGNvbG9ycy5ibGFjayxcbiAgICBkaXZpZGVyOiBjb2xvcnMud2hpdGUsXG4gIH0sXG4gIHZhcmlhbnRzLFxuICBzcGFjaW5nLFxufTtcblxuY29uc3QgY29sb3JTY2hlbWUgPSBBcHBlYXJhbmNlLmdldENvbG9yU2NoZW1lKCk7XG5jb25zdCBpc1RoZW1lRGFyayA9IGNvbG9yU2NoZW1lID09PSAnZGFyayc7XG5cbmV4cG9ydCBkZWZhdWx0IGlzVGhlbWVEYXJrID8gQ29tYmluZWREYXJrVGhlbWUgOiBDb21iaW5lZERlZmF1bHRUaGVtZTtcbiJdfQ==

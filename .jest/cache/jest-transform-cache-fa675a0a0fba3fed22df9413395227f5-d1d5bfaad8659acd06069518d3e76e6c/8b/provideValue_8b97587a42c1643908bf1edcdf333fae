@@ -1,0 +1,82 @@
+fa5b5036ebcae45e52354a6829ef7180
+"use strict";var _handlers;
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.provideValue = provideValue;
+exports.handlers = exports.next = exports.NEXT = void 0;
+
+var _parseEffect = _interopRequireDefault(require("./parseEffect"));
+
+
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var NEXT = Object.create(null);
+exports.NEXT = NEXT;
+
+var next = function next() {return NEXT;};
+
+exports.next = next;
+var handlers = (_handlers = {}, require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").ACTION_CHANNEL, 'actionChannel'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+
+require("../shared/keys").ALL, function (providers, value) {
+  if (providers.all) {
+    return providers.all(value, next);
+  }
+
+  return NEXT;
+}), require("@babel/runtime/helpers/defineProperty")(_handlers,
+
+require("../shared/keys").CALL, 'call'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").CANCEL, 'cancel'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").CANCELLED, 'cancelled'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").CPS, 'cps'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").FLUSH, 'flush'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+
+require("../shared/keys").FORK, function (providers, value) {
+  var effect = require("../utils/asEffect").asEffect.fork(value);
+
+  if (providers.fork && !effect.detached) {
+    return providers.fork(effect, next);
+  }
+
+  if (providers.spawn && effect.detached) {
+    return providers.spawn(effect, next);
+  }
+
+  return NEXT;
+}), require("@babel/runtime/helpers/defineProperty")(_handlers,
+
+require("../shared/keys").GET_CONTEXT, 'getContext'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").JOIN, 'join'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").PUT, 'put'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").RACE, 'race'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").SELECT, 'select'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").SET_CONTEXT, 'setContext'), require("@babel/runtime/helpers/defineProperty")(_handlers,
+require("../shared/keys").TAKE, 'take'), _handlers);
+
+exports.handlers = handlers;
+
+function provideValue(providers, value) {
+  if (providers) {
+    var effectType = (0, _parseEffect.default)(value).type;
+    var handler = handlers[effectType];
+
+    if (typeof handler === 'string' && handler in providers) {
+      var effect = require("../utils/asEffect").asEffect[handler](value);
+
+      return providers[handler](effect, next);
+    }
+
+    if (typeof handler === 'function') {
+      return handler(providers, value);
+    }
+  }
+
+  return NEXT;
+}

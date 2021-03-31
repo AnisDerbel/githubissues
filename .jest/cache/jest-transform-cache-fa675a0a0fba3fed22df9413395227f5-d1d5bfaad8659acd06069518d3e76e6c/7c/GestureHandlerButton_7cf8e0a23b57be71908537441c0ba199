@@ -1,0 +1,13 @@
+130448833d8615890ac78a0d8f0c7a63
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+
+
+var RNGestureHandlerButton = (0, require("react-native").requireNativeComponent)('RNGestureHandlerButton');
+var _default = RNGestureHandlerButton;
+exports.default = _default;

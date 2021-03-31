@@ -1,0 +1,12 @@
+51a5a70ed10e3b2f4e8097137bf13a61
+'use strict';
+
+
+
+
+
+
+
+module.exports = function isAxiosError(payload) {
+  return typeof payload === 'object' && payload.isAxiosError === true;
+};

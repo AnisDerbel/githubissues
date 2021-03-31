@@ -1,0 +1,16 @@
+dbe570844e6c72666ae53d91ddac9077
+
+
+var inc = function inc(version, release, options, identifier) {
+  if (typeof options === 'string') {
+    identifier = options;
+    options = undefined;
+  }
+
+  try {
+    return new (require('../classes/semver'))(version, options).inc(release, identifier).version;
+  } catch (er) {
+    return null;
+  }
+};
+module.exports = inc;

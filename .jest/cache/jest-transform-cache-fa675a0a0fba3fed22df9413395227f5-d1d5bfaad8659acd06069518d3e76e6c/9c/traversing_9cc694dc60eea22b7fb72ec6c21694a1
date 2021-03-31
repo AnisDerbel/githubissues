@@ -1,0 +1,929 @@
+3fb6ebbb61dee3f61af4a47ff12b795f
+
+
+
+
+
+
+
+
+
+var uniqueSort = require('htmlparser2').DomUtils.uniqueSort;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.find = function (selectorOrHaystack) {
+  var elems = this.toArray().reduce(function (newElems, elem) {
+    return newElems.concat(elem.children.filter(require('../utils').isTag));
+  }, []);
+  var contains = this.constructor.contains;
+  var haystack;
+
+  if (selectorOrHaystack && typeof selectorOrHaystack !== 'string') {
+    if (selectorOrHaystack.cheerio) {
+      haystack = selectorOrHaystack.get();
+    } else {
+      haystack = [selectorOrHaystack];
+    }
+
+    return this._make(
+    haystack.filter(function (elem) {
+      var idx;
+      var len;
+      for (idx = 0, len = this.length; idx < len; ++idx) {
+        if (contains(this[idx], elem)) {
+          return true;
+        }
+      }
+    }, this));
+
+  }
+
+  var options = { __proto__: this.options, context: this.toArray() };
+
+  return this._make(require('cheerio-select-tmp').select(selectorOrHaystack || '', elems, options));
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.parent = function (selector) {
+  var set = [];
+
+  require('../utils').domEach(this, function (idx, elem) {
+    var parentElem = elem.parent;
+    if (
+    parentElem &&
+    parentElem.type !== 'root' &&
+    set.indexOf(parentElem) < 0)
+    {
+      set.push(parentElem);
+    }
+  });
+
+  if (arguments.length) {
+    set = exports.filter.call(set, selector, this);
+  }
+
+  return this._make(set);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.parents = function (selector) {
+  var parentNodes = [];
+
+
+
+
+  this.get().
+  reverse().
+  forEach(function (elem) {
+    traverseParents(this, elem.parent, selector, Infinity).forEach(function (
+    node)
+    {
+      if (parentNodes.indexOf(node) === -1) {
+        parentNodes.push(node);
+      }
+    });
+  }, this);
+
+  return this._make(parentNodes);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.parentsUntil = function (selector, filter) {
+  var parentNodes = [];
+  var untilNode;
+  var untilNodes;
+
+  if (typeof selector === 'string') {
+    untilNode = require('cheerio-select-tmp').select(
+    selector,
+    this.parents().toArray(),
+    this.options)[
+    0];
+  } else if (selector && selector.cheerio) {
+    untilNodes = selector.toArray();
+  } else if (selector) {
+    untilNode = selector;
+  }
+
+
+
+
+
+  this.toArray().
+  reverse().
+  forEach(function (elem) {
+    while (elem = elem.parent) {
+      if (
+      untilNode && elem !== untilNode ||
+      untilNodes && untilNodes.indexOf(elem) === -1 ||
+      !untilNode && !untilNodes)
+      {
+        if (require('../utils').isTag(elem) && parentNodes.indexOf(elem) === -1) {
+          parentNodes.push(elem);
+        }
+      } else {
+        break;
+      }
+    }
+  }, this);
+
+  return this._make(
+  filter ? require('cheerio-select-tmp').select(filter, parentNodes, this.options) : parentNodes);
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.closest = function (selector) {
+  var set = [];
+
+  if (!selector) {
+    return this._make(set);
+  }
+
+  require('../utils').domEach(this, function (idx, elem) {
+    var closestElem = traverseParents(this, elem, selector, 1)[0];
+
+
+    if (closestElem && set.indexOf(closestElem) < 0) {
+      set.push(closestElem);
+    }
+  });
+
+  return this._make(set);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.next = function (selector) {
+  if (!this[0]) {
+    return this;
+  }
+  var elems = [];
+
+  this.toArray().forEach(function (elem) {
+    while (elem = elem.next) {
+      if (require('../utils').isTag(elem)) {
+        elems.push(elem);
+        return;
+      }
+    }
+  });
+
+  return selector ?
+  exports.filter.call(elems, selector, this) :
+  this._make(elems);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.nextAll = function (selector) {
+  if (!this[0]) {
+    return this;
+  }
+  var elems = [];
+
+  this.toArray().forEach(function (elem) {
+    while (elem = elem.next) {
+      if (require('../utils').isTag(elem) && elems.indexOf(elem) === -1) {
+        elems.push(elem);
+      }
+    }
+  });
+
+  return selector ?
+  exports.filter.call(elems, selector, this) :
+  this._make(elems);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.nextUntil = function (selector, filterSelector) {
+  if (!this[0]) {
+    return this;
+  }
+  var elems = [];
+  var untilNode;
+  var untilNodes;
+
+  if (typeof selector === 'string') {
+    untilNode = require('cheerio-select-tmp').select(selector, this.nextAll().get(), this.options)[0];
+  } else if (selector && selector.cheerio) {
+    untilNodes = selector.get();
+  } else if (selector) {
+    untilNode = selector;
+  }
+
+  this.toArray().forEach(function (elem) {
+    while (elem = elem.next) {
+      if (
+      untilNode && elem !== untilNode ||
+      untilNodes && untilNodes.indexOf(elem) === -1 ||
+      !untilNode && !untilNodes)
+      {
+        if (require('../utils').isTag(elem) && elems.indexOf(elem) === -1) {
+          elems.push(elem);
+        }
+      } else {
+        break;
+      }
+    }
+  });
+
+  return filterSelector ?
+  exports.filter.call(elems, filterSelector, this) :
+  this._make(elems);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.prev = function (selector) {
+  if (!this[0]) {
+    return this;
+  }
+  var elems = [];
+
+  this.toArray().forEach(function (elem) {
+    while (elem = elem.prev) {
+      if (require('../utils').isTag(elem)) {
+        elems.push(elem);
+        return;
+      }
+    }
+  });
+
+  return selector ?
+  exports.filter.call(elems, selector, this) :
+  this._make(elems);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.prevAll = function (selector) {
+  if (!this[0]) {
+    return this;
+  }
+  var elems = [];
+
+  this.toArray().forEach(function (elem) {
+    while (elem = elem.prev) {
+      if (require('../utils').isTag(elem) && elems.indexOf(elem) === -1) {
+        elems.push(elem);
+      }
+    }
+  });
+
+  return selector ?
+  exports.filter.call(elems, selector, this) :
+  this._make(elems);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.prevUntil = function (selector, filterSelector) {
+  if (!this[0]) {
+    return this;
+  }
+  var elems = [];
+  var untilNode;
+  var untilNodes;
+
+  if (typeof selector === 'string') {
+    untilNode = require('cheerio-select-tmp').select(selector, this.prevAll().get(), this.options)[0];
+  } else if (selector && selector.cheerio) {
+    untilNodes = selector.get();
+  } else if (selector) {
+    untilNode = selector;
+  }
+
+  this.toArray().forEach(function (elem) {
+    while (elem = elem.prev) {
+      if (
+      untilNode && elem !== untilNode ||
+      untilNodes && untilNodes.indexOf(elem) === -1 ||
+      !untilNode && !untilNodes)
+      {
+        if (require('../utils').isTag(elem) && elems.indexOf(elem) === -1) {
+          elems.push(elem);
+        }
+      } else {
+        break;
+      }
+    }
+  });
+
+  return filterSelector ?
+  exports.filter.call(elems, filterSelector, this) :
+  this._make(elems);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.siblings = function (selector) {
+  var parent = this.parent();
+
+  var elems = (parent ? parent.children() : this.siblingsAndMe()).
+  toArray().
+  filter(function (elem) {
+    return require('../utils').isTag(elem) && !this.is(elem);
+  }, this);
+
+  if (selector !== undefined) {
+    return exports.filter.call(elems, selector, this);
+  }
+  return this._make(elems);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.children = function (selector) {
+  var elems = this.toArray().reduce(function (newElems, elem) {
+    return newElems.concat(elem.children.filter(require('../utils').isTag));
+  }, []);
+
+  if (selector === undefined) return this._make(elems);
+
+  return exports.filter.call(elems, selector, this);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+exports.contents = function () {
+  var elems = this.toArray().reduce(function (newElems, elem) {
+    return newElems.concat(elem.children);
+  }, []);
+  return this._make(elems);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.each = function (fn) {
+  var i = 0;
+  var len = this.length;
+  while (i < len && fn.call(this[i], i, this[i]) !== false) {++i;}
+  return this;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.map = function (fn) {
+  var elems = [];
+  for (var i = 0; i < this.length; i++) {
+    var el = this[i];
+    var val = fn.call(el, i, el);
+    if (val != null) {
+      elems = elems.concat(val);
+    }
+  }
+  return this._make(elems);
+};
+
+function getFilterFn(match) {
+  if (typeof match === 'function') {
+    return function (el, i) {
+      return match.call(el, i, el);
+    };
+  } else if (match.cheerio) {
+    return match.is.bind(match);
+  }
+  return function (el) {
+    return match === el;
+  };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.filter = function (match, container) {
+  container = container || this;
+  var elements = this.toArray ? this.toArray() : this;
+
+  if (typeof match === 'string') {
+    elements = require('cheerio-select-tmp').filter(match, elements, container.options);
+  } else {
+    elements = elements.filter(getFilterFn(match));
+  }
+
+  return container._make(elements);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.not = function (match, container) {
+  container = container || this;
+  var elements = container.toArray ? container.toArray() : container;
+  var matches;
+  var filterFn;
+
+  if (typeof match === 'string') {
+    matches = new Set(require('cheerio-select-tmp').filter(match, elements, this.options));
+    elements = elements.filter(function (el) {
+      return !matches.has(el);
+    });
+  } else {
+    filterFn = getFilterFn(match);
+    elements = elements.filter(function (el, i) {
+      return !filterFn(el, i);
+    });
+  }
+
+  return container._make(elements);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.has = function (selectorOrHaystack) {
+  var that = this;
+  return exports.filter.call(this, function () {
+    return that._make(this).find(selectorOrHaystack).length > 0;
+  });
+};
+
+
+
+
+
+
+
+
+
+
+
+exports.first = function () {
+  return this.length > 1 ? this._make(this[0]) : this;
+};
+
+
+
+
+
+
+
+
+
+
+
+exports.last = function () {
+  return this.length > 1 ? this._make(this[this.length - 1]) : this;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.eq = function (i) {
+  i = +i;
+
+
+  if (i === 0 && this.length <= 1) return this;
+
+  if (i < 0) i = this.length + i;
+  return this[i] ? this._make(this[i]) : this._make([]);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.get = function (i) {
+  if (i == null) {
+    return Array.prototype.slice.call(this);
+  }
+  return this[i < 0 ? this.length + i : i];
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.index = function (selectorOrNeedle) {
+  var $haystack;
+  var needle;
+
+  if (arguments.length === 0) {
+    $haystack = this.parent().children();
+    needle = this[0];
+  } else if (typeof selectorOrNeedle === 'string') {
+    $haystack = this._make(selectorOrNeedle);
+    needle = this[0];
+  } else {
+    $haystack = this;
+    needle = selectorOrNeedle.cheerio ? selectorOrNeedle[0] : selectorOrNeedle;
+  }
+
+  return $haystack.get().indexOf(needle);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.slice = function () {
+  return this._make([].slice.apply(this, arguments));
+};
+
+function traverseParents(self, elem, selector, limit) {
+  var elems = [];
+  while (elem && elems.length < limit && elem.type !== 'root') {
+    if (!selector || exports.filter.call([elem], selector, self).length) {
+      elems.push(elem);
+    }
+    elem = elem.parent;
+  }
+  return elems;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+exports.end = function () {
+  return this.prevObject || this._make([]);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.add = function (other, context) {
+  var selection = this._make(other, context);
+  var contents = uniqueSort(selection.get().concat(this.get()));
+
+  for (var i = 0; i < contents.length; ++i) {
+    selection[i] = contents[i];
+  }
+  selection.length = contents.length;
+
+  return selection;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.addBack = function (selector) {
+  return this.add(
+  arguments.length ? this.prevObject.filter(selector) : this.prevObject);
+
+};

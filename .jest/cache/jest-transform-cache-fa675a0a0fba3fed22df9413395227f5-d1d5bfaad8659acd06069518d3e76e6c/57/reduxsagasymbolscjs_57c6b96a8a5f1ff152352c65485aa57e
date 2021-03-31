@@ -1,0 +1,54 @@
+313c981815c3cf5a4a9f68a119f01417
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var createSymbol = function createSymbol(name) {
+  return "@@redux-saga/" + name;
+};
+
+var CANCEL =
+
+createSymbol('CANCEL_PROMISE');
+var CHANNEL_END_TYPE =
+
+createSymbol('CHANNEL_END');
+var IO =
+
+createSymbol('IO');
+var MATCH =
+
+createSymbol('MATCH');
+var MULTICAST =
+
+createSymbol('MULTICAST');
+var SAGA_ACTION =
+
+createSymbol('SAGA_ACTION');
+var SELF_CANCELLATION =
+
+createSymbol('SELF_CANCELLATION');
+var TASK =
+
+createSymbol('TASK');
+var TASK_CANCEL =
+
+createSymbol('TASK_CANCEL');
+var TERMINATE =
+
+createSymbol('TERMINATE');
+var SAGA_LOCATION =
+
+createSymbol('LOCATION');
+
+exports.CANCEL = CANCEL;
+exports.CHANNEL_END_TYPE = CHANNEL_END_TYPE;
+exports.IO = IO;
+exports.MATCH = MATCH;
+exports.MULTICAST = MULTICAST;
+exports.SAGA_ACTION = SAGA_ACTION;
+exports.SAGA_LOCATION = SAGA_LOCATION;
+exports.SELF_CANCELLATION = SELF_CANCELLATION;
+exports.TASK = TASK;
+exports.TASK_CANCEL = TASK_CANCEL;
+exports.TERMINATE = TERMINATE;

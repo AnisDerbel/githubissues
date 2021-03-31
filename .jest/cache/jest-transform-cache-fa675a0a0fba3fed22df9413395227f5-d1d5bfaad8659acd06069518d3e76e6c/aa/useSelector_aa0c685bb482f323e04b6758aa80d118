@@ -1,0 +1,156 @@
+8ba9037b15f9b3074496f33801e3b0b4
+"use strict";
+
+
+
+exports.__esModule = true;
+exports.createSelectorHook = createSelectorHook;
+exports.useSelector = void 0;
+
+
+
+
+
+var _Subscription = require("@babel/runtime/helpers/interopRequireDefault")(require("../utils/Subscription"));
+
+
+
+
+
+var refEquality = function refEquality(a, b) {
+  return a === b;
+};
+
+function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contextSub) {
+  var _useReducer = (0, require("react").useReducer)(function (s) {
+    return s + 1;
+  }, 0),
+  forceRender = _useReducer[1];
+
+  var subscription = (0, require("react").useMemo)(function () {
+    return new _Subscription["default"](store, contextSub);
+  }, [store, contextSub]);
+  var latestSubscriptionCallbackError = (0, require("react").useRef)();
+  var latestSelector = (0, require("react").useRef)();
+  var latestStoreState = (0, require("react").useRef)();
+  var latestSelectedState = (0, require("react").useRef)();
+  var storeState = store.getState();
+  var selectedState;
+
+  try {
+    if (selector !== latestSelector.current || storeState !== latestStoreState.current || latestSubscriptionCallbackError.current) {
+      var newSelectedState = selector(storeState);
+
+      if (latestSelectedState.current === undefined || !equalityFn(newSelectedState, latestSelectedState.current)) {
+        selectedState = newSelectedState;
+      } else {
+        selectedState = latestSelectedState.current;
+      }
+    } else {
+      selectedState = latestSelectedState.current;
+    }
+  } catch (err) {
+    if (latestSubscriptionCallbackError.current) {
+      err.message += "\nThe error may be correlated with this previous error:\n" + latestSubscriptionCallbackError.current.stack + "\n\n";
+    }
+
+    throw err;
+  }
+
+  (0, require("../utils/useIsomorphicLayoutEffect").useIsomorphicLayoutEffect)(function () {
+    latestSelector.current = selector;
+    latestStoreState.current = storeState;
+    latestSelectedState.current = selectedState;
+    latestSubscriptionCallbackError.current = undefined;
+  });
+  (0, require("../utils/useIsomorphicLayoutEffect").useIsomorphicLayoutEffect)(function () {
+    function checkForUpdates() {
+      try {
+        var _newSelectedState = latestSelector.current(store.getState());
+
+        if (equalityFn(_newSelectedState, latestSelectedState.current)) {
+          return;
+        }
+
+        latestSelectedState.current = _newSelectedState;
+      } catch (err) {
+
+
+
+
+        latestSubscriptionCallbackError.current = err;
+      }
+
+      forceRender();
+    }
+
+    subscription.onStateChange = checkForUpdates;
+    subscription.trySubscribe();
+    checkForUpdates();
+    return function () {
+      return subscription.tryUnsubscribe();
+    };
+  }, [store, subscription]);
+  return selectedState;
+}
+
+
+
+
+
+
+
+
+function createSelectorHook(context) {
+  if (context === void 0) {
+    context = require("../components/Context").ReactReduxContext;
+  }
+
+  var useReduxContext = context === require("../components/Context").ReactReduxContext ? require("./useReduxContext").useReduxContext : function () {
+    return (0, require("react").useContext)(context);
+  };
+  return function useSelector(selector, equalityFn) {
+    if (equalityFn === void 0) {
+      equalityFn = refEquality;
+    }
+
+    if (process.env.NODE_ENV !== 'production' && !selector) {
+      throw new Error("You must pass a selector to useSelector");
+    }
+
+    var _useReduxContext = useReduxContext(),
+    store = _useReduxContext.store,
+    contextSub = _useReduxContext.subscription;
+
+    var selectedState = useSelectorWithStoreAndSubscription(selector, equalityFn, store, contextSub);
+    (0, require("react").useDebugValue)(selectedState);
+    return selectedState;
+  };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var useSelector = createSelectorHook();
+exports.useSelector = useSelector;

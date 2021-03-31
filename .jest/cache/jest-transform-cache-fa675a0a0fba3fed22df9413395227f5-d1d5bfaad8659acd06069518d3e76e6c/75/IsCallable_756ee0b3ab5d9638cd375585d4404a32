@@ -1,0 +1,6 @@
+56af81191a619099fa0bb62bf51c657d
+'use strict';
+
+
+
+module.exports = require('is-callable');

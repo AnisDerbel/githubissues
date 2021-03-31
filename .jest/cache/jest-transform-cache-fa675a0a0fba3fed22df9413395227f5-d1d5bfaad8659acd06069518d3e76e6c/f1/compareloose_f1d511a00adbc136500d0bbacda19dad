@@ -1,0 +1,4 @@
+9302db6bff324b8d105549a1de55c545
+
+var compareLoose = function compareLoose(a, b) {return require('./compare')(a, b, true);};
+module.exports = compareLoose;

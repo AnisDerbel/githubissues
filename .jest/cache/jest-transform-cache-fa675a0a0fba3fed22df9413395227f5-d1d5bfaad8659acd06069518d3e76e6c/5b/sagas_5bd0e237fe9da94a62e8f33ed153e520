@@ -1,0 +1,747 @@
+e0d34612b2a162b1e5f4f169b880dd6e
+"use strict";
+
+/* istanbul ignore next */
+function cov_1lozuverrm() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/sagas.ts";
+  var hash = "dafbe9c6fcdd8df500ce43d79973a6835ed4c2cb";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/sagas.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 29
+        },
+        end: {
+          line: 3,
+          column: 84
+        }
+      },
+      "1": {
+        start: {
+          line: 5,
+          column: 19
+        },
+        end: {
+          line: 5,
+          column: 80
+        }
+      },
+      "2": {
+        start: {
+          line: 7,
+          column: 14
+        },
+        end: {
+          line: 7,
+          column: 61
+        }
+      },
+      "3": {
+        start: {
+          line: 8,
+          column: 15
+        },
+        end: {
+          line: 8,
+          column: 50
+        }
+      },
+      "4": {
+        start: {
+          line: 10,
+          column: 0
+        },
+        end: {
+          line: 12,
+          column: 3
+        }
+      },
+      "5": {
+        start: {
+          line: 14,
+          column: 14
+        },
+        end: {
+          line: 14,
+          column: 30
+        }
+      },
+      "6": {
+        start: {
+          line: 16,
+          column: 16
+        },
+        end: {
+          line: 16,
+          column: 45
+        }
+      },
+      "7": {
+        start: {
+          line: 18,
+          column: 13
+        },
+        end: {
+          line: 18,
+          column: 60
+        }
+      },
+      "8": {
+        start: {
+          line: 20,
+          column: 12
+        },
+        end: {
+          line: 20,
+          column: 28
+        }
+      },
+      "9": {
+        start: {
+          line: 23,
+          column: 2
+        },
+        end: {
+          line: 47,
+          column: 30
+        }
+      },
+      "10": {
+        start: {
+          line: 24,
+          column: 4
+        },
+        end: {
+          line: 46,
+          column: 5
+        }
+      },
+      "11": {
+        start: {
+          line: 25,
+          column: 6
+        },
+        end: {
+          line: 45,
+          column: 7
+        }
+      },
+      "12": {
+        start: {
+          line: 27,
+          column: 10
+        },
+        end: {
+          line: 27,
+          column: 28
+        }
+      },
+      "13": {
+        start: {
+          line: 28,
+          column: 10
+        },
+        end: {
+          line: 28,
+          column: 28
+        }
+      },
+      "14": {
+        start: {
+          line: 29,
+          column: 10
+        },
+        end: {
+          line: 31,
+          column: 13
+        }
+      },
+      "15": {
+        start: {
+          line: 34,
+          column: 10
+        },
+        end: {
+          line: 34,
+          column: 28
+        }
+      },
+      "16": {
+        start: {
+          line: 35,
+          column: 10
+        },
+        end: {
+          line: 35,
+          column: 16
+        }
+      },
+      "17": {
+        start: {
+          line: 38,
+          column: 10
+        },
+        end: {
+          line: 38,
+          column: 28
+        }
+      },
+      "18": {
+        start: {
+          line: 39,
+          column: 10
+        },
+        end: {
+          line: 39,
+          column: 45
+        }
+      },
+      "19": {
+        start: {
+          line: 40,
+          column: 10
+        },
+        end: {
+          line: 40,
+          column: 52
+        }
+      },
+      "20": {
+        start: {
+          line: 44,
+          column: 10
+        },
+        end: {
+          line: 44,
+          column: 33
+        }
+      },
+      "21": {
+        start: {
+          line: 51,
+          column: 2
+        },
+        end: {
+          line: 65,
+          column: 15
+        }
+      },
+      "22": {
+        start: {
+          line: 52,
+          column: 4
+        },
+        end: {
+          line: 64,
+          column: 5
+        }
+      },
+      "23": {
+        start: {
+          line: 53,
+          column: 6
+        },
+        end: {
+          line: 63,
+          column: 7
+        }
+      },
+      "24": {
+        start: {
+          line: 55,
+          column: 10
+        },
+        end: {
+          line: 55,
+          column: 29
+        }
+      },
+      "25": {
+        start: {
+          line: 56,
+          column: 10
+        },
+        end: {
+          line: 58,
+          column: 14
+        }
+      },
+      "26": {
+        start: {
+          line: 57,
+          column: 12
+        },
+        end: {
+          line: 57,
+          column: 62
+        }
+      },
+      "27": {
+        start: {
+          line: 62,
+          column: 10
+        },
+        end: {
+          line: 62,
+          column: 34
+        }
+      },
+      "28": {
+        start: {
+          line: 68,
+          column: 0
+        },
+        end: {
+          line: 68,
+          column: 27
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "wrapForErrorHandling",
+        decl: {
+          start: {
+            line: 22,
+            column: 9
+          },
+          end: {
+            line: 22,
+            column: 29
+          }
+        },
+        loc: {
+          start: {
+            line: 22,
+            column: 34
+          },
+          end: {
+            line: 48,
+            column: 1
+          }
+        },
+        line: 22
+      },
+      "1": {
+        name: "wrapForErrorHandling$",
+        decl: {
+          start: {
+            line: 23,
+            column: 44
+          },
+          end: {
+            line: 23,
+            column: 65
+          }
+        },
+        loc: {
+          start: {
+            line: 23,
+            column: 76
+          },
+          end: {
+            line: 47,
+            column: 3
+          }
+        },
+        line: 23
+      },
+      "2": {
+        name: "rootSaga",
+        decl: {
+          start: {
+            line: 50,
+            column: 9
+          },
+          end: {
+            line: 50,
+            column: 17
+          }
+        },
+        loc: {
+          start: {
+            line: 50,
+            column: 20
+          },
+          end: {
+            line: 66,
+            column: 1
+          }
+        },
+        line: 50
+      },
+      "3": {
+        name: "rootSaga$",
+        decl: {
+          start: {
+            line: 51,
+            column: 44
+          },
+          end: {
+            line: 51,
+            column: 53
+          }
+        },
+        loc: {
+          start: {
+            line: 51,
+            column: 65
+          },
+          end: {
+            line: 65,
+            column: 3
+          }
+        },
+        line: 51
+      },
+      "4": {
+        name: "(anonymous_4)",
+        decl: {
+          start: {
+            line: 56,
+            column: 41
+          },
+          end: {
+            line: 56,
+            column: 42
+          }
+        },
+        loc: {
+          start: {
+            line: 56,
+            column: 57
+          },
+          end: {
+            line: 58,
+            column: 11
+          }
+        },
+        line: 56
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 25,
+            column: 6
+          },
+          end: {
+            line: 45,
+            column: 7
+          }
+        },
+        type: "switch",
+        locations: [{
+          start: {
+            line: 26,
+            column: 8
+          },
+          end: {
+            line: 31,
+            column: 13
+          }
+        }, {
+          start: {
+            line: 33,
+            column: 8
+          },
+          end: {
+            line: 35,
+            column: 16
+          }
+        }, {
+          start: {
+            line: 37,
+            column: 8
+          },
+          end: {
+            line: 40,
+            column: 52
+          }
+        }, {
+          start: {
+            line: 42,
+            column: 8
+          },
+          end: {
+            line: 42,
+            column: 15
+          }
+        }, {
+          start: {
+            line: 43,
+            column: 8
+          },
+          end: {
+            line: 44,
+            column: 33
+          }
+        }],
+        line: 25
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 53,
+            column: 6
+          },
+          end: {
+            line: 63,
+            column: 7
+          }
+        },
+        type: "switch",
+        locations: [{
+          start: {
+            line: 54,
+            column: 8
+          },
+          end: {
+            line: 58,
+            column: 14
+          }
+        }, {
+          start: {
+            line: 60,
+            column: 8
+          },
+          end: {
+            line: 60,
+            column: 15
+          }
+        }, {
+          start: {
+            line: 61,
+            column: 8
+          },
+          end: {
+            line: 62,
+            column: 34
+          }
+        }],
+        line: 53
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0,
+      "25": 0,
+      "26": 0,
+      "27": 0,
+      "28": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    },
+    b: {
+      "0": [0, 0, 0, 0, 0],
+      "1": [0, 0, 0]
+    },
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/redux/sagas.ts"],
+      names: [],
+      mappings: ";;;;;;wCAIU,oB;yCAQA,Q;;;;;;;;AAZV,IAAA,SAAA,GAAA,OAAA,CAAA,oBAAA,CAAA;;AACA,IAAA,MAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,aAAA,CAAA,CAAA;;AACA,IAAM,KAAK,GAAG,CAAC,MAAA,CAAA,OAAD,CAAd;;AAEA,SAAU,oBAAV,CAA+B,EAA/B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAEI,iBAAM,SAAA,CAAA,IAAA,CAAK,EAAL,EAAS;AAAC,YAAA,SAAS,EAAE;AAAZ,WAAT,CAAN;;AAFJ;AAAA;AAAA;;AAAA;AAAA;AAAA;AAII,UAAA,OAAO,CAAC,GAAR,CAAY,eAAZ;;AAJJ;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAQA,SAAU,QAAV;AAAA;AAAA;AAAA;AAAA;AAAA;AACE,iBAAM,SAAA,CAAA,GAAA,CAAI,KAAK,CAAC,GAAN,CAAU,UAAA,IAAI;AAAA,mBAAI,SAAA,CAAA,IAAA,CAAK,oBAAL,EAA2B,IAA3B,CAAJ;AAAA,WAAd,CAAJ,CAAN;;AADF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;AAIA,OAAA,CAAA,OAAA,GAAe,QAAf",
+      sourcesContent: ["import {all, call, fork} from 'redux-saga/effects';\nimport repo from './repo/saga';\nconst sagas = [repo];\n\nfunction* wrapForErrorHandling(fn: (...args: any[]) => void) {\n  try {\n    yield call(fn, {restarted: false});\n  } catch (e) {\n    console.log('app crashed: ', e);\n  }\n}\n\nfunction* rootSaga() {\n  yield all(sagas.map(saga => fork(wrapForErrorHandling, saga)));\n}\n\nexport default rootSaga;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "dafbe9c6fcdd8df500ce43d79973a6835ed4c2cb"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1lozuverrm = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1lozuverrm();
+
+var _interopRequireDefault =
+/* istanbul ignore next */
+(cov_1lozuverrm().s[0]++, require("@babel/runtime/helpers/interopRequireDefault"));
+
+var _regenerator =
+/* istanbul ignore next */
+(cov_1lozuverrm().s[1]++, _interopRequireDefault(require("@babel/runtime/regenerator")));
+
+var _marked =
+/* istanbul ignore next */
+(cov_1lozuverrm().s[2]++, _regenerator.default.mark(wrapForErrorHandling)),
+    _marked2 =
+/* istanbul ignore next */
+(cov_1lozuverrm().s[3]++, _regenerator.default.mark(rootSaga));
+
+/* istanbul ignore next */
+cov_1lozuverrm().s[4]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tslib_1 =
+/* istanbul ignore next */
+(cov_1lozuverrm().s[5]++, require("tslib"));
+var effects_1 =
+/* istanbul ignore next */
+(cov_1lozuverrm().s[6]++, require("redux-saga/effects"));
+var saga_1 =
+/* istanbul ignore next */
+(cov_1lozuverrm().s[7]++, tslib_1.__importDefault(require("./repo/saga")));
+var sagas =
+/* istanbul ignore next */
+(cov_1lozuverrm().s[8]++, [saga_1.default]);
+
+function wrapForErrorHandling(fn) {
+  /* istanbul ignore next */
+  cov_1lozuverrm().f[0]++;
+  cov_1lozuverrm().s[9]++;
+  return _regenerator.default.wrap(function wrapForErrorHandling$(_context) {
+    /* istanbul ignore next */
+    cov_1lozuverrm().f[1]++;
+    cov_1lozuverrm().s[10]++;
+
+    while (1) {
+      /* istanbul ignore next */
+      cov_1lozuverrm().s[11]++;
+
+      switch (_context.prev = _context.next) {
+        case 0:
+          /* istanbul ignore next */
+          cov_1lozuverrm().b[0][0]++;
+          cov_1lozuverrm().s[12]++;
+          _context.prev = 0;
+
+          /* istanbul ignore next */
+          cov_1lozuverrm().s[13]++;
+          _context.next = 3;
+
+          /* istanbul ignore next */
+          cov_1lozuverrm().s[14]++;
+          return effects_1.call(fn, {
+            restarted: false
+          });
+
+        case 3:
+          /* istanbul ignore next */
+          cov_1lozuverrm().b[0][1]++;
+          cov_1lozuverrm().s[15]++;
+          _context.next = 8;
+
+          /* istanbul ignore next */
+          cov_1lozuverrm().s[16]++;
+          break;
+
+        case 5:
+          /* istanbul ignore next */
+          cov_1lozuverrm().b[0][2]++;
+          cov_1lozuverrm().s[17]++;
+          _context.prev = 5;
+
+          /* istanbul ignore next */
+          cov_1lozuverrm().s[18]++;
+          _context.t0 = _context["catch"](0);
+
+          /* istanbul ignore next */
+          cov_1lozuverrm().s[19]++;
+          console.log('app crashed: ', _context.t0);
+
+        case 8:
+          /* istanbul ignore next */
+          cov_1lozuverrm().b[0][3]++;
+
+        case "end":
+          /* istanbul ignore next */
+          cov_1lozuverrm().b[0][4]++;
+          cov_1lozuverrm().s[20]++;
+          return _context.stop();
+      }
+    }
+  }, _marked, null, [[0, 5]]);
+}
+
+function rootSaga() {
+  /* istanbul ignore next */
+  cov_1lozuverrm().f[2]++;
+  cov_1lozuverrm().s[21]++;
+  return _regenerator.default.wrap(function rootSaga$(_context2) {
+    /* istanbul ignore next */
+    cov_1lozuverrm().f[3]++;
+    cov_1lozuverrm().s[22]++;
+
+    while (1) {
+      /* istanbul ignore next */
+      cov_1lozuverrm().s[23]++;
+
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          /* istanbul ignore next */
+          cov_1lozuverrm().b[1][0]++;
+          cov_1lozuverrm().s[24]++;
+          _context2.next = 2;
+
+          /* istanbul ignore next */
+          cov_1lozuverrm().s[25]++;
+          return effects_1.all(sagas.map(function (saga) {
+            /* istanbul ignore next */
+            cov_1lozuverrm().f[4]++;
+            cov_1lozuverrm().s[26]++;
+            return effects_1.fork(wrapForErrorHandling, saga);
+          }));
+
+        case 2:
+          /* istanbul ignore next */
+          cov_1lozuverrm().b[1][1]++;
+
+        case "end":
+          /* istanbul ignore next */
+          cov_1lozuverrm().b[1][2]++;
+          cov_1lozuverrm().s[27]++;
+          return _context2.stop();
+      }
+    }
+  }, _marked2);
+}
+
+/* istanbul ignore next */
+cov_1lozuverrm().s[28]++;
+exports.default = rootSaga;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L3NhZ2FzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7OztvREFJVSxvQjs7O29EQVFBLFE7Ozs7Ozs7Ozs7QUFaVixJQUFBLFNBQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSxvQkFBQSxDQUFBLENBQUE7QUFDQSxJQUFBLE1BQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQSxDQUFBLENBQUE7QUFDQSxJQUFNLEtBQUs7QUFBQTtBQUFBLDBCQUFHLENBQUMsTUFBQSxDQUFmLE9BQWMsQ0FBSCxDQUFYOztBQUVBLFNBQUEsb0JBQUEsQ0FBQSxFQUFBLEVBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQUFBLFlBQUEsQ0FBQSxPQUFBLENBQUEsSUFBQSxDQUFBLFNBQUEscUJBQUEsQ0FBQSxRQUFBLEVBQUE7QUFBQTtBQUFBO0FBQUE7O0FBQUEsV0FBQSxDQUFBLEVBQUE7QUFBQTtBQUFBOztBQUFBLGNBQUEsUUFBQSxDQUFBLElBQUEsR0FBQSxRQUFBLENBQUEsSUFBQTtBQUFBLGFBQUEsQ0FBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLFVBQUEsUUFBQSxDQUFBLElBQUEsR0FBQSxDQUFBOztBQUFBO0FBQUE7QUFBQSxVQUFBLFFBQUEsQ0FBQSxJQUFBLEdBQUEsQ0FBQTs7QUFBQTtBQUFBO0FBRUksaUJBQU0sU0FBQSxDQUFBLElBQUEsQ0FBQSxFQUFBLEVBQVM7QUFBQyxZQUFBLFNBQVMsRUFBRTtBQUFaLFdBQVQsQ0FBTjs7QUFGSixhQUFBLENBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxVQUFBLFFBQUEsQ0FBQSxJQUFBLEdBQUEsQ0FBQTs7QUFBQTtBQUFBO0FBQUE7O0FBQUEsYUFBQSxDQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsVUFBQSxRQUFBLENBQUEsSUFBQSxHQUFBLENBQUE7O0FBQUE7QUFBQTtBQUFBLFVBQUEsUUFBQSxDQUFBLEVBQUEsR0FBQSxRQUFBLENBQUEsT0FBQSxDQUFBLENBQUEsQ0FBQSxDQUFBOztBQUFBO0FBQUE7QUFJSSxVQUFBLE9BQU8sQ0FBUCxHQUFBLENBQUEsZUFBQSxFQUFBLFFBQUEsQ0FBQSxFQUFBOztBQUpKLGFBQUEsQ0FBQTtBQUFBO0FBQUE7O0FBQUEsYUFBQSxLQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQUEsUUFBQSxDQUFBLElBQUEsRUFBQTtBQUFBO0FBQUE7QUFBQSxHQUFBLEVBQUEsT0FBQSxFQUFBLElBQUEsRUFBQSxDQUFBLENBQUEsQ0FBQSxFQUFBLENBQUEsQ0FBQSxDQUFBLENBQUE7QUFBQTs7QUFRQSxTQUFBLFFBQUEsR0FBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBQUEsWUFBQSxDQUFBLE9BQUEsQ0FBQSxJQUFBLENBQUEsU0FBQSxTQUFBLENBQUEsU0FBQSxFQUFBO0FBQUE7QUFBQTtBQUFBOztBQUFBLFdBQUEsQ0FBQSxFQUFBO0FBQUE7QUFBQTs7QUFBQSxjQUFBLFNBQUEsQ0FBQSxJQUFBLEdBQUEsU0FBQSxDQUFBLElBQUE7QUFBQSxhQUFBLENBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxVQUFBLFNBQUEsQ0FBQSxJQUFBLEdBQUEsQ0FBQTs7QUFBQTtBQUFBO0FBQ0UsaUJBQU0sU0FBQSxDQUFBLEdBQUEsQ0FBSSxLQUFLLENBQUwsR0FBQSxDQUFVLFVBQUEsSUFBQSxFQUFJO0FBQUE7QUFBQTtBQUFBO0FBQUEsbUJBQUksU0FBQSxDQUFBLElBQUEsQ0FBQSxvQkFBQSxFQUFKLElBQUksQ0FBSjtBQUF4QixXQUFVLENBQUosQ0FBTjs7QUFERixhQUFBLENBQUE7QUFBQTtBQUFBOztBQUFBLGFBQUEsS0FBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUFBLFNBQUEsQ0FBQSxJQUFBLEVBQUE7QUFBQTtBQUFBO0FBQUEsR0FBQSxFQUFBLFFBQUEsQ0FBQTtBQUFBOzs7O0FBSUEsT0FBQSxDQUFBLE9BQUEsR0FBQSxRQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHthbGwsIGNhbGwsIGZvcmt9IGZyb20gJ3JlZHV4LXNhZ2EvZWZmZWN0cyc7XG5pbXBvcnQgcmVwbyBmcm9tICcuL3JlcG8vc2FnYSc7XG5jb25zdCBzYWdhcyA9IFtyZXBvXTtcblxuZnVuY3Rpb24qIHdyYXBGb3JFcnJvckhhbmRsaW5nKGZuOiAoLi4uYXJnczogYW55W10pID0+IHZvaWQpIHtcbiAgdHJ5IHtcbiAgICB5aWVsZCBjYWxsKGZuLCB7cmVzdGFydGVkOiBmYWxzZX0pO1xuICB9IGNhdGNoIChlKSB7XG4gICAgY29uc29sZS5sb2coJ2FwcCBjcmFzaGVkOiAnLCBlKTtcbiAgfVxufVxuXG5mdW5jdGlvbiogcm9vdFNhZ2EoKSB7XG4gIHlpZWxkIGFsbChzYWdhcy5tYXAoc2FnYSA9PiBmb3JrKHdyYXBGb3JFcnJvckhhbmRsaW5nLCBzYWdhKSkpO1xufVxuXG5leHBvcnQgZGVmYXVsdCByb290U2FnYTtcbiJdfQ==

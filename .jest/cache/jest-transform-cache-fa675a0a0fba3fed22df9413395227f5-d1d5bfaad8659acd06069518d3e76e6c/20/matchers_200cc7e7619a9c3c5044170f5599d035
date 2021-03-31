@@ -1,0 +1,2 @@
+ba28472ae9bbbf0b88f32f3399a09947
+module.exports = require('./lib/expectSaga/matchers');

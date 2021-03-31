@@ -1,0 +1,47 @@
+a9ba3907cd432e50fcf114cdcf8afce3
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = findDispatchableActionIndex;
+
+
+
+function findDispatchableActionIndex(actions, pattern) {
+  if (pattern == null || actions.length <= 0) {
+    return -1;
+  }
+
+  if (pattern === '*') {
+    return 0;
+  }
+
+  if (typeof pattern === 'function' && hasOwn(pattern, 'toString')) {
+    return findDispatchableActionIndex(actions, String(pattern));
+  }
+
+  if (typeof pattern === 'function') {
+
+
+    return (0, require("../utils/array").findIndex)(actions, function (a) {return pattern(a);});
+  }
+
+  if (Array.isArray(pattern)) {
+    for (var i = 0, l = pattern.length; i < l; i++) {
+      var index = findDispatchableActionIndex(actions, pattern[i]);
+
+      if (index > -1) {
+        return index;
+      }
+    }
+
+    return -1;
+  }
+
+  return (0, require("../utils/array").findIndex)(actions, function (a) {return a.type === pattern;});
+}
+
+function hasOwn(object, key) {
+  return {}.hasOwnProperty.call(object, key);
+}

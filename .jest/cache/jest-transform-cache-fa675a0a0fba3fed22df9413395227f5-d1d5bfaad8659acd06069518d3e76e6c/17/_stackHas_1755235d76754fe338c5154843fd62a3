@@ -1,0 +1,15 @@
+c57da9fc7bf5b0d8c27a6a216e5def48
+
+
+
+
+
+
+
+
+
+function stackHas(key) {
+  return this.__data__.has(key);
+}
+
+module.exports = stackHas;

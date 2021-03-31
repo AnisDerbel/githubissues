@@ -1,0 +1,185 @@
+2b86866cce9d044c8c1692dbf4385c57
+/* istanbul ignore next */
+function cov_yl676wybm() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/appReducer.ts";
+  var hash = "93abc4870bb90e84acf43c397d23dacb5389622c";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/appReducer.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 29
+        },
+        end: {
+          line: 1,
+          column: 84
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 25
+        }
+      },
+      "3": {
+        start: {
+          line: 8,
+          column: 13
+        },
+        end: {
+          line: 8,
+          column: 29
+        }
+      },
+      "4": {
+        start: {
+          line: 10,
+          column: 17
+        },
+        end: {
+          line: 10,
+          column: 38
+        }
+      },
+      "5": {
+        start: {
+          line: 12,
+          column: 15
+        },
+        end: {
+          line: 12,
+          column: 64
+        }
+      },
+      "6": {
+        start: {
+          line: 14,
+          column: 17
+        },
+        end: {
+          line: 17,
+          column: 2
+        }
+      },
+      "7": {
+        start: {
+          line: 18,
+          column: 15
+        },
+        end: {
+          line: 18,
+          column: 25
+        }
+      },
+      "8": {
+        start: {
+          line: 19,
+          column: 0
+        },
+        end: {
+          line: 19,
+          column: 27
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/redux/appReducer.ts"],
+      names: [],
+      mappings: ";;;;;;;AAAA;;AACA;;AAEA;;AAOA,IAAM,UAAU,GAA+B,4BAC7C;AACE,EAAA,IAAI,EAAJ,kBADF;AAEE,EAAA,IAAI,EAAJ;AAFF,CAD6C,CAA/C;eAOe,U",
+      sourcesContent: ["import {combineReducers, Reducer} from 'redux';\nimport {FormStateMap, reducer as form} from 'redux-form';\n\nimport repo, {IRepoState} from './repo/reducer';\n\nexport interface IApplicationState {\n  repo: IRepoState;\n  form: FormStateMap;\n}\n\nconst appReducer: Reducer<IApplicationState> = combineReducers<IApplicationState>(\n  {\n    form,\n    repo,\n  },\n);\n\nexport default appReducer;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "93abc4870bb90e84acf43c397d23dacb5389622c"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_yl676wybm = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_yl676wybm();
+
+var _interopRequireDefault =
+/* istanbul ignore next */
+(cov_yl676wybm().s[0]++, require("@babel/runtime/helpers/interopRequireDefault"));
+
+/* istanbul ignore next */
+cov_yl676wybm().s[1]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_yl676wybm().s[2]++;
+exports.default = void 0;
+
+var _redux =
+/* istanbul ignore next */
+(cov_yl676wybm().s[3]++, require("redux"));
+
+var _reduxForm =
+/* istanbul ignore next */
+(cov_yl676wybm().s[4]++, require("redux-form"));
+
+var _reducer =
+/* istanbul ignore next */
+(cov_yl676wybm().s[5]++, _interopRequireDefault(require("./repo/reducer")));
+
+var appReducer =
+/* istanbul ignore next */
+(cov_yl676wybm().s[6]++, (0, _redux.combineReducers)({
+  form: _reduxForm.reducer,
+  repo: _reducer.default
+}));
+
+var _default =
+/* istanbul ignore next */
+(cov_yl676wybm().s[7]++, appReducer);
+
+/* istanbul ignore next */
+cov_yl676wybm().s[8]++;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L2FwcFJlZHVjZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQWFJOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFiSixJQUFBLE1BQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxPQUFBLENBQUEsQ0FBQTs7QUFDQSxJQUFBLFVBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxZQUFBLENBQUEsQ0FBQTs7QUFFQSxJQUFBLFFBQUE7QUFBQTtBQUFBLHlCQUFBLHNCQUFBLENBQUEsT0FBQSxDQUFBLGdCQUFBLENBQUEsQ0FBQSxDQUFBOztBQU9BLElBQU0sVUFBVTtBQUFBO0FBQUEseUJBQStCLENBQUEsR0FBQSxNQUFBLENBQUEsZUFBQSxFQUM3QztBQUNFLEVBQUEsSUFBSSxFQUFKLFVBQUEsQ0FERixPQUFBO0FBRUUsRUFBQSxJQUFJLEVBQUosUUFBQSxDQUFBO0FBRkYsQ0FENkMsQ0FBL0IsQ0FBaEI7Ozs7eUJBT2UsVSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7Y29tYmluZVJlZHVjZXJzLCBSZWR1Y2VyfSBmcm9tICdyZWR1eCc7XG5pbXBvcnQge0Zvcm1TdGF0ZU1hcCwgcmVkdWNlciBhcyBmb3JtfSBmcm9tICdyZWR1eC1mb3JtJztcblxuaW1wb3J0IHJlcG8sIHtJUmVwb1N0YXRlfSBmcm9tICcuL3JlcG8vcmVkdWNlcic7XG5cbmV4cG9ydCBpbnRlcmZhY2UgSUFwcGxpY2F0aW9uU3RhdGUge1xuICByZXBvOiBJUmVwb1N0YXRlO1xuICBmb3JtOiBGb3JtU3RhdGVNYXA7XG59XG5cbmNvbnN0IGFwcFJlZHVjZXI6IFJlZHVjZXI8SUFwcGxpY2F0aW9uU3RhdGU+ID0gY29tYmluZVJlZHVjZXJzPElBcHBsaWNhdGlvblN0YXRlPihcbiAge1xuICAgIGZvcm0sXG4gICAgcmVwbyxcbiAgfSxcbik7XG5cbmV4cG9ydCBkZWZhdWx0IGFwcFJlZHVjZXI7XG4iXX0=

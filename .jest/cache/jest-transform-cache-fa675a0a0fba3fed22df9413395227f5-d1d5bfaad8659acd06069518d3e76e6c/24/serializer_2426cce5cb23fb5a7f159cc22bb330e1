@@ -1,0 +1,8 @@
+1f88e41279b8ed21993515503f348dc9
+"use strict";
+
+var _createSerializer = _interopRequireDefault(require("./createSerializer"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+module.exports = (0, _createSerializer.default)();

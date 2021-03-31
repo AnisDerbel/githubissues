@@ -1,0 +1,24 @@
+08de56bc81dd850b2de8bf2c790e14f3
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");require("react-native");
+
+
+var _enzymeAdapterReact17Updated = _interopRequireDefault(require("enzyme-adapter-react-17-updated"));
+
+
+var _enzyme = _interopRequireDefault(require("enzyme"));
+
+
+
+require("react-native-gesture-handler/jestSetup");_enzyme.default.configure({ adapter: new _enzymeAdapterReact17Updated.default() });
+jest.mock('react-native-reanimated', function () {
+  var Reanimated = require('react-native-reanimated/mock');
+
+
+
+  Reanimated.default.call = function () {};
+
+  return Reanimated;
+});
+
+
+jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');

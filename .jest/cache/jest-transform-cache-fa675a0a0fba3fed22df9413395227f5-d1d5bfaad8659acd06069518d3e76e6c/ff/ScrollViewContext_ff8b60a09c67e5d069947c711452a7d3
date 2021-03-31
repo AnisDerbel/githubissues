@@ -1,0 +1,23 @@
+6a243d100ef87028449f35aaf5dca853
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports, "__esModule", { value: true });exports.VERTICAL = exports.HORIZONTAL = exports.default = void 0;
+
+var React = _interopRequireWildcard(require("react"));
+
+
+
+var ScrollViewContext = React.createContext(null);var _default =
+
+ScrollViewContext;exports.default = _default;
+
+var HORIZONTAL = Object.freeze({ horizontal: true });exports.HORIZONTAL = HORIZONTAL;
+var VERTICAL = Object.freeze({ horizontal: false });exports.VERTICAL = VERTICAL;

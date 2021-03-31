@@ -1,0 +1,68 @@
+20024d3d1f6a396d2566c295d8275cd7
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactNative = require("react-native");
+
+var _reactNativePaper = require("react-native-paper");
+
+var _routes = require("../routes");
+
+var _InputForm = _interopRequireDefault(require("../components/InputForm"));
+
+var _this = this,
+    _jsxFileName = "/Users/anisderbel/Documents/apcgithubissues/src/screens/WelcomeScreen.tsx";
+
+var WelcomeScreen = function WelcomeScreen(_ref) {
+  var navigation = _ref.navigation;
+  var theme = (0, _reactNativePaper.useTheme)();
+
+  var onSuccess = function onSuccess() {
+    navigation.navigate(_routes.ROUTES.GITHUB_ISSUES);
+  };
+
+  return _react.default.createElement(_reactNative.View, {
+    style: styles.container,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 13
+    }
+  }, _react.default.createElement(_reactNativePaper.Text, {
+    style: [styles.title, theme.variants.title],
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 7
+    }
+  }, "Welcome to Gibhub issues"), _react.default.createElement(_InputForm.default, {
+    onSuccess: onSuccess,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 7
+    }
+  }));
+};
+
+var _default = WelcomeScreen;
+exports.default = _default;
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    margin: 10
+  },
+  title: {
+    marginVertical: 20
+  }
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3NjcmVlbnMvV2VsY29tZVNjcmVlbi50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOztBQUNBOztBQUNBOztBQUNBOztBQUNBOzs7OztBQVdBLElBQU0sYUFBYSxHQUFHLFNBQWhCLGFBQWdCLE9BQXNDO0FBQUEsTUFBcEMsVUFBb0MsUUFBcEMsVUFBb0M7QUFDMUQsTUFBTSxLQUFLLEdBQUcsaUNBQWQ7O0FBRUEsTUFBTSxTQUFTLEdBQUcsU0FBWixTQUFZLEdBQUs7QUFDckIsSUFBQSxVQUFVLENBQUMsUUFBWCxDQUFvQixlQUFPLGFBQTNCO0FBQ0QsR0FGRDs7QUFHQSxTQUNFLDZCQUFDLGlCQUFEO0FBQU0sSUFBQSxLQUFLLEVBQUUsTUFBTSxDQUFDLFNBQXBCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsS0FDRSw2QkFBQyxzQkFBRDtBQUFNLElBQUEsS0FBSyxFQUFFLENBQUMsTUFBTSxDQUFDLEtBQVIsRUFBZSxLQUFLLENBQUMsUUFBTixDQUFlLEtBQTlCLENBQWI7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxnQ0FERixFQUlFLDZCQUFDLGtCQUFEO0FBQVcsSUFBQSxTQUFTLEVBQUUsU0FBdEI7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxJQUpGLENBREY7QUFRRCxDQWREOztlQWVlLGE7OztBQUNmLElBQU0sTUFBTSxHQUFHLHdCQUFXLE1BQVgsQ0FBa0I7QUFDL0IsRUFBQSxTQUFTLEVBQUU7QUFDVCxJQUFBLE1BQU0sRUFBRTtBQURDLEdBRG9CO0FBSS9CLEVBQUEsS0FBSyxFQUFFO0FBQ0wsSUFBQSxjQUFjLEVBQUU7QUFEWDtBQUp3QixDQUFsQixDQUFmIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7U3R5bGVTaGVldCwgVmlld30gZnJvbSAncmVhY3QtbmF0aXZlJztcbmltcG9ydCB7VGV4dCwgdXNlVGhlbWV9IGZyb20gJ3JlYWN0LW5hdGl2ZS1wYXBlcic7XG5pbXBvcnQge1Jvb3RTdGFja1BhcmFtTGlzdCwgUk9VVEVTfSBmcm9tICcuLi9yb3V0ZXMnO1xuaW1wb3J0IElucHV0Rm9ybSBmcm9tICcuLi9jb21wb25lbnRzL0lucHV0Rm9ybSc7XG5pbXBvcnQge1N0YWNrTmF2aWdhdGlvblByb3B9IGZyb20gJ0ByZWFjdC1uYXZpZ2F0aW9uL3N0YWNrJztcblxudHlwZSBUV2VsY29tZVNjcmVlbk5hdmlnYXRpb25Qcm9wID0gU3RhY2tOYXZpZ2F0aW9uUHJvcDxcbiAgUm9vdFN0YWNrUGFyYW1MaXN0LFxuICAnV2VsY29tZSdcbj47XG5cbmludGVyZmFjZSBJV2VsY29tZVNjcmVlblByb3BzIHtcbiAgbmF2aWdhdGlvbjogVFdlbGNvbWVTY3JlZW5OYXZpZ2F0aW9uUHJvcDtcbn1cbmNvbnN0IFdlbGNvbWVTY3JlZW4gPSAoe25hdmlnYXRpb259OiBJV2VsY29tZVNjcmVlblByb3BzKSA9PiB7XG4gIGNvbnN0IHRoZW1lID0gdXNlVGhlbWUoKTtcblxuICBjb25zdCBvblN1Y2Nlc3MgPSAoKSA9PiB7XG4gICAgbmF2aWdhdGlvbi5uYXZpZ2F0ZShST1VURVMuR0lUSFVCX0lTU1VFUyk7XG4gIH07XG4gIHJldHVybiAoXG4gICAgPFZpZXcgc3R5bGU9e3N0eWxlcy5jb250YWluZXJ9PlxuICAgICAgPFRleHQgc3R5bGU9e1tzdHlsZXMudGl0bGUsIHRoZW1lLnZhcmlhbnRzLnRpdGxlXX0+XG4gICAgICAgIFdlbGNvbWUgdG8gR2liaHViIGlzc3Vlc1xuICAgICAgPC9UZXh0PlxuICAgICAgPElucHV0Rm9ybSBvblN1Y2Nlc3M9e29uU3VjY2Vzc30gLz5cbiAgICA8L1ZpZXc+XG4gICk7XG59O1xuZXhwb3J0IGRlZmF1bHQgV2VsY29tZVNjcmVlbjtcbmNvbnN0IHN0eWxlcyA9IFN0eWxlU2hlZXQuY3JlYXRlKHtcbiAgY29udGFpbmVyOiB7XG4gICAgbWFyZ2luOiAxMCxcbiAgfSxcbiAgdGl0bGU6IHtcbiAgICBtYXJnaW5WZXJ0aWNhbDogMjAsXG4gIH0sXG59KTtcbiJdfQ==

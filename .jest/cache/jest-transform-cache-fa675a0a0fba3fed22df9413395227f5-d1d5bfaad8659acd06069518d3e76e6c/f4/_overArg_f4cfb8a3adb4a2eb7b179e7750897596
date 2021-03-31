@@ -1,0 +1,16 @@
+86dbafc07a8e0c2e01dbb9997fcdd052
+
+
+
+
+
+
+
+
+function overArg(func, transform) {
+  return function (arg) {
+    return func(transform(arg));
+  };
+}
+
+module.exports = overArg;

@@ -1,0 +1,250 @@
+0979df384b3333d5166b8b9639073f32
+"use strict";
+
+/* istanbul ignore next */
+function cov_2i30vu0q7l() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/utils/utils.ts";
+  var hash = "93b10cfd65cb7868ef14256c003d5484ece756aa";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/utils/utils.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 26
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 17
+        },
+        end: {
+          line: 10,
+          column: 1
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 14
+        },
+        end: {
+          line: 5,
+          column: 49
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 14
+        },
+        end: {
+          line: 6,
+          column: 49
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 14
+        },
+        end: {
+          line: 7,
+          column: 49
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 16
+        },
+        end: {
+          line: 8,
+          column: 52
+        }
+      },
+      "7": {
+        start: {
+          line: 9,
+          column: 4
+        },
+        end: {
+          line: 9,
+          column: 42
+        }
+      },
+      "8": {
+        start: {
+          line: 11,
+          column: 0
+        },
+        end: {
+          line: 11,
+          column: 28
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 4,
+            column: 17
+          },
+          end: {
+            line: 4,
+            column: 18
+          }
+        },
+        loc: {
+          start: {
+            line: 4,
+            column: 31
+          },
+          end: {
+            line: 10,
+            column: 1
+          }
+        },
+        line: 4
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 9,
+            column: 11
+          },
+          end: {
+            line: 9,
+            column: 41
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 9,
+            column: 24
+          },
+          end: {
+            line: 9,
+            column: 31
+          }
+        }, {
+          start: {
+            line: 9,
+            column: 34
+          },
+          end: {
+            line: 9,
+            column: 41
+          }
+        }],
+        line: 9
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {
+      "0": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/Users/anisderbel/Documents/apcgithubissues/src/utils/utils.ts",
+      mappings: ";;;AAAO,MAAM,QAAQ,GAAG,CAAC,QAAgB,EAAE,EAAE;IAC3C,MAAM,CAAC,GAAG,QAAQ,CAAC,QAAQ,CAAC,MAAM,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC;IAC9C,MAAM,CAAC,GAAG,QAAQ,CAAC,QAAQ,CAAC,MAAM,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC;IAC9C,MAAM,CAAC,GAAG,QAAQ,CAAC,QAAQ,CAAC,MAAM,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,EAAE,CAAC,CAAC;IAC9C,MAAM,GAAG,GAAG,CAAC,CAAC,GAAG,GAAG,GAAG,CAAC,GAAG,GAAG,GAAG,CAAC,GAAG,GAAG,CAAC,GAAG,IAAI,CAAC;IACjD,OAAO,GAAG,IAAI,GAAG,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC,OAAO,CAAC;AACxC,CAAC,CAAC;AANW,QAAA,QAAQ,YAMnB",
+      names: [],
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/utils/utils.ts"],
+      sourcesContent: ["export const getColor = (hexColor: string) => {\n  const r = parseInt(hexColor.substr(0, 2), 16);\n  const g = parseInt(hexColor.substr(2, 2), 16);\n  const b = parseInt(hexColor.substr(4, 2), 16);\n  const yiq = (r * 299 + g * 587 + b * 114) / 1000;\n  return yiq >= 128 ? 'black' : 'white';\n};\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "93b10cfd65cb7868ef14256c003d5484ece756aa"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2i30vu0q7l = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2i30vu0q7l();
+cov_2i30vu0q7l().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_2i30vu0q7l().s[1]++;
+exports.getColor = void 0;
+
+/* istanbul ignore next */
+cov_2i30vu0q7l().s[2]++;
+
+const getColor = hexColor => {
+  /* istanbul ignore next */
+  cov_2i30vu0q7l().f[0]++;
+  const r =
+  /* istanbul ignore next */
+  (cov_2i30vu0q7l().s[3]++, parseInt(hexColor.substr(0, 2), 16));
+  const g =
+  /* istanbul ignore next */
+  (cov_2i30vu0q7l().s[4]++, parseInt(hexColor.substr(2, 2), 16));
+  const b =
+  /* istanbul ignore next */
+  (cov_2i30vu0q7l().s[5]++, parseInt(hexColor.substr(4, 2), 16));
+  const yiq =
+  /* istanbul ignore next */
+  (cov_2i30vu0q7l().s[6]++, (r * 299 + g * 587 + b * 114) / 1000);
+
+  /* istanbul ignore next */
+  cov_2i30vu0q7l().s[7]++;
+  return yiq >= 128 ?
+  /* istanbul ignore next */
+  (cov_2i30vu0q7l().b[0][0]++, 'black') :
+  /* istanbul ignore next */
+  (cov_2i30vu0q7l().b[0][1]++, 'white');
+};
+
+/* istanbul ignore next */
+cov_2i30vu0q7l().s[8]++;
+exports.getColor = getColor;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3V0aWxzL3V0aWxzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBTyxNQUFNLFFBQVEsR0FBSSxRQUFELElBQXFCO0FBQUE7QUFBQTtBQUMzQyxRQUFNLENBQUM7QUFBQTtBQUFBLDRCQUFHLFFBQVEsQ0FBQyxRQUFRLENBQUMsTUFBVCxDQUFnQixDQUFoQixFQUFtQixDQUFuQixDQUFELEVBQXdCLEVBQXhCLENBQVgsQ0FBUDtBQUNBLFFBQU0sQ0FBQztBQUFBO0FBQUEsNEJBQUcsUUFBUSxDQUFDLFFBQVEsQ0FBQyxNQUFULENBQWdCLENBQWhCLEVBQW1CLENBQW5CLENBQUQsRUFBd0IsRUFBeEIsQ0FBWCxDQUFQO0FBQ0EsUUFBTSxDQUFDO0FBQUE7QUFBQSw0QkFBRyxRQUFRLENBQUMsUUFBUSxDQUFDLE1BQVQsQ0FBZ0IsQ0FBaEIsRUFBbUIsQ0FBbkIsQ0FBRCxFQUF3QixFQUF4QixDQUFYLENBQVA7QUFDQSxRQUFNLEdBQUc7QUFBQTtBQUFBLDRCQUFHLENBQUMsQ0FBQyxHQUFHLEdBQUosR0FBVSxDQUFDLEdBQUcsR0FBZCxHQUFvQixDQUFDLEdBQUcsR0FBekIsSUFBZ0MsSUFBbkMsQ0FBVDs7QUFKMkM7QUFBQTtBQUszQyxTQUFPLEdBQUcsSUFBSSxHQUFQO0FBQUE7QUFBQSwrQkFBYSxPQUFiO0FBQUE7QUFBQSwrQkFBdUIsT0FBdkIsQ0FBUDtBQUNELENBTk07Ozs7QUFBTSxPQUFBLENBQUEsUUFBQSxHQUFRLFFBQVIiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgZ2V0Q29sb3IgPSAoaGV4Q29sb3I6IHN0cmluZykgPT4ge1xuICBjb25zdCByID0gcGFyc2VJbnQoaGV4Q29sb3Iuc3Vic3RyKDAsIDIpLCAxNik7XG4gIGNvbnN0IGcgPSBwYXJzZUludChoZXhDb2xvci5zdWJzdHIoMiwgMiksIDE2KTtcbiAgY29uc3QgYiA9IHBhcnNlSW50KGhleENvbG9yLnN1YnN0cig0LCAyKSwgMTYpO1xuICBjb25zdCB5aXEgPSAociAqIDI5OSArIGcgKiA1ODcgKyBiICogMTE0KSAvIDEwMDA7XG4gIHJldHVybiB5aXEgPj0gMTI4ID8gJ2JsYWNrJyA6ICd3aGl0ZSc7XG59O1xuIl19

@@ -1,0 +1,95 @@
+8aff2e116ed231a5fd81e805e8610f95
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.queryByText = exports.queryAllByText = exports.getByText = exports.getAllByText = exports.findByText = exports.findAllByText = void 0;
+
+var React = _interopRequireWildcard(require("react"));
+
+
+
+
+
+
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+var getChildrenAsText = function getChildrenAsText(children, TextComponent) {var textContent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+  React.Children.forEach(children, function (child) {
+    var _child$props;
+
+    if (typeof child === 'string') {
+      textContent.push(child);
+      return;
+    }
+
+    if (typeof child === 'number') {
+      textContent.push(child.toString());
+      return;
+    }
+
+    if (child !== null && child !== void 0 && (_child$props = child.props) !== null && _child$props !== void 0 && _child$props.children) {
+
+
+
+
+      if ((0, require("./filterNodeByType").filterNodeByType)(child, TextComponent) && textContent.length === 0) {
+        return;
+      }
+
+      getChildrenAsText(child.props.children, TextComponent, textContent);
+    }
+  });
+  return textContent;
+};
+
+var getNodeByText = function getNodeByText(node, text) {
+  try {var _require =
+
+
+    require('react-native'),Text = _require.Text;
+
+    var isTextComponent = (0, require("./filterNodeByType").filterNodeByType)(node, Text);
+
+    if (isTextComponent) {
+      var textChildren = getChildrenAsText(node.props.children, Text);
+
+      if (textChildren) {
+        var textToTest = textChildren.join('');
+        return typeof text === 'string' ? text === textToTest : text.test(textToTest);
+      }
+    }
+
+    return false;
+  } catch (error) {
+    throw (0, require("./errors").createLibraryNotSupportedError)(error);
+  }
+};
+
+var queryAllByText = function queryAllByText(instance) {return function queryAllByTextFn(text) {
+    var results = instance.findAll(function (node) {return getNodeByText(node, text);});
+    return results;
+  };};
+
+exports.queryAllByText = queryAllByText;
+
+var getMultipleError = function getMultipleError(text) {return "Found multiple elements with text: " + String(text);};
+
+var getMissingError = function getMissingError(text) {return "Unable to find an element with text: " + String(text);};var _ref =
+
+
+
+
+
+
+
+(0, require("./makeQueries").makeQueries)(queryAllByText, getMissingError, getMultipleError),getByText = _ref.getBy,getAllByText = _ref.getAllBy,queryByText = _ref.queryBy,findByText = _ref.findBy,findAllByText = _ref.findAllBy;
+exports.findAllByText = findAllByText;
+exports.findByText = findByText;
+exports.queryByText = queryByText;
+exports.getAllByText = getAllByText;
+exports.getByText = getByText;

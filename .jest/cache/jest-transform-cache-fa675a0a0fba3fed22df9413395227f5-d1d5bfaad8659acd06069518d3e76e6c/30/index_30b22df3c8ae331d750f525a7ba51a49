@@ -1,0 +1,46 @@
+8cacb4ba96972209006439dc21268d44
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ROUTES = void 0;
+
+function cov_24t5rofkg2() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/routes/index.ts";
+  var hash = "bcbf320fda4b9723b97543e5f962e6e25f08632f";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/routes/index.ts",
+    statementMap: {},
+    fnMap: {},
+    branchMap: {},
+    s: {},
+    f: {},
+    b: {},
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "bcbf320fda4b9723b97543e5f962e6e25f08632f"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_24t5rofkg2 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_24t5rofkg2();
+var ROUTES;
+exports.ROUTES = ROUTES;
+
+(function (ROUTES) {
+  ROUTES["WELCOME"] = "Welcome";
+  ROUTES["GITHUB_ISSUES"] = "GithubIssues";
+})(ROUTES || (exports.ROUTES = ROUTES = {}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LnRzIl0sIm5hbWVzIjpbIlJPVVRFUyJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztJQUtZQSxNOzs7V0FBQUEsTTtBQUFBQSxFQUFBQSxNO0FBQUFBLEVBQUFBLE07R0FBQUEsTSxzQkFBQUEsTSIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCB0eXBlIFJvb3RTdGFja1BhcmFtTGlzdCA9IHtcbiAgV2VsY29tZTogdW5kZWZpbmVkO1xuICBHaXRodWJJc3N1ZXM6IHVuZGVmaW5lZDtcbn07XG5cbmV4cG9ydCBlbnVtIFJPVVRFUyB7XG4gIFdFTENPTUUgPSAnV2VsY29tZScsXG4gIEdJVEhVQl9JU1NVRVMgPSAnR2l0aHViSXNzdWVzJyxcbn1cbiJdfQ==

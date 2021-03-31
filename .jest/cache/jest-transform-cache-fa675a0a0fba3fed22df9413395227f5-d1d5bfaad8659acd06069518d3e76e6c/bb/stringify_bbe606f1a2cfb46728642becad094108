@@ -1,0 +1,73 @@
+1def4b772cc8a3f665d4cd613c5b1639
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = stringify;
+
+var _circularJsonEs = _interopRequireDefault(require("circular-json-es6"));
+
+var _colors = _interopRequireDefault(require("./colors"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function stringifySingle(key, value) {
+  var stringifyingValue = value;
+  var skipCircularCheck = false;
+
+  if (Array.isArray(value)) {
+    var values = value.map(function (v) {return stringifySingle('', v)[1];});
+
+    skipCircularCheck = true;
+    var joined = values.join(' ');
+
+    var initialBracket = _colors.default.gray('[');
+
+    var endingBracket = _colors.default.gray(']');
+
+    if (joined.length > 20) {
+      var pad = '\n  ';
+      joined = values.join(pad) + "\n";
+      initialBracket += pad;
+    }
+
+    stringifyingValue = _colors.default.gray("" + initialBracket + joined + endingBracket);
+  } else if (value === null) {
+    stringifyingValue = _colors.default.gray(value);
+  } else if (typeof value === 'object') {
+    stringifyingValue = _colors.default.gray(_circularJsonEs.default.stringify(value));
+  } else if (typeof value === 'string') {
+    stringifyingValue = _colors.default.gray("\"" + value + "\"");
+  } else if (typeof value === 'number') {
+    stringifyingValue = _colors.default.blue(value);
+  } else if (value) {
+    stringifyingValue = _colors.default.green(value);
+  } else if (!value) {
+    stringifyingValue = _colors.default.red(value);
+  }
+
+  try {
+
+    if (!skipCircularCheck) {
+      JSON.stringify(require("@babel/runtime/helpers/defineProperty")({},
+      key, value));
+
+    }
+
+    return [key, stringifyingValue];
+  } catch (e) {
+    return [key, _colors.default.gray('[Circular]')];
+  }
+}
+
+function color(_ref) {var _ref2 = require("@babel/runtime/helpers/slicedToArray")(_ref, 2),key = _ref2[0],value = _ref2[1];
+  return "" + _colors.default.yellow(key) + _colors.default.gray(':') + " " + _colors.default.yellow(value);
+}
+
+function stringify(object) {
+  var keys = Object.keys(object);
+  return keys.map(function (key) {return color(stringifySingle(key, object[key]));}).join('\n');
+}
+
+module.exports = exports.default;

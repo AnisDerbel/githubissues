@@ -1,0 +1,33 @@
+d74f33b61f44851447ff5edc5fa2605c
+
+
+
+
+
+
+
+
+
+
+
+
+
+function MapCache(entries) {
+  var index = -1,
+  length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+
+MapCache.prototype.clear = require('./_mapCacheClear');
+MapCache.prototype['delete'] = require('./_mapCacheDelete');
+MapCache.prototype.get = require('./_mapCacheGet');
+MapCache.prototype.has = require('./_mapCacheHas');
+MapCache.prototype.set = require('./_mapCacheSet');
+
+module.exports = MapCache;

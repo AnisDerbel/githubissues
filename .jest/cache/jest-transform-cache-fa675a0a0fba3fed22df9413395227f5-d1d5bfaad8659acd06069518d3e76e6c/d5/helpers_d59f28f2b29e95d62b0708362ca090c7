@@ -1,0 +1,97 @@
+e0449543c6c64310d1c80c9858bb5484
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.composeProviders = composeProviders;
+exports.applyProviders = applyProviders;
+exports.coalesceProviders = coalesceProviders;
+exports.DYNAMIC_PROVIDER = void 0;
+
+var _lodash = _interopRequireDefault(require("lodash.isequal"));
+
+var _lodash2 = _interopRequireDefault(require("lodash.ismatch"));
+
+
+
+
+
+var _parseEffect = _interopRequireDefault(require("../parseEffect"));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var DYNAMIC_PROVIDER = '@@redux-saga-test-plan/dynamic-provider';
+exports.DYNAMIC_PROVIDER = DYNAMIC_PROVIDER;
+
+function isDynamicallyProvidedValue(value) {
+  return !!value && typeof value === 'object' && DYNAMIC_PROVIDER in value;
+}
+
+function composeProviders() {for (var _len = arguments.length, providers = new Array(_len), _key = 0; _key < _len; _key++) {providers[_key] = arguments[_key];}
+  return function (effect, next) {
+    for (var i = 0, l = providers.length; i < l; i++) {
+      var provider = providers[i];
+      var result = provider(effect, next);
+
+      if (result !== require("../provideValue").NEXT) {
+        return result;
+      }
+    }
+
+    return require("../provideValue").NEXT;
+  };
+}
+
+function applyProviders(providerFns) {
+  return composeProviders.apply(void 0, require("@babel/runtime/helpers/toConsumableArray")(providerFns));
+}
+
+function coalesceProviders(providers) {
+  var collected = {};
+
+  function addToCollected(key, value) {
+    if (key in collected) {
+      collected[key].push(value);
+    } else {
+      collected[key] = [value];
+    }
+  }
+
+  providers.forEach(function (providersObject) {
+    if (Array.isArray(providersObject)) {var _providersObject = require("@babel/runtime/helpers/slicedToArray")(
+      providersObject, 2),expectedEffect = _providersObject[0],providedValue = _providersObject[1];
+      var parsedEffect;
+      var comparer;
+
+      if ((0, require("../matchers/helpers").isPartialMatcher)(expectedEffect)) {
+        parsedEffect = expectedEffect;
+        comparer = _lodash2.default;
+      } else {
+        parsedEffect = (0, _parseEffect.default)(expectedEffect);
+        comparer = _lodash.default;
+      }
+
+      if (parsedEffect.providerKey && parsedEffect.effect) {
+        addToCollected(parsedEffect.providerKey, function (actualEffect, next) {
+          var pass = comparer(actualEffect, parsedEffect.effect);
+
+          if (isDynamicallyProvidedValue(providedValue) && pass) {
+            return providedValue.fn(actualEffect, next);
+          }
+
+          return pass ? providedValue : next();
+        });
+      }
+    } else {
+      Object.keys(providersObject).forEach(function (providerKey) {
+
+        var provider = providersObject[providerKey];
+        addToCollected(providerKey, provider);
+      });
+    }
+  });
+  return (0, require("../../utils/object").mapValues)(collected, applyProviders);
+}

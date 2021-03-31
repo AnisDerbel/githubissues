@@ -1,0 +1,43 @@
+2d2c923b95fd3c3864b35e73f86d8f6c
+
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "/Users/anisderbel/Documents/apcgithubissues/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js";function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = require("@babel/runtime/helpers/getPrototypeOf")(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = require("@babel/runtime/helpers/getPrototypeOf")(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return require("@babel/runtime/helpers/possibleConstructorReturn")(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}var
+
+
+
+
+
+
+
+
+UnimplementedView = function (_React$Component) {require("@babel/runtime/helpers/inherits")(UnimplementedView, _React$Component);var _super = _createSuper(UnimplementedView);function UnimplementedView() {require("@babel/runtime/helpers/classCallCheck")(this, UnimplementedView);return _super.apply(this, arguments);}require("@babel/runtime/helpers/createClass")(UnimplementedView, [{ key: "render", value:
+    function render() {
+
+      var View = require('../View/View');
+      return (
+        require('react').createElement(View, { style: [styles.unimplementedView, this.props.style], __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 25, columnNumber: 7 } },
+        this.props.children));
+
+
+    } }]);return UnimplementedView;}(require('react').Component);
+
+
+var styles = require('../../StyleSheet/StyleSheet').create({
+  unimplementedView: __DEV__ ?
+  {
+    alignSelf: 'flex-start',
+    borderColor: 'red',
+    borderWidth: 1 } :
+
+  {} });
+
+
+module.exports = UnimplementedView;

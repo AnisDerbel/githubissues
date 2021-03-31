@@ -1,0 +1,183 @@
+f788fba07dd98058500b91baf009d2d1
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getColor = void 0;
+
+function cov_2i30vu0q7l() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/utils/utils.ts";
+  var hash = "686ddeaef236892a2d00ef02f52e91358a62cbea";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/utils/utils.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 24
+        },
+        end: {
+          line: 7,
+          column: 1
+        }
+      },
+      "1": {
+        start: {
+          line: 2,
+          column: 12
+        },
+        end: {
+          line: 2,
+          column: 47
+        }
+      },
+      "2": {
+        start: {
+          line: 3,
+          column: 12
+        },
+        end: {
+          line: 3,
+          column: 47
+        }
+      },
+      "3": {
+        start: {
+          line: 4,
+          column: 12
+        },
+        end: {
+          line: 4,
+          column: 47
+        }
+      },
+      "4": {
+        start: {
+          line: 5,
+          column: 14
+        },
+        end: {
+          line: 5,
+          column: 50
+        }
+      },
+      "5": {
+        start: {
+          line: 6,
+          column: 2
+        },
+        end: {
+          line: 6,
+          column: 40
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 1,
+            column: 24
+          },
+          end: {
+            line: 1,
+            column: 25
+          }
+        },
+        loc: {
+          start: {
+            line: 1,
+            column: 46
+          },
+          end: {
+            line: 7,
+            column: 1
+          }
+        },
+        line: 1
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 6,
+            column: 9
+          },
+          end: {
+            line: 6,
+            column: 39
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 6,
+            column: 22
+          },
+          end: {
+            line: 6,
+            column: 29
+          }
+        }, {
+          start: {
+            line: 6,
+            column: 32
+          },
+          end: {
+            line: 6,
+            column: 39
+          }
+        }],
+        line: 6
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {
+      "0": [0, 0]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "686ddeaef236892a2d00ef02f52e91358a62cbea"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_2i30vu0q7l = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2i30vu0q7l();
+cov_2i30vu0q7l().s[0]++;
+
+var getColor = function getColor(hexColor) {
+  cov_2i30vu0q7l().f[0]++;
+  var r = (cov_2i30vu0q7l().s[1]++, parseInt(hexColor.substr(0, 2), 16));
+  var g = (cov_2i30vu0q7l().s[2]++, parseInt(hexColor.substr(2, 2), 16));
+  var b = (cov_2i30vu0q7l().s[3]++, parseInt(hexColor.substr(4, 2), 16));
+  var yiq = (cov_2i30vu0q7l().s[4]++, (r * 299 + g * 587 + b * 114) / 1000);
+  cov_2i30vu0q7l().s[5]++;
+  return yiq >= 128 ? (cov_2i30vu0q7l().b[0][0]++, 'black') : (cov_2i30vu0q7l().b[0][1]++, 'white');
+};
+
+exports.getColor = getColor;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInV0aWxzLnRzIl0sIm5hbWVzIjpbImdldENvbG9yIiwiaGV4Q29sb3IiLCJyIiwicGFyc2VJbnQiLCJzdWJzdHIiLCJnIiwiYiIsInlpcSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBTyxJQUFNQSxRQUFRLEdBQUcsU0FBWEEsUUFBVyxDQUFDQyxRQUFELEVBQXNCO0FBQUE7QUFDNUMsTUFBTUMsQ0FBQyw2QkFBR0MsUUFBUSxDQUFDRixRQUFRLENBQUNHLE1BQVQsQ0FBZ0IsQ0FBaEIsRUFBbUIsQ0FBbkIsQ0FBRCxFQUF3QixFQUF4QixDQUFYLENBQVA7QUFDQSxNQUFNQyxDQUFDLDZCQUFHRixRQUFRLENBQUNGLFFBQVEsQ0FBQ0csTUFBVCxDQUFnQixDQUFoQixFQUFtQixDQUFuQixDQUFELEVBQXdCLEVBQXhCLENBQVgsQ0FBUDtBQUNBLE1BQU1FLENBQUMsNkJBQUdILFFBQVEsQ0FBQ0YsUUFBUSxDQUFDRyxNQUFULENBQWdCLENBQWhCLEVBQW1CLENBQW5CLENBQUQsRUFBd0IsRUFBeEIsQ0FBWCxDQUFQO0FBQ0EsTUFBTUcsR0FBRyw2QkFBRyxDQUFDTCxDQUFDLEdBQUcsR0FBSixHQUFVRyxDQUFDLEdBQUcsR0FBZCxHQUFvQkMsQ0FBQyxHQUFHLEdBQXpCLElBQWdDLElBQW5DLENBQVQ7QUFKNEM7QUFLNUMsU0FBT0MsR0FBRyxJQUFJLEdBQVAsZ0NBQWEsT0FBYixpQ0FBdUIsT0FBdkIsQ0FBUDtBQUNELENBTk0iLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgZ2V0Q29sb3IgPSAoaGV4Q29sb3I6IHN0cmluZykgPT4ge1xuICBjb25zdCByID0gcGFyc2VJbnQoaGV4Q29sb3Iuc3Vic3RyKDAsIDIpLCAxNik7XG4gIGNvbnN0IGcgPSBwYXJzZUludChoZXhDb2xvci5zdWJzdHIoMiwgMiksIDE2KTtcbiAgY29uc3QgYiA9IHBhcnNlSW50KGhleENvbG9yLnN1YnN0cig0LCAyKSwgMTYpO1xuICBjb25zdCB5aXEgPSAociAqIDI5OSArIGcgKiA1ODcgKyBiICogMTE0KSAvIDEwMDA7XG4gIHJldHVybiB5aXEgPj0gMTI4ID8gJ2JsYWNrJyA6ICd3aGl0ZSc7XG59O1xuIl19

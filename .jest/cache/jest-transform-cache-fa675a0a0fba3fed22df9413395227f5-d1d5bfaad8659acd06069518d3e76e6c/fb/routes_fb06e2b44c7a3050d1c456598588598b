@@ -1,0 +1,244 @@
+5d13f263b991ca2b99c6f62eee14eb1a
+"use strict";
+
+/* istanbul ignore next */
+function cov_20a7t3kmy2() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/routes/routes.tsx";
+  var hash = "e2cd3e1d14419ca985f7f295c8a04d992935dfca";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/routes/routes.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "1": {
+        start: {
+          line: 7,
+          column: 14
+        },
+        end: {
+          line: 7,
+          column: 30
+        }
+      },
+      "2": {
+        start: {
+          line: 9,
+          column: 14
+        },
+        end: {
+          line: 9,
+          column: 55
+        }
+      },
+      "3": {
+        start: {
+          line: 11,
+          column: 27
+        },
+        end: {
+          line: 11,
+          column: 92
+        }
+      },
+      "4": {
+        start: {
+          line: 13,
+          column: 14
+        },
+        end: {
+          line: 13,
+          column: 48
+        }
+      },
+      "5": {
+        start: {
+          line: 15,
+          column: 22
+        },
+        end: {
+          line: 15,
+          column: 82
+        }
+      },
+      "6": {
+        start: {
+          line: 17,
+          column: 9
+        },
+        end: {
+          line: 17,
+          column: 21
+        }
+      },
+      "7": {
+        start: {
+          line: 19,
+          column: 16
+        },
+        end: {
+          line: 19,
+          column: 46
+        }
+      },
+      "8": {
+        start: {
+          line: 21,
+          column: 13
+        },
+        end: {
+          line: 31,
+          column: 1
+        }
+      },
+      "9": {
+        start: {
+          line: 22,
+          column: 2
+        },
+        end: {
+          line: 30,
+          column: 7
+        }
+      },
+      "10": {
+        start: {
+          line: 33,
+          column: 0
+        },
+        end: {
+          line: 33,
+          column: 25
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "Routes",
+        decl: {
+          start: {
+            line: 21,
+            column: 22
+          },
+          end: {
+            line: 21,
+            column: 28
+          }
+        },
+        loc: {
+          start: {
+            line: 21,
+            column: 31
+          },
+          end: {
+            line: 31,
+            column: 1
+          }
+        },
+        line: 21
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/routes/routes.tsx"],
+      names: [],
+      mappings: ";;;;;;;;AAAA,IAAA,OAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,OAAA,CAAA,CAAA;;AACA,IAAA,oBAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,+BAAA,CAAA,CAAA;;AACA,IAAA,OAAA,GAAA,OAAA,CAAA,yBAAA,CAAA;;AAEA,IAAA,eAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,0BAAA,CAAA,CAAA;;AACA,IAAA,EAAA,GAAA,OAAA,CAAA,GAAA,CAAA;;AAEA,IAAM,SAAS,GAAG,OAAA,CAAA,oBAAA,EAAlB;;AAEA,IAAM,MAAM,GAAG,SAAT,MAAS;AAAA,SACb,OAAA,CAAA,OAAA,CAAA,aAAA,CAAA,OAAA,CAAA,OAAA,CAAA,QAAA,EAAA,IAAA,EACE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,SAAS,CAAC,SAAX,EAAoB;AAAC,IAAA,gBAAgB,EAAE,EAAA,CAAA,MAAA,CAAO;AAA1B,GAApB,EAEE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,SAAS,CAAC,MAAX,EAAiB;AAAC,IAAA,IAAI,EAAE,EAAA,CAAA,MAAA,CAAO,OAAd;AAAuB,IAAA,SAAS,EAAE,eAAA,CAAA;AAAlC,GAAjB,CAFF,EAGE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,SAAS,CAAC,MAAX,EAAiB;AACf,IAAA,IAAI,EAAE,EAAA,CAAA,MAAA,CAAO,aADE;AAEf,IAAA,SAAS,EAAE,oBAAA,CAAA;AAFI,GAAjB,CAHF,CADF,CADa;AAAA,CAAf;;AAaA,OAAA,CAAA,OAAA,GAAe,MAAf",
+      sourcesContent: ["import React from 'react';\nimport GithubIssuesScreen from '../screens/GithubIssuesScreen';\nimport {createStackNavigator} from '@react-navigation/stack';\n// import TestScreen from '../screens/TestScreen';\nimport WelcomeScreen from '../screens/WelcomeScreen';\nimport {ROUTES} from '.';\n\nconst RootStack = createStackNavigator();\n\nconst Routes = () => (\n  <>\n    <RootStack.Navigator initialRouteName={ROUTES.WELCOME}>\n      {/* <RootStack.Screen name=\"test\" component={TestScreen} /> */}\n      <RootStack.Screen name={ROUTES.WELCOME} component={WelcomeScreen} />\n      <RootStack.Screen\n        name={ROUTES.GITHUB_ISSUES}\n        component={GithubIssuesScreen}\n      />\n    </RootStack.Navigator>\n  </>\n);\n\nexport default Routes;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "e2cd3e1d14419ca985f7f295c8a04d992935dfca"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_20a7t3kmy2 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_20a7t3kmy2();
+cov_20a7t3kmy2().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tslib_1 =
+/* istanbul ignore next */
+(cov_20a7t3kmy2().s[1]++, require("tslib"));
+var react_1 =
+/* istanbul ignore next */
+(cov_20a7t3kmy2().s[2]++, tslib_1.__importDefault(require("react")));
+var GithubIssuesScreen_1 =
+/* istanbul ignore next */
+(cov_20a7t3kmy2().s[3]++, tslib_1.__importDefault(require("../screens/GithubIssuesScreen")));
+var stack_1 =
+/* istanbul ignore next */
+(cov_20a7t3kmy2().s[4]++, require("@react-navigation/stack"));
+var WelcomeScreen_1 =
+/* istanbul ignore next */
+(cov_20a7t3kmy2().s[5]++, tslib_1.__importDefault(require("../screens/WelcomeScreen")));
+
+var _1 =
+/* istanbul ignore next */
+(cov_20a7t3kmy2().s[6]++, require("."));
+
+var RootStack =
+/* istanbul ignore next */
+(cov_20a7t3kmy2().s[7]++, stack_1.createStackNavigator());
+
+/* istanbul ignore next */
+cov_20a7t3kmy2().s[8]++;
+
+var Routes = function Routes() {
+  /* istanbul ignore next */
+  cov_20a7t3kmy2().f[0]++;
+  cov_20a7t3kmy2().s[9]++;
+  return react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(RootStack.Navigator, {
+    initialRouteName: _1.ROUTES.WELCOME
+  }, react_1.default.createElement(RootStack.Screen, {
+    name: _1.ROUTES.WELCOME,
+    component: WelcomeScreen_1.default
+  }), react_1.default.createElement(RootStack.Screen, {
+    name: _1.ROUTES.GITHUB_ISSUES,
+    component: GithubIssuesScreen_1.default
+  })));
+};
+
+/* istanbul ignore next */
+cov_20a7t3kmy2().s[10]++;
+exports.default = Routes;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JvdXRlcy9yb3V0ZXMudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsSUFBQSxPQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsZUFBQSxDQUFBLE9BQUEsQ0FBQSxPQUFBLENBQUEsQ0FBQSxDQUFBO0FBQ0EsSUFBQSxvQkFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLGVBQUEsQ0FBQSxPQUFBLENBQUEsK0JBQUEsQ0FBQSxDQUFBLENBQUE7QUFDQSxJQUFBLE9BQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSx5QkFBQSxDQUFBLENBQUE7QUFFQSxJQUFBLGVBQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLDBCQUFBLENBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsRUFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLEdBQUEsQ0FBQSxDQUFBOztBQUVBLElBQU0sU0FBUztBQUFBO0FBQUEsMEJBQUcsT0FBQSxDQUFsQixvQkFBa0IsRUFBSCxDQUFmOzs7OztBQUVBLElBQU0sTUFBTSxHQUFHLFNBQVQsTUFBUyxHQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0FDYixPQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQSxPQUFBLENBQUEsT0FBQSxDQUFBLFFBQUEsRUFBQSxJQUFBLEVBQ0UsT0FBQSxDQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsU0FBUyxDQUFWLFNBQUEsRUFBb0I7QUFBQyxJQUFBLGdCQUFnQixFQUFFLEVBQUEsQ0FBQSxNQUFBLENBQU87QUFBMUIsR0FBcEIsRUFFRSxPQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxTQUFTLENBQVYsTUFBQSxFQUFpQjtBQUFDLElBQUEsSUFBSSxFQUFFLEVBQUEsQ0FBQSxNQUFBLENBQVAsT0FBQTtBQUF1QixJQUFBLFNBQVMsRUFBRSxlQUFBLENBQUE7QUFBbEMsR0FBakIsQ0FGRixFQUdFLE9BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLFNBQVMsQ0FBVixNQUFBLEVBQWlCO0FBQ2YsSUFBQSxJQUFJLEVBQUUsRUFBQSxDQUFBLE1BQUEsQ0FEUyxhQUFBO0FBRWYsSUFBQSxTQUFTLEVBQUUsb0JBQUEsQ0FBQTtBQUZJLEdBQWpCLENBSEYsQ0FERixDQURhO0FBQWYsQ0FBQTs7OztBQWFBLE9BQUEsQ0FBQSxPQUFBLEdBQUEsTUFBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgR2l0aHViSXNzdWVzU2NyZWVuIGZyb20gJy4uL3NjcmVlbnMvR2l0aHViSXNzdWVzU2NyZWVuJztcbmltcG9ydCB7Y3JlYXRlU3RhY2tOYXZpZ2F0b3J9IGZyb20gJ0ByZWFjdC1uYXZpZ2F0aW9uL3N0YWNrJztcbi8vIGltcG9ydCBUZXN0U2NyZWVuIGZyb20gJy4uL3NjcmVlbnMvVGVzdFNjcmVlbic7XG5pbXBvcnQgV2VsY29tZVNjcmVlbiBmcm9tICcuLi9zY3JlZW5zL1dlbGNvbWVTY3JlZW4nO1xuaW1wb3J0IHtST1VURVN9IGZyb20gJy4nO1xuXG5jb25zdCBSb290U3RhY2sgPSBjcmVhdGVTdGFja05hdmlnYXRvcigpO1xuXG5jb25zdCBSb3V0ZXMgPSAoKSA9PiAoXG4gIDw+XG4gICAgPFJvb3RTdGFjay5OYXZpZ2F0b3IgaW5pdGlhbFJvdXRlTmFtZT17Uk9VVEVTLldFTENPTUV9PlxuICAgICAgey8qIDxSb290U3RhY2suU2NyZWVuIG5hbWU9XCJ0ZXN0XCIgY29tcG9uZW50PXtUZXN0U2NyZWVufSAvPiAqL31cbiAgICAgIDxSb290U3RhY2suU2NyZWVuIG5hbWU9e1JPVVRFUy5XRUxDT01FfSBjb21wb25lbnQ9e1dlbGNvbWVTY3JlZW59IC8+XG4gICAgICA8Um9vdFN0YWNrLlNjcmVlblxuICAgICAgICBuYW1lPXtST1VURVMuR0lUSFVCX0lTU1VFU31cbiAgICAgICAgY29tcG9uZW50PXtHaXRodWJJc3N1ZXNTY3JlZW59XG4gICAgICAvPlxuICAgIDwvUm9vdFN0YWNrLk5hdmlnYXRvcj5cbiAgPC8+XG4pO1xuXG5leHBvcnQgZGVmYXVsdCBSb3V0ZXM7XG4iXX0=

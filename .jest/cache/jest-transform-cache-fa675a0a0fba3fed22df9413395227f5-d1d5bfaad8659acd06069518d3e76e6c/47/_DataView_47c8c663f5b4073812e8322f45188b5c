@@ -1,0 +1,8 @@
+fa27dea5e4f75c9a2690e81c3fc601fc
+
+
+
+
+var DataView = require('./_getNative')(require('./_root'), 'DataView');
+
+module.exports = DataView;

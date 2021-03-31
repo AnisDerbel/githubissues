@@ -1,0 +1,53 @@
+606d83a3d154c00c02cf6a874f0ed682
+"use strict";
+
+exports.__esModule = true;
+exports.createDispatchHook = createDispatchHook;
+exports.useDispatch = void 0;
+
+
+
+
+
+
+
+
+
+
+
+function createDispatchHook(context) {
+  if (context === void 0) {
+    context = require("../components/Context").ReactReduxContext;
+  }
+
+  var useStore = context === require("../components/Context").ReactReduxContext ? require("./useStore").useStore : (0, require("./useStore").createStoreHook)(context);
+  return function useDispatch() {
+    var store = useStore();
+    return store.dispatch;
+  };
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var useDispatch = createDispatchHook();
+exports.useDispatch = useDispatch;

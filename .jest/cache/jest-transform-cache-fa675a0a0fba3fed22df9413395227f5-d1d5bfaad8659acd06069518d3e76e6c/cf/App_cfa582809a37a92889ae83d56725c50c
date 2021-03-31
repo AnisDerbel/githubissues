@@ -1,0 +1,285 @@
+169a5e7d2c5ad5f83c6f12d260a18ee6
+"use strict";
+
+/* istanbul ignore next */
+function cov_xov0h2ysh() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/App.tsx";
+  var hash = "20a557d1be38fa22e7b051483ed48a84b2368fa2";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/App.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "1": {
+        start: {
+          line: 7,
+          column: 14
+        },
+        end: {
+          line: 7,
+          column: 30
+        }
+      },
+      "2": {
+        start: {
+          line: 9,
+          column: 0
+        },
+        end: {
+          line: 9,
+          column: 40
+        }
+      },
+      "3": {
+        start: {
+          line: 11,
+          column: 14
+        },
+        end: {
+          line: 11,
+          column: 55
+        }
+      },
+      "4": {
+        start: {
+          line: 13,
+          column: 20
+        },
+        end: {
+          line: 13,
+          column: 42
+        }
+      },
+      "5": {
+        start: {
+          line: 15,
+          column: 27
+        },
+        end: {
+          line: 15,
+          column: 56
+        }
+      },
+      "6": {
+        start: {
+          line: 17,
+          column: 15
+        },
+        end: {
+          line: 17,
+          column: 50
+        }
+      },
+      "7": {
+        start: {
+          line: 19,
+          column: 15
+        },
+        end: {
+          line: 19,
+          column: 70
+        }
+      },
+      "8": {
+        start: {
+          line: 21,
+          column: 14
+        },
+        end: {
+          line: 21,
+          column: 67
+        }
+      },
+      "9": {
+        start: {
+          line: 23,
+          column: 14
+        },
+        end: {
+          line: 23,
+          column: 61
+        }
+      },
+      "10": {
+        start: {
+          line: 25,
+          column: 28
+        },
+        end: {
+          line: 25,
+          column: 100
+        }
+      },
+      "11": {
+        start: {
+          line: 27,
+          column: 10
+        },
+        end: {
+          line: 35,
+          column: 1
+        }
+      },
+      "12": {
+        start: {
+          line: 28,
+          column: 2
+        },
+        end: {
+          line: 34,
+          column: 130
+        }
+      },
+      "13": {
+        start: {
+          line: 37,
+          column: 0
+        },
+        end: {
+          line: 37,
+          column: 22
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "App",
+        decl: {
+          start: {
+            line: 27,
+            column: 19
+          },
+          end: {
+            line: 27,
+            column: 22
+          }
+        },
+        loc: {
+          start: {
+            line: 27,
+            column: 25
+          },
+          end: {
+            line: 35,
+            column: 1
+          }
+        },
+        line: 27
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/App.tsx"],
+      names: [],
+      mappings: ";;;;;;;;AAAA,OAAA,CAAA,8BAAA,CAAA;;AACA,IAAA,OAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,OAAA,CAAA,CAAA;;AACA,IAAA,aAAA,GAAA,OAAA,CAAA,aAAA,CAAA;;AACA,IAAA,oBAAA,GAAA,OAAA,CAAA,oBAAA,CAAA;;AACA,IAAA,QAAA,GAAA,OAAA,CAAA,0BAAA,CAAA;;AACA,IAAA,QAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,qBAAA,CAAA,CAAA;;AACA,IAAA,OAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,mBAAA,CAAA,CAAA;;AACA,IAAA,OAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,aAAA,CAAA,CAAA;;AACA,IAAA,qBAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,sCAAA,CAAA,CAAA;;AAEA,IAAM,GAAG,GAAG,SAAN,GAAM;AAAA,SACV,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,aAAA,CAAA,QAAD,EAAS;AAAC,IAAA,KAAK,EAAE,OAAA,CAAA;AAAR,GAAT,EACE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,oBAAA,CAAA,QAAD,EAAc;AAAC,IAAA,KAAK,EAAE,OAAA,CAAA;AAAR,GAAd,EACE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,QAAA,CAAA,mBAAD,EAAoB;AAAC,IAAA,KAAK,EAAE,OAAA,CAAA;AAAR,GAApB,EACE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,QAAA,CAAA,OAAD,EAAO,IAAP,CADF,CADF,EAIE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,qBAAA,CAAA,OAAD,EAAoB,IAApB,CAJF,CADF,CADU;AAAA,CAAZ;;AAWA,OAAA,CAAA,OAAA,GAAe,GAAf",
+      sourcesContent: ["import 'react-native-gesture-handler';\nimport React from 'react';\nimport {Provider} from 'react-redux';\nimport {Provider as PaperProvider} from 'react-native-paper';\nimport {NavigationContainer} from '@react-navigation/native';\nimport Routes from './src/routes/routes';\nimport store from './src/redux/store';\nimport theme from './src/theme';\nimport CustomDropdownAlert from './src/components/CustomDropdownAlert';\n\nconst App = () => (\n  <Provider store={store}>\n    <PaperProvider theme={theme}>\n      <NavigationContainer theme={theme}>\n        <Routes />\n      </NavigationContainer>\n      <CustomDropdownAlert />\n    </PaperProvider>\n  </Provider>\n);\n\nexport default App;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "20a557d1be38fa22e7b051483ed48a84b2368fa2"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_xov0h2ysh = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_xov0h2ysh();
+cov_xov0h2ysh().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tslib_1 =
+/* istanbul ignore next */
+(cov_xov0h2ysh().s[1]++, require("tslib"));
+
+/* istanbul ignore next */
+cov_xov0h2ysh().s[2]++;
+
+require("react-native-gesture-handler");
+
+var react_1 =
+/* istanbul ignore next */
+(cov_xov0h2ysh().s[3]++, tslib_1.__importDefault(require("react")));
+var react_redux_1 =
+/* istanbul ignore next */
+(cov_xov0h2ysh().s[4]++, require("react-redux"));
+var react_native_paper_1 =
+/* istanbul ignore next */
+(cov_xov0h2ysh().s[5]++, require("react-native-paper"));
+var native_1 =
+/* istanbul ignore next */
+(cov_xov0h2ysh().s[6]++, require("@react-navigation/native"));
+var routes_1 =
+/* istanbul ignore next */
+(cov_xov0h2ysh().s[7]++, tslib_1.__importDefault(require("./src/routes/routes")));
+var store_1 =
+/* istanbul ignore next */
+(cov_xov0h2ysh().s[8]++, tslib_1.__importDefault(require("./src/redux/store")));
+var theme_1 =
+/* istanbul ignore next */
+(cov_xov0h2ysh().s[9]++, tslib_1.__importDefault(require("./src/theme")));
+var CustomDropdownAlert_1 =
+/* istanbul ignore next */
+(cov_xov0h2ysh().s[10]++, tslib_1.__importDefault(require("./src/components/CustomDropdownAlert")));
+
+/* istanbul ignore next */
+cov_xov0h2ysh().s[11]++;
+
+var App = function App() {
+  /* istanbul ignore next */
+  cov_xov0h2ysh().f[0]++;
+  cov_xov0h2ysh().s[12]++;
+  return react_1.default.createElement(react_redux_1.Provider, {
+    store: store_1.default
+  }, react_1.default.createElement(react_native_paper_1.Provider, {
+    theme: theme_1.default
+  }, react_1.default.createElement(native_1.NavigationContainer, {
+    theme: theme_1.default
+  }, react_1.default.createElement(routes_1.default, null)), react_1.default.createElement(CustomDropdownAlert_1.default, null)));
+};
+
+/* istanbul ignore next */
+cov_xov0h2ysh().s[13]++;
+exports.default = App;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvQXBwLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxPQUFBLENBQUEsOEJBQUEsQ0FBQTs7QUFDQSxJQUFBLE9BQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLE9BQUEsQ0FBQSxDQUFBLENBQUE7QUFDQSxJQUFBLGFBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUEsQ0FBQTtBQUNBLElBQUEsb0JBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxvQkFBQSxDQUFBLENBQUE7QUFDQSxJQUFBLFFBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSwwQkFBQSxDQUFBLENBQUE7QUFDQSxJQUFBLFFBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLHFCQUFBLENBQUEsQ0FBQSxDQUFBO0FBQ0EsSUFBQSxPQUFBO0FBQUE7QUFBQSx5QkFBQSxPQUFBLENBQUEsZUFBQSxDQUFBLE9BQUEsQ0FBQSxtQkFBQSxDQUFBLENBQUEsQ0FBQTtBQUNBLElBQUEsT0FBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLGVBQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFBLENBQUEsQ0FBQTtBQUNBLElBQUEscUJBQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLHNDQUFBLENBQUEsQ0FBQSxDQUFBOzs7OztBQUVBLElBQU0sR0FBRyxHQUFHLFNBQU4sR0FBTSxHQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0FDVixPQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxhQUFBLENBQUQsUUFBQSxFQUFTO0FBQUMsSUFBQSxLQUFLLEVBQUUsT0FBQSxDQUFBO0FBQVIsR0FBVCxFQUNFLE9BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLG9CQUFBLENBQUQsUUFBQSxFQUFjO0FBQUMsSUFBQSxLQUFLLEVBQUUsT0FBQSxDQUFBO0FBQVIsR0FBZCxFQUNFLE9BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLFFBQUEsQ0FBRCxtQkFBQSxFQUFvQjtBQUFDLElBQUEsS0FBSyxFQUFFLE9BQUEsQ0FBQTtBQUFSLEdBQXBCLEVBQ0UsT0FBQSxDQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsUUFBQSxDQUFELE9BQUEsRUFGSixJQUVJLENBREYsQ0FERixFQUlFLE9BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLHFCQUFBLENBQUQsT0FBQSxFQU5NLElBTU4sQ0FKRixDQURGLENBRFU7QUFBWixDQUFBOzs7O0FBV0EsT0FBQSxDQUFBLE9BQUEsR0FBQSxHQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICdyZWFjdC1uYXRpdmUtZ2VzdHVyZS1oYW5kbGVyJztcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQge1Byb3ZpZGVyfSBmcm9tICdyZWFjdC1yZWR1eCc7XG5pbXBvcnQge1Byb3ZpZGVyIGFzIFBhcGVyUHJvdmlkZXJ9IGZyb20gJ3JlYWN0LW5hdGl2ZS1wYXBlcic7XG5pbXBvcnQge05hdmlnYXRpb25Db250YWluZXJ9IGZyb20gJ0ByZWFjdC1uYXZpZ2F0aW9uL25hdGl2ZSc7XG5pbXBvcnQgUm91dGVzIGZyb20gJy4vc3JjL3JvdXRlcy9yb3V0ZXMnO1xuaW1wb3J0IHN0b3JlIGZyb20gJy4vc3JjL3JlZHV4L3N0b3JlJztcbmltcG9ydCB0aGVtZSBmcm9tICcuL3NyYy90aGVtZSc7XG5pbXBvcnQgQ3VzdG9tRHJvcGRvd25BbGVydCBmcm9tICcuL3NyYy9jb21wb25lbnRzL0N1c3RvbURyb3Bkb3duQWxlcnQnO1xuXG5jb25zdCBBcHAgPSAoKSA9PiAoXG4gIDxQcm92aWRlciBzdG9yZT17c3RvcmV9PlxuICAgIDxQYXBlclByb3ZpZGVyIHRoZW1lPXt0aGVtZX0+XG4gICAgICA8TmF2aWdhdGlvbkNvbnRhaW5lciB0aGVtZT17dGhlbWV9PlxuICAgICAgICA8Um91dGVzIC8+XG4gICAgICA8L05hdmlnYXRpb25Db250YWluZXI+XG4gICAgICA8Q3VzdG9tRHJvcGRvd25BbGVydCAvPlxuICAgIDwvUGFwZXJQcm92aWRlcj5cbiAgPC9Qcm92aWRlcj5cbik7XG5cbmV4cG9ydCBkZWZhdWx0IEFwcDtcbiJdfQ==

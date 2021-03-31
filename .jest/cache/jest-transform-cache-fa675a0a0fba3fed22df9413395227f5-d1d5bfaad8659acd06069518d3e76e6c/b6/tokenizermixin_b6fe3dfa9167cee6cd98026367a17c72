@@ -1,0 +1,43 @@
+fc7cd5b5a4d1718e9a7bb02342888013
+'use strict';
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+var ErrorReportingMixinBase = require('./mixin-base');
+
+var ErrorReportingPreprocessorMixin = require('./preprocessor-mixin');
+
+var Mixin = require('../../utils/mixin');
+
+var ErrorReportingTokenizerMixin = function (_ErrorReportingMixinB) {
+  (0, _inherits2.default)(ErrorReportingTokenizerMixin, _ErrorReportingMixinB);
+
+  var _super = _createSuper(ErrorReportingTokenizerMixin);
+
+  function ErrorReportingTokenizerMixin(tokenizer, opts) {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, ErrorReportingTokenizerMixin);
+    _this = _super.call(this, tokenizer, opts);
+    var preprocessorMixin = Mixin.install(tokenizer.preprocessor, ErrorReportingPreprocessorMixin, opts);
+    _this.posTracker = preprocessorMixin.posTracker;
+    return _this;
+  }
+
+  return ErrorReportingTokenizerMixin;
+}(ErrorReportingMixinBase);
+
+module.exports = ErrorReportingTokenizerMixin;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRva2VuaXplci1taXhpbi5qcyJdLCJuYW1lcyI6WyJFcnJvclJlcG9ydGluZ01peGluQmFzZSIsInJlcXVpcmUiLCJFcnJvclJlcG9ydGluZ1ByZXByb2Nlc3Nvck1peGluIiwiTWl4aW4iLCJFcnJvclJlcG9ydGluZ1Rva2VuaXplck1peGluIiwidG9rZW5pemVyIiwib3B0cyIsInByZXByb2Nlc3Nvck1peGluIiwiaW5zdGFsbCIsInByZXByb2Nlc3NvciIsInBvc1RyYWNrZXIiLCJtb2R1bGUiLCJleHBvcnRzIl0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Ozs7Ozs7Ozs7OztBQUVBLElBQU1BLHVCQUF1QixHQUFHQyxPQUFPLENBQUMsY0FBRCxDQUF2Qzs7QUFDQSxJQUFNQywrQkFBK0IsR0FBR0QsT0FBTyxDQUFDLHNCQUFELENBQS9DOztBQUNBLElBQU1FLEtBQUssR0FBR0YsT0FBTyxDQUFDLG1CQUFELENBQXJCOztJQUVNRyw0Qjs7Ozs7QUFDRix3Q0FBWUMsU0FBWixFQUF1QkMsSUFBdkIsRUFBNkI7QUFBQTs7QUFBQTtBQUN6Qiw4QkFBTUQsU0FBTixFQUFpQkMsSUFBakI7QUFFQSxRQUFNQyxpQkFBaUIsR0FBR0osS0FBSyxDQUFDSyxPQUFOLENBQWNILFNBQVMsQ0FBQ0ksWUFBeEIsRUFBc0NQLCtCQUF0QyxFQUF1RUksSUFBdkUsQ0FBMUI7QUFFQSxVQUFLSSxVQUFMLEdBQWtCSCxpQkFBaUIsQ0FBQ0csVUFBcEM7QUFMeUI7QUFNNUI7OztFQVBzQ1YsdUI7O0FBVTNDVyxNQUFNLENBQUNDLE9BQVAsR0FBaUJSLDRCQUFqQiIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuY29uc3QgRXJyb3JSZXBvcnRpbmdNaXhpbkJhc2UgPSByZXF1aXJlKCcuL21peGluLWJhc2UnKTtcbmNvbnN0IEVycm9yUmVwb3J0aW5nUHJlcHJvY2Vzc29yTWl4aW4gPSByZXF1aXJlKCcuL3ByZXByb2Nlc3Nvci1taXhpbicpO1xuY29uc3QgTWl4aW4gPSByZXF1aXJlKCcuLi8uLi91dGlscy9taXhpbicpO1xuXG5jbGFzcyBFcnJvclJlcG9ydGluZ1Rva2VuaXplck1peGluIGV4dGVuZHMgRXJyb3JSZXBvcnRpbmdNaXhpbkJhc2Uge1xuICAgIGNvbnN0cnVjdG9yKHRva2VuaXplciwgb3B0cykge1xuICAgICAgICBzdXBlcih0b2tlbml6ZXIsIG9wdHMpO1xuXG4gICAgICAgIGNvbnN0IHByZXByb2Nlc3Nvck1peGluID0gTWl4aW4uaW5zdGFsbCh0b2tlbml6ZXIucHJlcHJvY2Vzc29yLCBFcnJvclJlcG9ydGluZ1ByZXByb2Nlc3Nvck1peGluLCBvcHRzKTtcblxuICAgICAgICB0aGlzLnBvc1RyYWNrZXIgPSBwcmVwcm9jZXNzb3JNaXhpbi5wb3NUcmFja2VyO1xuICAgIH1cbn1cblxubW9kdWxlLmV4cG9ydHMgPSBFcnJvclJlcG9ydGluZ1Rva2VuaXplck1peGluO1xuIl19

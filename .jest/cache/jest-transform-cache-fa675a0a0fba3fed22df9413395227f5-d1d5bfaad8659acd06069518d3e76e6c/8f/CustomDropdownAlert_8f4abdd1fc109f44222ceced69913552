@@ -1,0 +1,290 @@
+5d1557822febd93a2196ce85dd313ae1
+/* istanbul ignore next */
+function cov_i3p6a3yuz() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/components/CustomDropdownAlert.tsx";
+  var hash = "9dfd4d0d146c940b7ed248d54b11a7066a91cf3d";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/components/CustomDropdownAlert.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 29
+        },
+        end: {
+          line: 1,
+          column: 84
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 30
+        },
+        end: {
+          line: 3,
+          column: 86
+        }
+      },
+      "2": {
+        start: {
+          line: 5,
+          column: 0
+        },
+        end: {
+          line: 7,
+          column: 3
+        }
+      },
+      "3": {
+        start: {
+          line: 8,
+          column: 0
+        },
+        end: {
+          line: 8,
+          column: 44
+        }
+      },
+      "4": {
+        start: {
+          line: 10,
+          column: 13
+        },
+        end: {
+          line: 10,
+          column: 54
+        }
+      },
+      "5": {
+        start: {
+          line: 12,
+          column: 32
+        },
+        end: {
+          line: 12,
+          column: 93
+        }
+      },
+      "6": {
+        start: {
+          line: 14,
+          column: 24
+        },
+        end: {
+          line: 14,
+          column: 53
+        }
+      },
+      "7": {
+        start: {
+          line: 16,
+          column: 15
+        },
+        end: {
+          line: 16,
+          column: 38
+        }
+      },
+      "8": {
+        start: {
+          line: 17,
+          column: 0
+        },
+        end: {
+          line: 17,
+          column: 28
+        }
+      },
+      "9": {
+        start: {
+          line: 19,
+          column: 26
+        },
+        end: {
+          line: 25,
+          column: 1
+        }
+      },
+      "10": {
+        start: {
+          line: 20,
+          column: 14
+        },
+        end: {
+          line: 20,
+          column: 47
+        }
+      },
+      "11": {
+        start: {
+          line: 21,
+          column: 2
+        },
+        end: {
+          line: 24,
+          column: 5
+        }
+      },
+      "12": {
+        start: {
+          line: 27,
+          column: 15
+        },
+        end: {
+          line: 27,
+          column: 34
+        }
+      },
+      "13": {
+        start: {
+          line: 28,
+          column: 0
+        },
+        end: {
+          line: 28,
+          column: 27
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "CustomDropdownAlert",
+        decl: {
+          start: {
+            line: 19,
+            column: 35
+          },
+          end: {
+            line: 19,
+            column: 54
+          }
+        },
+        loc: {
+          start: {
+            line: 19,
+            column: 57
+          },
+          end: {
+            line: 25,
+            column: 1
+          }
+        },
+        line: 19
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/components/CustomDropdownAlert.tsx"],
+      names: [],
+      mappings: ";;;;;;;;;AAAA;;AACA;;AACA;;AAGO,IAAM,QAAQ,GAAG,uBAAjB;;;AAEP,IAAM,mBAAmB,GAAG,SAAtB,mBAAsB,GAAK;AAC/B,MAAM,KAAK,GAAG,iCAAd;AAIA,SAAO,6BAAC,iCAAD;AAAe,IAAA,UAAU,EAAE,KAAK,CAAC,MAAN,CAAa,KAAxC;AAA+C,IAAA,GAAG,EAAE;AAApD,IAAP;AACD,CAND;;eAQe,mB",
+      sourcesContent: ["import React, {createRef} from 'react';\nimport DropdownAlert from 'react-native-dropdownalert';\nimport {useTheme} from 'react-native-paper';\nimport FlashMessage from 'react-native-flash-message';\n\nexport const alertRef = createRef<DropdownAlert>();\n\nconst CustomDropdownAlert = () => {\n  const theme = useTheme();\n  // return <DropdownAlert errorColor={theme.colors.error} ref={alertRef} />;\n  // return <FlashMessage position=\"top\" />;\n\n  return <DropdownAlert errorColor={theme.colors.error} ref={alertRef} />;\n};\n\nexport default CustomDropdownAlert;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "9dfd4d0d146c940b7ed248d54b11a7066a91cf3d"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_i3p6a3yuz = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_i3p6a3yuz();
+
+var _interopRequireDefault =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[0]++, require("@babel/runtime/helpers/interopRequireDefault"));
+
+var _interopRequireWildcard =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[1]++, require("@babel/runtime/helpers/interopRequireWildcard"));
+
+/* istanbul ignore next */
+cov_i3p6a3yuz().s[2]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_i3p6a3yuz().s[3]++;
+exports.default = exports.alertRef = void 0;
+
+var _react =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[4]++, _interopRequireWildcard(require("react")));
+
+var _reactNativeDropdownalert =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[5]++, _interopRequireDefault(require("react-native-dropdownalert")));
+
+var _reactNativePaper =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[6]++, require("react-native-paper"));
+
+var alertRef =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[7]++, (0, _react.createRef)());
+
+/* istanbul ignore next */
+cov_i3p6a3yuz().s[8]++;
+exports.alertRef = alertRef;
+
+/* istanbul ignore next */
+cov_i3p6a3yuz().s[9]++;
+
+var CustomDropdownAlert = function CustomDropdownAlert() {
+  /* istanbul ignore next */
+  cov_i3p6a3yuz().f[0]++;
+  var theme =
+  /* istanbul ignore next */
+  (cov_i3p6a3yuz().s[10]++, (0, _reactNativePaper.useTheme)());
+
+  /* istanbul ignore next */
+  cov_i3p6a3yuz().s[11]++;
+  return _react.default.createElement(_reactNativeDropdownalert.default, {
+    errorColor: theme.colors.error,
+    ref: alertRef
+  });
+};
+
+var _default =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[12]++, CustomDropdownAlert);
+
+/* istanbul ignore next */
+cov_i3p6a3yuz().s[13]++;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL2NvbXBvbmVudHMvQ3VzdG9tRHJvcGRvd25BbGVydC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFLcUI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFMckIsSUFBQSxNQUFBO0FBQUE7QUFBQSx5QkFBQSx1QkFBQSxDQUFBLE9BQUEsQ0FBQSxPQUFBLENBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEseUJBQUE7QUFBQTtBQUFBLHlCQUFBLHNCQUFBLENBQUEsT0FBQSxDQUFBLDRCQUFBLENBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsaUJBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxvQkFBQSxDQUFBLENBQUE7O0FBR08sSUFBTSxRQUFRO0FBQUE7QUFBQSx5QkFBRyxDQUFBLEdBQUEsTUFBQSxDQUFqQixTQUFpQixHQUFILENBQWQ7Ozs7Ozs7OztBQUVQLElBQU0sbUJBQW1CLEdBQUcsU0FBdEIsbUJBQXNCLEdBQUs7QUFBQTtBQUFBO0FBQy9CLE1BQU0sS0FBSztBQUFBO0FBQUEsNEJBQUcsQ0FBQSxHQUFBLGlCQUFBLENBQWQsUUFBYyxHQUFILENBQVg7O0FBRCtCO0FBQUE7QUFLL0IsU0FBTyxNQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyx5QkFBQSxDQUFELE9BQUEsRUFBQTtBQUFlLElBQUEsVUFBVSxFQUFFLEtBQUssQ0FBTCxNQUFBLENBQTNCLEtBQUE7QUFBK0MsSUFBQSxHQUFHLEVBQUU7QUFBcEQsR0FBQSxDQUFQO0FBTEYsQ0FBQTs7OzswQkFRZSxtQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwge2NyZWF0ZVJlZn0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IERyb3Bkb3duQWxlcnQgZnJvbSAncmVhY3QtbmF0aXZlLWRyb3Bkb3duYWxlcnQnO1xuaW1wb3J0IHt1c2VUaGVtZX0gZnJvbSAncmVhY3QtbmF0aXZlLXBhcGVyJztcbmltcG9ydCBGbGFzaE1lc3NhZ2UgZnJvbSAncmVhY3QtbmF0aXZlLWZsYXNoLW1lc3NhZ2UnO1xuXG5leHBvcnQgY29uc3QgYWxlcnRSZWYgPSBjcmVhdGVSZWY8RHJvcGRvd25BbGVydD4oKTtcblxuY29uc3QgQ3VzdG9tRHJvcGRvd25BbGVydCA9ICgpID0+IHtcbiAgY29uc3QgdGhlbWUgPSB1c2VUaGVtZSgpO1xuICAvLyByZXR1cm4gPERyb3Bkb3duQWxlcnQgZXJyb3JDb2xvcj17dGhlbWUuY29sb3JzLmVycm9yfSByZWY9e2FsZXJ0UmVmfSAvPjtcbiAgLy8gcmV0dXJuIDxGbGFzaE1lc3NhZ2UgcG9zaXRpb249XCJ0b3BcIiAvPjtcblxuICByZXR1cm4gPERyb3Bkb3duQWxlcnQgZXJyb3JDb2xvcj17dGhlbWUuY29sb3JzLmVycm9yfSByZWY9e2FsZXJ0UmVmfSAvPjtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IEN1c3RvbURyb3Bkb3duQWxlcnQ7XG4iXX0=

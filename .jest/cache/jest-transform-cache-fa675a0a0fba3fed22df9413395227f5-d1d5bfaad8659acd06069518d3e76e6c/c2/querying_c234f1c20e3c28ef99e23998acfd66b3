@@ -1,0 +1,127 @@
+dafc2bb972cc07acdb59e5fed1da9907
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.findAll = exports.existsOne = exports.findOne = exports.findOneChild = exports.find = exports.filter = void 0;
+
+
+
+
+
+
+
+
+
+
+function filter(test, node, recurse, limit) {
+  if (recurse === void 0) {recurse = true;}
+  if (limit === void 0) {limit = Infinity;}
+  if (!Array.isArray(node))
+  node = [node];
+  return find(test, node, recurse, limit);
+}
+exports.filter = filter;
+
+
+
+
+
+
+
+
+
+function find(test, nodes, recurse, limit) {
+  var result = [];
+  for (var _i = 0, nodes_1 = nodes; _i < nodes_1.length; _i++) {
+    var elem = nodes_1[_i];
+    if (test(elem)) {
+      result.push(elem);
+      if (--limit <= 0)
+      break;
+    }
+    if (recurse && require("./tagtypes").hasChildren(elem) && elem.children.length > 0) {
+      var children = find(test, elem.children, recurse, limit);
+      result.push.apply(result, children);
+      limit -= children.length;
+      if (limit <= 0)
+      break;
+    }
+  }
+  return result;
+}
+exports.find = find;
+
+
+
+
+
+
+
+function findOneChild(test, nodes) {
+  return nodes.find(test);
+}
+exports.findOneChild = findOneChild;
+
+
+
+
+
+
+
+
+function findOne(test, nodes, recurse) {
+  if (recurse === void 0) {recurse = true;}
+  var elem = null;
+  for (var i = 0; i < nodes.length && !elem; i++) {
+    var checked = nodes[i];
+    if (!require("./tagtypes").isTag(checked)) {
+      continue;
+    } else
+    if (test(checked)) {
+      elem = checked;
+    } else
+    if (recurse && checked.children.length > 0) {
+      elem = findOne(test, checked.children);
+    }
+  }
+  return elem;
+}
+exports.findOne = findOne;
+
+
+
+
+
+function existsOne(test, nodes) {
+  return nodes.some(function (checked) {
+    return require("./tagtypes").isTag(checked) && (
+    test(checked) ||
+    checked.children.length > 0 &&
+    existsOne(test, checked.children));
+  });
+}
+exports.existsOne = existsOne;
+
+
+
+
+
+
+
+
+
+function findAll(test, nodes) {
+  var _a;
+  var result = [];
+  var stack = nodes.filter(require("./tagtypes").isTag);
+  var elem;
+  while (elem = stack.shift()) {
+    var children = (_a = elem.children) === null || _a === void 0 ? void 0 : _a.filter(require("./tagtypes").isTag);
+    if (children && children.length > 0) {
+      stack.unshift.apply(stack, children);
+    }
+    if (test(elem))
+    result.push(elem);
+  }
+  return result;
+}
+exports.findAll = findAll;

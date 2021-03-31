@@ -1,0 +1,404 @@
+208ff0890c5bec18aa9bd5b090b3766f
+"use strict";var _stateToPropMappings;function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = require("@babel/runtime/helpers/getPrototypeOf")(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = require("@babel/runtime/helpers/getPrototypeOf")(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return require("@babel/runtime/helpers/possibleConstructorReturn")(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {require("@babel/runtime/helpers/defineProperty")(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = createHandler;
+
+var React = _interopRequireWildcard(require("react"));
+
+
+
+var _areEqual = _interopRequireDefault(require("fbjs/lib/areEqual"));
+
+var _RNGestureHandlerModule = _interopRequireDefault(require("../RNGestureHandlerModule"));
+
+
+
+var _UIManager$getViewMan, _UIManager$getViewMan2, _UIManager$getConstan;
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+function findNodeHandle(node) {
+  if (require("react-native").Platform.OS === 'web') return node;
+  return (0, require("react-native").findNodeHandle)(node);
+}var _reactNative$NativeMo =
+
+
+
+require("react-native").NativeModules.UIManager,UIManager = _reactNative$NativeMo === void 0 ? {} : _reactNative$NativeMo;
+var customGHEventsConfig = {
+  onGestureHandlerEvent: {
+    registrationName: 'onGestureHandlerEvent' },
+
+  onGestureHandlerStateChange: {
+    registrationName: 'onGestureHandlerStateChange' } };
+
+
+
+
+
+
+UIManager.genericDirectEventTypes = _objectSpread(_objectSpread({}, UIManager.genericDirectEventTypes),
+customGHEventsConfig);
+
+
+
+
+var UIManagerConstants = (_UIManager$getViewMan = (_UIManager$getViewMan2 = UIManager.getViewManagerConfig) === null || _UIManager$getViewMan2 === void 0 ? void 0 : _UIManager$getViewMan2.call(UIManager, 'getConstants')) !== null && _UIManager$getViewMan !== void 0 ? _UIManager$getViewMan : (_UIManager$getConstan = UIManager.getConstants) === null || _UIManager$getConstan === void 0 ? void 0 : _UIManager$getConstan.call(UIManager);
+
+if (UIManagerConstants) {
+  UIManagerConstants.genericDirectEventTypes = _objectSpread(_objectSpread({}, UIManagerConstants.genericDirectEventTypes),
+  customGHEventsConfig);
+
+}var _UIManager$setJSRespo =
+
+
+
+
+
+
+
+UIManager.setJSResponder,oldSetJSResponder = _UIManager$setJSRespo === void 0 ? function () {} : _UIManager$setJSRespo,_UIManager$clearJSRes = UIManager.clearJSResponder,oldClearJSResponder = _UIManager$clearJSRes === void 0 ? function () {} : _UIManager$clearJSRes;
+
+UIManager.setJSResponder = function (tag, blockNativeResponder) {
+  _RNGestureHandlerModule.default.handleSetJSResponder(tag, blockNativeResponder);
+
+  oldSetJSResponder(tag, blockNativeResponder);
+};
+
+UIManager.clearJSResponder = function () {
+  _RNGestureHandlerModule.default.handleClearJSResponder();
+
+  oldClearJSResponder();
+};
+
+var handlerTag = 1;
+var handlerIDToTag = {};
+
+function isConfigParam(param, name) {
+
+
+  return param !== undefined && (param !== Object(param) || !('__isNative' in param)) && name !== 'onHandlerStateChange' && name !== 'onGestureEvent';
+}
+
+function filterConfig(props, validProps) {var defaults = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var res = _objectSpread({}, defaults);
+
+  validProps.forEach(function (key) {
+    var value = props[key];
+
+    if (isConfigParam(value, key)) {
+      var _value = props[key];
+
+      if (key === 'simultaneousHandlers' || key === 'waitFor') {
+        _value = transformIntoHandlerTags(props[key]);
+      } else if (key === 'hitSlop') {
+        if (typeof _value !== 'object') {
+          _value = {
+            top: _value,
+            left: _value,
+            bottom: _value,
+            right: _value };
+
+        }
+      }
+
+      res[key] = _value;
+    }
+  });
+  return res;
+}
+
+function transformIntoHandlerTags(handlerIDs) {
+  if (!Array.isArray(handlerIDs)) {
+    handlerIDs = [handlerIDs];
+  }
+
+  if (require("react-native").Platform.OS === 'web') {
+    return handlerIDs.map(function (_ref) {var
+      current = _ref.current;return (
+        current);}).filter(function (handle) {return handle;});
+  }
+
+
+  return handlerIDs.map(function (handlerID) {
+    var _handlerID$current;
+
+    return handlerIDToTag[handlerID] || ((_handlerID$current = handlerID.current) === null || _handlerID$current === void 0 ? void 0 : _handlerID$current.handlerTag) || -1;
+  }).filter(function (handlerTag) {return handlerTag > 0;});
+}
+
+function hasUnresolvedRefs(props) {
+
+  var extract = function extract(refs) {
+    if (!Array.isArray(refs)) {
+      return refs && refs.current === null;
+    }
+
+    return refs.some(function (r) {return r && r.current === null;});
+  };
+
+  return extract(props['simultaneousHandlers']) || extract(props['waitFor']);
+}
+
+var stateToPropMappings = (_stateToPropMappings = {}, require("@babel/runtime/helpers/defineProperty")(_stateToPropMappings,
+require("../State").State.UNDETERMINED, undefined), require("@babel/runtime/helpers/defineProperty")(_stateToPropMappings,
+require("../State").State.BEGAN, 'onBegan'), require("@babel/runtime/helpers/defineProperty")(_stateToPropMappings,
+require("../State").State.FAILED, 'onFailed'), require("@babel/runtime/helpers/defineProperty")(_stateToPropMappings,
+require("../State").State.CANCELLED, 'onCancelled'), require("@babel/runtime/helpers/defineProperty")(_stateToPropMappings,
+require("../State").State.ACTIVE, 'onActivated'), require("@babel/runtime/helpers/defineProperty")(_stateToPropMappings,
+require("../State").State.END, 'onEnded'), _stateToPropMappings);
+
+
+
+function createHandler(_ref2)
+
+
+
+
+
+{var name = _ref2.name,_ref2$allowedProps = _ref2.allowedProps,allowedProps = _ref2$allowedProps === void 0 ? [] : _ref2$allowedProps,_ref2$config = _ref2.config,config = _ref2$config === void 0 ? {} : _ref2$config,transformProps = _ref2.transformProps,_ref2$customNativePro = _ref2.customNativeProps,customNativeProps = _ref2$customNativePro === void 0 ? [] : _ref2$customNativePro;var
+  Handler = function (_React$Component) {require("@babel/runtime/helpers/inherits")(Handler, _React$Component);var _super = _createSuper(Handler);
+    function Handler(props) {var _this;require("@babel/runtime/helpers/classCallCheck")(this, Handler);
+      _this = _super.call(this, props);
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "handlerTag", void 0);
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "config", void 0);
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "propsRef", void 0);
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "viewNode", void 0);
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "viewTag", void 0);
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "updateEnqueued", null);
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "onGestureHandlerEvent", function (event) {
+        if (event.nativeEvent.handlerTag === _this.handlerTag) {
+          var _this$props$onGesture, _this$props;
+
+          (_this$props$onGesture = (_this$props = _this.props).onGestureEvent) === null || _this$props$onGesture === void 0 ? void 0 : _this$props$onGesture.call(_this$props, event);
+        } else {
+          var _this$props$onGesture2, _this$props2;
+
+          (_this$props$onGesture2 = (_this$props2 = _this.props).onGestureHandlerEvent) === null || _this$props$onGesture2 === void 0 ? void 0 : _this$props$onGesture2.call(_this$props2, event);
+        }
+      });
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "onGestureHandlerStateChange", function (event) {
+        if (event.nativeEvent.handlerTag === _this.handlerTag) {
+          var _this$props$onHandler, _this$props3;
+
+          (_this$props$onHandler = (_this$props3 = _this.props).onHandlerStateChange) === null || _this$props$onHandler === void 0 ? void 0 : _this$props$onHandler.call(_this$props3, event);
+          var state = event.nativeEvent.state;
+          var stateEventName = stateToPropMappings[state];
+          var eventHandler = stateEventName && _this.props[stateEventName];
+
+          if (eventHandler && typeof eventHandler === 'function') {
+            eventHandler(event);
+          }
+        } else {
+          var _this$props$onGesture3, _this$props4;
+
+          (_this$props$onGesture3 = (_this$props4 = _this.props).onGestureHandlerStateChange) === null || _this$props$onGesture3 === void 0 ? void 0 : _this$props$onGesture3.call(_this$props4, event);
+        }
+      });
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "refHandler", function (node) {
+        _this.viewNode = node;
+        var child = React.Children.only(_this.props.children);var
+
+
+        ref =
+        child.ref;
+
+        if (ref !== null) {
+          if (typeof ref === 'function') {
+            ref(node);
+          } else {
+            ref.current = node;
+          }
+        }
+      });
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "createGestureHandler", function (newConfig) {
+        _this.config = newConfig;
+
+        _RNGestureHandlerModule.default.createGestureHandler(name, _this.handlerTag, newConfig);
+      });
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "attachGestureHandler", function (newViewTag) {
+        _this.viewTag = newViewTag;
+
+        if (require("react-native").Platform.OS === 'web') {
+
+          _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, _this.propsRef);
+        } else {
+          _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag);
+        }
+      });
+
+      _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "updateGestureHandler", function (newConfig) {
+        _this.config = newConfig;
+
+        _RNGestureHandlerModule.default.updateGestureHandler(_this.handlerTag, newConfig);
+      });
+
+      _this.handlerTag = handlerTag++;
+      _this.config = {};
+      _this.propsRef = React.createRef();
+
+      if (props.id) {
+        if (handlerIDToTag[props.id] !== undefined) {
+          throw new Error("Handler with ID \"".concat(props.id, "\" already registered"));
+        }
+
+        handlerIDToTag[props.id] = _this.handlerTag;
+      }return _this;
+    }require("@babel/runtime/helpers/createClass")(Handler, [{ key: "componentDidMount", value:
+
+      function componentDidMount() {var _this2 = this;
+        var props = this.props;
+
+        if (hasUnresolvedRefs(props)) {
+
+
+
+
+
+
+          this.updateEnqueued = setImmediate(function () {
+            _this2.updateEnqueued = null;
+            _this2.update();
+          });
+        }
+
+        this.createGestureHandler(filterConfig(transformProps ? transformProps(this.props) : this.props, [].concat(require("@babel/runtime/helpers/toConsumableArray")(allowedProps), require("@babel/runtime/helpers/toConsumableArray")(customNativeProps)), config));
+        this.attachGestureHandler(findNodeHandle(this.viewNode));
+      } }, { key: "componentDidUpdate", value:
+
+      function componentDidUpdate() {
+        var viewTag = findNodeHandle(this.viewNode);
+
+        if (this.viewTag !== viewTag) {
+          this.attachGestureHandler(viewTag);
+        }
+
+        this.update();
+      } }, { key: "componentWillUnmount", value:
+
+      function componentWillUnmount() {
+        _RNGestureHandlerModule.default.dropGestureHandler(this.handlerTag);
+
+        if (this.updateEnqueued) {
+          clearImmediate(this.updateEnqueued);
+        }
+
+
+        var handlerID = this.props.id;
+
+        if (handlerID) {
+
+          delete handlerIDToTag[handlerID];
+        }
+      } }, { key: "update", value:
+
+      function update() {
+        var newConfig = filterConfig(transformProps ? transformProps(this.props) : this.props, [].concat(require("@babel/runtime/helpers/toConsumableArray")(allowedProps), require("@babel/runtime/helpers/toConsumableArray")(customNativeProps)), config);
+
+        if (!(0, _areEqual.default)(this.config, newConfig)) {
+          this.updateGestureHandler(newConfig);
+        }
+      } }, { key: "setNativeProps", value:
+
+      function setNativeProps(updates) {
+        var mergedProps = _objectSpread(_objectSpread({}, this.props),
+        updates);
+
+        var newConfig = filterConfig(transformProps ? transformProps(mergedProps) : mergedProps, [].concat(require("@babel/runtime/helpers/toConsumableArray")(allowedProps), require("@babel/runtime/helpers/toConsumableArray")(customNativeProps)), config);
+        this.updateGestureHandler(newConfig);
+      } }, { key: "render", value:
+
+      function render() {
+        var gestureEventHandler = this.onGestureHandlerEvent;var _this$props5 =
+
+
+
+
+        this.props,onGestureEvent = _this$props5.onGestureEvent,onGestureHandlerEvent = _this$props5.onGestureHandlerEvent;
+
+        if (onGestureEvent && typeof onGestureEvent !== 'function') {
+
+
+
+          if (onGestureHandlerEvent) {
+            throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+          }
+
+          gestureEventHandler = onGestureEvent;
+        } else {
+          if (onGestureHandlerEvent && typeof onGestureHandlerEvent !== 'function') {
+            throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+          }
+        }
+
+        var gestureStateEventHandler = this.onGestureHandlerStateChange;var _this$props6 =
+
+
+
+
+        this.props,onHandlerStateChange = _this$props6.onHandlerStateChange,onGestureHandlerStateChange = _this$props6.onGestureHandlerStateChange;
+
+        if (onHandlerStateChange && typeof onHandlerStateChange !== 'function') {
+
+
+
+          if (onGestureHandlerStateChange) {
+            throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+          }
+
+          gestureStateEventHandler = onHandlerStateChange;
+        } else {
+          if (onGestureHandlerStateChange && typeof onGestureHandlerStateChange !== 'function') {
+            throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+          }
+        }
+
+        var events = {
+          onGestureHandlerEvent: gestureEventHandler,
+          onGestureHandlerStateChange: gestureStateEventHandler };
+
+        this.propsRef.current = events;
+        var child = React.Children.only(this.props.children);
+        var grandChildren = child.props.children;
+
+        if (require("react-native").Touchable.TOUCH_TARGET_DEBUG && child.type && (child.type === 'RNGestureHandlerButton' || child.type.name === 'View' || child.type.displayName === 'View')) {
+          grandChildren = React.Children.toArray(grandChildren);
+          grandChildren.push(require("react-native").Touchable.renderDebugView({
+            color: 'mediumspringgreen',
+            hitSlop: child.props.hitSlop }));
+
+        }
+
+        return React.cloneElement(child, _objectSpread({
+          ref: this.refHandler,
+          collapsable: false },
+        events),
+        grandChildren);
+      } }]);return Handler;}(React.Component);
+
+
+
+  _defineProperty(Handler, "displayName", name);
+
+  return Handler;
+}

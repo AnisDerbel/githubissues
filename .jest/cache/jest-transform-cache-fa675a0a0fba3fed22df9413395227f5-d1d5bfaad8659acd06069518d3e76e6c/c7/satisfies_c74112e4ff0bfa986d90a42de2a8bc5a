@@ -1,0 +1,11 @@
+738ea6a9e24ed7455f04eae405334f4f
+
+var satisfies = function satisfies(version, range, options) {
+  try {
+    range = new (require('../classes/range'))(range, options);
+  } catch (er) {
+    return false;
+  }
+  return range.test(version);
+};
+module.exports = satisfies;

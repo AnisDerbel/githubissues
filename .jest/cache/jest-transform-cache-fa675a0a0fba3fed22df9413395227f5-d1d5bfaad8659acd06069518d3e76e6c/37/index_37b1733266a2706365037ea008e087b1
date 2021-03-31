@@ -1,0 +1,19 @@
+2a9f2ec1ea0c442152e5d0f13ed2e809
+'use strict';
+
+
+
+
+
+
+
+
+var bound = require('call-bind')(require('./implementation'));
+
+require('define-properties')(bound, {
+  getPolyfill: require('./polyfill'),
+  implementation: require('./implementation'),
+  shim: require('./shim') });
+
+
+module.exports = bound;

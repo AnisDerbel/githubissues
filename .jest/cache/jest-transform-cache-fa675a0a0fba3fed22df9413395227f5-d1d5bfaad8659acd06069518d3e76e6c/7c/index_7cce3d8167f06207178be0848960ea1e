@@ -1,0 +1,4 @@
+fa0f2ec7b2ba6cfa058b96c9b79c4274
+"use strict";
+
+module.exports = require('./ReactSeventeenAdapter');

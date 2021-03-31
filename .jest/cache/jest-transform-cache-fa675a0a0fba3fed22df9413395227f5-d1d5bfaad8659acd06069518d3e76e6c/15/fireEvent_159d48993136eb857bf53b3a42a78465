@@ -1,0 +1,114 @@
+9cf599087d264b84eaceccc4d5b5d3d8
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+var _act = _interopRequireDefault(require("./act"));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var isHostElement = function isHostElement(element) {
+  return typeof (element === null || element === void 0 ? void 0 : element.type) === 'string';
+};
+
+var isTextInput = function isTextInput(element) {var _require =
+
+
+  require('react-native'),TextInput = _require.TextInput;
+
+  return (element === null || element === void 0 ? void 0 : element.type) === TextInput;
+};
+
+var isTouchResponder = function isTouchResponder(element) {
+  if (!isHostElement(element)) return false;
+  return !!(element !== null && element !== void 0 && element.props.onStartShouldSetResponder) || isTextInput(element);
+};
+
+var isPointerEventEnabled = function isPointerEventEnabled(element, isParent) {
+  var parentCondition = isParent ? (element === null || element === void 0 ? void 0 : element.props.pointerEvents) === 'box-only' : (element === null || element === void 0 ? void 0 : element.props.pointerEvents) === 'box-none';
+
+  if ((element === null || element === void 0 ? void 0 : element.props.pointerEvents) === 'none' || parentCondition) {
+    return false;
+  }
+
+  if (!(element !== null && element !== void 0 && element.parent)) return true;
+  return isPointerEventEnabled(element.parent, true);
+};
+
+var isEventEnabled = function isEventEnabled(element, touchResponder) {
+  var _touchResponder$props, _touchResponder$props2, _touchResponder$props3, _touchResponder$props4;
+
+  if (isTextInput(element)) return (element === null || element === void 0 ? void 0 : element.props.editable) !== false;
+  if (!isPointerEventEnabled(element)) return false;
+  var touchStart = touchResponder === null || touchResponder === void 0 ? void 0 : (_touchResponder$props = (_touchResponder$props2 = touchResponder.props).onStartShouldSetResponder) === null || _touchResponder$props === void 0 ? void 0 : _touchResponder$props.call(_touchResponder$props2);
+  var touchMove = touchResponder === null || touchResponder === void 0 ? void 0 : (_touchResponder$props3 = (_touchResponder$props4 = touchResponder.props).onMoveShouldSetResponder) === null || _touchResponder$props3 === void 0 ? void 0 : _touchResponder$props3.call(_touchResponder$props4);
+  if (touchStart || touchMove) return true;
+  return touchStart === undefined && touchMove === undefined;
+};
+
+var findEventHandler = function findEventHandler(element, eventName, callsite, nearestTouchResponder, hasDescendandHandler) {
+  var touchResponder = isTouchResponder(element) ? element : nearestTouchResponder;
+  var handler = getEventHandler(element, eventName);
+  if (handler && isEventEnabled(element, touchResponder)) return handler;
+
+  var hasHandler = handler != null || hasDescendandHandler;
+
+  if (element.parent === null || element.parent.parent === null) {
+    if (hasHandler) {
+      return null;
+    } else {
+      throw new (require("./helpers/errors").ErrorWithStack)("No handler function found for event: \"" + eventName + "\"", callsite || invokeEvent);
+    }
+  }
+
+  return findEventHandler(element.parent, eventName, callsite, touchResponder, hasHandler);
+};
+
+var getEventHandler = function getEventHandler(element, eventName) {
+  var eventHandlerName = toEventHandlerName(eventName);
+
+  if (typeof element.props[eventHandlerName] === 'function') {
+    return element.props[eventHandlerName];
+  }
+
+  if (typeof element.props[eventName] === 'function') {
+    return element.props[eventName];
+  }
+
+  return undefined;
+};
+
+var invokeEvent = function invokeEvent(element, eventName, callsite) {for (var _len = arguments.length, data = new Array(_len > 3 ? _len - 3 : 0), _key = 3; _key < _len; _key++) {data[_key - 3] = arguments[_key];}
+  var handler = findEventHandler(element, eventName, callsite);
+
+  if (!handler) {
+    return;
+  }
+
+  var returnValue;
+  (0, _act.default)(function () {
+    returnValue = handler.apply(void 0, data);
+  });
+  return returnValue;
+};
+
+var toEventHandlerName = function toEventHandlerName(eventName) {return "on" + eventName.charAt(0).toUpperCase() + eventName.slice(1);};
+
+var pressHandler = function pressHandler(element) {return invokeEvent(element, 'press', pressHandler);};
+
+var changeTextHandler = function changeTextHandler(element) {for (var _len2 = arguments.length, data = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {data[_key2 - 1] = arguments[_key2];}return invokeEvent.apply(void 0, [element, 'changeText', changeTextHandler].concat(data));};
+
+var scrollHandler = function scrollHandler(element) {for (var _len3 = arguments.length, data = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {data[_key3 - 1] = arguments[_key3];}return invokeEvent.apply(void 0, [element, 'scroll', scrollHandler].concat(data));};
+
+var fireEvent = function fireEvent(element, eventName) {for (var _len4 = arguments.length, data = new Array(_len4 > 2 ? _len4 - 2 : 0), _key4 = 2; _key4 < _len4; _key4++) {data[_key4 - 2] = arguments[_key4];}return invokeEvent.apply(void 0, [element, eventName, fireEvent].concat(data));};
+
+fireEvent.press = pressHandler;
+fireEvent.changeText = changeTextHandler;
+fireEvent.scroll = scrollHandler;
+var _default = fireEvent;
+exports.default = _default;

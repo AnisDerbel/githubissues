@@ -1,0 +1,71 @@
+425626bf50ac24128dce35d8d8f11362
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.get = get;exports.getEnforcing = getEnforcing;
+
+
+
+var _invariant = _interopRequireDefault(require("invariant"));
+
+var turboModuleProxy = global.__turboModuleProxy;
+
+function requireModule(name, schema) {
+
+  if (!global.RN$Bridgeless) {
+
+    var legacyModule = require('../BatchedBridge/NativeModules')[name];
+    if (legacyModule != null) {
+      return legacyModule;
+    }
+  }
+
+  if (turboModuleProxy != null) {
+    var module =
+    schema != null ? turboModuleProxy(name, schema) : turboModuleProxy(name);
+    return module;
+  }
+
+  return null;
+}
+
+function get(name) {
+
+
+
+
+
+
+
+
+
+  var schema = arguments.length === 2 ? arguments[1] : undefined;
+  return requireModule(name, schema);
+}
+
+function getEnforcing(name) {
+
+
+
+
+
+
+
+
+
+  var schema = arguments.length === 2 ? arguments[1] : undefined;
+  var module = requireModule(name, schema);
+  (0, _invariant.default)(
+  module != null,
+  "TurboModuleRegistry.getEnforcing(...): '" + name + "' could not be found. " +
+  'Verify that a module by this name is registered in the native binary.');
+
+  return module;
+}

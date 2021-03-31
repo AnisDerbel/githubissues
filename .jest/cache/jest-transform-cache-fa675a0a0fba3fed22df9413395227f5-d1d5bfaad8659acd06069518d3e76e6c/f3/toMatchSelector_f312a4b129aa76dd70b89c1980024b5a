@@ -1,0 +1,41 @@
+f617483b9d7be9817fc286314e15f755
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+var _name = _interopRequireDefault(require("../utils/name"));
+
+var _html = _interopRequireDefault(require("../utils/html"));
+
+var _single = _interopRequireDefault(require("../utils/single"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+
+
+
+
+
+function toMatchSelector(enzymeWrapper, selector) {
+  var pass = enzymeWrapper.is(selector);
+  var wrapperName = "<" + (0, _name.default)(enzymeWrapper) + ">";
+  var wrapperHtml = (0, _html.default)(enzymeWrapper);
+  return {
+    pass: pass,
+    message: "Expected " + wrapperName + " component to match the selector \"" + selector + "\", but it didn't.",
+    negatedMessage: "Expected " + wrapperName + " component not to match the selector \"" + selector + "\", but it did.",
+    contextualInformation: {
+      actual: wrapperHtml } };
+
+
+}
+
+var _default = (0, _single.default)(toMatchSelector);
+
+exports.default = _default;
+module.exports = exports.default;

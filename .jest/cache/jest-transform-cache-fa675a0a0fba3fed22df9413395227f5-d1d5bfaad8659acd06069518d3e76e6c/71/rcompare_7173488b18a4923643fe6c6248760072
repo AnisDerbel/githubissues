@@ -1,0 +1,4 @@
+94d340f8c3715991cf174beaa47e3a20
+
+var rcompare = function rcompare(a, b, loose) {return require('./compare')(b, a, loose);};
+module.exports = rcompare;

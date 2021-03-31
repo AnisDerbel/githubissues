@@ -1,0 +1,137 @@
+c2bf1f0f07db0369968ab1634e27ec48
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = exports.PATTERNS = void 0;var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));var _react = _interopRequireDefault(require("react"));
+var _reactNative = require("react-native");
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _TextExtraction = _interopRequireDefault(require("./lib/TextExtraction"));var _jsxFileName = "/Users/anisderbel/Documents/apcgithubissues/node_modules/react-native-parsed-text/src/ParsedText.js";function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = (0, _getPrototypeOf2.default)(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = (0, _getPrototypeOf2.default)(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return (0, _possibleConstructorReturn2.default)(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {(0, _defineProperty2.default)(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+
+
+
+
+
+
+
+
+var PATTERNS = {
+
+
+
+
+
+
+
+
+
+
+  url: /(https?:\/\/|www\.)[-a-zA-Z0-9@:%._\+~#=]{1,256}\.(xn--)?[a-z0-9-]{2,20}\b([-a-zA-Z0-9@:%_\+\[\],.~#?&\/=]*[-a-zA-Z0-9@:%_\+\]~#?&\/=])*/i,
+  phone: /[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,7}/,
+  email: /\S+@\S+\.\S+/ };exports.PATTERNS = PATTERNS;
+
+
+
+
+
+
+
+
+
+
+
+
+var defaultParseShape = _propTypes.default.shape(_objectSpread(_objectSpread({},
+_reactNative.Text.propTypes), {}, {
+  type: _propTypes.default.oneOf(Object.keys(PATTERNS)).isRequired,
+  nonExhaustiveMaxMatchCount: _propTypes.default.number }));
+
+
+var customParseShape = _propTypes.default.shape(_objectSpread(_objectSpread({},
+_reactNative.Text.propTypes), {}, {
+  pattern: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.instanceOf(RegExp)]).
+  isRequired,
+  nonExhaustiveMaxMatchCount: _propTypes.default.number }));var
+
+
+
+
+
+
+
+
+
+
+
+ParsedText = function (_React$Component) {(0, _inherits2.default)(ParsedText, _React$Component);var _super = _createSuper(ParsedText);function ParsedText() {(0, _classCallCheck2.default)(this, ParsedText);return _super.apply(this, arguments);}(0, _createClass2.default)(ParsedText, [{ key: "setNativeProps", value:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function setNativeProps(nativeProps) {
+      this._root.setNativeProps(nativeProps);
+    } }, { key: "getPatterns", value:
+
+    function getPatterns() {
+      return this.props.parse.map(function (option) {var
+        type = option.type,patternOption = (0, _objectWithoutProperties2.default)(option, ["type"]);
+        if (type) {
+          if (!PATTERNS[type]) {
+            throw new Error(option.type + " is not a supported type");
+          }
+          patternOption.pattern = PATTERNS[type];
+        }
+
+        return patternOption;
+      });
+    } }, { key: "getParsedText", value:
+
+    function getParsedText() {var _this = this;
+      if (!this.props.parse) {
+        return this.props.children;
+      }
+      if (typeof this.props.children !== 'string') {
+        return this.props.children;
+      }
+
+      var textExtraction = new _TextExtraction.default(
+      this.props.children,
+      this.getPatterns());
+
+
+      return textExtraction.parse().map(function (props, index) {var
+        parentStyle = _this.props.style;var
+        style = props.style,remainder = (0, _objectWithoutProperties2.default)(props, ["style"]);
+        return (
+          _react.default.createElement(_reactNative.Text, (0, _extends2.default)({
+            key: "parsedText-" + index,
+            style: [parentStyle, style] },
+          _this.props.childrenProps,
+          remainder, { __self: _this, __self: _this, __source: { fileName: _jsxFileName, lineNumber: 114, columnNumber: 9 } })));
+
+
+      });
+    } }, { key: "render", value:
+
+    function render() {var _this2 = this;var _this$props = _objectSpread({},
+
+      this.props),parse = _this$props.parse,childrenProps = _this$props.childrenProps,remainder = (0, _objectWithoutProperties2.default)(_this$props, ["parse", "childrenProps"]);
+
+      return (
+        _react.default.createElement(_reactNative.Text, (0, _extends2.default)({ ref: function ref(_ref) {return _this2._root = _ref;} }, remainder, { __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 129, columnNumber: 7 } }),
+        this.getParsedText()));
+
+
+    } }]);return ParsedText;}(_react.default.Component);ParsedText.displayName = 'ParsedText';ParsedText.propTypes = _objectSpread(_objectSpread({}, _reactNative.Text.propTypes), {}, { parse: _propTypes.default.arrayOf(_propTypes.default.oneOfType([defaultParseShape, customParseShape])), childrenProps: _propTypes.default.shape(_reactNative.Text.propTypes) });ParsedText.defaultProps = { parse: null, childrenProps: {} };var _default =
+
+
+ParsedText;exports.default = _default;

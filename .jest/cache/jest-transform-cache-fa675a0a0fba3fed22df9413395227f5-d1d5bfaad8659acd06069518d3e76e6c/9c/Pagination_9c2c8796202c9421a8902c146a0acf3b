@@ -1,0 +1,588 @@
+c3d42c4ac2c781300fc5686610b1f578
+"use strict";
+
+/* istanbul ignore next */
+function cov_1pdrel4fdb() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/components/Pagination.tsx";
+  var hash = "0e32df72a360e39e68a0660452442f57069cc6c7";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/components/Pagination.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "1": {
+        start: {
+          line: 7,
+          column: 14
+        },
+        end: {
+          line: 7,
+          column: 30
+        }
+      },
+      "2": {
+        start: {
+          line: 9,
+          column: 14
+        },
+        end: {
+          line: 9,
+          column: 55
+        }
+      },
+      "3": {
+        start: {
+          line: 11,
+          column: 21
+        },
+        end: {
+          line: 11,
+          column: 44
+        }
+      },
+      "4": {
+        start: {
+          line: 13,
+          column: 27
+        },
+        end: {
+          line: 13,
+          column: 56
+        }
+      },
+      "5": {
+        start: {
+          line: 15,
+          column: 20
+        },
+        end: {
+          line: 15,
+          column: 42
+        }
+      },
+      "6": {
+        start: {
+          line: 17,
+          column: 16
+        },
+        end: {
+          line: 17,
+          column: 48
+        }
+      },
+      "7": {
+        start: {
+          line: 19,
+          column: 27
+        },
+        end: {
+          line: 19,
+          column: 56
+        }
+      },
+      "8": {
+        start: {
+          line: 21,
+          column: 17
+        },
+        end: {
+          line: 56,
+          column: 1
+        }
+      },
+      "9": {
+        start: {
+          line: 22,
+          column: 17
+        },
+        end: {
+          line: 22,
+          column: 44
+        }
+      },
+      "10": {
+        start: {
+          line: 23,
+          column: 14
+        },
+        end: {
+          line: 23,
+          column: 45
+        }
+      },
+      "11": {
+        start: {
+          line: 25,
+          column: 30
+        },
+        end: {
+          line: 27,
+          column: 4
+        }
+      },
+      "12": {
+        start: {
+          line: 26,
+          column: 4
+        },
+        end: {
+          line: 26,
+          column: 22
+        }
+      },
+      "13": {
+        start: {
+          line: 28,
+          column: 13
+        },
+        end: {
+          line: 28,
+          column: 39
+        }
+      },
+      "14": {
+        start: {
+          line: 29,
+          column: 22
+        },
+        end: {
+          line: 29,
+          column: 57
+        }
+      },
+      "15": {
+        start: {
+          line: 30,
+          column: 18
+        },
+        end: {
+          line: 30,
+          column: 49
+        }
+      },
+      "16": {
+        start: {
+          line: 32,
+          column: 27
+        },
+        end: {
+          line: 32,
+          column: 37
+        }
+      },
+      "17": {
+        start: {
+          line: 33,
+          column: 23
+        },
+        end: {
+          line: 33,
+          column: 46
+        }
+      },
+      "18": {
+        start: {
+          line: 34,
+          column: 2
+        },
+        end: {
+          line: 55,
+          column: 14
+        }
+      },
+      "19": {
+        start: {
+          line: 41,
+          column: 6
+        },
+        end: {
+          line: 43,
+          column: 10
+        }
+      },
+      "20": {
+        start: {
+          line: 50,
+          column: 6
+        },
+        end: {
+          line: 52,
+          column: 10
+        }
+      },
+      "21": {
+        start: {
+          line: 58,
+          column: 0
+        },
+        end: {
+          line: 58,
+          column: 29
+        }
+      },
+      "22": {
+        start: {
+          line: 59,
+          column: 13
+        },
+        end: {
+          line: 65,
+          column: 2
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "Pagination",
+        decl: {
+          start: {
+            line: 21,
+            column: 26
+          },
+          end: {
+            line: 21,
+            column: 36
+          }
+        },
+        loc: {
+          start: {
+            line: 21,
+            column: 39
+          },
+          end: {
+            line: 56,
+            column: 1
+          }
+        },
+        line: 21
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 25,
+            column: 56
+          },
+          end: {
+            line: 25,
+            column: 57
+          }
+        },
+        loc: {
+          start: {
+            line: 25,
+            column: 73
+          },
+          end: {
+            line: 27,
+            column: 3
+          }
+        },
+        line: 25
+      },
+      "2": {
+        name: "onPress",
+        decl: {
+          start: {
+            line: 40,
+            column: 22
+          },
+          end: {
+            line: 40,
+            column: 29
+          }
+        },
+        loc: {
+          start: {
+            line: 40,
+            column: 32
+          },
+          end: {
+            line: 44,
+            column: 5
+          }
+        },
+        line: 40
+      },
+      "3": {
+        name: "onPress",
+        decl: {
+          start: {
+            line: 49,
+            column: 22
+          },
+          end: {
+            line: 49,
+            column: 29
+          }
+        },
+        loc: {
+          start: {
+            line: 49,
+            column: 32
+          },
+          end: {
+            line: 53,
+            column: 5
+          }
+        },
+        line: 49
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 39,
+            column: 14
+          },
+          end: {
+            line: 39,
+            column: 45
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 39,
+            column: 14
+          },
+          end: {
+            line: 39,
+            column: 23
+          }
+        }, {
+          start: {
+            line: 39,
+            column: 27
+          },
+          end: {
+            line: 39,
+            column: 45
+          }
+        }],
+        line: 39
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 47,
+            column: 14
+          },
+          end: {
+            line: 47,
+            column: 41
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 47,
+            column: 14
+          },
+          end: {
+            line: 47,
+            column: 23
+          }
+        }, {
+          start: {
+            line: 47,
+            column: 27
+          },
+          end: {
+            line: 47,
+            column: 41
+          }
+        }],
+        line: 47
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0]
+    },
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/components/Pagination.tsx"],
+      names: [],
+      mappings: ";;;;;;;;AAAA,IAAA,OAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,OAAA,CAAA,CAAA;;AACA,IAAA,cAAA,GAAA,OAAA,CAAA,cAAA,CAAA;;AACA,IAAA,oBAAA,GAAA,OAAA,CAAA,oBAAA,CAAA;;AACA,IAAA,aAAA,GAAA,OAAA,CAAA,aAAA,CAAA;;AAEA,IAAA,SAAA,GAAA,OAAA,CAAA,uBAAA,CAAA;;AACA,IAAA,oBAAA,GAAA,OAAA,CAAA,oBAAA,CAAA;;AAEA,IAAM,UAAU,GAAG,SAAb,UAAa,GAAK;AACtB,MAAM,QAAQ,GAAG,aAAA,CAAA,WAAA,EAAjB;AACA,MAAM,KAAK,GAAG,oBAAA,CAAA,QAAA,EAAd;;AAFsB,8BAGqB,aAAA,CAAA,WAAA,CAAY,UAAC,KAAD;AAAA,WAA8B,KAAK,CAAC,IAApC;AAAA,GAAZ,CAHrB;AAAA,MAGd,IAHc,yBAGd,IAHc;AAAA,MAGR,aAHQ,yBAGR,aAHQ;AAAA,MAGO,SAHP,yBAGO,SAHP;;AAItB,MAAM,kBAAkB,GAAG,IAAI,KAAK,CAApC;AACA,MAAM,cAAc,GAAG,aAAa,KAAK,KAAzC;AACA,SACE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,cAAA,CAAA,IAAD,EAAK;AAAC,IAAA,KAAK,EAAE,CAAC,MAAM,CAAC,GAAR,EAAa;AAAE,MAAA,MAAM,EAAE,KAAK,CAAC,OAAN,CAAc;AAAxB,KAAb;AAAR,GAAL,EACE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,oBAAA,CAAA,MAAD,EAAO;AACL,IAAA,QAAQ,EAAE,SAAS,IAAI,kBADlB;AAEL,IAAA,OAAO,EAAE;AAAA,aAAM,QAAQ,CAAC,SAAA,CAAA,WAAA,CAAY,aAAZ,CAA0B;AAAE,QAAA,IAAI,EAAE,IAAI,GAAG;AAAf,OAA1B,CAAD,CAAd;AAAA,KAFJ;AAGL,IAAA,IAAI,EAAC;AAHA,GAAP,EAGkB,UAHlB,CADF,EAQE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,oBAAA,CAAA,MAAD,EAAO;AACL,IAAA,QAAQ,EAAE,SAAS,IAAI,cADlB;AAEL,IAAA,OAAO,EAAE,SAFJ;AAGL,IAAA,OAAO,EAAE;AAAA,aAAM,QAAQ,CAAC,SAAA,CAAA,WAAA,CAAY,aAAZ,CAA0B;AAAE,QAAA,IAAI,EAAE,IAAI,GAAG;AAAf,OAA1B,CAAD,CAAd;AAAA,KAHJ;AAIL,IAAA,IAAI,EAAC;AAJA,GAAP,EAIkB,MAJlB,CARF,CADF;AAmBD,CAzBD;;AA2BA,OAAA,CAAA,OAAA,GAAe,UAAf;AAEA,IAAM,MAAM,GAAG,cAAA,CAAA,UAAA,CAAW,MAAX,CAAkB;AAC/B,EAAA,SAAS,EAAE,EADoB;AAI/B,EAAA,GAAG,EAAE;AACH,IAAA,aAAa,EAAE,KADZ;AAEH,IAAA,cAAc,EAAE;AAFb;AAJ0B,CAAlB,CAAf",
+      sourcesContent: ["import React from 'react';\nimport { View, StyleSheet } from 'react-native';\nimport { useTheme } from 'react-native-paper';\nimport { useDispatch, useSelector } from 'react-redux';\nimport { IApplicationState } from '../redux/appReducer';\nimport { repoActions } from '../redux/repo/actions';\nimport { Button } from 'react-native-paper';\n\nconst Pagination = () => {\n  const dispatch = useDispatch();\n  const theme = useTheme();\n  const { page, hasMoreIssues, isLoading } = useSelector((state: IApplicationState) => state.repo);\n  const isPreviousDisabled = page === 1;\n  const isNextDisabled = hasMoreIssues === false;\n  return (\n    <View style={[styles.row, { margin: theme.spacing.l }]}>\n      <Button\n        disabled={isLoading || isPreviousDisabled}\n        onPress={() => dispatch(repoActions.getRepoIssues({ page: page - 1 }))}\n        mode=\"contained\"\n      >\n        Previous\n      </Button>\n      <Button\n        disabled={isLoading || isNextDisabled}\n        loading={isLoading}\n        onPress={() => dispatch(repoActions.getRepoIssues({ page: page + 1 }))}\n        mode=\"contained\"\n      >\n        Next\n      </Button>\n    </View>\n  );\n};\n\nexport default Pagination;\n\nconst styles = StyleSheet.create({\n  container: {\n    // alignItems: 'center',\n  },\n  row: {\n    flexDirection: 'row',\n    justifyContent: 'space-between',\n  },\n});\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "0e32df72a360e39e68a0660452442f57069cc6c7"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1pdrel4fdb = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1pdrel4fdb();
+cov_1pdrel4fdb().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tslib_1 =
+/* istanbul ignore next */
+(cov_1pdrel4fdb().s[1]++, require("tslib"));
+var react_1 =
+/* istanbul ignore next */
+(cov_1pdrel4fdb().s[2]++, tslib_1.__importDefault(require("react")));
+var react_native_1 =
+/* istanbul ignore next */
+(cov_1pdrel4fdb().s[3]++, require("react-native"));
+var react_native_paper_1 =
+/* istanbul ignore next */
+(cov_1pdrel4fdb().s[4]++, require("react-native-paper"));
+var react_redux_1 =
+/* istanbul ignore next */
+(cov_1pdrel4fdb().s[5]++, require("react-redux"));
+var actions_1 =
+/* istanbul ignore next */
+(cov_1pdrel4fdb().s[6]++, require("../redux/repo/actions"));
+var react_native_paper_2 =
+/* istanbul ignore next */
+(cov_1pdrel4fdb().s[7]++, require("react-native-paper"));
+
+/* istanbul ignore next */
+cov_1pdrel4fdb().s[8]++;
+
+var Pagination = function Pagination() {
+  /* istanbul ignore next */
+  cov_1pdrel4fdb().f[0]++;
+  var dispatch =
+  /* istanbul ignore next */
+  (cov_1pdrel4fdb().s[9]++, react_redux_1.useDispatch());
+  var theme =
+  /* istanbul ignore next */
+  (cov_1pdrel4fdb().s[10]++, react_native_paper_1.useTheme());
+
+  var _react_redux_1$useSel =
+  /* istanbul ignore next */
+  (cov_1pdrel4fdb().s[11]++, react_redux_1.useSelector(function (state) {
+    /* istanbul ignore next */
+    cov_1pdrel4fdb().f[1]++;
+    cov_1pdrel4fdb().s[12]++;
+    return state.repo;
+  })),
+      page =
+  /* istanbul ignore next */
+  (cov_1pdrel4fdb().s[13]++, _react_redux_1$useSel.page),
+      hasMoreIssues =
+  /* istanbul ignore next */
+  (cov_1pdrel4fdb().s[14]++, _react_redux_1$useSel.hasMoreIssues),
+      isLoading =
+  /* istanbul ignore next */
+  (cov_1pdrel4fdb().s[15]++, _react_redux_1$useSel.isLoading);
+
+  var isPreviousDisabled =
+  /* istanbul ignore next */
+  (cov_1pdrel4fdb().s[16]++, page === 1);
+  var isNextDisabled =
+  /* istanbul ignore next */
+  (cov_1pdrel4fdb().s[17]++, hasMoreIssues === false);
+
+  /* istanbul ignore next */
+  cov_1pdrel4fdb().s[18]++;
+  return react_1.default.createElement(react_native_1.View, {
+    style: [styles.row, {
+      margin: theme.spacing.l
+    }]
+  }, react_1.default.createElement(react_native_paper_2.Button, {
+    disabled:
+    /* istanbul ignore next */
+    (cov_1pdrel4fdb().b[0][0]++, isLoading) ||
+    /* istanbul ignore next */
+    (cov_1pdrel4fdb().b[0][1]++, isPreviousDisabled),
+    onPress: function onPress() {
+      /* istanbul ignore next */
+      cov_1pdrel4fdb().f[2]++;
+      cov_1pdrel4fdb().s[19]++;
+      return dispatch(actions_1.repoActions.getRepoIssues({
+        page: page - 1
+      }));
+    },
+    mode: "contained"
+  }, "Previous"), react_1.default.createElement(react_native_paper_2.Button, {
+    disabled:
+    /* istanbul ignore next */
+    (cov_1pdrel4fdb().b[1][0]++, isLoading) ||
+    /* istanbul ignore next */
+    (cov_1pdrel4fdb().b[1][1]++, isNextDisabled),
+    loading: isLoading,
+    onPress: function onPress() {
+      /* istanbul ignore next */
+      cov_1pdrel4fdb().f[3]++;
+      cov_1pdrel4fdb().s[20]++;
+      return dispatch(actions_1.repoActions.getRepoIssues({
+        page: page + 1
+      }));
+    },
+    mode: "contained"
+  }, "Next"));
+};
+
+/* istanbul ignore next */
+cov_1pdrel4fdb().s[21]++;
+exports.default = Pagination;
+var styles =
+/* istanbul ignore next */
+(cov_1pdrel4fdb().s[22]++, react_native_1.StyleSheet.create({
+  container: {},
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
+}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL2NvbXBvbmVudHMvUGFnaW5hdGlvbi50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsSUFBQSxPQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsZUFBQSxDQUFBLE9BQUEsQ0FBQSxPQUFBLENBQUEsQ0FBQSxDQUFBO0FBQ0EsSUFBQSxjQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsY0FBQSxDQUFBLENBQUE7QUFDQSxJQUFBLG9CQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsb0JBQUEsQ0FBQSxDQUFBO0FBQ0EsSUFBQSxhQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsYUFBQSxDQUFBLENBQUE7QUFFQSxJQUFBLFNBQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSx1QkFBQSxDQUFBLENBQUE7QUFDQSxJQUFBLG9CQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsb0JBQUEsQ0FBQSxDQUFBOzs7OztBQUVBLElBQU0sVUFBVSxHQUFHLFNBQWIsVUFBYSxHQUFLO0FBQUE7QUFBQTtBQUN0QixNQUFNLFFBQVE7QUFBQTtBQUFBLDRCQUFHLGFBQUEsQ0FBakIsV0FBaUIsRUFBSCxDQUFkO0FBQ0EsTUFBTSxLQUFLO0FBQUE7QUFBQSw2QkFBRyxvQkFBQSxDQUFkLFFBQWMsRUFBSCxDQUFYOztBQUZzQixNQUFBLHFCQUFBO0FBQUE7QUFBQSw2QkFHcUIsYUFBQSxDQUFBLFdBQUEsQ0FBWSxVQUFBLEtBQUEsRUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBQThCLEtBQUssQ0FBbkMsSUFBQTtBQUhqQyxHQUdxQixDQUhyQixDQUFBO0FBQUEsTUFHZCxJQUhjO0FBQUE7QUFBQSw2QkFBQSxxQkFBQSxDQUFBLElBQUEsQ0FBQTtBQUFBLE1BR1IsYUFIUTtBQUFBO0FBQUEsNkJBQUEscUJBQUEsQ0FBQSxhQUFBLENBQUE7QUFBQSxNQUdPLFNBSFA7QUFBQTtBQUFBLDZCQUFBLHFCQUFBLENBQUEsU0FBQSxDQUFBOztBQUl0QixNQUFNLGtCQUFrQjtBQUFBO0FBQUEsNkJBQUcsSUFBSSxLQUEvQixDQUF3QixDQUF4QjtBQUNBLE1BQU0sY0FBYztBQUFBO0FBQUEsNkJBQUcsYUFBYSxLQUFwQyxLQUFvQixDQUFwQjs7QUFMc0I7QUFBQTtBQU10QixTQUNFLE9BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLGNBQUEsQ0FBRCxJQUFBLEVBQUs7QUFBQyxJQUFBLEtBQUssRUFBRSxDQUFDLE1BQU0sQ0FBUCxHQUFBLEVBQWE7QUFBRSxNQUFBLE1BQU0sRUFBRSxLQUFLLENBQUwsT0FBQSxDQUFjO0FBQXhCLEtBQWI7QUFBUixHQUFMLEVBQ0UsT0FBQSxDQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsb0JBQUEsQ0FBRCxNQUFBLEVBQU87QUFDTCxJQUFBLFFBQVE7QUFBRTtBQUFBLGlDQUFBLFNBQVM7QUFBQTtBQUFBLGlDQURkLGtCQUNjLENBRGQ7QUFFTCxJQUFBLE9BQU8sRUFBRSxTQUFBLE9BQUEsR0FBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQU0sUUFBUSxDQUFDLFNBQUEsQ0FBQSxXQUFBLENBQUEsYUFBQSxDQUEwQjtBQUFFLFFBQUEsSUFBSSxFQUFFLElBQUksR0FBRztBQUFmLE9BQTFCLENBQUQsQ0FBZDtBQUZKLEtBQUE7QUFHTCxJQUFBLElBQUksRUFBQztBQUhBLEdBQVAsRUFERixVQUNFLENBREYsRUFRRSxPQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxvQkFBQSxDQUFELE1BQUEsRUFBTztBQUNMLElBQUEsUUFBUTtBQUFFO0FBQUEsaUNBQUEsU0FBUztBQUFBO0FBQUEsaUNBRGQsY0FDYyxDQURkO0FBRUwsSUFBQSxPQUFPLEVBRkYsU0FBQTtBQUdMLElBQUEsT0FBTyxFQUFFLFNBQUEsT0FBQSxHQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBTSxRQUFRLENBQUMsU0FBQSxDQUFBLFdBQUEsQ0FBQSxhQUFBLENBQTBCO0FBQUUsUUFBQSxJQUFJLEVBQUUsSUFBSSxHQUFHO0FBQWYsT0FBMUIsQ0FBRCxDQUFkO0FBSEosS0FBQTtBQUlMLElBQUEsSUFBSSxFQUFDO0FBSkEsR0FBUCxFQVRKLE1BU0ksQ0FSRixDQURGO0FBTkYsQ0FBQTs7OztBQTJCQSxPQUFBLENBQUEsT0FBQSxHQUFBLFVBQUE7QUFFQSxJQUFNLE1BQU07QUFBQTtBQUFBLDJCQUFHLGNBQUEsQ0FBQSxVQUFBLENBQUEsTUFBQSxDQUFrQjtBQUMvQixFQUFBLFNBQVMsRUFEc0IsRUFBQTtBQUkvQixFQUFBLEdBQUcsRUFBRTtBQUNILElBQUEsYUFBYSxFQURWLEtBQUE7QUFFSCxJQUFBLGNBQWMsRUFBRTtBQUZiO0FBSjBCLENBQWxCLENBQUgsQ0FBWiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyBWaWV3LCBTdHlsZVNoZWV0IH0gZnJvbSAncmVhY3QtbmF0aXZlJztcbmltcG9ydCB7IHVzZVRoZW1lIH0gZnJvbSAncmVhY3QtbmF0aXZlLXBhcGVyJztcbmltcG9ydCB7IHVzZURpc3BhdGNoLCB1c2VTZWxlY3RvciB9IGZyb20gJ3JlYWN0LXJlZHV4JztcbmltcG9ydCB7IElBcHBsaWNhdGlvblN0YXRlIH0gZnJvbSAnLi4vcmVkdXgvYXBwUmVkdWNlcic7XG5pbXBvcnQgeyByZXBvQWN0aW9ucyB9IGZyb20gJy4uL3JlZHV4L3JlcG8vYWN0aW9ucyc7XG5pbXBvcnQgeyBCdXR0b24gfSBmcm9tICdyZWFjdC1uYXRpdmUtcGFwZXInO1xuXG5jb25zdCBQYWdpbmF0aW9uID0gKCkgPT4ge1xuICBjb25zdCBkaXNwYXRjaCA9IHVzZURpc3BhdGNoKCk7XG4gIGNvbnN0IHRoZW1lID0gdXNlVGhlbWUoKTtcbiAgY29uc3QgeyBwYWdlLCBoYXNNb3JlSXNzdWVzLCBpc0xvYWRpbmcgfSA9IHVzZVNlbGVjdG9yKChzdGF0ZTogSUFwcGxpY2F0aW9uU3RhdGUpID0+IHN0YXRlLnJlcG8pO1xuICBjb25zdCBpc1ByZXZpb3VzRGlzYWJsZWQgPSBwYWdlID09PSAxO1xuICBjb25zdCBpc05leHREaXNhYmxlZCA9IGhhc01vcmVJc3N1ZXMgPT09IGZhbHNlO1xuICByZXR1cm4gKFxuICAgIDxWaWV3IHN0eWxlPXtbc3R5bGVzLnJvdywgeyBtYXJnaW46IHRoZW1lLnNwYWNpbmcubCB9XX0+XG4gICAgICA8QnV0dG9uXG4gICAgICAgIGRpc2FibGVkPXtpc0xvYWRpbmcgfHwgaXNQcmV2aW91c0Rpc2FibGVkfVxuICAgICAgICBvblByZXNzPXsoKSA9PiBkaXNwYXRjaChyZXBvQWN0aW9ucy5nZXRSZXBvSXNzdWVzKHsgcGFnZTogcGFnZSAtIDEgfSkpfVxuICAgICAgICBtb2RlPVwiY29udGFpbmVkXCJcbiAgICAgID5cbiAgICAgICAgUHJldmlvdXNcbiAgICAgIDwvQnV0dG9uPlxuICAgICAgPEJ1dHRvblxuICAgICAgICBkaXNhYmxlZD17aXNMb2FkaW5nIHx8IGlzTmV4dERpc2FibGVkfVxuICAgICAgICBsb2FkaW5nPXtpc0xvYWRpbmd9XG4gICAgICAgIG9uUHJlc3M9eygpID0+IGRpc3BhdGNoKHJlcG9BY3Rpb25zLmdldFJlcG9Jc3N1ZXMoeyBwYWdlOiBwYWdlICsgMSB9KSl9XG4gICAgICAgIG1vZGU9XCJjb250YWluZWRcIlxuICAgICAgPlxuICAgICAgICBOZXh0XG4gICAgICA8L0J1dHRvbj5cbiAgICA8L1ZpZXc+XG4gICk7XG59O1xuXG5leHBvcnQgZGVmYXVsdCBQYWdpbmF0aW9uO1xuXG5jb25zdCBzdHlsZXMgPSBTdHlsZVNoZWV0LmNyZWF0ZSh7XG4gIGNvbnRhaW5lcjoge1xuICAgIC8vIGFsaWduSXRlbXM6ICdjZW50ZXInLFxuICB9LFxuICByb3c6IHtcbiAgICBmbGV4RGlyZWN0aW9uOiAncm93JyxcbiAgICBqdXN0aWZ5Q29udGVudDogJ3NwYWNlLWJldHdlZW4nLFxuICB9LFxufSk7XG4iXX0=

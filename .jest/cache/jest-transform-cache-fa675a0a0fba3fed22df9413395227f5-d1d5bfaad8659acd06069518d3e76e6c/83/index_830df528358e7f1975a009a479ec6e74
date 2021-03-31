@@ -1,0 +1,335 @@
+c4873617b4d8eff39eeca466f78c4563
+'use strict';
+
+
+
+
+var MAX = Symbol('max');
+var LENGTH = Symbol('length');
+var LENGTH_CALCULATOR = Symbol('lengthCalculator');
+var ALLOW_STALE = Symbol('allowStale');
+var MAX_AGE = Symbol('maxAge');
+var DISPOSE = Symbol('dispose');
+var NO_DISPOSE_ON_SET = Symbol('noDisposeOnSet');
+var LRU_LIST = Symbol('lruList');
+var CACHE = Symbol('cache');
+var UPDATE_AGE_ON_GET = Symbol('updateAgeOnGet');
+
+var naiveLength = function naiveLength() {return 1;};var
+
+
+
+
+
+
+
+
+
+LRUCache = function () {
+  function LRUCache(options) {require("@babel/runtime/helpers/classCallCheck")(this, LRUCache);
+    if (typeof options === 'number')
+    options = { max: options };
+
+    if (!options)
+    options = {};
+
+    if (options.max && (typeof options.max !== 'number' || options.max < 0))
+    throw new TypeError('max must be a non-negative number');
+
+    var max = this[MAX] = options.max || Infinity;
+
+    var lc = options.length || naiveLength;
+    this[LENGTH_CALCULATOR] = typeof lc !== 'function' ? naiveLength : lc;
+    this[ALLOW_STALE] = options.stale || false;
+    if (options.maxAge && typeof options.maxAge !== 'number')
+    throw new TypeError('maxAge must be a number');
+    this[MAX_AGE] = options.maxAge || 0;
+    this[DISPOSE] = options.dispose;
+    this[NO_DISPOSE_ON_SET] = options.noDisposeOnSet || false;
+    this[UPDATE_AGE_ON_GET] = options.updateAgeOnGet || false;
+    this.reset();
+  }require("@babel/runtime/helpers/createClass")(LRUCache, [{ key: "max", get:
+
+
+
+
+
+
+
+
+
+    function get() {
+      return this[MAX];
+    }, set: function set(mL) {if (typeof mL !== 'number' || mL < 0) throw new TypeError('max must be a non-negative number');this[MAX] = mL || Infinity;trim(this);} }, { key: "allowStale", get:
+
+
+
+
+    function get() {
+      return this[ALLOW_STALE];
+    }, set: function set(allowStale) {this[ALLOW_STALE] = !!allowStale;} }, { key: "maxAge", get:
+
+
+
+
+
+
+
+
+    function get() {
+      return this[MAX_AGE];
+    }, set: function set(mA) {if (typeof mA !== 'number') throw new TypeError('maxAge must be a non-negative number');this[MAX_AGE] = mA;trim(this);} }, { key: "lengthCalculator", get:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function get() {return this[LENGTH_CALCULATOR];}, set: function set(lC) {var _this = this;if (typeof lC !== 'function') lC = naiveLength;if (lC !== this[LENGTH_CALCULATOR]) {this[LENGTH_CALCULATOR] = lC;this[LENGTH] = 0;this[LRU_LIST].forEach(function (hit) {hit.length = _this[LENGTH_CALCULATOR](hit.value, hit.key);_this[LENGTH] += hit.length;});}trim(this);} }, { key: "length", get:
+
+    function get() {return this[LENGTH];} }, { key: "itemCount", get:
+    function get() {return this[LRU_LIST].length;} }, { key: "rforEach", value:
+
+    function rforEach(fn, thisp) {
+      thisp = thisp || this;
+      for (var walker = this[LRU_LIST].tail; walker !== null;) {
+        var prev = walker.prev;
+        forEachStep(this, fn, walker, thisp);
+        walker = prev;
+      }
+    } }, { key: "forEach", value:
+
+    function forEach(fn, thisp) {
+      thisp = thisp || this;
+      for (var walker = this[LRU_LIST].head; walker !== null;) {
+        var next = walker.next;
+        forEachStep(this, fn, walker, thisp);
+        walker = next;
+      }
+    } }, { key: "keys", value:
+
+    function keys() {
+      return this[LRU_LIST].toArray().map(function (k) {return k.key;});
+    } }, { key: "values", value:
+
+    function values() {
+      return this[LRU_LIST].toArray().map(function (k) {return k.value;});
+    } }, { key: "reset", value:
+
+    function reset() {var _this2 = this;
+      if (this[DISPOSE] &&
+      this[LRU_LIST] &&
+      this[LRU_LIST].length) {
+        this[LRU_LIST].forEach(function (hit) {return _this2[DISPOSE](hit.key, hit.value);});
+      }
+
+      this[CACHE] = new Map();
+      this[LRU_LIST] = new (require('yallist'))();
+      this[LENGTH] = 0;
+    } }, { key: "dump", value:
+
+    function dump() {var _this3 = this;
+      return this[LRU_LIST].map(function (hit) {return (
+          isStale(_this3, hit) ? false : {
+            k: hit.key,
+            v: hit.value,
+            e: hit.now + (hit.maxAge || 0) });}).
+      toArray().filter(function (h) {return h;});
+    } }, { key: "dumpLru", value:
+
+    function dumpLru() {
+      return this[LRU_LIST];
+    } }, { key: "set", value:
+
+    function set(key, value, maxAge) {
+      maxAge = maxAge || this[MAX_AGE];
+
+      if (maxAge && typeof maxAge !== 'number')
+      throw new TypeError('maxAge must be a number');
+
+      var now = maxAge ? Date.now() : 0;
+      var len = this[LENGTH_CALCULATOR](value, key);
+
+      if (this[CACHE].has(key)) {
+        if (len > this[MAX]) {
+          _del(this, this[CACHE].get(key));
+          return false;
+        }
+
+        var node = this[CACHE].get(key);
+        var item = node.value;
+
+
+
+        if (this[DISPOSE]) {
+          if (!this[NO_DISPOSE_ON_SET])
+          this[DISPOSE](key, item.value);
+        }
+
+        item.now = now;
+        item.maxAge = maxAge;
+        item.value = value;
+        this[LENGTH] += len - item.length;
+        item.length = len;
+        this.get(key);
+        trim(this);
+        return true;
+      }
+
+      var hit = new Entry(key, value, len, now, maxAge);
+
+
+      if (hit.length > this[MAX]) {
+        if (this[DISPOSE])
+        this[DISPOSE](key, value);
+
+        return false;
+      }
+
+      this[LENGTH] += hit.length;
+      this[LRU_LIST].unshift(hit);
+      this[CACHE].set(key, this[LRU_LIST].head);
+      trim(this);
+      return true;
+    } }, { key: "has", value:
+
+    function has(key) {
+      if (!this[CACHE].has(key)) return false;
+      var hit = this[CACHE].get(key).value;
+      return !isStale(this, hit);
+    } }, { key: "get", value:
+
+    function get(key) {
+      return _get(this, key, true);
+    } }, { key: "peek", value:
+
+    function peek(key) {
+      return _get(this, key, false);
+    } }, { key: "pop", value:
+
+    function pop() {
+      var node = this[LRU_LIST].tail;
+      if (!node)
+      return null;
+
+      _del(this, node);
+      return node.value;
+    } }, { key: "del", value:
+
+    function del(key) {
+      _del(this, this[CACHE].get(key));
+    } }, { key: "load", value:
+
+    function load(arr) {
+
+      this.reset();
+
+      var now = Date.now();
+
+      for (var l = arr.length - 1; l >= 0; l--) {
+        var hit = arr[l];
+        var expiresAt = hit.e || 0;
+        if (expiresAt === 0)
+
+          this.set(hit.k, hit.v);else
+        {
+          var maxAge = expiresAt - now;
+
+          if (maxAge > 0) {
+            this.set(hit.k, hit.v, maxAge);
+          }
+        }
+      }
+    } }, { key: "prune", value:
+
+    function prune() {var _this4 = this;
+      this[CACHE].forEach(function (value, key) {return _get(_this4, key, false);});
+    } }]);return LRUCache;}();
+
+
+var _get = function _get(self, key, doUse) {
+  var node = self[CACHE].get(key);
+  if (node) {
+    var hit = node.value;
+    if (isStale(self, hit)) {
+      _del(self, node);
+      if (!self[ALLOW_STALE])
+      return undefined;
+    } else {
+      if (doUse) {
+        if (self[UPDATE_AGE_ON_GET])
+        node.value.now = Date.now();
+        self[LRU_LIST].unshiftNode(node);
+      }
+    }
+    return hit.value;
+  }
+};
+
+var isStale = function isStale(self, hit) {
+  if (!hit || !hit.maxAge && !self[MAX_AGE])
+  return false;
+
+  var diff = Date.now() - hit.now;
+  return hit.maxAge ? diff > hit.maxAge :
+  self[MAX_AGE] && diff > self[MAX_AGE];
+};
+
+var trim = function trim(self) {
+  if (self[LENGTH] > self[MAX]) {
+    for (var walker = self[LRU_LIST].tail;
+    self[LENGTH] > self[MAX] && walker !== null;) {
+
+
+
+      var prev = walker.prev;
+      _del(self, walker);
+      walker = prev;
+    }
+  }
+};
+
+var _del = function _del(self, node) {
+  if (node) {
+    var hit = node.value;
+    if (self[DISPOSE])
+    self[DISPOSE](hit.key, hit.value);
+
+    self[LENGTH] -= hit.length;
+    self[CACHE].delete(hit.key);
+    self[LRU_LIST].removeNode(node);
+  }
+};var
+
+Entry =
+function Entry(key, value, length, now, maxAge) {require("@babel/runtime/helpers/classCallCheck")(this, Entry);
+  this.key = key;
+  this.value = value;
+  this.length = length;
+  this.now = now;
+  this.maxAge = maxAge || 0;
+};
+
+
+var forEachStep = function forEachStep(self, fn, node, thisp) {
+  var hit = node.value;
+  if (isStale(self, hit)) {
+    _del(self, node);
+    if (!self[ALLOW_STALE])
+    hit = undefined;
+  }
+  if (hit)
+  fn.call(thisp, hit.value, hit.key, self);
+};
+
+module.exports = LRUCache;

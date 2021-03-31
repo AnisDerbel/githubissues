@@ -1,0 +1,43 @@
+53d423ea9906206c9781f52bd2f9b331
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = waitForElementToBeRemoved;
+
+var _waitFor = _interopRequireDefault(require("./waitFor"));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function isRemoved(result) {
+  return !result || Array.isArray(result) && !result.length;
+}
+
+function waitForElementToBeRemoved(expectation, options) {var timeoutError, initialElements;return require("@babel/runtime/regenerator").async(function waitForElementToBeRemoved$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+
+          timeoutError = new (require("./helpers/errors").ErrorWithStack)('Timed out in waitForElementToBeRemoved.', waitForElementToBeRemoved);
+
+          initialElements = expectation();if (!
+
+          isRemoved(initialElements)) {_context.next = 4;break;}throw (
+            new (require("./helpers/errors").ErrorWithStack)('The element(s) given to waitForElementToBeRemoved are already removed. waitForElementToBeRemoved requires that the element(s) exist(s) before waiting for removal.', waitForElementToBeRemoved));case 4:return _context.abrupt("return",
+
+
+          (0, _waitFor.default)(function () {
+            var result;
+
+            try {
+              result = expectation();
+            } catch (error) {
+              return initialElements;
+            }
+
+            if (!isRemoved(result)) {
+              throw timeoutError;
+            }
+
+            return initialElements;
+          }, options));case 5:case "end":return _context.stop();}}}, null, null, null, Promise);}

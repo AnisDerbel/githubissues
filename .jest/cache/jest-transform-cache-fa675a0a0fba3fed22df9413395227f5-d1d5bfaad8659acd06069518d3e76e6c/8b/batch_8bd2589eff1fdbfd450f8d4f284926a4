@@ -1,0 +1,25 @@
+3a264a47b2aac36751a8ee73ca8495ad
+"use strict";
+
+exports.__esModule = true;
+exports.getBatch = exports.setBatch = void 0;
+
+
+function defaultNoopBatch(callback) {
+  callback();
+}
+
+var batch = defaultNoopBatch;
+
+var setBatch = function setBatch(newBatch) {
+  return batch = newBatch;
+};
+
+
+exports.setBatch = setBatch;
+
+var getBatch = function getBatch() {
+  return batch;
+};
+
+exports.getBatch = getBatch;

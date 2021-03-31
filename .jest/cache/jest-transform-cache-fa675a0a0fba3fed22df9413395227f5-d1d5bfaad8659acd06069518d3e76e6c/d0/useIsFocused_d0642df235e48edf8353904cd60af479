@@ -1,0 +1,47 @@
+392fabb491e178c37bca2f8809f6de95
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = useIsFocused;
+
+var React = _interopRequireWildcard(require("react"));
+
+var _useNavigation = _interopRequireDefault(require("./useNavigation"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+
+
+
+
+function useIsFocused() {
+  var navigation = (0, _useNavigation.default)();var _ref =
+  (0, React.useState)(navigation.isFocused),_ref2 = require("@babel/runtime/helpers/slicedToArray")(_ref, 2),isFocused = _ref2[0],setIsFocused = _ref2[1];
+  var valueToReturn = navigation.isFocused();
+
+  if (isFocused !== valueToReturn) {
+
+
+
+
+
+    setIsFocused(valueToReturn);
+  }
+
+  React.useEffect(function () {
+    var unsubscribeFocus = navigation.addListener('focus', function () {return setIsFocused(true);});
+    var unsubscribeBlur = navigation.addListener('blur', function () {return setIsFocused(false);});
+    return function () {
+      unsubscribeFocus();
+      unsubscribeBlur();
+    };
+  }, [navigation]);
+  React.useDebugValue(valueToReturn);
+  return valueToReturn;
+}

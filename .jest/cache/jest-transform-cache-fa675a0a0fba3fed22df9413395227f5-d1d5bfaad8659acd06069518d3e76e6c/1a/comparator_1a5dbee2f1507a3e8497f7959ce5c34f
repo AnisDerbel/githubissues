@@ -1,0 +1,129 @@
+53d9ccd2d8afacd6e5e42cad710b46fd
+var ANY = Symbol('SemVer ANY');var
+
+Comparator = function () {"use strict";
+
+
+
+  function Comparator(comp, options) {require("@babel/runtime/helpers/classCallCheck")(this, Comparator);
+    options = require('../internal/parse-options')(options);
+
+    if (comp instanceof Comparator) {
+      if (comp.loose === !!options.loose) {
+        return comp;
+      } else {
+        comp = comp.value;
+      }
+    }
+
+    require('../internal/debug')('comparator', comp, options);
+    this.options = options;
+    this.loose = !!options.loose;
+    this.parse(comp);
+
+    if (this.semver === ANY) {
+      this.value = '';
+    } else {
+      this.value = this.operator + this.semver.version;
+    }
+
+    require('../internal/debug')('comp', this);
+  }require("@babel/runtime/helpers/createClass")(Comparator, [{ key: "parse", value:
+
+    function parse(comp) {
+      var r = this.options.loose ? require('../internal/re').re[require('../internal/re').t.COMPARATORLOOSE] : require('../internal/re').re[require('../internal/re').t.COMPARATOR];
+      var m = comp.match(r);
+
+      if (!m) {
+        throw new TypeError("Invalid comparator: " + comp);
+      }
+
+      this.operator = m[1] !== undefined ? m[1] : '';
+      if (this.operator === '=') {
+        this.operator = '';
+      }
+
+
+      if (!m[2]) {
+        this.semver = ANY;
+      } else {
+        this.semver = new (require('./semver'))(m[2], this.options.loose);
+      }
+    } }, { key: "toString", value:
+
+    function toString() {
+      return this.value;
+    } }, { key: "test", value:
+
+    function test(version) {
+      require('../internal/debug')('Comparator.test', version, this.options.loose);
+
+      if (this.semver === ANY || version === ANY) {
+        return true;
+      }
+
+      if (typeof version === 'string') {
+        try {
+          version = new (require('./semver'))(version, this.options);
+        } catch (er) {
+          return false;
+        }
+      }
+
+      return require('../functions/cmp')(version, this.operator, this.semver, this.options);
+    } }, { key: "intersects", value:
+
+    function intersects(comp, options) {
+      if (!(comp instanceof Comparator)) {
+        throw new TypeError('a Comparator is required');
+      }
+
+      if (!options || typeof options !== 'object') {
+        options = {
+          loose: !!options,
+          includePrerelease: false };
+
+      }
+
+      if (this.operator === '') {
+        if (this.value === '') {
+          return true;
+        }
+        return new (require('./range'))(comp.value, options).test(this.value);
+      } else if (comp.operator === '') {
+        if (comp.value === '') {
+          return true;
+        }
+        return new (require('./range'))(this.value, options).test(comp.semver);
+      }
+
+      var sameDirectionIncreasing =
+      (this.operator === '>=' || this.operator === '>') && (
+      comp.operator === '>=' || comp.operator === '>');
+      var sameDirectionDecreasing =
+      (this.operator === '<=' || this.operator === '<') && (
+      comp.operator === '<=' || comp.operator === '<');
+      var sameSemVer = this.semver.version === comp.semver.version;
+      var differentDirectionsInclusive =
+      (this.operator === '>=' || this.operator === '<=') && (
+      comp.operator === '>=' || comp.operator === '<=');
+      var oppositeDirectionsLessThan =
+      require('../functions/cmp')(this.semver, '<', comp.semver, options) && (
+      this.operator === '>=' || this.operator === '>') && (
+      comp.operator === '<=' || comp.operator === '<');
+      var oppositeDirectionsGreaterThan =
+      require('../functions/cmp')(this.semver, '>', comp.semver, options) && (
+      this.operator === '<=' || this.operator === '<') && (
+      comp.operator === '>=' || comp.operator === '>');
+
+      return (
+        sameDirectionIncreasing ||
+        sameDirectionDecreasing ||
+        sameSemVer && differentDirectionsInclusive ||
+        oppositeDirectionsLessThan ||
+        oppositeDirectionsGreaterThan);
+
+    } }], [{ key: "ANY", get: function get() {return ANY;} }]);return Comparator;}();
+
+
+module.exports = Comparator;

@@ -1,0 +1,716 @@
+e93ea6cc1d732b96b3d5604a7d136c8f
+/* istanbul ignore next */
+function cov_4ozf2bibw() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/components/InputForm.tsx";
+  var hash = "d60f3aeff5b3a5f0a31de42fbea97cc905659084";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/components/InputForm.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 29
+        },
+        end: {
+          line: 1,
+          column: 84
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 30
+        },
+        end: {
+          line: 3,
+          column: 86
+        }
+      },
+      "2": {
+        start: {
+          line: 5,
+          column: 0
+        },
+        end: {
+          line: 7,
+          column: 3
+        }
+      },
+      "3": {
+        start: {
+          line: 8,
+          column: 0
+        },
+        end: {
+          line: 8,
+          column: 25
+        }
+      },
+      "4": {
+        start: {
+          line: 10,
+          column: 13
+        },
+        end: {
+          line: 10,
+          column: 54
+        }
+      },
+      "5": {
+        start: {
+          line: 12,
+          column: 19
+        },
+        end: {
+          line: 12,
+          column: 42
+        }
+      },
+      "6": {
+        start: {
+          line: 14,
+          column: 18
+        },
+        end: {
+          line: 14,
+          column: 40
+        }
+      },
+      "7": {
+        start: {
+          line: 16,
+          column: 17
+        },
+        end: {
+          line: 16,
+          column: 38
+        }
+      },
+      "8": {
+        start: {
+          line: 18,
+          column: 24
+        },
+        end: {
+          line: 18,
+          column: 53
+        }
+      },
+      "9": {
+        start: {
+          line: 20,
+          column: 13
+        },
+        end: {
+          line: 20,
+          column: 55
+        }
+      },
+      "10": {
+        start: {
+          line: 22,
+          column: 16
+        },
+        end: {
+          line: 22,
+          column: 38
+        }
+      },
+      "11": {
+        start: {
+          line: 24,
+          column: 15
+        },
+        end: {
+          line: 24,
+          column: 47
+        }
+      },
+      "12": {
+        start: {
+          line: 26,
+          column: 16
+        },
+        end: {
+          line: 68,
+          column: 1
+        }
+      },
+      "13": {
+        start: {
+          line: 27,
+          column: 17
+        },
+        end: {
+          line: 27,
+          column: 47
+        }
+      },
+      "14": {
+        start: {
+          line: 29,
+          column: 21
+        },
+        end: {
+          line: 31,
+          column: 4
+        }
+      },
+      "15": {
+        start: {
+          line: 30,
+          column: 4
+        },
+        end: {
+          line: 30,
+          column: 22
+        }
+      },
+      "16": {
+        start: {
+          line: 32,
+          column: 18
+        },
+        end: {
+          line: 32,
+          column: 40
+        }
+      },
+      "17": {
+        start: {
+          line: 33,
+          column: 14
+        },
+        end: {
+          line: 33,
+          column: 32
+        }
+      },
+      "18": {
+        start: {
+          line: 35,
+          column: 14
+        },
+        end: {
+          line: 35,
+          column: 47
+        }
+      },
+      "19": {
+        start: {
+          line: 36,
+          column: 21
+        },
+        end: {
+          line: 36,
+          column: 39
+        }
+      },
+      "20": {
+        start: {
+          line: 37,
+          column: 18
+        },
+        end: {
+          line: 37,
+          column: 33
+        }
+      },
+      "21": {
+        start: {
+          line: 39,
+          column: 17
+        },
+        end: {
+          line: 44,
+          column: 3
+        }
+      },
+      "22": {
+        start: {
+          line: 40,
+          column: 4
+        },
+        end: {
+          line: 43,
+          column: 8
+        }
+      },
+      "23": {
+        start: {
+          line: 46,
+          column: 2
+        },
+        end: {
+          line: 48,
+          column: 25
+        }
+      },
+      "24": {
+        start: {
+          line: 47,
+          column: 4
+        },
+        end: {
+          line: 47,
+          column: 51
+        }
+      },
+      "25": {
+        start: {
+          line: 47,
+          column: 39
+        },
+        end: {
+          line: 47,
+          column: 51
+        }
+      },
+      "26": {
+        start: {
+          line: 49,
+          column: 2
+        },
+        end: {
+          line: 67,
+          column: 20
+        }
+      },
+      "27": {
+        start: {
+          line: 70,
+          column: 15
+        },
+        end: {
+          line: 73,
+          column: 13
+        }
+      },
+      "28": {
+        start: {
+          line: 75,
+          column: 0
+        },
+        end: {
+          line: 75,
+          column: 27
+        }
+      },
+      "29": {
+        start: {
+          line: 77,
+          column: 13
+        },
+        end: {
+          line: 88,
+          column: 2
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "InputForm",
+        decl: {
+          start: {
+            line: 26,
+            column: 25
+          },
+          end: {
+            line: 26,
+            column: 34
+          }
+        },
+        loc: {
+          start: {
+            line: 26,
+            column: 42
+          },
+          end: {
+            line: 68,
+            column: 1
+          }
+        },
+        line: 26
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 29,
+            column: 50
+          },
+          end: {
+            line: 29,
+            column: 51
+          }
+        },
+        loc: {
+          start: {
+            line: 29,
+            column: 67
+          },
+          end: {
+            line: 31,
+            column: 3
+          }
+        },
+        line: 29
+      },
+      "2": {
+        name: "onSubmit",
+        decl: {
+          start: {
+            line: 39,
+            column: 26
+          },
+          end: {
+            line: 39,
+            column: 34
+          }
+        },
+        loc: {
+          start: {
+            line: 39,
+            column: 37
+          },
+          end: {
+            line: 44,
+            column: 3
+          }
+        },
+        line: 39
+      },
+      "3": {
+        name: "(anonymous_3)",
+        decl: {
+          start: {
+            line: 46,
+            column: 24
+          },
+          end: {
+            line: 46,
+            column: 25
+          }
+        },
+        loc: {
+          start: {
+            line: 46,
+            column: 36
+          },
+          end: {
+            line: 48,
+            column: 3
+          }
+        },
+        line: 46
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 47,
+            column: 4
+          },
+          end: {
+            line: 47,
+            column: 51
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 47,
+            column: 4
+          },
+          end: {
+            line: 47,
+            column: 51
+          }
+        }, {
+          start: {
+            line: 47,
+            column: 4
+          },
+          end: {
+            line: 47,
+            column: 51
+          }
+        }],
+        line: 47
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 47,
+            column: 8
+          },
+          end: {
+            line: 47,
+            column: 37
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 47,
+            column: 8
+          },
+          end: {
+            line: 47,
+            column: 18
+          }
+        }, {
+          start: {
+            line: 47,
+            column: 22
+          },
+          end: {
+            line: 47,
+            column: 37
+          }
+        }],
+        line: 47
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0,
+      "25": 0,
+      "26": 0,
+      "27": 0,
+      "28": 0,
+      "29": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0]
+    },
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/components/InputForm.tsx"],
+      names: [],
+      mappings: ";;;;;;;;;AAAA;;AACA;;AACA;;AACA;;AACA;;AACA;;AACA;;AAEA;;AAUA,IAAM,SAAS,GAAG,SAAZ,SAAY,CAAC,KAAD,EAAkD;AAClE,MAAM,QAAQ,GAAG,8BAAjB;;AADkE,qBAEvC,6BACzB,UAAC,KAAD;AAAA,WAA8B,KAAK,CAAC,IAApC;AAAA,GADyB,CAFuC;AAAA,MAE3D,SAF2D,gBAE3D,SAF2D;AAAA,MAEhD,KAFgD,gBAEhD,KAFgD;;AAKlE,MAAM,KAAK,GAAG,iCAAd;AALkE,MAM3D,YAN2D,GAMhC,KANgC,CAM3D,YAN2D;AAAA,MAM7C,SAN6C,GAMhC,KANgC,CAM7C,SAN6C;;AAOlE,MAAM,QAAQ,GAAG,SAAX,QAAW,GAAK;AACpB,IAAA,QAAQ,CAAC,qBAAY,aAAZ,CAA0B;AAAC,MAAA,IAAI,EAAE,CAAP;AAAU,MAAA,KAAK,EAAE;AAAjB,KAA1B,CAAD,CAAR;AACD,GAFD;;AAIA,wBAAU,YAAK;AACb,QAAI,CAAC,SAAD,IAAc,KAAK,KAAK,KAA5B,EAAmC,SAAS;AAC7C,GAFD,EAEG,CAAC,SAAD,EAAY,KAAZ,CAFH;AAIA,SACE,6BAAC,iBAAD,QACE,6BAAC,gBAAD;AACE,IAAA,UAAU,EAAE,KAAK,CAAC,MAAN,CAAa,KAD3B;AAEE,IAAA,SAAS,EAAE,EAFb;AAGE,IAAA,KAAK,EAAC,eAHR;AAIE,IAAA,IAAI,EAAC,cAJP;AAKE,IAAA,SAAS,EAAE;AALb,IADF,EAQE,6BAAC,gBAAD;AACE,IAAA,UAAU,EAAE,KAAK,CAAC,MAAN,CAAa,KAD3B;AAEE,IAAA,SAAS,EAAE,GAFb;AAGE,IAAA,KAAK,EAAC,aAHR;AAIE,IAAA,IAAI,EAAC,YAJP;AAKE,IAAA,SAAS,EAAE;AALb,IARF,EAeE,6BAAC,wBAAD;AACE,IAAA,QAAQ,EAAE,SADZ;AAEE,IAAA,OAAO,EAAE,SAFX;AAGE,IAAA,OAAO,EAAE,YAAY,CAAC,QAAD,CAHvB;AAIE,IAAA,KAAK,EAAE,MAAM,CAAC,MAJhB;AAKE,IAAA,IAAI,EAAC;AALP,kBAfF,CADF;AA0BD,CAzCD;;eA2Ce,0BAA8B;AAC3C,EAAA,IAAI,EAAE,MADqC;AAG3C,EAAA,QAAQ,EAAR;AAH2C,CAA9B,EAIZ,SAJY,C;;;;AAMf,IAAM,MAAM,GAAG,wBAAW,MAAX,CAAkB;AAC/B,EAAA,SAAS,EAAE;AACT,IAAA,MAAM,EAAE;AADC,GADoB;AAI/B,EAAA,MAAM,EAAE;AACN,IAAA,SAAS,EAAE;AADL,GAJuB;AAO/B,EAAA,KAAK,EAAE;AACL,IAAA,QAAQ,EAAE,EADL;AAEL,IAAA,cAAc,EAAE;AAFX;AAPwB,CAAlB,CAAf",
+      sourcesContent: ["import React, {useEffect} from 'react';\nimport {StyleSheet, View} from 'react-native';\nimport {useDispatch, useSelector} from 'react-redux';\nimport {reduxForm, Field, InjectedFormProps} from 'redux-form';\nimport {Button, useTheme} from 'react-native-paper';\nimport Input from './Input';\nimport {validate} from '../validate';\nimport {IApplicationState} from '../redux/appReducer';\nimport {repoActions} from '../redux/repo/actions';\n\ninterface IFormState {\n  repository: string;\n  organization: string;\n}\n\ninterface IProps {\n  onSuccess: () => void;\n}\nconst InputForm = (props: InjectedFormProps<IFormState> & IProps) => {\n  const dispatch = useDispatch();\n  const {isLoading, error} = useSelector(\n    (state: IApplicationState) => state.repo,\n  );\n  const theme = useTheme();\n  const {handleSubmit, onSuccess} = props;\n  const onSubmit = () => {\n    dispatch(repoActions.getRepoIssues({page: 1, reset: true}));\n  };\n\n  useEffect(() => {\n    if (!isLoading && error === false) onSuccess();\n  }, [isLoading, error]);\n\n  return (\n    <View>\n      <Field\n        errorColor={theme.colors.error}\n        maxLength={60}\n        label=\"organization*\"\n        name=\"organization\"\n        component={Input}\n      />\n      <Field\n        errorColor={theme.colors.error}\n        maxLength={100}\n        label=\"repository*\"\n        name=\"repository\"\n        component={Input}\n      />\n      <Button\n        disabled={isLoading}\n        loading={isLoading}\n        onPress={handleSubmit(onSubmit)}\n        style={styles.button}\n        mode=\"contained\">\n        get issues\n      </Button>\n    </View>\n  );\n};\n\nexport default reduxForm<IFormState, IProps>({\n  form: 'form',\n  // fields: ['organization', 'repository'],\n  validate,\n})(InputForm);\n\nconst styles = StyleSheet.create({\n  container: {\n    margin: 10,\n  },\n  button: {\n    marginTop: 20,\n  },\n  title: {\n    fontSize: 20,\n    marginVertical: 20,\n  },\n});\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "d60f3aeff5b3a5f0a31de42fbea97cc905659084"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_4ozf2bibw = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_4ozf2bibw();
+
+var _interopRequireDefault =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[0]++, require("@babel/runtime/helpers/interopRequireDefault"));
+
+var _interopRequireWildcard =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[1]++, require("@babel/runtime/helpers/interopRequireWildcard"));
+
+/* istanbul ignore next */
+cov_4ozf2bibw().s[2]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_4ozf2bibw().s[3]++;
+exports.default = void 0;
+
+var _react =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[4]++, _interopRequireWildcard(require("react")));
+
+var _reactNative =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[5]++, require("react-native"));
+
+var _reactRedux =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[6]++, require("react-redux"));
+
+var _reduxForm =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[7]++, require("redux-form"));
+
+var _reactNativePaper =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[8]++, require("react-native-paper"));
+
+var _Input =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[9]++, _interopRequireDefault(require("./Input")));
+
+var _validate =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[10]++, require("../validate"));
+
+var _actions =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[11]++, require("../redux/repo/actions"));
+
+/* istanbul ignore next */
+cov_4ozf2bibw().s[12]++;
+
+var InputForm = function InputForm(props) {
+  /* istanbul ignore next */
+  cov_4ozf2bibw().f[0]++;
+  var dispatch =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[13]++, (0, _reactRedux.useDispatch)());
+
+  var _useSelector =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[14]++, (0, _reactRedux.useSelector)(function (state) {
+    /* istanbul ignore next */
+    cov_4ozf2bibw().f[1]++;
+    cov_4ozf2bibw().s[15]++;
+    return state.repo;
+  })),
+      isLoading =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[16]++, _useSelector.isLoading),
+      error =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[17]++, _useSelector.error);
+
+  var theme =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[18]++, (0, _reactNativePaper.useTheme)());
+  var handleSubmit =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[19]++, props.handleSubmit),
+      onSuccess =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[20]++, props.onSuccess);
+
+  /* istanbul ignore next */
+  cov_4ozf2bibw().s[21]++;
+
+  var onSubmit = function onSubmit() {
+    /* istanbul ignore next */
+    cov_4ozf2bibw().f[2]++;
+    cov_4ozf2bibw().s[22]++;
+    dispatch(_actions.repoActions.getRepoIssues({
+      page: 1,
+      reset: true
+    }));
+  };
+
+  /* istanbul ignore next */
+  cov_4ozf2bibw().s[23]++;
+  (0, _react.useEffect)(function () {
+    /* istanbul ignore next */
+    cov_4ozf2bibw().f[3]++;
+    cov_4ozf2bibw().s[24]++;
+
+    if (
+    /* istanbul ignore next */
+    (cov_4ozf2bibw().b[1][0]++, !isLoading) &&
+    /* istanbul ignore next */
+    (cov_4ozf2bibw().b[1][1]++, error === false)) {
+      /* istanbul ignore next */
+      cov_4ozf2bibw().b[0][0]++;
+      cov_4ozf2bibw().s[25]++;
+      onSuccess();
+    } else
+    /* istanbul ignore next */
+    {
+      cov_4ozf2bibw().b[0][1]++;
+    }
+  }, [isLoading, error]);
+
+  /* istanbul ignore next */
+  cov_4ozf2bibw().s[26]++;
+  return _react.default.createElement(_reactNative.View, null, _react.default.createElement(_reduxForm.Field, {
+    errorColor: theme.colors.error,
+    maxLength: 60,
+    label: "organization*",
+    name: "organization",
+    component: _Input.default
+  }), _react.default.createElement(_reduxForm.Field, {
+    errorColor: theme.colors.error,
+    maxLength: 100,
+    label: "repository*",
+    name: "repository",
+    component: _Input.default
+  }), _react.default.createElement(_reactNativePaper.Button, {
+    disabled: isLoading,
+    loading: isLoading,
+    onPress: handleSubmit(onSubmit),
+    style: styles.button,
+    mode: "contained"
+  }, "get issues"));
+};
+
+var _default =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[27]++, (0, _reduxForm.reduxForm)({
+  form: 'form',
+  validate: _validate.validate
+})(InputForm));
+
+/* istanbul ignore next */
+cov_4ozf2bibw().s[28]++;
+exports.default = _default;
+var styles =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[29]++, _reactNative.StyleSheet.create({
+  container: {
+    margin: 10
+  },
+  button: {
+    marginTop: 20
+  },
+  title: {
+    fontSize: 20,
+    marginVertical: 20
+  }
+}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL2NvbXBvbmVudHMvSW5wdXRGb3JtLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUdBOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBSEEsSUFBQSxNQUFBO0FBQUE7QUFBQSx5QkFBQSx1QkFBQSxDQUFBLE9BQUEsQ0FBQSxPQUFBLENBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsWUFBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLGNBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsV0FBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsVUFBQTtBQUFBO0FB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Q0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLGlCQUFBLENBQUQsTUFBQSxFQUFBO0FBQ0UsSUFBQSxRQUFRLEVBRFYsU0FBQTtBQUVFLElBQUEsT0FBTyxFQUZULFNBQUE7QUFHRSxJQUFBLE9BQU8sRUFBRSxZQUFZLENBSHZCLFFBR3VCLENBSHZCO0FBSUUsSUFBQSxLQUFLLEVBQUUsTUFBTSxDQUpmLE1BQUE7QUFLRSxJQUFBLElBQUksRUFBQztBQUxQLEdBQUEsRUFoQkosWUFnQkksQ0FmRixDQURGO0FBZkYsQ0FBQTs7OzswQkEyQ2UsQ0FBQSxHQUFBLFVBQUEsQ0FBQSxTQUFBLEVBQThCO0FBQzNDLEVBQUEsSUFBSSxFQUR1QyxNQUFBO0FBRzNDLEVBQUEsUUFBUSxFQUFSLFNBQUEsQ0FBQTtBQUgyQyxDQUE5QixFQUFBLFNBQUEsQzs7Ozs7QUFNZixJQUFNLE1BQU07QUFBQTtBQUFBLDBCQUFHLFlBQUEsQ0FBQSxVQUFBLENBQUEsTUFBQSxDQUFrQjtBQUMvQixFQUFBLFNBQVMsRUFBRTtBQUNULElBQUEsTUFBTSxFQUFFO0FBREMsR0FEb0I7QUFJL0IsRUFBQSxNQUFNLEVBQUU7QUFDTixJQUFBLFNBQVMsRUFBRTtBQURMLEdBSnVCO0FBTy9CLEVBQUEsS0FBSyxFQUFFO0FBQ0wsSUFBQSxRQUFRLEVBREgsRUFBQTtBQUVMLElBQUEsY0FBYyxFQUFFO0FBRlg7QUFQd0IsQ0FBbEIsQ0FBSCxDQUFaIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7dXNlRWZmZWN0fSBmcm9tICdyZWFjdCc7XG5pbXBvcnQge1N0eWxlU2hlZXQsIFZpZXd9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQge3VzZURpc3BhdGNoLCB1c2VTZWxlY3Rvcn0gZnJvbSAncmVhY3QtcmVkdXgnO1xuaW1wb3J0IHtyZWR1eEZvcm0sIEZpZWxkLCBJbmplY3RlZEZvcm1Qcm9wc30gZnJvbSAncmVkdXgtZm9ybSc7XG5pbXBvcnQge0J1dHRvbiwgdXNlVGhlbWV9IGZyb20gJ3JlYWN0LW5hdGl2ZS1wYXBlcic7XG5pbXBvcnQgSW5wdXQgZnJvbSAnLi9JbnB1dCc7XG5pbXBvcnQge3ZhbGlkYXRlfSBmcm9tICcuLi92YWxpZGF0ZSc7XG5pbXBvcnQge0lBcHBsaWNhdGlvblN0YXRlfSBmcm9tICcuLi9yZWR1eC9hcHBSZWR1Y2VyJztcbmltcG9ydCB7cmVwb0FjdGlvbnN9IGZyb20gJy4uL3JlZHV4L3JlcG8vYWN0aW9ucyc7XG5cbmludGVyZmFjZSBJRm9ybVN0YXRlIHtcbiAgcmVwb3NpdG9yeTogc3RyaW5nO1xuICBvcmdhbml6YXRpb246IHN0cmluZztcbn1cblxuaW50ZXJmYWNlIElQcm9wcyB7XG4gIG9uU3VjY2VzczogKCkgPT4gdm9pZDtcbn1cbmNvbnN0IElucHV0Rm9ybSA9IChwcm9wczogSW5qZWN0ZWRGb3JtUHJvcHM8SUZvcm1TdGF0ZT4gJiBJUHJvcHMpID0+IHtcbiAgY29uc3QgZGlzcGF0Y2ggPSB1c2VEaXNwYXRjaCgpO1xuICBjb25zdCB7aXNMb2FkaW5nLCBlcnJvcn0gPSB1c2VTZWxlY3RvcihcbiAgICAoc3RhdGU6IElBcHBsaWNhdGlvblN0YXRlKSA9PiBzdGF0ZS5yZXBvLFxuICApO1xuICBjb25zdCB0aGVtZSA9IHVzZVRoZW1lKCk7XG4gIGNvbnN0IHtoYW5kbGVTdWJtaXQsIG9uU3VjY2Vzc30gPSBwcm9wcztcbiAgY29uc3Qgb25TdWJtaXQgPSAoKSA9PiB7XG4gICAgZGlzcGF0Y2gocmVwb0FjdGlvbnMuZ2V0UmVwb0lzc3Vlcyh7cGFnZTogMSwgcmVzZXQ6IHRydWV9KSk7XG4gIH07XG5cbiAgdXNlRWZmZWN0KCgpID0+IHtcbiAgICBpZiAoIWlzTG9hZGluZyAmJiBlcnJvciA9PT0gZmFsc2UpIG9uU3VjY2VzcygpO1xuICB9LCBbaXNMb2FkaW5nLCBlcnJvcl0pO1xuXG4gIHJldHVybiAoXG4gICAgPFZpZXc+XG4gICAgICA8RmllbGRcbiAgICAgICAgZXJyb3JDb2xvcj17dGhlbWUuY29sb3JzLmVycm9yfVxuICAgICAgICBtYXhMZW5ndGg9ezYwfVxuICAgICAgICBsYWJlbD1cIm9yZ2FuaXphdGlvbipcIlxuICAgICAgICBuYW1lPVwib3JnYW5pemF0aW9uXCJcbiAgICAgICAgY29tcG9uZW50PXtJbnB1dH1cbiAgICAgIC8+XG4gICAgICA8RmllbGRcbiAgICAgICAgZXJyb3JDb2xvcj17dGhlbWUuY29sb3JzLmVycm9yfVxuICAgICAgICBtYXhMZW5ndGg9ezEwMH1cbiAgICAgICAgbGFiZWw9XCJyZXBvc2l0b3J5KlwiXG4gICAgICAgIG5hbWU9XCJyZXBvc2l0b3J5XCJcbiAgICAgICAgY29tcG9uZW50PXtJbnB1dH1cbiAgICAgIC8+XG4gICAgICA8QnV0dG9uXG4gICAgICAgIGRpc2FibGVkPXtpc0xvYWRpbmd9XG4gICAgICAgIGxvYWRpbmc9e2lzTG9hZGluZ31cbiAgICAgICAgb25QcmVzcz17aGFuZGxlU3VibWl0KG9uU3VibWl0KX1cbiAgICAgICAgc3R5bGU9e3N0eWxlcy5idXR0b259XG4gICAgICAgIG1vZGU9XCJjb250YWluZWRcIj5cbiAgICAgICAgZ2V0IGlzc3Vlc1xuICAgICAgPC9CdXR0b24+XG4gICAgPC9WaWV3PlxuICApO1xufTtcblxuZXhwb3J0IGRlZmF1bHQgcmVkdXhGb3JtPElGb3JtU3RhdGUsIElQcm9wcz4oe1xuICBmb3JtOiAnZm9ybScsXG4gIC8vIGZpZWxkczogWydvcmdhbml6YXRpb24nLCAncmVwb3NpdG9yeSddLFxuICB2YWxpZGF0ZSxcbn0pKElucHV0Rm9ybSk7XG5cbmNvbnN0IHN0eWxlcyA9IFN0eWxlU2hlZXQuY3JlYXRlKHtcbiAgY29udGFpbmVyOiB7XG4gICAgbWFyZ2luOiAxMCxcbiAgfSxcbiAgYnV0dG9uOiB7XG4gICAgbWFyZ2luVG9wOiAyMCxcbiAgfSxcbiAgdGl0bGU6IHtcbiAgICBmb250U2l6ZTogMjAsXG4gICAgbWFyZ2luVmVydGljYWw6IDIwLFxuICB9LFxufSk7XG4iXX0=

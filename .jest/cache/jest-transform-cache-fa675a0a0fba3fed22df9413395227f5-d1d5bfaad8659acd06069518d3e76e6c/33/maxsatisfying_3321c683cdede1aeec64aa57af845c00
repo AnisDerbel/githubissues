@@ -1,0 +1,26 @@
+ecb3c26b3e15e1a84d12968396050080
+
+
+
+var maxSatisfying = function maxSatisfying(versions, range, options) {
+  var max = null;
+  var maxSV = null;
+  var rangeObj = null;
+  try {
+    rangeObj = new (require('../classes/range'))(range, options);
+  } catch (er) {
+    return null;
+  }
+  versions.forEach(function (v) {
+    if (rangeObj.test(v)) {
+
+      if (!max || maxSV.compare(v) === -1) {
+
+        max = v;
+        maxSV = new (require('../classes/semver'))(max, options);
+      }
+    }
+  });
+  return max;
+};
+module.exports = maxSatisfying;

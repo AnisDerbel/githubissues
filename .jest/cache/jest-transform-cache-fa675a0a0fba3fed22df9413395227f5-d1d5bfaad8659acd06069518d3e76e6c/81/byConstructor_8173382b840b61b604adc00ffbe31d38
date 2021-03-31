@@ -1,0 +1,22 @@
+71dc14d4c219a1413b6196dadc3526a2
+'use strict';
+
+
+
+
+module.exports = function byConstructor(constructor) {
+  if (!constructor) {
+    return [];
+  }
+
+  var data = require('./getData')();
+  if (constructor === data.unknown) {
+    return [];
+  }
+  if (constructor === data.all) {
+    return data.elements;
+  }
+  return require('array-filter')(data.elements, function (item) {
+    return item.constructor === constructor;
+  });
+};

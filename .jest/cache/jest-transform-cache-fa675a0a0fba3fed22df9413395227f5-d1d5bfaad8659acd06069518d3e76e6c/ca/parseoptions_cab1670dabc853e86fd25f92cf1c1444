@@ -1,0 +1,12 @@
+b87ead770a0df4954c1451785c28785a
+
+
+var opts = ['includePrerelease', 'loose', 'rtl'];
+var parseOptions = function parseOptions(options) {return (
+    !options ? {} :
+    typeof options !== 'object' ? { loose: true } :
+    opts.filter(function (k) {return options[k];}).reduce(function (options, k) {
+      options[k] = true;
+      return options;
+    }, {}));};
+module.exports = parseOptions;

@@ -1,0 +1,7 @@
+40f03f6d9e11489651321a6aa21fba4a
+
+
+
+var nativeCreate = require('./_getNative')(Object, 'create');
+
+module.exports = nativeCreate;

@@ -1,0 +1,79 @@
+70e5309058a6bb33668c2066b4e4c3a9
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = printHTMLForWrapper;
+
+var _instance = _interopRequireDefault(require("./instance"));
+
+var _isShallowWrapper = _interopRequireDefault(require("./isShallowWrapper"));
+
+var _getConsoleObject = _interopRequireDefault(require("./getConsoleObject"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var consoleObject = (0, _getConsoleObject.default)();
+
+var noop = function noop() {};
+
+function mapWrappersHTML(wrapper) {
+  return wrapper.getElements().map(function (node) {
+    var inst = (0, _instance.default)(node);
+    var type = node.type || inst._tag;var
+
+    error =
+    consoleObject.error;
+    consoleObject.error = noop;var _ref =
+
+
+
+    node.props ? node.props : inst._currentElement.props,children = _ref.children,props = require("@babel/runtime/helpers/objectWithoutProperties")(_ref, ["children"]);
+    consoleObject.error = error;
+    var transformedProps = Object.keys(props).map(function (key) {
+      try {
+        return key + "=\"" + props[key].toString() + "\"";
+      } catch (e) {
+        return key + "=\"[object Object]\"";
+      }
+    });
+    var stringifiedNode = "<" + type + " " + transformedProps.join(' ');
+
+    if (children) {
+      stringifiedNode += ">[..children..]</" + node.type;
+    } else {
+      stringifiedNode += '/>';
+    }
+
+    return stringifiedNode;
+  });
+}
+
+function printHTMLForWrapper(wrapper) {
+  switch (wrapper.getElements().length) {
+    case 0:
+      {
+        return '[empty set]';
+      }
+
+    case 1:
+      {
+        if ((0, _isShallowWrapper.default)(wrapper)) {
+
+
+          return wrapper.debug().replace(/\n(\s*)/g, '');
+        }
+
+        return wrapper.html();
+      }
+
+    default:
+      {
+        var nodes = mapWrappersHTML(wrapper).reduce(function (acc, curr, index) {return "" + acc + index + ": " + curr + "\n";}, '');
+        return "Multiple nodes found:\n" + nodes;
+      }}
+
+}
+
+module.exports = exports.default;

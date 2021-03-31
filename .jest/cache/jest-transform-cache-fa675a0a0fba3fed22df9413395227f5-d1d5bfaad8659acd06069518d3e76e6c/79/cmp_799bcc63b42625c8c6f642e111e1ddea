@@ -1,0 +1,49 @@
+edb49bc5d84514084b83565f0cc969d8
+
+
+
+
+
+
+
+var cmp = function cmp(a, op, b, loose) {
+  switch (op) {
+    case '===':
+      if (typeof a === 'object')
+      a = a.version;
+      if (typeof b === 'object')
+      b = b.version;
+      return a === b;
+
+    case '!==':
+      if (typeof a === 'object')
+      a = a.version;
+      if (typeof b === 'object')
+      b = b.version;
+      return a !== b;
+
+    case '':
+    case '=':
+    case '==':
+      return require('./eq')(a, b, loose);
+
+    case '!=':
+      return require('./neq')(a, b, loose);
+
+    case '>':
+      return require('./gt')(a, b, loose);
+
+    case '>=':
+      return require('./gte')(a, b, loose);
+
+    case '<':
+      return require('./lt')(a, b, loose);
+
+    case '<=':
+      return require('./lte')(a, b, loose);
+
+    default:
+      throw new TypeError("Invalid operator: " + op);}
+
+};
+module.exports = cmp;

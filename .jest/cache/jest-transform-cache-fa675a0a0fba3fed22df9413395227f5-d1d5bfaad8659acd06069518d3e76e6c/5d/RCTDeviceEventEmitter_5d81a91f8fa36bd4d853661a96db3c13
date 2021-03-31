@@ -1,0 +1,84 @@
+eed5097fd9c47aa3aaf8e4c7e80c24ac
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _EventEmitter2 = _interopRequireDefault(require("../vendor/emitter/EventEmitter"));
+
+var _EventSubscriptionVendor = _interopRequireDefault(require("../vendor/emitter/_EventSubscriptionVendor"));function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = (0, _getPrototypeOf2.default)(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = (0, _getPrototypeOf2.default)(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return (0, _possibleConstructorReturn2.default)(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}
+
+function checkNativeEventModule(eventType) {
+  if (eventType) {
+    if (eventType.lastIndexOf('statusBar', 0) === 0) {
+      throw new Error(
+      '`' +
+      eventType +
+      '` event should be registered via the StatusBarIOS module');
+
+    }
+    if (eventType.lastIndexOf('keyboard', 0) === 0) {
+      throw new Error(
+      '`' +
+      eventType +
+      '` event should be registered via the Keyboard module');
+
+    }
+    if (eventType === 'appStateDidChange' || eventType === 'memoryWarning') {
+      throw new Error(
+      '`' +
+      eventType +
+      '` event should be registered via the AppState module');
+
+    }
+  }
+}var
+
+
+
+
+
+RCTDeviceEventEmitter = function (_EventEmitter) {(0, _inherits2.default)(RCTDeviceEventEmitter, _EventEmitter);var _super = _createSuper(RCTDeviceEventEmitter);
+
+
+  function RCTDeviceEventEmitter() {var _this;(0, _classCallCheck2.default)(this, RCTDeviceEventEmitter);
+    var sharedSubscriber = new _EventSubscriptionVendor.default();
+    _this = _super.call(this, sharedSubscriber);
+    _this.sharedSubscriber = sharedSubscriber;return _this;
+  }(0, _createClass2.default)(RCTDeviceEventEmitter, [{ key: "addListener", value:
+
+    function addListener(
+    eventType,
+    listener,
+    context)
+    {
+      if (__DEV__) {
+        checkNativeEventModule(eventType);
+      }
+      return (0, _get2.default)((0, _getPrototypeOf2.default)(RCTDeviceEventEmitter.prototype), "addListener", this).call(this, eventType, listener, context);
+    } }, { key: "removeAllListeners", value:
+
+    function removeAllListeners(eventType) {
+      if (__DEV__) {
+        checkNativeEventModule(eventType);
+      }
+      (0, _get2.default)((0, _getPrototypeOf2.default)(RCTDeviceEventEmitter.prototype), "removeAllListeners", this).call(this, eventType);
+    } }, { key: "removeSubscription", value:
+
+    function removeSubscription(subscription) {
+      if (subscription.emitter !== this) {
+        subscription.emitter.removeSubscription(subscription);
+      } else {
+        (0, _get2.default)((0, _getPrototypeOf2.default)(RCTDeviceEventEmitter.prototype), "removeSubscription", this).call(this, subscription);
+      }
+    } }]);return RCTDeviceEventEmitter;}(_EventEmitter2.default);var _default =
+
+
+new RCTDeviceEventEmitter();exports.default = _default;

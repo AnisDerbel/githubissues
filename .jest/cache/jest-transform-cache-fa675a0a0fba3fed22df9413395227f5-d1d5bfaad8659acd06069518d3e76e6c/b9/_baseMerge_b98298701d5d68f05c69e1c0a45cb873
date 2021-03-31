@@ -1,0 +1,43 @@
+3e6e10d875d8c1f87c2cf0994042f63d
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function baseMerge(object, source, srcIndex, customizer, stack) {
+  if (object === source) {
+    return;
+  }
+  require('./_baseFor')(source, function (srcValue, key) {
+    stack || (stack = new (require('./_Stack'))());
+    if (require('./isObject')(srcValue)) {
+      require('./_baseMergeDeep')(object, source, key, srcIndex, baseMerge, customizer, stack);
+    } else
+    {
+      var newValue = customizer ?
+      customizer(require('./_safeGet')(object, key), srcValue, key + '', object, source, stack) :
+      undefined;
+
+      if (newValue === undefined) {
+        newValue = srcValue;
+      }
+      require('./_assignMergeValue')(object, key, newValue);
+    }
+  }, require('./keysIn'));
+}
+
+module.exports = baseMerge;

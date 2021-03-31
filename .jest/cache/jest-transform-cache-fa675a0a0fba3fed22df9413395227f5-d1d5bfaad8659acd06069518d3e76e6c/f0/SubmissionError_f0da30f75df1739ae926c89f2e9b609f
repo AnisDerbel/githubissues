@@ -1,0 +1,36 @@
+57876baf85f42e91036d0b73786fc61c
+"use strict";
+
+
+
+exports.__esModule = true;
+exports.isSubmissionError = isSubmissionError;
+exports.SubmissionError = void 0;
+
+var _inheritsLoose2 = require("@babel/runtime/helpers/interopRequireDefault")(require("@babel/runtime/helpers/inheritsLoose"));
+
+var _es6Error = require("@babel/runtime/helpers/interopRequireDefault")(require("es6-error"));
+
+var __FLAG__ = '@@redux-form/submission-error-flag';
+
+var SubmissionError = function (_ExtendableError) {
+  (0, _inheritsLoose2["default"])(SubmissionError, _ExtendableError);
+
+
+  function SubmissionError(errors) {
+    var _this;
+
+    _this = _ExtendableError.call(this, 'Submit Validation Failed') || this;
+    _this.errors = errors;
+    return _this;
+  }
+
+  return SubmissionError;
+}(_es6Error["default"]);
+
+exports.SubmissionError = SubmissionError;
+SubmissionError.__FLAG__ = __FLAG__;
+
+function isSubmissionError(error) {
+  return (error && error.constructor && error.constructor.__FLAG__ === __FLAG__) === true;
+}

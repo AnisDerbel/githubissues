@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.ts"],"names":["ROUTES"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAKYA,M;;;WAAAA,M;AAAAA,EAAAA,M;AAAAA,EAAAA,M;GAAAA,M,sBAAAA,M","sourcesContent":["export type RootStackParamList = {\n  Welcome: undefined;\n  GithubIssues: undefined;\n};\n\nexport enum ROUTES {\n  WELCOME = 'Welcome',\n  GITHUB_ISSUES = 'GithubIssues',\n}\n"]}

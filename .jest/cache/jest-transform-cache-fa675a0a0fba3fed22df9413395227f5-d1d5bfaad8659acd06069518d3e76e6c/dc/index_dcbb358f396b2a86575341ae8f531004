@@ -1,0 +1,4 @@
+1415dd8f9cd917081f9d9b11c52afc62
+module.exports = typeof global.Map === 'function' ?
+require('./deepEqualIdentMap') :
+require('./deepEqualIdentTag');

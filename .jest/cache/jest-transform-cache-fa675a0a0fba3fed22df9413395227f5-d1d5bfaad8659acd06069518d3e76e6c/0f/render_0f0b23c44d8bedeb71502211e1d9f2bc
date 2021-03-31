@@ -1,0 +1,91 @@
+a0e7f2baf2e3df9591d5881ea015a037
+"use strict";function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {require("@babel/runtime/helpers/defineProperty")(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = render;
+
+var React = _interopRequireWildcard(require("react"));
+
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));
+
+var _act = _interopRequireDefault(require("./act"));
+
+
+
+
+
+
+
+
+
+
+
+var _debugShallow = _interopRequireDefault(require("./helpers/debugShallow"));
+
+var _debugDeep = _interopRequireDefault(require("./helpers/debugDeep"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+
+
+
+
+
+
+function render(component)
+
+
+{var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},Wrapper = _ref.wrapper,createNodeMock = _ref.createNodeMock;
+  var wrap = function wrap(innerElement) {return Wrapper ? React.createElement(Wrapper, null, innerElement) : innerElement;};
+
+  var renderer = renderWithAct(wrap(component), createNodeMock ? {
+    createNodeMock: createNodeMock } :
+  undefined);
+  var update = updateWithAct(renderer, wrap);
+  var instance = renderer.root;
+  (0, require("./cleanup").addToCleanupQueue)(renderer.unmount);
+  return _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, (0, require("./helpers/getByAPI").getByAPI)(instance)),
+  (0, require("./helpers/queryByAPI").queryByAPI)(instance)),
+  (0, require("./helpers/findByAPI").findByAPI)(instance)),
+  (0, require("./helpers/a11yAPI").a11yAPI)(instance)), {}, {
+    update: update,
+    container: instance,
+    rerender: update,
+
+    unmount: renderer.unmount,
+    toJSON: renderer.toJSON,
+    debug: debug(instance, renderer) });
+
+}
+
+function renderWithAct(component, options) {
+  var renderer;
+  (0, _act.default)(function () {
+    renderer = _reactTestRenderer.default.create(component, options);
+  });
+  return renderer;
+}
+
+function updateWithAct(renderer, wrap) {
+  return function (component) {
+    (0, _act.default)(function () {
+      renderer.update(wrap(component));
+    });
+  };
+}
+
+function debug(instance, renderer) {
+  function debugImpl(message) {
+    return (0, _debugDeep.default)(renderer.toJSON(), message);
+  }
+
+  debugImpl.shallow = function (message) {return (0, _debugShallow.default)(instance, message);};
+
+  return debugImpl;
+}

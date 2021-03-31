@@ -1,0 +1,1 @@
+{"version":3,"sources":["/Users/anisderbel/Documents/apcgithubissues/__mocks__/svgMock.ts"],"names":[],"mappings":";;;;;;AAAA,IAAM,QAAQ,GAAG,SAAjB;AACa,OAAA,CAAA,cAAA,GAAiB,QAAjB;AACb,OAAA,CAAA,OAAA,GAAe,QAAf","sourcesContent":["const exported = 'SvgMock';\nexport const ReactComponent = exported;\nexport default exported;\n"]}

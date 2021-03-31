@@ -1,0 +1,251 @@
+ce964ca3c32a0d7160dfd8b78603fb07
+"use strict";
+
+/* istanbul ignore next */
+function cov_28pgxpwqst() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/selectors.ts";
+  var hash = "01a0ebdad9327cde5ef13c3681471fb9432a2fb2";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/selectors.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "1": {
+        start: {
+          line: 6,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 49
+        }
+      },
+      "2": {
+        start: {
+          line: 8,
+          column: 17
+        },
+        end: {
+          line: 8,
+          column: 36
+        }
+      },
+      "3": {
+        start: {
+          line: 10,
+          column: 11
+        },
+        end: {
+          line: 12,
+          column: 1
+        }
+      },
+      "4": {
+        start: {
+          line: 11,
+          column: 2
+        },
+        end: {
+          line: 11,
+          column: 20
+        }
+      },
+      "5": {
+        start: {
+          line: 14,
+          column: 0
+        },
+        end: {
+          line: 14,
+          column: 20
+        }
+      },
+      "6": {
+        start: {
+          line: 15,
+          column: 0
+        },
+        end: {
+          line: 19,
+          column: 3
+        }
+      },
+      "7": {
+        start: {
+          line: 16,
+          column: 13
+        },
+        end: {
+          line: 16,
+          column: 22
+        }
+      },
+      "8": {
+        start: {
+          line: 17,
+          column: 15
+        },
+        end: {
+          line: 17,
+          column: 26
+        }
+      },
+      "9": {
+        start: {
+          line: 18,
+          column: 2
+        },
+        end: {
+          line: 18,
+          column: 22
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "repo",
+        decl: {
+          start: {
+            line: 10,
+            column: 20
+          },
+          end: {
+            line: 10,
+            column: 24
+          }
+        },
+        loc: {
+          start: {
+            line: 10,
+            column: 32
+          },
+          end: {
+            line: 12,
+            column: 1
+          }
+        },
+        line: 10
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 15,
+            column: 69
+          },
+          end: {
+            line: 15,
+            column: 70
+          }
+        },
+        loc: {
+          start: {
+            line: 15,
+            column: 85
+          },
+          end: {
+            line: 19,
+            column: 1
+          }
+        },
+        line: 15
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {},
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/selectors.ts"],
+      names: [],
+      mappings: ";;;;;;;AAAA,IAAA,UAAA,GAAA,OAAA,CAAA,UAAA,CAAA;;AAKO,IAAM,IAAI,GAAG,SAAP,IAAO,CAAC,KAAD;AAAA,SAA0C,KAAK,CAAC,IAAhD;AAAA,CAAb;;AAAM,OAAA,CAAA,IAAA,GAAI,IAAJ;AAEA,OAAA,CAAA,gBAAA,GAAmB,UAAA,CAAA,cAAA,CAC9B,CAAC,OAAA,CAAA,IAAD,CAD8B,EAE9B;AAAA,MAAG,IAAH,QAAG,IAAH;AAAA,MAAS,MAAT,QAAS,MAAT;AAAA,SAAoC,MAAM,CAAC,IAAD,CAA1C;AAAA,CAF8B,CAAnB",
+      sourcesContent: ["import { createSelector } from 'reselect';\n\nimport { IApplicationState } from '../appReducer';\nimport { IRepoState, Issue } from './reducer';\n\nexport const repo = (state: IApplicationState): IRepoState => state.repo;\n\nexport const getCurrentIssues = createSelector(\n  [repo],\n  ({ page, issues }): Array<Issue> => issues[page],\n);\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "01a0ebdad9327cde5ef13c3681471fb9432a2fb2"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_28pgxpwqst = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_28pgxpwqst();
+cov_28pgxpwqst().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_28pgxpwqst().s[1]++;
+exports.getCurrentIssues = exports.repo = void 0;
+var reselect_1 =
+/* istanbul ignore next */
+(cov_28pgxpwqst().s[2]++, require("reselect"));
+
+/* istanbul ignore next */
+cov_28pgxpwqst().s[3]++;
+
+var repo = function repo(state) {
+  /* istanbul ignore next */
+  cov_28pgxpwqst().f[0]++;
+  cov_28pgxpwqst().s[4]++;
+  return state.repo;
+};
+
+/* istanbul ignore next */
+cov_28pgxpwqst().s[5]++;
+exports.repo = repo;
+
+/* istanbul ignore next */
+cov_28pgxpwqst().s[6]++;
+exports.getCurrentIssues = reselect_1.createSelector([exports.repo], function (_ref) {
+  /* istanbul ignore next */
+  cov_28pgxpwqst().f[1]++;
+  var page =
+  /* istanbul ignore next */
+  (cov_28pgxpwqst().s[7]++, _ref.page),
+      issues =
+  /* istanbul ignore next */
+  (cov_28pgxpwqst().s[8]++, _ref.issues);
+
+  /* istanbul ignore next */
+  cov_28pgxpwqst().s[9]++;
+  return issues[page];
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L3JlcG8vc2VsZWN0b3JzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQVNFOzs7Ozs7Ozs7Ozs7Ozs7OztBQVRGLElBQUEsVUFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLFVBQUEsQ0FBQSxDQUFBOzs7OztBQUtPLElBQU0sSUFBSSxHQUFHLFNBQVAsSUFBTyxDQUFBLEtBQUEsRUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBQTBDLEtBQUssQ0FBL0MsSUFBQTtBQUFiLENBQUE7Ozs7QUFBTSxPQUFBLENBQUEsSUFBQSxHQUFBLElBQUE7Ozs7QUFFQSxPQUFBLENBQUEsZ0JBQUEsR0FBbUIsVUFBQSxDQUFBLGNBQUEsQ0FDOUIsQ0FBQyxPQUFBLENBRDZCLElBQzlCLENBRDhCLEVBRTlCLFVBQUEsSUFBQSxFQUFBO0FBQUE7QUFBQTtBQUFBLE1BQUcsSUFBSDtBQUFBO0FBQUEsNEJBQUEsSUFBQSxDQUFBLElBQUEsQ0FBQTtBQUFBLE1BQVMsTUFBVDtBQUFBO0FBQUEsNEJBQUEsSUFBQSxDQUFBLE1BQUEsQ0FBQTs7QUFBQTtBQUFBO0FBQUEsU0FBb0MsTUFBTSxDQUExQyxJQUEwQyxDQUExQztBQUZXLENBQW1CLENBQW5CIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY3JlYXRlU2VsZWN0b3IgfSBmcm9tICdyZXNlbGVjdCc7XG5cbmltcG9ydCB7IElBcHBsaWNhdGlvblN0YXRlIH0gZnJvbSAnLi4vYXBwUmVkdWNlcic7XG5pbXBvcnQgeyBJUmVwb1N0YXRlLCBJc3N1ZSB9IGZyb20gJy4vcmVkdWNlcic7XG5cbmV4cG9ydCBjb25zdCByZXBvID0gKHN0YXRlOiBJQXBwbGljYXRpb25TdGF0ZSk6IElSZXBvU3RhdGUgPT4gc3RhdGUucmVwbztcblxuZXhwb3J0IGNvbnN0IGdldEN1cnJlbnRJc3N1ZXMgPSBjcmVhdGVTZWxlY3RvcihcbiAgW3JlcG9dLFxuICAoeyBwYWdlLCBpc3N1ZXMgfSk6IEFycmF5PElzc3VlPiA9PiBpc3N1ZXNbcGFnZV0sXG4pO1xuIl19

@@ -1,0 +1,619 @@
+7fcd47b9b375f7aa6dbbb99e4bdeb3ae
+"use strict";
+
+/* istanbul ignore next */
+function cov_1c3r4pj5oc() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/interceptors/interceptors.ts";
+  var hash = "c15d83c3d6082f38e9bba59e7da5fd924e2c6d3f";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/interceptors/interceptors.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 69
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 37
+        },
+        end: {
+          line: 4,
+          column: 74
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 30
+        },
+        end: {
+          line: 5,
+          column: 77
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 25
+        },
+        end: {
+          line: 24,
+          column: 1
+        }
+      },
+      "5": {
+        start: {
+          line: 11,
+          column: 4
+        },
+        end: {
+          line: 22,
+          column: 11
+        }
+      },
+      "6": {
+        start: {
+          line: 12,
+          column: 8
+        },
+        end: {
+          line: 12,
+          column: 43
+        }
+      },
+      "7": {
+        start: {
+          line: 13,
+          column: 8
+        },
+        end: {
+          line: 16,
+          column: 11
+        }
+      },
+      "8": {
+        start: {
+          line: 19,
+          column: 8
+        },
+        end: {
+          line: 22,
+          column: 11
+        }
+      },
+      "9": {
+        start: {
+          line: 23,
+          column: 4
+        },
+        end: {
+          line: 23,
+          column: 33
+        }
+      },
+      "10": {
+        start: {
+          line: 25,
+          column: 21
+        },
+        end: {
+          line: 28,
+          column: 1
+        }
+      },
+      "11": {
+        start: {
+          line: 26,
+          column: 4
+        },
+        end: {
+          line: 26,
+          column: 67
+        }
+      },
+      "12": {
+        start: {
+          line: 26,
+          column: 44
+        },
+        end: {
+          line: 26,
+          column: 47
+        }
+      },
+      "13": {
+        start: {
+          line: 27,
+          column: 4
+        },
+        end: {
+          line: 27,
+          column: 18
+        }
+      },
+      "14": {
+        start: {
+          line: 29,
+          column: 0
+        },
+        end: {
+          line: 29,
+          column: 36
+        }
+      },
+      "15": {
+        start: {
+          line: 30,
+          column: 12
+        },
+        end: {
+          line: 32,
+          column: 1
+        }
+      },
+      "16": {
+        start: {
+          line: 31,
+          column: 4
+        },
+        end: {
+          line: 31,
+          column: 24
+        }
+      },
+      "17": {
+        start: {
+          line: 33,
+          column: 0
+        },
+        end: {
+          line: 33,
+          column: 18
+        }
+      },
+      "18": {
+        start: {
+          line: 35,
+          column: 31
+        },
+        end: {
+          line: 35,
+          column: 61
+        }
+      },
+      "19": {
+        start: {
+          line: 36,
+          column: 4
+        },
+        end: {
+          line: 38,
+          column: 5
+        }
+      },
+      "20": {
+        start: {
+          line: 37,
+          column: 8
+        },
+        end: {
+          line: 37,
+          column: 15
+        }
+      },
+      "21": {
+        start: {
+          line: 39,
+          column: 4
+        },
+        end: {
+          line: 39,
+          column: 56
+        }
+      },
+      "22": {
+        start: {
+          line: 41,
+          column: 0
+        },
+        end: {
+          line: 41,
+          column: 40
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 6,
+            column: 25
+          },
+          end: {
+            line: 6,
+            column: 26
+          }
+        },
+        loc: {
+          start: {
+            line: 6,
+            column: 42
+          },
+          end: {
+            line: 24,
+            column: 1
+          }
+        },
+        line: 6
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 25,
+            column: 21
+          },
+          end: {
+            line: 25,
+            column: 22
+          }
+        },
+        loc: {
+          start: {
+            line: 25,
+            column: 33
+          },
+          end: {
+            line: 28,
+            column: 1
+          }
+        },
+        line: 25
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 26,
+            column: 37
+          },
+          end: {
+            line: 26,
+            column: 38
+          }
+        },
+        loc: {
+          start: {
+            line: 26,
+            column: 44
+          },
+          end: {
+            line: 26,
+            column: 47
+          }
+        },
+        line: 26
+      },
+      "3": {
+        name: "(anonymous_3)",
+        decl: {
+          start: {
+            line: 30,
+            column: 12
+          },
+          end: {
+            line: 30,
+            column: 13
+          }
+        },
+        loc: {
+          start: {
+            line: 30,
+            column: 18
+          },
+          end: {
+            line: 32,
+            column: 1
+          }
+        },
+        line: 30
+      },
+      "4": {
+        name: "showErrorAlert",
+        decl: {
+          start: {
+            line: 34,
+            column: 9
+          },
+          end: {
+            line: 34,
+            column: 23
+          }
+        },
+        loc: {
+          start: {
+            line: 34,
+            column: 40
+          },
+          end: {
+            line: 40,
+            column: 1
+          }
+        },
+        line: 34
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 11,
+            column: 4
+          },
+          end: {
+            line: 22,
+            column: 11
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 11,
+            column: 4
+          },
+          end: {
+            line: 22,
+            column: 11
+          }
+        }, {
+          start: {
+            line: 11,
+            column: 4
+          },
+          end: {
+            line: 22,
+            column: 11
+          }
+        }],
+        line: 11
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 36,
+            column: 4
+          },
+          end: {
+            line: 38,
+            column: 5
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 36,
+            column: 4
+          },
+          end: {
+            line: 38,
+            column: 5
+          }
+        }, {
+          start: {
+            line: 36,
+            column: 4
+          },
+          end: {
+            line: 38,
+            column: 5
+          }
+        }],
+        line: 36
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/Users/anisderbel/Documents/apcgithubissues/src/redux/interceptors/interceptors.ts",
+      mappings: ";;;AACA,2EAAuD;AACvD,8EAA8D;AAE9D,MAAM,gBAAgB,GAAG,KAAK,EAAE,KAAiB,EAAE,EAAE;IACnD,SAAS;IACT,sCAAsC;IACtC,8EAA8E;IAC9E,sDAAsD;IAEtD,IAAI,KAAK,CAAC,QAAQ,EAAE,MAAM,KAAK,GAAG,EAAE;QAClC,OAAO,CAAC,GAAG,CAAC,qBAAqB,CAAC,CAAC;QAEnC,wCAAW,CAAC;YACV,OAAO,EAAE,2CAA2C;YACpD,IAAI,EAAE,QAAQ;SACf,CAAC,CAAC;KACJ;;QACC,wCAAW,CAAC;YACV,OAAO,EAAE,sBAAsB;YAC/B,IAAI,EAAE,QAAQ;SACf,CAAC,CAAC;IAEL,OAAO,OAAO,CAAC,MAAM,CAAC,KAAK,CAAC,CAAC;AAC/B,CAAC,CAAC;AAEK,MAAM,YAAY,GAAG,CAAC,MAAqB,EAAE,EAAE;IACpD,MAAM,CAAC,YAAY,CAAC,QAAQ,CAAC,GAAG,CAAC,GAAG,CAAC,EAAE,CAAC,GAAG,EAAE,gBAAgB,CAAC,CAAC;IAE/D,OAAO,MAAM,CAAC;AAChB,CAAC,CAAC;AAJW,QAAA,YAAY,gBAIvB;AAEK,MAAM,GAAG,GAAG,GAAG,EAAE;IACtB,OAAO,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC;AACtB,CAAC,CAAC;AAFW,QAAA,GAAG,OAEd;AAEF,SAAgB,cAAc,CAAC,KAAa,EAAE,OAAe;IAC3D,MAAM,EAAC,OAAO,EAAE,KAAK,EAAC,GAAG,8BAAQ,CAAC;IAElC,IAAI,CAAC,KAAK,EAAE;QACV,OAAO;KACR;IAED,OAAO,KAAK,CAAC,aAAa,CAAC,OAAO,EAAE,KAAK,EAAE,OAAO,CAAC,CAAC;AACtD,CAAC;AARD,wCAQC",
+      names: [],
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/redux/interceptors/interceptors.ts"],
+      sourcesContent: ["import {AxiosInstance, AxiosError} from 'axios';\nimport {showMessage} from 'react-native-flash-message';\nimport {alertRef} from '../../components/CustomDropdownAlert';\n\nconst errorInterceptor = async (error: AxiosError) => {\n  // sum();\n  // if (error.response?.status === 404)\n  //   showErrorAlert('Not found', 'Organization and/or repository not found!');\n  // else showErrorAlert('Not', 'Something went wrong');\n\n  if (error.response?.status === 404) {\n    console.log('show message please');\n\n    showMessage({\n      message: 'Organization and/or repository not found!',\n      type: 'danger',\n    });\n  } else\n    showMessage({\n      message: 'Something went wrong',\n      type: 'danger',\n    });\n\n  return Promise.reject(error);\n};\n\nexport const interceptors = (client: AxiosInstance) => {\n  client.interceptors.response.use(res => res, errorInterceptor);\n\n  return client;\n};\n\nexport const sum = () => {\n  console.log('blah');\n};\n\nexport function showErrorAlert(title: string, message: string) {\n  const {current: alert} = alertRef;\n\n  if (!alert) {\n    return;\n  }\n\n  return alert.alertWithType('error', title, message);\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "c15d83c3d6082f38e9bba59e7da5fd924e2c6d3f"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1c3r4pj5oc = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1c3r4pj5oc();
+cov_1c3r4pj5oc().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_1c3r4pj5oc().s[1]++;
+exports.showErrorAlert = exports.sum = exports.interceptors = void 0;
+const react_native_flash_message_1 =
+/* istanbul ignore next */
+(cov_1c3r4pj5oc().s[2]++, require("react-native-flash-message"));
+const CustomDropdownAlert_1 =
+/* istanbul ignore next */
+(cov_1c3r4pj5oc().s[3]++, require("../../components/CustomDropdownAlert"));
+
+/* istanbul ignore next */
+cov_1c3r4pj5oc().s[4]++;
+
+const errorInterceptor = async error => {
+  /* istanbul ignore next */
+  cov_1c3r4pj5oc().f[0]++;
+  cov_1c3r4pj5oc().s[5]++;
+
+  // sum();
+  // if (error.response?.status === 404)
+  //   showErrorAlert('Not found', 'Organization and/or repository not found!');
+  // else showErrorAlert('Not', 'Something went wrong');
+  if (error.response?.status === 404) {
+    /* istanbul ignore next */
+    cov_1c3r4pj5oc().b[0][0]++;
+    cov_1c3r4pj5oc().s[6]++;
+    console.log('show message please');
+
+    /* istanbul ignore next */
+    cov_1c3r4pj5oc().s[7]++;
+    react_native_flash_message_1.showMessage({
+      message: 'Organization and/or repository not found!',
+      type: 'danger'
+    });
+  } else {
+    /* istanbul ignore next */
+    cov_1c3r4pj5oc().b[0][1]++;
+    cov_1c3r4pj5oc().s[8]++;
+    react_native_flash_message_1.showMessage({
+      message: 'Something went wrong',
+      type: 'danger'
+    });
+  }
+
+  /* istanbul ignore next */
+  cov_1c3r4pj5oc().s[9]++;
+  return Promise.reject(error);
+};
+
+/* istanbul ignore next */
+cov_1c3r4pj5oc().s[10]++;
+
+const interceptors = client => {
+  /* istanbul ignore next */
+  cov_1c3r4pj5oc().f[1]++;
+  cov_1c3r4pj5oc().s[11]++;
+  client.interceptors.response.use(res => {
+    /* istanbul ignore next */
+    cov_1c3r4pj5oc().f[2]++;
+    cov_1c3r4pj5oc().s[12]++;
+    return res;
+  }, errorInterceptor);
+
+  /* istanbul ignore next */
+  cov_1c3r4pj5oc().s[13]++;
+  return client;
+};
+
+/* istanbul ignore next */
+cov_1c3r4pj5oc().s[14]++;
+exports.interceptors = interceptors;
+
+/* istanbul ignore next */
+cov_1c3r4pj5oc().s[15]++;
+
+const sum = () => {
+  /* istanbul ignore next */
+  cov_1c3r4pj5oc().f[3]++;
+  cov_1c3r4pj5oc().s[16]++;
+  console.log('blah');
+};
+
+/* istanbul ignore next */
+cov_1c3r4pj5oc().s[17]++;
+exports.sum = sum;
+
+function showErrorAlert(title, message) {
+  /* istanbul ignore next */
+  cov_1c3r4pj5oc().f[4]++;
+  const {
+    current: alert
+  } =
+  /* istanbul ignore next */
+  (cov_1c3r4pj5oc().s[18]++, CustomDropdownAlert_1.alertRef);
+
+  /* istanbul ignore next */
+  cov_1c3r4pj5oc().s[19]++;
+
+  if (!alert) {
+    /* istanbul ignore next */
+    cov_1c3r4pj5oc().b[1][0]++;
+    cov_1c3r4pj5oc().s[20]++;
+    return;
+  } else
+  /* istanbul ignore next */
+  {
+    cov_1c3r4pj5oc().b[1][1]++;
+  }
+
+  cov_1c3r4pj5oc().s[21]++;
+  return alert.alertWithType('error', title, message);
+}
+
+/* istanbul ignore next */
+cov_1c3r4pj5oc().s[22]++;
+exports.showErrorAlert = showErrorAlert;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L2ludGVyY2VwdG9ycy9pbnRlcmNlcHRvcnMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQWdCTzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFmUCxNQUFBLDRCQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsNEJBQUEsQ0FBQSxDQUFBO0FBQ0EsTUFBQSxxQkFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLHNDQUFBLENBQUEsQ0FBQTs7Ozs7QUFFQSxNQUFNLGdCQUFnQixHQUFHLE1BQU8sS0FBUCxJQUE0QjtBQUFBO0FBQUE7QUFBQTs7QUFDbkQ7QUFDQTtBQUNBO0FBQ0E7QUFFQSxNQUFJLEtBQUssQ0FBQyxRQUFOLEVBQWdCLE1BQWhCLEtBQTJCLEdBQS9CLEVBQW9DO0FBQUE7QUFBQTtBQUFBO0FBQ2xDLElBQUEsT0FBTyxDQUFDLEdBQVIsQ0FBWSxxQkFBWjs7QUFEa0M7QUFBQTtBQUdsQyxJQUFBLDRCQUFBLENBQUEsV0FBQSxDQUFZO0FBQ1YsTUFBQSxPQUFPLEVBQUUsMkNBREM7QUFFVixNQUFBLElBQUksRUFBRTtBQUZJLEtBQVo7QUFJRCxHQVBELE1BUUU7QUFBQTtBQUFBO0FBQUE7QUFBQSxJQUFBLDRCQUFBLENBQUEsV0FBQSxDQUFZO0FBQ1YsTUFBQSxPQUFPLEVBQUUsc0JBREM7QUFFVixNQUFBLElBQUksRUFBRTtBQUZJLEtBQVo7QUFHRzs7QUFqQjhDO0FBQUE7QUFtQm5ELFNBQU8sT0FBTyxDQUFDLE1BQVIsQ0FBZSxLQUFmLENBQVA7QUFDRCxDQXBCRDs7Ozs7QUFzQk8sTUFBTSxZQUFZLEdBQUksTUFBRCxJQUEwQjtBQUFBO0FBQUE7QUFBQTtBQUNwRCxFQUFBLE1BQU0sQ0FBQyxZQUFQLENBQW9CLFFBQXBCLENBQTZCLEdBQTdCLENBQWlDLEdBQUcsSUFBSTtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBQUEsR0FBRztBQUFBLEdBQTNDLEVBQTZDLGdCQUE3Qzs7QUFEb0Q7QUFBQTtBQUdwRCxTQUFPLE1BQVA7QUFDRCxDQUpNOzs7O0FBQU0sT0FBQSxDQUFBLFlBQUEsR0FBWSxZQUFaOzs7OztBQU1OLE1BQU0sR0FBRyxHQUFHLE1BQUs7QUFBQTtBQUFBO0FBQUE7QUFDdEIsRUFBQSxPQUFPLENBQUMsR0FBUixDQUFZLE1BQVo7QUFDRCxDQUZNOzs7O0FBQU0sT0FBQSxDQUFBLEdBQUEsR0FBRyxHQUFIOztBQUliLFNBQWdCLGNBQWhCLENBQStCLEtBQS9CLEVBQThDLE9BQTlDLEVBQTZEO0FBQUE7QUFBQTtBQUMzRCxRQUFNO0FBQUMsSUFBQSxPQUFPLEVBQUU7QUFBVjtBQUFBO0FBQUEsNkJBQW1CLHFCQUFBLENBQUEsUUFBbkIsQ0FBTjs7QUFEMkQ7QUFBQTs7QUFHM0QsTUFBSSxDQUFDLEtBQUwsRUFBWTtBQUFBO0FBQUE7QUFBQTtBQUNWO0FBQ0QsR0FGRDtBQUFBO0FBQUE7QUFBQTtBQUFBOztBQUgyRDtBQU8zRCxTQUFPLEtBQUssQ0FBQyxhQUFOLENBQW9CLE9BQXBCLEVBQTZCLEtBQTdCLEVBQW9DLE9BQXBDLENBQVA7QUFDRDs7OztBQVJELE9BQUEsQ0FBQSxjQUFBLEdBQUEsY0FBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7QXhpb3NJbnN0YW5jZSwgQXhpb3NFcnJvcn0gZnJvbSAnYXhpb3MnO1xuaW1wb3J0IHtzaG93TWVzc2FnZX0gZnJvbSAncmVhY3QtbmF0aXZlLWZsYXNoLW1lc3NhZ2UnO1xuaW1wb3J0IHthbGVydFJlZn0gZnJvbSAnLi4vLi4vY29tcG9uZW50cy9DdXN0b21Ecm9wZG93bkFsZXJ0JztcblxuY29uc3QgZXJyb3JJbnRlcmNlcHRvciA9IGFzeW5jIChlcnJvcjogQXhpb3NFcnJvcikgPT4ge1xuICAvLyBzdW0oKTtcbiAgLy8gaWYgKGVycm9yLnJlc3BvbnNlPy5zdGF0dXMgPT09IDQwNClcbiAgLy8gICBzaG93RXJyb3JBbGVydCgnTm90IGZvdW5kJywgJ09yZ2FuaXphdGlvbiBhbmQvb3IgcmVwb3NpdG9yeSBub3QgZm91bmQhJyk7XG4gIC8vIGVsc2Ugc2hvd0Vycm9yQWxlcnQoJ05vdCcsICdTb21ldGhpbmcgd2VudCB3cm9uZycpO1xuXG4gIGlmIChlcnJvci5yZXNwb25zZT8uc3RhdHVzID09PSA0MDQpIHtcbiAgICBjb25zb2xlLmxvZygnc2hvdyBtZXNzYWdlIHBsZWFzZScpO1xuXG4gICAgc2hvd01lc3NhZ2Uoe1xuICAgICAgbWVzc2FnZTogJ09yZ2FuaXphdGlvbiBhbmQvb3IgcmVwb3NpdG9yeSBub3QgZm91bmQhJyxcbiAgICAgIHR5cGU6ICdkYW5nZXInLFxuICAgIH0pO1xuICB9IGVsc2VcbiAgICBzaG93TWVzc2FnZSh7XG4gICAgICBtZXNzYWdlOiAnU29tZXRoaW5nIHdlbnQgd3JvbmcnLFxuICAgICAgdHlwZTogJ2RhbmdlcicsXG4gICAgfSk7XG5cbiAgcmV0dXJuIFByb21pc2UucmVqZWN0KGVycm9yKTtcbn07XG5cbmV4cG9ydCBjb25zdCBpbnRlcmNlcHRvcnMgPSAoY2xpZW50OiBBeGlvc0luc3RhbmNlKSA9PiB7XG4gIGNsaWVudC5pbnRlcmNlcHRvcnMucmVzcG9uc2UudXNlKHJlcyA9PiByZXMsIGVycm9ySW50ZXJjZXB0b3IpO1xuXG4gIHJldHVybiBjbGllbnQ7XG59O1xuXG5leHBvcnQgY29uc3Qgc3VtID0gKCkgPT4ge1xuICBjb25zb2xlLmxvZygnYmxhaCcpO1xufTtcblxuZXhwb3J0IGZ1bmN0aW9uIHNob3dFcnJvckFsZXJ0KHRpdGxlOiBzdHJpbmcsIG1lc3NhZ2U6IHN0cmluZykge1xuICBjb25zdCB7Y3VycmVudDogYWxlcnR9ID0gYWxlcnRSZWY7XG5cbiAgaWYgKCFhbGVydCkge1xuICAgIHJldHVybjtcbiAgfVxuXG4gIHJldHVybiBhbGVydC5hbGVydFdpdGhUeXBlKCdlcnJvcicsIHRpdGxlLCBtZXNzYWdlKTtcbn1cbiJdfQ==

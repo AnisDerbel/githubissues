@@ -1,0 +1,6 @@
+171749f8a9616b374b967b7a40c97fe6
+
+var compare = function compare(a, b, loose) {return (
+    new (require('../classes/semver'))(a, loose).compare(new (require('../classes/semver'))(b, loose)));};
+
+module.exports = compare;

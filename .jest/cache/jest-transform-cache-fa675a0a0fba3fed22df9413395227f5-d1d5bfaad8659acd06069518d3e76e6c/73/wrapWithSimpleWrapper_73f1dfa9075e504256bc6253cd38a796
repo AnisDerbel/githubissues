@@ -1,0 +1,36 @@
+ac0514fa07b307fc976ec14f2af0221f
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports["default"] = wrap;
+
+var _object = _interopRequireDefault(require("object.assign"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { "default": obj };}
+
+var propTypes = {
+  children: _propTypes["default"].node };
+
+var defaultProps = {
+  children: undefined };
+
+
+var Wrapper = function Wrapper() {
+  return (0, _object["default"])(function SimpleSFCWrapper(_ref) {
+    var children = _ref.children;
+    return children;
+  }, {
+    propTypes: propTypes,
+    defaultProps: defaultProps });
+
+};
+
+function wrap(element) {
+  return _react["default"].createElement(Wrapper, null, element);
+}

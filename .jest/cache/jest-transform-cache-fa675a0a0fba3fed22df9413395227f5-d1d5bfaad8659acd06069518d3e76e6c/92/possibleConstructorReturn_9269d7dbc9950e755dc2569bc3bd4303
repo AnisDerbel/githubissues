@@ -1,0 +1,15 @@
+95f4b97d36e69e512248abf9c6d8265c
+
+
+
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (require("@babel/runtime/helpers/typeof")["default"](call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return require("./assertThisInitialized.js")(self);
+}
+
+module.exports = _possibleConstructorReturn;
+module.exports["default"] = module.exports, module.exports.__esModule = true;

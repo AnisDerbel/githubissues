@@ -1,0 +1,28 @@
+7f8cd9c733c3271df5aa9f9b7bc793c1
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var Queue = function () {
+  function Queue() {(0, _classCallCheck2.default)(this, Queue);
+    this.data = [];
+  }(0, _createClass2.default)(Queue, [{ key: "firstItem", get:
+    function get() {
+      if (!this.isEmpty) {
+        return this.data[0];
+      }
+      return null;
+    } }, { key: "size", get:
+    function get() {
+      return this.data.length;
+    } }, { key: "isEmpty", get:
+    function get() {
+      return this.size === 0;
+    } }, { key: "enqueue", value:
+    function enqueue(item) {
+      this.data.push(item);
+    } }, { key: "dequeue", value:
+    function dequeue() {
+      if (!this.isEmpty) {
+        this.data.shift();
+      }
+    } }, { key: "clear", value:
+    function clear() {
+      this.data = [];
+    } }]);return Queue;}();exports.default = Queue;

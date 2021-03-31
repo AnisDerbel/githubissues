@@ -1,0 +1,22 @@
+20c3d78e3a98dccf9778ae5186c5e2e4
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = isShallowWrapper;
+var SHALLOW_WRAPPER_CONSTRUCTOR = 'ShallowWrapper';
+
+function isShallowWrapper(wrapper) {
+  var isShallow;
+
+  if (wrapper.constructor.name !== undefined) {
+    isShallow = wrapper.constructor.name === SHALLOW_WRAPPER_CONSTRUCTOR;
+  } else {
+    isShallow = !!("" + wrapper.constructor).match(/^function ShallowWrapper\(/);
+  }
+
+  return isShallow;
+}
+
+module.exports = exports.default;

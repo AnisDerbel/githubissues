@@ -1,0 +1,386 @@
+05de2b2d1e3699e265a6d8aab4723b41
+"use strict";
+
+/* istanbul ignore next */
+function cov_2ayhrgny5r() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/validate.ts";
+  var hash = "2ca208b1a3a5e7964f832c74caa73c6dd587aa96";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/validate.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "1": {
+        start: {
+          line: 6,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 26
+        }
+      },
+      "2": {
+        start: {
+          line: 8,
+          column: 15
+        },
+        end: {
+          line: 23,
+          column: 1
+        }
+      },
+      "3": {
+        start: {
+          line: 9,
+          column: 14
+        },
+        end: {
+          line: 12,
+          column: 3
+        }
+      },
+      "4": {
+        start: {
+          line: 14,
+          column: 2
+        },
+        end: {
+          line: 16,
+          column: 3
+        }
+      },
+      "5": {
+        start: {
+          line: 15,
+          column: 4
+        },
+        end: {
+          line: 15,
+          column: 45
+        }
+      },
+      "6": {
+        start: {
+          line: 18,
+          column: 2
+        },
+        end: {
+          line: 20,
+          column: 3
+        }
+      },
+      "7": {
+        start: {
+          line: 19,
+          column: 4
+        },
+        end: {
+          line: 19,
+          column: 43
+        }
+      },
+      "8": {
+        start: {
+          line: 22,
+          column: 2
+        },
+        end: {
+          line: 22,
+          column: 15
+        }
+      },
+      "9": {
+        start: {
+          line: 25,
+          column: 0
+        },
+        end: {
+          line: 25,
+          column: 28
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "validate",
+        decl: {
+          start: {
+            line: 8,
+            column: 24
+          },
+          end: {
+            line: 8,
+            column: 32
+          }
+        },
+        loc: {
+          start: {
+            line: 8,
+            column: 41
+          },
+          end: {
+            line: 23,
+            column: 1
+          }
+        },
+        line: 8
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 14,
+            column: 2
+          },
+          end: {
+            line: 16,
+            column: 3
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 14,
+            column: 2
+          },
+          end: {
+            line: 16,
+            column: 3
+          }
+        }, {
+          start: {
+            line: 14,
+            column: 2
+          },
+          end: {
+            line: 16,
+            column: 3
+          }
+        }],
+        line: 14
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 14,
+            column: 6
+          },
+          end: {
+            line: 14,
+            column: 69
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 14,
+            column: 6
+          },
+          end: {
+            line: 14,
+            column: 39
+          }
+        }, {
+          start: {
+            line: 14,
+            column: 43
+          },
+          end: {
+            line: 14,
+            column: 69
+          }
+        }],
+        line: 14
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 18,
+            column: 2
+          },
+          end: {
+            line: 20,
+            column: 3
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 18,
+            column: 2
+          },
+          end: {
+            line: 20,
+            column: 3
+          }
+        }, {
+          start: {
+            line: 18,
+            column: 2
+          },
+          end: {
+            line: 20,
+            column: 3
+          }
+        }],
+        line: 18
+      },
+      "3": {
+        loc: {
+          start: {
+            line: 18,
+            column: 6
+          },
+          end: {
+            line: 18,
+            column: 65
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 18,
+            column: 6
+          },
+          end: {
+            line: 18,
+            column: 37
+          }
+        }, {
+          start: {
+            line: 18,
+            column: 41
+          },
+          end: {
+            line: 18,
+            column: 65
+          }
+        }],
+        line: 18
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0],
+      "3": [0, 0]
+    },
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/validate.ts"],
+      names: [],
+      mappings: ";;;;;;;AAEO,IAAM,QAAQ,GAAG,SAAX,QAAW,CAAC,MAAD,EAAuB;AAC7C,MAAM,KAAK,GAAG;AACZ,IAAA,YAAY,EAAE,EADF;AAEZ,IAAA,UAAU,EAAE;AAFA,GAAd;;AAIA,MAAI,MAAM,CAAC,YAAP,KAAwB,SAAxB,IAAqC,MAAM,CAAC,YAAP,KAAwB,EAAjE,EAAqE;AACnE,IAAA,KAAK,CAAC,YAAN,GAAqB,mBAArB;AACD;;AACD,MAAI,MAAM,CAAC,UAAP,KAAsB,SAAtB,IAAmC,MAAM,CAAC,UAAP,KAAsB,EAA7D,EAAiE;AAC/D,IAAA,KAAK,CAAC,UAAN,GAAmB,mBAAnB;AACD;;AACD,SAAO,KAAP;AACD,CAZM;;AAAM,OAAA,CAAA,QAAA,GAAQ,QAAR",
+      sourcesContent: ["import {IFormState} from './redux/form/reducer';\n\nexport const validate = (values: IFormState) => {\n  const error = {\n    organization: '',\n    repository: '',\n  };\n  if (values.organization === undefined || values.organization === '') {\n    error.organization = 'field is required';\n  }\n  if (values.repository === undefined || values.repository === '') {\n    error.repository = 'field is required';\n  }\n  return error;\n};\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "2ca208b1a3a5e7964f832c74caa73c6dd587aa96"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2ayhrgny5r = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2ayhrgny5r();
+cov_2ayhrgny5r().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_2ayhrgny5r().s[1]++;
+exports.validate = void 0;
+
+/* istanbul ignore next */
+cov_2ayhrgny5r().s[2]++;
+
+var validate = function validate(values) {
+  /* istanbul ignore next */
+  cov_2ayhrgny5r().f[0]++;
+  var error =
+  /* istanbul ignore next */
+  (cov_2ayhrgny5r().s[3]++, {
+    organization: '',
+    repository: ''
+  });
+
+  /* istanbul ignore next */
+  cov_2ayhrgny5r().s[4]++;
+
+  if (
+  /* istanbul ignore next */
+  (cov_2ayhrgny5r().b[1][0]++, values.organization === undefined) ||
+  /* istanbul ignore next */
+  (cov_2ayhrgny5r().b[1][1]++, values.organization === '')) {
+    /* istanbul ignore next */
+    cov_2ayhrgny5r().b[0][0]++;
+    cov_2ayhrgny5r().s[5]++;
+    error.organization = 'field is required';
+  } else
+  /* istanbul ignore next */
+  {
+    cov_2ayhrgny5r().b[0][1]++;
+  }
+
+  cov_2ayhrgny5r().s[6]++;
+
+  if (
+  /* istanbul ignore next */
+  (cov_2ayhrgny5r().b[3][0]++, values.repository === undefined) ||
+  /* istanbul ignore next */
+  (cov_2ayhrgny5r().b[3][1]++, values.repository === '')) {
+    /* istanbul ignore next */
+    cov_2ayhrgny5r().b[2][0]++;
+    cov_2ayhrgny5r().s[7]++;
+    error.repository = 'field is required';
+  } else
+  /* istanbul ignore next */
+  {
+    cov_2ayhrgny5r().b[2][1]++;
+  }
+
+  cov_2ayhrgny5r().s[8]++;
+  return error;
+};
+
+/* istanbul ignore next */
+cov_2ayhrgny5r().s[9]++;
+exports.validate = validate;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3ZhbGlkYXRlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBU0c7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQVBJLElBQU0sUUFBUSxHQUFHLFNBQVgsUUFBVyxDQUFBLE1BQUEsRUFBdUI7QUFBQTtBQUFBO0FBQzdDLE1BQU0sS0FBSztBQUFBO0FBQUEsNEJBQUc7QUFDWixJQUFBLFlBQVksRUFEQSxFQUFBO0FBRVosSUFBQSxVQUFVLEVBQUU7QUFGQSxHQUFILENBQVg7O0FBRDZDO0FBQUE7O0FBSzdDO0FBQUk7QUFBQSwrQkFBQSxNQUFNLENBQU4sWUFBQSxLQUFBLFNBQUE7QUFBQTtBQUFBLCtCQUFxQyxNQUFNLENBQU4sWUFBQSxLQUF6QyxFQUFJLENBQUosRUFBcUU7QUFBQTtBQUFBO0FBQUE7QUFDbkUsSUFBQSxLQUFLLENBQUwsWUFBQSxHQUFBLG1CQUFBO0FBQ0QsR0FGRDtBQUFBO0FBQUE7QUFBQTtBQUFBOztBQUw2Qzs7QUFRN0M7QUFBSTtBQUFBLCtCQUFBLE1BQU0sQ0FBTixVQUFBLEtBQUEsU0FBQTtBQUFBO0FBQUEsK0JBQW1DLE1BQU0sQ0FBTixVQUFBLEtBQXZDLEVBQUksQ0FBSixFQUFpRTtBQUFBO0FBQUE7QUFBQTtBQUMvRCxJQUFBLEtBQUssQ0FBTCxVQUFBLEdBQUEsbUJBQUE7QUFDRCxHQUZEO0FBQUE7QUFBQTtBQUFBO0FBQUE7O0FBUjZDO0FBVzdDLFNBQUEsS0FBQTtBQVhLLENBQUE7Ozs7QUFBTSxPQUFBLENBQUEsUUFBQSxHQUFBLFFBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge0lGb3JtU3RhdGV9IGZyb20gJy4vcmVkdXgvZm9ybS9yZWR1Y2VyJztcblxuZXhwb3J0IGNvbnN0IHZhbGlkYXRlID0gKHZhbHVlczogSUZvcm1TdGF0ZSkgPT4ge1xuICBjb25zdCBlcnJvciA9IHtcbiAgICBvcmdhbml6YXRpb246ICcnLFxuICAgIHJlcG9zaXRvcnk6ICcnLFxuICB9O1xuICBpZiAodmFsdWVzLm9yZ2FuaXphdGlvbiA9PT0gdW5kZWZpbmVkIHx8IHZhbHVlcy5vcmdhbml6YXRpb24gPT09ICcnKSB7XG4gICAgZXJyb3Iub3JnYW5pemF0aW9uID0gJ2ZpZWxkIGlzIHJlcXVpcmVkJztcbiAgfVxuICBpZiAodmFsdWVzLnJlcG9zaXRvcnkgPT09IHVuZGVmaW5lZCB8fCB2YWx1ZXMucmVwb3NpdG9yeSA9PT0gJycpIHtcbiAgICBlcnJvci5yZXBvc2l0b3J5ID0gJ2ZpZWxkIGlzIHJlcXVpcmVkJztcbiAgfVxuICByZXR1cm4gZXJyb3I7XG59O1xuIl19

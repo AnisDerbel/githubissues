@@ -1,0 +1,24 @@
+ac21d85ffb72945b8426ab9a89b8bd7a
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = getFocusedRouteNameFromRoute;
+
+
+
+function getFocusedRouteNameFromRoute(route) {
+  var _state$index;
+
+  require("./useRouteCache").SUPPRESS_STATE_ACCESS_WARNING.value = true;
+  var state = route.state;
+  require("./useRouteCache").SUPPRESS_STATE_ACCESS_WARNING.value = false;
+  var params = route.params;
+  var routeName = state ?
+  state.routes[
+
+  (_state$index = state.index) !== null && _state$index !== void 0 ? _state$index : typeof state.type === 'string' && state.type !== 'stack' ? 0 : state.routes.length - 1].name :
+  typeof (params === null || params === void 0 ? void 0 : params.screen) === 'string' ? params.screen : undefined;
+  return routeName;
+}

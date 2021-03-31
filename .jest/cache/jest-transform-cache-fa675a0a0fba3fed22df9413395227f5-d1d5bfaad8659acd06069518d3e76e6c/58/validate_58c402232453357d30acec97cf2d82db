@@ -1,0 +1,316 @@
+38956c7f9504a40b223c7678a54d832d
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.validate = void 0;
+
+function cov_2ayhrgny5r() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/validate.ts";
+  var hash = "4aba7b01de7da48373d51dc2229708b41b1de3a2";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/validate.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 24
+        },
+        end: {
+          line: 15,
+          column: 1
+        }
+      },
+      "1": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 7,
+          column: 3
+        }
+      },
+      "2": {
+        start: {
+          line: 8,
+          column: 2
+        },
+        end: {
+          line: 10,
+          column: 3
+        }
+      },
+      "3": {
+        start: {
+          line: 9,
+          column: 4
+        },
+        end: {
+          line: 9,
+          column: 45
+        }
+      },
+      "4": {
+        start: {
+          line: 11,
+          column: 2
+        },
+        end: {
+          line: 13,
+          column: 3
+        }
+      },
+      "5": {
+        start: {
+          line: 12,
+          column: 4
+        },
+        end: {
+          line: 12,
+          column: 43
+        }
+      },
+      "6": {
+        start: {
+          line: 14,
+          column: 2
+        },
+        end: {
+          line: 14,
+          column: 15
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 3,
+            column: 24
+          },
+          end: {
+            line: 3,
+            column: 25
+          }
+        },
+        loc: {
+          start: {
+            line: 3,
+            column: 48
+          },
+          end: {
+            line: 15,
+            column: 1
+          }
+        },
+        line: 3
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 8,
+            column: 2
+          },
+          end: {
+            line: 10,
+            column: 3
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 8,
+            column: 2
+          },
+          end: {
+            line: 10,
+            column: 3
+          }
+        }, {
+          start: {
+            line: 8,
+            column: 2
+          },
+          end: {
+            line: 10,
+            column: 3
+          }
+        }],
+        line: 8
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 8,
+            column: 6
+          },
+          end: {
+            line: 8,
+            column: 69
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 8,
+            column: 6
+          },
+          end: {
+            line: 8,
+            column: 39
+          }
+        }, {
+          start: {
+            line: 8,
+            column: 43
+          },
+          end: {
+            line: 8,
+            column: 69
+          }
+        }],
+        line: 8
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 11,
+            column: 2
+          },
+          end: {
+            line: 13,
+            column: 3
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 11,
+            column: 2
+          },
+          end: {
+            line: 13,
+            column: 3
+          }
+        }, {
+          start: {
+            line: 11,
+            column: 2
+          },
+          end: {
+            line: 13,
+            column: 3
+          }
+        }],
+        line: 11
+      },
+      "3": {
+        loc: {
+          start: {
+            line: 11,
+            column: 6
+          },
+          end: {
+            line: 11,
+            column: 65
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 11,
+            column: 6
+          },
+          end: {
+            line: 11,
+            column: 37
+          }
+        }, {
+          start: {
+            line: 11,
+            column: 41
+          },
+          end: {
+            line: 11,
+            column: 65
+          }
+        }],
+        line: 11
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0],
+      "3": [0, 0]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "4aba7b01de7da48373d51dc2229708b41b1de3a2"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_2ayhrgny5r = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2ayhrgny5r();
+cov_2ayhrgny5r().s[0]++;
+
+var validate = function validate(values) {
+  cov_2ayhrgny5r().f[0]++;
+  var error = (cov_2ayhrgny5r().s[1]++, {
+    organization: '',
+    repository: ''
+  });
+  cov_2ayhrgny5r().s[2]++;
+
+  if ((cov_2ayhrgny5r().b[1][0]++, values.organization === undefined) || (cov_2ayhrgny5r().b[1][1]++, values.organization === '')) {
+    cov_2ayhrgny5r().b[0][0]++;
+    cov_2ayhrgny5r().s[3]++;
+    error.organization = 'field is required';
+  } else {
+    cov_2ayhrgny5r().b[0][1]++;
+  }
+
+  cov_2ayhrgny5r().s[4]++;
+
+  if ((cov_2ayhrgny5r().b[3][0]++, values.repository === undefined) || (cov_2ayhrgny5r().b[3][1]++, values.repository === '')) {
+    cov_2ayhrgny5r().b[2][0]++;
+    cov_2ayhrgny5r().s[5]++;
+    error.repository = 'field is required';
+  } else {
+    cov_2ayhrgny5r().b[2][1]++;
+  }
+
+  cov_2ayhrgny5r().s[6]++;
+  return error;
+};
+
+exports.validate = validate;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZhbGlkYXRlLnRzIl0sIm5hbWVzIjpbInZhbGlkYXRlIiwidmFsdWVzIiwiZXJyb3IiLCJvcmdhbml6YXRpb24iLCJyZXBvc2l0b3J5IiwidW5kZWZpbmVkIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBRU8sSUFBTUEsUUFBUSxHQUFHLFNBQVhBLFFBQVcsQ0FBQ0MsTUFBRCxFQUF3QjtBQUFBO0FBQzlDLE1BQU1DLEtBQUssNkJBQUc7QUFDWkMsSUFBQUEsWUFBWSxFQUFFLEVBREY7QUFFWkMsSUFBQUEsVUFBVSxFQUFFO0FBRkEsR0FBSCxDQUFYO0FBRDhDOztBQUs5QyxNQUFJLDZCQUFBSCxNQUFNLENBQUNFLFlBQVAsS0FBd0JFLFNBQXhCLGtDQUFxQ0osTUFBTSxDQUFDRSxZQUFQLEtBQXdCLEVBQTdELENBQUosRUFBcUU7QUFBQTtBQUFBO0FBQ25FRCxJQUFBQSxLQUFLLENBQUNDLFlBQU4sR0FBcUIsbUJBQXJCO0FBQ0QsR0FGRDtBQUFBO0FBQUE7O0FBTDhDOztBQVE5QyxNQUFJLDZCQUFBRixNQUFNLENBQUNHLFVBQVAsS0FBc0JDLFNBQXRCLGtDQUFtQ0osTUFBTSxDQUFDRyxVQUFQLEtBQXNCLEVBQXpELENBQUosRUFBaUU7QUFBQTtBQUFBO0FBQy9ERixJQUFBQSxLQUFLLENBQUNFLFVBQU4sR0FBbUIsbUJBQW5CO0FBQ0QsR0FGRDtBQUFBO0FBQUE7O0FBUjhDO0FBVzlDLFNBQU9GLEtBQVA7QUFDRCxDQVpNIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtJRm9ybVN0YXRlfSBmcm9tICcuL3JlZHV4L2Zvcm0vcmVkdWNlcic7XG5cbmV4cG9ydCBjb25zdCB2YWxpZGF0ZSA9ICh2YWx1ZXM6IElGb3JtU3RhdGUpID0+IHtcbiAgY29uc3QgZXJyb3IgPSB7XG4gICAgb3JnYW5pemF0aW9uOiAnJyxcbiAgICByZXBvc2l0b3J5OiAnJyxcbiAgfTtcbiAgaWYgKHZhbHVlcy5vcmdhbml6YXRpb24gPT09IHVuZGVmaW5lZCB8fCB2YWx1ZXMub3JnYW5pemF0aW9uID09PSAnJykge1xuICAgIGVycm9yLm9yZ2FuaXphdGlvbiA9ICdmaWVsZCBpcyByZXF1aXJlZCc7XG4gIH1cbiAgaWYgKHZhbHVlcy5yZXBvc2l0b3J5ID09PSB1bmRlZmluZWQgfHwgdmFsdWVzLnJlcG9zaXRvcnkgPT09ICcnKSB7XG4gICAgZXJyb3IucmVwb3NpdG9yeSA9ICdmaWVsZCBpcyByZXF1aXJlZCc7XG4gIH1cbiAgcmV0dXJuIGVycm9yO1xufTtcbiJdfQ==

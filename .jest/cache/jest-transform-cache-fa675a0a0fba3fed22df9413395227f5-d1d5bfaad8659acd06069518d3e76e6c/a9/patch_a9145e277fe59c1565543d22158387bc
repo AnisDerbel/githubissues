@@ -1,0 +1,4 @@
+9efef675b71df981771a879b35e7166d
+
+var patch = function patch(a, loose) {return new (require('../classes/semver'))(a, loose).patch;};
+module.exports = patch;

@@ -1,0 +1,33 @@
+b5016cfbd5dff19b99703423ff8cb17a
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.findByAPI = void 0;
+
+
+
+
+
+
+
+
+
+
+
+var findByAPI = function findByAPI(instance) {return {
+    findByTestId: (0, require("./byTestId").findByTestId)(instance),
+    findByText: (0, require("./byText").findByText)(instance),
+    findByPlaceholderText: (0, require("./byPlaceholderText").findByPlaceholderText)(instance),
+    findByDisplayValue: (0, require("./byDisplayValue").findByDisplayValue)(instance),
+    findAllByTestId: (0, require("./byTestId").findAllByTestId)(instance),
+    findAllByText: (0, require("./byText").findAllByText)(instance),
+    findAllByPlaceholderText: (0, require("./byPlaceholderText").findAllByPlaceholderText)(instance),
+    findAllByDisplayValue: (0, require("./byDisplayValue").findAllByDisplayValue)(instance),
+
+    findByPlaceholder: function findByPlaceholder() {return (0, require("./errors").throwRenamedFunctionError)('findByPlaceholder', 'findByPlaceholderText');},
+    findAllByPlaceholder: function findAllByPlaceholder() {return (0, require("./errors").throwRenamedFunctionError)('findAllByPlaceholder', 'findAllByPlaceholderText');} };};
+
+
+exports.findByAPI = findByAPI;

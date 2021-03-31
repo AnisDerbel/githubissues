@@ -1,0 +1,74 @@
+b86e5612d24d12dc57427c6edd720680
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+require("react-native-gesture-handler");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactRedux = require("react-redux");
+
+var _reactNativePaper = require("react-native-paper");
+
+var _native = require("@react-navigation/native");
+
+var _routes = _interopRequireDefault(require("./src/routes/routes"));
+
+var _store = _interopRequireDefault(require("./src/redux/store"));
+
+var _theme = _interopRequireDefault(require("./src/theme"));
+
+var _CustomDropdownAlert = _interopRequireDefault(require("./src/components/CustomDropdownAlert"));
+
+var _this = this,
+    _jsxFileName = "/Users/anisderbel/Documents/apcgithubissues/App.tsx";
+
+var App = function App() {
+  return _react.default.createElement(_reactRedux.Provider, {
+    store: _store.default,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 20
+    }
+  }, _react.default.createElement(_reactNativePaper.Provider, {
+    theme: _theme.default,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 5
+    }
+  }, _react.default.createElement(_native.NavigationContainer, {
+    theme: _theme.default,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 7
+    }
+  }, _react.default.createElement(_routes.default, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 9
+    }
+  })), _react.default.createElement(_CustomDropdownAlert.default, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 7
+    }
+  })));
+};
+
+var _default = App;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvQXBwLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7Ozs7O0FBRUEsSUFBTSxHQUFHLEdBQUcsU0FBTixHQUFNO0FBQUEsU0FDViw2QkFBQyxvQkFBRDtBQUFVLElBQUEsS0FBSyxFQUFFLGNBQWpCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsS0FDRSw2QkFBQywwQkFBRDtBQUFlLElBQUEsS0FBSyxFQUFFLGNBQXRCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsS0FDRSw2QkFBQywyQkFBRDtBQUFxQixJQUFBLEtBQUssRUFBRSxjQUE1QjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLEtBQ0UsNkJBQUMsZUFBRDtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLElBREYsQ0FERixFQUlFLDZCQUFDLDRCQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsSUFKRixDQURGLENBRFU7QUFBQSxDQUFaOztlQVdlLEciLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgJ3JlYWN0LW5hdGl2ZS1nZXN0dXJlLWhhbmRsZXInO1xuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7UHJvdmlkZXJ9IGZyb20gJ3JlYWN0LXJlZHV4JztcbmltcG9ydCB7UHJvdmlkZXIgYXMgUGFwZXJQcm92aWRlcn0gZnJvbSAncmVhY3QtbmF0aXZlLXBhcGVyJztcbmltcG9ydCB7TmF2aWdhdGlvbkNvbnRhaW5lcn0gZnJvbSAnQHJlYWN0LW5hdmlnYXRpb24vbmF0aXZlJztcbmltcG9ydCBSb3V0ZXMgZnJvbSAnLi9zcmMvcm91dGVzL3JvdXRlcyc7XG5pbXBvcnQgc3RvcmUgZnJvbSAnLi9zcmMvcmVkdXgvc3RvcmUnO1xuaW1wb3J0IHRoZW1lIGZyb20gJy4vc3JjL3RoZW1lJztcbmltcG9ydCBDdXN0b21Ecm9wZG93bkFsZXJ0IGZyb20gJy4vc3JjL2NvbXBvbmVudHMvQ3VzdG9tRHJvcGRvd25BbGVydCc7XG5cbmNvbnN0IEFwcCA9ICgpID0+IChcbiAgPFByb3ZpZGVyIHN0b3JlPXtzdG9yZX0+XG4gICAgPFBhcGVyUHJvdmlkZXIgdGhlbWU9e3RoZW1lfT5cbiAgICAgIDxOYXZpZ2F0aW9uQ29udGFpbmVyIHRoZW1lPXt0aGVtZX0+XG4gICAgICAgIDxSb3V0ZXMgLz5cbiAgICAgIDwvTmF2aWdhdGlvbkNvbnRhaW5lcj5cbiAgICAgIDxDdXN0b21Ecm9wZG93bkFsZXJ0IC8+XG4gICAgPC9QYXBlclByb3ZpZGVyPlxuICA8L1Byb3ZpZGVyPlxuKTtcblxuZXhwb3J0IGRlZmF1bHQgQXBwO1xuIl19

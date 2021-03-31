@@ -1,0 +1,16 @@
+a314ce1d65b52f345b49b34fd19618e3
+
+
+
+
+
+
+
+function isKeyable(value) {
+  var type = typeof value;
+  return type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean' ?
+  value !== '__proto__' :
+  value === null;
+}
+
+module.exports = isKeyable;

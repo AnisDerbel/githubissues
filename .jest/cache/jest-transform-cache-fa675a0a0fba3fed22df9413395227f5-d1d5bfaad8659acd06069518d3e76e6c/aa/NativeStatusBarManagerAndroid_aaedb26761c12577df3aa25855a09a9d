@@ -1,0 +1,70 @@
+6a4e41c93749940f101b287595cda885
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+var TurboModuleRegistry = _interopRequireWildcard(require("../../TurboModule/TurboModuleRegistry"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var NativeModule = TurboModuleRegistry.getEnforcing('StatusBarManager');
+var constants = null;
+
+var NativeStatusBarManager = {
+  getConstants: function getConstants()
+
+
+  {
+    if (constants == null) {
+      constants = NativeModule.getConstants();
+    }
+    return constants;
+  },
+
+  setColor: function setColor(color, animated) {
+    NativeModule.setColor(color, animated);
+  },
+
+  setTranslucent: function setTranslucent(translucent) {
+    NativeModule.setTranslucent(translucent);
+  },
+
+
+
+
+
+
+  setStyle: function setStyle(statusBarStyle) {
+    NativeModule.setStyle(statusBarStyle);
+  },
+
+  setHidden: function setHidden(hidden) {
+    NativeModule.setHidden(hidden);
+  } };var _default =
+
+
+NativeStatusBarManager;exports.default = _default;

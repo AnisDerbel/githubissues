@@ -1,0 +1,9 @@
+c713ba8be9ca923ae88f85304c9a4581
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.APPROX_STATUSBAR_HEIGHT = void 0;
+var APPROX_STATUSBAR_HEIGHT = 0;
+exports.APPROX_STATUSBAR_HEIGHT = APPROX_STATUSBAR_HEIGHT;

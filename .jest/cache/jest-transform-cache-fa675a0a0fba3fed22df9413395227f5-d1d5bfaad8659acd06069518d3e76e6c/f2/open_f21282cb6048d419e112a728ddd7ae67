@@ -1,0 +1,53 @@
+ddf88163505b104781a4369cadf0c78a
+/* istanbul ignore next */
+function cov_2kay6yvm1m() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/assets/svgs/open.svg";
+  var hash = "bd0f44553da2568424f9e43c4b8f644c4df808eb";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/assets/svgs/open.svg",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 4,
+          column: 6
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: null,
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "bd0f44553da2568424f9e43c4b8f644c4df808eb"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2kay6yvm1m = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2kay6yvm1m();
+cov_2kay6yvm1m().s[0]++;
+module.exports = {
+  testUri: "../../../src/assets/svgs/open.svg"
+};

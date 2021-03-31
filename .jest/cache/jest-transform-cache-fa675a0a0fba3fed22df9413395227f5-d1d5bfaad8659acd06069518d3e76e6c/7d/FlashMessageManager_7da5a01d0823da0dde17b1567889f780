@@ -1,0 +1,22 @@
+d4c660b7b4ebfa4ac1fd7b649e42b7c8
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var
+
+
+FlashMessageManager = function () {function FlashMessageManager() {(0, _classCallCheck2.default)(this, FlashMessageManager);this.
+    _defaultFlashMessage = null;}(0, _createClass2.default)(FlashMessageManager, [{ key: "register", value:
+    function register(_ref) {
+      if (!this._defaultFlashMessage && "_id" in _ref) {
+        this._defaultFlashMessage = _ref;
+      }
+    } }, { key: "unregister", value:
+    function unregister(_ref) {
+      if (!!this._defaultFlashMessage && this._defaultFlashMessage._id === _ref._id) {
+        this._defaultFlashMessage = null;
+      }
+    } }, { key: "getDefault", value:
+    function getDefault() {
+      return this._defaultFlashMessage;
+    } }]);return FlashMessageManager;}();var _default =
+
+
+new FlashMessageManager();exports.default = _default;

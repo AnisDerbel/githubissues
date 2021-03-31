@@ -1,0 +1,59 @@
+c9f06c750cf638a05d511aefef50ee5c
+
+
+
+
+
+
+
+
+
+var mapTag = '[object Map]',
+objectTag = '[object Object]',
+promiseTag = '[object Promise]',
+setTag = '[object Set]',
+weakMapTag = '[object WeakMap]';
+
+var dataViewTag = '[object DataView]';
+
+
+var dataViewCtorString = require('./_toSource')(require('./_DataView')),
+mapCtorString = require('./_toSource')(require('./_Map')),
+promiseCtorString = require('./_toSource')(require('./_Promise')),
+setCtorString = require('./_toSource')(require('./_Set')),
+weakMapCtorString = require('./_toSource')(require('./_WeakMap'));
+
+
+
+
+
+
+
+
+var getTag = require('./_baseGetTag');
+
+
+if (require('./_DataView') && getTag(new (require('./_DataView'))(new ArrayBuffer(1))) != dataViewTag ||
+require('./_Map') && getTag(new (require('./_Map'))()) != mapTag ||
+require('./_Promise') && getTag(require('./_Promise').resolve()) != promiseTag ||
+require('./_Set') && getTag(new (require('./_Set'))()) != setTag ||
+require('./_WeakMap') && getTag(new (require('./_WeakMap'))()) != weakMapTag) {
+  getTag = function getTag(value) {
+    var result = require('./_baseGetTag')(value),
+    Ctor = result == objectTag ? value.constructor : undefined,
+    ctorString = Ctor ? require('./_toSource')(Ctor) : '';
+
+    if (ctorString) {
+      switch (ctorString) {
+        case dataViewCtorString:return dataViewTag;
+        case mapCtorString:return mapTag;
+        case promiseCtorString:return promiseTag;
+        case setCtorString:return setTag;
+        case weakMapCtorString:return weakMapTag;}
+
+    }
+    return result;
+  };
+}
+
+module.exports = getTag;

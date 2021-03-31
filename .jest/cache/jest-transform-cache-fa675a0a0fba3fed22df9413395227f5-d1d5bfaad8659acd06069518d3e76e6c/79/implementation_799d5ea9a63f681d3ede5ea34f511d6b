@@ -1,0 +1,23 @@
+dbeaed2df877ddf73818e34ebde7a762
+'use strict';
+
+
+
+
+
+
+
+
+module.exports = function flat() {
+  var O = require('es-abstract/2020/ToObject')(this);
+  var sourceLen = require('es-abstract/2020/ToLength')(require('es-abstract/2020/Get')(O, 'length'));
+
+  var depthNum = 1;
+  if (arguments.length > 0 && typeof arguments[0] !== 'undefined') {
+    depthNum = require('es-abstract/2020/ToInteger')(arguments[0]);
+  }
+
+  var A = require('es-abstract/2020/ArraySpeciesCreate')(O, 0);
+  require('es-abstract/2020/FlattenIntoArray')(A, O, sourceLen, 0, depthNum);
+  return A;
+};

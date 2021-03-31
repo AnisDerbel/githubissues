@@ -1,0 +1,4 @@
+ae8c800424d46510ffdd567e2fed8e44
+
+var rsort = function rsort(list, loose) {return list.sort(function (a, b) {return require('./compare-build')(b, a, loose);});};
+module.exports = rsort;

@@ -1,0 +1,15 @@
+8433bc7d168d1ddcd5561342802f19be
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _isDirty = require("@babel/runtime/helpers/interopRequireDefault")(require("./selectors/isDirty"));
+
+var _plain = require("@babel/runtime/helpers/interopRequireDefault")(require("./structure/plain"));
+
+var _default = (0, _isDirty["default"])(_plain["default"]);
+
+exports["default"] = _default;

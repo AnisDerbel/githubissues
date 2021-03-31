@@ -1,0 +1,18 @@
+b04d3445a3af6cc8d5347e1432fc172f
+"use strict";
+
+exports.__esModule = true;
+exports["default"] = createGetFormError;
+
+function createGetFormError(_ref) {
+  var getIn = _ref.getIn;
+  return function (form, getFormState) {
+    return function (state) {
+      var nonNullGetFormState = getFormState || function (state) {
+        return getIn(state, 'form');
+      };
+
+      return getIn(nonNullGetFormState(state), form + ".error");
+    };
+  };
+}

@@ -1,0 +1,8 @@
+{
+  "preset": "ts-jest",
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "commonjs"
+  }
+}

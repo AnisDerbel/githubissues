@@ -1,0 +1,17 @@
+11b2d32d4e297c50bd50151ffef8722a
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = verifyPlainObject;
+
+var _isPlainObject = require("@babel/runtime/helpers/interopRequireDefault")(require("./isPlainObject"));
+
+var _warning = require("@babel/runtime/helpers/interopRequireDefault")(require("./warning"));
+
+function verifyPlainObject(value, displayName, methodName) {
+  if (!(0, _isPlainObject["default"])(value)) {
+    (0, _warning["default"])(methodName + "() in " + displayName + " must return a plain object. Instead received " + value + ".");
+  }
+}

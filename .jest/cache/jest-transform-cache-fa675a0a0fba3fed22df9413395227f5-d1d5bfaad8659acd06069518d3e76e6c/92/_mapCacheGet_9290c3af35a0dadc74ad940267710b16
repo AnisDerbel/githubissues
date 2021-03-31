@@ -1,0 +1,17 @@
+76ac3f62d6db230125b56ff6922387f6
+
+
+
+
+
+
+
+
+
+
+
+function mapCacheGet(key) {
+  return require('./_getMapData')(this, key).get(key);
+}
+
+module.exports = mapCacheGet;

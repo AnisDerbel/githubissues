@@ -1,0 +1,4 @@
+3337cea61fbd99ac8b4f9790a9abee92
+
+var neq = function neq(a, b, loose) {return require('./compare')(a, b, loose) !== 0;};
+module.exports = neq;

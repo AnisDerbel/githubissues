@@ -1,0 +1,9 @@
+31e5668da70881f6031dcd7cfd454249
+
+
+
+var toComparators = function toComparators(range, options) {return (
+    new (require('../classes/range'))(range, options).set.
+    map(function (comp) {return comp.map(function (c) {return c.value;}).join(' ').trim().split(' ');}));};
+
+module.exports = toComparators;

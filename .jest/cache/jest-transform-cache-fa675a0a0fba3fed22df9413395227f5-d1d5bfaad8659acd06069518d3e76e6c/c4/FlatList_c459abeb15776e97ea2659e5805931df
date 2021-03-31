@@ -1,0 +1,638 @@
+dc211c3611b35390b537c6dd7745d925
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));var _jsxFileName = "/Users/anisderbel/Documents/apcgithubissues/node_modules/react-native/Libraries/Lists/FlatList.js";function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = (0, _getPrototypeOf2.default)(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = (0, _getPrototypeOf2.default)(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return (0, _possibleConstructorReturn2.default)(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {(0, _defineProperty2.default)(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var defaultProps = _objectSpread(_objectSpread({},
+require('./VirtualizedList').defaultProps), {}, {
+  numColumns: 1,
+
+
+
+
+
+  removeClippedSubviews: require('../Utilities/Platform').OS === 'android' });var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FlatList = function (_React$PureComponent) {(0, _inherits2.default)(FlatList, _React$PureComponent);var _super = _createSuper(FlatList);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function FlatList(_props) {var _this;(0, _classCallCheck2.default)(this, FlatList);
+    _this = _super.call(this, _props);_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    _virtualizedListPairs = [];_this.
+
+    _captureRef = function (ref) {
+      _this._listRef = ref;
+    };_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    _getItem = function (data, index) {var
+      numColumns = _this.props.numColumns;
+      if (numColumns > 1) {
+        var ret = [];
+        for (var kk = 0; kk < numColumns; kk++) {
+          var _item = data[index * numColumns + kk];
+          if (_item != null) {
+            ret.push(_item);
+          }
+        }
+        return ret;
+      } else {
+        return data[index];
+      }
+    };_this.
+
+    _getItemCount = function (data) {
+      if (data) {var
+        numColumns = _this.props.numColumns;
+        return numColumns > 1 ? Math.ceil(data.length / numColumns) : data.length;
+      } else {
+        return 0;
+      }
+    };_this.
+
+    _keyExtractor = function (items, index) {var _this$props =
+      _this.props,keyExtractor = _this$props.keyExtractor,numColumns = _this$props.numColumns;
+      if (numColumns > 1) {
+        require('invariant')(
+        Array.isArray(items),
+        'FlatList: Encountered internal consistency error, expected each item to consist of an ' +
+        'array with 1-%s columns; instead, received a single item.',
+        numColumns);
+
+        return items.
+        map(function (it, kk) {return keyExtractor(it, index * numColumns + kk);}).
+        join(':');
+      } else {
+
+        return keyExtractor(items, index);
+      }
+    };_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    _renderer = function () {var _this$props2 =
+
+
+
+
+
+      _this.props,ListItemComponent = _this$props2.ListItemComponent,renderItem = _this$props2.renderItem,numColumns = _this$props2.numColumns,columnWrapperStyle = _this$props2.columnWrapperStyle;
+
+      var virtualizedListRenderKey = ListItemComponent ?
+      'ListItemComponent' :
+      'renderItem';
+
+      var renderer = function renderer(props) {
+        if (ListItemComponent) {
+
+          return require('react').createElement(ListItemComponent, (0, _extends2.default)({}, props, { __self: (0, _assertThisInitialized2.default)(_this), __source: { fileName: _jsxFileName, lineNumber: 576, columnNumber: 16 } }));
+        } else if (renderItem) {
+          return renderItem(props);
+        } else {
+          return null;
+        }
+      };
+
+      return (0, _defineProperty2.default)({},
+
+
+
+      virtualizedListRenderKey, function (info) {
+        if (numColumns > 1) {var
+          _item2 = info.item,_index = info.index;
+          require('invariant')(
+          Array.isArray(_item2),
+          'Expected array of items with numColumns > 1');
+
+          return (
+            require('react').createElement(require('../Components/View/View'), { style: require('../StyleSheet/StyleSheet').compose(styles.row, columnWrapperStyle), __self: (0, _assertThisInitialized2.default)(_this), __source: { fileName: _jsxFileName, lineNumber: 596, columnNumber: 13 } },
+            _item2.map(function (it, kk) {
+              var element = renderer({
+                item: it,
+                index: _index * numColumns + kk,
+                separators: info.separators });
+
+              return element != null ?
+              require('react').createElement(require('react').Fragment, { key: kk, __self: (0, _assertThisInitialized2.default)(_this), __source: { fileName: _jsxFileName, lineNumber: 604, columnNumber: 19 } }, element) :
+              null;
+            })));
+
+
+        } else {
+          return renderer(info);
+        }
+      });
+
+    };_this._checkProps(_this.props);if (_this.props.viewabilityConfigCallbackPairs) {_this._virtualizedListPairs = _this.props.viewabilityConfigCallbackPairs.map(function (pair) {return { viewabilityConfig: pair.viewabilityConfig, onViewableItemsChanged: _this._createOnViewableItemsChanged(pair.onViewableItemsChanged) };});} else if (_this.props.onViewableItemsChanged) {_this._virtualizedListPairs.push({ viewabilityConfig: _this.props.viewabilityConfig, onViewableItemsChanged: _this._createOnViewableItemsChanged(_this.props.onViewableItemsChanged) });}return _this;}(0, _createClass2.default)(FlatList, [{ key: "scrollToEnd", value: function scrollToEnd(params) {if (this._listRef) {this._listRef.scrollToEnd(params);}} }, { key: "scrollToIndex", value: function scrollToIndex(params) {if (this._listRef) {this._listRef.scrollToIndex(params);}} }, { key: "scrollToItem", value: function scrollToItem(params) {if (this._listRef) {this._listRef.scrollToItem(params);}} }, { key: "scrollToOffset", value: function scrollToOffset(params) {if (this._listRef) {this._listRef.scrollToOffset(params);}} }, { key: "recordInteraction", value: function recordInteraction() {if (this._listRef) {this._listRef.recordInteraction();}} }, { key: "flashScrollIndicators", value: function flashScrollIndicators() {if (this._listRef) {this._listRef.flashScrollIndicators();}} }, { key: "getScrollResponder", value: function getScrollResponder() {if (this._listRef) {return this._listRef.getScrollResponder();}} }, { key: "getNativeScrollRef", value: function getNativeScrollRef() {if (this._listRef) {return this._listRef.getScrollRef();}} }, { key: "getScrollableNode", value: function getScrollableNode() {if (this._listRef) {return this._listRef.getScrollableNode();}} }, { key: "setNativeProps", value: function setNativeProps(props) {if (this._listRef) {this._listRef.setNativeProps(props);}} }, { key: "componentDidUpdate", value: function componentDidUpdate(prevProps) {require('invariant')(prevProps.numColumns === this.props.numColumns, 'Changing numColumns on the fly is not supported. Change the key prop on FlatList when ' + 'changing the number of columns to force a fresh render of the component.');require('invariant')(prevProps.onViewableItemsChanged === this.props.onViewableItemsChanged, 'Changing onViewableItemsChanged on the fly is not supported');require('invariant')(!require('../Utilities/differ/deepDiffer')(prevProps.viewabilityConfig, this.props.viewabilityConfig), 'Changing viewabilityConfig on the fly is not supported');require('invariant')(prevProps.viewabilityConfigCallbackPairs === this.props.viewabilityConfigCallbackPairs, 'Changing viewabilityConfigCallbackPairs on the fly is not supported');this._checkProps(this.props);} }, { key: "_checkProps", value: function _checkProps(props) {var getItem = props.getItem,getItemCount = props.getItemCount,horizontal = props.horizontal,numColumns = props.numColumns,columnWrapperStyle = props.columnWrapperStyle,onViewableItemsChanged = props.onViewableItemsChanged,viewabilityConfigCallbackPairs = props.viewabilityConfigCallbackPairs;require('invariant')(!getItem && !getItemCount, 'FlatList does not support custom data formats.');if (numColumns > 1) {require('invariant')(!horizontal, 'numColumns does not support horizontal.');} else {require('invariant')(!columnWrapperStyle, 'columnWrapperStyle not supported for single column lists');}require('invariant')(!(onViewableItemsChanged && viewabilityConfigCallbackPairs), 'FlatList does not support setting both onViewableItemsChanged and ' + 'viewabilityConfigCallbackPairs.');} }, { key: "_pushMultiColumnViewable", value: function _pushMultiColumnViewable(arr, v) {var _this$props3 = this.props,numColumns = _this$props3.numColumns,keyExtractor = _this$props3.keyExtractor;v.item.forEach(function (item, ii) {require('invariant')(v.index != null, 'Missing index!');var index = v.index * numColumns + ii;arr.push(_objectSpread(_objectSpread({}, v), {}, { item: item, key: keyExtractor(item, index), index: index }));});} }, { key: "_createOnViewableItemsChanged", value: function _createOnViewableItemsChanged(onViewableItemsChanged) {var _this2 = this;return function (info) {var numColumns = _this2.props.numColumns;if (onViewableItemsChanged) {if (numColumns > 1) {var changed = [];var viewableItems = [];info.viewableItems.forEach(function (v) {return _this2._pushMultiColumnViewable(viewableItems, v);});info.changed.forEach(function (v) {return _this2._pushMultiColumnViewable(changed, v);});onViewableItemsChanged({ viewableItems: viewableItems, changed: changed });} else {onViewableItemsChanged(info);}}};} }, { key: "render", value:
+
+    function render() {var _this$props4 =
+      this.props,numColumns = _this$props4.numColumns,columnWrapperStyle = _this$props4.columnWrapperStyle,restProps = (0, _objectWithoutProperties2.default)(_this$props4, ["numColumns", "columnWrapperStyle"]);
+
+      return (
+        require('react').createElement(require('./VirtualizedList'), (0, _extends2.default)({},
+        restProps, {
+          getItem: this._getItem,
+          getItemCount: this._getItemCount,
+          keyExtractor: this._keyExtractor,
+          ref: this._captureRef,
+          viewabilityConfigCallbackPairs: this._virtualizedListPairs },
+        this._renderer(), { __self: this, __source: { fileName: _jsxFileName, lineNumber: 620, columnNumber: 7 } })));
+
+
+    } }]);return FlatList;}(require('react').PureComponent);FlatList.defaultProps = defaultProps;
+
+
+var styles = require('../StyleSheet/StyleSheet').create({
+  row: { flexDirection: 'row' } });
+
+
+module.exports = FlatList;

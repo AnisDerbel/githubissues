@@ -1,0 +1,84 @@
+4c346394257a7f7348d5d9c9f01b3bdf
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
+
+
+var _verifyComponentAttributeEquivalence = _interopRequireDefault(require("./verifyComponentAttributeEquivalence"));function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {(0, _defineProperty2.default)(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function registerGeneratedViewConfig(
+componentName,
+viewConfig)
+{
+  var mergedViewConfig = {
+    uiViewClassName: componentName,
+    Commands: {},
+
+
+
+    bubblingEventTypes: _objectSpread(_objectSpread({},
+    require('../Components/View/ReactNativeViewViewConfig').bubblingEventTypes),
+    viewConfig.bubblingEventTypes || {}),
+
+
+
+
+    directEventTypes: _objectSpread(_objectSpread({},
+    require('../Components/View/ReactNativeViewViewConfig').directEventTypes),
+    viewConfig.directEventTypes || {}),
+
+
+
+
+    validAttributes: _objectSpread(_objectSpread({},
+    require('../Components/View/ReactNativeViewViewConfig').validAttributes),
+    viewConfig.validAttributes || {}) };
+
+
+
+  require('../Renderer/shims/ReactNativeViewConfigRegistry').register(componentName, function () {
+    (0, _verifyComponentAttributeEquivalence.default)(componentName, mergedViewConfig);
+
+    return mergedViewConfig;
+  });
+}
+
+module.exports = registerGeneratedViewConfig;

@@ -1,0 +1,15 @@
+b3a70897dd4dcbac6d020846fecb3747
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.mapValues = mapValues;
+
+
+function mapValues(object, fn) {
+  return Object.keys(object).reduce(function (memo, key) {
+    memo[key] = fn(object[key]);
+    return memo;
+  }, {});
+}

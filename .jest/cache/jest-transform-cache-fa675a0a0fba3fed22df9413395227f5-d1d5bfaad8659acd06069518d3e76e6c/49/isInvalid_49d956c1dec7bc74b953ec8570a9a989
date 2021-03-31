@@ -1,0 +1,18 @@
+3ff21ae98f99e28a8d064ae95efc15be
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = createIsInvalid;
+
+var _isValid = require("@babel/runtime/helpers/interopRequireDefault")(require("./isValid"));
+
+function createIsInvalid(structure) {
+  return function (form, getFormState) {
+    var isValid = (0, _isValid["default"])(structure)(form, getFormState);
+    return function (state) {
+      return !isValid(state);
+    };
+  };
+}

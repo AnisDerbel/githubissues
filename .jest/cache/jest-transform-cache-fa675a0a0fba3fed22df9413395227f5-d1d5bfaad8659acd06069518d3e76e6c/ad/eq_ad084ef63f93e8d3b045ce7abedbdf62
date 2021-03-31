@@ -1,0 +1,4 @@
+6e5ac7e56e79dd91854ec2a4053bbfb5
+
+var eq = function eq(a, b, loose) {return require('./compare')(a, b, loose) === 0;};
+module.exports = eq;

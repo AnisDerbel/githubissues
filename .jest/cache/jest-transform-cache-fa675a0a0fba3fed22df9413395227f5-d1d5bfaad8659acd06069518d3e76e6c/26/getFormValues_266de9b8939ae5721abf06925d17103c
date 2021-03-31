@@ -1,0 +1,15 @@
+287f1bd8020084df596396ce4fdc9923
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _getFormValues = require("@babel/runtime/helpers/interopRequireDefault")(require("./selectors/getFormValues"));
+
+var _plain = require("@babel/runtime/helpers/interopRequireDefault")(require("./structure/plain"));
+
+var _default = (0, _getFormValues["default"])(_plain["default"]);
+
+exports["default"] = _default;

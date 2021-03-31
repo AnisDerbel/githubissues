@@ -1,0 +1,34 @@
+c98a5784d7c920759644d4d46970da7d
+"use strict";
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var defaultShouldAsyncValidate = function defaultShouldAsyncValidate(_ref) {
+  var initialized = _ref.initialized,
+  trigger = _ref.trigger,
+  pristine = _ref.pristine,
+  syncValidationPasses = _ref.syncValidationPasses;
+
+  if (!syncValidationPasses) {
+    return false;
+  }
+
+  switch (trigger) {
+    case 'blur':
+    case 'change':
+
+      return true;
+
+    case 'submit':
+
+
+      return !pristine || !initialized;
+
+    default:
+      return false;}
+
+};
+
+var _default = defaultShouldAsyncValidate;
+exports["default"] = _default;

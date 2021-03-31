@@ -1,0 +1,37 @@
+462fabd196ad2ccaf3c8964cb4b72d9b
+
+
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _base = _interopRequireDefault(require("@react-native/normalize-color/base"));
+
+
+
+
+function normalizeColor(
+color)
+{
+  if (typeof color === 'object' && color != null) {var _require =
+    require('./PlatformColorValueTypes'),normalizeColorObject = _require.normalizeColorObject;
+    var normalizedColor = normalizeColorObject(color);
+    if (normalizedColor != null) {
+      return color;
+    }
+  }
+
+  if (typeof color === 'string' || typeof color === 'number') {
+    return (0, _base.default)(color);
+  }
+}
+
+module.exports = normalizeColor;

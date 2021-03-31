@@ -1,0 +1,80 @@
+3b07edf8015fc791543cb8d90b7e35b1
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _Platform = _interopRequireDefault(require("../Utilities/Platform"));
+var _EventEmitter2 = _interopRequireDefault(require("../vendor/emitter/EventEmitter"));
+
+var _RCTDeviceEventEmitter = _interopRequireDefault(require("./RCTDeviceEventEmitter"));
+var _invariant = _interopRequireDefault(require("invariant"));function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = (0, _getPrototypeOf2.default)(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = (0, _getPrototypeOf2.default)(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return (0, _possibleConstructorReturn2.default)(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}
+
+
+
+
+
+
+
+
+
+
+
+var DEFAULT_NATIVE_EVENT_EMITTER_OPTIONS = {
+  __SECRET_DISABLE_CALLS_INTO_MODULE_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: false };var
+
+
+
+
+
+
+NativeEventEmitter = function (_EventEmitter) {(0, _inherits2.default)(NativeEventEmitter, _EventEmitter);var _super = _createSuper(NativeEventEmitter);
+
+
+
+  function NativeEventEmitter(
+  nativeModule)
+
+  {var _this;var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DEFAULT_NATIVE_EVENT_EMITTER_OPTIONS;(0, _classCallCheck2.default)(this, NativeEventEmitter);
+    _this = _super.call(this, _RCTDeviceEventEmitter.default.sharedSubscriber);
+    _this._disableCallsIntoModule =
+    options.__SECRET_DISABLE_CALLS_INTO_MODULE_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+    if (_Platform.default.OS === 'ios') {
+      (0, _invariant.default)(nativeModule, 'Native module cannot be null.');
+      _this._nativeModule = nativeModule;
+    }return _this;
+  }(0, _createClass2.default)(NativeEventEmitter, [{ key: "addListener", value:
+
+    function addListener(
+    eventType,
+    listener,
+    context)
+    {
+      if (this._nativeModule != null && !this._disableCallsIntoModule) {
+        this._nativeModule.addListener(eventType);
+      }
+      return (0, _get2.default)((0, _getPrototypeOf2.default)(NativeEventEmitter.prototype), "addListener", this).call(this, eventType, listener, context);
+    } }, { key: "removeAllListeners", value:
+
+    function removeAllListeners(eventType) {
+      (0, _invariant.default)(eventType, 'eventType argument is required.');
+      var count = this.listenerCount(eventType);
+      if (this._nativeModule != null && !this._disableCallsIntoModule) {
+        this._nativeModule.removeListeners(count);
+      }
+      (0, _get2.default)((0, _getPrototypeOf2.default)(NativeEventEmitter.prototype), "removeAllListeners", this).call(this, eventType);
+    } }, { key: "removeSubscription", value:
+
+    function removeSubscription(subscription) {
+      if (this._nativeModule != null && !this._disableCallsIntoModule) {
+        this._nativeModule.removeListeners(1);
+      }
+      (0, _get2.default)((0, _getPrototypeOf2.default)(NativeEventEmitter.prototype), "removeSubscription", this).call(this, subscription);
+    } }]);return NativeEventEmitter;}(_EventEmitter2.default);exports.default = NativeEventEmitter;

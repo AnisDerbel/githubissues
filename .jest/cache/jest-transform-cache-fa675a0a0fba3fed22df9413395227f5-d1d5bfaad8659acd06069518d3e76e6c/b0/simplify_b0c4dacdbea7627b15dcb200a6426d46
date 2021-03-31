@@ -1,0 +1,45 @@
+872276a84d64831920691d46f41b370f
+function _createForOfIteratorHelperLoose(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;return function () {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };};}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}it = o[Symbol.iterator]();return it.next.bind(it);}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}
+
+
+
+
+module.exports = function (versions, range, options) {
+  var set = [];
+  var min = null;
+  var prev = null;
+  var v = versions.sort(function (a, b) {return require('../functions/compare.js')(a, b, options);});
+  for (var _iterator = _createForOfIteratorHelperLoose(v), _step; !(_step = _iterator()).done;) {var version = _step.value;
+    var included = require('../functions/satisfies.js')(version, range, options);
+    if (included) {
+      prev = version;
+      if (!min)
+      min = version;
+    } else {
+      if (prev) {
+        set.push([min, prev]);
+      }
+      prev = null;
+      min = null;
+    }
+  }
+  if (min)
+  set.push([min, null]);
+
+  var ranges = [];
+  for (var _i = 0, _set = set; _i < _set.length; _i++) {var _ref = _set[_i];var _ref2 = require("@babel/runtime/helpers/slicedToArray")(_ref, 2);var _min = _ref2[0];var max = _ref2[1];
+    if (_min === max)
+    ranges.push(_min);else
+    if (!max && _min === v[0])
+    ranges.push('*');else
+    if (!max)
+    ranges.push(">=" + _min);else
+    if (_min === v[0])
+    ranges.push("<=" + max);else
+
+    ranges.push(_min + " - " + max);
+  }
+  var simplified = ranges.join(' || ');
+  var original = typeof range.raw === 'string' ? range.raw : String(range);
+  return simplified.length < original.length ? simplified : range;
+};

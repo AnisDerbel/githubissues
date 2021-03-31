@@ -1,0 +1,17 @@
+0201d94e0e230a6d2cd2b101ecd98241
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = sagaIdFactory;
+var PREFIX = '@@redux-saga-test-plan/id-';
+
+function sagaIdFactory() {
+  var id = 1;
+  return function nextSagaId() {
+    var newId = "" + PREFIX + id;
+    id += 1;
+    return newId;
+  };
+}

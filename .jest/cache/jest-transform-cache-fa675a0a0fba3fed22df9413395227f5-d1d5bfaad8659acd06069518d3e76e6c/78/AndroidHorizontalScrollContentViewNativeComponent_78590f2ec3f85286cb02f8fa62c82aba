@@ -1,0 +1,41 @@
+4075f25e8d63a8ed6b2d919655db6f66
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+var _registerGeneratedViewConfig = _interopRequireDefault(require("../../Utilities/registerGeneratedViewConfig"));
+var _requireNativeComponent = _interopRequireDefault(require("../../ReactNative/requireNativeComponent"));
+
+
+
+
+var AndroidHorizontalScrollContentViewViewConfig = {
+  uiViewClassName: 'AndroidHorizontalScrollContentView',
+  bubblingEventTypes: {},
+  directEventTypes: {},
+  validAttributes: {} };
+
+
+var AndroidHorizontalScrollContentViewNativeComponent;
+if (global.RN$Bridgeless) {
+  (0, _registerGeneratedViewConfig.default)(
+  'AndroidHorizontalScrollContentView',
+  AndroidHorizontalScrollContentViewViewConfig);
+
+  AndroidHorizontalScrollContentViewNativeComponent =
+  'AndroidHorizontalScrollContentView';
+} else {
+  AndroidHorizontalScrollContentViewNativeComponent = (0, _requireNativeComponent.default)(
+  'AndroidHorizontalScrollContentView');
+
+}var _default =
+
+AndroidHorizontalScrollContentViewNativeComponent;exports.default = _default;

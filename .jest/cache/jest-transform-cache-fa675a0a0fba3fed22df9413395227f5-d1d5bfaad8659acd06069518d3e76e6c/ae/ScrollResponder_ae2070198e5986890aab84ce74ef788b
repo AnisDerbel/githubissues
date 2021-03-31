@@ -1,0 +1,797 @@
+f1fa4a8b6573c159d453712883b6cdde
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _ScrollViewCommands = _interopRequireDefault(require("./ScrollView/ScrollViewCommands"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var IS_ANIMATING_TOUCH_START_THRESHOLD_MS = 16;
+
+
+
+
+
+
+
+
+
+var ScrollResponderMixin = {
+  _subscriptionKeyboardWillShow: null,
+  _subscriptionKeyboardWillHide: null,
+  _subscriptionKeyboardDidShow: null,
+  _subscriptionKeyboardDidHide: null,
+  scrollResponderMixinGetInitialState: function scrollResponderMixinGetInitialState() {
+    return {
+      isTouching: false,
+      lastMomentumScrollBeginTime: 0,
+      lastMomentumScrollEndTime: 0,
+
+
+
+
+
+
+      observedScrollSinceBecomingResponder: false,
+      becameResponderWhileAnimating: false };
+
+  },
+
+
+
+
+  scrollResponderHandleScrollShouldSetResponder: function scrollResponderHandleScrollShouldSetResponder() {
+
+    if (this.props.disableScrollViewPanResponder === true) {
+      return false;
+    }
+    return this.state.isTouching;
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  scrollResponderHandleStartShouldSetResponder: function scrollResponderHandleStartShouldSetResponder(
+  e)
+  {
+
+    if (this.props.disableScrollViewPanResponder === true) {
+      return false;
+    }
+
+    var currentlyFocusedInput = require('./TextInput/TextInputState').currentlyFocusedInput();
+
+    if (
+    this.props.keyboardShouldPersistTaps === 'handled' &&
+    this.scrollResponderKeyboardIsDismissible() &&
+    e.target !== currentlyFocusedInput)
+    {
+      return true;
+    }
+    return false;
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+  scrollResponderHandleStartShouldSetResponderCapture: function scrollResponderHandleStartShouldSetResponderCapture(
+  e)
+  {
+
+
+    if (this.scrollResponderIsAnimating()) {
+      return true;
+    }
+
+
+    if (this.props.disableScrollViewPanResponder === true) {
+      return false;
+    }var
+
+
+
+
+
+    keyboardShouldPersistTaps = this.props.keyboardShouldPersistTaps;
+    var keyboardNeverPersistTaps =
+    !keyboardShouldPersistTaps || keyboardShouldPersistTaps === 'never';
+
+    if (typeof e.target === 'number') {
+      if (__DEV__) {
+        console.error(
+        'Did not expect event target to be a number. Should have been a native component');
+
+      }
+
+      return false;
+    }
+
+    if (
+    keyboardNeverPersistTaps &&
+    this.scrollResponderKeyboardIsDismissible() &&
+    e.target != null &&
+    !require('./TextInput/TextInputState').isTextInput(e.target))
+    {
+      return true;
+    }
+
+    return false;
+  },
+
+
+
+
+  scrollResponderKeyboardIsDismissible: function scrollResponderKeyboardIsDismissible() {
+    var currentlyFocusedInput = require('./TextInput/TextInputState').currentlyFocusedInput();
+
+
+
+
+
+
+    var hasFocusedTextInput =
+    currentlyFocusedInput != null &&
+    require('./TextInput/TextInputState').isTextInput(currentlyFocusedInput);
+
+
+
+
+
+    var softKeyboardMayBeOpen =
+    this.keyboardWillOpenTo != null || require('../Utilities/Platform').OS === 'android';
+
+    return hasFocusedTextInput && softKeyboardMayBeOpen;
+  },
+
+
+
+
+
+
+
+
+
+
+
+  scrollResponderHandleResponderReject: function scrollResponderHandleResponderReject() {},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  scrollResponderHandleTerminationRequest: function scrollResponderHandleTerminationRequest() {
+    return !this.state.observedScrollSinceBecomingResponder;
+  },
+
+
+
+
+
+
+  scrollResponderHandleTouchEnd: function scrollResponderHandleTouchEnd(e) {
+    var nativeEvent = e.nativeEvent;
+    this.state.isTouching = nativeEvent.touches.length !== 0;
+    this.props.onTouchEnd && this.props.onTouchEnd(e);
+  },
+
+
+
+
+
+
+  scrollResponderHandleTouchCancel: function scrollResponderHandleTouchCancel(e) {
+    this.state.isTouching = false;
+    this.props.onTouchCancel && this.props.onTouchCancel(e);
+  },
+
+
+
+
+  scrollResponderHandleResponderRelease: function scrollResponderHandleResponderRelease(e) {
+    this.props.onResponderRelease && this.props.onResponderRelease(e);
+
+    if (typeof e.target === 'number') {
+      if (__DEV__) {
+        console.error(
+        'Did not expect event target to be a number. Should have been a native component');
+
+      }
+
+      return;
+    }
+
+
+
+    var currentlyFocusedTextInput = require('./TextInput/TextInputState').currentlyFocusedInput();
+    if (
+    this.props.keyboardShouldPersistTaps !== true &&
+    this.props.keyboardShouldPersistTaps !== 'always' &&
+    this.scrollResponderKeyboardIsDismissible() &&
+    e.target !== currentlyFocusedTextInput &&
+    !this.state.observedScrollSinceBecomingResponder &&
+    !this.state.becameResponderWhileAnimating)
+    {
+      this.props.onScrollResponderKeyboardDismissed &&
+      this.props.onScrollResponderKeyboardDismissed(e);
+      require('./TextInput/TextInputState').blurTextInput(currentlyFocusedTextInput);
+    }
+  },
+
+  scrollResponderHandleScroll: function scrollResponderHandleScroll(e) {
+    this.state.observedScrollSinceBecomingResponder = true;
+    this.props.onScroll && this.props.onScroll(e);
+  },
+
+
+
+
+  scrollResponderHandleResponderGrant: function scrollResponderHandleResponderGrant(e) {
+    this.state.observedScrollSinceBecomingResponder = false;
+    this.props.onResponderGrant && this.props.onResponderGrant(e);
+    this.state.becameResponderWhileAnimating = this.scrollResponderIsAnimating();
+  },
+
+
+
+
+
+
+
+
+  scrollResponderHandleScrollBeginDrag: function scrollResponderHandleScrollBeginDrag(e) {
+    require('../Interaction/FrameRateLogger').beginScroll();
+    this.props.onScrollBeginDrag && this.props.onScrollBeginDrag(e);
+  },
+
+
+
+
+  scrollResponderHandleScrollEndDrag: function scrollResponderHandleScrollEndDrag(e) {var
+    velocity = e.nativeEvent.velocity;
+
+
+
+
+
+    if (
+    !this.scrollResponderIsAnimating() && (
+    !velocity || velocity.x === 0 && velocity.y === 0))
+    {
+      require('../Interaction/FrameRateLogger').endScroll();
+    }
+    this.props.onScrollEndDrag && this.props.onScrollEndDrag(e);
+  },
+
+
+
+
+  scrollResponderHandleMomentumScrollBegin: function scrollResponderHandleMomentumScrollBegin(e) {
+    this.state.lastMomentumScrollBeginTime = global.performance.now();
+    this.props.onMomentumScrollBegin && this.props.onMomentumScrollBegin(e);
+  },
+
+
+
+
+  scrollResponderHandleMomentumScrollEnd: function scrollResponderHandleMomentumScrollEnd(e) {
+    require('../Interaction/FrameRateLogger').endScroll();
+    this.state.lastMomentumScrollEndTime = global.performance.now();
+    this.props.onMomentumScrollEnd && this.props.onMomentumScrollEnd(e);
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+  scrollResponderHandleTouchStart: function scrollResponderHandleTouchStart(e) {
+    this.state.isTouching = true;
+    this.props.onTouchStart && this.props.onTouchStart(e);
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+  scrollResponderHandleTouchMove: function scrollResponderHandleTouchMove(e) {
+    this.props.onTouchMove && this.props.onTouchMove(e);
+  },
+
+
+
+
+
+
+  scrollResponderIsAnimating: function scrollResponderIsAnimating() {
+    var now = global.performance.now();
+    var timeSinceLastMomentumScrollEnd =
+    now - this.state.lastMomentumScrollEndTime;
+    var isAnimating =
+    timeSinceLastMomentumScrollEnd < IS_ANIMATING_TOUCH_START_THRESHOLD_MS ||
+    this.state.lastMomentumScrollEndTime <
+    this.state.lastMomentumScrollBeginTime;
+    return isAnimating;
+  },
+
+
+
+
+
+
+  scrollResponderGetScrollableNode: function scrollResponderGetScrollableNode() {
+    return this.getScrollableNode ?
+    this.getScrollableNode() :
+    require('../Renderer/shims/ReactNative').findNodeHandle(this);
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+  scrollResponderScrollTo: function scrollResponderScrollTo(
+  x,
+
+
+
+
+
+
+
+  y,
+  animated)
+  {
+    if (typeof x === 'number') {
+      console.warn(
+      '`scrollResponderScrollTo(x, y, animated)` is deprecated. Use `scrollResponderScrollTo({x: 5, y: 5, animated: true})` instead.');
+
+    } else {var _ref =
+      x || {};x = _ref.x;y = _ref.y;animated = _ref.animated;
+    }
+
+    var that = this;
+    require('invariant')(
+    that.getNativeScrollRef != null,
+    'Expected scrollTo to be called on a scrollViewRef. If this exception occurs it is likely a bug in React Native');
+
+    var nativeScrollRef = that.getNativeScrollRef();
+    if (nativeScrollRef == null) {
+      return;
+    }
+    _ScrollViewCommands.default.scrollTo(nativeScrollRef, x || 0, y || 0, animated !== false);
+  },
+
+
+
+
+
+
+
+
+
+  scrollResponderScrollToEnd: function scrollResponderScrollToEnd(options) {
+
+    var animated = (options && options.animated) !== false;
+
+    var that = this;
+    require('invariant')(
+    that.getNativeScrollRef != null,
+    'Expected scrollToEnd to be called on a scrollViewRef. If this exception occurs it is likely a bug in React Native');
+
+    var nativeScrollRef = that.getNativeScrollRef();
+    if (nativeScrollRef == null) {
+      return;
+    }
+
+    _ScrollViewCommands.default.scrollToEnd(nativeScrollRef, animated);
+  },
+
+
+
+
+
+
+
+  scrollResponderZoomTo: function scrollResponderZoomTo(
+  rect,
+
+
+
+
+
+
+  animated)
+  {
+    require('invariant')(require('../Utilities/Platform').OS === 'ios', 'zoomToRect is not implemented');
+    if ('animated' in rect) {
+      animated = rect.animated;
+      delete rect.animated;
+    } else if (typeof animated !== 'undefined') {
+      console.warn(
+      '`scrollResponderZoomTo` `animated` argument is deprecated. Use `options.animated` instead');
+
+    }
+
+    var that = this;
+    require('invariant')(
+    that.getNativeScrollRef != null,
+    'Expected zoomToRect to be called on a scrollViewRef. If this exception occurs it is likely a bug in React Native');
+
+    var nativeScrollRef = that.getNativeScrollRef();
+    if (nativeScrollRef == null) {
+      return;
+    }
+    _ScrollViewCommands.default.zoomToRect(nativeScrollRef, rect, animated !== false);
+  },
+
+
+
+
+  scrollResponderFlashScrollIndicators: function scrollResponderFlashScrollIndicators() {
+    var that = this;
+    require('invariant')(
+    that.getNativeScrollRef != null,
+    'Expected flashScrollIndicators to be called on a scrollViewRef. If this exception occurs it is likely a bug in React Native');
+
+    var nativeScrollRef = that.getNativeScrollRef();
+    if (nativeScrollRef == null) {
+      return;
+    }
+    _ScrollViewCommands.default.flashScrollIndicators(nativeScrollRef);
+  },
+
+
+
+
+
+
+
+
+
+
+
+  scrollResponderScrollNativeHandleToKeyboard: function scrollResponderScrollNativeHandleToKeyboard(
+  nodeHandle,
+  additionalOffset,
+  preventNegativeScrollOffset)
+  {
+    this.additionalScrollOffset = additionalOffset || 0;
+    this.preventNegativeScrollOffset = !!preventNegativeScrollOffset;
+
+    if (typeof nodeHandle === 'number') {
+      require('../ReactNative/UIManager').measureLayout(
+      nodeHandle,
+      require('../Renderer/shims/ReactNative').findNodeHandle(this.getInnerViewNode()),
+      this.scrollResponderTextInputFocusError,
+      this.scrollResponderInputMeasureAndScrollToKeyboard);
+
+    } else {
+      var innerRef = this.getInnerViewRef();
+
+      if (innerRef == null) {
+        return;
+      }
+
+      nodeHandle.measureLayout(
+      innerRef,
+      this.scrollResponderInputMeasureAndScrollToKeyboard,
+      this.scrollResponderTextInputFocusError);
+
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+  scrollResponderInputMeasureAndScrollToKeyboard: function scrollResponderInputMeasureAndScrollToKeyboard(
+  left,
+  top,
+  width,
+  height)
+  {
+    var keyboardScreenY = require('../Utilities/Dimensions').get('window').height;
+    if (this.keyboardWillOpenTo) {
+      keyboardScreenY = this.keyboardWillOpenTo.endCoordinates.screenY;
+    }
+    var scrollOffsetY =
+    top - keyboardScreenY + height + this.additionalScrollOffset;
+
+
+
+
+
+    if (this.preventNegativeScrollOffset) {
+      scrollOffsetY = Math.max(0, scrollOffsetY);
+    }
+    this.scrollResponderScrollTo({ x: 0, y: scrollOffsetY, animated: true });
+
+    this.additionalOffset = 0;
+    this.preventNegativeScrollOffset = false;
+  },
+
+  scrollResponderTextInputFocusError: function scrollResponderTextInputFocusError(msg) {
+    console.error('Error measuring text field: ', msg);
+  },
+
+
+
+
+
+
+
+  UNSAFE_componentWillMount: function UNSAFE_componentWillMount() {var _ref2 =
+    this.props,keyboardShouldPersistTaps = _ref2.keyboardShouldPersistTaps;
+    if (typeof keyboardShouldPersistTaps === 'boolean') {
+      console.warn(
+      "'keyboardShouldPersistTaps={" + (
+      keyboardShouldPersistTaps === true ? 'true' : 'false') + "}' is deprecated. " + ("Use 'keyboardShouldPersistTaps=\"" + (
+
+
+      keyboardShouldPersistTaps ? 'always' : 'never') + "\"' instead"));
+
+
+    }
+
+    this.keyboardWillOpenTo = null;
+    this.additionalScrollOffset = 0;
+    this._subscriptionKeyboardWillShow = require('./Keyboard/Keyboard').addListener(
+    'keyboardWillShow',
+    this.scrollResponderKeyboardWillShow);
+
+
+    this._subscriptionKeyboardWillHide = require('./Keyboard/Keyboard').addListener(
+    'keyboardWillHide',
+    this.scrollResponderKeyboardWillHide);
+
+    this._subscriptionKeyboardDidShow = require('./Keyboard/Keyboard').addListener(
+    'keyboardDidShow',
+    this.scrollResponderKeyboardDidShow);
+
+    this._subscriptionKeyboardDidHide = require('./Keyboard/Keyboard').addListener(
+    'keyboardDidHide',
+    this.scrollResponderKeyboardDidHide);
+
+  },
+
+  componentWillUnmount: function componentWillUnmount() {
+    if (this._subscriptionKeyboardWillShow != null) {
+      this._subscriptionKeyboardWillShow.remove();
+    }
+    if (this._subscriptionKeyboardWillHide != null) {
+      this._subscriptionKeyboardWillHide.remove();
+    }
+    if (this._subscriptionKeyboardDidShow != null) {
+      this._subscriptionKeyboardDidShow.remove();
+    }
+    if (this._subscriptionKeyboardDidHide != null) {
+      this._subscriptionKeyboardDidHide.remove();
+    }
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  scrollResponderKeyboardWillShow: function scrollResponderKeyboardWillShow(e) {
+    this.keyboardWillOpenTo = e;
+    this.props.onKeyboardWillShow && this.props.onKeyboardWillShow(e);
+  },
+
+  scrollResponderKeyboardWillHide: function scrollResponderKeyboardWillHide(e) {
+    this.keyboardWillOpenTo = null;
+    this.props.onKeyboardWillHide && this.props.onKeyboardWillHide(e);
+  },
+
+  scrollResponderKeyboardDidShow: function scrollResponderKeyboardDidShow(e) {
+
+
+    if (e) {
+      this.keyboardWillOpenTo = e;
+    }
+    this.props.onKeyboardDidShow && this.props.onKeyboardDidShow(e);
+  },
+
+  scrollResponderKeyboardDidHide: function scrollResponderKeyboardDidHide(e) {
+    this.keyboardWillOpenTo = null;
+    this.props.onKeyboardDidHide && this.props.onKeyboardDidHide(e);
+  } };
+
+
+var ScrollResponder = {
+  Mixin: ScrollResponderMixin };
+
+
+module.exports = ScrollResponder;

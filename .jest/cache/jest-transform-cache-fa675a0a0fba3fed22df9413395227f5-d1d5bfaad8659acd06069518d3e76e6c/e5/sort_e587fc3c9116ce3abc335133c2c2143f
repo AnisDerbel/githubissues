@@ -1,0 +1,4 @@
+48c31677d922b79109b25e7b08ad90b9
+
+var sort = function sort(list, loose) {return list.sort(function (a, b) {return require('./compare-build')(a, b, loose);});};
+module.exports = sort;

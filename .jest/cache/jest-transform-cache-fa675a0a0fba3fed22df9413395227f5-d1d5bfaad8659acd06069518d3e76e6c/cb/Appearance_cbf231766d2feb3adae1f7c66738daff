@@ -1,0 +1,87 @@
+4589b190d80c56db7bde86ff88884580
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _EventEmitter = _interopRequireDefault(require("../vendor/emitter/EventEmitter"));
+var _NativeEventEmitter = _interopRequireDefault(require("../EventEmitter/NativeEventEmitter"));
+var _NativeAppearance = _interopRequireDefault(require("./NativeAppearance"));
+
+
+
+var _invariant = _interopRequireDefault(require("invariant"));
+var _DebugEnvironment = require("./DebugEnvironment");
+
+
+var eventEmitter = new _EventEmitter.default();
+
+if (_NativeAppearance.default) {
+  var nativeEventEmitter = new _NativeEventEmitter.default(_NativeAppearance.default);
+  nativeEventEmitter.addListener(
+  'appearanceChanged',
+  function (newAppearance) {var
+    colorScheme = newAppearance.colorScheme;
+    (0, _invariant.default)(
+    colorScheme === 'dark' ||
+    colorScheme === 'light' ||
+    colorScheme == null,
+    "Unrecognized color scheme. Did you mean 'dark' or 'light'?");
+
+    eventEmitter.emit('change', { colorScheme: colorScheme });
+  });
+
+}
+
+module.exports = {
+
+
+
+
+
+
+
+
+
+
+  getColorScheme: function getColorScheme() {
+    if (__DEV__) {
+      if (_DebugEnvironment.isAsyncDebugging) {
+
+
+        return 'light';
+      }
+    }
+
+
+    var nativeColorScheme =
+    _NativeAppearance.default == null ?
+    null :
+    _NativeAppearance.default.getColorScheme() || null;
+    (0, _invariant.default)(
+    nativeColorScheme === 'dark' ||
+    nativeColorScheme === 'light' ||
+    nativeColorScheme == null,
+    "Unrecognized color scheme. Did you mean 'dark' or 'light'?");
+
+    return nativeColorScheme;
+  },
+
+
+
+  addChangeListener: function addChangeListener(listener) {
+    eventEmitter.addListener('change', listener);
+  },
+
+
+
+  removeChangeListener: function removeChangeListener(listener) {
+    eventEmitter.removeListener('change', listener);
+  } };

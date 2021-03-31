@@ -1,0 +1,35 @@
+49acfb9440021a6523f77900097cd8c7
+
+
+
+
+
+var LARGE_ARRAY_SIZE = 200;
+
+
+
+
+
+
+
+
+
+
+
+function stackSet(key, value) {
+  var data = this.__data__;
+  if (data instanceof require('./_ListCache')) {
+    var pairs = data.__data__;
+    if (!require('./_Map') || pairs.length < LARGE_ARRAY_SIZE - 1) {
+      pairs.push([key, value]);
+      this.size = ++data.size;
+      return this;
+    }
+    data = this.__data__ = new (require('./_MapCache'))(pairs);
+  }
+  data.set(key, value);
+  this.size = data.size;
+  return this;
+}
+
+module.exports = stackSet;

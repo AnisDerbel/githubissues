@@ -1,0 +1,68 @@
+832c00f6228b3a781d8d91941d7a740d
+"use strict";
+
+
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _react = require("@babel/runtime/helpers/interopRequireWildcard")(require("react"));
+
+var _propTypes = require("@babel/runtime/helpers/interopRequireDefault")(require("prop-types"));
+
+
+
+var _Subscription = require("@babel/runtime/helpers/interopRequireDefault")(require("../utils/Subscription"));
+
+
+
+function Provider(_ref) {
+  var store = _ref.store,
+  context = _ref.context,
+  children = _ref.children;
+  var contextValue = (0, _react.useMemo)(function () {
+    var subscription = new _Subscription["default"](store);
+    subscription.onStateChange = subscription.notifyNestedSubs;
+    return {
+      store: store,
+      subscription: subscription };
+
+  }, [store]);
+  var previousState = (0, _react.useMemo)(function () {
+    return store.getState();
+  }, [store]);
+  (0, require("../utils/useIsomorphicLayoutEffect").useIsomorphicLayoutEffect)(function () {
+    var subscription = contextValue.subscription;
+    subscription.trySubscribe();
+
+    if (previousState !== store.getState()) {
+      subscription.notifyNestedSubs();
+    }
+
+    return function () {
+      subscription.tryUnsubscribe();
+      subscription.onStateChange = null;
+    };
+  }, [contextValue, previousState]);
+  var Context = context || require("./Context").ReactReduxContext;
+  return _react["default"].createElement(Context.Provider, {
+    value: contextValue },
+  children);
+}
+
+if (process.env.NODE_ENV !== 'production') {
+  Provider.propTypes = {
+    store: _propTypes["default"].shape({
+      subscribe: _propTypes["default"].func.isRequired,
+      dispatch: _propTypes["default"].func.isRequired,
+      getState: _propTypes["default"].func.isRequired }),
+
+    context: _propTypes["default"].object,
+    children: _propTypes["default"].any };
+
+}
+
+var _default = Provider;
+exports["default"] = _default;

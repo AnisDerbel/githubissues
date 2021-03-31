@@ -1,0 +1,12 @@
+04a1d72dbda978e2ecc4ee4477a01008
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+
+
+
+exports.default = require("react-native").View;

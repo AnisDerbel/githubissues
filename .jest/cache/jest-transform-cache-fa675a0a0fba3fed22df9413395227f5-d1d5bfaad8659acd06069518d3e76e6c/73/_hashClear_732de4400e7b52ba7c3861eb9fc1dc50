@@ -1,0 +1,16 @@
+14488c362fd0a2d4941fefb9bd51d7f1
+
+
+
+
+
+
+
+
+
+function hashClear() {
+  this.__data__ = require('./_nativeCreate') ? require('./_nativeCreate')(null) : {};
+  this.size = 0;
+}
+
+module.exports = hashClear;

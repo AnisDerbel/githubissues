@@ -1,0 +1,242 @@
+55ea2d94334bd54d9caa372592fd962a
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.repoActions = exports.ERepoActionTypes = void 0;
+
+function cov_2dlypotq3q() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/actions.ts";
+  var hash = "d6366c45c28a70eb8f9aa3f0328bab65792f0b95";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/actions.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 38,
+          column: 27
+        },
+        end: {
+          line: 54,
+          column: 1
+        }
+      },
+      "1": {
+        start: {
+          line: 39,
+          column: 51
+        },
+        end: {
+          line: 42,
+          column: 3
+        }
+      },
+      "2": {
+        start: {
+          line: 43,
+          column: 54
+        },
+        end: {
+          line: 46,
+          column: 3
+        }
+      },
+      "3": {
+        start: {
+          line: 47,
+          column: 48
+        },
+        end: {
+          line: 50,
+          column: 3
+        }
+      },
+      "4": {
+        start: {
+          line: 51,
+          column: 30
+        },
+        end: {
+          line: 53,
+          column: 3
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 39,
+            column: 17
+          },
+          end: {
+            line: 39,
+            column: 18
+          }
+        },
+        loc: {
+          start: {
+            line: 39,
+            column: 51
+          },
+          end: {
+            line: 42,
+            column: 3
+          }
+        },
+        line: 39
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 43,
+            column: 24
+          },
+          end: {
+            line: 43,
+            column: 25
+          }
+        },
+        loc: {
+          start: {
+            line: 43,
+            column: 54
+          },
+          end: {
+            line: 46,
+            column: 3
+          }
+        },
+        line: 43
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 47,
+            column: 18
+          },
+          end: {
+            line: 47,
+            column: 19
+          }
+        },
+        loc: {
+          start: {
+            line: 47,
+            column: 48
+          },
+          end: {
+            line: 50,
+            column: 3
+          }
+        },
+        line: 47
+      },
+      "3": {
+        name: "(anonymous_3)",
+        decl: {
+          start: {
+            line: 51,
+            column: 23
+          },
+          end: {
+            line: 51,
+            column: 24
+          }
+        },
+        loc: {
+          start: {
+            line: 51,
+            column: 30
+          },
+          end: {
+            line: 53,
+            column: 3
+          }
+        },
+        line: 51
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    b: {},
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "d6366c45c28a70eb8f9aa3f0328bab65792f0b95"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_2dlypotq3q = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2dlypotq3q();
+var ERepoActionTypes;
+exports.ERepoActionTypes = ERepoActionTypes;
+
+(function (ERepoActionTypes) {
+  ERepoActionTypes["GET_REPO_ISSUES"] = "REPO.GET_REPO_ISSUES";
+  ERepoActionTypes["GET_REPO_ISSUES_SUCCESS"] = "REPO.GET_REPO_ISSUES_SUCCESS";
+  ERepoActionTypes["SET_CURRENT_PAGE"] = "REPO.SET_CURRENT_PAGE";
+  ERepoActionTypes["GET_REPO_ISSUES_FAILED"] = "REPO.GET_REPO_ISSUES_FAILED";
+})(ERepoActionTypes || (exports.ERepoActionTypes = ERepoActionTypes = {}));
+
+var repoActions = (cov_2dlypotq3q().s[0]++, {
+  getRepoIssues: function getRepoIssues(payload) {
+    cov_2dlypotq3q().f[0]++;
+    cov_2dlypotq3q().s[1]++;
+    return {
+      type: ERepoActionTypes.GET_REPO_ISSUES,
+      payload: payload
+    };
+  },
+  getRepoIssuesSuccess: function getRepoIssuesSuccess(payload) {
+    cov_2dlypotq3q().f[1]++;
+    cov_2dlypotq3q().s[2]++;
+    return {
+      type: ERepoActionTypes.GET_REPO_ISSUES_SUCCESS,
+      payload: payload
+    };
+  },
+  setCurrentPage: function setCurrentPage(payload) {
+    cov_2dlypotq3q().f[2]++;
+    cov_2dlypotq3q().s[3]++;
+    return {
+      type: ERepoActionTypes.SET_CURRENT_PAGE,
+      payload: payload
+    };
+  },
+  getRepoIssuesFailed: function getRepoIssuesFailed() {
+    cov_2dlypotq3q().f[3]++;
+    cov_2dlypotq3q().s[4]++;
+    return {
+      type: ERepoActionTypes.GET_REPO_ISSUES_FAILED
+    };
+  }
+});
+exports.repoActions = repoActions;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFjdGlvbnMudHMiXSwibmFtZXMiOlsiRVJlcG9BY3Rpb25UeXBlcyIsInJlcG9BY3Rpb25zIiwiZ2V0UmVwb0lzc3VlcyIsInBheWxvYWQiLCJ0eXBlIiwiR0VUX1JFUE9fSVNTVUVTIiwiZ2V0UmVwb0lzc3Vlc1N1Y2Nlc3MiLCJHRVRfUkVQT19JU1NVRVNfU1VDQ0VTUyIsInNldEN1cnJlbnRQYWdlIiwiU0VUX0NVUlJFTlRfUEFHRSIsImdldFJlcG9Jc3N1ZXNGYWlsZWQiLCJHRVRfUkVQT19JU1NVRVNfRkFJTEVEIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0lBR1lBLGdCOzs7V0FBQUEsZ0I7QUFBQUEsRUFBQUEsZ0I7QUFBQUEsRUFBQUEsZ0I7QUFBQUEsRUFBQUEsZ0I7QUFBQUEsRUFBQUEsZ0I7R0FBQUEsZ0IsZ0NBQUFBLGdCOztBQWtDTCxJQUFNQyxXQUFXLDZCQUFHO0FBQ3pCQyxFQUFBQSxhQUFhLEVBQUUsdUJBQUNDLE9BQUQsRUFBa0M7QUFBQTtBQUFBO0FBQUE7QUFDL0NDLE1BQUFBLElBQUksRUFBRUosZ0JBQWdCLENBQUNLLGVBRHdCO0FBRS9DRixNQUFBQSxPQUFPLEVBQVBBO0FBRitDO0FBR2hELEdBSndCO0FBS3pCRyxFQUFBQSxvQkFBb0IsRUFBRSw4QkFBQ0gsT0FBRCxFQUE4QjtBQUFBO0FBQUE7QUFBQTtBQUNsREMsTUFBQUEsSUFBSSxFQUFFSixnQkFBZ0IsQ0FBQ08sdUJBRDJCO0FBRWxESixNQUFBQSxPQUFPLEVBQVBBO0FBRmtEO0FBR25ELEdBUndCO0FBU3pCSyxFQUFBQSxjQUFjLEVBQUUsd0JBQUNMLE9BQUQsRUFBOEI7QUFBQTtBQUFBO0FBQUE7QUFDNUNDLE1BQUFBLElBQUksRUFBRUosZ0JBQWdCLENBQUNTLGdCQURxQjtBQUU1Q04sTUFBQUEsT0FBTyxFQUFQQTtBQUY0QztBQUc3QyxHQVp3QjtBQWF6Qk8sRUFBQUEsbUJBQW1CLEVBQUUsK0JBQU87QUFBQTtBQUFBO0FBQUE7QUFDMUJOLE1BQUFBLElBQUksRUFBRUosZ0JBQWdCLENBQUNXO0FBREc7QUFFM0I7QUFmd0IsQ0FBSCxDQUFqQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7SXNzdWV9IGZyb20gJy4vcmVkdWNlcic7XG5pbXBvcnQge0FjdGlvbn0gZnJvbSAncmVkdXgnO1xuXG5leHBvcnQgZW51bSBFUmVwb0FjdGlvblR5cGVzIHtcbiAgR0VUX1JFUE9fSVNTVUVTID0gJ1JFUE8uR0VUX1JFUE9fSVNTVUVTJyxcbiAgR0VUX1JFUE9fSVNTVUVTX1NVQ0NFU1MgPSAnUkVQTy5HRVRfUkVQT19JU1NVRVNfU1VDQ0VTUycsXG4gIFNFVF9DVVJSRU5UX1BBR0UgPSAnUkVQTy5TRVRfQ1VSUkVOVF9QQUdFJyxcbiAgR0VUX1JFUE9fSVNTVUVTX0ZBSUxFRCA9ICdSRVBPLkdFVF9SRVBPX0lTU1VFU19GQUlMRUQnLFxufVxuXG5pbnRlcmZhY2UgSXNzdWVzUmVzcG9uc2Uge1xuICBpc3N1ZXM6IEFycmF5PElzc3VlPjtcbiAgaGFzTW9yZUlzc3VlczogYm9vbGVhbjtcbiAgcGFnZTogbnVtYmVyO1xufVxuaW50ZXJmYWNlIExvYWRQYWdlSXNzdWVzIHtcbiAgaGFzTW9yZUlzc3VlczogYm9vbGVhbjtcbiAgcGFnZTogbnVtYmVyO1xufVxuXG5pbnRlcmZhY2UgSVJlcG9Jc3N1ZXNQYXlsb2FkIHtcbiAgcGFnZTogbnVtYmVyO1xuICByZXNldD86IGJvb2xlYW47XG59XG5cbmV4cG9ydCBpbnRlcmZhY2UgSUFjdGlvbldpdGhQYXlsb2FkPFQsIFA+IGV4dGVuZHMgQWN0aW9uPFQ+IHtcbiAgcGF5bG9hZDogUDtcbn1cblxuZXhwb3J0IHR5cGUgVFJlcG9Jc3N1ZXNBY3Rpb24gPSBJQWN0aW9uV2l0aFBheWxvYWQ8XG4gIEVSZXBvQWN0aW9uVHlwZXMuR0VUX1JFUE9fSVNTVUVTLFxuICB7XG4gICAgcGFnZTogbnVtYmVyO1xuICAgIHJlc2V0PzogYm9vbGVhbjtcbiAgfVxuPjtcblxuZXhwb3J0IGNvbnN0IHJlcG9BY3Rpb25zID0ge1xuICBnZXRSZXBvSXNzdWVzOiAocGF5bG9hZDogSVJlcG9Jc3N1ZXNQYXlsb2FkKSA9PiAoe1xuICAgIHR5cGU6IEVSZXBvQWN0aW9uVHlwZXMuR0VUX1JFUE9fSVNTVUVTLFxuICAgIHBheWxvYWQsXG4gIH0pLFxuICBnZXRSZXBvSXNzdWVzU3VjY2VzczogKHBheWxvYWQ6IElzc3Vlc1Jlc3BvbnNlKSA9PiAoe1xuICAgIHR5cGU6IEVSZXBvQWN0aW9uVHlwZXMuR0VUX1JFUE9fSVNTVUVTX1NVQ0NFU1MsXG4gICAgcGF5bG9hZCxcbiAgfSksXG4gIHNldEN1cnJlbnRQYWdlOiAocGF5bG9hZDogTG9hZFBhZ2VJc3N1ZXMpID0+ICh7XG4gICAgdHlwZTogRVJlcG9BY3Rpb25UeXBlcy5TRVRfQ1VSUkVOVF9QQUdFLFxuICAgIHBheWxvYWQsXG4gIH0pLFxuICBnZXRSZXBvSXNzdWVzRmFpbGVkOiAoKSA9PiAoe1xuICAgIHR5cGU6IEVSZXBvQWN0aW9uVHlwZXMuR0VUX1JFUE9fSVNTVUVTX0ZBSUxFRCxcbiAgfSksXG59O1xuIl19

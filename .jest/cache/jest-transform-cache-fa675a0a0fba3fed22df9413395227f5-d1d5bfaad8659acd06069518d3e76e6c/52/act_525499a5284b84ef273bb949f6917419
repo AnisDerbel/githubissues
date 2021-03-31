@@ -1,0 +1,17 @@
+98c4eb38c3bb5c519bf1463121773820
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+
+
+var actMock = function actMock(callback) {
+  callback();
+};
+
+var _default = require("react-test-renderer").act || actMock;
+
+exports.default = _default;

@@ -1,0 +1,61 @@
+753f81c503e0ea82c761fcfb1f5291e8
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+var TurboModuleRegistry = _interopRequireWildcard(require("../TurboModule/TurboModuleRegistry"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var NativeModule = TurboModuleRegistry.getEnforcing('DeviceInfo');
+var constants = null;
+
+var NativeDeviceInfo = {
+  getConstants: function getConstants()
+
+
+  {
+    if (constants == null) {
+      constants = NativeModule.getConstants();
+    }
+    return constants;
+  } };var _default =
+
+
+NativeDeviceInfo;exports.default = _default;

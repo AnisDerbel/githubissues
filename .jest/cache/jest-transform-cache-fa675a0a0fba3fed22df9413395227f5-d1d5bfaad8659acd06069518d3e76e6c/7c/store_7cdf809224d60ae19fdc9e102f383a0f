@@ -1,0 +1,344 @@
+0c9a54dbebba36bab1658f15996d190a
+/* istanbul ignore next */
+function cov_yzh17qyo0() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/store.ts";
+  var hash = "364baf6c70b7353698580db90dce65a7f74206be";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/store.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 29
+        },
+        end: {
+          line: 1,
+          column: 84
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 25
+        }
+      },
+      "3": {
+        start: {
+          line: 8,
+          column: 13
+        },
+        end: {
+          line: 8,
+          column: 29
+        }
+      },
+      "4": {
+        start: {
+          line: 10,
+          column: 17
+        },
+        end: {
+          line: 10,
+          column: 62
+        }
+      },
+      "5": {
+        start: {
+          line: 12,
+          column: 30
+        },
+        end: {
+          line: 12,
+          column: 65
+        }
+      },
+      "6": {
+        start: {
+          line: 14,
+          column: 18
+        },
+        end: {
+          line: 14,
+          column: 65
+        }
+      },
+      "7": {
+        start: {
+          line: 16,
+          column: 13
+        },
+        end: {
+          line: 16,
+          column: 55
+        }
+      },
+      "8": {
+        start: {
+          line: 18,
+          column: 21
+        },
+        end: {
+          line: 18,
+          column: 46
+        }
+      },
+      "9": {
+        start: {
+          line: 19,
+          column: 18
+        },
+        end: {
+          line: 19,
+          column: 34
+        }
+      },
+      "10": {
+        start: {
+          line: 21,
+          column: 0
+        },
+        end: {
+          line: 25,
+          column: 1
+        }
+      },
+      "11": {
+        start: {
+          line: 22,
+          column: 32
+        },
+        end: {
+          line: 22,
+          column: 78
+        }
+      },
+      "12": {
+        start: {
+          line: 24,
+          column: 2
+        },
+        end: {
+          line: 24,
+          column: 46
+        }
+      },
+      "13": {
+        start: {
+          line: 27,
+          column: 12
+        },
+        end: {
+          line: 27,
+          column: 157
+        }
+      },
+      "14": {
+        start: {
+          line: 28,
+          column: 0
+        },
+        end: {
+          line: 28,
+          column: 35
+        }
+      },
+      "15": {
+        start: {
+          line: 29,
+          column: 15
+        },
+        end: {
+          line: 29,
+          column: 20
+        }
+      },
+      "16": {
+        start: {
+          line: 30,
+          column: 0
+        },
+        end: {
+          line: 30,
+          column: 27
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 21,
+            column: 0
+          },
+          end: {
+            line: 25,
+            column: 1
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 21,
+            column: 0
+          },
+          end: {
+            line: 25,
+            column: 1
+          }
+        }, {
+          start: {
+            line: 21,
+            column: 0
+          },
+          end: {
+            line: 25,
+            column: 1
+          }
+        }],
+        line: 21
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0
+    },
+    f: {},
+    b: {
+      "0": [0, 0]
+    },
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/redux/store.ts"],
+      names: [],
+      mappings: ";;;;;;;AAAA;;AACA;;AACA;;AACA;;AACA;;AACA,IAAM,cAAc,GAAG,yBAAvB;AAEA,IAAM,WAAW,GAAG,CAAC,cAAD,CAApB;;AACA,IAAI,OAAJ,EAAa;AAEX,MAAM,uBAAuB,GAAG,OAAO,CAAC,6BAAD,CAAP,CAC7B,OADH;;AAEA,EAAA,WAAW,CAAC,IAAZ,CAAiB,uBAAuB,EAAxC;AACD;;AAED,IAAM,KAAK,GAAG,wBACZ,mBADY,EAEZ,iDAAoB,qCAAmB,WAAnB,CAApB,CAFY,CAAd;AAIA,cAAc,CAAC,GAAf,CAAmB,cAAnB;eAEe,K",
+      sourcesContent: ["import {applyMiddleware, createStore} from 'redux';\nimport createSagaMiddleware from 'redux-saga';\nimport {composeWithDevTools} from 'redux-devtools-extension';\nimport rootReducer from './appReducer';\nimport rootSaga from './sagas';\nconst sagaMiddleware = createSagaMiddleware();\n\nconst middleWares = [sagaMiddleware];\nif (__DEV__) {\n  // eslint-disable-next-line @typescript-eslint/no-var-requires\n  const createFlipperMiddleware = require('rn-redux-middleware-flipper')\n    .default;\n  middleWares.push(createFlipperMiddleware());\n}\n\nconst store = createStore(\n  rootReducer,\n  composeWithDevTools(applyMiddleware(...middleWares)),\n);\nsagaMiddleware.run(rootSaga);\n\nexport default store;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "364baf6c70b7353698580db90dce65a7f74206be"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_yzh17qyo0 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_yzh17qyo0();
+
+var _interopRequireDefault =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[0]++, require("@babel/runtime/helpers/interopRequireDefault"));
+
+/* istanbul ignore next */
+cov_yzh17qyo0().s[1]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_yzh17qyo0().s[2]++;
+exports.default = void 0;
+
+var _redux =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[3]++, require("redux"));
+
+var _reduxSaga =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[4]++, _interopRequireDefault(require("redux-saga")));
+
+var _reduxDevtoolsExtension =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[5]++, require("redux-devtools-extension"));
+
+var _appReducer =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[6]++, _interopRequireDefault(require("./appReducer")));
+
+var _sagas =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[7]++, _interopRequireDefault(require("./sagas")));
+
+var sagaMiddleware =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[8]++, (0, _reduxSaga.default)());
+var middleWares =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[9]++, [sagaMiddleware]);
+
+/* istanbul ignore next */
+cov_yzh17qyo0().s[10]++;
+
+if (__DEV__) {
+  /* istanbul ignore next */
+  cov_yzh17qyo0().b[0][0]++;
+  var createFlipperMiddleware =
+  /* istanbul ignore next */
+  (cov_yzh17qyo0().s[11]++, require('rn-redux-middleware-flipper').default);
+
+  /* istanbul ignore next */
+  cov_yzh17qyo0().s[12]++;
+  middleWares.push(createFlipperMiddleware());
+} else
+/* istanbul ignore next */
+{
+  cov_yzh17qyo0().b[0][1]++;
+}
+
+var store =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[13]++, (0, _redux.createStore)(_appReducer.default, (0, _reduxDevtoolsExtension.composeWithDevTools)(_redux.applyMiddleware.apply(void 0, middleWares))));
+
+/* istanbul ignore next */
+cov_yzh17qyo0().s[14]++;
+sagaMiddleware.run(_sagas.default);
+
+var _default =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[15]++, store);
+
+/* istanbul ignore next */
+cov_yzh17qyo0().s[16]++;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L3N0b3JlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBSUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUpBLElBQUEsTUFBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLE9BQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsVUFBQTtBQUFBO0FBQUEseUJBQUEsc0JBQUEsQ0FBQSxPQUFBLENBQUEsWUFBQSxDQUFBLENBQUEsQ0FBQTs7QUFDQSxJQUFBLHVCQUFBO0FBQUE7QUFBQSx5QkFBQSxPQUFBLENBQUEsMEJBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsV0FBQTtBQUFBO0FBQUEseUJBQUEsc0JBQUEsQ0FBQSxPQUFBLENBQUEsY0FBQSxDQUFBLENBQUEsQ0FBQTs7QUFDQSxJQUFBLE1BQUE7QUFBQTtBQUFBLHlCQUFBLHNCQUFBLENBQUEsT0FBQSxDQUFBLFNBQUEsQ0FBQSxDQUFBLENBQUE7O0FBQ0EsSUFBTSxjQUFjO0FBQUE7QUFBQSx5QkFBRyxDQUFBLEdBQUEsVUFBQSxDQUF2QixPQUF1QixHQUFILENBQXBCO0FBRUEsSUFBTSxXQUFXO0FBQUE7QUFBQSx5QkFBRyxDQUFwQixjQUFvQixDQUFILENBQWpCOzs7OztBQUNBLElBQUEsT0FBQSxFQUFhO0FBQUE7QUFBQTtBQUVYLE1BQU0sdUJBQXVCO0FBQUE7QUFBQSw0QkFBRyxPQUFPLENBQVAsNkJBQU8sQ0FBUCxDQUFoQyxPQUE2QixDQUE3Qjs7QUFGVztBQUFBO0FBSVgsRUFBQSxXQUFXLENBQVgsSUFBQSxDQUFpQix1QkFBakIsRUFBQTtBQUNELENBTEQ7QUFBQTtBQUFBO0FBQUE7QUFBQTs7QUFPQSxJQUFNLEtBQUs7QUFBQTtBQUFBLDBCQUFHLENBQUEsR0FBQSxNQUFBLENBQUEsV0FBQSxFQUNaLFdBQUEsQ0FEWSxPQUFBLEVBRVosQ0FBQSxHQUFBLHVCQUFBLENBQUEsbUJBQUEsRUFBb0IsTUFBQSxDQUFBLGVBQUEsQ0FBQSxLQUFBLENBQUEsS0FBQSxDQUFBLEVBRnRCLFdBRXNCLENBQXBCLENBRlksQ0FBSCxDQUFYOzs7O0FBSUEsY0FBYyxDQUFkLEdBQUEsQ0FBbUIsTUFBQSxDQUFuQixPQUFBOzs7OzBCQUVlLEsiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge2FwcGx5TWlkZGxld2FyZSwgY3JlYXRlU3RvcmV9IGZyb20gJ3JlZHV4JztcbmltcG9ydCBjcmVhdGVTYWdhTWlkZGxld2FyZSBmcm9tICdyZWR1eC1zYWdhJztcbmltcG9ydCB7Y29tcG9zZVdpdGhEZXZUb29sc30gZnJvbSAncmVkdXgtZGV2dG9vbHMtZXh0ZW5zaW9uJztcbmltcG9ydCByb290UmVkdWNlciBmcm9tICcuL2FwcFJlZHVjZXInO1xuaW1wb3J0IHJvb3RTYWdhIGZyb20gJy4vc2FnYXMnO1xuY29uc3Qgc2FnYU1pZGRsZXdhcmUgPSBjcmVhdGVTYWdhTWlkZGxld2FyZSgpO1xuXG5jb25zdCBtaWRkbGVXYXJlcyA9IFtzYWdhTWlkZGxld2FyZV07XG5pZiAoX19ERVZfXykge1xuICAvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgQHR5cGVzY3JpcHQtZXNsaW50L25vLXZhci1yZXF1aXJlc1xuICBjb25zdCBjcmVhdGVGbGlwcGVyTWlkZGxld2FyZSA9IHJlcXVpcmUoJ3JuLXJlZHV4LW1pZGRsZXdhcmUtZmxpcHBlcicpXG4gICAgLmRlZmF1bHQ7XG4gIG1pZGRsZVdhcmVzLnB1c2goY3JlYXRlRmxpcHBlck1pZGRsZXdhcmUoKSk7XG59XG5cbmNvbnN0IHN0b3JlID0gY3JlYXRlU3RvcmUoXG4gIHJvb3RSZWR1Y2VyLFxuICBjb21wb3NlV2l0aERldlRvb2xzKGFwcGx5TWlkZGxld2FyZSguLi5taWRkbGVXYXJlcykpLFxuKTtcbnNhZ2FNaWRkbGV3YXJlLnJ1bihyb290U2FnYSk7XG5cbmV4cG9ydCBkZWZhdWx0IHN0b3JlO1xuIl19

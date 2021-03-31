@@ -1,0 +1,19 @@
+27b1f09c1c68a35c875f8c15c1dbc077
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = getConsoleObject;
+
+
+function getConsoleObject() {
+  try {
+    return console;
+  } catch (e) {
+
+    return {};
+  }
+}
+
+module.exports = exports.default;

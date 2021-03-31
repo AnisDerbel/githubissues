@@ -1,0 +1,4 @@
+f99a1f5ddd29d7fe6af38f997d4944e4
+
+var lte = function lte(a, b, loose) {return require('./compare')(a, b, loose) <= 0;};
+module.exports = lte;

@@ -1,0 +1,369 @@
+6b1ecec61aa4f26f16a0829df6e29271
+'use strict';function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = require("@babel/runtime/helpers/getPrototypeOf")(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = require("@babel/runtime/helpers/getPrototypeOf")(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return require("@babel/runtime/helpers/possibleConstructorReturn")(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {require("@babel/runtime/helpers/defineProperty")(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var getDisplayName = function getDisplayName(type) {return type.displayName ||
+  type.name ||
+  type.type && getDisplayName(type.type) ||
+  type.render && getDisplayName(type.render);};
+
+var isClassComponent = function isClassComponent(Component) {return Component.prototype && !!Component.prototype.isReactComponent;};
+
+
+
+
+
+var REACT_MEMO_TYPE = 0xead3;
+var REACT_FORWARD_REF_TYPE = 0xead0;
+var symbolFor = typeof Symbol === 'function' && Symbol.for;
+
+if (symbolFor) {
+  REACT_MEMO_TYPE = Symbol.for('react.memo');
+  REACT_FORWARD_REF_TYPE = Symbol.for('react.forward_ref');
+}
+
+var isMemoComponent = function isMemoComponent(Component) {return Component.$$typeof === REACT_MEMO_TYPE;};
+
+var isForwardRefComponent = function isForwardRefComponent(Component) {return Component.$$typeof === REACT_FORWARD_REF_TYPE;};
+
+var isFunctionComponent = function isFunctionComponent(type) {return typeof type === 'function';};
+
+var W = (global === null || global === void 0 ? void 0 : global.window) ? window : global;
+
+var pushTask = function pushTask(cb) {
+  W.setImmediate(cb);
+};
+
+var setArray = function setArray(displayName, state, initialValue) {
+  var obj = state.current[displayName];
+  var currentIndex = -1;
+  if (obj) {
+    state.current[displayName] = Array.isArray(obj) ? [].concat(require("@babel/runtime/helpers/toConsumableArray")(
+    obj), [initialValue]) :
+    [_objectSpread({}, obj), initialValue];
+    currentIndex = Array.isArray(obj) ? obj.length : 1;
+  }
+  return currentIndex;
+};
+var updateRenderCount = function updateRenderCount(renderCount, index, displayName) {
+  if (!displayName) {
+    return;
+  }
+  var obj = renderCount.current;
+  if (!obj[displayName]) {
+    obj[displayName] = { value: 0 };
+  }
+  pushTask(function () {
+    var obj = renderCount.current;
+    var field = obj[displayName];
+    if (Array.isArray(field)) {
+      var formattedIndex = index === -1 ? 0 : index;
+      field[formattedIndex].value += 1;
+      return;
+    }
+    field.value += 1;
+  });
+};
+var startMeasureRenderTime = function startMeasureRenderTime(renderTime, index, displayName) {
+  if (!displayName) {
+    return function () {};
+  }
+  var obj = renderTime.current;
+  if (!obj[displayName]) {
+    obj[displayName] = { mount: null, updates: [] };
+  }
+  var startTime = performance.now();
+  return function () {
+    var duration = performance.now() - startTime;
+    pushTask(function () {
+      var obj = renderTime.current;
+      var field = obj[displayName];
+      if (Array.isArray(field)) {
+        var formattedIndex = index === -1 ? 0 : index;
+        var fieldValues = field[formattedIndex];
+        field[formattedIndex] = {
+          mount: fieldValues.mount || duration,
+          updates: fieldValues.mount ? [].concat(require("@babel/runtime/helpers/toConsumableArray")(fieldValues.updates), [duration]) : [] };
+
+        return;
+      }
+      obj[displayName] = {
+        mount: field.mount || duration,
+        updates: field.mount ? [].concat(require("@babel/runtime/helpers/toConsumableArray")(field.updates), [duration]) : [] };
+
+    });
+  };
+};
+var createClassComponent = function createClassComponent(type, _ref, _ref2) {var renderCount = _ref.renderCount,renderTime = _ref.renderTime;var hasRenderCount = _ref2.hasRenderCount,hasRenderTime = _ref2.hasRenderTime;
+  var ClassComponent = type;
+  var displayName = getDisplayName(type);
+  if (!displayName) {
+    console.warn("[react-performance-testing] You have anonymous component. If your component don't have display name, we can not set property to renderCount.current");
+  }var
+  _PatchedClassComponent = function (_ClassComponent) {require("@babel/runtime/helpers/inherits")(_PatchedClassComponent, _ClassComponent);var _super = _createSuper(_PatchedClassComponent);
+    function _PatchedClassComponent(props, context) {var _thisSuper, _this;require("@babel/runtime/helpers/classCallCheck")(this, _PatchedClassComponent);
+      _this = _super.call(this, props, context);
+      var origRender = require("@babel/runtime/helpers/get")((_thisSuper = require("@babel/runtime/helpers/assertThisInitialized")(_this), require("@babel/runtime/helpers/getPrototypeOf")(_PatchedClassComponent.prototype)), "render", _thisSuper) || _this.render;
+      if (hasRenderTime) {
+        _this.currentIndex = setArray(displayName, renderTime, {
+          mount: null,
+          updates: [] });
+
+      }
+      if (hasRenderCount) {
+        _this.currentIndex = setArray(displayName, renderCount, { value: 0 });
+      }
+
+
+      var IsBoundFunction = origRender !== ClassComponent.prototype.render;
+      if (IsBoundFunction) {
+        _this.render = function () {
+          _PatchedClassComponent.prototype.render.apply(require("@babel/runtime/helpers/assertThisInitialized")(_this));
+          return origRender();
+        };
+      }return _this;
+    }require("@babel/runtime/helpers/createClass")(_PatchedClassComponent, [{ key: "componentDidMount", value:
+      function componentDidMount() {
+        if (this.endMeasureRenderTime) {
+          this.endMeasureRenderTime();
+        }
+      } }, { key: "componentDidUpdate", value:
+      function componentDidUpdate() {
+        if (this.endMeasureRenderTime) {
+          this.endMeasureRenderTime();
+        }
+      } }, { key: "render", value:
+      function render() {
+        if (hasRenderCount) {
+          updateRenderCount(renderCount, this.currentIndex, displayName);
+        }
+        if (hasRenderTime) {
+          this.endMeasureRenderTime = startMeasureRenderTime(renderTime, this.currentIndex, displayName);
+        }
+        return require("@babel/runtime/helpers/get")(require("@babel/runtime/helpers/getPrototypeOf")(_PatchedClassComponent.prototype), "render", this) ? require("@babel/runtime/helpers/get")(require("@babel/runtime/helpers/getPrototypeOf")(_PatchedClassComponent.prototype), "render", this).call(this) : null;
+      } }]);return _PatchedClassComponent;}(ClassComponent);
+
+  return _PatchedClassComponent;
+};
+var createFunctionComponent = function createFunctionComponent(type, _ref3, _ref4, React) {var renderCount = _ref3.renderCount,renderTime = _ref3.renderTime;var hasRenderCount = _ref4.hasRenderCount,hasRenderTime = _ref4.hasRenderTime;
+  var FunctionComponent = type;
+  var displayName = getDisplayName(type);
+  if (!displayName) {
+    console.warn("[react-performance-testing] You have anonymous component. If your component don't have display name, we can not set property to renderCount.current");
+  }
+  var PatchedFunctionComponent = function PatchedFunctionComponent() {
+    var currentIndex = React.useMemo(function () {
+      var index = -1;
+      if (hasRenderTime) {
+        index = setArray(displayName, renderTime, { mount: null, updates: [] });
+      }
+      if (hasRenderCount) {
+        index = setArray(displayName, renderCount, { value: 0 });
+      }
+      return index;
+    }, []);
+    var endMeasureRenderTime = React.useRef(null);
+    if (hasRenderCount) {
+      updateRenderCount(renderCount, currentIndex, displayName);
+    }
+    React.useLayoutEffect(function () {
+      if (endMeasureRenderTime.current) {
+        endMeasureRenderTime.current();
+      }
+    });
+    if (hasRenderTime) {
+      endMeasureRenderTime.current = startMeasureRenderTime(renderTime, currentIndex, displayName);
+    }
+    return FunctionComponent.apply(void 0, arguments);
+  };
+  return PatchedFunctionComponent;
+};
+var createMemoComponent = function createMemoComponent(type, tools, perfState, React) {var
+  InnerMemoComponent = type.type;
+  var isInnerForwardRefComponent = isForwardRefComponent(InnerMemoComponent);
+  var WrappedFunctionalComponent = isInnerForwardRefComponent ?
+  InnerMemoComponent.render :
+  InnerMemoComponent;
+  var PatchedInnerComponent = isClassComponent(InnerMemoComponent) ?
+  createClassComponent(WrappedFunctionalComponent, tools, perfState) :
+  isMemoComponent(InnerMemoComponent) ?
+  createMemoComponent(WrappedFunctionalComponent, tools, perfState, React) :
+  createFunctionComponent(WrappedFunctionalComponent, tools, perfState, React);
+  try {
+
+    PatchedInnerComponent.displayName = getDisplayName(WrappedFunctionalComponent);
+  }
+  catch (e) {}
+  var PatchedMemoComponent = React.memo(isInnerForwardRefComponent ?
+  React.forwardRef(PatchedInnerComponent) :
+  PatchedInnerComponent, type.compare);
+  return PatchedMemoComponent;
+};
+var createForwardRefComponent = function createForwardRefComponent(type, tools, perfState, React) {var
+  InnerForwardRefComponent = type.render;
+  var isInnerMemoComponent = isMemoComponent(InnerForwardRefComponent);
+  var WrappedFunctionalComponent = isInnerMemoComponent ?
+  InnerForwardRefComponent.type :
+  InnerForwardRefComponent;
+  var PatchedInnerComponent = createFunctionComponent(WrappedFunctionalComponent, tools, perfState, React);
+  try {
+
+    PatchedInnerComponent.displayName = getDisplayName(WrappedFunctionalComponent);
+  }
+  catch (e) {}
+  var PatchedForwardRefComponent = React.forwardRef(isInnerMemoComponent ?
+  React.memo(PatchedInnerComponent, WrappedFunctionalComponent.compare) :
+  PatchedInnerComponent);
+  return PatchedForwardRefComponent;
+};
+var createPatchedComponent = function createPatchedComponent(type, tools, perfState, React) {
+  if (isMemoComponent(type)) {
+    return createMemoComponent(type, tools, perfState, React);
+  }
+  if (isForwardRefComponent(type)) {
+    return createForwardRefComponent(type, tools, perfState, React);
+  }
+  if (isClassComponent(type)) {
+    return createClassComponent(type, tools, perfState);
+  }
+
+
+  if (isFunctionComponent(type)) {
+    return createFunctionComponent(type, tools, perfState, React);
+  }
+};
+var getPatchedComponent = function getPatchedComponent(componentsMap, type, tools, perfState, React) {
+  var PatchedComponent = createPatchedComponent(type, tools, perfState, React);
+  try {
+
+    PatchedComponent.displayName = getDisplayName(type);
+  }
+  catch (e) {}
+  componentsMap.set(type, PatchedComponent);
+  return PatchedComponent;
+};
+
+var shouldTrack = function shouldTrack(component) {return isClassComponent(component) ||
+  isMemoComponent(component) ||
+  isForwardRefComponent(component) ||
+  typeof component === 'function';};
+
+var globalOption = {
+  isDeclaredRenderTime: false };
+
+
+var checkRenderTimeDeclaring = function checkRenderTimeDeclaring(prop) {
+  if (prop === 'renderTime' && globalOption.isDeclaredRenderTime) {
+    console.warn('[react-performance-testing] You need to execute test one by one when you use `renderTime`. Please check here: https://github.com/keiya01/react-performance-testing#renderTime');
+  } else
+  {
+    globalOption.isDeclaredRenderTime = true;
+  }
+};
+var origCreateElement = null;
+var origCreateFactory = null;
+var origCloneElement = null;
+var origReact = null;
+var perf = function perf(React) {
+  var tools = {
+    renderCount: { current: {} },
+    renderTime: { current: {} } };
+
+  var perfState = {
+    hasRenderCount: !Proxy,
+    hasRenderTime: !Proxy };
+
+  Object.defineProperties(perfState, {
+    renderCount: {
+      set: function set(val) {
+        this.hasRenderCount = val;
+      } },
+
+    renderTime: {
+      set: function set(val) {
+        this.hasRenderTime = val;
+      } } });
+
+
+  origReact = React;
+  origCreateElement = React.createElement;
+  origCreateFactory = React.createFactory;
+  origCloneElement = React.cloneElement;
+
+  var componentsMap = new WeakMap();
+
+  React.createElement = function (type) {for (var _len = arguments.length, rest = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {rest[_key - 1] = arguments[_key];}
+    if (!shouldTrack(type)) {
+      return origCreateElement.apply(React, [type].concat(rest));
+    }
+    var PatchedComponent;
+    if (componentsMap.has(type)) {
+      PatchedComponent = componentsMap.get(type);
+    } else
+    {
+      PatchedComponent = getPatchedComponent(componentsMap, type, tools, perfState, React);
+    }
+    return origCreateElement.apply(React, [PatchedComponent].concat(rest));
+  };
+  require("@babel/runtime/helpers/extends")(React.createElement, origCreateElement);
+
+  React.createFactory = function (type) {
+    var factory = React.createElement.bind(null, type);
+
+    factory.type = type;
+    return factory;
+  };
+  require("@babel/runtime/helpers/extends")(React.createFactory, origCreateFactory);
+
+  React.cloneElement = function () {for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {args[_key2] = arguments[_key2];}
+    var element = origCloneElement.apply(React, args);
+    return element;
+  };
+  require("@babel/runtime/helpers/extends")(React.cloneElement, origCloneElement);
+  return Proxy ?
+  new Proxy(tools, {
+    get: function get(target, prop) {
+      checkRenderTimeDeclaring(prop);
+      perfState[prop] = true;
+      return target[prop];
+    } }) :
+
+  tools;
+};
+var cleanup = function cleanup() {
+  if (!origReact) {
+    return;
+  }
+  require("@babel/runtime/helpers/extends")(origReact, {
+    createElement: origCreateElement,
+    createFactory: origCreateFactory,
+    cloneElement: origCloneElement });
+
+  origReact = null;
+  origCreateElement = null;
+  origCreateFactory = null;
+  origCloneElement = null;
+};
+
+
+if (!process.env.RPT_SKIP_AUTO_CLEANUP) {
+
+  if (typeof afterEach === 'function') {
+    afterEach(cleanup);
+
+  } else
+  if (typeof teardown === 'function') {
+
+    teardown(cleanup);
+  }
+}
+
+var wait = function wait(callback) {return new Promise(function (resolve) {return pushTask(function () {
+      callback();
+      resolve();
+    });});};
+
+exports.cleanup = cleanup;
+exports.perf = perf;
+exports.wait = wait;

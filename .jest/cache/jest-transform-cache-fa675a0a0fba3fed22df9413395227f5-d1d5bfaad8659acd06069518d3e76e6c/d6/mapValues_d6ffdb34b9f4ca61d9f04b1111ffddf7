@@ -1,0 +1,44 @@
+a76dbfe183c9a82101b4f634949a1c49
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function mapValues(object, iteratee) {
+  var result = {};
+  iteratee = require('./_baseIteratee')(iteratee, 3);
+
+  require('./_baseForOwn')(object, function (value, key, object) {
+    require('./_baseAssignValue')(result, key, iteratee(value, key, object));
+  });
+  return result;
+}
+
+module.exports = mapValues;

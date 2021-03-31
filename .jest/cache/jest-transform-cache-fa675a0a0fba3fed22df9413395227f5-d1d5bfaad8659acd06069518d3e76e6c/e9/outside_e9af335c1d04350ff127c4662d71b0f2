@@ -1,0 +1,81 @@
+fd356d7d4b495da4356c647484a5004b
+
+
+
+
+
+
+
+
+
+
+var outside = function outside(version, range, hilo, options) {
+  version = new (require('../classes/semver'))(version, options);
+  range = new (require('../classes/range'))(range, options);
+
+  var gtfn, ltefn, ltfn, comp, ecomp;
+  switch (hilo) {
+    case '>':
+      gtfn = require('../functions/gt');
+      ltefn = require('../functions/lte');
+      ltfn = require('../functions/lt');
+      comp = '>';
+      ecomp = '>=';
+      break;
+    case '<':
+      gtfn = require('../functions/lt');
+      ltefn = require('../functions/gte');
+      ltfn = require('../functions/gt');
+      comp = '<';
+      ecomp = '<=';
+      break;
+    default:
+      throw new TypeError('Must provide a hilo val of "<" or ">"');}
+
+
+
+  if (require('../functions/satisfies')(version, range, options)) {
+    return false;
+  }var _loop = function _loop(
+
+
+
+
+  i) {
+    var comparators = range.set[i];
+
+    var high = null;
+    var low = null;
+
+    comparators.forEach(function (comparator) {
+      if (comparator.semver === require('../classes/comparator').ANY) {
+        comparator = new (require('../classes/comparator'))('>=0.0.0');
+      }
+      high = high || comparator;
+      low = low || comparator;
+      if (gtfn(comparator.semver, high.semver, options)) {
+        high = comparator;
+      } else if (ltfn(comparator.semver, low.semver, options)) {
+        low = comparator;
+      }
+    });
+
+
+
+    if (high.operator === comp || high.operator === ecomp) {
+      return { v: false };
+    }
+
+
+
+    if ((!low.operator || low.operator === comp) &&
+    ltefn(version, low.semver)) {
+      return { v: false };
+    } else if (low.operator === ecomp && ltfn(version, low.semver)) {
+      return { v: false };
+    }};for (var i = 0; i < range.set.length; ++i) {var _ret = _loop(i);if (typeof _ret === "object") return _ret.v;
+  }
+  return true;
+};
+
+module.exports = outside;

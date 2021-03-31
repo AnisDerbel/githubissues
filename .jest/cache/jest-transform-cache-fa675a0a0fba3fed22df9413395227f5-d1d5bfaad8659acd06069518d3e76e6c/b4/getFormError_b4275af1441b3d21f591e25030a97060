@@ -1,0 +1,15 @@
+e575e3de5f7bc0262a2cddcb414b0615
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _getFormError = require("@babel/runtime/helpers/interopRequireDefault")(require("./selectors/getFormError"));
+
+var _plain = require("@babel/runtime/helpers/interopRequireDefault")(require("./structure/plain"));
+
+var _default = (0, _getFormError["default"])(_plain["default"]);
+
+exports["default"] = _default;

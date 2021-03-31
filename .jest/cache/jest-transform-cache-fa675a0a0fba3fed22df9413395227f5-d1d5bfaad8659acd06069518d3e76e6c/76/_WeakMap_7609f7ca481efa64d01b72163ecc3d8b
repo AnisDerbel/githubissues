@@ -1,0 +1,8 @@
+1cae304d5b7f2c9698299f14a3ce4460
+
+
+
+
+var WeakMap = require('./_getNative')(require('./_root'), 'WeakMap');
+
+module.exports = WeakMap;

@@ -1,0 +1,37 @@
+9f38af14e0548f84453716b26534e31e
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.getDefaultStatusBarStyle = getDefaultStatusBarStyle;exports.getDefaultStatusBarBackgroundColor = getDefaultStatusBarBackgroundColor;exports.ACTION = exports.TYPE = exports.IS_IOS_BELOW_11 = exports.IS_ANDROID = exports.WIDTH = exports.HEIGHT = exports.WINDOW = exports.DEFAULT_IMAGE_DIMENSIONS = void 0;var _reactNative = require("react-native");
+
+var DEFAULT_IMAGE_DIMENSIONS = 36;exports.DEFAULT_IMAGE_DIMENSIONS = DEFAULT_IMAGE_DIMENSIONS;
+var WINDOW = _reactNative.Dimensions.get('window');exports.WINDOW = WINDOW;
+var HEIGHT = WINDOW.height;exports.HEIGHT = HEIGHT;
+var WIDTH = WINDOW.width;exports.WIDTH = WIDTH;
+var IS_ANDROID = _reactNative.Platform.OS === 'android';exports.IS_ANDROID = IS_ANDROID;
+var IS_IOS = _reactNative.Platform.OS === 'ios';
+var PLATFORM_VERSION = parseInt(_reactNative.Platform.Version, 10);
+var IS_IOS_BELOW_11 = IS_IOS && PLATFORM_VERSION < 11;exports.IS_IOS_BELOW_11 = IS_IOS_BELOW_11;
+var TYPE = {
+  info: 'info',
+  warn: 'warn',
+  error: 'error',
+  success: 'success',
+  custom: 'custom' };exports.TYPE = TYPE;
+
+var ACTION = {
+  automatic: 'automatic',
+  cancel: 'cancel',
+  pan: 'pan',
+  programmatic: 'programmatic',
+  tap: 'tap' };exports.ACTION = ACTION;
+
+function getDefaultStatusBarStyle() {
+  if (_reactNative.StatusBar._defaultProps) {
+    return _reactNative.StatusBar._defaultProps.barStyle.value;
+  }
+  return 'default';
+}
+function getDefaultStatusBarBackgroundColor() {
+  if (_reactNative.StatusBar._defaultProps) {
+    return _reactNative.StatusBar._defaultProps.backgroundColor.value;
+  }
+  return 'black';
+}

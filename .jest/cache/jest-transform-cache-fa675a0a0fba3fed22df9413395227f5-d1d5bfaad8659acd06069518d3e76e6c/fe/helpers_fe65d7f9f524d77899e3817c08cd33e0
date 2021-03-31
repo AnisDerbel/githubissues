@@ -1,0 +1,35 @@
+5c893d06d453f3ef5ba9728bb89f1009
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.wrapEffectCreator = wrapEffectCreator;
+exports.like = like;
+exports.isPartialMatcher = isPartialMatcher;
+
+var _objectAssign = _interopRequireDefault(require("object-assign"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var PARTIAL_MATCH = '@@redux-saga-test-plan/partial-matcher';
+
+function wrapEffectCreator(effectCreator) {
+  return function wrappedEffectCreator() {
+    return effectCreator.apply(void 0, arguments);
+  };
+}
+
+function like(providerKey) {var defaults = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  return function effectMatcher(effect) {
+    return (0, _objectAssign.default)({}, defaults, require("@babel/runtime/helpers/defineProperty")({
+      effect: effect,
+      providerKey: providerKey },
+    PARTIAL_MATCH, true));
+
+  };
+}
+
+function isPartialMatcher(effect) {
+  return PARTIAL_MATCH in effect;
+}

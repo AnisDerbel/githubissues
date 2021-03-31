@@ -1,0 +1,22 @@
+1fa8da1160c621d5f2791da484dfb9a2
+
+
+
+
+
+
+
+
+
+
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if (require('./eq')(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+
+module.exports = assocIndexOf;

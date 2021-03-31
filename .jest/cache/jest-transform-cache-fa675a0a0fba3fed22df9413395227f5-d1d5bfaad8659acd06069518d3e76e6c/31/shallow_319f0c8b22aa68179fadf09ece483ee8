@@ -1,0 +1,37 @@
+4d616b84ee6fb4252f893d935f52f55a
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.shallowInternal = shallowInternal;
+exports.default = shallow;
+
+var React = _interopRequireWildcard(require("react"));
+
+var _shallow = _interopRequireDefault(require("react-test-renderer/shallow"));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+
+
+
+
+
+function shallowInternal(instance) {
+  var renderer = new _shallow.default();
+  renderer.render(React.createElement(instance.type, instance.props));
+  return {
+    output: renderer.getRenderOutput() };
+
+}
+
+function shallow(_) {
+  (0, require("./helpers/errors").throwRemovedFunctionError)('shallow', 'migration-v2#removed-global-shallow-function');
+}

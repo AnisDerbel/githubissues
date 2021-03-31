@@ -1,0 +1,44 @@
+9176826790a014d0f63a0d8b8ad3320c
+'use strict';
+
+
+var functionsHaveNames = require('functions-have-names')();
+
+var $functionToString = require('call-bind/callBound')('Function.prototype.toString');
+var $stringMatch = require('call-bind/callBound')('String.prototype.match');
+
+var classRegex = /^class /;
+
+var isClass = function isClassConstructor(fn) {
+  if (require('es-abstract/2020/IsCallable')(fn)) {
+    return false;
+  }
+  if (typeof fn !== 'function') {
+    return false;
+  }
+  try {
+    var match = $stringMatch($functionToString(fn), classRegex);
+    return !!match;
+  } catch (e) {}
+  return false;
+};
+
+var regex = /\s*function\s+([^(\s]*)\s*/;
+
+var functionProto = Function.prototype;
+
+module.exports = function getName() {
+  if (!isClass(this) && !require('es-abstract/2020/IsCallable')(this)) {
+    throw new TypeError('Function.prototype.name sham getter called on non-function');
+  }
+  if (functionsHaveNames) {
+    return this.name;
+  }
+  if (this === functionProto) {
+    return '';
+  }
+  var str = $functionToString(this);
+  var match = $stringMatch(str, regex);
+  var name = match && match[1];
+  return name;
+};

@@ -1,0 +1,23 @@
+293d7affc819dedd61b114ffe337a26c
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.NativeViewGestureHandler = exports.nativeViewProps = void 0;
+
+var _createHandler = _interopRequireDefault(require("./createHandler"));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var nativeViewProps = [].concat(require("@babel/runtime/helpers/toConsumableArray")(require("./gestureHandlers").baseProps), ['shouldActivateOnStart', 'disallowInterruption']);
+exports.nativeViewProps = nativeViewProps;
+
+var NativeViewGestureHandler = (0, _createHandler.default)({
+  name: 'NativeViewGestureHandler',
+  allowedProps: nativeViewProps,
+  config: {} });
+
+exports.NativeViewGestureHandler = NativeViewGestureHandler;

@@ -1,0 +1,307 @@
+fec79d84100a29b411bc947a3e9a0a92
+"use strict";
+
+/* istanbul ignore next */
+function cov_yzh17qyo0() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/store.ts";
+  var hash = "849b58d5304225c5571e4eea37ae538240c44d39";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/store.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "1": {
+        start: {
+          line: 7,
+          column: 14
+        },
+        end: {
+          line: 7,
+          column: 30
+        }
+      },
+      "2": {
+        start: {
+          line: 9,
+          column: 14
+        },
+        end: {
+          line: 9,
+          column: 30
+        }
+      },
+      "3": {
+        start: {
+          line: 11,
+          column: 19
+        },
+        end: {
+          line: 11,
+          column: 65
+        }
+      },
+      "4": {
+        start: {
+          line: 13,
+          column: 33
+        },
+        end: {
+          line: 13,
+          column: 68
+        }
+      },
+      "5": {
+        start: {
+          line: 15,
+          column: 19
+        },
+        end: {
+          line: 15,
+          column: 67
+        }
+      },
+      "6": {
+        start: {
+          line: 17,
+          column: 14
+        },
+        end: {
+          line: 17,
+          column: 57
+        }
+      },
+      "7": {
+        start: {
+          line: 19,
+          column: 21
+        },
+        end: {
+          line: 19,
+          column: 43
+        }
+      },
+      "8": {
+        start: {
+          line: 20,
+          column: 18
+        },
+        end: {
+          line: 20,
+          column: 34
+        }
+      },
+      "9": {
+        start: {
+          line: 22,
+          column: 0
+        },
+        end: {
+          line: 26,
+          column: 1
+        }
+      },
+      "10": {
+        start: {
+          line: 23,
+          column: 32
+        },
+        end: {
+          line: 23,
+          column: 78
+        }
+      },
+      "11": {
+        start: {
+          line: 25,
+          column: 2
+        },
+        end: {
+          line: 25,
+          column: 46
+        }
+      },
+      "12": {
+        start: {
+          line: 28,
+          column: 12
+        },
+        end: {
+          line: 28,
+          column: 154
+        }
+      },
+      "13": {
+        start: {
+          line: 29,
+          column: 0
+        },
+        end: {
+          line: 29,
+          column: 36
+        }
+      },
+      "14": {
+        start: {
+          line: 30,
+          column: 0
+        },
+        end: {
+          line: 30,
+          column: 24
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 22,
+            column: 0
+          },
+          end: {
+            line: 26,
+            column: 1
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 22,
+            column: 0
+          },
+          end: {
+            line: 26,
+            column: 1
+          }
+        }, {
+          start: {
+            line: 22,
+            column: 0
+          },
+          end: {
+            line: 26,
+            column: 1
+          }
+        }],
+        line: 22
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0
+    },
+    f: {},
+    b: {
+      "0": [0, 0]
+    },
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/redux/store.ts"],
+      names: [],
+      mappings: ";;;;;;;;AAAA,IAAA,OAAA,GAAA,OAAA,CAAA,OAAA,CAAA;;AACA,IAAA,YAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,YAAA,CAAA,CAAA;;AACA,IAAA,0BAAA,GAAA,OAAA,CAAA,0BAAA,CAAA;;AACA,IAAA,YAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,cAAA,CAAA,CAAA;;AACA,IAAA,OAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,SAAA,CAAA,CAAA;;AACA,IAAM,cAAc,GAAG,YAAA,CAAA,OAAA,EAAvB;AAEA,IAAM,WAAW,GAAG,CAAC,cAAD,CAApB;;AACA,IAAI,OAAJ,EAAa;AAEX,MAAM,uBAAuB,GAAG,OAAO,CAAC,6BAAD,CAAP,CAAuC,OAAvE;;AACA,EAAA,WAAW,CAAC,IAAZ,CAAiB,uBAAuB,EAAxC;AACD;;AAED,IAAM,KAAK,GAAG,OAAA,CAAA,WAAA,CAAY,YAAA,CAAA,OAAZ,EAAyB,0BAAA,CAAA,mBAAA,CAAoB,OAAA,CAAA,eAAA,OAAA,OAAA,EAAmB,WAAnB,CAApB,CAAzB,CAAd;AACA,cAAc,CAAC,GAAf,CAAmB,OAAA,CAAA,OAAnB;AAEA,OAAA,CAAA,OAAA,GAAe,KAAf",
+      sourcesContent: ["import { applyMiddleware, createStore } from 'redux';\nimport createSagaMiddleware from 'redux-saga';\nimport { composeWithDevTools } from 'redux-devtools-extension';\nimport rootReducer from './appReducer';\nimport rootSaga from './sagas';\nconst sagaMiddleware = createSagaMiddleware();\n\nconst middleWares = [sagaMiddleware];\nif (__DEV__) {\n  // eslint-disable-next-line @typescript-eslint/no-var-requires\n  const createFlipperMiddleware = require('rn-redux-middleware-flipper').default;\n  middleWares.push(createFlipperMiddleware());\n}\n\nconst store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middleWares)));\nsagaMiddleware.run(rootSaga);\n\nexport default store;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "849b58d5304225c5571e4eea37ae538240c44d39"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_yzh17qyo0 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_yzh17qyo0();
+cov_yzh17qyo0().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tslib_1 =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[1]++, require("tslib"));
+var redux_1 =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[2]++, require("redux"));
+var redux_saga_1 =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[3]++, tslib_1.__importDefault(require("redux-saga")));
+var redux_devtools_extension_1 =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[4]++, require("redux-devtools-extension"));
+var appReducer_1 =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[5]++, tslib_1.__importDefault(require("./appReducer")));
+var sagas_1 =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[6]++, tslib_1.__importDefault(require("./sagas")));
+var sagaMiddleware =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[7]++, redux_saga_1.default());
+var middleWares =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[8]++, [sagaMiddleware]);
+
+/* istanbul ignore next */
+cov_yzh17qyo0().s[9]++;
+
+if (__DEV__) {
+  /* istanbul ignore next */
+  cov_yzh17qyo0().b[0][0]++;
+  var createFlipperMiddleware =
+  /* istanbul ignore next */
+  (cov_yzh17qyo0().s[10]++, require('rn-redux-middleware-flipper').default);
+
+  /* istanbul ignore next */
+  cov_yzh17qyo0().s[11]++;
+  middleWares.push(createFlipperMiddleware());
+} else
+/* istanbul ignore next */
+{
+  cov_yzh17qyo0().b[0][1]++;
+}
+
+var store =
+/* istanbul ignore next */
+(cov_yzh17qyo0().s[12]++, redux_1.createStore(appReducer_1.default, redux_devtools_extension_1.composeWithDevTools(redux_1.applyMiddleware.apply(redux_1, middleWares))));
+
+/* istanbul ignore next */
+cov_yzh17qyo0().s[13]++;
+sagaMiddleware.run(sagas_1.default);
+
+/* istanbul ignore next */
+cov_yzh17qyo0().s[14]++;
+exports.default = store;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L3N0b3JlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxJQUFBLE9BQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxPQUFBLENBQUEsQ0FBQTtBQUNBLElBQUEsWUFBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLGVBQUEsQ0FBQSxPQUFBLENBQUEsWUFBQSxDQUFBLENBQUEsQ0FBQTtBQUNBLElBQUEsMEJBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSwwQkFBQSxDQUFBLENBQUE7QUFDQSxJQUFBLFlBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLGNBQUEsQ0FBQSxDQUFBLENBQUE7QUFDQSxJQUFBLE9BQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLFNBQUEsQ0FBQSxDQUFBLENBQUE7QUFDQSxJQUFNLGNBQWM7QUFBQTtBQUFBLHlCQUFHLFlBQUEsQ0FBdkIsT0FBdUIsRUFBSCxDQUFwQjtBQUVBLElBQU0sV0FBVztBQUFBO0FBQUEseUJBQUcsQ0FBcEIsY0FBb0IsQ0FBSCxDQUFqQjs7Ozs7QUFDQSxJQUFBLE9BQUEsRUFBYTtBQUFBO0FBQUE7QUFFWCxNQUFNLHVCQUF1QjtBQUFBO0FBQUEsNEJBQUcsT0FBTyxDQUFQLDZCQUFPLENBQVAsQ0FBaEMsT0FBNkIsQ0FBN0I7O0FBRlc7QUFBQTtBQUdYLEVBQUEsV0FBVyxDQUFYLElBQUEsQ0FBaUIsdUJBQWpCLEVBQUE7QUFDRCxDQUpEO0FBQUE7QUFBQTtBQUFBO0FBQUE7O0FBTUEsSUFBTSxLQUFLO0FBQUE7QUFBQSwwQkFBRyxPQUFBLENBQUEsV0FBQSxDQUFZLFlBQUEsQ0FBWixPQUFBLEVBQXlCLDBCQUFBLENBQUEsbUJBQUEsQ0FBb0IsT0FBQSxDQUFBLGVBQUEsQ0FBQSxLQUFBLENBQUEsT0FBQSxFQUEzRCxXQUEyRCxDQUFwQixDQUF6QixDQUFILENBQVg7Ozs7QUFDQSxjQUFjLENBQWQsR0FBQSxDQUFtQixPQUFBLENBQW5CLE9BQUE7Ozs7QUFFQSxPQUFBLENBQUEsT0FBQSxHQUFBLEtBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBhcHBseU1pZGRsZXdhcmUsIGNyZWF0ZVN0b3JlIH0gZnJvbSAncmVkdXgnO1xuaW1wb3J0IGNyZWF0ZVNhZ2FNaWRkbGV3YXJlIGZyb20gJ3JlZHV4LXNhZ2EnO1xuaW1wb3J0IHsgY29tcG9zZVdpdGhEZXZUb29scyB9IGZyb20gJ3JlZHV4LWRldnRvb2xzLWV4dGVuc2lvbic7XG5pbXBvcnQgcm9vdFJlZHVjZXIgZnJvbSAnLi9hcHBSZWR1Y2VyJztcbmltcG9ydCByb290U2FnYSBmcm9tICcuL3NhZ2FzJztcbmNvbnN0IHNhZ2FNaWRkbGV3YXJlID0gY3JlYXRlU2FnYU1pZGRsZXdhcmUoKTtcblxuY29uc3QgbWlkZGxlV2FyZXMgPSBbc2FnYU1pZGRsZXdhcmVdO1xuaWYgKF9fREVWX18pIHtcbiAgLy8gZXNsaW50LWRpc2FibGUtbmV4dC1saW5lIEB0eXBlc2NyaXB0LWVzbGludC9uby12YXItcmVxdWlyZXNcbiAgY29uc3QgY3JlYXRlRmxpcHBlck1pZGRsZXdhcmUgPSByZXF1aXJlKCdybi1yZWR1eC1taWRkbGV3YXJlLWZsaXBwZXInKS5kZWZhdWx0O1xuICBtaWRkbGVXYXJlcy5wdXNoKGNyZWF0ZUZsaXBwZXJNaWRkbGV3YXJlKCkpO1xufVxuXG5jb25zdCBzdG9yZSA9IGNyZWF0ZVN0b3JlKHJvb3RSZWR1Y2VyLCBjb21wb3NlV2l0aERldlRvb2xzKGFwcGx5TWlkZGxld2FyZSguLi5taWRkbGVXYXJlcykpKTtcbnNhZ2FNaWRkbGV3YXJlLnJ1bihyb290U2FnYSk7XG5cbmV4cG9ydCBkZWZhdWx0IHN0b3JlO1xuIl19

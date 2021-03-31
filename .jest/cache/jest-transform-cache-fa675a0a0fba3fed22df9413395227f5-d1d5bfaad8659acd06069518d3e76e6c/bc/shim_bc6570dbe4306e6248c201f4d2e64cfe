@@ -1,0 +1,15 @@
+5aa1a94c6a7d2607fe8274616a98caa4
+'use strict';
+
+
+
+
+module.exports = function shimObjectIs() {
+  var polyfill = require('./polyfill')();
+  require('define-properties')(Object, { is: polyfill }, {
+    is: function testObjectIs() {
+      return Object.is !== polyfill;
+    } });
+
+  return polyfill;
+};

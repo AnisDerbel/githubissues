@@ -1,0 +1,7 @@
+2534a029b5deda766fd50f98aaab7f07
+
+
+
+var nativeKeys = require('./_overArg')(Object.keys, Object);
+
+module.exports = nativeKeys;

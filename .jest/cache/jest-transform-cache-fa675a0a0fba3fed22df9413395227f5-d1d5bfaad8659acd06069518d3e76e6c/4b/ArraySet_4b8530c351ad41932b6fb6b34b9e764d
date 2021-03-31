@@ -1,0 +1,64 @@
+bb3b63478b6ec6e163e41fc149f3cadf
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+var _lodash = _interopRequireDefault(require("lodash.isequal"));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var
+
+
+ArraySet = function () {
+  function ArraySet() {var values = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];require("@babel/runtime/helpers/classCallCheck")(this, ArraySet);
+    this._values = values.slice(0);
+  }require("@babel/runtime/helpers/createClass")(ArraySet, [{ key: "values", value:
+
+    function values() {
+      return this._values.slice(0);
+    } }, { key: "add", value:
+
+    function add(value) {
+      this._values.push(value);
+    } }, { key: "has", value:
+
+    function has(value) {
+      var index = this.findIndex(value);
+      return index !== -1;
+    } }, { key: "delete", value:
+
+    function _delete(value) {
+      var index = this.findIndex(value);
+      return this._deleteAtIndex(index);
+    } }, { key: "deleteBy", value:
+
+    function deleteBy(finder) {
+      var index = this.findIndexBy(finder);
+      return this._deleteAtIndex(index);
+    } }, { key: "findIndex", value:
+
+    function findIndex(value) {
+      return this.findIndexBy(function (item) {return (0, _lodash.default)(item, value);});
+    } }, { key: "findIndexBy", value:
+
+    function findIndexBy(finder) {
+      return (0, require("./array").findIndex)(this._values, finder);
+    } }, { key: "_deleteAtIndex", value:
+
+    function _deleteAtIndex(index) {
+      if (index !== -1) {
+        this._values.splice(index, 1);
+
+        return true;
+      }
+
+      return false;
+    } }]);return ArraySet;}();
+
+
+
+exports.default = ArraySet;

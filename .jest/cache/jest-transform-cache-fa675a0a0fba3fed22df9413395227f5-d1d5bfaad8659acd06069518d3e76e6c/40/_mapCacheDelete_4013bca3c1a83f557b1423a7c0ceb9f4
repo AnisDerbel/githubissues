@@ -1,0 +1,19 @@
+c9d76c5d2d6f43f25c38466380a80fbb
+
+
+
+
+
+
+
+
+
+
+
+function mapCacheDelete(key) {
+  var result = require('./_getMapData')(this, key)['delete'](key);
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+module.exports = mapCacheDelete;

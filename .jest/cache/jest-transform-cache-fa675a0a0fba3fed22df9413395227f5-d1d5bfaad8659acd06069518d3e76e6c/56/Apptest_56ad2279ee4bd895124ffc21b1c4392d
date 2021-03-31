@@ -1,0 +1,15 @@
+28760f57273a991badbc23cbc6384315
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+
+
+require("react-native");
+var _react = _interopRequireDefault(require("react"));
+var _App = _interopRequireDefault(require("../App"));
+
+
+var _reactTestRenderer = _interopRequireDefault(require("react-test-renderer"));var _this = this,_jsxFileName = "/Users/anisderbel/Documents/apcgithubissues/__tests__/App-test.js";
+
+it('renders correctly', function () {
+  _reactTestRenderer.default.create(_react.default.createElement(_App.default, { __self: _this, __self: _this, __source: { fileName: _jsxFileName, lineNumber: 13, columnNumber: 19 } }));
+});

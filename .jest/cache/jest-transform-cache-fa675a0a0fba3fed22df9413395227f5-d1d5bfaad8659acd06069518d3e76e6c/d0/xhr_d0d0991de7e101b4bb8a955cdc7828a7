@@ -1,0 +1,180 @@
+3d1f606e68db9ae194af3a0c9ce9cb32
+'use strict';
+
+
+
+
+
+
+
+
+
+
+module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    var requestData = config.data;
+    var requestHeaders = config.headers;
+
+    if (require('./../utils').isFormData(requestData)) {
+      delete requestHeaders['Content-Type'];
+    }
+
+    var request = new XMLHttpRequest();
+
+
+    if (config.auth) {
+      var username = config.auth.username || '';
+      var password = config.auth.password ? unescape(encodeURIComponent(config.auth.password)) : '';
+      requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+    }
+
+    var fullPath = require('../core/buildFullPath')(config.baseURL, config.url);
+    request.open(config.method.toUpperCase(), require('./../helpers/buildURL')(fullPath, config.params, config.paramsSerializer), true);
+
+
+    request.timeout = config.timeout;
+
+
+    request.onreadystatechange = function handleLoad() {
+      if (!request || request.readyState !== 4) {
+        return;
+      }
+
+
+
+
+
+      if (request.status === 0 && !(request.responseURL && request.responseURL.indexOf('file:') === 0)) {
+        return;
+      }
+
+
+      var responseHeaders = 'getAllResponseHeaders' in request ? require('./../helpers/parseHeaders')(request.getAllResponseHeaders()) : null;
+      var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
+      var response = {
+        data: responseData,
+        status: request.status,
+        statusText: request.statusText,
+        headers: responseHeaders,
+        config: config,
+        request: request };
+
+
+      require('./../core/settle')(resolve, reject, response);
+
+
+      request = null;
+    };
+
+
+    request.onabort = function handleAbort() {
+      if (!request) {
+        return;
+      }
+
+      reject(require('../core/createError')('Request aborted', config, 'ECONNABORTED', request));
+
+
+      request = null;
+    };
+
+
+    request.onerror = function handleError() {
+
+
+      reject(require('../core/createError')('Network Error', config, null, request));
+
+
+      request = null;
+    };
+
+
+    request.ontimeout = function handleTimeout() {
+      var timeoutErrorMessage = 'timeout of ' + config.timeout + 'ms exceeded';
+      if (config.timeoutErrorMessage) {
+        timeoutErrorMessage = config.timeoutErrorMessage;
+      }
+      reject(require('../core/createError')(timeoutErrorMessage, config, 'ECONNABORTED',
+      request));
+
+
+      request = null;
+    };
+
+
+
+
+    if (require('./../utils').isStandardBrowserEnv()) {
+
+      var xsrfValue = (config.withCredentials || require('./../helpers/isURLSameOrigin')(fullPath)) && config.xsrfCookieName ?
+      require('./../helpers/cookies').read(config.xsrfCookieName) :
+      undefined;
+
+      if (xsrfValue) {
+        requestHeaders[config.xsrfHeaderName] = xsrfValue;
+      }
+    }
+
+
+    if ('setRequestHeader' in request) {
+      require('./../utils').forEach(requestHeaders, function setRequestHeader(val, key) {
+        if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
+
+          delete requestHeaders[key];
+        } else {
+
+          request.setRequestHeader(key, val);
+        }
+      });
+    }
+
+
+    if (!require('./../utils').isUndefined(config.withCredentials)) {
+      request.withCredentials = !!config.withCredentials;
+    }
+
+
+    if (config.responseType) {
+      try {
+        request.responseType = config.responseType;
+      } catch (e) {
+
+
+        if (config.responseType !== 'json') {
+          throw e;
+        }
+      }
+    }
+
+
+    if (typeof config.onDownloadProgress === 'function') {
+      request.addEventListener('progress', config.onDownloadProgress);
+    }
+
+
+    if (typeof config.onUploadProgress === 'function' && request.upload) {
+      request.upload.addEventListener('progress', config.onUploadProgress);
+    }
+
+    if (config.cancelToken) {
+
+      config.cancelToken.promise.then(function onCanceled(cancel) {
+        if (!request) {
+          return;
+        }
+
+        request.abort();
+        reject(cancel);
+
+        request = null;
+      });
+    }
+
+    if (!requestData) {
+      requestData = null;
+    }
+
+
+    request.send(requestData);
+  });
+};

@@ -1,0 +1,48 @@
+22c7fcadcfbf97495da39abde13dd871
+'use strict';
+
+
+
+
+var $apply = require('get-intrinsic')('%Function.prototype.apply%');
+var $call = require('get-intrinsic')('%Function.prototype.call%');
+var $reflectApply = require('get-intrinsic')('%Reflect.apply%', true) || require('function-bind').call($call, $apply);
+
+var $gOPD = require('get-intrinsic')('%Object.getOwnPropertyDescriptor%', true);
+var $defineProperty = require('get-intrinsic')('%Object.defineProperty%', true);
+var $max = require('get-intrinsic')('%Math.max%');
+
+if ($defineProperty) {
+  try {
+    $defineProperty({}, 'a', { value: 1 });
+  } catch (e) {
+
+    $defineProperty = null;
+  }
+}
+
+module.exports = function callBind(originalFunction) {
+  var func = $reflectApply(require('function-bind'), $call, arguments);
+  if ($gOPD && $defineProperty) {
+    var desc = $gOPD(func, 'length');
+    if (desc.configurable) {
+
+      $defineProperty(
+      func,
+      'length',
+      { value: 1 + $max(0, originalFunction.length - (arguments.length - 1)) });
+
+    }
+  }
+  return func;
+};
+
+var applyBind = function applyBind() {
+  return $reflectApply(require('function-bind'), $apply, arguments);
+};
+
+if ($defineProperty) {
+  $defineProperty(module.exports, 'apply', { value: applyBind });
+} else {
+  module.exports.apply = applyBind;
+}

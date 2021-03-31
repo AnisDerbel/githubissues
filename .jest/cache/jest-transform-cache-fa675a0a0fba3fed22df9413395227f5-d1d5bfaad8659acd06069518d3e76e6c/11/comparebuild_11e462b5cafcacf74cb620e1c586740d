@@ -1,0 +1,8 @@
+cf98f3d3095850ea083a43f9df0c5f12
+
+var compareBuild = function compareBuild(a, b, loose) {
+  var versionA = new (require('../classes/semver'))(a, loose);
+  var versionB = new (require('../classes/semver'))(b, loose);
+  return versionA.compare(versionB) || versionA.compareBuild(versionB);
+};
+module.exports = compareBuild;

@@ -1,0 +1,83 @@
+75320c3affd37f40546e36697be300ec
+
+
+
+
+
+
+var submittableSelector = 'input,select,textarea,keygen';
+var r20 = /%20/g;
+var rCRLF = /\r?\n/g;
+
+
+
+
+
+
+exports.serialize = function () {
+
+  var arr = this.serializeArray();
+
+
+  var retArr = arr.map(function (data) {
+    return encodeURIComponent(data.name) + '=' + encodeURIComponent(data.value);
+  });
+
+
+  return retArr.join('&').replace(r20, '+');
+};
+
+
+
+
+
+
+
+
+
+
+exports.serializeArray = function () {
+
+  var Cheerio = this.constructor;
+  return this.map(function () {
+    var elem = this;
+    var $elem = Cheerio(elem);
+    if (elem.name === 'form') {
+      return $elem.find(submittableSelector).toArray();
+    }
+    return $elem.filter(submittableSelector).toArray();
+  }).
+  filter(
+
+  '[name!=""]:not(:disabled)' +
+
+  ':not(:submit, :button, :image, :reset, :file)' +
+
+  ':matches([checked], :not(:checkbox, :radio))').
+
+
+  map(function (i, elem) {
+    var $elem = Cheerio(elem);
+    var name = $elem.attr('name');
+    var value = $elem.val();
+
+
+    if (value == null) {
+      value = '';
+    }
+
+
+    if (Array.isArray(value)) {
+      return value.map(function (val) {
+
+
+        return { name: name, value: val.replace(rCRLF, '\r\n') };
+      });
+
+    }
+    return { name: name, value: value.replace(rCRLF, '\r\n') };
+
+
+  }).
+  get();
+};

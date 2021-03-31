@@ -1,0 +1,205 @@
+768eddde87fcfe29077505a477591ec4
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _reactNative = require("react-native");
+
+var _reactNativePaper = require("react-native-paper");
+
+var _routes = require("../routes");
+
+var _InputForm = _interopRequireDefault(require("../components/InputForm"));
+
+function cov_17deyjnby4() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/screens/WelcomeScreen.tsx";
+  var hash = "37efa1bb481c9d3f5256e1ef212f88619460b405";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/screens/WelcomeScreen.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 16,
+          column: 22
+        },
+        end: {
+          line: 30,
+          column: 1
+        }
+      },
+      "1": {
+        start: {
+          line: 17,
+          column: 16
+        },
+        end: {
+          line: 17,
+          column: 26
+        }
+      },
+      "2": {
+        start: {
+          line: 19,
+          column: 20
+        },
+        end: {
+          line: 21,
+          column: 3
+        }
+      },
+      "3": {
+        start: {
+          line: 20,
+          column: 4
+        },
+        end: {
+          line: 20,
+          column: 46
+        }
+      },
+      "4": {
+        start: {
+          line: 22,
+          column: 2
+        },
+        end: {
+          line: 29,
+          column: 4
+        }
+      },
+      "5": {
+        start: {
+          line: 32,
+          column: 15
+        },
+        end: {
+          line: 39,
+          column: 2
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 16,
+            column: 22
+          },
+          end: {
+            line: 16,
+            column: 23
+          }
+        },
+        loc: {
+          start: {
+            line: 16,
+            column: 61
+          },
+          end: {
+            line: 30,
+            column: 1
+          }
+        },
+        line: 16
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 19,
+            column: 20
+          },
+          end: {
+            line: 19,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 19,
+            column: 26
+          },
+          end: {
+            line: 21,
+            column: 3
+          }
+        },
+        line: 19
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {},
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "37efa1bb481c9d3f5256e1ef212f88619460b405"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_17deyjnby4 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_17deyjnby4();
+cov_17deyjnby4().s[0]++;
+
+var WelcomeScreen = function WelcomeScreen(_ref) {
+  var navigation = _ref.navigation;
+  cov_17deyjnby4().f[0]++;
+  var theme = (cov_17deyjnby4().s[1]++, (0, _reactNativePaper.useTheme)());
+  cov_17deyjnby4().s[2]++;
+
+  var onSuccess = function onSuccess() {
+    cov_17deyjnby4().f[1]++;
+    cov_17deyjnby4().s[3]++;
+    navigation.navigate(_routes.ROUTES.GITHUB_ISSUES);
+  };
+
+  cov_17deyjnby4().s[4]++;
+  return _react.default.createElement(_reactNative.View, {
+    style: styles.container
+  }, _react.default.createElement(_reactNativePaper.Text, {
+    style: [styles.title, theme.variants.title]
+  }, "Welcome to Gibhub issues"), _react.default.createElement(_InputForm.default, {
+    onSuccess: onSuccess
+  }));
+};
+
+var _default = WelcomeScreen;
+exports.default = _default;
+var styles = (cov_17deyjnby4().s[5]++, _reactNative.StyleSheet.create({
+  container: {
+    margin: 10
+  },
+  title: {
+    marginVertical: 20
+  }
+}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIldlbGNvbWVTY3JlZW4udHN4Il0sIm5hbWVzIjpbIldlbGNvbWVTY3JlZW4iLCJuYXZpZ2F0aW9uIiwidGhlbWUiLCJvblN1Y2Nlc3MiLCJuYXZpZ2F0ZSIsIlJPVVRFUyIsIkdJVEhVQl9JU1NVRVMiLCJzdHlsZXMiLCJjb250YWluZXIiLCJ0aXRsZSIsInZhcmlhbnRzIiwiU3R5bGVTaGVldCIsImNyZWF0ZSIsIm1hcmdpbiIsIm1hcmdpblZlcnRpY2FsIl0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBQ0E7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQVdBLElBQU1BLGFBQWEsR0FBRyxTQUFoQkEsYUFBZ0IsT0FBdUM7QUFBQSxNQUFyQ0MsVUFBcUMsUUFBckNBLFVBQXFDO0FBQUE7QUFDM0QsTUFBTUMsS0FBSyw2QkFBRyxpQ0FBSCxDQUFYO0FBRDJEOztBQUczRCxNQUFNQyxTQUFTLEdBQUcsU0FBWkEsU0FBWSxHQUFNO0FBQUE7QUFBQTtBQUN0QkYsSUFBQUEsVUFBVSxDQUFDRyxRQUFYLENBQW9CQyxlQUFPQyxhQUEzQjtBQUNELEdBRkQ7O0FBSDJEO0FBTTNELFNBQ0UsNkJBQUMsaUJBQUQ7QUFBTSxJQUFBLEtBQUssRUFBRUMsTUFBTSxDQUFDQztBQUFwQixLQUNFLDZCQUFDLHNCQUFEO0FBQU0sSUFBQSxLQUFLLEVBQUUsQ0FBQ0QsTUFBTSxDQUFDRSxLQUFSLEVBQWVQLEtBQUssQ0FBQ1EsUUFBTixDQUFlRCxLQUE5QjtBQUFiLGdDQURGLEVBSUUsNkJBQUMsa0JBQUQ7QUFBVyxJQUFBLFNBQVMsRUFBRU47QUFBdEIsSUFKRixDQURGO0FBUUQsQ0FkRDs7ZUFlZUgsYTs7QUFDZixJQUFNTyxNQUFNLDZCQUFHSSx3QkFBV0MsTUFBWCxDQUFrQjtBQUMvQkosRUFBQUEsU0FBUyxFQUFFO0FBQ1RLLElBQUFBLE1BQU0sRUFBRTtBQURDLEdBRG9CO0FBSS9CSixFQUFBQSxLQUFLLEVBQUU7QUFDTEssSUFBQUEsY0FBYyxFQUFFO0FBRFg7QUFKd0IsQ0FBbEIsQ0FBSCxDQUFaIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7U3R5bGVTaGVldCwgVmlld30gZnJvbSAncmVhY3QtbmF0aXZlJztcbmltcG9ydCB7VGV4dCwgdXNlVGhlbWV9IGZyb20gJ3JlYWN0LW5hdGl2ZS1wYXBlcic7XG5pbXBvcnQge1Jvb3RTdGFja1BhcmFtTGlzdCwgUk9VVEVTfSBmcm9tICcuLi9yb3V0ZXMnO1xuaW1wb3J0IElucHV0Rm9ybSBmcm9tICcuLi9jb21wb25lbnRzL0lucHV0Rm9ybSc7XG5pbXBvcnQge1N0YWNrTmF2aWdhdGlvblByb3B9IGZyb20gJ0ByZWFjdC1uYXZpZ2F0aW9uL3N0YWNrJztcblxudHlwZSBUV2VsY29tZVNjcmVlbk5hdmlnYXRpb25Qcm9wID0gU3RhY2tOYXZpZ2F0aW9uUHJvcDxcbiAgUm9vdFN0YWNrUGFyYW1MaXN0LFxuICAnV2VsY29tZSdcbj47XG5cbmludGVyZmFjZSBJV2VsY29tZVNjcmVlblByb3BzIHtcbiAgbmF2aWdhdGlvbjogVFdlbGNvbWVTY3JlZW5OYXZpZ2F0aW9uUHJvcDtcbn1cbmNvbnN0IFdlbGNvbWVTY3JlZW4gPSAoe25hdmlnYXRpb259OiBJV2VsY29tZVNjcmVlblByb3BzKSA9PiB7XG4gIGNvbnN0IHRoZW1lID0gdXNlVGhlbWUoKTtcblxuICBjb25zdCBvblN1Y2Nlc3MgPSAoKSA9PiB7XG4gICAgbmF2aWdhdGlvbi5uYXZpZ2F0ZShST1VURVMuR0lUSFVCX0lTU1VFUyk7XG4gIH07XG4gIHJldHVybiAoXG4gICAgPFZpZXcgc3R5bGU9e3N0eWxlcy5jb250YWluZXJ9PlxuICAgICAgPFRleHQgc3R5bGU9e1tzdHlsZXMudGl0bGUsIHRoZW1lLnZhcmlhbnRzLnRpdGxlXX0+XG4gICAgICAgIFdlbGNvbWUgdG8gR2liaHViIGlzc3Vlc1xuICAgICAgPC9UZXh0PlxuICAgICAgPElucHV0Rm9ybSBvblN1Y2Nlc3M9e29uU3VjY2Vzc30gLz5cbiAgICA8L1ZpZXc+XG4gICk7XG59O1xuZXhwb3J0IGRlZmF1bHQgV2VsY29tZVNjcmVlbjtcbmNvbnN0IHN0eWxlcyA9IFN0eWxlU2hlZXQuY3JlYXRlKHtcbiAgY29udGFpbmVyOiB7XG4gICAgbWFyZ2luOiAxMCxcbiAgfSxcbiAgdGl0bGU6IHtcbiAgICBtYXJnaW5WZXJ0aWNhbDogMjAsXG4gIH0sXG59KTtcbiJdfQ==

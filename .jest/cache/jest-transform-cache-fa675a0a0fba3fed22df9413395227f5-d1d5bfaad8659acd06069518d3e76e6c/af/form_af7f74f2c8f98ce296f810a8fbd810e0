@@ -1,0 +1,28 @@
+eaeb6813b6bfa9c9db2f01866dafa1a4
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  form: {
+    registeredFields: [{
+      count: 1,
+      name: 'organization',
+      type: 'Field'
+    }, {
+      count: 1,
+      name: 'repository',
+      type: 'Field'
+    }],
+    syncErrors: {
+      organization: 'field is required',
+      repository: 'field is required'
+    },
+    values: {
+      organization: 'facebook',
+      repository: 'react-native'
+    }
+  }
+};
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvcm0udHMiXSwibmFtZXMiOlsiZm9ybSIsInJlZ2lzdGVyZWRGaWVsZHMiLCJjb3VudCIsIm5hbWUiLCJ0eXBlIiwic3luY0Vycm9ycyIsIm9yZ2FuaXphdGlvbiIsInJlcG9zaXRvcnkiLCJ2YWx1ZXMiXSwibWFwcGluZ3MiOiI7Ozs7ZUFFZTtBQUNiQSxFQUFBQSxJQUFJLEVBQUU7QUFDSkMsSUFBQUEsZ0JBQWdCLEVBQUUsQ0FDaEI7QUFDRUMsTUFBQUEsS0FBSyxFQUFFLENBRFQ7QUFFRUMsTUFBQUEsSUFBSSxFQUFFLGNBRlI7QUFHRUMsTUFBQUEsSUFBSSxFQUFFO0FBSFIsS0FEZ0IsRUFNaEI7QUFDRUYsTUFBQUEsS0FBSyxFQUFFLENBRFQ7QUFFRUMsTUFBQUEsSUFBSSxFQUFFLFlBRlI7QUFHRUMsTUFBQUEsSUFBSSxFQUFFO0FBSFIsS0FOZ0IsQ0FEZDtBQWFKQyxJQUFBQSxVQUFVLEVBQUU7QUFDVkMsTUFBQUEsWUFBWSxFQUFFLG1CQURKO0FBRVZDLE1BQUFBLFVBQVUsRUFBRTtBQUZGLEtBYlI7QUFpQkpDLElBQUFBLE1BQU0sRUFBRTtBQUNORixNQUFBQSxZQUFZLEVBQUUsVUFEUjtBQUVOQyxNQUFBQSxVQUFVLEVBQUU7QUFGTjtBQWpCSjtBQURPLEMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge0Zvcm1TdGF0ZU1hcH0gZnJvbSAncmVkdXgtZm9ybSc7XG5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgZm9ybToge1xuICAgIHJlZ2lzdGVyZWRGaWVsZHM6IFtcbiAgICAgIHtcbiAgICAgICAgY291bnQ6IDEsXG4gICAgICAgIG5hbWU6ICdvcmdhbml6YXRpb24nLFxuICAgICAgICB0eXBlOiAnRmllbGQnLFxuICAgICAgfSxcbiAgICAgIHtcbiAgICAgICAgY291bnQ6IDEsXG4gICAgICAgIG5hbWU6ICdyZXBvc2l0b3J5JyxcbiAgICAgICAgdHlwZTogJ0ZpZWxkJyxcbiAgICAgIH0sXG4gICAgXSxcbiAgICBzeW5jRXJyb3JzOiB7XG4gICAgICBvcmdhbml6YXRpb246ICdmaWVsZCBpcyByZXF1aXJlZCcsXG4gICAgICByZXBvc2l0b3J5OiAnZmllbGQgaXMgcmVxdWlyZWQnLFxuICAgIH0sXG4gICAgdmFsdWVzOiB7XG4gICAgICBvcmdhbml6YXRpb246ICdmYWNlYm9vaycsXG4gICAgICByZXBvc2l0b3J5OiAncmVhY3QtbmF0aXZlJyxcbiAgICB9LFxuICB9LFxufSBhcyBGb3JtU3RhdGVNYXA7XG4iXX0=

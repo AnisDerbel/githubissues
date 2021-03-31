@@ -1,0 +1,174 @@
+b0c5e802c171625353c6556edb041548
+
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+
+
+var _EmitterSubscription = _interopRequireDefault(require("./_EmitterSubscription"));
+var _EventSubscriptionVendor = _interopRequireDefault(require("./_EventSubscriptionVendor"));
+
+var sparseFilterPredicate = function sparseFilterPredicate() {return true;};var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EventEmitter = function () {
+
+
+
+
+
+
+
+
+  function EventEmitter(subscriber) {(0, _classCallCheck2.default)(this, EventEmitter);
+    this._subscriber = subscriber || new _EventSubscriptionVendor.default();
+  }(0, _createClass2.default)(EventEmitter, [{ key: "addListener", value:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function addListener(
+    eventType,
+    listener,
+    context)
+    {
+      return this._subscriber.addSubscription(
+      eventType,
+      new _EmitterSubscription.default(this, this._subscriber, listener, context));
+
+    } }, { key: "removeAllListeners", value:
+
+
+
+
+
+
+
+
+    function removeAllListeners(eventType) {
+      this._subscriber.removeAllSubscriptions(eventType);
+    } }, { key: "removeSubscription", value:
+
+
+
+
+
+    function removeSubscription(subscription) {
+      require('invariant')(
+      subscription.emitter === this,
+      'Subscription does not belong to this emitter.');
+
+      this._subscriber.removeSubscription(subscription);
+    } }, { key: "listenerCount", value:
+
+
+
+
+
+
+
+
+    function listenerCount(eventType) {
+      var subscriptions = this._subscriber.getSubscriptionsForType(eventType);
+      return subscriptions ?
+
+
+
+
+      subscriptions.filter(sparseFilterPredicate).length :
+      0;
+    } }, { key: "emit", value:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function emit(eventType) {
+      var subscriptions = this._subscriber.getSubscriptionsForType(eventType);
+      if (subscriptions) {
+        for (var i = 0, l = subscriptions.length; i < l; i++) {
+          var subscription = subscriptions[i];
+
+
+          if (subscription && subscription.listener) {
+            subscription.listener.apply(
+            subscription.context,
+            Array.prototype.slice.call(arguments, 1));
+
+          }
+        }
+      }
+    } }, { key: "removeListener", value:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function removeListener(eventType, listener) {
+      var subscriptions = this._subscriber.getSubscriptionsForType(eventType);
+      if (subscriptions) {
+        for (var i = 0, l = subscriptions.length; i < l; i++) {
+          var subscription = subscriptions[i];
+
+
+
+          if (subscription && subscription.listener === listener) {
+            subscription.remove();
+          }
+        }
+      }
+    } }]);return EventEmitter;}();
+
+
+module.exports = EventEmitter;

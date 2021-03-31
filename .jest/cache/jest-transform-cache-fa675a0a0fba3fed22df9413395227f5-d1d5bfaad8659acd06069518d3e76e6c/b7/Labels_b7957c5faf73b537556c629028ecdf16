@@ -1,0 +1,422 @@
+d91f984804082eec39e20c41ce5aeda0
+/* istanbul ignore next */
+function cov_1w4rjza8g0() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/components/Labels.tsx";
+  var hash = "15a2526afe2375cc3d1ccc6d576b0b4de9cb0de5";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/components/Labels.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 29
+        },
+        end: {
+          line: 1,
+          column: 84
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 25
+        }
+      },
+      "3": {
+        start: {
+          line: 8,
+          column: 13
+        },
+        end: {
+          line: 8,
+          column: 53
+        }
+      },
+      "4": {
+        start: {
+          line: 10,
+          column: 19
+        },
+        end: {
+          line: 10,
+          column: 42
+        }
+      },
+      "5": {
+        start: {
+          line: 12,
+          column: 24
+        },
+        end: {
+          line: 12,
+          column: 53
+        }
+      },
+      "6": {
+        start: {
+          line: 14,
+          column: 13
+        },
+        end: {
+          line: 14,
+          column: 32
+        }
+      },
+      "7": {
+        start: {
+          line: 16,
+          column: 13
+        },
+        end: {
+          line: 36,
+          column: 1
+        }
+      },
+      "8": {
+        start: {
+          line: 17,
+          column: 14
+        },
+        end: {
+          line: 17,
+          column: 24
+        }
+      },
+      "9": {
+        start: {
+          line: 18,
+          column: 14
+        },
+        end: {
+          line: 18,
+          column: 47
+        }
+      },
+      "10": {
+        start: {
+          line: 19,
+          column: 2
+        },
+        end: {
+          line: 35,
+          column: 6
+        }
+      },
+      "11": {
+        start: {
+          line: 22,
+          column: 26
+        },
+        end: {
+          line: 22,
+          column: 42
+        }
+      },
+      "12": {
+        start: {
+          line: 23,
+          column: 22
+        },
+        end: {
+          line: 23,
+          column: 55
+        }
+      },
+      "13": {
+        start: {
+          line: 24,
+          column: 4
+        },
+        end: {
+          line: 34,
+          column: 19
+        }
+      },
+      "14": {
+        start: {
+          line: 38,
+          column: 15
+        },
+        end: {
+          line: 38,
+          column: 21
+        }
+      },
+      "15": {
+        start: {
+          line: 39,
+          column: 0
+        },
+        end: {
+          line: 39,
+          column: 27
+        }
+      },
+      "16": {
+        start: {
+          line: 41,
+          column: 13
+        },
+        end: {
+          line: 55,
+          column: 2
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "Labels",
+        decl: {
+          start: {
+            line: 16,
+            column: 22
+          },
+          end: {
+            line: 16,
+            column: 28
+          }
+        },
+        loc: {
+          start: {
+            line: 16,
+            column: 35
+          },
+          end: {
+            line: 36,
+            column: 1
+          }
+        },
+        line: 16
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 21,
+            column: 15
+          },
+          end: {
+            line: 21,
+            column: 16
+          }
+        },
+        loc: {
+          start: {
+            line: 21,
+            column: 31
+          },
+          end: {
+            line: 35,
+            column: 3
+          }
+        },
+        line: 21
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 23,
+            column: 22
+          },
+          end: {
+            line: 23,
+            column: 55
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 23,
+            column: 48
+          },
+          end: {
+            line: 23,
+            column: 51
+          }
+        }, {
+          start: {
+            line: 23,
+            column: 54
+          },
+          end: {
+            line: 23,
+            column: 55
+          }
+        }],
+        line: 23
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0]
+    },
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/components/Labels.tsx"],
+      names: [],
+      mappings: ";;;;;;;AAAA;;AACA;;AACA;;AACA;;AAGA,IAAM,MAAM,GAAG,SAAT,MAAS,OAAmC;AAAA,MAAjC,KAAiC,QAAjC,KAAiC;AAChD,MAAM,KAAK,GAAG,iCAAd;AAEA,SACE,6BAAC,iBAAD;AAAM,IAAA,KAAK,EAAE,MAAM,CAAC;AAApB,KACG,KAAK,CAAC,GAAN,CAAU,UAAA,IAAI,EAAG;AAChB,QAAM,eAAe,SAAO,IAAI,CAAC,KAAjC;AACA,QAAM,WAAW,GAAG,IAAI,CAAC,KAAL,KAAe,QAAf,GAA0B,GAA1B,GAAgC,CAApD;AACA,WACE,6BAAC,iBAAD;AACE,MAAA,GAAG,EAAE,IAAI,CAAC,EADZ;AAEE,MAAA,KAAK,EAAE,CACL;AACE,QAAA,eAAe,EAAf,eADF;AAEE,QAAA,WAAW,EAAX;AAFF,OADK,EAKL,MAAM,CAAC,GALF;AAFT,OASE,6BAAC,iBAAD;AAAM,MAAA,KAAK,EAAE,CAAC,KAAK,CAAC,QAAN,CAAe,GAAhB,EAAqB;AAAC,QAAA,KAAK,EAAE,qBAAS,IAAI,CAAC,KAAd;AAAR,OAArB;AAAb,OACG,IAAI,CAAC,IADR,CATF,CADF;AAeD,GAlBA,CADH,CADF;AAuBD,CA1BD;;eA4Be,M;;;AAEf,IAAM,MAAM,GAAG,wBAAW,MAAX,CAAkB;AAC/B,EAAA,OAAO,EAAE;AACP,IAAA,aAAa,EAAE,KADR;AAEP,IAAA,QAAQ,EAAE,MAFH;AAGP,IAAA,SAAS,EAAE;AAHJ,GADsB;AAM/B,EAAA,GAAG,EAAE;AACH,IAAA,YAAY,EAAE,EADX;AAEH,IAAA,iBAAiB,EAAE,CAFhB;AAGH,IAAA,eAAe,EAAE,CAHd;AAIH,IAAA,WAAW,EAAE,CAJV;AAKH,IAAA,WAAW,EAAE,SALV;AAMH,IAAA,YAAY,EAAE;AANX;AAN0B,CAAlB,CAAf",
+      sourcesContent: ["import React from 'react';\nimport {StyleSheet, View, Text} from 'react-native';\nimport {useTheme} from 'react-native-paper';\nimport {getColor} from '../utils';\nimport {Label} from '../redux/repo/reducer';\n\nconst Labels = ({items}: {items: Array<Label>}) => {\n  const theme = useTheme();\n\n  return (\n    <View style={styles.wrapper}>\n      {items.map(item => {\n        const backgroundColor = `#${item.color}`;\n        const borderWidth = item.color === 'ffffff' ? 0.5 : 0;\n        return (\n          <View\n            key={item.id}\n            style={[\n              {\n                backgroundColor,\n                borderWidth,\n              },\n              styles.tag,\n            ]}>\n            <Text style={[theme.variants.tag, {color: getColor(item.color)}]}>\n              {item.name}\n            </Text>\n          </View>\n        );\n      })}\n    </View>\n  );\n};\n\nexport default Labels;\n\nconst styles = StyleSheet.create({\n  wrapper: {\n    flexDirection: 'row',\n    flexWrap: 'wrap',\n    marginTop: 10,\n  },\n  tag: {\n    borderRadius: 10,\n    paddingHorizontal: 5,\n    paddingVertical: 2,\n    marginRight: 5,\n    borderColor: '#363636',\n    marginBottom: 5,\n  },\n});\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "15a2526afe2375cc3d1ccc6d576b0b4de9cb0de5"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1w4rjza8g0 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1w4rjza8g0();
+
+var _interopRequireDefault =
+/* istanbul ignore next */
+(cov_1w4rjza8g0().s[0]++, require("@babel/runtime/helpers/interopRequireDefault"));
+
+/* istanbul ignore next */
+cov_1w4rjza8g0().s[1]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_1w4rjza8g0().s[2]++;
+exports.default = void 0;
+
+var _react =
+/* istanbul ignore next */
+(cov_1w4rjza8g0().s[3]++, _interopRequireDefault(require("react")));
+
+var _reactNative =
+/* istanbul ignore next */
+(cov_1w4rjza8g0().s[4]++, require("react-native"));
+
+var _reactNativePaper =
+/* istanbul ignore next */
+(cov_1w4rjza8g0().s[5]++, require("react-native-paper"));
+
+var _utils =
+/* istanbul ignore next */
+(cov_1w4rjza8g0().s[6]++, require("../utils"));
+
+/* istanbul ignore next */
+cov_1w4rjza8g0().s[7]++;
+
+var Labels = function Labels(_ref) {
+  /* istanbul ignore next */
+  cov_1w4rjza8g0().f[0]++;
+  var items =
+  /* istanbul ignore next */
+  (cov_1w4rjza8g0().s[8]++, _ref.items);
+  var theme =
+  /* istanbul ignore next */
+  (cov_1w4rjza8g0().s[9]++, (0, _reactNativePaper.useTheme)());
+
+  /* istanbul ignore next */
+  cov_1w4rjza8g0().s[10]++;
+  return _react.default.createElement(_reactNative.View, {
+    style: styles.wrapper
+  }, items.map(function (item) {
+    /* istanbul ignore next */
+    cov_1w4rjza8g0().f[1]++;
+    var backgroundColor =
+    /* istanbul ignore next */
+    (cov_1w4rjza8g0().s[11]++, "#" + item.color);
+    var borderWidth =
+    /* istanbul ignore next */
+    (cov_1w4rjza8g0().s[12]++, item.color === 'ffffff' ?
+    /* istanbul ignore next */
+    (cov_1w4rjza8g0().b[0][0]++, 0.5) :
+    /* istanbul ignore next */
+    (cov_1w4rjza8g0().b[0][1]++, 0));
+
+    /* istanbul ignore next */
+    cov_1w4rjza8g0().s[13]++;
+    return _react.default.createElement(_reactNative.View, {
+      key: item.id,
+      style: [{
+        backgroundColor: backgroundColor,
+        borderWidth: borderWidth
+      }, styles.tag]
+    }, _react.default.createElement(_reactNative.Text, {
+      style: [theme.variants.tag, {
+        color: (0, _utils.getColor)(item.color)
+      }]
+    }, item.name));
+  }));
+};
+
+var _default =
+/* istanbul ignore next */
+(cov_1w4rjza8g0().s[14]++, Labels);
+
+/* istanbul ignore next */
+cov_1w4rjza8g0().s[15]++;
+exports.default = _default;
+var styles =
+/* istanbul ignore next */
+(cov_1w4rjza8g0().s[16]++, _reactNative.StyleSheet.create({
+  wrapper: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginTop: 10
+  },
+  tag: {
+    borderRadius: 10,
+    paddingHorizontal: 5,
+    paddingVertical: 2,
+    marginRight: 5,
+    borderColor: '#363636',
+    marginBottom: 5
+  }
+}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL2NvbXBvbmVudHMvTGFiZWxzLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFNWTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBTlosSUFBQSxNQUFBO0FBQUE7QUFBQSwwQkFBQSxzQkFBQSxDQUFBLE9BQUEsQ0FBQSxPQUFBLENBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsWUFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLGNBQUEsQ0FBQSxDQUFBOztBQUNBLElBQUEsaUJBQUE7QUFBQTtBQUFBLDBCQUFBLE9BQUEsQ0FBQSxvQkFBQSxDQUFBLENBQUE7O0FBQ0EsSUFBQSxNQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsVUFBQSxDQUFBLENBQUE7Ozs7O0FBR0EsSUFBTSxNQUFNLEdBQUcsU0FBVCxNQUFTLENBQUEsSUFBQSxFQUFtQztBQUFBO0FBQUE7QUFBQSxNQUFqQyxLQUFpQztBQUFBO0FBQUEsNEJBQUEsSUFBQSxDQUFqQyxLQUFpQyxDQUFBO0FBQ2hELE1BQU0sS0FBSztBQUFBO0FBQUEsNEJBQUcsQ0FBQSxHQUFBLGlCQUFBLENBQWQsUUFBYyxHQUFILENBQVg7O0FBRGdEO0FBQUE7QUFHaEQsU0FDRSxNQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxZQUFBLENBQUQsSUFBQSxFQUFBO0FBQU0sSUFBQSxLQUFLLEVBQUUsTUFBTSxDQUFDO0FBQXBCLEdBQUEsRUFDRyxLQUFLLENBQUwsR0FBQSxDQUFVLFVBQUEsSUFBQSxFQUFPO0FBQUE7QUFBQTtBQUNoQixRQUFNLGVBQWU7QUFBQTtBQUFBLCtCQUFBLE1BQU8sSUFBSSxDQUFoQyxLQUFxQixDQUFyQjtBQUNBLFFBQU0sV0FBVztBQUFBO0FBQUEsK0JBQUcsSUFBSSxDQUFKLEtBQUEsS0FBQSxRQUFBO0FBQUE7QUFBQSxpQ0FBQSxHQUFBO0FBQUE7QUFBQSxpQ0FBcEIsQ0FBb0IsQ0FBSCxDQUFqQjs7QUFGZ0I7QUFBQTtBQUdoQixXQUNFLE1BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLFlBQUEsQ0FBRCxJQUFBLEVBQUE7QUFDRSxNQUFBLEdBQUcsRUFBRSxJQUFJLENBRFgsRUFBQTtBQUVFLE1BQUEsS0FBSyxFQUFFLENBQ0w7QUFDRSxRQUFBLGVBQWUsRUFEakIsZUFBQTtBQUVFLFFBQUEsV0FBVyxFQUFYO0FBRkYsT0FESyxFQUtMLE1BQU0sQ0FMRCxHQUFBO0FBRlQsS0FBQSxFQVNFLE1BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLFlBQUEsQ0FBRCxJQUFBLEVBQUE7QUFBTSxNQUFBLEtBQUssRUFBRSxDQUFDLEtBQUssQ0FBTCxRQUFBLENBQUQsR0FBQSxFQUFxQjtBQUFDLFFBQUEsS0FBSyxFQUFFLENBQUEsR0FBQSxNQUFBLENBQUEsUUFBQSxFQUFTLElBQUksQ0FBYixLQUFBO0FBQVIsT0FBckI7QUFBYixLQUFBLEVBQ0csSUFBSSxDQVhYLElBVUksQ0FURixDQURGO0FBTE4sR0FFSyxDQURILENBREY7QUFIRixDQUFBOzs7OzJCQTRCZSxNOzs7OztBQUVmLElBQU0sTUFBTTtBQUFBO0FBQUEsMkJBQUcsWUFBQSxDQUFBLFVBQUEsQ0FBQSxNQUFBLENBQWtCO0FBQy9CLEVBQUEsT0FBTyxFQUFFO0FBQ1AsSUFBQSxhQUFhLEVBRE4sS0FBQTtBQUVQLElBQUEsUUFBUSxFQUZELE1BQUE7QUFHUCxJQUFBLFNBQVMsRUFBRTtBQUhKLEdBRHNCO0FBTS9CLEVBQUEsR0FBRyxFQUFFO0FBQ0gsSUFBQSxZQUFZLEVBRFQsRUFBQTtBQUVILElBQUEsaUJBQWlCLEVBRmQsQ0FBQTtBQUdILElBQUEsZUFBZSxFQUhaLENBQUE7QUFJSCxJQUFBLFdBQVcsRUFKUixDQUFBO0FBS0gsSUFBQSxXQUFXLEVBTFIsU0FBQTtBQU1ILElBQUEsWUFBWSxFQUFFO0FBTlg7QUFOMEIsQ0FBbEIsQ0FBSCxDQUFaIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7U3R5bGVTaGVldCwgVmlldywgVGV4dH0gZnJvbSAncmVhY3QtbmF0aXZlJztcbmltcG9ydCB7dXNlVGhlbWV9IGZyb20gJ3JlYWN0LW5hdGl2ZS1wYXBlcic7XG5pbXBvcnQge2dldENvbG9yfSBmcm9tICcuLi91dGlscyc7XG5pbXBvcnQge0xhYmVsfSBmcm9tICcuLi9yZWR1eC9yZXBvL3JlZHVjZXInO1xuXG5jb25zdCBMYWJlbHMgPSAoe2l0ZW1zfToge2l0ZW1zOiBBcnJheTxMYWJlbD59KSA9PiB7XG4gIGNvbnN0IHRoZW1lID0gdXNlVGhlbWUoKTtcblxuICByZXR1cm4gKFxuICAgIDxWaWV3IHN0eWxlPXtzdHlsZXMud3JhcHBlcn0+XG4gICAgICB7aXRlbXMubWFwKGl0ZW0gPT4ge1xuICAgICAgICBjb25zdCBiYWNrZ3JvdW5kQ29sb3IgPSBgIyR7aXRlbS5jb2xvcn1gO1xuICAgICAgICBjb25zdCBib3JkZXJXaWR0aCA9IGl0ZW0uY29sb3IgPT09ICdmZmZmZmYnID8gMC41IDogMDtcbiAgICAgICAgcmV0dXJuIChcbiAgICAgICAgICA8Vmlld1xuICAgICAgICAgICAga2V5PXtpdGVtLmlkfVxuICAgICAgICAgICAgc3R5bGU9e1tcbiAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgIGJhY2tncm91bmRDb2xvcixcbiAgICAgICAgICAgICAgICBib3JkZXJXaWR0aCxcbiAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgc3R5bGVzLnRhZyxcbiAgICAgICAgICAgIF19PlxuICAgICAgICAgICAgPFRleHQgc3R5bGU9e1t0aGVtZS52YXJpYW50cy50YWcsIHtjb2xvcjogZ2V0Q29sb3IoaXRlbS5jb2xvcil9XX0+XG4gICAgICAgICAgICAgIHtpdGVtLm5hbWV9XG4gICAgICAgICAgICA8L1RleHQ+XG4gICAgICAgICAgPC9WaWV3PlxuICAgICAgICApO1xuICAgICAgfSl9XG4gICAgPC9WaWV3PlxuICApO1xufTtcblxuZXhwb3J0IGRlZmF1bHQgTGFiZWxzO1xuXG5jb25zdCBzdHlsZXMgPSBTdHlsZVNoZWV0LmNyZWF0ZSh7XG4gIHdyYXBwZXI6IHtcbiAgICBmbGV4RGlyZWN0aW9uOiAncm93JyxcbiAgICBmbGV4V3JhcDogJ3dyYXAnLFxuICAgIG1hcmdpblRvcDogMTAsXG4gIH0sXG4gIHRhZzoge1xuICAgIGJvcmRlclJhZGl1czogMTAsXG4gICAgcGFkZGluZ0hvcml6b250YWw6IDUsXG4gICAgcGFkZGluZ1ZlcnRpY2FsOiAyLFxuICAgIG1hcmdpblJpZ2h0OiA1LFxuICAgIGJvcmRlckNvbG9yOiAnIzM2MzYzNicsXG4gICAgbWFyZ2luQm90dG9tOiA1LFxuICB9LFxufSk7XG4iXX0=

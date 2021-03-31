@@ -1,0 +1,31 @@
+8800acfb35cb77636b0700306d78be52
+
+
+
+
+var objectProto = Object.prototype;
+
+
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+
+var nativeGetSymbols = Object.getOwnPropertySymbols;
+
+
+
+
+
+
+
+
+var getSymbols = !nativeGetSymbols ? require('./stubArray') : function (object) {
+  if (object == null) {
+    return [];
+  }
+  object = Object(object);
+  return require('./_arrayFilter')(nativeGetSymbols(object), function (symbol) {
+    return propertyIsEnumerable.call(object, symbol);
+  });
+};
+
+module.exports = getSymbols;

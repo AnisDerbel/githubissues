@@ -1,0 +1,15 @@
+d6c7589665f543f254ef4ee97dafcb46
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.Directions = void 0;
+var Directions = {
+  RIGHT: 1,
+  LEFT: 2,
+  UP: 4,
+  DOWN: 8 };
+
+
+exports.Directions = Directions;

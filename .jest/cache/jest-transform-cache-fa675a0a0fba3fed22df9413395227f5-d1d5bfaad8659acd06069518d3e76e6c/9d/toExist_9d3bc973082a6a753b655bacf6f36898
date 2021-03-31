@@ -1,0 +1,39 @@
+cd05fb8a501b1fef7b912ffb9a36ca9f
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = toExist;
+
+var _html = _interopRequireDefault(require("../utils/html"));
+
+var _name = _interopRequireDefault(require("../utils/name"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+
+
+
+
+
+function toExist(enzymeWrapper) {
+  var pass = enzymeWrapper.exists();
+  var contextualInformation = {};
+
+  if (enzymeWrapper.getElements().length) {
+    contextualInformation.actual = "Found Nodes: " + (0, _html.default)(enzymeWrapper);
+  }
+
+  var nodeName = (0, _name.default)(enzymeWrapper);
+  return {
+    pass: pass,
+    message: "Expected \"" + nodeName + "\" to exist.",
+    negatedMessage: "Expected \"" + nodeName + "\" not to exist. Instead found " + enzymeWrapper.getElements().length + " nodes.",
+    contextualInformation: contextualInformation };
+
+}
+
+module.exports = exports.default;

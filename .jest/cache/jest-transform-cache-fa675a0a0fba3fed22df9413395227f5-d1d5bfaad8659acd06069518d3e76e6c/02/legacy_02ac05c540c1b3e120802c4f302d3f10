@@ -1,0 +1,125 @@
+ca9c308d0589f76cf9733c42f54fe837
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getElementsByTagType = exports.getElementsByTagName = exports.getElementById = exports.getElements = exports.testElement = void 0;
+
+
+var Checks = {
+  tag_name: function tag_name(name) {
+    if (typeof name === "function") {
+      return function (elem) {return require("./tagtypes").isTag(elem) && name(elem.name);};
+    } else
+    if (name === "*") {
+      return require("./tagtypes").isTag;
+    }
+    return function (elem) {return require("./tagtypes").isTag(elem) && elem.name === name;};
+  },
+  tag_type: function tag_type(type) {
+    if (typeof type === "function") {
+      return function (elem) {return type(elem.type);};
+    }
+    return function (elem) {return elem.type === type;};
+  },
+  tag_contains: function tag_contains(data) {
+    if (typeof data === "function") {
+      return function (elem) {return require("./tagtypes").isText(elem) && data(elem.data);};
+    }
+    return function (elem) {return require("./tagtypes").isText(elem) && elem.data === data;};
+  } };
+
+
+
+
+
+
+function getAttribCheck(attrib, value) {
+  if (typeof value === "function") {
+    return function (elem) {return require("./tagtypes").isTag(elem) && value(elem.attribs[attrib]);};
+  }
+  return function (elem) {return require("./tagtypes").isTag(elem) && elem.attribs[attrib] === value;};
+}
+
+
+
+
+
+
+function combineFuncs(a, b) {
+  return function (elem) {return a(elem) || b(elem);};
+}
+
+
+
+
+
+function compileTest(options) {
+  var funcs = Object.keys(options).map(function (key) {
+    var value = options[key];
+    return key in Checks ?
+    Checks[key](value) :
+    getAttribCheck(key, value);
+  });
+  return funcs.length === 0 ? null : funcs.reduce(combineFuncs);
+}
+
+
+
+
+
+function testElement(options, node) {
+  var test = compileTest(options);
+  return test ? test(node) : true;
+}
+exports.testElement = testElement;
+
+
+
+
+
+
+
+function getElements(options, nodes, recurse, limit) {
+  if (limit === void 0) {limit = Infinity;}
+  var test = compileTest(options);
+  return test ? require("./querying").filter(test, nodes, recurse, limit) : [];
+}
+exports.getElements = getElements;
+
+
+
+
+
+
+function getElementById(id, nodes, recurse) {
+  if (recurse === void 0) {recurse = true;}
+  if (!Array.isArray(nodes))
+  nodes = [nodes];
+  return require("./querying").findOne(getAttribCheck("id", id), nodes, recurse);
+}
+exports.getElementById = getElementById;
+
+
+
+
+
+
+
+function getElementsByTagName(tagName, nodes, recurse, limit) {
+  if (recurse === void 0) {recurse = true;}
+  if (limit === void 0) {limit = Infinity;}
+  return require("./querying").filter(Checks.tag_name(tagName), nodes, recurse, limit);
+}
+exports.getElementsByTagName = getElementsByTagName;
+
+
+
+
+
+
+
+function getElementsByTagType(type, nodes, recurse, limit) {
+  if (recurse === void 0) {recurse = true;}
+  if (limit === void 0) {limit = Infinity;}
+  return require("./querying").filter(Checks.tag_type(type), nodes, recurse, limit);
+}
+exports.getElementsByTagType = getElementsByTagType;

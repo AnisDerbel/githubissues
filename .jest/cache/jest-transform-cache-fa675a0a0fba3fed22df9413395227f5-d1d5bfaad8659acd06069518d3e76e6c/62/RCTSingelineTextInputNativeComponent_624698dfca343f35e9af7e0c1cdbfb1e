@@ -1,0 +1,42 @@
+e72b409a452e89401d2c0bb1b1d1a4e0
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = exports.Commands = void 0;
+
+
+var _requireNativeComponent = _interopRequireDefault(require("../../ReactNative/requireNativeComponent"));
+var _codegenNativeCommands = _interopRequireDefault(require("../../Utilities/codegenNativeCommands"));
+
+var _RCTSinglelineTextInputViewConfig = _interopRequireDefault(require("./RCTSinglelineTextInputViewConfig"));
+
+
+
+
+
+
+var Commands = (0, _codegenNativeCommands.default)({
+  supportedCommands: ['focus', 'blur', 'setTextAndSelection'] });exports.Commands = Commands;
+
+
+var SinglelineTextInputNativeComponent;
+if (global.RN$Bridgeless) {
+  require('../../Renderer/shims/ReactNativeViewConfigRegistry').register('RCTSinglelineTextInputView', function () {
+    return _RCTSinglelineTextInputViewConfig.default;
+  });
+  SinglelineTextInputNativeComponent = 'RCTSinglelineTextInputView';
+} else {
+  SinglelineTextInputNativeComponent = (0, _requireNativeComponent.default)(
+  'RCTSinglelineTextInputView');
+
+}var _default =
+
+
+SinglelineTextInputNativeComponent;exports.default = _default;

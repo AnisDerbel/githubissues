@@ -1,0 +1,19 @@
+60ba6b8b6e9f89f6cfbb39cd561cac87
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+
+
+
+Object.keys(require("./GestureHandlerNative")).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === require("./GestureHandlerNative")[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return require("./GestureHandlerNative")[key];
+    } });
+
+});

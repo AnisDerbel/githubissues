@@ -1,0 +1,34 @@
+9ef55386c987f8541ac9716e1a21e9e6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function toPath(value) {
+  if (require('./isArray')(value)) {
+    return require('./_arrayMap')(value, require('./_toKey'));
+  }
+  return require('./isSymbol')(value) ? [value] : require('./_copyArray')(require('./_stringToPath')(require('./toString')(value)));
+}
+
+module.exports = toPath;

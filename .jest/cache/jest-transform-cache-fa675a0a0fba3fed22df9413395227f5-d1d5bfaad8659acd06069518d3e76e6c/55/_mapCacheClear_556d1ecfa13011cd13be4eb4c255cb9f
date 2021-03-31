@@ -1,0 +1,22 @@
+bc294c2472cb727830dcc6dde909fecd
+
+
+
+
+
+
+
+
+
+
+
+function mapCacheClear() {
+  this.size = 0;
+  this.__data__ = {
+    'hash': new (require('./_Hash'))(),
+    'map': new (require('./_Map') || require('./_ListCache'))(),
+    'string': new (require('./_Hash'))() };
+
+}
+
+module.exports = mapCacheClear;

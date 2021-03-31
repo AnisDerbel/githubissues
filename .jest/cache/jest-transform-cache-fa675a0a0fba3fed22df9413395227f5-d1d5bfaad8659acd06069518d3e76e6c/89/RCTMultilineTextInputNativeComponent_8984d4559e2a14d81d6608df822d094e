@@ -1,0 +1,31 @@
+8af1d1cc0c2bcb751a9690959f42b5ca
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = exports.Commands = void 0;
+
+
+var _requireNativeComponent = _interopRequireDefault(require("../../ReactNative/requireNativeComponent"));
+var _codegenNativeCommands = _interopRequireDefault(require("../../Utilities/codegenNativeCommands"));
+
+
+
+
+
+
+var Commands = (0, _codegenNativeCommands.default)({
+  supportedCommands: ['focus', 'blur', 'setTextAndSelection'] });exports.Commands = Commands;
+
+
+var SinglelineTextInputNativeComponent = (0, _requireNativeComponent.default)(
+'RCTMultilineTextInputView');var _default =
+
+
+SinglelineTextInputNativeComponent;exports.default = _default;

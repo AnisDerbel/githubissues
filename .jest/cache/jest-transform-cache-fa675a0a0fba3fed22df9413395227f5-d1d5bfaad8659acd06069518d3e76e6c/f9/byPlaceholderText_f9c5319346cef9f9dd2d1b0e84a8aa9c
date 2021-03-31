@@ -1,0 +1,48 @@
+7e2f073766f2d24e17ceb2c45a3105ff
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.queryByPlaceholderText = exports.queryAllByPlaceholderText = exports.getByPlaceholderText = exports.getAllByPlaceholderText = exports.findByPlaceholderText = exports.findAllByPlaceholderText = void 0;
+
+
+
+
+
+
+
+var getTextInputNodeByPlaceholderText = function getTextInputNodeByPlaceholderText(node, placeholder) {
+  try {var _require =
+
+
+    require('react-native'),TextInput = _require.TextInput;
+
+    return (0, require("./filterNodeByType").filterNodeByType)(node, TextInput) && (typeof placeholder === 'string' ? placeholder === node.props.placeholder : placeholder.test(node.props.placeholder));
+  } catch (error) {
+    throw (0, require("./errors").createLibraryNotSupportedError)(error);
+  }
+};
+
+var queryAllByPlaceholderText = function queryAllByPlaceholderText(instance) {return function queryAllByPlaceholderFn(placeholder) {
+    return instance.findAll(function (node) {return getTextInputNodeByPlaceholderText(node, placeholder);});
+  };};
+
+exports.queryAllByPlaceholderText = queryAllByPlaceholderText;
+
+var getMultipleError = function getMultipleError(placeholder) {return "Found multiple elements with placeholder: " + String(placeholder) + " ";};
+
+var getMissingError = function getMissingError(placeholder) {return "Unable to find an element with placeholder: " + String(placeholder);};var _ref =
+
+
+
+
+
+
+
+(0, require("./makeQueries").makeQueries)(queryAllByPlaceholderText, getMissingError, getMultipleError),getByPlaceholderText = _ref.getBy,getAllByPlaceholderText = _ref.getAllBy,queryByPlaceholderText = _ref.queryBy,findByPlaceholderText = _ref.findBy,findAllByPlaceholderText = _ref.findAllBy;
+exports.findAllByPlaceholderText = findAllByPlaceholderText;
+exports.findByPlaceholderText = findByPlaceholderText;
+exports.queryByPlaceholderText = queryByPlaceholderText;
+exports.getAllByPlaceholderText = getAllByPlaceholderText;
+exports.getByPlaceholderText = getByPlaceholderText;

@@ -1,0 +1,28 @@
+d84d6a2653e9b9b7778ff0def8cd99cc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Stack(entries) {
+  var data = this.__data__ = new (require('./_ListCache'))(entries);
+  this.size = data.size;
+}
+
+
+Stack.prototype.clear = require('./_stackClear');
+Stack.prototype['delete'] = require('./_stackDelete');
+Stack.prototype.get = require('./_stackGet');
+Stack.prototype.has = require('./_stackHas');
+Stack.prototype.set = require('./_stackSet');
+
+module.exports = Stack;

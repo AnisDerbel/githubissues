@@ -1,0 +1,313 @@
+e409f05ad2e1c694e988224b389c9a69
+"use strict";
+
+/* istanbul ignore next */
+function cov_2i9qrl4wks() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/axios.ts";
+  var hash = "360d23b7b80bdcf85ccd055ce00158efde5b9732";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/axios.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 56
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 4,
+          column: 32
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 16
+        },
+        end: {
+          line: 5,
+          column: 57
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 23
+        },
+        end: {
+          line: 6,
+          column: 61
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 0
+        },
+        end: {
+          line: 7,
+          column: 44
+        }
+      },
+      "6": {
+        start: {
+          line: 8,
+          column: 28
+        },
+        end: {
+          line: 15,
+          column: 2
+        }
+      },
+      "7": {
+        start: {
+          line: 8,
+          column: 34
+        },
+        end: {
+          line: 15,
+          column: 2
+        }
+      },
+      "8": {
+        start: {
+          line: 11,
+          column: 32
+        },
+        end: {
+          line: 11,
+          column: 61
+        }
+      },
+      "9": {
+        start: {
+          line: 16,
+          column: 0
+        },
+        end: {
+          line: 16,
+          column: 50
+        }
+      },
+      "10": {
+        start: {
+          line: 17,
+          column: 0
+        },
+        end: {
+          line: 17,
+          column: 77
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 8,
+            column: 28
+          },
+          end: {
+            line: 8,
+            column: 29
+          }
+        },
+        loc: {
+          start: {
+            line: 8,
+            column: 34
+          },
+          end: {
+            line: 15,
+            column: 2
+          }
+        },
+        line: 8
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 11,
+            column: 20
+          },
+          end: {
+            line: 11,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 11,
+            column: 32
+          },
+          end: {
+            line: 11,
+            column: 61
+          }
+        },
+        line: 11
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 11,
+            column: 32
+          },
+          end: {
+            line: 11,
+            column: 61
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 11,
+            column: 32
+          },
+          end: {
+            line: 11,
+            column: 45
+          }
+        }, {
+          start: {
+            line: 11,
+            column: 49
+          },
+          end: {
+            line: 11,
+            column: 61
+          }
+        }],
+        line: 11
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/Users/anisderbel/Documents/apcgithubissues/src/redux/axios.ts",
+      mappings: ";;;;AAAA,0DAA0B;AAC1B,8DAAyD;AAC5C,QAAA,QAAQ,GAAG,wBAAwB,CAAC;AAE1C,MAAM,mBAAmB,GAAG,GAAG,EAAE,CACtC,eAAK,CAAC,MAAM,CAAC;IACX,OAAO,EAAE,gBAAQ;IACjB,YAAY,EAAE,MAAM;IACpB,cAAc,EAAE,CAAC,MAAc,EAAE,EAAE,CAAC,MAAM,IAAI,GAAG,IAAI,MAAM,GAAG,GAAG;IACjE,OAAO,EAAE;QACP,MAAM,EAAE,gCAAgC;KACzC;CACF,CAAC,CAAC;AARQ,QAAA,mBAAmB,uBAQ3B;AAEL,kBAAe,2BAAY,CAAC,2BAAmB,EAAE,CAAC,CAAC",
+      names: [],
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/redux/axios.ts"],
+      sourcesContent: ["import axios from 'axios';\nimport {interceptors} from './interceptors/interceptors';\nexport const BASE_URL = 'https://api.github.com';\n\nexport const createAxiosInstance = () =>\n  axios.create({\n    baseURL: BASE_URL,\n    responseType: 'json',\n    validateStatus: (status: number) => status >= 200 && status < 400,\n    headers: {\n      Accept: 'application/vnd.github.v3+json',\n    },\n  });\n\nexport default interceptors(createAxiosInstance());\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "360d23b7b80bdcf85ccd055ce00158efde5b9732"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2i9qrl4wks = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2i9qrl4wks();
+cov_2i9qrl4wks().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_2i9qrl4wks().s[1]++;
+exports.createAxiosInstance = exports.BASE_URL = void 0;
+const tslib_1 =
+/* istanbul ignore next */
+(cov_2i9qrl4wks().s[2]++, require("tslib"));
+const axios_1 =
+/* istanbul ignore next */
+(cov_2i9qrl4wks().s[3]++, tslib_1.__importDefault(require("axios")));
+const interceptors_1 =
+/* istanbul ignore next */
+(cov_2i9qrl4wks().s[4]++, require("./interceptors/interceptors"));
+
+/* istanbul ignore next */
+cov_2i9qrl4wks().s[5]++;
+exports.BASE_URL = 'https://api.github.com';
+
+/* istanbul ignore next */
+cov_2i9qrl4wks().s[6]++;
+
+const createAxiosInstance = () => {
+  /* istanbul ignore next */
+  cov_2i9qrl4wks().f[0]++;
+  cov_2i9qrl4wks().s[7]++;
+  return axios_1.default.create({
+    baseURL: exports.BASE_URL,
+    responseType: 'json',
+    validateStatus: status => {
+      /* istanbul ignore next */
+      cov_2i9qrl4wks().f[1]++;
+      cov_2i9qrl4wks().s[8]++;
+      return (
+        /* istanbul ignore next */
+        (cov_2i9qrl4wks().b[0][0]++, status >= 200) &&
+        /* istanbul ignore next */
+        (cov_2i9qrl4wks().b[0][1]++, status < 400)
+      );
+    },
+    headers: {
+      Accept: 'application/vnd.github.v3+json'
+    }
+  });
+};
+
+/* istanbul ignore next */
+cov_2i9qrl4wks().s[9]++;
+exports.createAxiosInstance = createAxiosInstance;
+
+/* istanbul ignore next */
+cov_2i9qrl4wks().s[10]++;
+exports.default = interceptors_1.interceptors(exports.createAxiosInstance());
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L2F4aW9zLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUlhOzs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUpiLE1BQUEsT0FBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLGVBQUEsQ0FBQSxPQUFBLENBQUEsT0FBQSxDQUFBLENBQUEsQ0FBQTtBQUNBLE1BQUEsY0FBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLDZCQUFBLENBQUEsQ0FBQTs7OztBQUNhLE9BQUEsQ0FBQSxRQUFBLEdBQVcsd0JBQVg7Ozs7O0FBRU4sTUFBTSxtQkFBbUIsR0FBRyxNQUNqQztBQUFBO0FBQUE7QUFBQTtBQUFBLFNBQUEsT0FBQSxDQUFBLE9BQUEsQ0FBTSxNQUFOLENBQWE7QUFDWCxJQUFBLE9BQU8sRUFBRSxPQUFBLENBQUEsUUFERTtBQUVYLElBQUEsWUFBWSxFQUFFLE1BRkg7QUFHWCxJQUFBLGNBQWMsRUFBRyxNQUFELElBQW9CO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLHFDQUFBLE1BQU0sSUFBSSxHQUFWO0FBQUE7QUFBQSxxQ0FBaUIsTUFBTSxHQUFHLEdBQTFCO0FBQUE7QUFBNkIsS0FIdEQ7QUFJWCxJQUFBLE9BQU8sRUFBRTtBQUNQLE1BQUEsTUFBTSxFQUFFO0FBREQ7QUFKRSxHQUFiO0FBT0UsQ0FSRzs7OztBQUFNLE9BQUEsQ0FBQSxtQkFBQSxHQUFtQixtQkFBbkI7Ozs7QUFVYixPQUFBLENBQUEsT0FBQSxHQUFlLGNBQUEsQ0FBQSxZQUFBLENBQWEsT0FBQSxDQUFBLG1CQUFBLEVBQWIsQ0FBZiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBheGlvcyBmcm9tICdheGlvcyc7XG5pbXBvcnQge2ludGVyY2VwdG9yc30gZnJvbSAnLi9pbnRlcmNlcHRvcnMvaW50ZXJjZXB0b3JzJztcbmV4cG9ydCBjb25zdCBCQVNFX1VSTCA9ICdodHRwczovL2FwaS5naXRodWIuY29tJztcblxuZXhwb3J0IGNvbnN0IGNyZWF0ZUF4aW9zSW5zdGFuY2UgPSAoKSA9PlxuICBheGlvcy5jcmVhdGUoe1xuICAgIGJhc2VVUkw6IEJBU0VfVVJMLFxuICAgIHJlc3BvbnNlVHlwZTogJ2pzb24nLFxuICAgIHZhbGlkYXRlU3RhdHVzOiAoc3RhdHVzOiBudW1iZXIpID0+IHN0YXR1cyA+PSAyMDAgJiYgc3RhdHVzIDwgNDAwLFxuICAgIGhlYWRlcnM6IHtcbiAgICAgIEFjY2VwdDogJ2FwcGxpY2F0aW9uL3ZuZC5naXRodWIudjMranNvbicsXG4gICAgfSxcbiAgfSk7XG5cbmV4cG9ydCBkZWZhdWx0IGludGVyY2VwdG9ycyhjcmVhdGVBeGlvc0luc3RhbmNlKCkpO1xuIl19

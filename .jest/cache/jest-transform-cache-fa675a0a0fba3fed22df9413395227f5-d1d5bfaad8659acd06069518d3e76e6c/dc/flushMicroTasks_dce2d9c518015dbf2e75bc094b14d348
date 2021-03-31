@@ -1,0 +1,29 @@
+2a7e69e1621c147f548f7dd59942e56c
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = flushMicrotasksQueue;
+exports.flushMicroTasks = flushMicroTasks;
+
+
+
+
+
+
+function flushMicrotasksQueue() {
+  (0, require("./helpers/errors").printDeprecationWarning)('flushMicrotasksQueue');
+  return flushMicroTasks();
+}
+
+function flushMicroTasks() {
+  return {
+
+
+    then: function then(resolve) {
+      setImmediate(resolve);
+    } };
+
+
+}

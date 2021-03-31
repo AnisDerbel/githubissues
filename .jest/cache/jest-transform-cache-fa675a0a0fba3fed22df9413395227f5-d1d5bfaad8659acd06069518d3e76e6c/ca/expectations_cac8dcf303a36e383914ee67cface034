@@ -1,0 +1,191 @@
+770677696e12de8812d857ee6a7634b5
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.createEffectExpectation = createEffectExpectation;
+exports.createReturnExpectation = createReturnExpectation;
+exports.createStoreStateExpectation = createStoreStateExpectation;
+exports.createErrorExpectation = createErrorExpectation;
+
+var _utilInspect = _interopRequireDefault(require("util-inspect"));
+
+var _lodash = _interopRequireDefault(require("lodash.ismatch"));
+
+var _lodash2 = _interopRequireDefault(require("lodash.isequal"));
+
+var _SagaTestError = _interopRequireDefault(require("../shared/SagaTestError"));
+
+var _serializeEffect = _interopRequireDefault(require("../shared/serializeEffect"));
+
+var _reportActualEffects = _interopRequireDefault(require("./reportActualEffects"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function createEffectExpectation(_ref)
+
+
+
+
+
+
+
+{var effectName = _ref.effectName,expectedEffect = _ref.expectedEffect,storeKey = _ref.storeKey,like = _ref.like,extractEffect = _ref.extractEffect,store = _ref.store,expected = _ref.expected;
+  return function () {
+    var deleted = like ? store.deleteBy(function (item) {return (0, _lodash.default)(extractEffect(item), expectedEffect);}) : store.delete(expectedEffect);
+    var errorMessage = '';
+
+    if (deleted && !expected) {
+      var serializedEffect = (0, _serializeEffect.default)(expectedEffect, storeKey);
+      errorMessage = "\n" + effectName + " expectation unmet:" + ("\n\nNot Expected\n------------\n" + serializedEffect + "\n");
+    } else if (!deleted && expected) {
+      var _serializedEffect = (0, _serializeEffect.default)(expectedEffect, storeKey);
+      errorMessage = "\n" + effectName + " expectation unmet:" + ("\n\nExpected\n--------\n" + _serializedEffect + "\n");
+      errorMessage += (0, _reportActualEffects.default)(store, storeKey, effectName);
+    }
+
+    if (errorMessage) {
+      throw new _SagaTestError.default(errorMessage);
+    }
+  };
+}
+
+function createReturnExpectation(_ref2)
+
+
+{var value = _ref2.value,expected = _ref2.expected;
+  return function (_ref3)
+
+  {var returnValue = _ref3.returnValue;
+    if (expected && !(0, _lodash2.default)(value, returnValue)) {
+      var serializedActual = (0, _utilInspect.default)(returnValue, {
+        depth: 3 });
+
+      var serializedExpected = (0, _utilInspect.default)(value, {
+        depth: 3 });
+
+      var errorMessage = "\nExpected to return:\n-------------------\n" +
+
+
+      serializedExpected + "\n\nBut returned instead:\n---------------------\n" +
+
+
+
+      serializedActual + "\n";
+
+      throw new _SagaTestError.default(errorMessage);
+    } else if (!expected && (0, _lodash2.default)(value, returnValue)) {
+      var _serializedExpected = (0, _utilInspect.default)(value, {
+        depth: 3 });
+
+      var _errorMessage = "\nDid not expect to return:\n-------------------------\n" +
+
+
+      _serializedExpected + "\n";
+
+      throw new _SagaTestError.default(_errorMessage);
+    }
+  };
+}
+
+function createStoreStateExpectation(_ref4)
+
+
+{var expectedState = _ref4.state,expected = _ref4.expected;
+  return function (_ref5)
+
+  {var storeState = _ref5.storeState;
+    if (expected && !(0, _lodash2.default)(expectedState, storeState)) {
+      var serializedActual = (0, _utilInspect.default)(storeState, {
+        depth: 3 });
+
+      var serializedExpected = (0, _utilInspect.default)(expectedState, {
+        depth: 3 });
+
+      var errorMessage = "\nExpected to have final store state:\n-----------------------------------\n" +
+
+
+      serializedExpected + "\n\nBut instead had final store state:\n----------------------------------\n" +
+
+
+
+      serializedActual + "\n";
+
+      throw new _SagaTestError.default(errorMessage);
+    } else if (!expected && (0, _lodash2.default)(expectedState, storeState)) {
+      var _serializedExpected2 = (0, _utilInspect.default)(expectedState, {
+        depth: 3 });
+
+      var _errorMessage2 = "\nExpected to not have final store state:\n---------------------------------------\n" +
+
+
+      _serializedExpected2 + "\n";
+
+      throw new _SagaTestError.default(_errorMessage2);
+    }
+  };
+}
+
+function createErrorExpectation(_ref6)
+
+
+{var type = _ref6.type,expected = _ref6.expected;
+  return function (_ref7)
+
+  {var errorValue = _ref7.errorValue;
+    var serializedExpected = typeof type;
+
+    if (typeof type === 'object') {
+      serializedExpected = (0, _utilInspect.default)(type, {
+        depth: 3 });
+
+    } else if (typeof type === 'function') {
+      serializedExpected = type.name;
+    }
+
+    var matches = function matches() {return typeof type === 'object' && (0, _lodash2.default)(type, errorValue) || typeof type === 'function' && errorValue instanceof type;};
+
+    if (!expected) {
+      if (typeof errorValue === 'undefined' || !matches()) return;
+      throw new _SagaTestError.default("\nExpected not to throw:\n----------------------\n" +
+
+
+      serializedExpected + "\n");
+
+    } else if (typeof errorValue === 'undefined') {
+      throw new _SagaTestError.default("\nExpected to throw:\n-------------------\n" +
+
+
+      serializedExpected + "\n\nBut no error thrown\n---------------------\n");
+
+
+
+
+    } else if (typeof type === 'object' && !matches()) {
+      var serializedActual = (0, _utilInspect.default)(errorValue, {
+        depth: 3 });
+
+      throw new _SagaTestError.default("\nExpected to throw:\n-------------------\n" +
+
+
+      serializedExpected + "\n\nBut instead threw:\n---------------------\n" +
+
+
+
+      serializedActual + "\n");
+
+    } else if (typeof type === 'function' && !matches()) {
+      var _serializedActual = typeof errorValue === 'function' ? errorValue.constructor.name : typeof errorValue;
+      throw new _SagaTestError.default("\nExpected to throw error of type:\n--------------------------------\n" +
+
+
+      serializedExpected + "\n\nBut instead threw:\n--------------------------------\n" +
+
+
+
+      _serializedActual + "\n");
+
+    }
+  };
+}

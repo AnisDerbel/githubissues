@@ -1,0 +1,29 @@
+77490862921ba4c240abfd1ec05ac26e
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function baseIsEqual(value, other, bitmask, customizer, stack) {
+  if (value === other) {
+    return true;
+  }
+  if (value == null || other == null || !require('./isObjectLike')(value) && !require('./isObjectLike')(other)) {
+    return value !== value && other !== other;
+  }
+  return require('./_baseIsEqualDeep')(value, other, bitmask, customizer, baseIsEqual, stack);
+}
+
+module.exports = baseIsEqual;

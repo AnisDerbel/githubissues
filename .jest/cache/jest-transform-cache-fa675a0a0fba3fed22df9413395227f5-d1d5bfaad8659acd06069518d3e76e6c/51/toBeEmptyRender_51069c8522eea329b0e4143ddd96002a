@@ -1,0 +1,39 @@
+695bc8b5a4dfdffeab38643be3abc56f
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+var _name = _interopRequireDefault(require("../utils/name"));
+
+var _html = _interopRequireDefault(require("../utils/html"));
+
+var _single = _interopRequireDefault(require("../utils/single"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+
+
+
+
+
+function toBeEmptyRender(enzymeWrapper) {
+  var pass = enzymeWrapper.isEmptyRender();
+  return {
+    pass: pass,
+    message: "Expected <" + (0, _name.default)(enzymeWrapper) + "> to be empty render (false or null), but it was not",
+    negatedMessage: "Expected <" + (0, _name.default)(enzymeWrapper) + "> not to be empty render (false or null), but it was",
+    contextualInformation: {
+      actual: "Found Nodes HTML output: " + (0, _html.default)(enzymeWrapper) } };
+
+
+}
+
+var _default = (0, _single.default)(toBeEmptyRender);
+
+exports.default = _default;
+module.exports = exports.default;

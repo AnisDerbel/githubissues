@@ -1,0 +1,52 @@
+e9174508421b473d8ba0c5a830cbd59c
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+var _name = _interopRequireDefault(require("../utils/name"));
+
+var _single = _interopRequireDefault(require("../utils/single"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+
+
+
+
+
+function toIncludeText(enzymeWrapper, text) {
+  var actualText = enzymeWrapper.text();
+
+  if (text === undefined) {
+    var message = "Expected \".toIncludeText(null)\" to be given some text.\n      If you are trying to assert this component has _some_ text, use the \".toHaveText()\" matcher";
+
+    return {
+      pass: false,
+      message: message,
+      negatedMessage: message,
+      contextualInformation: {} };
+
+  }
+
+  var pass = actualText.includes(text);
+  var wrapperName = "<" + (0, _name.default)(enzymeWrapper) + ">";
+  return {
+    pass: pass,
+    message: "Expected " + wrapperName + " to contain \"" + text + "\" but it did not.",
+    negatedMessage: "Expected " + wrapperName + " not to contain \"" + text + "\" but it did.",
+    contextualInformation: {
+      expected: "Expected HTML: \"" + text + "\"",
+      actual: "Actual HTML: \"" + actualText + "\"" } };
+
+
+}
+
+var _default = (0, _single.default)(toIncludeText);
+
+exports.default = _default;
+module.exports = exports.default;

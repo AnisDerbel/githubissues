@@ -1,0 +1,28 @@
+707270164efcd1e608c3076541dded4a
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = {
+  form: {
+    registeredFields: [{
+      count: 1,
+      name: 'organization',
+      type: 'Field'
+    }, {
+      count: 1,
+      name: 'repository',
+      type: 'Field'
+    }],
+    syncErrors: {
+      organization: 'field is required',
+      repository: 'field is required'
+    },
+    values: {
+      organization: 'facebook',
+      repository: 'react-native'
+    }
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL19fbW9ja3NfXy9mb3JtLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7O0FBRUEsT0FBQSxDQUFBLE9BQUEsR0FBZTtBQUNiLEVBQUEsSUFBSSxFQUFFO0FBQ0osSUFBQSxnQkFBZ0IsRUFBRSxDQUNoQjtBQUNFLE1BQUEsS0FBSyxFQUFFLENBRFQ7QUFFRSxNQUFBLElBQUksRUFBRSxjQUZSO0FBR0UsTUFBQSxJQUFJLEVBQUU7QUFIUixLQURnQixFQU1oQjtBQUNFLE1BQUEsS0FBSyxFQUFFLENBRFQ7QUFFRSxNQUFBLElBQUksRUFBRSxZQUZSO0FBR0UsTUFBQSxJQUFJLEVBQUU7QUFIUixLQU5nQixDQURkO0FBYUosSUFBQSxVQUFVLEVBQUU7QUFDVixNQUFBLFlBQVksRUFBRSxtQkFESjtBQUVWLE1BQUEsVUFBVSxFQUFFO0FBRkYsS0FiUjtBQWlCSixJQUFBLE1BQU0sRUFBRTtBQUNOLE1BQUEsWUFBWSxFQUFFLFVBRFI7QUFFTixNQUFBLFVBQVUsRUFBRTtBQUZOO0FBakJKO0FBRE8sQ0FBZiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEZvcm1TdGF0ZU1hcCB9IGZyb20gJ3JlZHV4LWZvcm0nO1xuXG5leHBvcnQgZGVmYXVsdCB7XG4gIGZvcm06IHtcbiAgICByZWdpc3RlcmVkRmllbGRzOiBbXG4gICAgICB7XG4gICAgICAgIGNvdW50OiAxLFxuICAgICAgICBuYW1lOiAnb3JnYW5pemF0aW9uJyxcbiAgICAgICAgdHlwZTogJ0ZpZWxkJyxcbiAgICAgIH0sXG4gICAgICB7XG4gICAgICAgIGNvdW50OiAxLFxuICAgICAgICBuYW1lOiAncmVwb3NpdG9yeScsXG4gICAgICAgIHR5cGU6ICdGaWVsZCcsXG4gICAgICB9LFxuICAgIF0sXG4gICAgc3luY0Vycm9yczoge1xuICAgICAgb3JnYW5pemF0aW9uOiAnZmllbGQgaXMgcmVxdWlyZWQnLFxuICAgICAgcmVwb3NpdG9yeTogJ2ZpZWxkIGlzIHJlcXVpcmVkJyxcbiAgICB9LFxuICAgIHZhbHVlczoge1xuICAgICAgb3JnYW5pemF0aW9uOiAnZmFjZWJvb2snLFxuICAgICAgcmVwb3NpdG9yeTogJ3JlYWN0LW5hdGl2ZScsXG4gICAgfSxcbiAgfSxcbn0gYXMgRm9ybVN0YXRlTWFwO1xuIl19

@@ -1,0 +1,5 @@
+2c93ece5f51cd99e1357dea87f8fbff3
+module.exports = {
+      testUri:
+        "../../../src/assets/svgs/open.svg"
+    };

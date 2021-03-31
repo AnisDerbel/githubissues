@@ -1,0 +1,12 @@
+34eb1999fd104261228696419beb0249
+
+var validRange = function validRange(range, options) {
+  try {
+
+
+    return new (require('../classes/range'))(range, options).range || '*';
+  } catch (er) {
+    return null;
+  }
+};
+module.exports = validRange;

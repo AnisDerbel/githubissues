@@ -1,0 +1,8 @@
+1b34b69640357c99179d1975689b77e5
+"use strict";
+
+exports.__esModule = true;
+
+
+
+exports.unstable_batchedUpdates = require("react-native").unstable_batchedUpdates;

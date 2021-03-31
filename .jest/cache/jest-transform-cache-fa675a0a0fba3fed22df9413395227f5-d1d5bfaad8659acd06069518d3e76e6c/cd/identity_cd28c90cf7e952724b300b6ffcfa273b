@@ -1,0 +1,11 @@
+46edb6a2e5f5921ede0a6e025e06601e
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = identity;
+
+function identity(value) {
+  return value;
+}

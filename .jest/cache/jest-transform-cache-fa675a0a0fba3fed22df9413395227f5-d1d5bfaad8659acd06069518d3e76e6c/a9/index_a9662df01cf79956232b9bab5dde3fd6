@@ -1,0 +1,64 @@
+5ab48e0cc51bf15fa7dac33caa0365eb
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _reactNativeFlipper = require("react-native-flipper");var _default =
+
+function _default() {
+  var storeInstance = null;
+  var connectStatus = false;
+  var connectionInstance = null;
+  (0, _reactNativeFlipper.addPlugin)({
+    getId: function getId() {
+      return 'flipper-plugin-rn-redux-inspector';
+    },
+    onConnect: function onConnect(connection) {
+      connectStatus = true;
+      connectionInstance = connection;
+
+      connection.receive('dispatch', function (action, responder) {
+        if (storeInstance) {
+          storeInstance.dispatch(action);
+        }
+        responder.success();
+      });
+    },
+    onDisconnect: function onDisconnect() {
+      connectionInstance = null;
+      connectStatus = false;
+    } });
+
+  var logAction = function logAction(_ref) {var action = _ref.action,prevState = _ref.prevState,nextState = _ref.nextState;
+    if (connectStatus && connectionInstance) {
+      var id = Date.now();
+      connectionInstance.send('action', {
+        timeStamp: id,
+        uniqueId: id,
+        actionType: action.type,
+        payload: action.payload,
+        action: action,
+        prevState: prevState,
+        nextState: nextState });
+
+    }
+  };
+  return function (store) {
+    if (typeof store.dispatch !== 'function' || typeof store.getState !== 'function') {
+      return console.error("\n      [rn-redux-middleware-flipper] INVALID INPUT\n      ");
+
+
+    }
+    return function (next) {return function (action) {
+        storeInstance = store;
+        var result;
+        try {
+          var prevState = store.getState();
+          result = next(action);
+          logAction({
+            action: action,
+            prevState: prevState,
+            nextState: store.getState() });
+
+        } catch (err) {
+        }
+        return result;
+      };};
+  };
+};exports.default = _default;

@@ -1,0 +1,36 @@
+bb521feedf148380d56ffc4f8551cb5e
+'use strict';
+
+
+
+
+
+
+
+function deepEqualIdentMap(a, b, callback, thisArg) {
+  var map = new Map();
+
+
+
+  function _map(a, b) {
+    if (!map.has(a) && !map.has(b)) {
+      map.set(a, b);
+      map.set(b, a);
+    } else if (map.get(a) !== b || map.get(b) !== a) {
+      return false;
+    }
+
+
+
+  }
+
+  var result = require('lodash.isequal')(
+  a,
+  b,
+  require('./_comparator').bind(null, _map, callback, thisArg));
+
+
+  return result;
+}
+
+module.exports = deepEqualIdentMap;

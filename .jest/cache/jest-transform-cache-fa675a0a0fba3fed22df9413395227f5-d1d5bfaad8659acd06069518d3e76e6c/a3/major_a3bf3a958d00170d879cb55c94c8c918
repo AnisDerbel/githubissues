@@ -1,0 +1,4 @@
+66e5ab738aba766c5efaccd8c96a7414
+
+var major = function major(a, loose) {return new (require('../classes/semver'))(a, loose).major;};
+module.exports = major;

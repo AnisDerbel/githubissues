@@ -1,0 +1,87 @@
+27154b05c107d32b3ead5e3441b327ba
+
+
+
+
+
+
+
+
+
+
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var startNativeAnimationNextId = 1;var
+
+
+
+
+Animation = function () {function Animation() {require("@babel/runtime/helpers/classCallCheck")(this, Animation);}require("@babel/runtime/helpers/createClass")(Animation, [{ key: "start", value:
+
+
+
+
+
+    function start(
+    fromValue,
+    onUpdate,
+    onEnd,
+    previousAnimation,
+    animatedValue)
+    {} }, { key: "stop", value:
+    function stop() {
+      if (this.__nativeId) {
+        require('../NativeAnimatedHelper').API.stopAnimation(this.__nativeId);
+      }
+    } }, { key: "__getNativeAnimationConfig", value:
+    function __getNativeAnimationConfig() {
+
+
+      throw new Error('This animation type cannot be offloaded to native');
+    } }, { key: "__debouncedOnEnd", value:
+
+    function __debouncedOnEnd(result) {
+      var onEnd = this.__onEnd;
+      this.__onEnd = null;
+      onEnd && onEnd(result);
+    } }, { key: "__startNativeAnimation", value:
+    function __startNativeAnimation(animatedValue) {
+      var startNativeAnimationWaitId = startNativeAnimationNextId + ":startAnimation";
+      startNativeAnimationNextId += 1;
+      require('../NativeAnimatedHelper').API.setWaitingForIdentifier(
+      startNativeAnimationWaitId);
+
+      try {
+        animatedValue.__makeNative();
+        this.__nativeId = require('../NativeAnimatedHelper').generateNewAnimationId();
+        require('../NativeAnimatedHelper').API.startAnimatingNode(
+        this.__nativeId,
+        animatedValue.__getNativeTag(),
+        this.__getNativeAnimationConfig(),
+        this.__debouncedOnEnd.bind(this));
+
+      } catch (e) {
+        throw e;
+      } finally {
+        require('../NativeAnimatedHelper').API.unsetWaitingForIdentifier(
+        startNativeAnimationWaitId);
+
+      }
+    } }]);return Animation;}();
+
+
+module.exports = Animation;

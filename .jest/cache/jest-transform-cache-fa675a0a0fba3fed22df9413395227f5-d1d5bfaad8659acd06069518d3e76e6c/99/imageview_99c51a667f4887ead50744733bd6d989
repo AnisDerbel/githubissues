@@ -1,0 +1,37 @@
+496cb7d62b094e999d59a5417f8ce647
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));var _react = _interopRequireWildcard(require("react"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
+var _reactNative = require("react-native");
+var _constants = require("./constants");var _jsxFileName = "/Users/anisderbel/Documents/apcgithubissues/node_modules/react-native-dropdownalert/imageview.js";function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = (0, _getPrototypeOf2.default)(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = (0, _getPrototypeOf2.default)(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return (0, _possibleConstructorReturn2.default)(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}var
+
+ImageView = function (_Component) {(0, _inherits2.default)(ImageView, _Component);var _super = _createSuper(ImageView);function ImageView() {(0, _classCallCheck2.default)(this, ImageView);return _super.apply(this, arguments);}(0, _createClass2.default)(ImageView, [{ key: "render", value:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function render() {var _this$props =
+      this.props,source = _this$props.source,style = _this$props.style,imageProps = _this$props.imageProps;
+      if (source == null) {
+        return null;
+      }
+      var isRemote = typeof source === 'string';
+      if (!style.width) {
+        style.width = _constants.DEFAULT_IMAGE_DIMENSIONS;
+      }
+      if (!style.height) {
+        style.height = _constants.DEFAULT_IMAGE_DIMENSIONS;
+      }
+      var src = isRemote ? { uri: source } : source;
+      return _react.default.createElement(_reactNative.Image, (0, _extends2.default)({}, imageProps, { style: style, source: src, __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 35, columnNumber: 12 } }));
+    } }]);return ImageView;}(_react.Component);exports.default = ImageView;ImageView.propTypes = { style: _propTypes.default.object, source: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]), imageProps: _propTypes.default.object };ImageView.defaultProps = { style: { padding: 8, width: _constants.DEFAULT_IMAGE_DIMENSIONS, height: _constants.DEFAULT_IMAGE_DIMENSIONS, alignSelf: 'center' }, source: null, imageProps: {} };

@@ -1,0 +1,167 @@
+25b4f581f5984d5617c3a63b8c42de19
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.addPlugin = addPlugin;exports.default = void 0;var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+
+
+
+
+
+
+
+
+var _reactNative = require("react-native");var
+
+Flipper = _reactNative.NativeModules.Flipper;var _default =
+
+Flipper;exports.default = _default;
+
+var listeners = {};
+var plugins = {};
+
+function assertSerializable(data) {
+  if (
+  data === undefined ||
+  Array.isArray(data) ||
+  data && typeof data === 'object')
+  {
+    return true;
+  }
+  throw new Error(
+  'Flipper: Expected serializable (undefined, an array or an object). Got: ' +
+  data);
+
+}var
+
+Connection = function () {
+
+
+
+  function Connection(pluginId) {(0, _classCallCheck2.default)(this, Connection);
+    this.connected = false;
+    this.pluginId = pluginId;
+  }(0, _createClass2.default)(Connection, [{ key: "send", value:
+
+    function send(method, data) {
+      if (!this.connected) {
+        throw new Error('Cannot send data, not connected');
+      }
+      assertSerializable(data);
+      Flipper.send(this.pluginId, method, JSON.stringify(data));
+    } }, { key: "reportErrorWithMetadata", value:
+
+    function reportErrorWithMetadata(reason, stackTrace) {
+      Flipper.reportErrorWithMetadata(
+      this.pluginId,
+      '' + reason,
+      '' + stackTrace);
+
+    } }, { key: "reportError", value:
+
+    function reportError(error) {
+      Flipper.reportError(this.pluginId, '' + error);
+    } }, { key: "receive", value:
+
+    function receive(method, listener) {
+      if (!this.connected) {
+        throw new Error('Cannot receive data, not connected');
+      }
+
+      listeners[this.pluginId + '#' + method] = listener;
+      Flipper.subscribe(this.pluginId, method);
+    } }]);return Connection;}();var
+
+
+Responder = function () {
+
+
+  function Responder(responderId) {(0, _classCallCheck2.default)(this, Responder);
+    this.responderId = responderId;
+  }(0, _createClass2.default)(Responder, [{ key: "success", value:
+
+    function success(response) {
+      assertSerializable(response);
+      Flipper.respondSuccess(
+      this.responderId,
+      response == null ? null : JSON.stringify(response));
+
+    } }, { key: "error", value:
+
+    function error(response) {
+      assertSerializable(response);
+      Flipper.respondError(this.responderId, JSON.stringify(response));
+    } }]);return Responder;}();
+
+
+function startEventListeners() {
+  var emitter = new _reactNative.NativeEventEmitter(Flipper);
+
+  emitter.addListener('react-native-flipper-plugin-connect', function (event) {var
+    plugin = event.plugin;
+    if (plugins[plugin]) {
+      var p = plugins[plugin];
+      p._connection.connected = true;
+      p.onConnect(p._connection);
+    }
+  });
+
+  emitter.addListener('react-native-flipper-plugin-disconnect', function (event) {var
+    plugin = event.plugin;
+    if (plugins[plugin]) {
+      var p = plugins[plugin];
+      p._connection.connected = false;
+      p.onDisconnect();
+    }
+  });
+
+  emitter.addListener('react-native-flipper-receive-event', function (event) {var
+    plugin = event.plugin,method = event.method,params = event.params,responderId = event.responderId;
+    var key = plugin + '#' + method;
+    if (listeners[key]) {
+      var responder =
+      responderId != null ? new Responder(responderId) : undefined;
+      listeners[key](JSON.parse(params), responder);
+    }
+  });
+}
+
+
+function addPlugin(plugin) {
+  if (!Flipper) {
+    printNoFlipperWarning();
+    return;
+  }
+  if (!plugin || typeof plugin !== 'object') {
+    throw new Error('Expected plugin, got ' + plugin);
+  }
+  ['getId', 'onConnect', 'onDisconnect'].forEach(function (method) {
+    if (typeof plugin[method] !== 'function') {
+      throw new Error("Plugin misses an implementation for '" + method + "'");
+    }
+  });
+  var runInBackground =
+  typeof plugin.runInBackground === 'function' ?
+  !!plugin.runInBackground() :
+  false;
+  var id = plugin.getId();
+  plugin._connection = new Connection(id);
+  plugins[id] = plugin;
+
+  Flipper.registerPlugin(id, runInBackground, function (status) {
+    if (status === 'noflipper') {
+      printNoFlipperWarning();
+    }
+  });
+}
+
+function printNoFlipperWarning() {
+
+  if (typeof __DEV__ !== 'undefined' && __DEV__) {
+    console.warn(
+    'The native module for Flipper seems unavailable. Please verify that `react-native-flipper` is installed as yarn dependency to your project and, for iOS, that `pod install` is run in the `ios` directory.');
+
+  }
+}
+
+if (Flipper) {
+  startEventListeners();
+}

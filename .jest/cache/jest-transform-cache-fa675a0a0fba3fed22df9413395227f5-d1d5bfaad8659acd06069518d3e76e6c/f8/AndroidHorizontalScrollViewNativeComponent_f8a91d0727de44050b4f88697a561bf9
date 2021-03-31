@@ -1,0 +1,58 @@
+deaced52e8d7b0d452a765c5eea120e0
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+var _registerGeneratedViewConfig = _interopRequireDefault(require("../../Utilities/registerGeneratedViewConfig"));
+var _requireNativeComponent = _interopRequireDefault(require("../../ReactNative/requireNativeComponent"));
+
+
+
+
+var AndroidHorizontalScrollViewViewConfig = {
+  uiViewClassName: 'AndroidHorizontalScrollView',
+  bubblingEventTypes: {},
+  directEventTypes: {},
+  validAttributes: {
+    decelerationRate: true,
+    disableIntervalMomentum: true,
+    endFillColor: { process: require('../../StyleSheet/processColor') },
+    fadingEdgeLength: true,
+    nestedScrollEnabled: true,
+    overScrollMode: true,
+    pagingEnabled: true,
+    persistentScrollbar: true,
+    scrollEnabled: true,
+    scrollPerfTag: true,
+    sendMomentumEvents: true,
+    showsHorizontalScrollIndicator: true,
+    snapToEnd: true,
+    snapToInterval: true,
+    snapToStart: true,
+    snapToOffsets: true,
+    contentOffset: true } };
+
+
+
+var AndroidHorizontalScrollViewNativeComponent;
+if (global.RN$Bridgeless) {
+  (0, _registerGeneratedViewConfig.default)(
+  'AndroidHorizontalScrollView',
+  AndroidHorizontalScrollViewViewConfig);
+
+  AndroidHorizontalScrollViewNativeComponent = 'AndroidHorizontalScrollView';
+} else {
+  AndroidHorizontalScrollViewNativeComponent = (0, _requireNativeComponent.default)(
+  'AndroidHorizontalScrollView');
+
+}var _default =
+
+AndroidHorizontalScrollViewNativeComponent;exports.default = _default;

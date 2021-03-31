@@ -1,0 +1,529 @@
+5d33cbd966816129df20b2fdfd767dcf
+"use strict";function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {require("@babel/runtime/helpers/defineProperty")(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = require("@babel/runtime/helpers/getPrototypeOf")(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = require("@babel/runtime/helpers/getPrototypeOf")(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return require("@babel/runtime/helpers/possibleConstructorReturn")(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+var React = _interopRequireWildcard(require("react"));
+
+var _invariant = _interopRequireDefault(require("invariant"));
+
+
+
+
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var DRAG_TOSS = 0.05;
+var IDLE = 'Idle';
+var DRAGGING = 'Dragging';
+var SETTLING = 'Settling';var
+
+DrawerLayout = function (_React$Component) {require("@babel/runtime/helpers/inherits")(DrawerLayout, _React$Component);var _super = _createSuper(DrawerLayout);
+  function DrawerLayout(_props) {var _this;require("@babel/runtime/helpers/classCallCheck")(this, DrawerLayout);
+    _this = _super.call(this, _props);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "openValue", void 0);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "onGestureEvent", void 0);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "accessibilityIsModalView", React.createRef());
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "pointerEventsView", React.createRef());
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "panGestureHandler", React.createRef());
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "drawerShown", false);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "updateAnimatedEvent", function (props, state) {var
+
+
+      drawerPosition =
+
+
+      props.drawerPosition,drawerWidth = props.drawerWidth,drawerType = props.drawerType;var
+
+      dragXValue =
+
+
+
+      state.dragX,touchXValue = state.touchX,drawerTranslation = state.drawerTranslation,containerWidth = state.containerWidth;
+      var dragX = dragXValue;
+      var touchX = touchXValue;
+
+      if (drawerPosition !== 'left') {
+
+
+
+
+
+
+
+        dragX = require("react-native").Animated.multiply(new (require("react-native").Animated.Value)(-1), dragXValue);
+
+        touchX = require("react-native").Animated.add(new (require("react-native").Animated.Value)(containerWidth), require("react-native").Animated.multiply(new (require("react-native").Animated.Value)(-1), touchXValue));
+
+        touchXValue.setValue(containerWidth);
+      } else {
+        touchXValue.setValue(0);
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      var translationX = dragX;
+
+      if (drawerType === 'front') {
+        var startPositionX = require("react-native").Animated.add(touchX, require("react-native").Animated.multiply(new (require("react-native").Animated.Value)(-1), dragX));
+
+        var dragOffsetFromOnStartPosition = startPositionX.interpolate({
+          inputRange: [drawerWidth - 1, drawerWidth, drawerWidth + 1],
+          outputRange: [0, 0, 1] });
+
+        translationX = require("react-native").Animated.add(dragX, dragOffsetFromOnStartPosition);
+      }
+
+      _this.openValue = require("react-native").Animated.add(translationX, drawerTranslation).interpolate({
+        inputRange: [0, drawerWidth],
+        outputRange: [0, 1],
+        extrapolate: 'clamp' });
+
+      var gestureOptions = {
+        useNativeDriver: props.useNativeAnimations };
+
+
+      if (_this.props.onDrawerSlide) {
+        gestureOptions.listener = function (ev) {
+          var _this$props$onDrawerS, _this$props;
+
+          var translationX = Math.floor(Math.abs(ev.nativeEvent.translationX));
+          var position = translationX / _this.state.containerWidth;
+          (_this$props$onDrawerS = (_this$props = _this.props).onDrawerSlide) === null || _this$props$onDrawerS === void 0 ? void 0 : _this$props$onDrawerS.call(_this$props, position);
+        };
+      }
+
+      _this.onGestureEvent = require("react-native").Animated.event([{
+        nativeEvent: {
+          translationX: dragXValue,
+          x: touchXValue } }],
+
+      gestureOptions);
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "handleContainerLayout", function (_ref)
+
+    {var nativeEvent = _ref.nativeEvent;
+      _this.setState({
+        containerWidth: nativeEvent.layout.width });
+
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "emitStateChanged", function (newState, drawerWillShow) {
+      var _this$props$onDrawerS2, _this$props2;
+
+      (_this$props$onDrawerS2 = (_this$props2 = _this.props).onDrawerStateChanged) === null || _this$props$onDrawerS2 === void 0 ? void 0 : _this$props$onDrawerS2.call(_this$props2, newState, drawerWillShow);
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "openingHandlerStateChange", function (_ref2)
+
+    {var nativeEvent = _ref2.nativeEvent;
+      if (nativeEvent.oldState === require("../State").State.ACTIVE) {
+        _this.handleRelease({
+          nativeEvent: nativeEvent });
+
+      } else if (nativeEvent.state === require("../State").State.ACTIVE) {
+        _this.emitStateChanged(DRAGGING, false);
+
+        if (_this.props.keyboardDismissMode === 'on-drag') {
+          require("react-native").Keyboard.dismiss();
+        }
+
+        if (_this.props.hideStatusBar) {
+          require("react-native").StatusBar.setHidden(true, _this.props.statusBarAnimation || 'slide');
+        }
+      }
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "onTapHandlerStateChange", function (_ref3)
+
+    {var nativeEvent = _ref3.nativeEvent;
+      if (_this.drawerShown && nativeEvent.oldState === require("../State").State.ACTIVE && _this.props.drawerLockMode !== 'locked-open') {
+        _this.closeDrawer();
+      }
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "handleRelease", function (_ref4)
+
+    {var nativeEvent = _ref4.nativeEvent;var _this$props6 =
+
+
+
+
+      _this.props,drawerWidth = _this$props6.drawerWidth,drawerPosition = _this$props6.drawerPosition,drawerType = _this$props6.drawerType;var
+
+      containerWidth =
+      _this.state.containerWidth;var
+
+      dragX =
+
+
+      nativeEvent.translationX,velocityX = nativeEvent.velocityX,touchX = nativeEvent.x;
+
+      if (drawerPosition !== 'left') {
+
+
+        dragX = -dragX;
+        touchX = containerWidth - touchX;
+        velocityX = -velocityX;
+      }
+
+      var gestureStartX = touchX - dragX;
+      var dragOffsetBasedOnStart = 0;
+
+      if (drawerType === 'front') {
+        dragOffsetBasedOnStart = gestureStartX > drawerWidth ? gestureStartX - drawerWidth : 0;
+      }
+
+      var startOffsetX = dragX + dragOffsetBasedOnStart + (_this.drawerShown ? drawerWidth : 0);
+      var projOffsetX = startOffsetX + DRAG_TOSS * velocityX;
+      var shouldOpen = projOffsetX > drawerWidth / 2;
+
+      if (shouldOpen) {
+        _this.animateDrawer(startOffsetX, drawerWidth, velocityX);
+      } else {
+        _this.animateDrawer(startOffsetX, 0, velocityX);
+      }
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "updateShowing", function (showing) {
+      var _this$accessibilityIs, _this$pointerEventsVi, _this$panGestureHandl;
+
+      _this.drawerShown = showing;
+      (_this$accessibilityIs = _this.accessibilityIsModalView.current) === null || _this$accessibilityIs === void 0 ? void 0 : _this$accessibilityIs.setNativeProps({
+        accessibilityViewIsModal: showing });
+
+      (_this$pointerEventsVi = _this.pointerEventsView.current) === null || _this$pointerEventsVi === void 0 ? void 0 : _this$pointerEventsVi.setNativeProps({
+        pointerEvents: showing ? 'auto' : 'none' });var _this$props7 =
+
+
+
+
+
+      _this.props,drawerPosition = _this$props7.drawerPosition,minSwipeDistance = _this$props7.minSwipeDistance,edgeWidth = _this$props7.edgeWidth;
+      var fromLeft = drawerPosition === 'left';
+
+
+
+      var gestureOrientation = (fromLeft ? 1 : -1) * (_this.drawerShown ? -1 : 1);
+
+
+
+      var hitSlop = fromLeft ? {
+        left: 0,
+        width: showing ? undefined : edgeWidth } :
+      {
+        right: 0,
+        width: showing ? undefined : edgeWidth };
+
+
+      (_this$panGestureHandl = _this.panGestureHandler.current) === null || _this$panGestureHandl === void 0 ? void 0 : _this$panGestureHandl.setNativeProps({
+        hitSlop: hitSlop,
+        activeOffsetX: gestureOrientation * minSwipeDistance });
+
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "animateDrawer", function (fromValue, toValue, velocity, speed) {
+      _this.state.dragX.setValue(0);
+      _this.state.touchX.setValue(_this.props.drawerPosition === 'left' ? 0 : _this.state.containerWidth);
+
+      if (fromValue != null) {
+        var nextFramePosition = fromValue;
+
+        if (_this.props.useNativeAnimations) {
+
+
+
+
+          if (fromValue < toValue && velocity > 0) {
+            nextFramePosition = Math.min(fromValue + velocity / 60.0, toValue);
+          } else if (fromValue > toValue && velocity < 0) {
+            nextFramePosition = Math.max(fromValue + velocity / 60.0, toValue);
+          }
+        }
+
+        _this.state.drawerTranslation.setValue(nextFramePosition);
+      }
+
+      var willShow = toValue !== 0;
+      _this.updateShowing(willShow);
+      _this.emitStateChanged(SETTLING, willShow);
+
+      if (_this.props.hideStatusBar) {
+        require("react-native").StatusBar.setHidden(willShow, _this.props.statusBarAnimation || 'slide');
+      }
+
+      require("react-native").Animated.spring(_this.state.drawerTranslation, {
+        velocity: velocity,
+        bounciness: 0,
+        toValue: toValue,
+        useNativeDriver: _this.props.useNativeAnimations,
+        speed: speed !== null && speed !== void 0 ? speed : undefined }).
+      start(function (_ref5)
+
+      {var finished = _ref5.finished;
+        if (finished) {
+          _this.emitStateChanged(IDLE, willShow);
+
+          if (willShow) {
+            var _this$props$onDrawerO, _this$props3;
+
+            (_this$props$onDrawerO = (_this$props3 = _this.props).onDrawerOpen) === null || _this$props$onDrawerO === void 0 ? void 0 : _this$props$onDrawerO.call(_this$props3);
+          } else {
+            var _this$props$onDrawerC, _this$props4;
+
+            (_this$props$onDrawerC = (_this$props4 = _this.props).onDrawerClose) === null || _this$props$onDrawerC === void 0 ? void 0 : _this$props$onDrawerC.call(_this$props4);
+          }
+        }
+      });
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "openDrawer", function () {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      _this.animateDrawer(
+      undefined, _this.props.drawerWidth, options.velocity ? options.velocity : 0);
+
+      _this.forceUpdate();
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "closeDrawer", function () {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+      _this.animateDrawer(undefined, 0, options.velocity ? options.velocity : 0);
+
+      _this.forceUpdate();
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "renderOverlay", function () {
+
+      (0, _invariant.default)(_this.openValue, 'should be set');
+      var overlayOpacity = _this.openValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [0, 1],
+        extrapolate: 'clamp' });
+
+      var dynamicOverlayStyles = {
+        opacity: overlayOpacity,
+        backgroundColor: _this.props.overlayColor };
+
+      return React.createElement(require("../handlers/gestureHandlers").TapGestureHandler, {
+        onHandlerStateChange: _this.onTapHandlerStateChange },
+      React.createElement(require("react-native").Animated.View, {
+        pointerEvents: _this.drawerShown ? 'auto' : 'none',
+        ref: _this.pointerEventsView,
+        style: [styles.overlay, dynamicOverlayStyles] }));
+
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "renderDrawer", function () {var _this$props8 =
+
+
+
+
+
+
+
+      _this.props,drawerBackgroundColor = _this$props8.drawerBackgroundColor,drawerWidth = _this$props8.drawerWidth,drawerPosition = _this$props8.drawerPosition,drawerType = _this$props8.drawerType,drawerContainerStyle = _this$props8.drawerContainerStyle,contentContainerStyle = _this$props8.contentContainerStyle;
+      var fromLeft = drawerPosition === 'left';
+      var drawerSlide = drawerType !== 'back';
+      var containerSlide = drawerType !== 'front';
+
+
+
+
+      var reverseContentDirection = require("react-native").I18nManager.isRTL ? fromLeft : !fromLeft;
+      var dynamicDrawerStyles = {
+        backgroundColor: drawerBackgroundColor,
+        width: drawerWidth };
+
+      var openValue = _this.openValue;
+      (0, _invariant.default)(openValue, 'should be set');
+      var containerStyles;
+
+      if (containerSlide) {
+        var containerTranslateX = openValue.interpolate({
+          inputRange: [0, 1],
+          outputRange: fromLeft ? [0, drawerWidth] : [0, -drawerWidth],
+          extrapolate: 'clamp' });
+
+        containerStyles = {
+          transform: [{
+            translateX: containerTranslateX }] };
+
+
+      }
+
+      var drawerTranslateX = 0;
+
+      if (drawerSlide) {
+        var closedDrawerOffset = fromLeft ? -drawerWidth : drawerWidth;
+        drawerTranslateX = openValue.interpolate({
+          inputRange: [0, 1],
+          outputRange: [closedDrawerOffset, 0],
+          extrapolate: 'clamp' });
+
+      }
+
+      var drawerStyles = {
+        transform: [{
+          translateX: drawerTranslateX }],
+
+        flexDirection: reverseContentDirection ? 'row-reverse' : 'row' };
+
+      return React.createElement(require("react-native").Animated.View, {
+        style: styles.main,
+        onLayout: _this.handleContainerLayout },
+      React.createElement(require("react-native").Animated.View, {
+        style: [drawerType === 'front' ? styles.containerOnBack : styles.containerInFront, containerStyles, contentContainerStyle],
+        importantForAccessibility: _this.drawerShown ? 'no-hide-descendants' : 'yes' },
+      typeof _this.props.children === 'function' ? _this.props.children(_this.openValue) : _this.props.children, _this.renderOverlay()), React.createElement(require("react-native").Animated.View, {
+        pointerEvents: "box-none",
+        ref: _this.accessibilityIsModalView,
+        accessibilityViewIsModal: _this.drawerShown,
+        style: [styles.drawerContainer, drawerStyles, drawerContainerStyle] },
+      React.createElement(require("react-native").View, {
+        style: dynamicDrawerStyles },
+      _this.props.renderNavigationView(_this.openValue))));
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "setPanGestureRef", function (ref) {
+      var _this$props$onGesture, _this$props5;
+
+
+
+      _this.panGestureHandler.current = ref;
+      (_this$props$onGesture = (_this$props5 = _this.props).onGestureRef) === null || _this$props$onGesture === void 0 ? void 0 : _this$props$onGesture.call(_this$props5, ref);
+    });
+
+    var _dragX = new (require("react-native").Animated.Value)(0);
+
+    var _touchX = new (require("react-native").Animated.Value)(0);
+
+    var _drawerTranslation = new (require("react-native").Animated.Value)(0);
+
+    _this.state = {
+      dragX: _dragX,
+      touchX: _touchX,
+      drawerTranslation: _drawerTranslation,
+      containerWidth: 0 };
+
+    _this.updateAnimatedEvent(_props, _this.state);return _this;
+  }require("@babel/runtime/helpers/createClass")(DrawerLayout, [{ key: "UNSAFE_componentWillUpdate", value:
+
+    function UNSAFE_componentWillUpdate(props, state) {
+      if (this.props.drawerPosition !== props.drawerPosition || this.props.drawerWidth !== props.drawerWidth || this.props.drawerType !== props.drawerType || this.state.containerWidth !== state.containerWidth) {
+        this.updateAnimatedEvent(props, state);
+      }
+    } }, { key: "render", value:
+
+    function render() {var _this$props9 =
+
+
+
+
+
+      this.props,drawerPosition = _this$props9.drawerPosition,drawerLockMode = _this$props9.drawerLockMode,edgeWidth = _this$props9.edgeWidth,minSwipeDistance = _this$props9.minSwipeDistance;
+      var fromLeft = drawerPosition === 'left';
+
+
+
+      var gestureOrientation = (fromLeft ? 1 : -1) * (this.drawerShown ? -1 : 1);
+
+
+
+      var hitSlop = fromLeft ? {
+        left: 0,
+        width: this.drawerShown ? undefined : edgeWidth } :
+      {
+        right: 0,
+        width: this.drawerShown ? undefined : edgeWidth };
+
+      return React.createElement(require("../handlers/gestureHandlers").PanGestureHandler,
+      {
+        ref: this.setPanGestureRef,
+        hitSlop: hitSlop,
+        activeOffsetX: gestureOrientation * minSwipeDistance,
+        failOffsetY: [-15, 15],
+        onGestureEvent: this.onGestureEvent,
+        onHandlerStateChange: this.openingHandlerStateChange,
+        enableTrackpadTwoFingerGesture: this.props.enableTrackpadTwoFingerGesture,
+        enabled: drawerLockMode !== 'locked-closed' && drawerLockMode !== 'locked-open' },
+      this.renderDrawer());
+    } }]);return DrawerLayout;}(React.Component);
+
+
+
+exports.default = DrawerLayout;
+
+_defineProperty(DrawerLayout, "defaultProps", {
+  drawerWidth: 200,
+  drawerPosition: 'left',
+  useNativeAnimations: true,
+  drawerType: 'front',
+  edgeWidth: 20,
+  minSwipeDistance: 3,
+  overlayColor: 'rgba(0, 0, 0, 0.7)',
+  drawerLockMode: 'unlocked',
+  enableTrackpadTwoFingerGesture: false });
+
+
+_defineProperty(DrawerLayout, "positions", {
+  Left: 'left',
+  Right: 'right' });
+
+
+var styles = require("react-native").StyleSheet.create({
+  drawerContainer: _objectSpread(_objectSpread({}, require("react-native").StyleSheet.absoluteFillObject), {}, {
+    zIndex: 1001,
+    flexDirection: 'row' }),
+
+  containerInFront: _objectSpread(_objectSpread({}, require("react-native").StyleSheet.absoluteFillObject), {}, {
+    zIndex: 1002 }),
+
+  containerOnBack: _objectSpread({}, require("react-native").StyleSheet.absoluteFillObject),
+
+  main: {
+    flex: 1,
+    zIndex: 0,
+    overflow: 'hidden' },
+
+  overlay: _objectSpread(_objectSpread({}, require("react-native").StyleSheet.absoluteFillObject), {}, {
+    zIndex: 1000 }) });

@@ -1,0 +1,511 @@
+750572eb84e95eec1b83d6a9be63a990
+function _createForOfIteratorHelperLoose(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;return function () {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };};}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}it = o[Symbol.iterator]();return it.next.bind(it);}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var
+Range = function () {"use strict";
+  function Range(range, options) {var _this = this;require("@babel/runtime/helpers/classCallCheck")(this, Range);
+    options = require('../internal/parse-options')(options);
+
+    if (range instanceof Range) {
+      if (
+      range.loose === !!options.loose &&
+      range.includePrerelease === !!options.includePrerelease)
+      {
+        return range;
+      } else {
+        return new Range(range.raw, options);
+      }
+    }
+
+    if (range instanceof require('./comparator')) {
+
+      this.raw = range.value;
+      this.set = [[range]];
+      this.format();
+      return this;
+    }
+
+    this.options = options;
+    this.loose = !!options.loose;
+    this.includePrerelease = !!options.includePrerelease;
+
+
+    this.raw = range;
+    this.set = range.
+    split(/\s*\|\|\s*/).
+
+    map(function (range) {return _this.parseRange(range.trim());}).
+
+
+
+    filter(function (c) {return c.length;});
+
+    if (!this.set.length) {
+      throw new TypeError("Invalid SemVer Range: " + range);
+    }
+
+
+    if (this.set.length > 1) {
+
+      var first = this.set[0];
+      this.set = this.set.filter(function (c) {return !isNullSet(c[0]);});
+      if (this.set.length === 0)
+      this.set = [first];else
+      if (this.set.length > 1) {
+
+        for (var _iterator = _createForOfIteratorHelperLoose(this.set), _step; !(_step = _iterator()).done;) {var c = _step.value;
+          if (c.length === 1 && isAny(c[0])) {
+            this.set = [c];
+            break;
+          }
+        }
+      }
+    }
+
+    this.format();
+  }require("@babel/runtime/helpers/createClass")(Range, [{ key: "format", value:
+
+    function format() {
+      this.range = this.set.
+      map(function (comps) {
+        return comps.join(' ').trim();
+      }).
+      join('||').
+      trim();
+      return this.range;
+    } }, { key: "toString", value:
+
+    function toString() {
+      return this.range;
+    } }, { key: "parseRange", value:
+
+    function parseRange(range) {var _this2 = this;
+      range = range.trim();
+
+
+
+      var memoOpts = Object.keys(this.options).join(',');
+      var memoKey = "parseRange:" + memoOpts + ":" + range;
+      var cached = cache.get(memoKey);
+      if (cached)
+      return cached;
+
+      var loose = this.options.loose;
+
+      var hr = loose ? require('../internal/re').re[require('../internal/re').t.HYPHENRANGELOOSE] : require('../internal/re').re[require('../internal/re').t.HYPHENRANGE];
+      range = range.replace(hr, hyphenReplace(this.options.includePrerelease));
+      require('../internal/debug')('hyphen replace', range);
+
+      range = range.replace(require('../internal/re').re[require('../internal/re').t.COMPARATORTRIM], require('../internal/re').comparatorTrimReplace);
+      require('../internal/debug')('comparator trim', range, require('../internal/re').re[require('../internal/re').t.COMPARATORTRIM]);
+
+
+      range = range.replace(require('../internal/re').re[require('../internal/re').t.TILDETRIM], require('../internal/re').tildeTrimReplace);
+
+
+      range = range.replace(require('../internal/re').re[require('../internal/re').t.CARETTRIM], require('../internal/re').caretTrimReplace);
+
+
+      range = range.split(/\s+/).join(' ');
+
+
+
+
+      var compRe = loose ? require('../internal/re').re[require('../internal/re').t.COMPARATORLOOSE] : require('../internal/re').re[require('../internal/re').t.COMPARATOR];
+      var rangeList = range.
+      split(' ').
+      map(function (comp) {return parseComparator(comp, _this2.options);}).
+      join(' ').
+      split(/\s+/).
+
+      map(function (comp) {return replaceGTE0(comp, _this2.options);}).
+
+      filter(this.options.loose ? function (comp) {return !!comp.match(compRe);} : function () {return true;}).
+      map(function (comp) {return new (require('./comparator'))(comp, _this2.options);});
+
+
+
+
+      var l = rangeList.length;
+      var rangeMap = new Map();
+      for (var _iterator2 = _createForOfIteratorHelperLoose(rangeList), _step2; !(_step2 = _iterator2()).done;) {var comp = _step2.value;
+        if (isNullSet(comp))
+        return [comp];
+        rangeMap.set(comp.value, comp);
+      }
+      if (rangeMap.size > 1 && rangeMap.has(''))
+      rangeMap.delete('');
+
+      var result = require("@babel/runtime/helpers/toConsumableArray")(rangeMap.values());
+      cache.set(memoKey, result);
+      return result;
+    } }, { key: "intersects", value:
+
+    function intersects(range, options) {
+      if (!(range instanceof Range)) {
+        throw new TypeError('a Range is required');
+      }
+
+      return this.set.some(function (thisComparators) {
+        return (
+          isSatisfiable(thisComparators, options) &&
+          range.set.some(function (rangeComparators) {
+            return (
+              isSatisfiable(rangeComparators, options) &&
+              thisComparators.every(function (thisComparator) {
+                return rangeComparators.every(function (rangeComparator) {
+                  return thisComparator.intersects(rangeComparator, options);
+                });
+              }));
+
+          }));
+
+      });
+    } }, { key: "test", value:
+
+
+    function test(version) {
+      if (!version) {
+        return false;
+      }
+
+      if (typeof version === 'string') {
+        try {
+          version = new (require('./semver'))(version, this.options);
+        } catch (er) {
+          return false;
+        }
+      }
+
+      for (var i = 0; i < this.set.length; i++) {
+        if (testSet(this.set[i], version, this.options)) {
+          return true;
+        }
+      }
+      return false;
+    } }]);return Range;}();
+
+module.exports = Range;
+
+
+var cache = new (require('lru-cache'))({ max: 1000 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+var isNullSet = function isNullSet(c) {return c.value === '<0.0.0-0';};
+var isAny = function isAny(c) {return c.value === '';};
+
+
+
+var isSatisfiable = function isSatisfiable(comparators, options) {
+  var result = true;
+  var remainingComparators = comparators.slice();
+  var testComparator = remainingComparators.pop();
+
+  while (result && remainingComparators.length) {
+    result = remainingComparators.every(function (otherComparator) {
+      return testComparator.intersects(otherComparator, options);
+    });
+
+    testComparator = remainingComparators.pop();
+  }
+
+  return result;
+};
+
+
+
+
+var parseComparator = function parseComparator(comp, options) {
+  require('../internal/debug')('comp', comp, options);
+  comp = replaceCarets(comp, options);
+  require('../internal/debug')('caret', comp);
+  comp = replaceTildes(comp, options);
+  require('../internal/debug')('tildes', comp);
+  comp = replaceXRanges(comp, options);
+  require('../internal/debug')('xrange', comp);
+  comp = replaceStars(comp, options);
+  require('../internal/debug')('stars', comp);
+  return comp;
+};
+
+var isX = function isX(id) {return !id || id.toLowerCase() === 'x' || id === '*';};
+
+
+
+
+
+
+
+var replaceTildes = function replaceTildes(comp, options) {return (
+    comp.trim().split(/\s+/).map(function (comp) {
+      return replaceTilde(comp, options);
+    }).join(' '));};
+
+var replaceTilde = function replaceTilde(comp, options) {
+  var r = options.loose ? require('../internal/re').re[require('../internal/re').t.TILDELOOSE] : require('../internal/re').re[require('../internal/re').t.TILDE];
+  return comp.replace(r, function (_, M, m, p, pr) {
+    require('../internal/debug')('tilde', comp, _, M, m, p, pr);
+    var ret;
+
+    if (isX(M)) {
+      ret = '';
+    } else if (isX(m)) {
+      ret = ">=" + M + ".0.0 <" + (+M + 1) + ".0.0-0";
+    } else if (isX(p)) {
+
+      ret = ">=" + M + "." + m + ".0 <" + M + "." + (+m + 1) + ".0-0";
+    } else if (pr) {
+      require('../internal/debug')('replaceTilde pr', pr);
+      ret = ">=" + M + "." + m + "." + p + "-" + pr + " <" +
+      M + "." + (+m + 1) + ".0-0";
+    } else {
+
+      ret = ">=" + M + "." + m + "." + p + " <" +
+      M + "." + (+m + 1) + ".0-0";
+    }
+
+    require('../internal/debug')('tilde return', ret);
+    return ret;
+  });
+};
+
+
+
+
+
+
+
+var replaceCarets = function replaceCarets(comp, options) {return (
+    comp.trim().split(/\s+/).map(function (comp) {
+      return replaceCaret(comp, options);
+    }).join(' '));};
+
+var replaceCaret = function replaceCaret(comp, options) {
+  require('../internal/debug')('caret', comp, options);
+  var r = options.loose ? require('../internal/re').re[require('../internal/re').t.CARETLOOSE] : require('../internal/re').re[require('../internal/re').t.CARET];
+  var z = options.includePrerelease ? '-0' : '';
+  return comp.replace(r, function (_, M, m, p, pr) {
+    require('../internal/debug')('caret', comp, _, M, m, p, pr);
+    var ret;
+
+    if (isX(M)) {
+      ret = '';
+    } else if (isX(m)) {
+      ret = ">=" + M + ".0.0" + z + " <" + (+M + 1) + ".0.0-0";
+    } else if (isX(p)) {
+      if (M === '0') {
+        ret = ">=" + M + "." + m + ".0" + z + " <" + M + "." + (+m + 1) + ".0-0";
+      } else {
+        ret = ">=" + M + "." + m + ".0" + z + " <" + (+M + 1) + ".0.0-0";
+      }
+    } else if (pr) {
+      require('../internal/debug')('replaceCaret pr', pr);
+      if (M === '0') {
+        if (m === '0') {
+          ret = ">=" + M + "." + m + "." + p + "-" + pr + " <" +
+          M + "." + m + "." + (+p + 1) + "-0";
+        } else {
+          ret = ">=" + M + "." + m + "." + p + "-" + pr + " <" +
+          M + "." + (+m + 1) + ".0-0";
+        }
+      } else {
+        ret = ">=" + M + "." + m + "." + p + "-" + pr + " <" + (
+        +M + 1) + ".0.0-0";
+      }
+    } else {
+      require('../internal/debug')('no pr');
+      if (M === '0') {
+        if (m === '0') {
+          ret = ">=" + M + "." + m + "." + p +
+          z + " <" + M + "." + m + "." + (+p + 1) + "-0";
+        } else {
+          ret = ">=" + M + "." + m + "." + p +
+          z + " <" + M + "." + (+m + 1) + ".0-0";
+        }
+      } else {
+        ret = ">=" + M + "." + m + "." + p + " <" + (
+        +M + 1) + ".0.0-0";
+      }
+    }
+
+    require('../internal/debug')('caret return', ret);
+    return ret;
+  });
+};
+
+var replaceXRanges = function replaceXRanges(comp, options) {
+  require('../internal/debug')('replaceXRanges', comp, options);
+  return comp.split(/\s+/).map(function (comp) {
+    return replaceXRange(comp, options);
+  }).join(' ');
+};
+
+var replaceXRange = function replaceXRange(comp, options) {
+  comp = comp.trim();
+  var r = options.loose ? require('../internal/re').re[require('../internal/re').t.XRANGELOOSE] : require('../internal/re').re[require('../internal/re').t.XRANGE];
+  return comp.replace(r, function (ret, gtlt, M, m, p, pr) {
+    require('../internal/debug')('xRange', comp, ret, gtlt, M, m, p, pr);
+    var xM = isX(M);
+    var xm = xM || isX(m);
+    var xp = xm || isX(p);
+    var anyX = xp;
+
+    if (gtlt === '=' && anyX) {
+      gtlt = '';
+    }
+
+
+
+    pr = options.includePrerelease ? '-0' : '';
+
+    if (xM) {
+      if (gtlt === '>' || gtlt === '<') {
+
+        ret = '<0.0.0-0';
+      } else {
+
+        ret = '*';
+      }
+    } else if (gtlt && anyX) {
+
+
+      if (xm) {
+        m = 0;
+      }
+      p = 0;
+
+      if (gtlt === '>') {
+
+
+        gtlt = '>=';
+        if (xm) {
+          M = +M + 1;
+          m = 0;
+          p = 0;
+        } else {
+          m = +m + 1;
+          p = 0;
+        }
+      } else if (gtlt === '<=') {
+
+
+        gtlt = '<';
+        if (xm) {
+          M = +M + 1;
+        } else {
+          m = +m + 1;
+        }
+      }
+
+      if (gtlt === '<')
+      pr = '-0';
+
+      ret = gtlt + M + "." + m + "." + p + pr;
+    } else if (xm) {
+      ret = ">=" + M + ".0.0" + pr + " <" + (+M + 1) + ".0.0-0";
+    } else if (xp) {
+      ret = ">=" + M + "." + m + ".0" + pr + " <" +
+      M + "." + (+m + 1) + ".0-0";
+    }
+
+    require('../internal/debug')('xRange return', ret);
+
+    return ret;
+  });
+};
+
+
+
+var replaceStars = function replaceStars(comp, options) {
+  require('../internal/debug')('replaceStars', comp, options);
+
+  return comp.trim().replace(require('../internal/re').re[require('../internal/re').t.STAR], '');
+};
+
+var replaceGTE0 = function replaceGTE0(comp, options) {
+  require('../internal/debug')('replaceGTE0', comp, options);
+  return comp.trim().
+  replace(require('../internal/re').re[options.includePrerelease ? require('../internal/re').t.GTE0PRE : require('../internal/re').t.GTE0], '');
+};
+
+
+
+
+
+
+var hyphenReplace = function hyphenReplace(incPr) {return function ($0,
+  from, fM, fm, fp, fpr, fb,
+  to, tM, tm, tp, tpr, tb) {
+    if (isX(fM)) {
+      from = '';
+    } else if (isX(fm)) {
+      from = ">=" + fM + ".0.0" + (incPr ? '-0' : '');
+    } else if (isX(fp)) {
+      from = ">=" + fM + "." + fm + ".0" + (incPr ? '-0' : '');
+    } else if (fpr) {
+      from = ">=" + from;
+    } else {
+      from = ">=" + from + (incPr ? '-0' : '');
+    }
+
+    if (isX(tM)) {
+      to = '';
+    } else if (isX(tm)) {
+      to = "<" + (+tM + 1) + ".0.0-0";
+    } else if (isX(tp)) {
+      to = "<" + tM + "." + (+tm + 1) + ".0-0";
+    } else if (tpr) {
+      to = "<=" + tM + "." + tm + "." + tp + "-" + tpr;
+    } else if (incPr) {
+      to = "<" + tM + "." + tm + "." + (+tp + 1) + "-0";
+    } else {
+      to = "<=" + to;
+    }
+
+    return (from + " " + to).trim();
+  };};
+
+var testSet = function testSet(set, version, options) {
+  for (var i = 0; i < set.length; i++) {
+    if (!set[i].test(version)) {
+      return false;
+    }
+  }
+
+  if (version.prerelease.length && !options.includePrerelease) {
+
+
+
+
+
+    for (var _i = 0; _i < set.length; _i++) {
+      require('../internal/debug')(set[_i].semver);
+      if (set[_i].semver === require('./comparator').ANY) {
+        continue;
+      }
+
+      if (set[_i].semver.prerelease.length > 0) {
+        var allowed = set[_i].semver;
+        if (allowed.major === version.major &&
+        allowed.minor === version.minor &&
+        allowed.patch === version.patch) {
+          return true;
+        }
+      }
+    }
+
+
+    return false;
+  }
+
+  return true;
+};

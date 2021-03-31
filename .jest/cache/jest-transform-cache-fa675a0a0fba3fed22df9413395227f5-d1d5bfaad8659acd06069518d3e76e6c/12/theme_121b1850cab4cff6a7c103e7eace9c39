@@ -1,0 +1,221 @@
+569172246b57b90bda4e15118f645d2c
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _reactNative = require("react-native");
+
+var _reactNativePaper = require("react-native-paper");
+
+var _native = require("@react-navigation/native");
+
+function cov_1led1vdmde() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/theme.ts";
+  var hash = "119a810d4bcc38fe1d773c5d17181e78bf79926d";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/theme.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 31,
+          column: 31
+        },
+        end: {
+          line: 48,
+          column: 1
+        }
+      },
+      "1": {
+        start: {
+          line: 50,
+          column: 15
+        },
+        end: {
+          line: 55,
+          column: 1
+        }
+      },
+      "2": {
+        start: {
+          line: 56,
+          column: 30
+        },
+        end: {
+          line: 62,
+          column: 1
+        }
+      },
+      "3": {
+        start: {
+          line: 63,
+          column: 29
+        },
+        end: {
+          line: 76,
+          column: 1
+        }
+      },
+      "4": {
+        start: {
+          line: 77,
+          column: 26
+        },
+        end: {
+          line: 90,
+          column: 1
+        }
+      },
+      "5": {
+        start: {
+          line: 92,
+          column: 20
+        },
+        end: {
+          line: 92,
+          column: 47
+        }
+      },
+      "6": {
+        start: {
+          line: 93,
+          column: 20
+        },
+        end: {
+          line: 93,
+          column: 42
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 95,
+            column: 15
+          },
+          end: {
+            line: 95,
+            column: 69
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 95,
+            column: 29
+          },
+          end: {
+            line: 95,
+            column: 46
+          }
+        }, {
+          start: {
+            line: 95,
+            column: 49
+          },
+          end: {
+            line: 95,
+            column: 69
+          }
+        }],
+        line: 95
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    f: {},
+    b: {
+      "0": [0, 0]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "119a810d4bcc38fe1d773c5d17181e78bf79926d"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_1led1vdmde = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1led1vdmde();
+var variants = (cov_1led1vdmde().s[0]++, {
+  h1: {
+    fontSize: 22,
+    fontWeight: 'bold'
+  },
+  title: {
+    fontSize: 20
+  },
+  body: {
+    fontSize: 16
+  },
+  tag: {
+    fontSize: 14
+  },
+  info: {
+    fontSize: 12
+  }
+});
+var colors = (cov_1led1vdmde().s[1]++, {
+  black: '#000000',
+  white: '#FFFFFF',
+  grey: 'grey',
+  lightGrey: '#d3d3d3'
+});
+var spacing = (cov_1led1vdmde().s[2]++, {
+  xs: 4,
+  s: 8,
+  m: 16,
+  l: 24,
+  xl: 32
+});
+var CombinedDefaultTheme = (cov_1led1vdmde().s[3]++, (0, _extends2.default)({}, _reactNativePaper.DefaultTheme, _native.DefaultTheme, {
+  colors: (0, _extends2.default)({}, _reactNativePaper.DefaultTheme.colors, _native.DefaultTheme.colors, {
+    primary: colors.black,
+    accent: colors.lightGrey,
+    divider: colors.grey,
+    badge: colors.black
+  }),
+  variants: variants,
+  spacing: spacing
+}));
+var CombinedDarkTheme = (cov_1led1vdmde().s[4]++, (0, _extends2.default)({}, _reactNativePaper.DarkTheme, _native.DarkTheme, {
+  colors: (0, _extends2.default)({}, _reactNativePaper.DarkTheme.colors, _native.DarkTheme.colors, {
+    primary: colors.white,
+    accent: colors.white,
+    badge: colors.black,
+    divider: colors.white
+  }),
+  variants: variants,
+  spacing: spacing
+}));
+var colorScheme = (cov_1led1vdmde().s[5]++, _reactNative.Appearance.getColorScheme());
+var isThemeDark = (cov_1led1vdmde().s[6]++, colorScheme === 'dark');
+
+var _default = isThemeDark ? (cov_1led1vdmde().b[0][0]++, CombinedDarkTheme) : (cov_1led1vdmde().b[0][1]++, CombinedDefaultTheme);
+
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRoZW1lLnRzIl0sIm5hbWVzIjpbInZhcmlhbnRzIiwiaDEiLCJmb250U2l6ZSIsImZvbnRXZWlnaHQiLCJ0aXRsZSIsImJvZHkiLCJ0YWciLCJpbmZvIiwiY29sb3JzIiwiYmxhY2siLCJ3aGl0ZSIsImdyZXkiLCJsaWdodEdyZXkiLCJzcGFjaW5nIiwieHMiLCJzIiwibSIsImwiLCJ4bCIsIkNvbWJpbmVkRGVmYXVsdFRoZW1lIiwiUGFwZXJEZWZhdWx0VGhlbWUiLCJOYXZpZ2F0aW9uRGVmYXVsdFRoZW1lIiwicHJpbWFyeSIsImFjY2VudCIsImRpdmlkZXIiLCJiYWRnZSIsIkNvbWJpbmVkRGFya1RoZW1lIiwiUGFwZXJEYXJrVGhlbWUiLCJOYXZpZ2F0aW9uRGFya1RoZW1lIiwiY29sb3JTY2hlbWUiLCJBcHBlYXJhbmNlIiwiZ2V0Q29sb3JTY2hlbWUiLCJpc1RoZW1lRGFyayJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQUE7O0FBRUE7O0FBSUE7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBd0JBLElBQU1BLFFBQXNCLDZCQUFHO0FBQzdCQyxFQUFBQSxFQUFFLEVBQUU7QUFDRkMsSUFBQUEsUUFBUSxFQUFFLEVBRFI7QUFFRkMsSUFBQUEsVUFBVSxFQUFFO0FBRlYsR0FEeUI7QUFLN0JDLEVBQUFBLEtBQUssRUFBRTtBQUNMRixJQUFBQSxRQUFRLEVBQUU7QUFETCxHQUxzQjtBQVE3QkcsRUFBQUEsSUFBSSxFQUFFO0FBQ0pILElBQUFBLFFBQVEsRUFBRTtBQUROLEdBUnVCO0FBVzdCSSxFQUFBQSxHQUFHLEVBQUU7QUFDSEosSUFBQUEsUUFBUSxFQUFFO0FBRFAsR0FYd0I7QUFjN0JLLEVBQUFBLElBQUksRUFBRTtBQUNKTCxJQUFBQSxRQUFRLEVBQUU7QUFETjtBQWR1QixDQUFILENBQTVCO0FBbUJBLElBQU1NLE1BQU0sNkJBQUc7QUFDYkMsRUFBQUEsS0FBSyxFQUFFLFNBRE07QUFFYkMsRUFBQUEsS0FBSyxFQUFFLFNBRk07QUFHYkMsRUFBQUEsSUFBSSxFQUFFLE1BSE87QUFJYkMsRUFBQUEsU0FBUyxFQUFFO0FBSkUsQ0FBSCxDQUFaO0FBTUEsSUFBTUMsT0FBcUIsNkJBQUc7QUFDNUJDLEVBQUFBLEVBQUUsRUFBRSxDQUR3QjtBQUU1QkMsRUFBQUEsQ0FBQyxFQUFFLENBRnlCO0FBRzVCQyxFQUFBQSxDQUFDLEVBQUUsRUFIeUI7QUFJNUJDLEVBQUFBLENBQUMsRUFBRSxFQUp5QjtBQUs1QkMsRUFBQUEsRUFBRSxFQUFFO0FBTHdCLENBQUgsQ0FBM0I7QUFPQSxJQUFNQyxvQkFBb0Isd0RBQ3JCQyw4QkFEcUIsRUFFckJDLG9CQUZxQjtBQUd4QmIsRUFBQUEsTUFBTSw2QkFDRFksK0JBQWtCWixNQURqQixFQUVEYSxxQkFBdUJiLE1BRnRCO0FBR0pjLElBQUFBLE9BQU8sRUFBRWQsTUFBTSxDQUFDQyxLQUhaO0FBSUpjLElBQUFBLE1BQU0sRUFBRWYsTUFBTSxDQUFDSSxTQUpYO0FBS0pZLElBQUFBLE9BQU8sRUFBRWhCLE1BQU0sQ0FBQ0csSUFMWjtBQU1KYyxJQUFBQSxLQUFLLEVBQUVqQixNQUFNLENBQUNDO0FBTlYsSUFIa0I7QUFXeEJULEVBQUFBLFFBQVEsRUFBUkEsUUFYd0I7QUFZeEJhLEVBQUFBLE9BQU8sRUFBUEE7QUFad0IsR0FBMUI7QUFjQSxJQUFNYSxpQkFBaUIsd0RBQ2xCQywyQkFEa0IsRUFFbEJDLGlCQUZrQjtBQUdyQnBCLEVBQUFBLE1BQU0sNkJBQ0RtQiw0QkFBZW5CLE1BRGQsRUFFRG9CLGtCQUFvQnBCLE1BRm5CO0FBR0pjLElBQUFBLE9BQU8sRUFBRWQsTUFBTSxDQUFDRSxLQUhaO0FBSUphLElBQUFBLE1BQU0sRUFBRWYsTUFBTSxDQUFDRSxLQUpYO0FBS0plLElBQUFBLEtBQUssRUFBRWpCLE1BQU0sQ0FBQ0MsS0FMVjtBQU1KZSxJQUFBQSxPQUFPLEVBQUVoQixNQUFNLENBQUNFO0FBTlosSUFIZTtBQVdyQlYsRUFBQUEsUUFBUSxFQUFSQSxRQVhxQjtBQVlyQmEsRUFBQUEsT0FBTyxFQUFQQTtBQVpxQixHQUF2QjtBQWVBLElBQU1nQixXQUFXLDZCQUFHQyx3QkFBV0MsY0FBWCxFQUFILENBQWpCO0FBQ0EsSUFBTUMsV0FBVyw2QkFBR0gsV0FBVyxLQUFLLE1BQW5CLENBQWpCOztlQUVlRyxXQUFXLGdDQUFHTixpQkFBSCxpQ0FBdUJQLG9CQUF2QixDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtBcHBlYXJhbmNlLCBUZXh0U3R5bGV9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5cbmltcG9ydCB7XG4gIERhcmtUaGVtZSBhcyBQYXBlckRhcmtUaGVtZSxcbiAgRGVmYXVsdFRoZW1lIGFzIFBhcGVyRGVmYXVsdFRoZW1lLFxufSBmcm9tICdyZWFjdC1uYXRpdmUtcGFwZXInO1xuaW1wb3J0IHtcbiAgRGFya1RoZW1lIGFzIE5hdmlnYXRpb25EYXJrVGhlbWUsXG4gIERlZmF1bHRUaGVtZSBhcyBOYXZpZ2F0aW9uRGVmYXVsdFRoZW1lLFxufSBmcm9tICdAcmVhY3QtbmF2aWdhdGlvbi9uYXRpdmUnO1xuXG5pbnRlcmZhY2UgVmFyaWFudFByb3BzIHtcbiAgW2tleTogc3RyaW5nXTogVGV4dFN0eWxlO1xufVxuaW50ZXJmYWNlIFNwYWNpbmdQcm9wcyB7XG4gIFtrZXk6IHN0cmluZ106IG51bWJlcjtcbn1cbmRlY2xhcmUgZ2xvYmFsIHtcbiAgbmFtZXNwYWNlIFJlYWN0TmF0aXZlUGFwZXIge1xuICAgIGludGVyZmFjZSBUaGVtZUNvbG9ycyB7XG4gICAgICBiYWRnZTogc3RyaW5nO1xuICAgICAgZGl2aWRlcjogc3RyaW5nO1xuICAgIH1cbiAgICBpbnRlcmZhY2UgVGhlbWUge1xuICAgICAgdmFyaWFudHM6IFZhcmlhbnRQcm9wcztcbiAgICAgIHNwYWNpbmc6IFNwYWNpbmdQcm9wcztcbiAgICB9XG4gIH1cbn1cblxuY29uc3QgdmFyaWFudHM6IFZhcmlhbnRQcm9wcyA9IHtcbiAgaDE6IHtcbiAgICBmb250U2l6ZTogMjIsXG4gICAgZm9udFdlaWdodDogJ2JvbGQnLFxuICB9LFxuICB0aXRsZToge1xuICAgIGZvbnRTaXplOiAyMCxcbiAgfSxcbiAgYm9keToge1xuICAgIGZvbnRTaXplOiAxNixcbiAgfSxcbiAgdGFnOiB7XG4gICAgZm9udFNpemU6IDE0LFxuICB9LFxuICBpbmZvOiB7XG4gICAgZm9udFNpemU6IDEyLFxuICB9LFxufTtcblxuY29uc3QgY29sb3JzID0ge1xuICBibGFjazogJyMwMDAwMDAnLFxuICB3aGl0ZTogJyNGRkZGRkYnLFxuICBncmV5OiAnZ3JleScsXG4gIGxpZ2h0R3JleTogJyNkM2QzZDMnLFxufTtcbmNvbnN0IHNwYWNpbmc6IFNwYWNpbmdQcm9wcyA9IHtcbiAgeHM6IDQsXG4gIHM6IDgsXG4gIG06IDE2LFxuICBsOiAyNCxcbiAgeGw6IDMyLFxufTtcbmNvbnN0IENvbWJpbmVkRGVmYXVsdFRoZW1lID0ge1xuICAuLi5QYXBlckRlZmF1bHRUaGVtZSxcbiAgLi4uTmF2aWdhdGlvbkRlZmF1bHRUaGVtZSxcbiAgY29sb3JzOiB7XG4gICAgLi4uUGFwZXJEZWZhdWx0VGhlbWUuY29sb3JzLFxuICAgIC4uLk5hdmlnYXRpb25EZWZhdWx0VGhlbWUuY29sb3JzLFxuICAgIHByaW1hcnk6IGNvbG9ycy5ibGFjayxcbiAgICBhY2NlbnQ6IGNvbG9ycy5saWdodEdyZXksXG4gICAgZGl2aWRlcjogY29sb3JzLmdyZXksXG4gICAgYmFkZ2U6IGNvbG9ycy5ibGFjayxcbiAgfSxcbiAgdmFyaWFudHMsXG4gIHNwYWNpbmcsXG59O1xuY29uc3QgQ29tYmluZWREYXJrVGhlbWUgPSB7XG4gIC4uLlBhcGVyRGFya1RoZW1lLFxuICAuLi5OYXZpZ2F0aW9uRGFya1RoZW1lLFxuICBjb2xvcnM6IHtcbiAgICAuLi5QYXBlckRhcmtUaGVtZS5jb2xvcnMsXG4gICAgLi4uTmF2aWdhdGlvbkRhcmtUaGVtZS5jb2xvcnMsXG4gICAgcHJpbWFyeTogY29sb3JzLndoaXRlLFxuICAgIGFjY2VudDogY29sb3JzLndoaXRlLFxuICAgIGJhZGdlOiBjb2xvcnMuYmxhY2ssXG4gICAgZGl2aWRlcjogY29sb3JzLndoaXRlLFxuICB9LFxuICB2YXJpYW50cyxcbiAgc3BhY2luZyxcbn07XG5cbmNvbnN0IGNvbG9yU2NoZW1lID0gQXBwZWFyYW5jZS5nZXRDb2xvclNjaGVtZSgpO1xuY29uc3QgaXNUaGVtZURhcmsgPSBjb2xvclNjaGVtZSA9PT0gJ2RhcmsnO1xuXG5leHBvcnQgZGVmYXVsdCBpc1RoZW1lRGFyayA/IENvbWJpbmVkRGFya1RoZW1lIDogQ29tYmluZWREZWZhdWx0VGhlbWU7XG4iXX0=

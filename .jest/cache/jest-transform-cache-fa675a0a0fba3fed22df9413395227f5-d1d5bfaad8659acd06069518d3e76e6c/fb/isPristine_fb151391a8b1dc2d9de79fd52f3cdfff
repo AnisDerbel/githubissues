@@ -1,0 +1,15 @@
+af4b82402543e1d1c32b6f6e3a576c88
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _isPristine = require("@babel/runtime/helpers/interopRequireDefault")(require("./selectors/isPristine"));
+
+var _plain = require("@babel/runtime/helpers/interopRequireDefault")(require("./structure/plain"));
+
+var _default = (0, _isPristine["default"])(_plain["default"]);
+
+exports["default"] = _default;

@@ -1,0 +1,79 @@
+96558fbd8d6f433a6999f9d89ab92626
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.makeQueries = makeQueries;
+
+var _waitFor = _interopRequireDefault(require("../waitFor"));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function makeQueries(queryAllByQuery, getMissingError, getMultipleError) {
+  function getAllByQuery(instance) {
+    return function getAllFn(args) {
+      var results = queryAllByQuery(instance)(args);
+
+      if (results.length === 0) {
+        throw new (require("./errors").ErrorWithStack)(getMissingError(args), getAllFn);
+      }
+
+      return results;
+    };
+  }
+
+  function queryByQuery(instance) {
+    return function singleQueryFn(args) {
+      var results = queryAllByQuery(instance)(args);
+
+      if (results.length > 1) {
+        throw new (require("./errors").ErrorWithStack)(getMultipleError(args), singleQueryFn);
+      }
+
+      if (results.length === 0) {
+        return null;
+      }
+
+      return results[0];
+    };
+  }
+
+  function getByQuery(instance) {
+    return function getFn(args) {
+      var results = queryAllByQuery(instance)(args);
+
+      if (results.length > 1) {
+        throw new (require("./errors").ErrorWithStack)(getMultipleError(args), getFn);
+      }
+
+      if (results.length === 0) {
+        throw new (require("./errors").ErrorWithStack)(getMissingError(args), getFn);
+      }
+
+      return results[0];
+    };
+  }
+
+  function findAllByQuery(instance) {
+    return function findAllFn(args) {var waitForOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return (0, _waitFor.default)(function () {return getAllByQuery(instance)(args);}, waitForOptions);
+    };
+  }
+
+  function findByQuery(instance) {
+    return function findFn(args) {var waitForOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return (0, _waitFor.default)(function () {return getByQuery(instance)(args);}, waitForOptions);
+    };
+  }
+
+  return {
+    getBy: getByQuery,
+    getAllBy: getAllByQuery,
+    queryBy: queryByQuery,
+    findBy: findByQuery,
+    findAllBy: findAllByQuery };
+
+}

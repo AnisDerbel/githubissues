@@ -1,0 +1,19 @@
+3be25773b8f0a09556c3d9a5e4bb6426
+
+
+
+
+
+
+
+
+
+function stackDelete(key) {
+  var data = this.__data__,
+  result = data['delete'](key);
+
+  this.size = data.size;
+  return result;
+}
+
+module.exports = stackDelete;

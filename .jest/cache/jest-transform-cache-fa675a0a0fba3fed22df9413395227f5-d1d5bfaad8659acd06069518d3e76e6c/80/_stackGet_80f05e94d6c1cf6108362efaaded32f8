@@ -1,0 +1,15 @@
+952894d121338d734c6dc49efff7b690
+
+
+
+
+
+
+
+
+
+function stackGet(key) {
+  return this.__data__.get(key);
+}
+
+module.exports = stackGet;

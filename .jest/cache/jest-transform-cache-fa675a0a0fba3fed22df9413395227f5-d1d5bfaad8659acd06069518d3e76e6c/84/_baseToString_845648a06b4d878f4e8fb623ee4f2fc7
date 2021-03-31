@@ -1,0 +1,38 @@
+5230e50b6b55094f2e11cded830acda2
+
+
+
+
+
+
+var INFINITY = 1 / 0;
+
+
+var symbolProto = require('./_Symbol') ? require('./_Symbol').prototype : undefined,
+symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+
+
+
+
+
+
+
+
+function baseToString(value) {
+
+  if (typeof value == 'string') {
+    return value;
+  }
+  if (require('./isArray')(value)) {
+
+    return require('./_arrayMap')(value, baseToString) + '';
+  }
+  if (require('./isSymbol')(value)) {
+    return symbolToString ? symbolToString.call(value) : '';
+  }
+  var result = value + '';
+  return result == '0' && 1 / value == -INFINITY ? '-0' : result;
+}
+
+module.exports = baseToString;

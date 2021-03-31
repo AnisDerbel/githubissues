@@ -1,0 +1,8 @@
+46de0e6e287a9e374b3b5b8621b2656e
+
+
+
+
+var Promise = require('./_getNative')(require('./_root'), 'Promise');
+
+module.exports = Promise;

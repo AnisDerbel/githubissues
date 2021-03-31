@@ -1,0 +1,15 @@
+631c970b3a29d6c25e815c05ddbcbec2
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _createFieldArray = require("@babel/runtime/helpers/interopRequireDefault")(require("./createFieldArray"));
+
+var _plain = require("@babel/runtime/helpers/interopRequireDefault")(require("./structure/plain"));
+
+var _default = (0, _createFieldArray["default"])(_plain["default"]);
+
+exports["default"] = _default;

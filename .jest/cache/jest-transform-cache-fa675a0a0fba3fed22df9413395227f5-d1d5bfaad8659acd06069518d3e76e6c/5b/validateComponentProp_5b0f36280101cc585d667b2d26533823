@@ -1,0 +1,18 @@
+fda68da0f9f6a51e910c26a9d955642c
+"use strict";
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+
+
+var validateComponentProp = function validateComponentProp(props, propName, componentName) {
+  if (!(0, require("react-is").isValidElementType)(props[propName])) {
+    return new Error('Invalid prop `' + propName + '` supplied to' + ' `' + componentName + '`.');
+  }
+
+  return null;
+};
+
+var _default = validateComponentProp;
+exports["default"] = _default;

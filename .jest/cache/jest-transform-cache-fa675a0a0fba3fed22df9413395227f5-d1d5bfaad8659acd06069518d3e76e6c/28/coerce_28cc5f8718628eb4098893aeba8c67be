@@ -1,0 +1,52 @@
+a0abdd4ebc7446bb2581b37e65140ea7
+
+
+
+
+var coerce = function coerce(version, options) {
+  if (version instanceof require('../classes/semver')) {
+    return version;
+  }
+
+  if (typeof version === 'number') {
+    version = String(version);
+  }
+
+  if (typeof version !== 'string') {
+    return null;
+  }
+
+  options = options || {};
+
+  var match = null;
+  if (!options.rtl) {
+    match = version.match(require('../internal/re').re[require('../internal/re').t.COERCE]);
+  } else {
+
+
+
+
+
+
+
+
+    var next;
+    while ((next = require('../internal/re').re[require('../internal/re').t.COERCERTL].exec(version)) && (
+    !match || match.index + match[0].length !== version.length))
+    {
+      if (!match ||
+      next.index + next[0].length !== match.index + match[0].length) {
+        match = next;
+      }
+      require('../internal/re').re[require('../internal/re').t.COERCERTL].lastIndex = next.index + next[1].length + next[2].length;
+    }
+
+    require('../internal/re').re[require('../internal/re').t.COERCERTL].lastIndex = -1;
+  }
+
+  if (match === null)
+  return null;
+
+  return require('./parse')(match[2] + "." + (match[3] || '0') + "." + (match[4] || '0'), options);
+};
+module.exports = coerce;

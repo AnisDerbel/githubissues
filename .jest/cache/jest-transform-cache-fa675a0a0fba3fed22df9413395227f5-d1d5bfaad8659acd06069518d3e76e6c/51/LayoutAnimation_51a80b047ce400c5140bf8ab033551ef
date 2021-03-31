@@ -1,0 +1,151 @@
+14e73d4b34dec09b16a8acd4141beae7
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+
+
+
+
+
+
+
+
+var _Platform = _interopRequireDefault(require("../Utilities/Platform"));
+
+
+
+
+
+
+
+function configureNext(
+config,
+onAnimationDidEnd,
+onAnimationDidFail)
+{
+  if (!_Platform.default.isTesting) {var _global;
+    if (require('../ReactNative/UIManager') != null && require('../ReactNative/UIManager').configureNextLayoutAnimation) {
+      require('../ReactNative/UIManager').configureNextLayoutAnimation(
+      config,
+      onAnimationDidEnd != null ? onAnimationDidEnd : function () {},
+      onAnimationDidFail != null ? onAnimationDidFail :
+      function () {});
+
+    }
+    var FabricUIManager = (_global = global) == null ? void 0 : _global.nativeFabricUIManager;
+    if (FabricUIManager != null && FabricUIManager.configureNextLayoutAnimation) {var _global2, _global2$nativeFabric;
+      (_global2 = global) == null ? void 0 : (_global2$nativeFabric = _global2.nativeFabricUIManager) == null ? void 0 : _global2$nativeFabric.configureNextLayoutAnimation(
+      config,
+      onAnimationDidEnd != null ? onAnimationDidEnd : function () {},
+      onAnimationDidFail != null ? onAnimationDidFail :
+      function () {});
+
+    }
+  }
+}
+
+function create(
+duration,
+type,
+property)
+{
+  return {
+    duration: duration,
+    create: { type: type, property: property },
+    update: { type: type },
+    delete: { type: type, property: property } };
+
+}
+
+var Presets = {
+  easeInEaseOut: create(
+  300,
+  'easeInEaseOut',
+  'opacity'),
+
+  linear: create(500, 'linear', 'opacity'),
+  spring: {
+    duration: 700,
+    create: {
+      type: 'linear',
+      property: 'opacity' },
+
+    update: {
+      type: 'spring',
+      springDamping: 0.4 },
+
+    delete: {
+      type: 'linear',
+      property: 'opacity' } } };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var LayoutAnimation = {
+
+
+
+
+
+
+
+
+
+
+
+
+
+  configureNext: configureNext,
+
+
+
+  create: create,
+  Types: Object.freeze({
+    spring: 'spring',
+    linear: 'linear',
+    easeInEaseOut: 'easeInEaseOut',
+    easeIn: 'easeIn',
+    easeOut: 'easeOut',
+    keyboard: 'keyboard' }),
+
+  Properties: Object.freeze({
+    opacity: 'opacity',
+    scaleX: 'scaleX',
+    scaleY: 'scaleY',
+    scaleXY: 'scaleXY' }),
+
+  checkConfig: function checkConfig() {
+    console.error('LayoutAnimation.checkConfig(...) has been disabled.');
+  },
+  Presets: Presets,
+  easeInEaseOut: configureNext.bind(null, Presets.easeInEaseOut),
+
+
+  linear: configureNext.bind(null, Presets.linear),
+
+
+  spring: configureNext.bind(null, Presets.spring) };
+
+
+
+
+module.exports = LayoutAnimation;

@@ -1,0 +1,22 @@
+e4558f07d13e4bf4064945bf1146981d
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _isEvent = require("@babel/runtime/helpers/interopRequireDefault")(require("./isEvent"));
+
+var silenceEvent = function silenceEvent(event) {
+  var is = (0, _isEvent["default"])(event);
+
+  if (is) {
+    event.preventDefault();
+  }
+
+  return is;
+};
+
+var _default = silenceEvent;
+exports["default"] = _default;

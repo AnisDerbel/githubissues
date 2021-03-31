@@ -1,0 +1,205 @@
+6589c8d4a1f5f94f2e39be3d991fac7d
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.createAxiosInstance = exports.BASE_URL = void 0;
+
+var _axios = _interopRequireDefault(require("axios"));
+
+var _interceptors = require("./interceptors/interceptors");
+
+function cov_2i9qrl4wks() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/axios.ts";
+  var hash = "3978c9c3c52b0c98a5fa93a76866e7dcf246ef19";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/axios.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 24
+        },
+        end: {
+          line: 3,
+          column: 48
+        }
+      },
+      "1": {
+        start: {
+          line: 5,
+          column: 35
+        },
+        end: {
+          line: 13,
+          column: 4
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 2
+        },
+        end: {
+          line: 13,
+          column: 4
+        }
+      },
+      "3": {
+        start: {
+          line: 9,
+          column: 40
+        },
+        end: {
+          line: 9,
+          column: 69
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 5,
+            column: 35
+          },
+          end: {
+            line: 5,
+            column: 36
+          }
+        },
+        loc: {
+          start: {
+            line: 6,
+            column: 2
+          },
+          end: {
+            line: 13,
+            column: 4
+          }
+        },
+        line: 6
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 9,
+            column: 20
+          },
+          end: {
+            line: 9,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 9,
+            column: 40
+          },
+          end: {
+            line: 9,
+            column: 69
+          }
+        },
+        line: 9
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 9,
+            column: 40
+          },
+          end: {
+            line: 9,
+            column: 69
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 9,
+            column: 40
+          },
+          end: {
+            line: 9,
+            column: 53
+          }
+        }, {
+          start: {
+            line: 9,
+            column: 57
+          },
+          end: {
+            line: 9,
+            column: 69
+          }
+        }],
+        line: 9
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "3978c9c3c52b0c98a5fa93a76866e7dcf246ef19"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_2i9qrl4wks = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2i9qrl4wks();
+var BASE_URL = (cov_2i9qrl4wks().s[0]++, 'https://api.github.com');
+exports.BASE_URL = BASE_URL;
+cov_2i9qrl4wks().s[1]++;
+
+var createAxiosInstance = function createAxiosInstance() {
+  cov_2i9qrl4wks().f[0]++;
+  cov_2i9qrl4wks().s[2]++;
+  return _axios.default.create({
+    baseURL: BASE_URL,
+    responseType: 'json',
+    validateStatus: function validateStatus(status) {
+      cov_2i9qrl4wks().f[1]++;
+      cov_2i9qrl4wks().s[3]++;
+      return (cov_2i9qrl4wks().b[0][0]++, status >= 200) && (cov_2i9qrl4wks().b[0][1]++, status < 400);
+    },
+    headers: {
+      Accept: 'application/vnd.github.v3+json'
+    }
+  });
+};
+
+exports.createAxiosInstance = createAxiosInstance;
+
+var _default = (0, _interceptors.interceptors)(createAxiosInstance());
+
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImF4aW9zLnRzIl0sIm5hbWVzIjpbIkJBU0VfVVJMIiwiY3JlYXRlQXhpb3NJbnN0YW5jZSIsImNyZWF0ZSIsImJhc2VVUkwiLCJyZXNwb25zZVR5cGUiLCJ2YWxpZGF0ZVN0YXR1cyIsInN0YXR1cyIsImhlYWRlcnMiLCJBY2NlcHQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQTs7QUFDQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQ08sSUFBTUEsUUFBUSw2QkFBRyx3QkFBSCxDQUFkOzs7O0FBRUEsSUFBTUMsbUJBQW1CLEdBQUcsU0FBdEJBLG1CQUFzQixHQUNqQztBQUFBO0FBQUE7QUFBQSx3QkFBTUMsTUFBTixDQUFhO0FBQ1hDLElBQUFBLE9BQU8sRUFBRUgsUUFERTtBQUVYSSxJQUFBQSxZQUFZLEVBQUUsTUFGSDtBQUdYQyxJQUFBQSxjQUFjLEVBQUUsd0JBQUNDLE1BQUQsRUFBb0I7QUFBQTtBQUFBO0FBQUEsMENBQUFBLE1BQU0sSUFBSSxHQUFWLGtDQUFpQkEsTUFBTSxHQUFHLEdBQTFCO0FBQTZCLEtBSHREO0FBSVhDLElBQUFBLE9BQU8sRUFBRTtBQUNQQyxNQUFBQSxNQUFNLEVBQUU7QUFERDtBQUpFLEdBQWI7QUFPRSxDQVJHOzs7O2VBVVEsZ0NBQWFQLG1CQUFtQixFQUFoQyxDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGF4aW9zIGZyb20gJ2F4aW9zJztcbmltcG9ydCB7aW50ZXJjZXB0b3JzfSBmcm9tICcuL2ludGVyY2VwdG9ycy9pbnRlcmNlcHRvcnMnO1xuZXhwb3J0IGNvbnN0IEJBU0VfVVJMID0gJ2h0dHBzOi8vYXBpLmdpdGh1Yi5jb20nO1xuXG5leHBvcnQgY29uc3QgY3JlYXRlQXhpb3NJbnN0YW5jZSA9ICgpID0+XG4gIGF4aW9zLmNyZWF0ZSh7XG4gICAgYmFzZVVSTDogQkFTRV9VUkwsXG4gICAgcmVzcG9uc2VUeXBlOiAnanNvbicsXG4gICAgdmFsaWRhdGVTdGF0dXM6IChzdGF0dXM6IG51bWJlcikgPT4gc3RhdHVzID49IDIwMCAmJiBzdGF0dXMgPCA0MDAsXG4gICAgaGVhZGVyczoge1xuICAgICAgQWNjZXB0OiAnYXBwbGljYXRpb24vdm5kLmdpdGh1Yi52Mytqc29uJyxcbiAgICB9LFxuICB9KTtcblxuZXhwb3J0IGRlZmF1bHQgaW50ZXJjZXB0b3JzKGNyZWF0ZUF4aW9zSW5zdGFuY2UoKSk7XG4iXX0=

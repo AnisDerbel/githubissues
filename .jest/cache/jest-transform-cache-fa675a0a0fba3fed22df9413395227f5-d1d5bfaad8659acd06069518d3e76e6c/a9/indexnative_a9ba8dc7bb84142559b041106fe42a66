@@ -1,0 +1,216 @@
+661f84f3efdf2d7eb4cd79833a640e9e
+"use strict";function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = require("@babel/runtime/helpers/getPrototypeOf")(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = require("@babel/runtime/helpers/getPrototypeOf")(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return require("@babel/runtime/helpers/possibleConstructorReturn")(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}
+
+var _react = _interopRequireDefault(require("react"));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}
+
+function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var ENABLE_SCREENS = false;
+
+function enableScreens() {var shouldEnableScreens = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+  ENABLE_SCREENS = shouldEnableScreens;
+
+  if (ENABLE_SCREENS && !require("react-native").UIManager.getViewManagerConfig('RNSScreen')) {
+    console.error("Screen native module hasn't been linked. Please check the react-native-screens README for more details");
+  }
+}
+
+
+var shouldUseActivityState = true;
+
+function screensEnabled() {
+  return ENABLE_SCREENS;
+}
+
+
+
+var NativeScreenValue;
+var NativeScreenContainerValue;
+var NativeScreenStack;
+var NativeScreenStackHeaderConfig;
+var NativeScreenStackHeaderSubview;
+var AnimatedNativeScreen;
+var ScreensNativeModules = {
+  get NativeScreen() {
+    NativeScreenValue = NativeScreenValue || (0, require("react-native").requireNativeComponent)('RNSScreen');
+    return NativeScreenValue;
+  },
+
+  get NativeScreenContainer() {
+    NativeScreenContainerValue = NativeScreenContainerValue || (0, require("react-native").requireNativeComponent)('RNSScreenContainer');
+    return NativeScreenContainerValue;
+  },
+
+  get NativeScreenStack() {
+    NativeScreenStack = NativeScreenStack || (0, require("react-native").requireNativeComponent)('RNSScreenStack');
+    return NativeScreenStack;
+  },
+
+  get NativeScreenStackHeaderConfig() {
+    NativeScreenStackHeaderConfig = NativeScreenStackHeaderConfig || (0, require("react-native").requireNativeComponent)('RNSScreenStackHeaderConfig');
+    return NativeScreenStackHeaderConfig;
+  },
+
+  get NativeScreenStackHeaderSubview() {
+    NativeScreenStackHeaderSubview = NativeScreenStackHeaderSubview || (0, require("react-native").requireNativeComponent)('RNSScreenStackHeaderSubview');
+    return NativeScreenStackHeaderSubview;
+  } };var
+
+
+
+Screen = function (_react$default$Compon) {require("@babel/runtime/helpers/inherits")(Screen, _react$default$Compon);var _super = _createSuper(Screen);
+  function Screen() {var _this;require("@babel/runtime/helpers/classCallCheck")(this, Screen);for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "ref", null);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "setRef", function (ref) {
+      var _this$props$onCompone, _this$props;
+
+      _this.ref = ref;
+      (_this$props$onCompone = (_this$props = _this.props).onComponentRef) === null || _this$props$onCompone === void 0 ? void 0 : _this$props$onCompone.call(_this$props, ref);
+    });return _this;
+  }require("@babel/runtime/helpers/createClass")(Screen, [{ key: "setNativeProps", value:
+
+    function setNativeProps(props) {
+      var _this$ref;
+
+      (_this$ref = this.ref) === null || _this$ref === void 0 ? void 0 : _this$ref.setNativeProps(props);
+    } }, { key: "render", value:
+
+    function render() {var _this$props$enabled =
+
+
+      this.props.enabled,enabled = _this$props$enabled === void 0 ? true : _this$props$enabled;
+
+      if (!ENABLE_SCREENS || !enabled) {var _this$props2 =
+
+
+
+
+
+
+
+
+
+
+        this.props,active = _this$props2.active,_enabled = _this$props2.enabled,onComponentRef = _this$props2.onComponentRef,rest = require("@babel/runtime/helpers/objectWithoutProperties")(_this$props2, ["active", "enabled", "onComponentRef"]);
+        return _react.default.createElement(require("react-native").Animated.View, _extends({}, rest, {
+          ref: this.setRef }));
+
+      } else {
+        AnimatedNativeScreen = AnimatedNativeScreen || require("react-native").Animated.createAnimatedComponent(ScreensNativeModules.NativeScreen);var _this$props3 =
+
+
+
+
+
+
+
+        this.props,_enabled2 = _this$props3.enabled,_active = _this$props3.active,activityState = _this$props3.activityState,_rest = require("@babel/runtime/helpers/objectWithoutProperties")(_this$props3, ["enabled", "active", "activityState"]);
+
+        if (_active !== undefined && activityState === undefined) {
+          console.warn('It appears that you are using old version of react-navigation library. Please update @react-navigation/bottom-tabs, @react-navigation/stack and @react-navigation/drawer to version 5.10.0 or above to take full advantage of new functionality added to react-native-screens');
+          activityState = _active !== 0 ? 2 : 0;
+        }
+
+        return _react.default.createElement(AnimatedNativeScreen, _extends({}, _rest, {
+          activityState: activityState,
+          ref: this.setRef }));
+
+      }
+    } }]);return Screen;}(_react.default.Component);var
+
+
+
+ScreenContainer = function (_react$default$Compon2) {require("@babel/runtime/helpers/inherits")(ScreenContainer, _react$default$Compon2);var _super2 = _createSuper(ScreenContainer);function ScreenContainer() {require("@babel/runtime/helpers/classCallCheck")(this, ScreenContainer);return _super2.apply(this, arguments);}require("@babel/runtime/helpers/createClass")(ScreenContainer, [{ key: "render", value:
+    function render() {var _this$props4 =
+
+
+
+      this.props,_this$props4$enabled = _this$props4.enabled,enabled = _this$props4$enabled === void 0 ? true : _this$props4$enabled,rest = require("@babel/runtime/helpers/objectWithoutProperties")(_this$props4, ["enabled"]);
+
+      if (!ENABLE_SCREENS || !enabled) {
+        return _react.default.createElement(require("react-native").View, rest);
+      } else {
+        return _react.default.createElement(ScreensNativeModules.NativeScreenContainer, this.props);
+      }
+    } }]);return ScreenContainer;}(_react.default.Component);
+
+
+
+var styles = require("react-native").StyleSheet.create({
+  headerSubview: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center' } });
+
+
+
+var ScreenStackHeaderBackButtonImage = function ScreenStackHeaderBackButtonImage(props) {return _react.default.createElement(ScreensNativeModules.NativeScreenStackHeaderSubview, {
+    type: "back",
+    style: styles.headerSubview },
+  _react.default.createElement(require("react-native").Image, _extends({
+    resizeMode: "center",
+    fadeDuration: 0 },
+  props)));};
+
+var ScreenStackHeaderRightView = function ScreenStackHeaderRightView(props) {return _react.default.createElement(ScreensNativeModules.NativeScreenStackHeaderSubview, _extends({}, props, {
+    type: "right",
+    style: styles.headerSubview }));};
+
+
+var ScreenStackHeaderLeftView = function ScreenStackHeaderLeftView(props) {return _react.default.createElement(ScreensNativeModules.NativeScreenStackHeaderSubview, _extends({}, props, {
+    type: "left",
+    style: styles.headerSubview }));};
+
+
+var ScreenStackHeaderCenterView = function ScreenStackHeaderCenterView(props) {return _react.default.createElement(ScreensNativeModules.NativeScreenStackHeaderSubview, _extends({}, props, {
+    type: "center",
+    style: styles.headerSubview }));};
+
+
+module.exports = {
+
+
+  Screen: Screen,
+  ScreenContainer: ScreenContainer,
+
+  get NativeScreen() {
+    return ScreensNativeModules.NativeScreen;
+  },
+
+  get NativeScreenContainer() {
+    return ScreensNativeModules.NativeScreenContainer;
+  },
+
+  get ScreenStack() {
+    return ScreensNativeModules.NativeScreenStack;
+  },
+
+  get ScreenStackHeaderConfig() {
+    return ScreensNativeModules.NativeScreenStackHeaderConfig;
+  },
+
+  get ScreenStackHeaderSubview() {
+    return ScreensNativeModules.NativeScreenStackHeaderSubview;
+  },
+
+
+
+  ScreenStackHeaderBackButtonImage: ScreenStackHeaderBackButtonImage,
+  ScreenStackHeaderRightView: ScreenStackHeaderRightView,
+  ScreenStackHeaderLeftView: ScreenStackHeaderLeftView,
+  ScreenStackHeaderCenterView: ScreenStackHeaderCenterView,
+  enableScreens: enableScreens,
+  screensEnabled: screensEnabled,
+  shouldUseActivityState: shouldUseActivityState };

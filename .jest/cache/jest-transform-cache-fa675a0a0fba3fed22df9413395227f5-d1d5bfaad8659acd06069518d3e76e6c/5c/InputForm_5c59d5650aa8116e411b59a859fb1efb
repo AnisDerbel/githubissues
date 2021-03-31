@@ -1,0 +1,662 @@
+65feb0b7e77d753f2ae721ac88e272cb
+"use strict";
+
+/* istanbul ignore next */
+function cov_4ozf2bibw() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/components/InputForm.tsx";
+  var hash = "78991dae8e8d90dca264a6c6c7df571b126d5b34";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/components/InputForm.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "1": {
+        start: {
+          line: 7,
+          column: 14
+        },
+        end: {
+          line: 7,
+          column: 30
+        }
+      },
+      "2": {
+        start: {
+          line: 9,
+          column: 14
+        },
+        end: {
+          line: 9,
+          column: 52
+        }
+      },
+      "3": {
+        start: {
+          line: 11,
+          column: 21
+        },
+        end: {
+          line: 11,
+          column: 44
+        }
+      },
+      "4": {
+        start: {
+          line: 13,
+          column: 20
+        },
+        end: {
+          line: 13,
+          column: 42
+        }
+      },
+      "5": {
+        start: {
+          line: 15,
+          column: 19
+        },
+        end: {
+          line: 15,
+          column: 40
+        }
+      },
+      "6": {
+        start: {
+          line: 17,
+          column: 27
+        },
+        end: {
+          line: 17,
+          column: 56
+        }
+      },
+      "7": {
+        start: {
+          line: 19,
+          column: 14
+        },
+        end: {
+          line: 19,
+          column: 57
+        }
+      },
+      "8": {
+        start: {
+          line: 21,
+          column: 17
+        },
+        end: {
+          line: 21,
+          column: 39
+        }
+      },
+      "9": {
+        start: {
+          line: 23,
+          column: 16
+        },
+        end: {
+          line: 23,
+          column: 48
+        }
+      },
+      "10": {
+        start: {
+          line: 25,
+          column: 16
+        },
+        end: {
+          line: 67,
+          column: 1
+        }
+      },
+      "11": {
+        start: {
+          line: 26,
+          column: 17
+        },
+        end: {
+          line: 26,
+          column: 44
+        }
+      },
+      "12": {
+        start: {
+          line: 28,
+          column: 30
+        },
+        end: {
+          line: 30,
+          column: 4
+        }
+      },
+      "13": {
+        start: {
+          line: 29,
+          column: 4
+        },
+        end: {
+          line: 29,
+          column: 22
+        }
+      },
+      "14": {
+        start: {
+          line: 31,
+          column: 18
+        },
+        end: {
+          line: 31,
+          column: 49
+        }
+      },
+      "15": {
+        start: {
+          line: 32,
+          column: 14
+        },
+        end: {
+          line: 32,
+          column: 41
+        }
+      },
+      "16": {
+        start: {
+          line: 34,
+          column: 14
+        },
+        end: {
+          line: 34,
+          column: 45
+        }
+      },
+      "17": {
+        start: {
+          line: 35,
+          column: 21
+        },
+        end: {
+          line: 35,
+          column: 39
+        }
+      },
+      "18": {
+        start: {
+          line: 36,
+          column: 18
+        },
+        end: {
+          line: 36,
+          column: 33
+        }
+      },
+      "19": {
+        start: {
+          line: 38,
+          column: 17
+        },
+        end: {
+          line: 43,
+          column: 3
+        }
+      },
+      "20": {
+        start: {
+          line: 39,
+          column: 4
+        },
+        end: {
+          line: 42,
+          column: 8
+        }
+      },
+      "21": {
+        start: {
+          line: 45,
+          column: 2
+        },
+        end: {
+          line: 47,
+          column: 36
+        }
+      },
+      "22": {
+        start: {
+          line: 46,
+          column: 4
+        },
+        end: {
+          line: 46,
+          column: 51
+        }
+      },
+      "23": {
+        start: {
+          line: 46,
+          column: 39
+        },
+        end: {
+          line: 46,
+          column: 51
+        }
+      },
+      "24": {
+        start: {
+          line: 48,
+          column: 2
+        },
+        end: {
+          line: 66,
+          column: 20
+        }
+      },
+      "25": {
+        start: {
+          line: 69,
+          column: 0
+        },
+        end: {
+          line: 72,
+          column: 14
+        }
+      },
+      "26": {
+        start: {
+          line: 73,
+          column: 13
+        },
+        end: {
+          line: 84,
+          column: 2
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "InputForm",
+        decl: {
+          start: {
+            line: 25,
+            column: 25
+          },
+          end: {
+            line: 25,
+            column: 34
+          }
+        },
+        loc: {
+          start: {
+            line: 25,
+            column: 42
+          },
+          end: {
+            line: 67,
+            column: 1
+          }
+        },
+        line: 25
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 28,
+            column: 56
+          },
+          end: {
+            line: 28,
+            column: 57
+          }
+        },
+        loc: {
+          start: {
+            line: 28,
+            column: 73
+          },
+          end: {
+            line: 30,
+            column: 3
+          }
+        },
+        line: 28
+      },
+      "2": {
+        name: "onSubmit",
+        decl: {
+          start: {
+            line: 38,
+            column: 26
+          },
+          end: {
+            line: 38,
+            column: 34
+          }
+        },
+        loc: {
+          start: {
+            line: 38,
+            column: 37
+          },
+          end: {
+            line: 43,
+            column: 3
+          }
+        },
+        line: 38
+      },
+      "3": {
+        name: "(anonymous_3)",
+        decl: {
+          start: {
+            line: 45,
+            column: 20
+          },
+          end: {
+            line: 45,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 45,
+            column: 32
+          },
+          end: {
+            line: 47,
+            column: 3
+          }
+        },
+        line: 45
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 46,
+            column: 4
+          },
+          end: {
+            line: 46,
+            column: 51
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 46,
+            column: 4
+          },
+          end: {
+            line: 46,
+            column: 51
+          }
+        }, {
+          start: {
+            line: 46,
+            column: 4
+          },
+          end: {
+            line: 46,
+            column: 51
+          }
+        }],
+        line: 46
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 46,
+            column: 8
+          },
+          end: {
+            line: 46,
+            column: 37
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 46,
+            column: 8
+          },
+          end: {
+            line: 46,
+            column: 18
+          }
+        }, {
+          start: {
+            line: 46,
+            column: 22
+          },
+          end: {
+            line: 46,
+            column: 37
+          }
+        }],
+        line: 46
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0,
+      "25": 0,
+      "26": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0]
+    },
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/components/InputForm.tsx"],
+      names: [],
+      mappings: "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",
+      sourcesContent: ["import React, { useEffect } from 'react';\nimport { StyleSheet, View } from 'react-native';\nimport { useDispatch, useSelector } from 'react-redux';\nimport { reduxForm, Field, InjectedFormProps } from 'redux-form';\nimport { Button, useTheme } from 'react-native-paper';\nimport Input from './Input';\nimport { validate } from '../validate';\nimport { IApplicationState } from '../redux/appReducer';\nimport { repoActions } from '../redux/repo/actions';\n\nexport interface IFormState {\n  repository: string;\n  organization: string;\n}\n\ninterface IProps {\n  onSuccess: () => void;\n}\nconst InputForm = (props: InjectedFormProps<IFormState> & IProps) => {\n  const dispatch = useDispatch();\n  const { isLoading, error } = useSelector((state: IApplicationState) => state.repo);\n  const theme = useTheme();\n  const { handleSubmit, onSuccess } = props;\n  const onSubmit = () => {\n    dispatch(repoActions.getRepoIssues({ page: 1, reset: true }));\n  };\n\n  useEffect(() => {\n    if (!isLoading && error === false) onSuccess();\n  }, [isLoading, error, onSuccess]);\n\n  return (\n    <View>\n      <Field\n        errorColor={theme.colors.error}\n        maxLength={60}\n        label=\"organization*\"\n        name=\"organization\"\n        component={Input}\n      />\n      <Field\n        errorColor={theme.colors.error}\n        maxLength={100}\n        label=\"repository*\"\n        name=\"repository\"\n        component={Input}\n      />\n      <Button\n        disabled={isLoading}\n        loading={isLoading}\n        onPress={handleSubmit(onSubmit)}\n        style={styles.button}\n        mode=\"contained\"\n      >\n        get issues\n      </Button>\n    </View>\n  );\n};\n\nexport default reduxForm<IFormState, IProps>({\n  form: 'form',\n  validate,\n})(InputForm as any);\n\nconst styles = StyleSheet.create({\n  container: {\n    margin: 10,\n  },\n  button: {\n    marginTop: 20,\n  },\n  title: {\n    fontSize: 20,\n    marginVertical: 20,\n  },\n});\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "78991dae8e8d90dca264a6c6c7df571b126d5b34"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_4ozf2bibw = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_4ozf2bibw();
+cov_4ozf2bibw().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tslib_1 =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[1]++, require("tslib"));
+var react_1 =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[2]++, tslib_1.__importStar(require("react")));
+var react_native_1 =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[3]++, require("react-native"));
+var react_redux_1 =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[4]++, require("react-redux"));
+var redux_form_1 =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[5]++, require("redux-form"));
+var react_native_paper_1 =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[6]++, require("react-native-paper"));
+var Input_1 =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[7]++, tslib_1.__importDefault(require("./Input")));
+var validate_1 =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[8]++, require("../validate"));
+var actions_1 =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[9]++, require("../redux/repo/actions"));
+
+/* istanbul ignore next */
+cov_4ozf2bibw().s[10]++;
+
+var InputForm = function InputForm(props) {
+  /* istanbul ignore next */
+  cov_4ozf2bibw().f[0]++;
+  var dispatch =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[11]++, react_redux_1.useDispatch());
+
+  var _react_redux_1$useSel =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[12]++, react_redux_1.useSelector(function (state) {
+    /* istanbul ignore next */
+    cov_4ozf2bibw().f[1]++;
+    cov_4ozf2bibw().s[13]++;
+    return state.repo;
+  })),
+      isLoading =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[14]++, _react_redux_1$useSel.isLoading),
+      error =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[15]++, _react_redux_1$useSel.error);
+
+  var theme =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[16]++, react_native_paper_1.useTheme());
+  var handleSubmit =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[17]++, props.handleSubmit),
+      onSuccess =
+  /* istanbul ignore next */
+  (cov_4ozf2bibw().s[18]++, props.onSuccess);
+
+  /* istanbul ignore next */
+  cov_4ozf2bibw().s[19]++;
+
+  var onSubmit = function onSubmit() {
+    /* istanbul ignore next */
+    cov_4ozf2bibw().f[2]++;
+    cov_4ozf2bibw().s[20]++;
+    dispatch(actions_1.repoActions.getRepoIssues({
+      page: 1,
+      reset: true
+    }));
+  };
+
+  /* istanbul ignore next */
+  cov_4ozf2bibw().s[21]++;
+  react_1.useEffect(function () {
+    /* istanbul ignore next */
+    cov_4ozf2bibw().f[3]++;
+    cov_4ozf2bibw().s[22]++;
+
+    if (
+    /* istanbul ignore next */
+    (cov_4ozf2bibw().b[1][0]++, !isLoading) &&
+    /* istanbul ignore next */
+    (cov_4ozf2bibw().b[1][1]++, error === false)) {
+      /* istanbul ignore next */
+      cov_4ozf2bibw().b[0][0]++;
+      cov_4ozf2bibw().s[23]++;
+      onSuccess();
+    } else
+    /* istanbul ignore next */
+    {
+      cov_4ozf2bibw().b[0][1]++;
+    }
+  }, [isLoading, error, onSuccess]);
+
+  /* istanbul ignore next */
+  cov_4ozf2bibw().s[24]++;
+  return react_1.default.createElement(react_native_1.View, null, react_1.default.createElement(redux_form_1.Field, {
+    errorColor: theme.colors.error,
+    maxLength: 60,
+    label: "organization*",
+    name: "organization",
+    component: Input_1.default
+  }), react_1.default.createElement(redux_form_1.Field, {
+    errorColor: theme.colors.error,
+    maxLength: 100,
+    label: "repository*",
+    name: "repository",
+    component: Input_1.default
+  }), react_1.default.createElement(react_native_paper_1.Button, {
+    disabled: isLoading,
+    loading: isLoading,
+    onPress: handleSubmit(onSubmit),
+    style: styles.button,
+    mode: "contained"
+  }, "get issues"));
+};
+
+/* istanbul ignore next */
+cov_4ozf2bibw().s[25]++;
+exports.default = redux_form_1.reduxForm({
+  form: 'form',
+  validate: validate_1.validate
+})(InputForm);
+var styles =
+/* istanbul ignore next */
+(cov_4ozf2bibw().s[26]++, react_native_1.StyleSheet.create({
+  container: {
+    margin: 10
+  },
+  button: {
+    marginTop: 20
+  },
+  title: {
+    fontSize: 20,
+    marginVertical: 20
+  }
+}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL2NvbXBvbmVudHMvSW5wdXRGb3JtLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLElBQUEsT0FBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLFlBQUEsQ0FBQSxPQUFBLENBQUEsT0FBQSxDQUFBLENBQUEsQ0FBQTtBQUNBLElBQUEsY0FBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLGNBQUEsQ0FBQSxDQUFBO0FBQ0EsSUFBQSxhQUFBO0FBQUE7QUFBQSx5QkFBQSxPQUFBLENBQUEsYUFBQSxDQUFBLENBQUE7QUFDQSxJQUFBLFlBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxZQUFBLENBQUEsQ0FBQTtBQUNBLElBQUEsb0JBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxvQkFBQSxDQUFBLENBQUE7QUFDQSxJQUFBLE9BQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLFNBQUEsQ0FBQSxDQUFBLENBQUE7QUFDQSxJQUFBLFVBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUEsQ0FBQTtBQUVBLElBQUEsU0FBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLHVCQUFBLENBQUEsQ0FBQTs7Ozs7QUFVQSxJQUFNLFNBQVMsR0FBRyxTQUFaLFNBQVksQ0FBQSxLQUFBLEVBQWtEO0FBQUE7QUFBQTtBQUNsRSxNQUFNLFFBQVE7QUFBQTtBQUFBLDRCQUFHLGFBQUEsQ0FBakIsV0FBaUIsRUFBSCxDQUFkOztBQURrRSxNQUFBLHFCQUFBO0FBQUE7QUFBQSw0QkFFckMsYUFBQSxDQUFBLFdBQUEsQ0FBWSxVQUFBLEtBQUEsRUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBQThCLEtBQUssQ0FBbkMsSUFBQTtBQUZ5QixHQUVyQyxDQUZxQyxDQUFBO0FBQUEsTUFFMUQsU0FGMEQ7QUFBQTtBQUFBLDRCQUFBLHFCQUFBLENBQUEsU0FBQSxDQUFBO0FBQUEsTUFFL0MsS0FGK0M7QUFBQTtBQUFBLDRCQUFBLHFCQUFBLENBQUEsS0FBQSxDQUFBOztBQUdsRSxNQUFNLEtBQUs7QUFBQTtBQUFBLDRCQUFHLG9CQUFBLENBQWQsUUFBYyxFQUFILENBQVg7QUFIa0UsTUFJMUQsWUFKMEQ7QUFBQTtBQUFBLDRCQUk5QixLQUo4QixDQUFBLFlBQUEsQ0FBQTtBQUFBLE1BSTVDLFNBSjRDO0FBQUE7QUFBQSw0QkFJOUIsS0FKOEIsQ0FBQSxTQUFBLENBQUE7O0FBQUE7QUFBQTs7QUFLbEUsTUFBTSxRQUFRLEdBQUcsU0FBWCxRQUFXLEdBQUs7QUFBQTtBQUFBO0FBQUE7QUFDcEIsSUFBQSxRQUFRLENBQUMsU0FBQSxDQUFBLFdBQUEsQ0FBQSxhQUFBLENBQTBCO0FBQUUsTUFBQSxJQUFJLEVBQU4sQ0FBQTtBQUFXLE1BQUEsS0FBSyxFQUFFO0FBQWxCLEtBQTFCLENBQUQsQ0FBUjtBQURGLEdBQUE7O0FBTGtFO0FBQUE7QUFTbEUsRUFBQSxPQUFBLENBQUEsU0FBQSxDQUFVLFlBQUs7QUFBQTtBQUFBO0FBQUE7O0FBQ2I7QUFBSTtBQUFBLGlDQUFBLFNBQUE7QUFBQTtBQUFBLGdDQUFjLEtBQUssS0FBdkIsS0FBSSxDQUFKLEVBQW1DO0FBQUE7QUFBQTtBQUFBO0FBQUEsTUFBQSxTQUFTO0FBQUEsS0FBNUM7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQURGLEdBQUEsRUFFRyxDQUFBLFNBQUEsRUFBQSxLQUFBLEVBRkgsU0FFRyxDQUZIOztBQVRrRTtBQUFBO0FBYWxFLFNBQ0UsT0FBQSxDQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsY0FBQSxDQUFELElBQUEsRUFBQSxJQUFBLEVBQ0UsT0FBQSxDQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsWUFBQSxDQUFELEtBQUEsRUFBTTtBQUNKLElBQUEsVUFBVSxFQUFFLEtBQUssQ0FBTCxNQUFBLENBRFIsS0FBQTtBQUVKLElBQUEsU0FBUyxFQUZMLEVBQUE7QUFHSixJQUFBLEtBQUssRUFIRCxlQUFBO0FBSUosSUFBQSxJQUFJLEVBSkEsY0FBQTtBQUtKLElBQUEsU0FBUyxFQUFFLE9BQUEsQ0FBQTtBQUxQLEdBQU4sQ0FERixFQVFFLE9BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLFlBQUEsQ0FBRCxLQUFBLEVBQU07QUFDSixJQUFBLFVBQVUsRUFBRSxLQUFLLENBQUwsTUFBQSxDQURSLEtBQUE7QUFFSixJQUFBLFNBQVMsRUFGTCxHQUFBO0FBR0osSUFBQSxLQUFLLEVBSEQsYUFBQTtBQUlKLElBQUEsSUFBSSxFQUpBLFlBQUE7QUFLSixJQUFBLFNBQVMsRUFBRSxPQUFBLENBQUE7QUFMUCxHQUFOLENBUkYsRUFlRSxPQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxvQkFBQSxDQUFELE1BQUEsRUFBTztBQUNMLElBQUEsUUFBUSxFQURILFNBQUE7QUFFTCxJQUFBLE9BQU8sRUFGRixTQUFBO0FBR0wsSUFBQSxPQUFPLEVBQUUsWUFBWSxDQUhoQixRQUdnQixDQUhoQjtBQUlMLElBQUEsS0FBSyxFQUFFLE1BQU0sQ0FKUixNQUFBO0FBS0wsSUFBQSxJQUFJLEVBQUM7QUFMQSxHQUFQLEVBaEJKLFlBZ0JJLENBZkYsQ0FERjtBQWJGLENBQUE7Ozs7QUEwQ0EsT0FBQSxDQUFBLE9BQUEsR0FBZSxZQUFBLENBQUEsU0FBQSxDQUE4QjtBQUMzQyxFQUFBLElBQUksRUFEdUMsTUFBQTtBQUUzQyxFQUFBLFFBQVEsRUFBUixVQUFBLENBQUE7QUFGMkMsQ0FBOUIsRUFBZixTQUFlLENBQWY7QUFLQSxJQUFNLE1BQU07QUFBQTtBQUFBLDBCQUFHLGNBQUEsQ0FBQSxVQUFBLENBQUEsTUFBQSxDQUFrQjtBQUMvQixFQUFBLFNBQVMsRUFBRTtBQUNULElBQUEsTUFBTSxFQUFFO0FBREMsR0FEb0I7QUFJL0IsRUFBQSxNQUFNLEVBQUU7QUFDTixJQUFBLFNBQVMsRUFBRTtBQURMLEdBSnVCO0FBTy9CLEVBQUEsS0FBSyxFQUFFO0FBQ0wsSUFBQSxRQUFRLEVBREgsRUFBQTtBQUVMLElBQUEsY0FBYyxFQUFFO0FBRlg7QUFQd0IsQ0FBbEIsQ0FBSCxDQUFaIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IFN0eWxlU2hlZXQsIFZpZXcgfSBmcm9tICdyZWFjdC1uYXRpdmUnO1xuaW1wb3J0IHsgdXNlRGlzcGF0Y2gsIHVzZVNlbGVjdG9yIH0gZnJvbSAncmVhY3QtcmVkdXgnO1xuaW1wb3J0IHsgcmVkdXhGb3JtLCBGaWVsZCwgSW5qZWN0ZWRGb3JtUHJvcHMgfSBmcm9tICdyZWR1eC1mb3JtJztcbmltcG9ydCB7IEJ1dHRvbiwgdXNlVGhlbWUgfSBmcm9tICdyZWFjdC1uYXRpdmUtcGFwZXInO1xuaW1wb3J0IElucHV0IGZyb20gJy4vSW5wdXQnO1xuaW1wb3J0IHsgdmFsaWRhdGUgfSBmcm9tICcuLi92YWxpZGF0ZSc7XG5pbXBvcnQgeyBJQXBwbGljYXRpb25TdGF0ZSB9IGZyb20gJy4uL3JlZHV4L2FwcFJlZHVjZXInO1xuaW1wb3J0IHsgcmVwb0FjdGlvbnMgfSBmcm9tICcuLi9yZWR1eC9yZXBvL2FjdGlvbnMnO1xuXG5leHBvcnQgaW50ZXJmYWNlIElGb3JtU3RhdGUge1xuICByZXBvc2l0b3J5OiBzdHJpbmc7XG4gIG9yZ2FuaXphdGlvbjogc3RyaW5nO1xufVxuXG5pbnRlcmZhY2UgSVByb3BzIHtcbiAgb25TdWNjZXNzOiAoKSA9PiB2b2lkO1xufVxuY29uc3QgSW5wdXRGb3JtID0gKHByb3BzOiBJbmplY3RlZEZvcm1Qcm9wczxJRm9ybVN0YXRlPiAmIElQcm9wcykgPT4ge1xuICBjb25zdCBkaXNwYXRjaCA9IHVzZURpc3BhdGNoKCk7XG4gIGNvbnN0IHsgaXNMb2FkaW5nLCBlcnJvciB9ID0gdXNlU2VsZWN0b3IoKHN0YXRlOiBJQXBwbGljYXRpb25TdGF0ZSkgPT4gc3RhdGUucmVwbyk7XG4gIGNvbnN0IHRoZW1lID0gdXNlVGhlbWUoKTtcbiAgY29uc3QgeyBoYW5kbGVTdWJtaXQsIG9uU3VjY2VzcyB9ID0gcHJvcHM7XG4gIGNvbnN0IG9uU3VibWl0ID0gKCkgPT4ge1xuICAgIGRpc3BhdGNoKHJlcG9BY3Rpb25zLmdldFJlcG9Jc3N1ZXMoeyBwYWdlOiAxLCByZXNldDogdHJ1ZSB9KSk7XG4gIH07XG5cbiAgdXNlRWZmZWN0KCgpID0+IHtcbiAgICBpZiAoIWlzTG9hZGluZyAmJiBlcnJvciA9PT0gZmFsc2UpIG9uU3VjY2VzcygpO1xuICB9LCBbaXNMb2FkaW5nLCBlcnJvciwgb25TdWNjZXNzXSk7XG5cbiAgcmV0dXJuIChcbiAgICA8Vmlldz5cbiAgICAgIDxGaWVsZFxuICAgICAgICBlcnJvckNvbG9yPXt0aGVtZS5jb2xvcnMuZXJyb3J9XG4gICAgICAgIG1heExlbmd0aD17NjB9XG4gICAgICAgIGxhYmVsPVwib3JnYW5pemF0aW9uKlwiXG4gICAgICAgIG5hbWU9XCJvcmdhbml6YXRpb25cIlxuICAgICAgICBjb21wb25lbnQ9e0lucHV0fVxuICAgICAgLz5cbiAgICAgIDxGaWVsZFxuICAgICAgICBlcnJvckNvbG9yPXt0aGVtZS5jb2xvcnMuZXJyb3J9XG4gICAgICAgIG1heExlbmd0aD17MTAwfVxuICAgICAgICBsYWJlbD1cInJlcG9zaXRvcnkqXCJcbiAgICAgICAgbmFtZT1cInJlcG9zaXRvcnlcIlxuICAgICAgICBjb21wb25lbnQ9e0lucHV0fVxuICAgICAgLz5cbiAgICAgIDxCdXR0b25cbiAgICAgICAgZGlzYWJsZWQ9e2lzTG9hZGluZ31cbiAgICAgICAgbG9hZGluZz17aXNMb2FkaW5nfVxuICAgICAgICBvblByZXNzPXtoYW5kbGVTdWJtaXQob25TdWJtaXQpfVxuICAgICAgICBzdHlsZT17c3R5bGVzLmJ1dHRvbn1cbiAgICAgICAgbW9kZT1cImNvbnRhaW5lZFwiXG4gICAgICA+XG4gICAgICAgIGdldCBpc3N1ZXNcbiAgICAgIDwvQnV0dG9uPlxuICAgIDwvVmlldz5cbiAgKTtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IHJlZHV4Rm9ybTxJRm9ybVN0YXRlLCBJUHJvcHM+KHtcbiAgZm9ybTogJ2Zvcm0nLFxuICB2YWxpZGF0ZSxcbn0pKElucHV0Rm9ybSBhcyBhbnkpO1xuXG5jb25zdCBzdHlsZXMgPSBTdHlsZVNoZWV0LmNyZWF0ZSh7XG4gIGNvbnRhaW5lcjoge1xuICAgIG1hcmdpbjogMTAsXG4gIH0sXG4gIGJ1dHRvbjoge1xuICAgIG1hcmdpblRvcDogMjAsXG4gIH0sXG4gIHRpdGxlOiB7XG4gICAgZm9udFNpemU6IDIwLFxuICAgIG1hcmdpblZlcnRpY2FsOiAyMCxcbiAgfSxcbn0pO1xuIl19

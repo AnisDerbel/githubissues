@@ -1,0 +1,44 @@
+d562c9fd48e88c7bdad7a721f4e03a6b
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports["default"] = shallowEqual;
+
+var _objectIs = _interopRequireDefault(require("object-is"));
+
+var _has = _interopRequireDefault(require("has"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { "default": obj };}
+
+function _typeof(obj) {"@babel/helpers - typeof";if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {_typeof = function _typeof(obj) {return typeof obj;};} else {_typeof = function _typeof(obj) {return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;};}return _typeof(obj);}
+
+
+function shallowEqual(objA, objB) {
+  if ((0, _objectIs["default"])(objA, objB)) {
+    return true;
+  }
+
+  if (!objA || !objB || _typeof(objA) !== 'object' || _typeof(objB) !== 'object') {
+    return false;
+  }
+
+  var keysA = Object.keys(objA);
+  var keysB = Object.keys(objB);
+
+  if (keysA.length !== keysB.length) {
+    return false;
+  }
+
+  keysA.sort();
+  keysB.sort();
+
+  for (var i = 0; i < keysA.length; i += 1) {
+    if (!(0, _has["default"])(objB, keysA[i]) || !(0, _objectIs["default"])(objA[keysA[i]], objB[keysA[i]])) {
+      return false;
+    }
+  }
+
+  return true;
+}

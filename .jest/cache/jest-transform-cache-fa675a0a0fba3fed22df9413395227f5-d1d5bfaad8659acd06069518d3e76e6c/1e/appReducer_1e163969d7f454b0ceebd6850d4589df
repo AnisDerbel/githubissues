@@ -1,0 +1,21 @@
+81024ae1496fd01f65c19c82a9517cd8
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _redux = require("redux");
+
+var _reduxForm = require("redux-form");
+
+var _reducer = _interopRequireDefault(require("./repo/reducer"));
+
+var appReducer = (0, _redux.combineReducers)({
+  form: _reduxForm.reducer,
+  repo: _reducer.default
+});
+var _default = appReducer;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L2FwcFJlZHVjZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOztBQUNBOztBQUVBOztBQU9BLElBQU0sVUFBVSxHQUErQiw0QkFDN0M7QUFDRSxFQUFBLElBQUksRUFBSixrQkFERjtBQUVFLEVBQUEsSUFBSSxFQUFKO0FBRkYsQ0FENkMsQ0FBL0M7ZUFPZSxVIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtjb21iaW5lUmVkdWNlcnMsIFJlZHVjZXJ9IGZyb20gJ3JlZHV4JztcbmltcG9ydCB7Rm9ybVN0YXRlTWFwLCByZWR1Y2VyIGFzIGZvcm19IGZyb20gJ3JlZHV4LWZvcm0nO1xuXG5pbXBvcnQgcmVwbywge0lSZXBvU3RhdGV9IGZyb20gJy4vcmVwby9yZWR1Y2VyJztcblxuZXhwb3J0IGludGVyZmFjZSBJQXBwbGljYXRpb25TdGF0ZSB7XG4gIHJlcG86IElSZXBvU3RhdGU7XG4gIGZvcm06IEZvcm1TdGF0ZU1hcDtcbn1cblxuY29uc3QgYXBwUmVkdWNlcjogUmVkdWNlcjxJQXBwbGljYXRpb25TdGF0ZT4gPSBjb21iaW5lUmVkdWNlcnM8SUFwcGxpY2F0aW9uU3RhdGU+KFxuICB7XG4gICAgZm9ybSxcbiAgICByZXBvLFxuICB9LFxuKTtcblxuZXhwb3J0IGRlZmF1bHQgYXBwUmVkdWNlcjtcbiJdfQ==

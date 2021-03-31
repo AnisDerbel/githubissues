@@ -1,0 +1,59 @@
+e294f8e183c0d26d764a5804ac5d1b58
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = single;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function single(matcherFn) {
+  return function singleWrapper(enzymeWrapper) {
+    var message;
+
+    switch (enzymeWrapper.getElements().length) {
+      case 0:
+        message = matcherFn.name + " must be called on a single node, not an empty node.";
+        break;
+
+      case 1:
+        break;
+
+      default:
+        message = matcherFn.name + " must be called on a single node, not multiple nodes.";}
+
+
+    if (message) {
+      return {
+        pass: false,
+        message: message,
+        negatedMessage: message,
+        contextualInformation: {} };
+
+    }for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {args[_key - 1] = arguments[_key];}
+
+    return matcherFn.call.apply(matcherFn, [this, enzymeWrapper].concat(args));
+  };
+}
+
+module.exports = exports.default;

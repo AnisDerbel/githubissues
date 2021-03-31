@@ -1,0 +1,42 @@
+7799064303cd2543a72e89aaba773d54
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports['default'] = render;
+
+
+
+var _object2 = _interopRequireDefault(require('object.assign'));
+
+
+
+var _getAdapter2 = _interopRequireDefault(require('./getAdapter'));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { 'default': obj };}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function render(node) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  var adapter = (0, _getAdapter2['default'])(options);
+  var renderer = adapter.createRenderer((0, _object2['default'])({ mode: 'string' }, options));
+  var html = renderer.render(node, options.context);
+  return (0, require('./Utils').loadCheerioRoot)(html);
+}

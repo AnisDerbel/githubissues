@@ -1,0 +1,33 @@
+73c0fe479d18520f5e492e3fc100eb0a
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = createValues;
+
+var _extends2 = require("@babel/runtime/helpers/interopRequireDefault")(require("@babel/runtime/helpers/extends"));
+
+
+
+function createValues(_ref) {
+  var getIn = _ref.getIn;
+  return function (config) {
+    var _prop$getFormState$co = (0, _extends2["default"])({
+      prop: 'values',
+      getFormState: function getFormState(state) {
+        return getIn(state, 'form');
+      } },
+    config),
+    form = _prop$getFormState$co.form,
+    prop = _prop$getFormState$co.prop,
+    getFormState = _prop$getFormState$co.getFormState;
+
+    return (0, require("react-redux").connect)(function (state) {
+      var _ref2;
+
+      return _ref2 = {}, _ref2[prop] = getIn(getFormState(state), form + ".values"), _ref2;
+    });
+
+  };
+}

@@ -1,0 +1,5 @@
+f860e1f63723c4e7286ebb654d35de6e
+module.exports = {
+      testUri:
+        "../../react-native-dropdownalert/assets/success.png"
+    };

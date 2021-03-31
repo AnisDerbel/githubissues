@@ -1,0 +1,33 @@
+ec910410d347c50d617ad58b50b1e6ec
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _getValue = require("@babel/runtime/helpers/interopRequireDefault")(require("./getValue"));
+
+var _isReactNative = require("@babel/runtime/helpers/interopRequireDefault")(require("../isReactNative"));
+
+var onChangeValue = function onChangeValue(event, _ref) {
+  var name = _ref.name,
+  parse = _ref.parse,
+  normalize = _ref.normalize;
+
+  var value = (0, _getValue["default"])(event, _isReactNative["default"]);
+
+  if (parse) {
+    value = parse(value, name);
+  }
+
+
+  if (normalize) {
+    value = normalize(name, value);
+  }
+
+  return value;
+};
+
+var _default = onChangeValue;
+exports["default"] = _default;

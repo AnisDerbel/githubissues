@@ -1,0 +1,4 @@
+1a2dd011498dd11fd380243dc0131589
+
+var minor = function minor(a, loose) {return new (require('../classes/semver'))(a, loose).minor;};
+module.exports = minor;

@@ -1,0 +1,696 @@
+f672030b3838cfe30cac3119fc343231
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports, "__esModule", { value: true });exports.positionStyle = positionStyle;exports.showMessage = showMessage;exports.hideMessage = hideMessage;exports.FlashMessageTransition = FlashMessageTransition;exports.default = exports.DefaultFlash = exports.renderFlashMessageIcon = void 0;var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));var _react = _interopRequireWildcard(require("react"));
+var _reactNative = require("react-native");
+var _reactNativeIphoneXHelper = require("react-native-iphone-x-helper");
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _FlashMessageManager = _interopRequireDefault(require("./FlashMessageManager"));
+var _FlashMessageWrapper = _interopRequireWildcard(require("./FlashMessageWrapper"));var _this = this,_jsxFileName = "/Users/anisderbel/Documents/apcgithubissues/node_modules/react-native-flash-message/src/FlashMessage.js";function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = (0, _getPrototypeOf2.default)(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = (0, _getPrototypeOf2.default)(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return (0, _possibleConstructorReturn2.default)(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {(0, _defineProperty2.default)(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+
+
+
+var OFFSET_HEIGHT = _reactNative.Platform.OS !== "ios" ? 60 : 48;
+
+
+
+
+
+
+
+
+var MessagePropType = _propTypes.default.shape({
+  message: _propTypes.default.string.isRequired,
+  description: _propTypes.default.string,
+  type: _propTypes.default.string,
+  backgroundColor: _propTypes.default.string,
+  color: _propTypes.default.string }).
+isRequired;
+
+
+
+
+var noop = function noop() {};
+
+
+
+
+function srid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000).
+    toString(16).
+    substring(1);
+  }
+
+  return s4() + "-" + s4() + "-" + s4();
+}
+
+
+
+
+function parseIcon() {var icon = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "none";
+  if (!!icon && icon !== "none") {
+    if (typeof icon === "string") {
+      return { icon: icon, position: "left", style: {} };
+    }
+
+    return _objectSpread({ position: "left", style: {} }, icon);
+  }
+
+  return null;
+}
+
+
+
+
+function positionStyle(style, position) {
+  if (typeof position === "string") {
+    return [
+    style,
+    position === "top" && styles.rootTop,
+    position === "bottom" && styles.rootBottom,
+    position === "center" && styles.rootCenter];
+
+  }
+
+  return [style, position];
+}
+
+
+
+
+
+
+
+
+
+function showMessage() {
+  var ref = _FlashMessageManager.default.getDefault();
+  if (!!ref) {
+    ref.showMessage.apply(ref, arguments);
+  }
+}
+
+
+
+
+
+
+
+
+function hideMessage() {
+  var ref = _FlashMessageManager.default.getDefault();
+  if (!!ref) {
+    ref.hideMessage.apply(ref, arguments);
+  }
+}
+
+
+
+
+
+function FlashMessageTransition(animValue) {var position = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "top";
+  var opacity = animValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, 1] });
+
+
+  if (position === "top") {
+    var translateY = animValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: [-OFFSET_HEIGHT, 0] });
+
+
+    return {
+      transform: [{ translateY: translateY }],
+      opacity: opacity };
+
+  } else if (position === "bottom") {
+    var _translateY = animValue.interpolate({
+      inputRange: [0, 1],
+      outputRange: [OFFSET_HEIGHT, 0] });
+
+
+    return {
+      transform: [{ translateY: _translateY }],
+      opacity: opacity };
+
+  }
+
+  return {
+    opacity: opacity };
+
+}
+
+var renderFlashMessageIcon = function renderFlashMessageIcon() {var icon = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "success";var style = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};var customProps = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  switch (icon) {
+    case "success":
+      return (
+        _react.default.createElement(_reactNative.Image, (0, _extends2.default)({ style: [styles.flashIcon, style], source: require("./icons/fm_icon_success.png") }, customProps, { __self: _this, __source: { fileName: _jsxFileName, lineNumber: 148, columnNumber: 9 } })));
+
+    case "info":
+      return _react.default.createElement(_reactNative.Image, (0, _extends2.default)({ style: [styles.flashIcon, style], source: require("./icons/fm_icon_info.png") }, customProps, { __self: _this, __source: { fileName: _jsxFileName, lineNumber: 151, columnNumber: 14 } }));
+    case "warning":
+      return (
+        _react.default.createElement(_reactNative.Image, (0, _extends2.default)({ style: [styles.flashIcon, style], source: require("./icons/fm_icon_warning.png") }, customProps, { __self: _this, __source: { fileName: _jsxFileName, lineNumber: 154, columnNumber: 9 } })));
+
+    case "danger":
+      return (
+        _react.default.createElement(_reactNative.Image, (0, _extends2.default)({ style: [styles.flashIcon, style], source: require("./icons/fm_icon_danger.png") }, customProps, { __self: _this, __source: { fileName: _jsxFileName, lineNumber: 158, columnNumber: 9 } })));
+
+    default:
+      return null;}
+
+};exports.renderFlashMessageIcon = renderFlashMessageIcon;
+
+
+
+
+
+
+var DefaultFlash = _react.default.forwardRef(
+function (_ref,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ref)
+{var message = _ref.message,style = _ref.style,textStyle = _ref.textStyle,titleStyle = _ref.titleStyle,titleProps = _ref.titleProps,textProps = _ref.textProps,renderFlashMessageIcon = _ref.renderFlashMessageIcon,_ref$position = _ref.position,position = _ref$position === void 0 ? "top" : _ref$position,_ref$statusBarHeight = _ref.statusBarHeight,statusBarHeight = _ref$statusBarHeight === void 0 ? null : _ref$statusBarHeight,renderCustomContent = _ref.renderCustomContent,_ref$floating = _ref.floating,floating = _ref$floating === void 0 ? false : _ref$floating,icon = _ref.icon,_ref$hideStatusBar = _ref.hideStatusBar,hideStatusBar = _ref$hideStatusBar === void 0 ? false : _ref$hideStatusBar,props = (0, _objectWithoutProperties2.default)(_ref, ["message", "style", "textStyle", "titleStyle", "titleProps", "textProps", "renderFlashMessageIcon", "position", "statusBarHeight", "renderCustomContent", "floating", "icon", "hideStatusBar"]);
+  var hasDescription = !!message.description && message.description !== "";
+  var iconView =
+  !!icon &&
+  !!icon.icon &&
+  renderFlashMessageIcon(icon.icon === "auto" ? message.type : icon.icon, [
+  icon.position === "left" && styles.flashIconLeft,
+  icon.position === "right" && styles.flashIconRight,
+  icon.style]);
+
+  var hasIcon = !!iconView;
+
+  return (
+    _react.default.createElement(_FlashMessageWrapper.default, {
+      ref: ref,
+      position: typeof position === "string" ? position : null,
+      statusBarHeight: statusBarHeight, __self: _this, __source: { fileName: _jsxFileName, lineNumber: 202, columnNumber: 7 } },
+    function (wrapperInset) {return (
+        _react.default.createElement(_reactNative.View, (0, _extends2.default)({
+          style: (0, _FlashMessageWrapper.styleWithInset)(
+          [
+          styles.defaultFlash,
+          position === "center" && styles.defaultFlashCenter,
+          position !== "center" && floating && styles.defaultFlashFloating,
+          hasIcon && styles.defaultFlashWithIcon,
+          !!message.backgroundColor ?
+          { backgroundColor: message.backgroundColor } :
+          !!message.type &&
+          !!FlashMessage.ColorTheme[message.type] && {
+            backgroundColor: FlashMessage.ColorTheme[message.type] },
+
+          style],
+
+          wrapperInset,
+          !!hideStatusBar,
+          position !== "center" && floating ? "margin" : "padding") },
+
+        props, { __self: _this, __source: { fileName: _jsxFileName, lineNumber: 207, columnNumber: 11 } }),
+        hasIcon && icon.position === "left" && iconView,
+        _react.default.createElement(_reactNative.View, { style: styles.flashLabel, __self: _this, __source: { fileName: _jsxFileName, lineNumber: 228, columnNumber: 13 } },
+        _react.default.createElement(_reactNative.Text, (0, _extends2.default)({
+          style: [
+          styles.flashText,
+          hasDescription && styles.flashTitle,
+          !!message.color && { color: message.color },
+          titleStyle] },
+
+        textProps,
+        titleProps, { __self: _this, __source: { fileName: _jsxFileName, lineNumber: 229, columnNumber: 15 } }),
+        message.message),
+
+        !!renderCustomContent && renderCustomContent(message),
+        hasDescription &&
+        _react.default.createElement(_reactNative.Text, (0, _extends2.default)({ style: [styles.flashText, !!message.color && { color: message.color }, textStyle] }, textProps, { __self: _this, __source: { fileName: _jsxFileName, lineNumber: 242, columnNumber: 17 } }),
+        message.description)),
+
+
+
+        hasIcon && icon.position === "right" && iconView));}));
+
+
+
+
+});exports.DefaultFlash = DefaultFlash;
+
+
+DefaultFlash.propTypes = {
+  message: MessagePropType,
+  renderFlashMessageIcon: _propTypes.default.func };var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FlashMessage = function (_Component) {(0, _inherits2.default)(FlashMessage, _Component);var _super = _createSuper(FlashMessage);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function FlashMessage(props) {var _this2;(0, _classCallCheck2.default)(this, FlashMessage);
+    _this2 = _super.call(this, props);
+
+    _this2.prop = _this2.prop.bind((0, _assertThisInitialized2.default)(_this2));
+    _this2.pressMessage = _this2.pressMessage.bind((0, _assertThisInitialized2.default)(_this2));
+    _this2.longPressMessage = _this2.longPressMessage.bind((0, _assertThisInitialized2.default)(_this2));
+    _this2.toggleVisibility = _this2.toggleVisibility.bind((0, _assertThisInitialized2.default)(_this2));
+    if (!_this2._id) _this2._id = srid();
+
+    _this2.state = {
+      visibleValue: new _reactNative.Animated.Value(0),
+      isHidding: false,
+      message: props.message || null };return _this2;
+
+  }(0, _createClass2.default)(FlashMessage, [{ key: "componentDidMount", value:
+    function componentDidMount() {
+      if (this.props.canRegisterAsDefault !== false) {
+        _FlashMessageManager.default.register(this);
+      }
+    } }, { key: "componentWillUnmount", value:
+    function componentWillUnmount() {
+      if (this.props.canRegisterAsDefault !== false) {
+        _FlashMessageManager.default.unregister(this);
+      }
+    } }, { key: "prop", value:
+
+
+
+    function prop(message, _prop) {
+      return !!message && _prop in message ? message[_prop] : _prop in this.props ? this.props[_prop] : null;
+    } }, { key: "isAnimated", value:
+
+
+
+    function isAnimated(message) {
+      return this.prop(message, "animated");
+    } }, { key: "pressMessage", value:
+
+
+
+    function pressMessage(event) {
+      if (!this.state.isHidding) {var
+        message = this.state.message;
+        var hideOnPress = this.prop(message, "hideOnPress");
+        var onPress = this.prop(message, "onPress");
+
+        if (hideOnPress) {
+          this.hideMessage();
+        }
+
+        if (typeof onPress === "function") {
+          onPress(event, message);
+        }
+      }
+    } }, { key: "longPressMessage", value:
+
+
+
+    function longPressMessage(event) {
+      if (!this.state.isHidding) {var
+        message = this.state.message;
+        var hideOnPress = this.prop(message, "hideOnPress");
+        var onLongPress = this.prop(message, "onLongPress");
+
+        if (hideOnPress) {
+          this.hideMessage();
+        }
+
+        if (typeof onLongPress === "function") {
+          onLongPress(event, message);
+        }
+      }
+    } }, { key: "toggleVisibility", value:
+
+
+
+    function toggleVisibility() {var _this3 = this;var visible = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;var animated = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;var done = arguments.length > 2 ? arguments[2] : undefined;var
+      message = this.state.message;
+
+      var position = this.prop(message, "position");
+      var animationDuration = this.prop(message, "animationDuration");
+      var duration = this.prop(message, "duration");
+      var autoHide = this.prop(message, "autoHide");
+      var hideStatusBar = this.prop(message, "hideStatusBar");
+
+      if (this._hideTimeout) {
+        clearTimeout(this._hideTimeout);
+      }
+
+      if (visible) {
+        var onShow = this.prop(message, "onShow") || noop;
+        var finish = function finish() {
+          if (!!autoHide && duration > 0) {
+            _this3._hideTimeout = setTimeout(function () {return _this3.toggleVisibility(false, animated);}, duration);
+          }
+
+          if (!!done && typeof done === "function") {
+            done();
+          }
+        };
+
+        this.setState({ isHidding: false });
+        this.state.visibleValue.setValue(0);
+
+        if (!!onShow && typeof onShow === "function") {
+          onShow(this);
+        }
+
+        if (!!hideStatusBar) {
+          _reactNative.StatusBar.setHidden(true, typeof hideStatusBar === "string" ? hideStatusBar : "slide");
+        }
+
+        if (animated) {
+          _reactNative.Animated.timing(this.state.visibleValue, {
+            toValue: 1,
+            duration: animationDuration,
+            useNativeDriver: true }).
+          start(finish);
+        } else {
+          finish();
+        }
+      } else {
+        var onHide = this.prop(message, "onHide") || noop;
+        var _finish = function _finish() {
+          _this3.setState({ message: null, isHidding: false });
+
+          if (!!onHide && typeof onHide === "function") {
+            onHide(_this3);
+          }
+
+          if (!!done && typeof done === "function") {
+            done();
+          }
+        };
+
+        this.setState({ isHidding: true });
+
+        if (!!hideStatusBar) {
+          _reactNative.StatusBar.setHidden(false, typeof hideStatusBar === "string" ? hideStatusBar : "slide");
+        }
+
+        if (animated) {
+          _reactNative.Animated.timing(this.state.visibleValue, {
+            toValue: 0,
+            duration: animationDuration,
+            useNativeDriver: true }).
+          start(_finish);
+        } else {
+          _finish();
+        }
+      }
+    } }, { key: "showMessage", value:
+
+
+
+
+
+
+
+
+    function showMessage(message) {var _this4 = this;var description = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "default";
+      if (!!message) {
+        var _message = {};
+        if (typeof message === "string") {
+          _message = { message: message, description: description, type: type };
+        } else if ("message" in message) {
+          _message = _objectSpread({ description: null, type: "default" }, message);
+        }
+
+        var animated = this.isAnimated(_message);
+        this.setState({ message: _message }, function () {return _this4.toggleVisibility(true, animated);});
+        return;
+      }
+
+      this.setState({ message: null, isHidding: false });
+    } }, { key: "hideMessage", value:
+
+
+
+
+
+
+
+    function hideMessage() {
+      var animated = this.isAnimated(this.state.message);
+      this.toggleVisibility(false, animated);
+    } }, { key: "render", value:
+    function render() {var _this$state =
+      this.state,message = _this$state.message,visibleValue = _this$state.visibleValue;var _this$props =
+
+      this.props,MessageComponent = _this$props.MessageComponent,testID = _this$props.testID,accessible = _this$props.accessible,accessibilityLabel = _this$props.accessibilityLabel,otherProps = (0, _objectWithoutProperties2.default)(_this$props, ["MessageComponent", "testID", "accessible", "accessibilityLabel"]);
+      var renderCustomContent = this.prop(message, "renderCustomContent");
+      var renderFlashMessageIcon = this.prop(message, "renderFlashMessageIcon");
+      var style = this.prop(message, "style");
+      var textStyle = this.prop(message, "textStyle");
+      var titleStyle = this.prop(message, "titleStyle");
+      var titleProps = this.prop(message, "titleProps");
+      var textProps = this.prop(message, "textProps");
+      var floating = this.prop(message, "floating");
+      var position = this.prop(message, "position");
+      var statusBarHeight = this.prop(message, "statusBarHeight");
+      var icon = parseIcon(this.prop(message, "icon"));
+      var hideStatusBar = this.prop(message, "hideStatusBar");
+      var transitionConfig = this.prop(message, "transitionConfig");
+      var animated = this.isAnimated(message);
+      var animStyle = animated ? transitionConfig(visibleValue, position) : {};
+
+      return (
+        _react.default.createElement(_reactNative.Animated.View, {
+          style: [
+          positionStyle(styles.root, position),
+          position === "center" && !!message && styles.rootCenterEnabled,
+          animStyle], __self: this, __source: { fileName: _jsxFileName, lineNumber: 588, columnNumber: 7 } },
+
+        !!message &&
+        _react.default.createElement(_reactNative.TouchableWithoutFeedback, { onPress: this.pressMessage, onLongPress: this.longPressMessage, accessible: false, __self: this, __source: { fileName: _jsxFileName, lineNumber: 595, columnNumber: 11 } },
+        _react.default.createElement(MessageComponent, {
+          position: position,
+          floating: floating,
+          message: message,
+          hideStatusBar: hideStatusBar,
+          renderFlashMessageIcon: renderFlashMessageIcon,
+          renderCustomContent: renderCustomContent,
+          statusBarHeight: statusBarHeight,
+          icon: icon,
+          style: style,
+          textStyle: textStyle,
+          titleStyle: titleStyle,
+          titleProps: titleProps,
+          textProps: textProps,
+          accessible: !!accessible,
+          testID: testID,
+          accessibilityLabel: accessibilityLabel, __self: this, __source: { fileName: _jsxFileName, lineNumber: 596, columnNumber: 13 } }))));
+
+
+
+
+
+    } }]);return FlashMessage;}(_react.Component);exports.default = FlashMessage;FlashMessage.defaultProps = { canRegisterAsDefault: true, hideOnPress: true, onPress: noop, onLongPress: noop, animated: true, animationDuration: 225, autoHide: true, duration: 1850, hideStatusBar: false, statusBarHeight: null, floating: false, position: "top", renderCustomContent: null, icon: "none", renderFlashMessageIcon: renderFlashMessageIcon, transitionConfig: FlashMessageTransition, MessageComponent: DefaultFlash };FlashMessage.propTypes = { canRegisterAsDefault: _propTypes.default.bool, hideOnPress: _propTypes.default.bool, onShow: _propTypes.default.func, onHide: _propTypes.default.func, onPress: _propTypes.default.func, onLongPress: _propTypes.default.func, animated: _propTypes.default.bool, animationDuration: _propTypes.default.number, duration: _propTypes.default.number, autoHide: _propTypes.default.bool, hideStatusBar: _propTypes.default.bool, floating: _propTypes.default.bool, position: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.array, _propTypes.default.object]), renderCustomContent: _propTypes.default.func, icon: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.object]), renderFlashMessageIcon: _propTypes.default.func, transitionConfig: _propTypes.default.func };FlashMessage.ColorTheme = { success: "#5cb85c", info: "#5bc0de", warning: "#f0ad4e", danger: "#d9534f" };FlashMessage.setColorTheme = function (theme) {FlashMessage.ColorTheme = (0, _extends2.default)(FlashMessage.ColorTheme, theme);};
+
+
+
+
+var styles = _reactNative.StyleSheet.create({
+  root: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    zIndex: 99 },
+
+  rootTop: {
+    top: 0 },
+
+  rootBottom: {
+    bottom: 0 },
+
+  rootCenter: {
+    justifyContent: "center",
+    alignItems: "center" },
+
+  rootCenterEnabled: {
+    top: 0,
+    bottom: 0,
+    width: "100%",
+    height: "100%" },
+
+  defaultFlash: {
+    justifyContent: "flex-start",
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    backgroundColor: "#696969",
+    minHeight: OFFSET_HEIGHT },
+
+  defaultFlashCenter: {
+    margin: 44,
+    borderRadius: 8,
+    overflow: "hidden" },
+
+  defaultFlashFloating: {
+    marginTop: 10,
+    marginLeft: 12,
+    marginRight: 12,
+    marginBottom: 10,
+    borderRadius: 8,
+    minHeight: OFFSET_HEIGHT - (0, _reactNativeIphoneXHelper.getStatusBarHeight)() },
+
+  defaultFlashWithIcon: {
+    flexDirection: "row" },
+
+  flashLabel: {
+    flex: 1,
+    flexDirection: "column" },
+
+  flashText: {
+    fontSize: 14,
+    lineHeight: 18,
+    color: "#fff" },
+
+  flashTitle: {
+    fontSize: 16,
+    fontWeight: "600",
+    marginBottom: 5 },
+
+  flashIcon: {
+    tintColor: "#fff",
+    marginTop: -1,
+    width: 21,
+    height: 21 },
+
+  flashIconLeft: {
+    marginLeft: -6,
+    marginRight: 9 },
+
+  flashIconRight: {
+    marginRight: -6,
+    marginLeft: 9 } });

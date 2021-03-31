@@ -1,0 +1,15 @@
+fba2d2f5d97ab4bc80ccb529fea8c3a7
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _createReducer = require("@babel/runtime/helpers/interopRequireDefault")(require("./createReducer"));
+
+var _plain = require("@babel/runtime/helpers/interopRequireDefault")(require("./structure/plain"));
+
+var _default = (0, _createReducer["default"])(_plain["default"]);
+
+exports["default"] = _default;

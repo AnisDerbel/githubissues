@@ -1,0 +1,5 @@
+cb742a762d19f29160d9c3e23ba3fb35
+
+
+var gtr = function gtr(version, range, options) {return require('./outside')(version, range, '>', options);};
+module.exports = gtr;

@@ -1,0 +1,4 @@
+00ff0a37fb10291e9ce483f930bf5e13
+
+var lt = function lt(a, b, loose) {return require('./compare')(a, b, loose) < 0;};
+module.exports = lt;

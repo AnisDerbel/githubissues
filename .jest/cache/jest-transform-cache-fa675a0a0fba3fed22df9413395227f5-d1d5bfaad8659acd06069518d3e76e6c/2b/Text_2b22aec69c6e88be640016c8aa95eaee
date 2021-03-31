@@ -1,0 +1,261 @@
+973bbf02ee59de77275685ac495f2370
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _TextInjection = _interopRequireDefault(require("./TextInjection"));
+var _TextNativeComponent = require("./TextNativeComponent");var _jsxFileName = "/Users/anisderbel/Documents/apcgithubissues/node_modules/react-native/Libraries/Text/Text.js",_this5 = this;function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {(0, _defineProperty2.default)(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = (0, _getPrototypeOf2.default)(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = (0, _getPrototypeOf2.default)(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return (0, _possibleConstructorReturn2.default)(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var PRESS_RECT_OFFSET = { top: 20, left: 20, right: 20, bottom: 30 };var
+
+
+
+
+
+
+TouchableText = function (_React$Component) {(0, _inherits2.default)(TouchableText, _React$Component);var _super = _createSuper(TouchableText);function TouchableText() {var _this;(0, _classCallCheck2.default)(this, TouchableText);for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}_this = _super.call.apply(_super, [this].concat(args));_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    state = _objectSpread(_objectSpread({},
+    require('../Components/Touchable/Touchable').Mixin.touchableGetInitialState()), {}, {
+      isHighlighted: false,
+      createResponderHandlers: _this._createResponseHandlers.bind((0, _assertThisInitialized2.default)(_this)),
+      responseHandlers: null });return _this;}(0, _createClass2.default)(TouchableText, [{ key: "render", value:
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function render() {var _this2 = this;var _this$props =
+      this.props,forwardedRef = _this$props.forwardedRef,selectionColor = _this$props.selectionColor,props = (0, _objectWithoutProperties2.default)(_this$props, ["forwardedRef", "selectionColor"]);
+      if (isTouchable(this.props)) {
+        props = _objectSpread(_objectSpread(_objectSpread({},
+        props),
+        this.state.responseHandlers), {}, {
+          isHighlighted: this.state.isHighlighted });
+
+      }
+      if (selectionColor != null) {
+        props = _objectSpread(_objectSpread({},
+        props), {}, {
+          selectionColor: require('../StyleSheet/processColor')(selectionColor) });
+
+      }
+      if (__DEV__) {
+        if (require('../Components/Touchable/Touchable').TOUCH_TARGET_DEBUG && props.onPress != null) {
+          props = _objectSpread(_objectSpread({},
+          props), {}, {
+            style: [props.style, { color: 'magenta' }] });
+
+        }
+      }
+      return (
+        require('react').createElement(require('./TextAncestor').Consumer, { __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 118, columnNumber: 7 } },
+        function (hasTextAncestor) {return (
+            hasTextAncestor ?
+
+            require('react').createElement(_TextNativeComponent.NativeVirtualText, (0, _extends2.default)({},
+            props, {
+
+
+              onClick: props.onPress,
+              ref: forwardedRef, __self: _this2, __self: _this2, __source: { fileName: _jsxFileName, lineNumber: 122, columnNumber: 13 } })) :
+
+
+            require('react').createElement(require('./TextAncestor').Provider, { value: true, __self: _this2, __self: _this2, __source: { fileName: _jsxFileName, lineNumber: 130, columnNumber: 13 } },
+            require('react').createElement(_TextNativeComponent.NativeText, (0, _extends2.default)({}, props, { ref: forwardedRef, __self: _this2, __self: _this2, __source: { fileName: _jsxFileName, lineNumber: 131, columnNumber: 15 } }))));}));
+
+
+
+
+
+    } }, { key: "_createResponseHandlers", value:
+
+    function _createResponseHandlers() {var _this3 = this;
+      return {
+        onStartShouldSetResponder: function onStartShouldSetResponder() {var
+          onStartShouldSetResponder = _this3.props.onStartShouldSetResponder;
+          var shouldSetResponder =
+          (onStartShouldSetResponder == null ?
+          false :
+          onStartShouldSetResponder()) || isTouchable(_this3.props);
+
+          if (shouldSetResponder) {
+            _this3._attachTouchHandlers();
+          }
+          return shouldSetResponder;
+        },
+        onResponderGrant: function onResponderGrant(event) {
+          require('nullthrows')(_this3.touchableHandleResponderGrant)(event);
+          if (_this3.props.onResponderGrant != null) {
+            _this3.props.onResponderGrant.call(_this3, event);
+          }
+        },
+        onResponderMove: function onResponderMove(event) {
+          require('nullthrows')(_this3.touchableHandleResponderMove)(event);
+          if (_this3.props.onResponderMove != null) {
+            _this3.props.onResponderMove.call(_this3, event);
+          }
+        },
+        onResponderRelease: function onResponderRelease(event) {
+          require('nullthrows')(_this3.touchableHandleResponderRelease)(event);
+          if (_this3.props.onResponderRelease != null) {
+            _this3.props.onResponderRelease.call(_this3, event);
+          }
+        },
+        onResponderTerminate: function onResponderTerminate(event) {
+          require('nullthrows')(_this3.touchableHandleResponderTerminate)(event);
+          if (_this3.props.onResponderTerminate != null) {
+            _this3.props.onResponderTerminate.call(_this3, event);
+          }
+        },
+        onResponderTerminationRequest: function onResponderTerminationRequest() {var
+          onResponderTerminationRequest = _this3.props.onResponderTerminationRequest;
+          if (!require('nullthrows')(_this3.touchableHandleResponderTerminationRequest)()) {
+            return false;
+          }
+          if (onResponderTerminationRequest == null) {
+            return true;
+          }
+          return onResponderTerminationRequest();
+        } };
+
+    } }, { key: "_attachTouchHandlers", value:
+
+
+
+
+    function _attachTouchHandlers() {var _this4 = this;
+      if (this.touchableGetPressRectOffset != null) {
+        return;
+      }
+      for (var key in require('../Components/Touchable/Touchable').Mixin) {
+        if (typeof require('../Components/Touchable/Touchable').Mixin[key] === 'function') {
+          this[key] = require('../Components/Touchable/Touchable').Mixin[key].bind(this);
+        }
+      }
+      this.touchableHandleActivePressIn = function () {
+        if (!_this4.props.suppressHighlighting && isTouchable(_this4.props)) {
+          _this4.setState({ isHighlighted: true });
+        }
+      };
+      this.touchableHandleActivePressOut = function () {
+        if (!_this4.props.suppressHighlighting && isTouchable(_this4.props)) {
+          _this4.setState({ isHighlighted: false });
+        }
+      };
+      this.touchableHandlePress = function (event) {
+        if (_this4.props.onPress != null) {
+          _this4.props.onPress(event);
+        }
+      };
+      this.touchableHandleLongPress = function (event) {
+        if (_this4.props.onLongPress != null) {
+          _this4.props.onLongPress(event);
+        }
+      };
+      this.touchableGetPressRectOffset = function () {return (
+          _this4.props.pressRetentionOffset == null ?
+          PRESS_RECT_OFFSET :
+          _this4.props.pressRetentionOffset);};
+    } }], [{ key: "getDerivedStateFromProps", value: function getDerivedStateFromProps(nextProps, prevState) {return prevState.responseHandlers == null && isTouchable(nextProps) ? { responseHandlers: prevState.createResponderHandlers() } : null;} }]);return TouchableText;}(require('react').Component);TouchableText.defaultProps = { accessible: true, allowFontScaling: true, ellipsizeMode: 'tail' };
+
+
+var isTouchable = function isTouchable(props) {return (
+    props.onPress != null ||
+    props.onLongPress != null ||
+    props.onStartShouldSetResponder != null);};
+
+var Text =
+
+
+require('react').forwardRef(
+function (
+props,
+forwardedRef)
+{
+  return require('react').createElement(TouchableText, (0, _extends2.default)({}, props, { forwardedRef: forwardedRef, __self: _this5, __self: _this5, __source: { fileName: _jsxFileName, lineNumber: 242, columnNumber: 12 } }));
+});
+
+Text.displayName = 'Text';
+
+
+
+
+
+Text.propTypes = require('../DeprecatedPropTypes/DeprecatedTextPropTypes');
+
+var TextToExport =
+
+
+
+
+_TextInjection.default.unstable_Text == null ? Text : _TextInjection.default.unstable_Text;
+
+module.exports = TextToExport;

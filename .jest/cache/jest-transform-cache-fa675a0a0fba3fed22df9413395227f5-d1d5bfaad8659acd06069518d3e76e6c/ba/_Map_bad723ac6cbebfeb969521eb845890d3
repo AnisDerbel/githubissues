@@ -1,0 +1,8 @@
+d13c9e2959937bcd40010d6d947bbf02
+
+
+
+
+var Map = require('./_getNative')(require('./_root'), 'Map');
+
+module.exports = Map;

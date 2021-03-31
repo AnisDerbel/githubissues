@@ -1,0 +1,15 @@
+2c8ca82edbfffb915fa3e15c85248958
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+
+
+var _NativeModules$Platfo;
+
+var _default = (_NativeModules$Platfo = require("react-native").NativeModules === null || require("react-native").NativeModules === void 0 ? void 0 : require("react-native").NativeModules.PlatformConstants) !== null && _NativeModules$Platfo !== void 0 ? _NativeModules$Platfo : require("react-native").Platform.constants;
+
+exports.default = _default;

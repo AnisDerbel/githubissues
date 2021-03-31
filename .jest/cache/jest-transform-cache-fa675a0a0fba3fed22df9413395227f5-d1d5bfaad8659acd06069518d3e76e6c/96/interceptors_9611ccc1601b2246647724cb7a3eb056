@@ -1,0 +1,50 @@
+71a6a0026b1a6f349e98b1fb6f25224b
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.interceptors = void 0;
+
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var _CustomDropdownAlert = require("../components/CustomDropdownAlert");
+
+var errorInterceptor = function errorInterceptor(error) {
+  var _a;
+
+  return _regenerator.default.async(function errorInterceptor$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          if (((_a = error.response) === null || _a === void 0 ? void 0 : _a.status) === 404) showErrorAlert('Not found', 'Organization and/or repository not found!');else showErrorAlert('Not', 'Something went wrong');
+          console.log(error.response);
+          return _context.abrupt("return", Promise.reject(error));
+
+        case 3:
+        case "end":
+          return _context.stop();
+      }
+    }
+  }, null, null, null, Promise);
+};
+
+var interceptors = function interceptors(client) {
+  client.interceptors.response.use(function (res) {
+    return res;
+  }, errorInterceptor);
+  return client;
+};
+
+exports.interceptors = interceptors;
+
+function showErrorAlert(title, message) {
+  var alert = _CustomDropdownAlert.alertRef.current;
+
+  if (!alert) {
+    return;
+  }
+
+  return alert.alertWithType('error', title, message);
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L2ludGVyY2VwdG9ycy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFDQTs7QUFFQSxJQUFNLGdCQUFnQixHQUFHLFNBQW5CLGdCQUFtQixDQUFPLEtBQVA7QUFBQTs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUN2QixjQUFJLENBQUEsQ0FBQSxFQUFBLEdBQUEsS0FBSyxDQUFDLFFBQU4sTUFBYyxJQUFkLElBQWMsRUFBQSxLQUFBLEtBQUEsQ0FBZCxHQUFjLEtBQUEsQ0FBZCxHQUFjLEVBQUEsQ0FBRSxNQUFoQixNQUEyQixHQUEvQixFQUNFLGNBQWMsQ0FBQyxXQUFELEVBQWMsMkNBQWQsQ0FBZCxDQURGLEtBRUssY0FBYyxDQUFDLEtBQUQsRUFBUSxzQkFBUixDQUFkO0FBQ0wsVUFBQSxPQUFPLENBQUMsR0FBUixDQUFZLEtBQUssQ0FBQyxRQUFsQjtBQUp1QiwyQ0FNaEIsT0FBTyxDQUFDLE1BQVIsQ0FBZSxLQUFmLENBTmdCOztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLENBQXpCOztBQVNPLElBQU0sWUFBWSxHQUFHLFNBQWYsWUFBZSxDQUFDLE1BQUQsRUFBMEI7QUFDcEQsRUFBQSxNQUFNLENBQUMsWUFBUCxDQUFvQixRQUFwQixDQUE2QixHQUE3QixDQUFpQyxVQUFBLEdBQUc7QUFBQSxXQUFJLEdBQUo7QUFBQSxHQUFwQyxFQUE2QyxnQkFBN0M7QUFFQSxTQUFPLE1BQVA7QUFDRCxDQUpNOzs7O0FBTVAsU0FBUyxjQUFULENBQXdCLEtBQXhCLEVBQXVDLE9BQXZDLEVBQXNEO0FBQUEsTUFDcEMsS0FEb0MsR0FDM0IsNkJBRDJCLENBQzdDLE9BRDZDOztBQUdwRCxNQUFJLENBQUMsS0FBTCxFQUFZO0FBQ1Y7QUFDRDs7QUFFRCxTQUFPLEtBQUssQ0FBQyxhQUFOLENBQW9CLE9BQXBCLEVBQTZCLEtBQTdCLEVBQW9DLE9BQXBDLENBQVA7QUFDRCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7QXhpb3NJbnN0YW5jZSwgQXhpb3NFcnJvcn0gZnJvbSAnYXhpb3MnO1xuaW1wb3J0IHthbGVydFJlZn0gZnJvbSAnLi4vY29tcG9uZW50cy9DdXN0b21Ecm9wZG93bkFsZXJ0JztcblxuY29uc3QgZXJyb3JJbnRlcmNlcHRvciA9IGFzeW5jIChlcnJvcjogQXhpb3NFcnJvcikgPT4ge1xuICBpZiAoZXJyb3IucmVzcG9uc2U/LnN0YXR1cyA9PT0gNDA0KVxuICAgIHNob3dFcnJvckFsZXJ0KCdOb3QgZm91bmQnLCAnT3JnYW5pemF0aW9uIGFuZC9vciByZXBvc2l0b3J5IG5vdCBmb3VuZCEnKTtcbiAgZWxzZSBzaG93RXJyb3JBbGVydCgnTm90JywgJ1NvbWV0aGluZyB3ZW50IHdyb25nJyk7XG4gIGNvbnNvbGUubG9nKGVycm9yLnJlc3BvbnNlKTtcblxuICByZXR1cm4gUHJvbWlzZS5yZWplY3QoZXJyb3IpO1xufTtcblxuZXhwb3J0IGNvbnN0IGludGVyY2VwdG9ycyA9IChjbGllbnQ6IEF4aW9zSW5zdGFuY2UpID0+IHtcbiAgY2xpZW50LmludGVyY2VwdG9ycy5yZXNwb25zZS51c2UocmVzID0+IHJlcywgZXJyb3JJbnRlcmNlcHRvcik7XG5cbiAgcmV0dXJuIGNsaWVudDtcbn07XG5cbmZ1bmN0aW9uIHNob3dFcnJvckFsZXJ0KHRpdGxlOiBzdHJpbmcsIG1lc3NhZ2U6IHN0cmluZykge1xuICBjb25zdCB7Y3VycmVudDogYWxlcnR9ID0gYWxlcnRSZWY7XG5cbiAgaWYgKCFhbGVydCkge1xuICAgIHJldHVybjtcbiAgfVxuXG4gIHJldHVybiBhbGVydC5hbGVydFdpdGhUeXBlKCdlcnJvcicsIHRpdGxlLCBtZXNzYWdlKTtcbn1cbiJdfQ==

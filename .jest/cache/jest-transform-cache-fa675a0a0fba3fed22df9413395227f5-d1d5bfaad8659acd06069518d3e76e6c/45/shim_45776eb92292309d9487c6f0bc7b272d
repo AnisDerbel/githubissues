@@ -1,0 +1,17 @@
+2727731b74aef460a4cb4b4cfed9e0e2
+'use strict';
+
+
+
+
+module.exports = function shimArrayPrototypeFind() {
+  var polyfill = require('./polyfill')();
+
+  require('define-properties')(Array.prototype, { find: polyfill }, {
+    find: function find() {
+      return Array.prototype.find !== polyfill;
+    } });
+
+
+  return polyfill;
+};

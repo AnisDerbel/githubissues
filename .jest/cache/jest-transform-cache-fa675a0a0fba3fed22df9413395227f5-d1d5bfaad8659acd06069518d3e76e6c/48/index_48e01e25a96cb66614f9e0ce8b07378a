@@ -1,0 +1,34 @@
+13d09710bbee13a7dae21a3e87fcad4b
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Doctype = exports.CDATA = exports.Tag = exports.Style = exports.Script = exports.Comment = exports.Directive = exports.Text = exports.Root = exports.isTag = void 0;
+
+
+
+
+
+function isTag(elem) {
+  return elem.type === "tag" ||
+  elem.type === "script" ||
+  elem.type === "style";
+}
+exports.isTag = isTag;
+
+
+exports.Root = "root";
+
+exports.Text = "text";
+
+exports.Directive = "directive";
+
+exports.Comment = "comment";
+
+exports.Script = "script";
+
+exports.Style = "style";
+
+exports.Tag = "tag";
+
+exports.CDATA = "cdata";
+
+exports.Doctype = "doctype";

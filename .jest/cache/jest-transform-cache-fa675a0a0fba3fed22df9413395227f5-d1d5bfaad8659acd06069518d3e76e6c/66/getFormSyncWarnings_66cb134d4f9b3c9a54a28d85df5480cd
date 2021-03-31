@@ -1,0 +1,15 @@
+ef24b3e4e0e745235f445de19a246277
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var _getFormSyncWarnings = require("@babel/runtime/helpers/interopRequireDefault")(require("./selectors/getFormSyncWarnings"));
+
+var _plain = require("@babel/runtime/helpers/interopRequireDefault")(require("./structure/plain"));
+
+var _default = (0, _getFormSyncWarnings["default"])(_plain["default"]);
+
+exports["default"] = _default;

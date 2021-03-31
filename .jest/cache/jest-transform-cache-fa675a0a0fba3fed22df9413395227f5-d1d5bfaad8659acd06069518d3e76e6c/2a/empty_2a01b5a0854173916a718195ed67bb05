@@ -1,0 +1,34 @@
+1bd2c2951ec57430abfa9b28658a8a9a
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports["default"] = void 0;
+
+
+
+var _or = _interopRequireDefault(require("./or"));
+
+var _explicitNull = _interopRequireDefault(require("./explicitNull"));
+
+var _withShape = _interopRequireDefault(require("./withShape"));
+
+var _wrapValidator = _interopRequireDefault(require("./helpers/wrapValidator"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { "default": obj };}
+
+var arrayOfValidator;
+var validator = (0, _or["default"])([_explicitNull["default"],
+(0, require("prop-types").oneOf)([false, '', NaN]), (0, _withShape["default"])(require("prop-types").array, {
+  length: (0, require("prop-types").oneOf)([0]).isRequired }).
+isRequired, function () {
+  return arrayOfValidator.apply(void 0, arguments);
+}]);
+arrayOfValidator = (0, require("prop-types").arrayOf)(validator).isRequired;
+
+var _default = function _default() {
+  return (0, _wrapValidator["default"])(validator, 'empty');
+};
+
+exports["default"] = _default;

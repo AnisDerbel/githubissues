@@ -1,0 +1,241 @@
+6314ebf73e245bd9db22f248a3902c73
+"use strict";
+
+/* istanbul ignore next */
+function cov_i3p6a3yuz() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/components/CustomDropdownAlert.tsx";
+  var hash = "f2b97efee0711a64bbf67a5cd27c67072a9013bd";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/components/CustomDropdownAlert.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "1": {
+        start: {
+          line: 6,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 26
+        }
+      },
+      "2": {
+        start: {
+          line: 8,
+          column: 14
+        },
+        end: {
+          line: 8,
+          column: 30
+        }
+      },
+      "3": {
+        start: {
+          line: 10,
+          column: 14
+        },
+        end: {
+          line: 10,
+          column: 52
+        }
+      },
+      "4": {
+        start: {
+          line: 12,
+          column: 35
+        },
+        end: {
+          line: 12,
+          column: 97
+        }
+      },
+      "5": {
+        start: {
+          line: 14,
+          column: 27
+        },
+        end: {
+          line: 14,
+          column: 56
+        }
+      },
+      "6": {
+        start: {
+          line: 16,
+          column: 0
+        },
+        end: {
+          line: 16,
+          column: 39
+        }
+      },
+      "7": {
+        start: {
+          line: 18,
+          column: 26
+        },
+        end: {
+          line: 24,
+          column: 1
+        }
+      },
+      "8": {
+        start: {
+          line: 19,
+          column: 14
+        },
+        end: {
+          line: 19,
+          column: 45
+        }
+      },
+      "9": {
+        start: {
+          line: 20,
+          column: 2
+        },
+        end: {
+          line: 23,
+          column: 5
+        }
+      },
+      "10": {
+        start: {
+          line: 26,
+          column: 0
+        },
+        end: {
+          line: 26,
+          column: 38
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "CustomDropdownAlert",
+        decl: {
+          start: {
+            line: 18,
+            column: 35
+          },
+          end: {
+            line: 18,
+            column: 54
+          }
+        },
+        loc: {
+          start: {
+            line: 18,
+            column: 57
+          },
+          end: {
+            line: 24,
+            column: 1
+          }
+        },
+        line: 18
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/components/CustomDropdownAlert.tsx"],
+      names: [],
+      mappings: ";;;;;;;;;AAAA,IAAA,OAAA,GAAA,OAAA,CAAA,YAAA,CAAA,OAAA,CAAA,OAAA,CAAA,CAAA;;AACA,IAAA,4BAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,4BAAA,CAAA,CAAA;;AACA,IAAA,oBAAA,GAAA,OAAA,CAAA,oBAAA,CAAA;;AAEa,OAAA,CAAA,QAAA,GAAW,OAAA,CAAA,SAAA,EAAX;;AAEb,IAAM,mBAAmB,GAAG,SAAtB,mBAAsB,GAAK;AAC/B,MAAM,KAAK,GAAG,oBAAA,CAAA,QAAA,EAAd;AACA,SAAO,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,4BAAA,CAAA,OAAD,EAAc;AAAC,IAAA,UAAU,EAAE,KAAK,CAAC,MAAN,CAAa,KAA1B;AAAiC,IAAA,GAAG,EAAE,OAAA,CAAA;AAAtC,GAAd,CAAP;AACD,CAHD;;AAKA,OAAA,CAAA,OAAA,GAAe,mBAAf",
+      sourcesContent: ["import React, { createRef } from 'react';\nimport DropdownAlert from 'react-native-dropdownalert';\nimport { useTheme } from 'react-native-paper';\n\nexport const alertRef = createRef<DropdownAlert>();\n\nconst CustomDropdownAlert = () => {\n  const theme = useTheme();\n  return <DropdownAlert errorColor={theme.colors.error} ref={alertRef} />;\n};\n\nexport default CustomDropdownAlert;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "f2b97efee0711a64bbf67a5cd27c67072a9013bd"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_i3p6a3yuz = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_i3p6a3yuz();
+cov_i3p6a3yuz().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_i3p6a3yuz().s[1]++;
+exports.alertRef = void 0;
+var tslib_1 =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[2]++, require("tslib"));
+var react_1 =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[3]++, tslib_1.__importStar(require("react")));
+var react_native_dropdownalert_1 =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[4]++, tslib_1.__importDefault(require("react-native-dropdownalert")));
+var react_native_paper_1 =
+/* istanbul ignore next */
+(cov_i3p6a3yuz().s[5]++, require("react-native-paper"));
+
+/* istanbul ignore next */
+cov_i3p6a3yuz().s[6]++;
+exports.alertRef = react_1.createRef();
+
+/* istanbul ignore next */
+cov_i3p6a3yuz().s[7]++;
+
+var CustomDropdownAlert = function CustomDropdownAlert() {
+  /* istanbul ignore next */
+  cov_i3p6a3yuz().f[0]++;
+  var theme =
+  /* istanbul ignore next */
+  (cov_i3p6a3yuz().s[8]++, react_native_paper_1.useTheme());
+
+  /* istanbul ignore next */
+  cov_i3p6a3yuz().s[9]++;
+  return react_1.default.createElement(react_native_dropdownalert_1.default, {
+    errorColor: theme.colors.error,
+    ref: exports.alertRef
+  });
+};
+
+/* istanbul ignore next */
+cov_i3p6a3yuz().s[10]++;
+exports.default = CustomDropdownAlert;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL2NvbXBvbmVudHMvQ3VzdG9tRHJvcGRvd25BbGVydC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUlhOzs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUpiLElBQUEsT0FBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLFlBQUEsQ0FBQSxPQUFBLENBQUEsT0FBQSxDQUFBLENBQUEsQ0FBQTtBQUNBLElBQUEsNEJBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLDRCQUFBLENBQUEsQ0FBQSxDQUFBO0FBQ0EsSUFBQSxvQkFBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLG9CQUFBLENBQUEsQ0FBQTs7OztBQUVhLE9BQUEsQ0FBQSxRQUFBLEdBQVcsT0FBQSxDQUFYLFNBQVcsRUFBWDs7Ozs7QUFFYixJQUFNLG1CQUFtQixHQUFHLFNBQXRCLG1CQUFzQixHQUFLO0FBQUE7QUFBQTtBQUMvQixNQUFNLEtBQUs7QUFBQTtBQUFBLDJCQUFHLG9CQUFBLENBQWQsUUFBYyxFQUFILENBQVg7O0FBRCtCO0FBQUE7QUFFL0IsU0FBTyxPQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyw0QkFBQSxDQUFELE9BQUEsRUFBYztBQUFDLElBQUEsVUFBVSxFQUFFLEtBQUssQ0FBTCxNQUFBLENBQWIsS0FBQTtBQUFpQyxJQUFBLEdBQUcsRUFBRSxPQUFBLENBQUE7QUFBdEMsR0FBZCxDQUFQO0FBRkYsQ0FBQTs7OztBQUtBLE9BQUEsQ0FBQSxPQUFBLEdBQUEsbUJBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QsIHsgY3JlYXRlUmVmIH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IERyb3Bkb3duQWxlcnQgZnJvbSAncmVhY3QtbmF0aXZlLWRyb3Bkb3duYWxlcnQnO1xuaW1wb3J0IHsgdXNlVGhlbWUgfSBmcm9tICdyZWFjdC1uYXRpdmUtcGFwZXInO1xuXG5leHBvcnQgY29uc3QgYWxlcnRSZWYgPSBjcmVhdGVSZWY8RHJvcGRvd25BbGVydD4oKTtcblxuY29uc3QgQ3VzdG9tRHJvcGRvd25BbGVydCA9ICgpID0+IHtcbiAgY29uc3QgdGhlbWUgPSB1c2VUaGVtZSgpO1xuICByZXR1cm4gPERyb3Bkb3duQWxlcnQgZXJyb3JDb2xvcj17dGhlbWUuY29sb3JzLmVycm9yfSByZWY9e2FsZXJ0UmVmfSAvPjtcbn07XG5cbmV4cG9ydCBkZWZhdWx0IEN1c3RvbURyb3Bkb3duQWxlcnQ7XG4iXX0=

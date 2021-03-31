@@ -1,0 +1,19 @@
+1e04c790bbad53238cd984d3afd1dae0
+
+
+
+
+
+
+
+
+
+
+function getMapData(map, key) {
+  var data = map.__data__;
+  return require('./_isKeyable')(key) ?
+  data[typeof key == 'string' ? 'string' : 'hash'] :
+  data.map;
+}
+
+module.exports = getMapData;

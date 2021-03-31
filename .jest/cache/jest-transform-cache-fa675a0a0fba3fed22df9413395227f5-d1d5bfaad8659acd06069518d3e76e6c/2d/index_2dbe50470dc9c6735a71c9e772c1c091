@@ -1,0 +1,287 @@
+c10347eb16437ee2cbc7593d03e7b473
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = testSaga;
+
+var _lodash = _interopRequireDefault(require("lodash.isequal"));
+
+var _objectAssign = _interopRequireDefault(require("object-assign"));
+
+var effects = _interopRequireWildcard(require("redux-saga/effects"));
+
+
+
+
+
+
+
+var _SagaTestError = _interopRequireDefault(require("../shared/SagaTestError"));
+
+var _createErrorMessage = _interopRequireDefault(require("./createErrorMessage"));
+
+var _assertSameEffect = _interopRequireDefault(require("./assertSameEffect"));
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function testSaga(saga) {
+  var api = {
+    next: next,
+    back: back,
+    finish: finish,
+    restart: restart,
+    save: save,
+    restore: restore,
+    throw: throwError };
+
+  var savePoints = {};
+  var history = [];for (var _len = arguments.length, sagaArgs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {sagaArgs[_key - 1] = arguments[_key];}
+  var finalSagaArgs = sagaArgs;
+  var iterator = createIterator();
+
+  function createEffectTester(name, key, effect) {var isForkedEffect = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+    return function (yieldedValue) {return function () {
+        (0, _assertSameEffect.default)(require("redux-saga").eventChannel, name, key, isForkedEffect, yieldedValue, effect.apply(void 0, arguments), history.length);
+        return api;
+      };};
+  }
+
+  function createEffectTesterFromEffects(name, key) {
+    return createEffectTester(name, key, effects[name]);
+  }
+
+  function createEffectTesterFromHelperEffect(name) {
+    return createEffectTester(name, undefined, effects[name], true);
+  }
+
+  var effectsTestersCreators = {
+    actionChannel: createEffectTesterFromEffects('actionChannel', require("../shared/keys").ACTION_CHANNEL),
+    all: createEffectTesterFromEffects('all', require("../shared/keys").ALL),
+    apply: createEffectTesterFromEffects('apply', require("../shared/keys").CALL),
+    call: createEffectTesterFromEffects('call', require("../shared/keys").CALL),
+    cancel: createEffectTesterFromEffects('cancel', require("../shared/keys").CANCEL),
+    cancelled: createEffectTesterFromEffects('cancelled', require("../shared/keys").CANCELLED),
+    cps: createEffectTesterFromEffects('cps', require("../shared/keys").CPS),
+    debounce: createEffectTesterFromHelperEffect('debounce'),
+    delay: createEffectTesterFromEffects('delay', require("../shared/keys").CALL),
+    flush: createEffectTesterFromEffects('flush', require("../shared/keys").FLUSH),
+    fork: createEffectTesterFromEffects('fork', require("../shared/keys").FORK),
+    getContext: createEffectTesterFromEffects('getContext', require("../shared/keys").GET_CONTEXT),
+    join: createEffectTesterFromEffects('join', require("../shared/keys").JOIN),
+    put: createEffectTesterFromEffects('put', require("../shared/keys").PUT),
+    putResolve: createEffectTesterFromEffects('putResolve', require("../shared/keys").PUT),
+    race: createEffectTesterFromEffects('race', require("../shared/keys").RACE),
+    select: createEffectTesterFromEffects('select', require("../shared/keys").SELECT),
+    setContext: createEffectTesterFromEffects('setContext', require("../shared/keys").SET_CONTEXT),
+    spawn: createEffectTesterFromEffects('spawn', require("../shared/keys").FORK),
+    take: createEffectTesterFromEffects('take', require("../shared/keys").TAKE),
+    takeEvery: createEffectTesterFromHelperEffect('takeEvery'),
+    takeLatest: createEffectTesterFromHelperEffect('takeLatest'),
+    takeLeading: createEffectTesterFromHelperEffect('takeLeading'),
+    takeMaybe: createEffectTesterFromEffects('takeMaybe', require("../shared/keys").TAKE),
+    throttle: createEffectTesterFromHelperEffect('throttle'),
+    retry: createEffectTesterFromHelperEffect('retry'),
+    isDone: function isDone(done) {return function () {
+        if (!done) {
+          throw new _SagaTestError.default('saga not done');
+        }
+
+        return api;
+      };},
+    is: function is(value) {return function (arg) {
+        if (!(0, _lodash.default)(arg, value)) {
+          var errorMessage = (0, _createErrorMessage.default)('yielded values do not match', history.length, value, arg);
+          throw new _SagaTestError.default(errorMessage);
+        }
+
+        return api;
+      };},
+    inspect: function inspect(value) {return function (fn) {
+        fn(value);
+        return api;
+      };},
+    returns: function returns(value, done) {return function (arg) {
+        if (!done) {
+          throw new _SagaTestError.default('saga not done');
+        }
+
+        if (!(0, _lodash.default)(arg, value)) {
+          var errorMessage = (0, _createErrorMessage.default)('returned values do not match', history.length, value, arg);
+          throw new _SagaTestError.default(errorMessage);
+        }
+
+        return api;
+      };} };
+
+
+  function createIterator() {
+    return saga.apply(void 0, require("@babel/runtime/helpers/toConsumableArray")(finalSagaArgs));
+  }
+
+  function apiWithEffectsTesters(_ref)
+
+
+  {var value = _ref.value,done = _ref.done;
+    var newApi = (0, _objectAssign.default)({}, api, {
+      actionChannel: effectsTestersCreators.actionChannel(value),
+      all: effectsTestersCreators.all(value),
+      apply: effectsTestersCreators.apply(value),
+      call: effectsTestersCreators.call(value),
+      cancel: effectsTestersCreators.cancel(value),
+      cancelled: effectsTestersCreators.cancelled(value),
+      cps: effectsTestersCreators.cps(value),
+      debounce: effectsTestersCreators.debounce(value),
+      delay: effectsTestersCreators.delay(value),
+      flush: effectsTestersCreators.flush(value),
+      fork: effectsTestersCreators.fork(value),
+      getContext: effectsTestersCreators.getContext(value),
+      join: effectsTestersCreators.join(value),
+      put: effectsTestersCreators.put(value),
+      putResolve: effectsTestersCreators.putResolve(value),
+      race: effectsTestersCreators.race(value),
+      select: effectsTestersCreators.select(value),
+      setContext: effectsTestersCreators.setContext(value),
+      spawn: effectsTestersCreators.spawn(value),
+      take: effectsTestersCreators.take(value),
+      takeEvery: effectsTestersCreators.takeEvery(value),
+      takeLatest: effectsTestersCreators.takeLatest(value),
+      takeLeading: effectsTestersCreators.takeLeading(value),
+      takeMaybe: effectsTestersCreators.takeMaybe(value),
+      throttle: effectsTestersCreators.throttle(value),
+      retry: effectsTestersCreators.retry(value),
+      is: effectsTestersCreators.is(value),
+      inspect: effectsTestersCreators.inspect(value),
+      isDone: effectsTestersCreators.isDone(done),
+      returns: effectsTestersCreators.returns(value, done) });
+
+    return newApi;
+  }
+
+  function restart() {for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {args[_key2] = arguments[_key2];}
+    if (args.length > 0) {
+      finalSagaArgs = args;
+    }
+
+    history = [];
+    iterator = createIterator();
+    return api;
+  }
+
+  function next() {
+    var arg = arguments.length <= 0 ? undefined : arguments[0];
+    var result;
+
+    if (arguments.length === 0) {
+      history.push({
+        type: require("./historyTypes").NONE });
+
+      result = iterator.next();
+    } else {
+      history.push({
+        type: require("./historyTypes").ARGUMENT,
+        value: arg });
+
+      result = iterator.next(arg);
+    }
+
+    return apiWithEffectsTesters(result);
+  }
+
+  function finish() {
+    var arg = arguments.length <= 0 ? undefined : arguments[0];
+    var result;
+
+    if (arguments.length === 0) {
+      history.push({
+        type: require("./historyTypes").FINISH });
+
+      result = iterator.return();
+    } else {
+      history.push({
+        type: require("./historyTypes").FINISH_ARGUMENT,
+        value: arg });
+
+      result = iterator.return(arg);
+    }
+
+    return apiWithEffectsTesters(result);
+  }
+
+  function throwError(error) {
+    history.push({
+      type: require("./historyTypes").ERROR,
+      value: error });
+
+    var result = iterator.throw(error);
+    return apiWithEffectsTesters(result);
+  }
+
+  function restore(name) {
+    if (!savePoints[name]) {
+      throw new Error("No such save point " + name);
+    }
+
+    iterator = createIterator();
+    history = savePoints[name];
+    return applyHistory();
+  }
+
+  function back() {var n = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+    if (n > history.length) {
+      throw new Error('Cannot go back any further');
+    }
+
+    var m = n;
+
+    while (m--) {
+      history.pop();
+    }
+
+    iterator = createIterator();
+    return applyHistory();
+  }
+
+  function save(name) {
+    savePoints[name] = history.slice(0);
+    return api;
+  }
+
+  function applyHistory() {
+    for (var i = 0, l = history.length; i < l; i++) {
+      var arg = history[i];
+
+      switch (arg.type) {
+        case require("./historyTypes").NONE:
+          iterator.next();
+          break;
+
+        case require("./historyTypes").ARGUMENT:
+          iterator.next(arg.value);
+          break;
+
+        case require("./historyTypes").ERROR:
+          iterator.throw(arg.value);
+          break;
+
+        case require("./historyTypes").FINISH:
+          iterator.return();
+          break;
+
+        case require("./historyTypes").FINISH_ARGUMENT:
+          iterator.return(arg.value);
+          break;}
+
+
+    }
+
+    return api;
+  }
+
+  return api;
+}

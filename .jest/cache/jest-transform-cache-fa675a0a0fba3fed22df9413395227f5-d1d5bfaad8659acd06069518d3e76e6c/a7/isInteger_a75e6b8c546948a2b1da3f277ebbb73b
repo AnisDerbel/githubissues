@@ -1,0 +1,17 @@
+d1b6badfdb8b896addfabc0f02fdf142
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports["default"] = void 0;
+var floor = Math.floor;
+var finite = isFinite;
+
+var _default = Number.isInteger ||
+
+function (x) {
+  return typeof x === 'number' && finite(x) && floor(x) === x;
+};
+
+exports["default"] = _default;

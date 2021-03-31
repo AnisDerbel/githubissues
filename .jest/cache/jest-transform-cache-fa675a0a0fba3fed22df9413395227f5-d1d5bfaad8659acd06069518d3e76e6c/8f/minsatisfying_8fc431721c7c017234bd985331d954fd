@@ -1,0 +1,25 @@
+ec2bd11ee1df62c9a4296a9ebbfe692c
+
+
+var minSatisfying = function minSatisfying(versions, range, options) {
+  var min = null;
+  var minSV = null;
+  var rangeObj = null;
+  try {
+    rangeObj = new (require('../classes/range'))(range, options);
+  } catch (er) {
+    return null;
+  }
+  versions.forEach(function (v) {
+    if (rangeObj.test(v)) {
+
+      if (!min || minSV.compare(v) === 1) {
+
+        min = v;
+        minSV = new (require('../classes/semver'))(min, options);
+      }
+    }
+  });
+  return min;
+};
+module.exports = minSatisfying;

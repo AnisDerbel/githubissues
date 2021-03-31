@@ -1,0 +1,20 @@
+5a514ad766998f9bc2eadcb6b13b0632
+
+
+
+
+
+
+
+
+
+
+
+function listCacheGet(key) {
+  var data = this.__data__,
+  index = require('./_assocIndexOf')(data, key);
+
+  return index < 0 ? undefined : data[index][1];
+}
+
+module.exports = listCacheGet;

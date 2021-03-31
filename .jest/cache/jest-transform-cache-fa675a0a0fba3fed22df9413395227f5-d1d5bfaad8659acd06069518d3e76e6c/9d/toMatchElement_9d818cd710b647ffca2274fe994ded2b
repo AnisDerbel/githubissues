@@ -1,0 +1,58 @@
+d2250bd76608a0b2c9535cff6e41e2a2
+"use strict";function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {require("@babel/runtime/helpers/defineProperty")(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+
+
+var _isShallowWrapper = _interopRequireDefault(require("../utils/isShallowWrapper"));
+
+var _single = _interopRequireDefault(require("../utils/single"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+
+
+
+
+
+function toMatchElement(actualEnzymeWrapper, reactInstance)
+
+{var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : { ignoreProps: true };
+  var expectedWrapper;
+
+  if (!(0, _isShallowWrapper.default)(actualEnzymeWrapper)) {
+    expectedWrapper = (0, require("enzyme").mount)(reactInstance);
+  } else {
+    expectedWrapper = (0, require("enzyme").shallow)(reactInstance);
+  }
+
+  var actual = actualEnzymeWrapper.debug(_objectSpread({
+    verbose: true },
+  options));
+
+  var expected = expectedWrapper.debug(_objectSpread({
+    verbose: true },
+  options));
+
+  var pass = actual === expected;
+  return {
+    pass: pass,
+    message: 'Expected actual value to match the expected value.',
+    negatedMessage: 'Did not expect actual value to match the expected value.',
+    contextualInformation: {
+      actual: "Actual:\n " + actual,
+      expected: "Expected:\n " + expected } };
+
+
+}
+
+var _default = (0, _single.default)(toMatchElement);
+
+exports.default = _default;
+module.exports = exports.default;

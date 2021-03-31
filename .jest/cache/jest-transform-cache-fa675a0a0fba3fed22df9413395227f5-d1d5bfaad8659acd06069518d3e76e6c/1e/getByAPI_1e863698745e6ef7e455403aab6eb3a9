@@ -1,0 +1,99 @@
+04932634b9a01e7775b4c1276070ff39
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.getByAPI = exports.UNSAFE_getAllByProps = exports.UNSAFE_getAllByType = exports.UNSAFE_getByProps = exports.UNSAFE_getByType = void 0;
+
+var React = _interopRequireWildcard(require("react"));
+
+var _prettyFormat = _interopRequireDefault(require("pretty-format"));
+
+
+
+
+
+
+
+
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+var UNSAFE_getByType = function UNSAFE_getByType(instance) {return function getByTypeFn(type) {
+    try {
+      return instance.findByType(type);
+    } catch (error) {
+      throw new (require("./errors").ErrorWithStack)((0, require("./errors").prepareErrorMessage)(error), getByTypeFn);
+    }
+  };};
+
+exports.UNSAFE_getByType = UNSAFE_getByType;
+
+var UNSAFE_getByProps = function UNSAFE_getByProps(instance) {return function getByPropsFn(props) {
+    try {
+      return instance.findByProps(props);
+    } catch (error) {
+      throw new (require("./errors").ErrorWithStack)((0, require("./errors").prepareErrorMessage)(error), getByPropsFn);
+    }
+  };};
+
+exports.UNSAFE_getByProps = UNSAFE_getByProps;
+
+var UNSAFE_getAllByType = function UNSAFE_getAllByType(instance) {return function getAllByTypeFn(type) {
+    var results = instance.findAllByType(type);
+
+    if (results.length === 0) {
+      throw new (require("./errors").ErrorWithStack)('No instances found', getAllByTypeFn);
+    }
+
+    return results;
+  };};
+
+exports.UNSAFE_getAllByType = UNSAFE_getAllByType;
+
+var UNSAFE_getAllByProps = function UNSAFE_getAllByProps(instance) {return function getAllByPropsFn(props) {
+    var results = instance.findAllByProps(props);
+
+    if (results.length === 0) {
+      throw new (require("./errors").ErrorWithStack)("No instances found with props:\n" + (0, _prettyFormat.default)(props), getAllByPropsFn);
+    }
+
+    return results;
+  };};
+
+exports.UNSAFE_getAllByProps = UNSAFE_getAllByProps;
+
+var getByAPI = function getByAPI(instance) {return {
+    getByText: (0, require("./byText").getByText)(instance),
+    getByPlaceholderText: (0, require("./byPlaceholderText").getByPlaceholderText)(instance),
+    getByDisplayValue: (0, require("./byDisplayValue").getByDisplayValue)(instance),
+    getByTestId: (0, require("./byTestId").getByTestId)(instance),
+    getAllByText: (0, require("./byText").getAllByText)(instance),
+    getAllByPlaceholderText: (0, require("./byPlaceholderText").getAllByPlaceholderText)(instance),
+    getAllByDisplayValue: (0, require("./byDisplayValue").getAllByDisplayValue)(instance),
+    getAllByTestId: (0, require("./byTestId").getAllByTestId)(instance),
+
+    UNSAFE_getByType: UNSAFE_getByType(instance),
+    UNSAFE_getAllByType: UNSAFE_getAllByType(instance),
+    UNSAFE_getByProps: UNSAFE_getByProps(instance),
+    UNSAFE_getAllByProps: UNSAFE_getAllByProps(instance),
+
+    getByName: function getByName() {return (0, require("./errors").throwRemovedFunctionError)('getByName', 'migration-v2#removed-functions');},
+    getAllByName: function getAllByName() {return (0, require("./errors").throwRemovedFunctionError)('getAllByName', 'migration-v2#removed-functions');},
+    getByType: function getByType() {return (0, require("./errors").throwRemovedFunctionError)('getByType', 'migration-v2#removed-functions');},
+    getAllByType: function getAllByType() {return (0, require("./errors").throwRemovedFunctionError)('getAllByType', 'migration-v2#removed-functions');},
+    getByProps: function getByProps() {return (0, require("./errors").throwRemovedFunctionError)('getByProps', 'migration-v2#removed-functions');},
+    getAllByProps: function getAllByProps() {return (0, require("./errors").throwRemovedFunctionError)('getAllByProps', 'migration-v2#removed-functions');},
+
+    getByPlaceholder: function getByPlaceholder() {return (0, require("./errors").throwRenamedFunctionError)('getByPlaceholder', 'getByPlaceholderText');},
+    getAllByPlaceholder: function getAllByPlaceholder() {return (0, require("./errors").throwRenamedFunctionError)('getAllByPlaceholder', 'getByPlaceholderText');} };};
+
+
+exports.getByAPI = getByAPI;

@@ -1,0 +1,7 @@
+bf694ef476434123200f735424bf5260
+
+var prerelease = function prerelease(version, options) {
+  var parsed = require('./parse')(version, options);
+  return parsed && parsed.prerelease.length ? parsed.prerelease : null;
+};
+module.exports = prerelease;

@@ -1,0 +1,23 @@
+19b6ac251f32049f3e7b7954a021a781
+
+
+
+
+
+
+
+
+
+
+
+
+function mapCacheSet(key, value) {
+  var data = require('./_getMapData')(this, key),
+  size = data.size;
+
+  data.set(key, value);
+  this.size += data.size == size ? 0 : 1;
+  return this;
+}
+
+module.exports = mapCacheSet;

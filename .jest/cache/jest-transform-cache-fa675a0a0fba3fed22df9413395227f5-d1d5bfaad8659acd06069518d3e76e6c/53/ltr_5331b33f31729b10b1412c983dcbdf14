@@ -1,0 +1,5 @@
+a8deeba4832cf079717f4c4a44da98d8
+
+
+var ltr = function ltr(version, range, options) {return require('./outside')(version, range, '<', options);};
+module.exports = ltr;

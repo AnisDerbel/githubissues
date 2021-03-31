@@ -1,0 +1,32 @@
+75e8fe5fbe0189d5f753c6f09b12b8c2
+
+
+
+
+
+
+
+
+
+
+
+
+
+function baseIteratee(value) {
+
+
+  if (typeof value == 'function') {
+    return value;
+  }
+  if (value == null) {
+    return require('./identity');
+  }
+  if (typeof value == 'object') {
+    return require('./isArray')(value) ?
+    require('./_baseMatchesProperty')(value[0], value[1]) :
+    require('./_baseMatches')(value);
+  }
+  return require('./property')(value);
+}
+
+module.exports = baseIteratee;

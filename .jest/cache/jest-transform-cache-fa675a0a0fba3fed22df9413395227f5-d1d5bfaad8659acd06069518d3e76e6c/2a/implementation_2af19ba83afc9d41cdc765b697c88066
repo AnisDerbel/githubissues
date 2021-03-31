@@ -1,0 +1,19 @@
+56c7b164c1778d1d3ea1018b69a5c846
+'use strict';
+
+
+
+
+
+
+var adder = function addDataProperty(key, value) {
+  var O = this;
+  var propertyKey = require('es-abstract/2020/ToPropertyKey')(key);
+  require('es-abstract/2020/CreateDataPropertyOrThrow')(O, propertyKey, value);
+};
+
+module.exports = function fromEntries(iterable) {
+  require('es-abstract/2020/RequireObjectCoercible')(iterable);
+
+  return require('es-abstract/2020/AddEntriesFromIterable')({}, iterable, adder);
+};

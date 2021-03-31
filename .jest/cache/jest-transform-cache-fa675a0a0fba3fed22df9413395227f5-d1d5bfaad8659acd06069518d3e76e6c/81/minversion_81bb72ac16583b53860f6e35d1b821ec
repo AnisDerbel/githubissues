@@ -1,0 +1,61 @@
+e50153220434a12c3b84bbdfd992ac4d
+
+
+
+
+var minVersion = function minVersion(range, loose) {
+  range = new (require('../classes/range'))(range, loose);
+
+  var minver = new (require('../classes/semver'))('0.0.0');
+  if (range.test(minver)) {
+    return minver;
+  }
+
+  minver = new (require('../classes/semver'))('0.0.0-0');
+  if (range.test(minver)) {
+    return minver;
+  }
+
+  minver = null;var _loop = function _loop(
+  i) {
+    var comparators = range.set[i];
+
+    var setMin = null;
+    comparators.forEach(function (comparator) {
+
+      var compver = new (require('../classes/semver'))(comparator.semver.version);
+      switch (comparator.operator) {
+        case '>':
+          if (compver.prerelease.length === 0) {
+            compver.patch++;
+          } else {
+            compver.prerelease.push(0);
+          }
+          compver.raw = compver.format();
+
+        case '':
+        case '>=':
+          if (!setMin || require('../functions/gt')(compver, setMin)) {
+            setMin = compver;
+          }
+          break;
+        case '<':
+        case '<=':
+
+          break;
+
+        default:
+          throw new Error("Unexpected operation: " + comparator.operator);}
+
+    });
+    if (setMin && (!minver || require('../functions/gt')(minver, setMin)))
+    minver = setMin;};for (var i = 0; i < range.set.length; ++i) {_loop(i);
+  }
+
+  if (minver && range.test(minver)) {
+    return minver;
+  }
+
+  return null;
+};
+module.exports = minVersion;

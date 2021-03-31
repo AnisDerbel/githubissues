@@ -1,0 +1,33 @@
+51a204502bf220de11a67aa9d1716c1a
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Hash(entries) {
+  var index = -1,
+  length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+
+Hash.prototype.clear = require('./_hashClear');
+Hash.prototype['delete'] = require('./_hashDelete');
+Hash.prototype.get = require('./_hashGet');
+Hash.prototype.has = require('./_hashHas');
+Hash.prototype.set = require('./_hashSet');
+
+module.exports = Hash;

@@ -1,0 +1,194 @@
+1878bd9e35660efa5430e4722ab5e847
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _NativeEventEmitter = _interopRequireDefault(require("../../EventEmitter/NativeEventEmitter"));
+var _LayoutAnimation = _interopRequireDefault(require("../../LayoutAnimation/LayoutAnimation"));
+var _dismissKeyboard = _interopRequireDefault(require("../../Utilities/dismissKeyboard"));
+var _NativeKeyboardObserver = _interopRequireDefault(require("./NativeKeyboardObserver"));
+var _invariant = _interopRequireDefault(require("invariant"));
+var KeyboardEventEmitter = new _NativeEventEmitter.default(
+_NativeKeyboardObserver.default);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var Keyboard = {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  addListener: function addListener(eventName, callback) {
+    (0, _invariant.default)(false, 'Dummy method used for documentation');
+  },
+
+
+
+
+
+
+
+  removeListener: function removeListener(
+  eventName,
+  callback)
+  {
+    (0, _invariant.default)(false, 'Dummy method used for documentation');
+  },
+
+
+
+
+
+
+  removeAllListeners: function removeAllListeners(eventName) {
+    (0, _invariant.default)(false, 'Dummy method used for documentation');
+  },
+
+
+
+
+  dismiss: function dismiss() {
+    (0, _invariant.default)(false, 'Dummy method used for documentation');
+  },
+
+
+
+
+
+  scheduleLayoutAnimation: function scheduleLayoutAnimation(event) {
+    (0, _invariant.default)(false, 'Dummy method used for documentation');
+  } };
+
+
+
+KeyboardEventEmitter.dismiss = _dismissKeyboard.default;
+KeyboardEventEmitter.scheduleLayoutAnimation = function (event) {var
+  duration = event.duration,easing = event.easing;
+  if (duration != null && duration !== 0) {
+    _LayoutAnimation.default.configureNext({
+      duration: duration,
+      update: {
+        duration: duration,
+        type: easing != null && _LayoutAnimation.default.Types[easing] || 'keyboard' } });
+
+
+  }
+};
+
+module.exports = KeyboardEventEmitter;

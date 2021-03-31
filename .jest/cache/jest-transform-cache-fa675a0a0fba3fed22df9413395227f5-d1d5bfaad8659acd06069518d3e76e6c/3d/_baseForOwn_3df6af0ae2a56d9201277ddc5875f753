@@ -1,0 +1,17 @@
+5fabdd003f66815edff58cb63d32b94e
+
+
+
+
+
+
+
+
+
+
+
+function baseForOwn(object, iteratee) {
+  return object && require('./_baseFor')(object, iteratee, require('./keys'));
+}
+
+module.exports = baseForOwn;

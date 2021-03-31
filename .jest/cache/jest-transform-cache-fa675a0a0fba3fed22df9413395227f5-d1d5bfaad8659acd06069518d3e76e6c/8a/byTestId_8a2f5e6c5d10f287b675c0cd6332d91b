@@ -1,0 +1,37 @@
+2156faae1c2e4d908bf496a8f9db0ec7
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.queryByTestId = exports.queryAllByTestId = exports.getByTestId = exports.getAllByTestId = exports.findByTestId = exports.findAllByTestId = void 0;
+
+
+
+var getNodeByTestId = function getNodeByTestId(node, testID) {
+  return typeof testID === 'string' ? testID === node.props.testID : testID.test(node.props.testID);
+};
+
+var queryAllByTestId = function queryAllByTestId(instance) {return function queryAllByTestIdFn(testId) {
+    var results = instance.findAll(function (node) {return getNodeByTestId(node, testId);}).filter(function (element) {return typeof element.type === 'string';});
+    return results;
+  };};
+
+exports.queryAllByTestId = queryAllByTestId;
+
+var getMultipleError = function getMultipleError(testId) {return "Found multiple elements with testID: " + String(testId);};
+
+var getMissingError = function getMissingError(testId) {return "Unable to find an element with testID: " + String(testId);};var _ref =
+
+
+
+
+
+
+
+(0, require("./makeQueries").makeQueries)(queryAllByTestId, getMissingError, getMultipleError),getByTestId = _ref.getBy,getAllByTestId = _ref.getAllBy,queryByTestId = _ref.queryBy,findByTestId = _ref.findBy,findAllByTestId = _ref.findAllBy;
+exports.findAllByTestId = findAllByTestId;
+exports.findByTestId = findByTestId;
+exports.queryByTestId = queryByTestId;
+exports.getAllByTestId = getAllByTestId;
+exports.getByTestId = getByTestId;

@@ -1,0 +1,78 @@
+fb5ae924f4136c8109d1b666072abf26
+
+
+
+
+
+
+
+
+
+exports = module.exports = require('./lib/cheerio');
+
+
+
+
+
+
+exports.version = require('./package.json').version;
+
+exports.load = require('./lib/static').load;
+exports.html = require('./lib/static').html;
+exports.text = require('./lib/static').text;
+exports.xml = require('./lib/static').xml;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.contains = require('./lib/static').contains;
+
+
+
+
+
+
+
+
+
+
+
+
+exports.merge = require('./lib/static').merge;
+
+
+
+
+
+
+
+
+
+
+
+
+
+exports.parseHTML = require('./lib/static').parseHTML;
+
+
+
+
+
+
+
+
+
+
+
+
+exports.root = require('./lib/static').root;

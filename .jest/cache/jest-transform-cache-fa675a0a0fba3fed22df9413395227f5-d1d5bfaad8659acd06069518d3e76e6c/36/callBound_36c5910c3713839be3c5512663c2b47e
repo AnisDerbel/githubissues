@@ -1,0 +1,16 @@
+9d8808dc9f1cf90c6d90c7ef790e225a
+'use strict';
+
+
+
+
+
+var $indexOf = require('./')(require('get-intrinsic')('String.prototype.indexOf'));
+
+module.exports = function callBoundIntrinsic(name, allowMissing) {
+  var intrinsic = require('get-intrinsic')(name, !!allowMissing);
+  if (typeof intrinsic === 'function' && $indexOf(name, '.prototype.') > -1) {
+    return require('./')(intrinsic);
+  }
+  return intrinsic;
+};

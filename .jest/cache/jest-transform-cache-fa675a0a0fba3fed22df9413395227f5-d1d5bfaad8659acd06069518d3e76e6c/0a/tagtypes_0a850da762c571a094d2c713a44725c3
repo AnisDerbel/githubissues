@@ -1,0 +1,45 @@
+9babc81836235b958059846b130f2ee9
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.hasChildren = exports.isComment = exports.isText = exports.isCDATA = exports.isTag = void 0;
+
+
+
+
+
+function isTag(node) {
+  return require("domelementtype").isTag(node);
+}
+exports.isTag = isTag;
+
+
+
+
+function isCDATA(node) {
+  return node.type === "cdata";
+}
+exports.isCDATA = isCDATA;
+
+
+
+
+function isText(node) {
+  return node.type === "text";
+}
+exports.isText = isText;
+
+
+
+
+function isComment(node) {
+  return node.type === "comment";
+}
+exports.isComment = isComment;
+
+
+
+
+function hasChildren(node) {
+  return Object.prototype.hasOwnProperty.call(node, "children");
+}
+exports.hasChildren = hasChildren;

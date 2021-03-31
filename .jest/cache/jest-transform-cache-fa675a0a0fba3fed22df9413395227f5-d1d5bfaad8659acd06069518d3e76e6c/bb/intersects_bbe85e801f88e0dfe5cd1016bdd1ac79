@@ -1,0 +1,8 @@
+bfcea9d88cab22507f02fb4c2513eb85
+
+var intersects = function intersects(r1, r2, options) {
+  r1 = new (require('../classes/range'))(r1, options);
+  r2 = new (require('../classes/range'))(r2, options);
+  return r1.intersects(r2);
+};
+module.exports = intersects;

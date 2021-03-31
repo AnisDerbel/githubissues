@@ -1,0 +1,206 @@
+266d821cb25766b65add714a9774e16b
+"use strict";function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = require("@babel/runtime/helpers/getPrototypeOf")(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = require("@babel/runtime/helpers/getPrototypeOf")(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return require("@babel/runtime/helpers/possibleConstructorReturn")(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+Object.defineProperty(exports, "PureNativeButton", {
+  enumerable: true,
+  get: function get() {
+    return _GestureHandlerButton.default;
+  } });
+
+exports.BorderlessButton = exports.RectButton = exports.BaseButton = exports.RawButton = void 0;
+
+var React = _interopRequireWildcard(require("react"));
+
+
+
+var _createNativeWrapper = _interopRequireDefault(require("../handlers/createNativeWrapper"));
+
+var _GestureHandlerButton = _interopRequireDefault(require("./GestureHandlerButton"));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}
+
+function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var RawButton = (0, _createNativeWrapper.default)(_GestureHandlerButton.default, {
+  shouldCancelWhenOutside: false,
+  shouldActivateOnStart: false });
+
+exports.RawButton = RawButton;var
+
+BaseButton = function (_React$Component) {require("@babel/runtime/helpers/inherits")(BaseButton, _React$Component);var _super = _createSuper(BaseButton);
+  function BaseButton(props) {var _this;require("@babel/runtime/helpers/classCallCheck")(this, BaseButton);
+    _this = _super.call(this, props);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "lastActive", void 0);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "handleEvent", function (_ref)
+
+    {var nativeEvent = _ref.nativeEvent;var
+
+      state =
+
+
+      nativeEvent.state,oldState = nativeEvent.oldState,pointerInside = nativeEvent.pointerInside;
+      var active = pointerInside && state === require("../State").State.ACTIVE;
+
+      if (active !== _this.lastActive && _this.props.onActiveStateChange) {
+        _this.props.onActiveStateChange(active);
+      }
+
+      if (oldState === require("../State").State.ACTIVE && state !== require("../State").State.CANCELLED && _this.lastActive && _this.props.onPress) {
+        _this.props.onPress(active);
+      }
+
+      _this.lastActive = active;
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "onHandlerStateChange", function (e) {
+      var _this$props$onHandler, _this$props;
+
+      (_this$props$onHandler = (_this$props = _this.props).onHandlerStateChange) === null || _this$props$onHandler === void 0 ? void 0 : _this$props$onHandler.call(_this$props, e);
+      _this.handleEvent(e);
+    });
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this), "onGestureEvent", function (e) {
+      var _this$props$onGesture, _this$props2;
+
+      (_this$props$onGesture = (_this$props2 = _this.props).onGestureEvent) === null || _this$props$onGesture === void 0 ? void 0 : _this$props$onGesture.call(_this$props2, e);
+      _this.handleEvent(e);
+    });
+
+    _this.lastActive = false;return _this;
+  }require("@babel/runtime/helpers/createClass")(BaseButton, [{ key: "render", value:
+
+    function render() {var _this$props5 =
+
+
+
+      this.props,rippleColor = _this$props5.rippleColor,rest = require("@babel/runtime/helpers/objectWithoutProperties")(_this$props5, ["rippleColor"]);
+      return React.createElement(RawButton, _extends({
+        rippleColor: (0, require("react-native").processColor)(rippleColor) },
+      rest, {
+        onGestureEvent: this.onGestureEvent,
+        onHandlerStateChange: this.onHandlerStateChange }));
+
+    } }]);return BaseButton;}(React.Component);
+
+
+
+exports.BaseButton = BaseButton;
+
+var AnimatedBaseButton = require("react-native").Animated.createAnimatedComponent(BaseButton);
+
+var btnStyles = require("react-native").StyleSheet.create({
+  underlay: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    top: 0 } });var
+
+
+
+RectButton = function (_React$Component2) {require("@babel/runtime/helpers/inherits")(RectButton, _React$Component2);var _super2 = _createSuper(RectButton);
+  function RectButton(props) {var _this2;require("@babel/runtime/helpers/classCallCheck")(this, RectButton);
+    _this2 = _super2.call(this, props);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this2), "opacity", void 0);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this2), "onActiveStateChange", function (active) {
+      var _this$props$onActiveS, _this$props3;
+
+      if (require("react-native").Platform.OS !== 'android') {
+        _this2.opacity.setValue(active ? _this2.props.activeOpacity : 0);
+      }
+
+      (_this$props$onActiveS = (_this$props3 = _this2.props).onActiveStateChange) === null || _this$props$onActiveS === void 0 ? void 0 : _this$props$onActiveS.call(_this$props3, active);
+    });
+
+    _this2.opacity = new (require("react-native").Animated.Value)(0);return _this2;
+  }require("@babel/runtime/helpers/createClass")(RectButton, [{ key: "render", value:
+
+    function render() {var _this$props6 =
+
+
+
+
+      this.props,children = _this$props6.children,style = _this$props6.style,rest = require("@babel/runtime/helpers/objectWithoutProperties")(_this$props6, ["children", "style"]);
+
+      var resolvedStyle = require("react-native").StyleSheet.flatten(style !== null && style !== void 0 ? style : {});
+
+      return React.createElement(BaseButton, _extends({}, rest, {
+        style: resolvedStyle,
+        onActiveStateChange: this.onActiveStateChange }),
+      React.createElement(require("react-native").Animated.View, {
+        style: [btnStyles.underlay, {
+          opacity: this.opacity,
+          backgroundColor: this.props.underlayColor,
+          borderRadius: resolvedStyle.borderRadius,
+          borderTopLeftRadius: resolvedStyle.borderTopLeftRadius,
+          borderTopRightRadius: resolvedStyle.borderTopRightRadius,
+          borderBottomLeftRadius: resolvedStyle.borderBottomLeftRadius,
+          borderBottomRightRadius: resolvedStyle.borderBottomRightRadius }] }),
+
+      children);
+    } }]);return RectButton;}(React.Component);
+
+
+
+exports.RectButton = RectButton;
+
+_defineProperty(RectButton, "defaultProps", {
+  activeOpacity: 0.105,
+  underlayColor: 'black' });var
+
+
+BorderlessButton = function (_React$Component3) {require("@babel/runtime/helpers/inherits")(BorderlessButton, _React$Component3);var _super3 = _createSuper(BorderlessButton);
+  function BorderlessButton(props) {var _this3;require("@babel/runtime/helpers/classCallCheck")(this, BorderlessButton);
+    _this3 = _super3.call(this, props);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this3), "opacity", void 0);
+
+    _defineProperty(require("@babel/runtime/helpers/assertThisInitialized")(_this3), "onActiveStateChange", function (active) {
+      var _this$props$onActiveS2, _this$props4;
+
+      if (require("react-native").Platform.OS !== 'android') {
+        _this3.opacity.setValue(active ? _this3.props.activeOpacity : 1);
+      }
+
+      (_this$props$onActiveS2 = (_this$props4 = _this3.props).onActiveStateChange) === null || _this$props$onActiveS2 === void 0 ? void 0 : _this$props$onActiveS2.call(_this$props4, active);
+    });
+
+    _this3.opacity = new (require("react-native").Animated.Value)(1);return _this3;
+  }require("@babel/runtime/helpers/createClass")(BorderlessButton, [{ key: "render", value:
+
+    function render() {var _this$props7 =
+
+
+
+
+      this.props,children = _this$props7.children,style = _this$props7.style,rest = require("@babel/runtime/helpers/objectWithoutProperties")(_this$props7, ["children", "style"]);
+      return React.createElement(AnimatedBaseButton, _extends({}, rest, {
+        onActiveStateChange: this.onActiveStateChange,
+        style: [style, require("react-native").Platform.OS === 'ios' && {
+          opacity: this.opacity }] }),
+
+      children);
+    } }]);return BorderlessButton;}(React.Component);
+
+
+
+exports.BorderlessButton = BorderlessButton;
+
+_defineProperty(BorderlessButton, "defaultProps", {
+  activeOpacity: 0.3,
+  borderless: true });

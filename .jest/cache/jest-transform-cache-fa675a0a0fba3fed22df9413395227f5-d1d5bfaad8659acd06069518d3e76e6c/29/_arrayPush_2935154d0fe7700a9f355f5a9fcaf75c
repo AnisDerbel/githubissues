@@ -1,0 +1,21 @@
+ab09a7ef573276a6eabd426f84e5397f
+
+
+
+
+
+
+
+
+function arrayPush(array, values) {
+  var index = -1,
+  length = values.length,
+  offset = array.length;
+
+  while (++index < length) {
+    array[offset + index] = values[index];
+  }
+  return array;
+}
+
+module.exports = arrayPush;

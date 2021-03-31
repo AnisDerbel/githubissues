@@ -1,0 +1,7 @@
+2eb6f06a10a0c0cf8b32db066c9b5a03
+
+var valid = function valid(version, options) {
+  var v = require('./parse')(version, options);
+  return v ? v.version : null;
+};
+module.exports = valid;

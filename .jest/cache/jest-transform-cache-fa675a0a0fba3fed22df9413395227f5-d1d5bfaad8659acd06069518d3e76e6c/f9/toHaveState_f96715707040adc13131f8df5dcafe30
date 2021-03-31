@@ -1,0 +1,79 @@
+fffe6df4e430bfbb70085bcfedf154f2
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+var _name = _interopRequireDefault(require("../utils/name"));
+
+var _reduceAssertionObject = _interopRequireDefault(require("../utils/reduceAssertionObject"));
+
+var _stringify = _interopRequireDefault(require("../utils/stringify"));
+
+var _single = _interopRequireDefault(require("../utils/single"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+
+
+
+
+
+function toHaveState(enzymeWrapper, stateKey, stateValue) {
+  var state = enzymeWrapper.state();
+  var wrapperName = (0, _name.default)(enzymeWrapper);
+
+
+  if (stateValue === undefined && arguments.length === 2 && typeof stateKey !== 'object' && Array.isArray(stateKey) === false) {
+    return {
+      pass: state.hasOwnProperty(stateKey),
+      message: "Expected the state for <" + wrapperName + "> to contain the key \"" + stateKey + "\", but it did not.",
+      negatedMessage: "Expected the state for <" + wrapperName + "> to not contain the key \"" + stateKey + "\", but it did.",
+      contextualInformation: {
+        actual: "Actual state: " + (0, _stringify.default)(require("@babel/runtime/helpers/defineProperty")({},
+        stateKey, state[stateKey])) } };
+
+
+
+  }
+
+  var results = _reduceAssertionObject.default.call(this, state, stateKey, stateValue);
+
+  var contextualInformation = {
+    actual: "Actual state: " + (0, _stringify.default)(results.actual),
+    expected: "Expected state: " + (0, _stringify.default)(results.expected) };
+
+
+  if (results.missingKeys.length) {
+    var missingKeys = results.missingKeys.join(', ');
+
+    var _key_2 = results.missingKeys.length === 1 ? 'key' : 'keys';
+
+    return {
+      pass: false,
+      message: "Expected the state for <" + wrapperName + "> to contain the " + _key_2 + " \"" + missingKeys + "\", but it did not.",
+      negatedMessage: "Expected the state for <" + wrapperName + "> to not contain the " + _key_2 + " \"" + missingKeys + "\", but it did.",
+      contextualInformation: contextualInformation };
+
+  }
+
+  var unmatchedKeys = results.unmatchedKeys.join(', ');
+
+  var _key_ = results.unmatchedKeys.length === 1 ? 'key' : 'keys';
+
+  return {
+    pass: results.pass,
+    message: "Expected the state for <" + wrapperName + "> to match for " + _key_ + " \"" + unmatchedKeys + "\", but it did not.",
+    negatedMessage: "Expected the state for <" + wrapperName + "> to not match for " + _key_ + " \"" + unmatchedKeys + "\", but it did.",
+    contextualInformation: contextualInformation };
+
+}
+
+var _default = (0, _single.default)(toHaveState);
+
+exports.default = _default;
+module.exports = exports.default;

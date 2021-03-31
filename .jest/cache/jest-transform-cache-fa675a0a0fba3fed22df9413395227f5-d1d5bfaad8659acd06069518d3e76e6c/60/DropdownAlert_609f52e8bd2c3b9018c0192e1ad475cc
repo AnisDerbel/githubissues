@@ -1,0 +1,647 @@
+258c1526983ee4f8344b8cb7b0f09c26
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));var _react = _interopRequireWildcard(require("react"));
+var _reactNative = require("react-native");
+
+
+
+
+
+
+
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+var _constants = require("./constants");
+
+
+
+
+
+
+
+
+
+var _TextView = _interopRequireDefault(require("./TextView"));
+var _imageview = _interopRequireDefault(require("./imageview"));
+var _CancelButton = _interopRequireDefault(require("./CancelButton"));
+var _Queue = _interopRequireDefault(require("./Queue"));var _jsxFileName = "/Users/anisderbel/Documents/apcgithubissues/node_modules/react-native-dropdownalert/DropdownAlert.js";function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = (0, _getPrototypeOf2.default)(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = (0, _getPrototypeOf2.default)(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return (0, _possibleConstructorReturn2.default)(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}var
+
+DropdownAlert = function (_Component) {(0, _inherits2.default)(DropdownAlert, _Component);var _super = _createSuper(DropdownAlert);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function DropdownAlert(props) {var _this;(0, _classCallCheck2.default)(this, DropdownAlert);
+    _this = _super.call(this, props);_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    getPanResponder = function () {
+      return _reactNative.PanResponder.create({
+        onStartShouldSetPanResponder: function onStartShouldSetPanResponder(event, gestureState) {return (
+            _this._onShouldStartPan(event, gestureState));},
+        onMoveShouldSetPanResponder: function onMoveShouldSetPanResponder(event, gestureState) {return (
+            _this._onShouldMovePan(event, gestureState));},
+        onPanResponderMove: function onPanResponderMove(event, gestureState) {return (
+            _this._onMovePan(event, gestureState));},
+        onPanResponderRelease: function onPanResponderRelease(event, gestureState) {return (
+            _this._onDonePan(event, gestureState));},
+        onPanResponderTerminate: function onPanResponderTerminate(event, gestureState) {return (
+            _this._onDonePan(event, gestureState));} });
+
+    };_this.
+    _onShouldStartPan = function (event, gestureState) {
+      return _this.props.panResponderEnabled;
+    };_this.
+    _onShouldMovePan = function (event, gestureState) {var _this$props =
+      _this.props,sensitivity = _this$props.sensitivity,panResponderEnabled = _this$props.panResponderEnabled;
+      var dx = Math.abs(gestureState.dx);
+      var dy = Math.abs(gestureState.dy);
+      var isDxSensitivity = dx < sensitivity;
+      var isDySensitivity = dy >= sensitivity;
+      return isDxSensitivity && isDySensitivity && panResponderEnabled;
+    };_this.
+    _onMovePan = function (event, gestureState) {
+      if (gestureState.dy < 0) {
+        _this.setState({ topValue: gestureState.dy });
+      }
+    };_this.
+    _onDonePan = function (event, gestureState) {
+      var start = _this.getStartDelta(_this.state.height, _this.props.startDelta);
+      var delta = start / 5;
+      if (gestureState.dy < delta) {
+        _this.closeAction(_constants.ACTION.pan);
+      }
+    };_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    alertWithType = function _callee() {var type,title,message,payload,interval,closeInterval,data,_args = arguments;return _regenerator.default.async(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+              type = _args.length > 0 && _args[0] !== undefined ? _args[0] : '';
+              title = _args.length > 1 && _args[1] !== undefined ? _args[1] : '';
+              message = _args.length > 2 && _args[2] !== undefined ? _args[2] : '';
+              payload = _args.length > 3 && _args[3] !== undefined ? _args[3] : {};
+              interval = _args.length > 4 ? _args[4] : undefined;
+
+
+
+              closeInterval = _this.props.closeInterval;
+
+              data = {
+                type: type,
+                title: _this.getStringValue(title),
+                message: _this.getStringValue(message),
+                payload: payload,
+                interval: closeInterval };
+
+
+              if (interval && typeof interval === 'number') {
+                data.interval = interval;
+              }
+              _this.queue.enqueue(data);
+
+              if (_this.getQueueSize() === 1) {
+                _this._processQueue();
+              }case 10:case "end":return _context.stop();}}}, null, null, null, Promise);};_this.
+
+    clearQueue = function () {
+      _this.queue.clear();
+    };_this.
+    getQueueSize = function () {
+      return _this.queue.size;
+    };_this.
+    _processQueue = function () {
+      var data = _this.queue.firstItem;
+      if (data) {
+        _this.open(data);
+      }
+    };_this.
+    open = function () {var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      _this.alertData = data;
+      _this.setState({ isOpen: true });
+      _this.animate(1, 450, function () {
+        if (data.interval > 0) {
+          _this.closeAutomatic(data.interval);
+        }
+      });
+    };_this.
+    closeAction = function () {var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _constants.ACTION.programmatic;var onDone = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
+
+
+
+      if (_this.state.isOpen) {
+        _this.clearCloseTimeoutID();
+        _this.close(action, onDone);
+      }
+    };_this.
+    closeAutomatic = function (interval) {
+      _this.clearCloseTimeoutID();
+      _this.closeTimeoutID = setTimeout(function () {
+        _this.close(_constants.ACTION.automatic);
+      }, interval);
+    };_this.
+    close = function (action) {var onDone = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
+      _this.animate(0, 250, function () {var _this$props2 =
+        _this.props,onClose = _this$props2.onClose,updateStatusBar = _this$props2.updateStatusBar,onCancel = _this$props2.onCancel,onTap = _this$props2.onTap;
+        _this.alertData.action = action;
+        _this.queue.dequeue();
+        if (action === _constants.ACTION.cancel) {
+          onCancel(_this.alertData);
+        } else {
+          if (action === _constants.ACTION.tap) {
+            onTap(_this.alertData);
+          }
+          onClose(_this.alertData);
+        }
+        _this.setState({ isOpen: false, topValue: 0, height: 0 });
+        _this.updateStatusBar(updateStatusBar, false);
+        _this._processQueue();
+        onDone();
+      });
+    };_this.
+    updateStatusBar = function () {var shouldUpdate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;var active = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      if (shouldUpdate) {
+        if (_constants.IS_ANDROID) {var _this$props3 =
+
+
+
+
+          _this.props,inactiveStatusBarBackgroundColor = _this$props3.inactiveStatusBarBackgroundColor,activeStatusBarBackgroundColor = _this$props3.activeStatusBarBackgroundColor,translucent = _this$props3.translucent;
+          if (active) {
+            var backgroundColor = activeStatusBarBackgroundColor;
+            var type = _this.alertData.type;
+            if (type !== _constants.TYPE.custom) {
+              backgroundColor = _this.getBackgroundColorForType(type);
+            }
+            _reactNative.StatusBar.setBackgroundColor(backgroundColor, true);
+            _reactNative.StatusBar.setTranslucent(translucent);
+          } else {
+            _reactNative.StatusBar.setBackgroundColor(inactiveStatusBarBackgroundColor, true);
+          }
+        }var _this$props4 =
+        _this.props,inactiveStatusBarStyle = _this$props4.inactiveStatusBarStyle,activeStatusBarStyle = _this$props4.activeStatusBarStyle;
+        if (active) {
+          _reactNative.StatusBar.setBarStyle(activeStatusBarStyle, true);
+        } else {
+          _reactNative.StatusBar.setBarStyle(inactiveStatusBarStyle, true);
+        }
+      }
+    };_this.
+    clearCloseTimeoutID = function () {
+      if (_this.closeTimeoutID) {
+        clearTimeout(_this.closeTimeoutID);
+      }
+    };_this.
+    animate = function (toValue) {var duration = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 450;var onComplete = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};var _this$props5 =
+      _this.props,useNativeDriver = _this$props5.useNativeDriver,isInteraction = _this$props5.isInteraction;
+      _reactNative.Animated.spring(_this.state.animationValue, {
+        toValue: toValue,
+        duration: duration,
+        friction: 9,
+        useNativeDriver: useNativeDriver,
+        isInteraction: isInteraction }).
+      start(onComplete);
+    };_this.
+    getStartDelta = function (height, start) {
+      var windowHeight = _constants.HEIGHT;
+      var startMin = 0 - height;
+      var startMax = windowHeight + height;
+      if (start < 0 && start !== startMin) {
+        return startMin;
+      } else if (start > startMax) {
+        return startMax;
+      }
+      return start;
+    };_this.
+    getEndDelta = function (height, end) {
+      var windowHeight = _constants.HEIGHT;
+      var endMin = 0;
+      var endMax = windowHeight;
+      if (end < endMin) {
+        return endMin;
+      } else if (end >= endMax) {
+        return endMax - height;
+      }
+      return end;
+    };_this.
+    getOutputRange = function (height, startDelta, endDelta) {
+      if (!height) {
+        return [startDelta, endDelta];
+      }
+      var start = _this.getStartDelta(height, startDelta);
+      var end = _this.getEndDelta(height, endDelta);
+      return [start, end];
+    };_this.state = { animationValue: new _reactNative.Animated.Value(0), isOpen: false, topValue: 0, height: 0 };_this.alertData = { type: '', message: '', title: '', payload: {}, interval: props.closeInterval, action: '' };_this.panResponder = _this.getPanResponder();_this.queue = new _Queue.default();return _this;}(0, _createClass2.default)(DropdownAlert, [{ key: "componentWillUnmount", value: function componentWillUnmount() {if (this.state.isOpen) {this.closeAction(_constants.ACTION.programmatic);}} }, { key: "getStringValue", value: function getStringValue(value) {try {if (typeof value !== 'string') {if (Array.isArray(value)) {return value.join(' ');}if (typeof value === 'object') {return "" + JSON.stringify(value);}return "" + value;}return value;} catch (error) {return error.toString();}} }, { key: "getStyleForType", value:
+    function getStyleForType(type) {var
+      defaultContainer = this.props.defaultContainer;
+      switch (type) {
+        case _constants.TYPE.info:
+          return [
+          _reactNative.StyleSheet.flatten(defaultContainer),
+          { backgroundColor: this.props.infoColor }];
+
+        case _constants.TYPE.warn:
+          return [
+          _reactNative.StyleSheet.flatten(defaultContainer),
+          { backgroundColor: this.props.warnColor }];
+
+        case _constants.TYPE.error:
+          return [
+          _reactNative.StyleSheet.flatten(defaultContainer),
+          { backgroundColor: this.props.errorColor }];
+
+        case _constants.TYPE.success:
+          return [
+          _reactNative.StyleSheet.flatten(defaultContainer),
+          { backgroundColor: this.props.successColor }];
+
+        default:
+          return [
+          _reactNative.StyleSheet.flatten(defaultContainer),
+          _reactNative.StyleSheet.flatten(this.props.containerStyle)];}
+
+
+    } }, { key: "getSourceForType", value:
+    function getSourceForType(type) {
+      switch (type) {
+        case _constants.TYPE.info:
+          return this.props.infoImageSrc;
+        case _constants.TYPE.warn:
+          return this.props.warnImageSrc;
+        case _constants.TYPE.error:
+          return this.props.errorImageSrc;
+        case _constants.TYPE.success:
+          return this.props.successImageSrc;
+        default:
+          return this.props.imageSrc;}
+
+    } }, { key: "getBackgroundColorForType", value:
+    function getBackgroundColorForType(type) {
+      switch (type) {
+        case _constants.TYPE.info:
+          return this.props.infoColor;
+        case _constants.TYPE.warn:
+          return this.props.warnColor;
+        case _constants.TYPE.error:
+          return this.props.errorColor;
+        case _constants.TYPE.success:
+          return this.props.successColor;
+        default:
+          return this.props.containerStyle.backgroundColor;}
+
+    } }, { key: "_onLayoutEvent", value:
+    function _onLayoutEvent(event) {var
+      height = event.nativeEvent.layout.height;
+      if (height > this.state.height) {var _this$props6 =
+        this.props,startDelta = _this$props6.startDelta,endDelta = _this$props6.endDelta;
+        var start = this.getStartDelta(height, startDelta);
+        var end = this.getEndDelta(height, endDelta);
+        if (startDelta !== start || endDelta !== end) {
+          this.setState({ height: height });
+        }
+      }
+    } }, { key: "_renderImage", value:
+    function _renderImage(source) {
+      if (this.props.renderImage) {
+        return this.props.renderImage(this.props, this.alertData);
+      }
+      return (
+        _react.default.createElement(_imageview.default, {
+          style: _reactNative.StyleSheet.flatten(this.props.imageStyle),
+          source: source, __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 503, columnNumber: 7 } }));
+
+
+    } }, { key: "_renderTitle", value:
+    function _renderTitle() {
+      if (this.props.renderTitle) {
+        return this.props.renderTitle(this.props, this.alertData);
+      }var _this$props7 =
+      this.props,titleTextProps = _this$props7.titleTextProps,titleStyle = _this$props7.titleStyle,titleNumOfLines = _this$props7.titleNumOfLines;
+      return (
+        _react.default.createElement(_TextView.default, (0, _extends2.default)({},
+        titleTextProps, {
+          style: _reactNative.StyleSheet.flatten(titleStyle),
+          numberOfLines: titleNumOfLines,
+          text: this.alertData.title, __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 515, columnNumber: 7 } })));
+
+
+    } }, { key: "_renderMessage", value:
+    function _renderMessage() {
+      if (this.props.renderMessage) {
+        return this.props.renderMessage(this.props, this.alertData);
+      }var _this$props8 =
+      this.props,messageTextProps = _this$props8.messageTextProps,messageStyle = _this$props8.messageStyle,messageNumOfLines = _this$props8.messageNumOfLines;
+      return (
+        _react.default.createElement(_TextView.default, (0, _extends2.default)({},
+        messageTextProps, {
+          style: _reactNative.StyleSheet.flatten(messageStyle),
+          numberOfLines: messageNumOfLines,
+          text: this.alertData.message, __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 529, columnNumber: 7 } })));
+
+
+    } }, { key: "_renderCancel", value:
+    function _renderCancel() {var _this2 = this;var show = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+      if (!show) {
+        return null;
+      }
+      if (this.props.renderCancel) {
+        return this.props.renderCancel(this.props, this.alertData);
+      } else {var _this$props9 =
+        this.props,cancelBtnImageSrc = _this$props9.cancelBtnImageSrc,cancelBtnImageStyle = _this$props9.cancelBtnImageStyle;
+        return (
+          _react.default.createElement(_CancelButton.default, {
+            imageStyle: cancelBtnImageStyle,
+            imageSrc: cancelBtnImageSrc,
+            onPress: function onPress() {return _this2.closeAction(_constants.ACTION.cancel);}, __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 546, columnNumber: 9 } }));
+
+
+      }
+    } }, { key: "render", value:
+    function render() {var _this3 = this;var
+      isOpen = this.state.isOpen;
+      if (!isOpen) {
+        return null;
+      }var _this$props10 =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      this.props,elevation = _this$props10.elevation,zIndex = _this$props10.zIndex,wrapperStyle = _this$props10.wrapperStyle,tapToCloseEnabled = _this$props10.tapToCloseEnabled,accessibilityLabel = _this$props10.accessibilityLabel,testID = _this$props10.testID,accessible = _this$props10.accessible,contentContainerStyle = _this$props10.contentContainerStyle,defaultTextContainer = _this$props10.defaultTextContainer,startDelta = _this$props10.startDelta,endDelta = _this$props10.endDelta,translucent = _this$props10.translucent,updateStatusBar = _this$props10.updateStatusBar,showCancel = _this$props10.showCancel;var _this$state =
+      this.state,animationValue = _this$state.animationValue,topValue = _this$state.topValue,height = _this$state.height;var _this$alertData =
+      this.alertData,type = _this$alertData.type,payload = _this$alertData.payload;
+      var style = this.getStyleForType(type);
+      var imageSrc = this.getSourceForType(type);
+
+
+      if (
+      payload &&
+      payload.hasOwnProperty('source') &&
+      payload.source &&
+      typeof payload.source !== 'object')
+      {
+        imageSrc = payload.source;
+      }
+      if (_constants.IS_ANDROID && translucent) {
+        style = [style, { paddingTop: _reactNative.StatusBar.currentHeight }];
+      }
+      this.updateStatusBar(updateStatusBar, true);
+      var outputRange = this.getOutputRange(height, startDelta, endDelta);
+      var wrapperAnimStyle = {
+        transform: [
+        {
+          translateY: animationValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: outputRange }) }],
+
+
+
+        position: 'absolute',
+        top: topValue,
+        left: 0,
+        right: 0,
+        elevation: elevation };
+
+      if (zIndex != null) {
+        wrapperAnimStyle.zIndex = zIndex;
+      }
+      var ContentView = _reactNative.SafeAreaView;
+      if (_constants.IS_IOS_BELOW_11 || _constants.IS_ANDROID) {
+        ContentView = _reactNative.View;
+      }
+      var activeOpacity = !tapToCloseEnabled || showCancel ? 1 : 0.95;
+      var onPress = !tapToCloseEnabled ?
+      null :
+      function () {return _this3.closeAction(_constants.ACTION.tap);};
+      return (
+        _react.default.createElement(_reactNative.Animated.View, (0, _extends2.default)({
+          ref: function ref(_ref) {return _this3.mainView = _ref;} },
+        this.panResponder.panHandlers, {
+          style: [wrapperAnimStyle, wrapperStyle], __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 621, columnNumber: 7 } }),
+        _react.default.createElement(_reactNative.TouchableOpacity, {
+          activeOpacity: activeOpacity,
+          onPress: onPress,
+          disabled: !tapToCloseEnabled,
+          onLayout: function onLayout(event) {return _this3._onLayoutEvent(event);},
+          testID: testID,
+          accessibilityLabel: accessibilityLabel,
+          accessible: accessible, __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 625, columnNumber: 9 } },
+        _react.default.createElement(_reactNative.View, { style: style, __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 633, columnNumber: 11 } },
+        _react.default.createElement(ContentView, { style: _reactNative.StyleSheet.flatten(contentContainerStyle), __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 634, columnNumber: 13 } },
+        this._renderImage(imageSrc),
+        _react.default.createElement(_reactNative.View, { style: _reactNative.StyleSheet.flatten(defaultTextContainer), __self: this, __self: this, __source: { fileName: _jsxFileName, lineNumber: 636, columnNumber: 15 } },
+        this._renderTitle(),
+        this._renderMessage())),
+
+
+        this._renderCancel(showCancel)))));
+
+
+
+
+    } }]);return DropdownAlert;}(_react.Component);exports.default = DropdownAlert;DropdownAlert.propTypes = { imageSrc: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]), infoImageSrc: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number, _propTypes.default.object]), warnImageSrc: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number, _propTypes.default.object]), errorImageSrc: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number, _propTypes.default.object]), successImageSrc: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number, _propTypes.default.object]), cancelBtnImageSrc: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number, _propTypes.default.object]), infoColor: _propTypes.default.string, warnColor: _propTypes.default.string, errorColor: _propTypes.default.string, successColor: _propTypes.default.string, closeInterval: _propTypes.default.number, startDelta: _propTypes.default.number, endDelta: _propTypes.default.number, wrapperStyle: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.number]), containerStyle: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.number]), contentContainerStyle: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.number]), titleStyle: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.number]), messageStyle: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.number]), imageStyle: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.number]), cancelBtnImageStyle: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.number]), titleNumOfLines: _propTypes.default.number, messageNumOfLines: _propTypes.default.number, onClose: _propTypes.default.func, onCancel: _propTypes.default.func, showCancel: _propTypes.default.bool, tapToCloseEnabled: _propTypes.default.bool, panResponderEnabled: _propTypes.default.bool, translucent: _propTypes.default.bool, useNativeDriver: _propTypes.default.bool, isInteraction: _propTypes.default.bool, activeStatusBarStyle: _propTypes.default.string, activeStatusBarBackgroundColor: _propTypes.default.string, inactiveStatusBarStyle: _propTypes.default.string, inactiveStatusBarBackgroundColor: _propTypes.default.string, updateStatusBar: _propTypes.default.bool, elevation: _propTypes.default.number, zIndex: _propTypes.default.number, sensitivity: _propTypes.default.number, defaultContainer: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.number]), defaultTextContainer: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.number]), renderImage: _propTypes.default.func, renderCancel: _propTypes.default.func, renderTitle: _propTypes.default.func, renderMessage: _propTypes.default.func, testID: _propTypes.default.string, accessibilityLabel: _propTypes.default.string, accessible: _propTypes.default.bool, titleTextProps: _propTypes.default.object, messageTextProps: _propTypes.default.object, onTap: _propTypes.default.func };DropdownAlert.defaultProps = { onClose: function onClose() {}, onCancel: function onCancel() {}, closeInterval: 4000, startDelta: -100, endDelta: 0, titleNumOfLines: 1, messageNumOfLines: 3, imageSrc: null, infoImageSrc: require('./assets/info.png'), warnImageSrc: require('./assets/warn.png'), errorImageSrc: require('./assets/error.png'), successImageSrc: require('./assets/success.png'), cancelBtnImageSrc: require('./assets/cancel.png'), infoColor: '#2B73B6', warnColor: '#cd853f', errorColor: '#cc3232', successColor: '#32A54A', showCancel: false, tapToCloseEnabled: true, panResponderEnabled: true, wrapperStyle: null, containerStyle: { padding: 16, flexDirection: 'row', backgroundColor: '#202020' }, contentContainerStyle: { flex: 1, flexDirection: 'row' }, titleStyle: { fontSize: 16, textAlign: 'left', fontWeight: 'bold', color: 'white', backgroundColor: 'transparent' }, messageStyle: { fontSize: 14, textAlign: 'left', fontWeight: 'normal', color: 'white', backgroundColor: 'transparent' }, imageStyle: { padding: 8, width: _constants.DEFAULT_IMAGE_DIMENSIONS, height: _constants.DEFAULT_IMAGE_DIMENSIONS, alignSelf: 'center' }, cancelBtnImageStyle: { padding: 8, width: _constants.DEFAULT_IMAGE_DIMENSIONS, height: _constants.DEFAULT_IMAGE_DIMENSIONS, alignSelf: 'center' }, defaultContainer: { padding: 8, flexDirection: 'row' }, defaultTextContainer: { flex: 1, padding: 8 }, translucent: false, activeStatusBarStyle: 'light-content', activeStatusBarBackgroundColor: (0, _constants.getDefaultStatusBarBackgroundColor)(), inactiveStatusBarStyle: (0, _constants.getDefaultStatusBarStyle)(), inactiveStatusBarBackgroundColor: (0, _constants.getDefaultStatusBarBackgroundColor)(), updateStatusBar: true, isInteraction: true, useNativeDriver: true, elevation: 1, zIndex: null, sensitivity: 20, renderImage: undefined, renderCancel: undefined, renderTitle: undefined, renderMessage: undefined, testID: undefined, accessibilityLabel: undefined, accessible: false, titleTextProps: undefined, messageTextProps: undefined, onTap: function onTap() {} };

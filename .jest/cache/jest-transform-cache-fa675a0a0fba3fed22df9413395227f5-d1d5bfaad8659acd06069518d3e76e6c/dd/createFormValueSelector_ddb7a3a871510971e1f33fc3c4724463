@@ -1,0 +1,36 @@
+306c2d8ff17b0d5b39d3546113e405ef
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = createFormValueSelector;
+
+var _invariant = require("@babel/runtime/helpers/interopRequireDefault")(require("invariant"));
+
+var _plain = require("@babel/runtime/helpers/interopRequireDefault")(require("./structure/plain"));
+
+function createFormValueSelector(_ref) {
+  var getIn = _ref.getIn;
+  return function (form, getFormState) {
+    (0, _invariant["default"])(form, 'Form value must be specified');
+
+    var nonNullGetFormState = getFormState || function (state) {
+      return getIn(state, 'form');
+    };
+
+    return function (state) {
+      for (var _len = arguments.length, fields = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        fields[_key - 1] = arguments[_key];
+      }
+
+      (0, _invariant["default"])(fields.length, 'No fields specified');
+      return fields.length === 1 ?
+      getIn(nonNullGetFormState(state), form + ".values." + fields[0]) :
+      fields.reduce(function (accumulator, field) {
+        var value = getIn(nonNullGetFormState(state), form + ".values." + field);
+        return value === undefined ? accumulator : _plain["default"].setIn(accumulator, field, value);
+      }, {});
+    };
+  };
+}

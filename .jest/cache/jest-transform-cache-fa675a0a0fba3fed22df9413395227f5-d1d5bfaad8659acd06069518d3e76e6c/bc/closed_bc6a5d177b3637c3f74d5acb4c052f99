@@ -1,0 +1,5 @@
+d28bb80f80acc98b5e1469dcf251e5bc
+module.exports = {
+      testUri:
+        "../../../src/assets/svgs/closed.svg"
+    };

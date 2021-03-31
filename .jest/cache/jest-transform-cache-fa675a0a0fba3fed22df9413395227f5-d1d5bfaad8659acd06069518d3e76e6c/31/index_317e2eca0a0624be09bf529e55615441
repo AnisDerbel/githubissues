@@ -1,0 +1,29 @@
+75890ea253427a0ae6cb95dd580c2873
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.dynamic = dynamic;
+exports.throwError = throwError;
+Object.defineProperty(exports, "composeProviders", {
+  enumerable: true,
+  get: function get() {
+    return require("./helpers").composeProviders;
+  } });
+
+
+
+
+function dynamic(fn) {
+  return require("@babel/runtime/helpers/defineProperty")({
+    fn: fn },
+  require("./helpers").DYNAMIC_PROVIDER, true);
+
+}
+
+function throwError(error) {
+  return dynamic(function () {
+    throw error;
+  });
+}

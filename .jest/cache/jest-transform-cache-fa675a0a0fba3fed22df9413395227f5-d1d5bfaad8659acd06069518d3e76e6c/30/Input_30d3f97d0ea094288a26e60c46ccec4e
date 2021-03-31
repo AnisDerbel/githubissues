@@ -1,0 +1,393 @@
+f7a07292e7fa91398c19a8e6a4dcb3d4
+"use strict";
+
+/* istanbul ignore next */
+function cov_1m9xck6iaj() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/components/Input.tsx";
+  var hash = "29c954afe80752d3a2220bdc7722c372b9bc354b";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/components/Input.tsx",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "1": {
+        start: {
+          line: 7,
+          column: 14
+        },
+        end: {
+          line: 7,
+          column: 30
+        }
+      },
+      "2": {
+        start: {
+          line: 9,
+          column: 14
+        },
+        end: {
+          line: 9,
+          column: 55
+        }
+      },
+      "3": {
+        start: {
+          line: 11,
+          column: 27
+        },
+        end: {
+          line: 11,
+          column: 56
+        }
+      },
+      "4": {
+        start: {
+          line: 13,
+          column: 12
+        },
+        end: {
+          line: 33,
+          column: 1
+        }
+      },
+      "5": {
+        start: {
+          line: 14,
+          column: 18
+        },
+        end: {
+          line: 14,
+          column: 27
+        }
+      },
+      "6": {
+        start: {
+          line: 15,
+          column: 16
+        },
+        end: {
+          line: 15,
+          column: 33
+        }
+      },
+      "7": {
+        start: {
+          line: 16,
+          column: 14
+        },
+        end: {
+          line: 16,
+          column: 29
+        }
+      },
+      "8": {
+        start: {
+          line: 17,
+          column: 14
+        },
+        end: {
+          line: 17,
+          column: 24
+        }
+      },
+      "9": {
+        start: {
+          line: 18,
+          column: 19
+        },
+        end: {
+          line: 18,
+          column: 34
+        }
+      },
+      "10": {
+        start: {
+          line: 19,
+          column: 18
+        },
+        end: {
+          line: 19,
+          column: 32
+        }
+      },
+      "11": {
+        start: {
+          line: 20,
+          column: 17
+        },
+        end: {
+          line: 20,
+          column: 36
+        }
+      },
+      "12": {
+        start: {
+          line: 21,
+          column: 16
+        },
+        end: {
+          line: 21,
+          column: 32
+        }
+      },
+      "13": {
+        start: {
+          line: 22,
+          column: 2
+        },
+        end: {
+          line: 32,
+          column: 13
+        }
+      },
+      "14": {
+        start: {
+          line: 35,
+          column: 0
+        },
+        end: {
+          line: 35,
+          column: 24
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "Input",
+        decl: {
+          start: {
+            line: 13,
+            column: 21
+          },
+          end: {
+            line: 13,
+            column: 26
+          }
+        },
+        loc: {
+          start: {
+            line: 13,
+            column: 33
+          },
+          end: {
+            line: 33,
+            column: 1
+          }
+        },
+        line: 13
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 21,
+            column: 16
+          },
+          end: {
+            line: 21,
+            column: 32
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 21,
+            column: 16
+          },
+          end: {
+            line: 21,
+            column: 23
+          }
+        }, {
+          start: {
+            line: 21,
+            column: 27
+          },
+          end: {
+            line: 21,
+            column: 32
+          }
+        }],
+        line: 21
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 28,
+            column: 6
+          },
+          end: {
+            line: 32,
+            column: 11
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 28,
+            column: 6
+          },
+          end: {
+            line: 28,
+            column: 13
+          }
+        }, {
+          start: {
+            line: 28,
+            column: 17
+          },
+          end: {
+            line: 28,
+            column: 22
+          }
+        }, {
+          start: {
+            line: 28,
+            column: 26
+          },
+          end: {
+            line: 32,
+            column: 11
+          }
+        }],
+        line: 28
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0, 0]
+    },
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/components/Input.tsx"],
+      names: [],
+      mappings: ";;;;;;;;AAAA,IAAA,OAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,OAAA,CAAA,CAAA;;AACA,IAAA,oBAAA,GAAA,OAAA,CAAA,oBAAA,CAAA;;AAQA,IAAM,KAAK,GAAG,SAAR,KAAQ,OAMuB;AAAA,uBALnC,IAKmC;AAAA,MAL3B,OAK2B,aAL3B,OAK2B;AAAA,MALlB,KAKkB,aALlB,KAKkB;AAAA,MAJnC,KAImC,QAJnC,KAImC;AAAA,MAHnC,UAGmC,QAHnC,UAGmC;AAAA,MAFnC,SAEmC,QAFnC,SAEmC;AAAA,MAD1B,QAC0B,QADnC,KACmC,CAD1B,QAC0B;AACnC,MAAM,OAAO,GAAG,OAAO,IAAI,KAA3B;AAEA,SACE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAA,OAAA,CAAA,OAAA,CAAA,QAAA,EAAA,IAAA,EACE,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,oBAAA,CAAA,SAAD,EAAU;AACR,IAAA,cAAc,EAAC,MADP;AAER,IAAA,KAAK,EAAE,OAFC;AAGR,IAAA,YAAY,EAAE,QAHN;AAIR,IAAA,SAAS,EAAE,SAJH;AAKR,IAAA,WAAW,EAAE;AALL,GAAV,CADF,EAQG,OAAO,IAAI,KAAX,IAAoB,OAAA,CAAA,OAAA,CAAA,aAAA,CAAC,oBAAA,CAAA,IAAD,EAAK;AAAC,IAAA,KAAK,EAAE;AAAE,MAAA,KAAK,EAAE;AAAT;AAAR,GAAL,EAAqC,KAArC,CARvB,CADF;AAYD,CArBD;;AAuBA,OAAA,CAAA,OAAA,GAAe,KAAf",
+      sourcesContent: ["import React from 'react';\nimport { TextInput, Text } from 'react-native-paper';\nimport { WrappedFieldProps } from 'redux-form';\n\ninterface InputProps {\n  label: string;\n  errorColor: string;\n  maxLength: number;\n}\nconst Input = ({\n  meta: { touched, error },\n  label,\n  errorColor,\n  maxLength,\n  input: { onChange },\n}: WrappedFieldProps & InputProps) => {\n  const isError = touched && error;\n\n  return (\n    <>\n      <TextInput\n        autoCapitalize=\"none\"\n        error={isError}\n        onChangeText={onChange}\n        maxLength={maxLength}\n        placeholder={label}\n      />\n      {touched && error && <Text style={{ color: errorColor }}>{error}</Text>}\n    </>\n  );\n};\n\nexport default Input;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "29c954afe80752d3a2220bdc7722c372b9bc354b"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1m9xck6iaj = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1m9xck6iaj();
+cov_1m9xck6iaj().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tslib_1 =
+/* istanbul ignore next */
+(cov_1m9xck6iaj().s[1]++, require("tslib"));
+var react_1 =
+/* istanbul ignore next */
+(cov_1m9xck6iaj().s[2]++, tslib_1.__importDefault(require("react")));
+var react_native_paper_1 =
+/* istanbul ignore next */
+(cov_1m9xck6iaj().s[3]++, require("react-native-paper"));
+
+/* istanbul ignore next */
+cov_1m9xck6iaj().s[4]++;
+
+var Input = function Input(_ref) {
+  /* istanbul ignore next */
+  cov_1m9xck6iaj().f[0]++;
+
+  var _ref$meta =
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().s[5]++, _ref.meta),
+      touched =
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().s[6]++, _ref$meta.touched),
+      error =
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().s[7]++, _ref$meta.error),
+      label =
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().s[8]++, _ref.label),
+      errorColor =
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().s[9]++, _ref.errorColor),
+      maxLength =
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().s[10]++, _ref.maxLength),
+      onChange =
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().s[11]++, _ref.input.onChange);
+
+  var isError =
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().s[12]++,
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().b[0][0]++, touched) &&
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().b[0][1]++, error));
+
+  /* istanbul ignore next */
+  cov_1m9xck6iaj().s[13]++;
+  return react_1.default.createElement(react_1.default.Fragment, null, react_1.default.createElement(react_native_paper_1.TextInput, {
+    autoCapitalize: "none",
+    error: isError,
+    onChangeText: onChange,
+    maxLength: maxLength,
+    placeholder: label
+  }),
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().b[1][0]++, touched) &&
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().b[1][1]++, error) &&
+  /* istanbul ignore next */
+  (cov_1m9xck6iaj().b[1][2]++, react_1.default.createElement(react_native_paper_1.Text, {
+    style: {
+      color: errorColor
+    }
+  }, error)));
+};
+
+/* istanbul ignore next */
+cov_1m9xck6iaj().s[14]++;
+exports.default = Input;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL2NvbXBvbmVudHMvSW5wdXQudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFlcUM7Ozs7Ozs7Ozs7Ozs7Ozs7QUFmckMsSUFBQSxPQUFBO0FBQUE7QUFBQSwwQkFBQSxPQUFBLENBQUEsZUFBQSxDQUFBLE9BQUEsQ0FBQSxPQUFBLENBQUEsQ0FBQSxDQUFBO0FBQ0EsSUFBQSxvQkFBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLG9CQUFBLENBQUEsQ0FBQTs7Ozs7QUFRQSxJQUFNLEtBQUssR0FBRyxTQUFSLEtBQVEsQ0FBQSxJQUFBLEVBTXVCO0FBQUE7QUFBQTs7QUFBQSxNQUFBLFNBQUE7QUFBQTtBQUFBLDRCQUFBLElBQUEsQ0FMbkMsSUFLbUMsQ0FBQTtBQUFBLE1BTDNCLE9BSzJCO0FBQUE7QUFBQSw0QkFBQSxTQUFBLENBTDNCLE9BSzJCLENBQUE7QUFBQSxNQUxsQixLQUtrQjtBQUFBO0FBQUEsNEJBQUEsU0FBQSxDQUxsQixLQUtrQixDQUFBO0FBQUEsTUFKbkMsS0FJbUM7QUFBQTtBQUFBLDRCQUFBLElBQUEsQ0FKbkMsS0FJbUMsQ0FBQTtBQUFBLE1BSG5DLFVBR21DO0FBQUE7QUFBQSw0QkFBQSxJQUFBLENBSG5DLFVBR21DLENBQUE7QUFBQSxNQUZuQyxTQUVtQztBQUFBO0FBQUEsNkJBQUEsSUFBQSxDQUZuQyxTQUVtQyxDQUFBO0FBQUEsTUFEMUIsUUFDMEI7QUFBQTtBQUFBLDZCQUFBLElBQUEsQ0FEbkMsS0FDbUMsQ0FEMUIsUUFDMEIsQ0FBQTs7QUFDbkMsTUFBTSxPQUFPO0FBQUE7QUFBQTtBQUFHO0FBQUEsK0JBQUEsT0FBTztBQUFBO0FBQUEsK0JBQXZCLEtBQXVCLENBQVYsQ0FBYjs7QUFEbUM7QUFBQTtBQUduQyxTQUNFLE9BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFBLE9BQUEsQ0FBQSxPQUFBLENBQUEsUUFBQSxFQUFBLElBQUEsRUFDRSxPQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxvQkFBQSxDQUFELFNBQUEsRUFBVTtBQUNSLElBQUEsY0FBYyxFQUROLE1BQUE7QUFFUixJQUFBLEtBQUssRUFGRyxPQUFBO0FBR1IsSUFBQSxZQUFZLEVBSEosUUFBQTtBQUlSLElBQUEsU0FBUyxFQUpELFNBQUE7QUFLUixJQUFBLFdBQVcsRUFBRTtBQUxMLEdBQVYsQ0FERjtBQVFHO0FBQUEsK0JBQUEsT0FBTztBQUFBO0FBQUEsK0JBQVAsS0FBTyxDQUFQO0FBQUE7QUFBQSwrQkFBb0IsT0FBQSxDQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUMsb0JBQUEsQ0FBRCxJQUFBLEVBQUs7QUFBQyxJQUFBLEtBQUssRUFBRTtBQUFFLE1BQUEsS0FBSyxFQUFFO0FBQVQ7QUFBUixHQUFMLEVBVHpCLEtBU3lCLENBQXBCLENBUkgsQ0FERjtBQVRGLENBQUE7Ozs7QUF1QkEsT0FBQSxDQUFBLE9BQUEsR0FBQSxLQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IFRleHRJbnB1dCwgVGV4dCB9IGZyb20gJ3JlYWN0LW5hdGl2ZS1wYXBlcic7XG5pbXBvcnQgeyBXcmFwcGVkRmllbGRQcm9wcyB9IGZyb20gJ3JlZHV4LWZvcm0nO1xuXG5pbnRlcmZhY2UgSW5wdXRQcm9wcyB7XG4gIGxhYmVsOiBzdHJpbmc7XG4gIGVycm9yQ29sb3I6IHN0cmluZztcbiAgbWF4TGVuZ3RoOiBudW1iZXI7XG59XG5jb25zdCBJbnB1dCA9ICh7XG4gIG1ldGE6IHsgdG91Y2hlZCwgZXJyb3IgfSxcbiAgbGFiZWwsXG4gIGVycm9yQ29sb3IsXG4gIG1heExlbmd0aCxcbiAgaW5wdXQ6IHsgb25DaGFuZ2UgfSxcbn06IFdyYXBwZWRGaWVsZFByb3BzICYgSW5wdXRQcm9wcykgPT4ge1xuICBjb25zdCBpc0Vycm9yID0gdG91Y2hlZCAmJiBlcnJvcjtcblxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICA8VGV4dElucHV0XG4gICAgICAgIGF1dG9DYXBpdGFsaXplPVwibm9uZVwiXG4gICAgICAgIGVycm9yPXtpc0Vycm9yfVxuICAgICAgICBvbkNoYW5nZVRleHQ9e29uQ2hhbmdlfVxuICAgICAgICBtYXhMZW5ndGg9e21heExlbmd0aH1cbiAgICAgICAgcGxhY2Vob2xkZXI9e2xhYmVsfVxuICAgICAgLz5cbiAgICAgIHt0b3VjaGVkICYmIGVycm9yICYmIDxUZXh0IHN0eWxlPXt7IGNvbG9yOiBlcnJvckNvbG9yIH19PntlcnJvcn08L1RleHQ+fVxuICAgIDwvPlxuICApO1xufTtcblxuZXhwb3J0IGRlZmF1bHQgSW5wdXQ7XG4iXX0=

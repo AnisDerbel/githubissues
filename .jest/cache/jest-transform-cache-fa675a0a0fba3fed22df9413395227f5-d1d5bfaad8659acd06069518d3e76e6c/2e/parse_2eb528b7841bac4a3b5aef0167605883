@@ -1,0 +1,34 @@
+f3eea3a120b874ea3128083b1c5d646d
+
+
+
+
+
+var parse = function parse(version, options) {
+  options = require('../internal/parse-options')(options);
+
+  if (version instanceof require('../classes/semver')) {
+    return version;
+  }
+
+  if (typeof version !== 'string') {
+    return null;
+  }
+
+  if (version.length > require('../internal/constants').MAX_LENGTH) {
+    return null;
+  }
+
+  var r = options.loose ? require('../internal/re').re[require('../internal/re').t.LOOSE] : require('../internal/re').re[require('../internal/re').t.FULL];
+  if (!r.test(version)) {
+    return null;
+  }
+
+  try {
+    return new (require('../classes/semver'))(version, options);
+  } catch (er) {
+    return null;
+  }
+};
+
+module.exports = parse;

@@ -1,0 +1,49 @@
+2616dd80b08d1efba87f7534dc2df4e9
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.queryByDisplayValue = exports.queryAllByDisplayValue = exports.getByDisplayValue = exports.getAllByDisplayValue = exports.findByDisplayValue = exports.findAllByDisplayValue = void 0;
+
+
+
+
+
+
+
+var getTextInputNodeByDisplayValue = function getTextInputNodeByDisplayValue(node, value) {
+  try {var _require =
+
+
+    require('react-native'),TextInput = _require.TextInput;
+
+    var nodeValue = node.props.value !== undefined ? node.props.value : node.props.defaultValue;
+    return (0, require("./filterNodeByType").filterNodeByType)(node, TextInput) && (typeof value === 'string' ? value === nodeValue : value.test(nodeValue));
+  } catch (error) {
+    throw (0, require("./errors").createLibraryNotSupportedError)(error);
+  }
+};
+
+var queryAllByDisplayValue = function queryAllByDisplayValue(instance) {return function queryAllByDisplayValueFn(displayValue) {
+    return instance.findAll(function (node) {return getTextInputNodeByDisplayValue(node, displayValue);});
+  };};
+
+exports.queryAllByDisplayValue = queryAllByDisplayValue;
+
+var getMultipleError = function getMultipleError(displayValue) {return "Found multiple elements with display value: " + String(displayValue) + " ";};
+
+var getMissingError = function getMissingError(displayValue) {return "Unable to find an element with displayValue: " + String(displayValue);};var _ref =
+
+
+
+
+
+
+
+(0, require("./makeQueries").makeQueries)(queryAllByDisplayValue, getMissingError, getMultipleError),getByDisplayValue = _ref.getBy,getAllByDisplayValue = _ref.getAllBy,queryByDisplayValue = _ref.queryBy,findByDisplayValue = _ref.findBy,findAllByDisplayValue = _ref.findAllBy;
+exports.findAllByDisplayValue = findAllByDisplayValue;
+exports.findByDisplayValue = findByDisplayValue;
+exports.queryByDisplayValue = queryByDisplayValue;
+exports.getAllByDisplayValue = getAllByDisplayValue;
+exports.getByDisplayValue = getByDisplayValue;

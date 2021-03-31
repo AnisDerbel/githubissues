@@ -1,0 +1,223 @@
+6d1bc3ed90b4377a88101323b3d56a02
+function _createForOfIteratorHelperLoose(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;return function () {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };};}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}it = o[Symbol.iterator]();return it.next.bind(it);}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var subset = function subset(sub, dom) {var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  if (sub === dom)
+  return true;
+
+  sub = new (require('../classes/range.js'))(sub, options);
+  dom = new (require('../classes/range.js'))(dom, options);
+  var sawNonNull = false;
+
+  OUTER: for (var _iterator = _createForOfIteratorHelperLoose(sub.set), _step; !(_step = _iterator()).done;) {var simpleSub = _step.value;
+    for (var _iterator2 = _createForOfIteratorHelperLoose(dom.set), _step2; !(_step2 = _iterator2()).done;) {var simpleDom = _step2.value;
+      var isSub = simpleSubset(simpleSub, simpleDom, options);
+      sawNonNull = sawNonNull || isSub !== null;
+      if (isSub)
+      continue OUTER;
+    }
+
+
+
+
+    if (sawNonNull)
+    return false;
+  }
+  return true;
+};
+
+var simpleSubset = function simpleSubset(sub, dom, options) {
+  if (sub === dom)
+  return true;
+
+  if (sub.length === 1 && sub[0].semver === require('../classes/comparator.js').ANY) {
+    if (dom.length === 1 && dom[0].semver === require('../classes/comparator.js').ANY)
+    return true;else
+    if (options.includePrerelease)
+    sub = [new (require('../classes/comparator.js'))('>=0.0.0-0')];else
+
+    sub = [new (require('../classes/comparator.js'))('>=0.0.0')];
+  }
+
+  if (dom.length === 1 && dom[0].semver === require('../classes/comparator.js').ANY) {
+    if (options.includePrerelease)
+    return true;else
+
+    dom = [new (require('../classes/comparator.js'))('>=0.0.0')];
+  }
+
+  var eqSet = new Set();
+  var gt, lt;
+  for (var _iterator3 = _createForOfIteratorHelperLoose(sub), _step3; !(_step3 = _iterator3()).done;) {var c = _step3.value;
+    if (c.operator === '>' || c.operator === '>=')
+    gt = higherGT(gt, c, options);else
+    if (c.operator === '<' || c.operator === '<=')
+    lt = lowerLT(lt, c, options);else
+
+    eqSet.add(c.semver);
+  }
+
+  if (eqSet.size > 1)
+  return null;
+
+  var gtltComp;
+  if (gt && lt) {
+    gtltComp = require('../functions/compare.js')(gt.semver, lt.semver, options);
+    if (gtltComp > 0)
+    return null;else
+    if (gtltComp === 0 && (gt.operator !== '>=' || lt.operator !== '<='))
+    return null;
+  }
+
+
+  for (var _iterator4 = _createForOfIteratorHelperLoose(eqSet), _step4; !(_step4 = _iterator4()).done;) {var eq = _step4.value;
+    if (gt && !require('../functions/satisfies.js')(eq, String(gt), options))
+    return null;
+
+    if (lt && !require('../functions/satisfies.js')(eq, String(lt), options))
+    return null;
+
+    for (var _iterator6 = _createForOfIteratorHelperLoose(dom), _step6; !(_step6 = _iterator6()).done;) {var _c2 = _step6.value;
+      if (!require('../functions/satisfies.js')(eq, String(_c2), options))
+      return false;
+    }
+
+    return true;
+  }
+
+  var higher, lower;
+  var hasDomLT, hasDomGT;
+
+
+  var needDomLTPre = lt &&
+  !options.includePrerelease &&
+  lt.semver.prerelease.length ? lt.semver : false;
+  var needDomGTPre = gt &&
+  !options.includePrerelease &&
+  gt.semver.prerelease.length ? gt.semver : false;
+
+  if (needDomLTPre && needDomLTPre.prerelease.length === 1 &&
+  lt.operator === '<' && needDomLTPre.prerelease[0] === 0) {
+    needDomLTPre = false;
+  }
+
+  for (var _iterator5 = _createForOfIteratorHelperLoose(dom), _step5; !(_step5 = _iterator5()).done;) {var _c = _step5.value;
+    hasDomGT = hasDomGT || _c.operator === '>' || _c.operator === '>=';
+    hasDomLT = hasDomLT || _c.operator === '<' || _c.operator === '<=';
+    if (gt) {
+      if (needDomGTPre) {
+        if (_c.semver.prerelease && _c.semver.prerelease.length &&
+        _c.semver.major === needDomGTPre.major &&
+        _c.semver.minor === needDomGTPre.minor &&
+        _c.semver.patch === needDomGTPre.patch) {
+          needDomGTPre = false;
+        }
+      }
+      if (_c.operator === '>' || _c.operator === '>=') {
+        higher = higherGT(gt, _c, options);
+        if (higher === _c && higher !== gt)
+        return false;
+      } else if (gt.operator === '>=' && !require('../functions/satisfies.js')(gt.semver, String(_c), options))
+      return false;
+    }
+    if (lt) {
+      if (needDomLTPre) {
+        if (_c.semver.prerelease && _c.semver.prerelease.length &&
+        _c.semver.major === needDomLTPre.major &&
+        _c.semver.minor === needDomLTPre.minor &&
+        _c.semver.patch === needDomLTPre.patch) {
+          needDomLTPre = false;
+        }
+      }
+      if (_c.operator === '<' || _c.operator === '<=') {
+        lower = lowerLT(lt, _c, options);
+        if (lower === _c && lower !== lt)
+        return false;
+      } else if (lt.operator === '<=' && !require('../functions/satisfies.js')(lt.semver, String(_c), options))
+      return false;
+    }
+    if (!_c.operator && (lt || gt) && gtltComp !== 0)
+    return false;
+  }
+
+
+
+
+  if (gt && hasDomLT && !lt && gtltComp !== 0)
+  return false;
+
+  if (lt && hasDomGT && !gt && gtltComp !== 0)
+  return false;
+
+
+
+
+  if (needDomGTPre || needDomLTPre)
+  return false;
+
+  return true;
+};
+
+
+var higherGT = function higherGT(a, b, options) {
+  if (!a)
+  return b;
+  var comp = require('../functions/compare.js')(a.semver, b.semver, options);
+  return comp > 0 ? a :
+  comp < 0 ? b :
+  b.operator === '>' && a.operator === '>=' ? b :
+  a;
+};
+
+
+var lowerLT = function lowerLT(a, b, options) {
+  if (!a)
+  return b;
+  var comp = require('../functions/compare.js')(a.semver, b.semver, options);
+  return comp < 0 ? a :
+  comp > 0 ? b :
+  b.operator === '<' && a.operator === '<=' ? b :
+  a;
+};
+
+module.exports = subset;

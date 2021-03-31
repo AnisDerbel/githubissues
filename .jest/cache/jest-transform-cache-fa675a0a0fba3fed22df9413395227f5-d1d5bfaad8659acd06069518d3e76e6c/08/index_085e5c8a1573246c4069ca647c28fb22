@@ -1,0 +1,48 @@
+1dddc3b6e5fdebc3bf965e4ad59eef6a
+"use strict";
+
+
+
+exports.__esModule = true;
+
+var _Provider = require("@babel/runtime/helpers/interopRequireDefault")(require("./components/Provider"));
+
+exports.Provider = _Provider["default"];
+
+var _connectAdvanced = require("@babel/runtime/helpers/interopRequireDefault")(require("./components/connectAdvanced"));
+
+exports.connectAdvanced = _connectAdvanced["default"];
+
+
+
+exports.ReactReduxContext = require("./components/Context").ReactReduxContext;
+
+var _connect = require("@babel/runtime/helpers/interopRequireDefault")(require("./connect/connect"));
+
+exports.connect = _connect["default"];
+
+
+
+exports.useDispatch = require("./hooks/useDispatch").useDispatch;
+exports.createDispatchHook = require("./hooks/useDispatch").createDispatchHook;
+
+
+
+exports.useSelector = require("./hooks/useSelector").useSelector;
+exports.createSelectorHook = require("./hooks/useSelector").createSelectorHook;
+
+
+
+exports.useStore = require("./hooks/useStore").useStore;
+exports.createStoreHook = require("./hooks/useStore").createStoreHook;
+
+
+
+
+
+exports.batch = require("./utils/reactBatchedUpdates").unstable_batchedUpdates;
+
+var _shallowEqual = require("@babel/runtime/helpers/interopRequireDefault")(require("./utils/shallowEqual"));
+
+exports.shallowEqual = _shallowEqual["default"];
+(0, require("./utils/batch").setBatch)(require("./utils/reactBatchedUpdates").unstable_batchedUpdates);

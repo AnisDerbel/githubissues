@@ -1,0 +1,35 @@
+c52a5e1aefbbf63c95962889d4616419
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+
+
+
+
+
+
+var NOOP = function NOOP() {
+};
+
+
+
+var attachGestureHandler = NOOP;
+var createGestureHandler = NOOP;
+var dropGestureHandler = NOOP;
+var updateGestureHandler = NOOP;
+var _default = {
+  ScrollView: require("react-native").ScrollView,
+  PanGestureHandler: require("react-native").View,
+  attachGestureHandler: attachGestureHandler,
+  createGestureHandler: createGestureHandler,
+  dropGestureHandler: dropGestureHandler,
+  updateGestureHandler: updateGestureHandler,
+
+  Directions: require("./Directions").Directions,
+  State: require("./State").State };
+
+exports.default = _default;

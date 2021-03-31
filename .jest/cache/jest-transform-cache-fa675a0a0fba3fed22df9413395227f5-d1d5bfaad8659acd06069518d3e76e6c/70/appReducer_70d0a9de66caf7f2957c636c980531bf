@@ -1,0 +1,150 @@
+e00dced665616fa9d7211598577e62e6
+"use strict";
+
+/* istanbul ignore next */
+function cov_yl676wybm() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/appReducer.ts";
+  var hash = "799127f5119c1f4b6cac8d417e7aaa26c008f099";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/appReducer.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 5,
+          column: 3
+        }
+      },
+      "1": {
+        start: {
+          line: 7,
+          column: 14
+        },
+        end: {
+          line: 7,
+          column: 30
+        }
+      },
+      "2": {
+        start: {
+          line: 9,
+          column: 14
+        },
+        end: {
+          line: 9,
+          column: 30
+        }
+      },
+      "3": {
+        start: {
+          line: 11,
+          column: 19
+        },
+        end: {
+          line: 11,
+          column: 40
+        }
+      },
+      "4": {
+        start: {
+          line: 13,
+          column: 16
+        },
+        end: {
+          line: 13,
+          column: 66
+        }
+      },
+      "5": {
+        start: {
+          line: 15,
+          column: 17
+        },
+        end: {
+          line: 18,
+          column: 2
+        }
+      },
+      "6": {
+        start: {
+          line: 19,
+          column: 0
+        },
+        end: {
+          line: 19,
+          column: 29
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: {
+      version: 3,
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/redux/appReducer.ts"],
+      names: [],
+      mappings: ";;;;;;;;AAAA,IAAA,OAAA,GAAA,OAAA,CAAA,OAAA,CAAA;;AACA,IAAA,YAAA,GAAA,OAAA,CAAA,YAAA,CAAA;;AAEA,IAAA,SAAA,GAAA,OAAA,CAAA,eAAA,CAAA,OAAA,CAAA,gBAAA,CAAA,CAAA;;AAOA,IAAM,UAAU,GAA+B,OAAA,CAAA,eAAA,CAC7C;AACE,EAAA,IAAI,EAAJ,YAAA,CAAA,OADF;AAEE,EAAA,IAAI,EAAJ,SAAA,CAAA;AAFF,CAD6C,CAA/C;AAOA,OAAA,CAAA,OAAA,GAAe,UAAf",
+      sourcesContent: ["import {combineReducers, Reducer} from 'redux';\nimport {FormStateMap, reducer as form} from 'redux-form';\n\nimport repo, {IRepoState} from './repo/reducer';\n\nexport interface IApplicationState {\n  repo: IRepoState;\n  form: FormStateMap;\n}\n\nconst appReducer: Reducer<IApplicationState> = combineReducers<IApplicationState>(\n  {\n    form,\n    repo,\n  },\n);\n\nexport default appReducer;\n"]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "799127f5119c1f4b6cac8d417e7aaa26c008f099"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_yl676wybm = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_yl676wybm();
+cov_yl676wybm().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var tslib_1 =
+/* istanbul ignore next */
+(cov_yl676wybm().s[1]++, require("tslib"));
+var redux_1 =
+/* istanbul ignore next */
+(cov_yl676wybm().s[2]++, require("redux"));
+var redux_form_1 =
+/* istanbul ignore next */
+(cov_yl676wybm().s[3]++, require("redux-form"));
+var reducer_1 =
+/* istanbul ignore next */
+(cov_yl676wybm().s[4]++, tslib_1.__importDefault(require("./repo/reducer")));
+var appReducer =
+/* istanbul ignore next */
+(cov_yl676wybm().s[5]++, redux_1.combineReducers({
+  form: redux_form_1.reducer,
+  repo: reducer_1.default
+}));
+
+/* istanbul ignore next */
+cov_yl676wybm().s[6]++;
+exports.default = appReducer;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L2FwcFJlZHVjZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFZSTs7Ozs7Ozs7Ozs7Ozs7OztBQVpKLElBQUEsT0FBQTtBQUFBO0FBQUEseUJBQUEsT0FBQSxDQUFBLE9BQUEsQ0FBQSxDQUFBO0FBQ0EsSUFBQSxZQUFBO0FBQUE7QUFBQSx5QkFBQSxPQUFBLENBQUEsWUFBQSxDQUFBLENBQUE7QUFFQSxJQUFBLFNBQUE7QUFBQTtBQUFBLHlCQUFBLE9BQUEsQ0FBQSxlQUFBLENBQUEsT0FBQSxDQUFBLGdCQUFBLENBQUEsQ0FBQSxDQUFBO0FBT0EsSUFBTSxVQUFVO0FBQUE7QUFBQSx5QkFBK0IsT0FBQSxDQUFBLGVBQUEsQ0FDN0M7QUFDRSxFQUFBLElBQUksRUFBSixZQUFBLENBREYsT0FBQTtBQUVFLEVBQUEsSUFBSSxFQUFKLFNBQUEsQ0FBQTtBQUZGLENBRDZDLENBQS9CLENBQWhCOzs7O0FBT0EsT0FBQSxDQUFBLE9BQUEsR0FBQSxVQUFBIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtjb21iaW5lUmVkdWNlcnMsIFJlZHVjZXJ9IGZyb20gJ3JlZHV4JztcbmltcG9ydCB7Rm9ybVN0YXRlTWFwLCByZWR1Y2VyIGFzIGZvcm19IGZyb20gJ3JlZHV4LWZvcm0nO1xuXG5pbXBvcnQgcmVwbywge0lSZXBvU3RhdGV9IGZyb20gJy4vcmVwby9yZWR1Y2VyJztcblxuZXhwb3J0IGludGVyZmFjZSBJQXBwbGljYXRpb25TdGF0ZSB7XG4gIHJlcG86IElSZXBvU3RhdGU7XG4gIGZvcm06IEZvcm1TdGF0ZU1hcDtcbn1cblxuY29uc3QgYXBwUmVkdWNlcjogUmVkdWNlcjxJQXBwbGljYXRpb25TdGF0ZT4gPSBjb21iaW5lUmVkdWNlcnM8SUFwcGxpY2F0aW9uU3RhdGU+KFxuICB7XG4gICAgZm9ybSxcbiAgICByZXBvLFxuICB9LFxuKTtcblxuZXhwb3J0IGRlZmF1bHQgYXBwUmVkdWNlcjtcbiJdfQ==

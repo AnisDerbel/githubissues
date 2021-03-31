@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["module","exports","global","Map","require"],"mappings":"AAAAA,MAAM,CAACC,OAAP,GAAiB,OAAOC,MAAM,CAACC,GAAd,KAAsB,UAAtB,GACfC,OAAO,CAAC,qBAAD,CADQ,GAEfA,OAAO,CAAC,qBAAD,CAFT","sourcesContent":["module.exports = typeof global.Map === 'function' ?\n  require('./deepEqualIdentMap') :\n  require('./deepEqualIdentTag');\n"]}

@@ -1,0 +1,16 @@
+58b988e2ead3148e1e920f288235fd3b
+
+
+
+
+
+
+
+
+
+function stackClear() {
+  this.__data__ = new (require('./_ListCache'))();
+  this.size = 0;
+}
+
+module.exports = stackClear;

@@ -1,0 +1,27 @@
+55c4cf3f25835247facbb3655330be78
+'use strict';
+
+
+
+
+
+
+
+
+var slice = Array.prototype.slice;
+
+var polyfill = require('./polyfill')();
+
+var boundFindShim = function find(array, predicate) {
+  require('es-abstract/2019/RequireObjectCoercible')(array);
+  var args = slice.call(arguments, 1);
+  return polyfill.apply(array, args);
+};
+
+require('define-properties')(boundFindShim, {
+  getPolyfill: require('./polyfill'),
+  implementation: require('./implementation'),
+  shim: require('./shim') });
+
+
+module.exports = boundFindShim;

@@ -1,0 +1,91 @@
+ad3ba40404ec954684bcb93a2270061d
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+var TurboModuleRegistry = _interopRequireWildcard(require("../../TurboModule/TurboModuleRegistry"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var NativeModule = TurboModuleRegistry.getEnforcing('StatusBarManager');
+var constants = null;
+
+var NativeStatusBarManager = {
+  getConstants: function getConstants()
+
+
+  {
+    if (constants == null) {
+      constants = NativeModule.getConstants();
+    }
+    return constants;
+  },
+
+
+  getHeight: function getHeight(callback) {
+    NativeModule.getHeight(callback);
+  },
+
+  setNetworkActivityIndicatorVisible: function setNetworkActivityIndicatorVisible(visible) {
+    NativeModule.setNetworkActivityIndicatorVisible(visible);
+  },
+
+  addListener: function addListener(eventType) {
+    NativeModule.addListener(eventType);
+  },
+
+  removeListeners: function removeListeners(count) {
+    NativeModule.removeListeners(count);
+  },
+
+
+
+
+
+
+
+  setStyle: function setStyle(statusBarStyle, animated) {
+    NativeModule.setStyle(statusBarStyle, animated);
+  },
+
+
+
+
+  setHidden: function setHidden(hidden, withAnimation) {
+    NativeModule.setHidden(hidden, withAnimation);
+  } };var _default =
+
+
+NativeStatusBarManager;exports.default = _default;

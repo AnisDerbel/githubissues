@@ -1,0 +1,24 @@
+19d67bb146455a2af502e4d0be1b14bf
+"use strict";var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");require("react-native");
+
+
+var _enzymeAdapterReact = _interopRequireDefault(require("enzyme-adapter-react-16"));
+var _enzyme = _interopRequireDefault(require("enzyme"));
+
+require("react-native-gesture-handler/jestSetup");
+jest.mock('react-native-reanimated', function () {
+  var Reanimated = require('react-native-reanimated/mock');
+
+
+
+  Reanimated.default.call = function () {};
+
+  return Reanimated;
+});
+
+
+jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+
+
+
+_enzyme.default.configure({ adapter: new _enzymeAdapterReact.default() });

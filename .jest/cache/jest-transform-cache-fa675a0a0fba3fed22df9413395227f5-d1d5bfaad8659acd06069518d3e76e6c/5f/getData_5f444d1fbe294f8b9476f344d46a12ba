@@ -1,0 +1,180 @@
+3826db6283de935e0a599ea94e6e492e
+'use strict';
+
+
+
+var $push = require('call-bind/callBound')('Array.prototype.push');
+
+var map = function map(arr, mapper) {
+  var mapped = [];
+  for (var i = 0; i < arr.length; i += 1) {
+    $push(mapped, mapper(arr[i], i));
+  }
+  return mapped;
+};
+
+var expecteds = [
+['HTMLElement', 'article'],
+['HTMLElement', 'section'],
+['HTMLBaseFontElement', 'basefont', 'HTMLBaseFontElementConstructor'],
+['HTMLPhraseElement', 'cite', 'HTMLElement'],
+['HTMLElement', 'noscript'],
+['HTMLBGSoundElement', 'bgsound', 'HTMLElement'],
+['HTMLPhraseElement', 'blink', 'HTMLElement'],
+['HTMLElement', 'multicol'],
+['HTMLNextIdElement', 'nextid', 'HTMLElement'],
+['HTMLElement', 'rb'],
+['HTMLElement', 'spacer'],
+['HTMLAnchorElement', 'a', 'HTMLElement'],
+
+['HTMLAreaElement', 'area', 'HTMLElement'],
+['HTMLAudioElement', 'audio', 'HTMLElement'],
+['HTMLBaseElement', 'base', 'HTMLElement'],
+['HTMLBodyElement', 'body', 'HTMLElement'],
+['HTMLBRElement', 'br', 'HTMLElement'],
+['HTMLButtonElement', 'button'],
+['HTMLCanvasElement', 'canvas'],
+['HTMLContentElement', 'content', 'HTMLElement'],
+['HTMLDataElement', 'data', 'HTMLElement'],
+['HTMLDataListElement', 'datalist'],
+['HTMLDialogElement', 'dialog', 'HTMLElement'],
+['HTMLDirectoryElement', 'dir'],
+['HTMLDivElement', 'div'],
+['HTMLDListElement', 'dl'],
+['HTMLEmbedElement', 'embed'],
+['HTMLFieldSetElement', 'fieldset'],
+['HTMLFontElement', 'font'],
+['HTMLFormElement', 'form'],
+['HTMLFrameElement', 'frame'],
+['HTMLFrameSetElement', 'frameset'],
+['HTMLHeadElement', 'head'],
+['HTMLHeadingElement', 'h1'],
+['HTMLHeadingElement', 'h2'],
+['HTMLHeadingElement', 'h3'],
+['HTMLHeadingElement', 'h4'],
+['HTMLHeadingElement', 'h5'],
+['HTMLHeadingElement', 'h6'],
+['HTMLHtmlElement', 'html'],
+['HTMLHRElement', 'hr'],
+['HTMLIFrameElement', 'iframe'],
+['HTMLImageElement', 'img'],
+['HTMLInputElement', 'input'],
+['HTMLIsIndexElement', 'index', 'HTMLElement'],
+['HTMLKeygenElement', 'keygen', 'HTMLBlockElement'],
+['HTMLLabelElement', 'label'],
+['HTMLLegendElement', 'legend'],
+['HTMLLIElement', 'li'],
+['HTMLLinkElement', 'link'],
+['HTMLElement', 'main'],
+['HTMLMapElement', 'map'],
+['HTMLMarqueeElement', 'marquee'],
+['HTMLMenuElement', 'menu'],
+['HTMLMetaElement', 'meta'],
+['HTMLMeterElement', 'meter', 'HTMLElement'],
+['HTMLModElement', 'del'],
+['HTMLModElement', 'ins'],
+['HTMLObjectElement', 'object'],
+['HTMLOListElement', 'ol'],
+['HTMLOptGroupElement', 'optgroup'],
+['HTMLOptionElement', 'option'],
+['HTMLOutputElement', 'output'],
+['HTMLParagraphElement', 'p'],
+['HTMLParamElement', 'param'],
+['HTMLPictureElement', 'picture', 'HTMLElement'],
+['HTMLPreElement', 'pre'],
+['HTMLProgressElement', 'progress', 'HTMLElement'],
+['HTMLQuoteElement', 'q', 'HTMLBlockquoteElement'],
+['HTMLQuoteElement', 'blockquote', 'HTMLBlockElement', 'HTMLBlockquoteElement'],
+['HTMLScriptElement', 'script'],
+['HTMLSelectElement', 'select'],
+['HTMLShadowElement', 'shadow', 'HTMLElement'],
+['HTMLSourceElement', 'source'],
+['HTMLSpanElement', 'span', 'HTMLElement'],
+['HTMLStyleElement', 'style'],
+['HTMLTableElement', 'table'],
+['HTMLTableCaptionElement', 'caption'],
+['HTMLTableCellElement', 'td', 'HTMLTableDataCellElement'],
+['HTMLTableCellElement', 'th', 'HTMLTableHeaderCellElement'],
+['HTMLTableRowElement', 'tr'],
+['HTMLTableColElement', 'col'],
+['HTMLTableColElement', 'colgroup'],
+['HTMLTableSectionElement', 'tbody'],
+['HTMLTableSectionElement', 'thead'],
+['HTMLTableSectionElement', 'tfoot'],
+['HTMLTemplateElement', 'template', 'HTMLElement'],
+['HTMLTextAreaElement', 'textarea'],
+['HTMLTimeElement', 'time', 'HTMLElement'],
+['HTMLTitleElement', 'title'],
+['HTMLTrackElement', 'track', 'HTMLElement'],
+['HTMLUListElement', 'ul'],
+['HTMLVideoElement', 'video'],
+['HTMLElement', 'abbr'],
+['HTMLElement', 'address'],
+['HTMLElement', 'aside'],
+['HTMLElement', 'b'],
+['HTMLElement', 'bdi'],
+['HTMLElement', 'bdo'],
+['HTMLElement', 'code'],
+['HTMLElement', 'dd'],
+['HTMLDetailsElement', 'details', 'HTMLElement'],
+['HTMLElement', 'dfn'],
+['HTMLElement', 'dt'],
+['HTMLElement', 'em'],
+['HTMLElement', 'figcaption'],
+['HTMLElement', 'figure'],
+['HTMLElement', 'footer'],
+['HTMLElement', 'header'],
+['HTMLElement', 'hgroup'],
+['HTMLElement', 'i'],
+['HTMLElement', 'kbd'],
+['HTMLElement', 'mark'],
+['HTMLElement', 'nav'],
+['HTMLElement', 'rp'],
+['HTMLElement', 'rt'],
+['HTMLElement', 'ruby'],
+['HTMLElement', 's'],
+['HTMLElement', 'samp'],
+['HTMLSlotElement', 'slot', 'HTMLElement'],
+['HTMLElement', 'small'],
+['HTMLElement', 'strong'],
+['HTMLElement', 'summary'],
+['HTMLElement', 'u'],
+['HTMLElement', 'var'],
+['HTMLElement', 'wbr']];
+
+
+
+var getConstructor = function getTagConstructor(tag, constructor, unknown) {
+  if (typeof document !== 'undefined' && typeof document.createElement === 'function') {
+    var actual = document.createElement(tag).constructor;
+    if (actual !== unknown) {
+      return actual;
+    }
+  }
+};
+
+module.exports = function getData() {
+  var unknown = global.HTMLUnknownElement;
+  return {
+    all: global.HTMLElement,
+    elements: map(expecteds, function (expected) {
+      var constructorName = expected[0];
+      var tag = expected[1];
+      var alternate;
+      var altConstructor;
+      for (var i = 2; i < arguments.length && !altConstructor; i += 1) {
+        alternate = expected[i];
+        altConstructor = alternate && global[alternate];
+      }
+      var constructor = global[constructorName];
+
+      return {
+        constructor: getConstructor(tag, altConstructor || constructor, unknown),
+        constructorName: altConstructor ? alternate : constructorName,
+        expectedConstructor: altConstructor || constructor,
+        tag: tag };
+
+    }),
+    unknown: unknown };
+
+};

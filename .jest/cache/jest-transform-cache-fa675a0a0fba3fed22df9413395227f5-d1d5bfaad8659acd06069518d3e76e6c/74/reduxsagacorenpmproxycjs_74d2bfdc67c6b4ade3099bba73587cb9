@@ -1,0 +1,21 @@
+cbd1e9f5c440b25951ced8ff3f3e216c
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+function _interopDefault(ex) {return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;}
+
+
+var createSagaMiddleware__default = _interopDefault(require('@redux-saga/core'));
+
+
+
+Object.keys(require('@redux-saga/core')).forEach(function (k) {
+  if (k !== 'default') Object.defineProperty(exports, k, {
+    enumerable: true,
+    get: function get() {
+      return require('@redux-saga/core')[k];
+    } });
+
+});
+exports.default = createSagaMiddleware__default;

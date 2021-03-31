@@ -1,0 +1,17 @@
+807b2b184869015fb8ad5c198e7a9e72
+"use strict";function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = require("@babel/runtime/helpers/getPrototypeOf")(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = require("@babel/runtime/helpers/getPrototypeOf")(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return require("@babel/runtime/helpers/possibleConstructorReturn")(this, result);};}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {}));return true;} catch (e) {return false;}}
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;var
+
+SagaTestError = function (_Error) {require("@babel/runtime/helpers/inherits")(SagaTestError, _Error);var _super = _createSuper(SagaTestError);
+  function SagaTestError(message) {var _this;require("@babel/runtime/helpers/classCallCheck")(this, SagaTestError);
+    _this = _super.call(this, message);
+    _this.name = 'SagaTestError';return _this;
+  }return SagaTestError;}(require("@babel/runtime/helpers/wrapNativeSuper")(Error));
+
+
+
+exports.default = SagaTestError;

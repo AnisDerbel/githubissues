@@ -1,0 +1,23 @@
+d0d61b45e3bea3d3720771fc1ed50462
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = serializeEffect;
+
+var _utilInspect = _interopRequireDefault(require("util-inspect"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var DEFAULT_OPTIONS = {
+  depth: 4 };
+
+
+function serializeEffect(effect, effectKey) {
+  if (effect != null && typeof effect === 'object' && !Array.isArray(effect) && effectKey && effectKey in effect) {
+    return (0, _utilInspect.default)(effect[effectKey], DEFAULT_OPTIONS);
+  }
+
+  return (0, _utilInspect.default)(effect, DEFAULT_OPTIONS);
+}

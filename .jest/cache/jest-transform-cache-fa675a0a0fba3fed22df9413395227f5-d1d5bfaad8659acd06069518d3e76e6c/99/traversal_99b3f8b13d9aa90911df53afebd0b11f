@@ -1,0 +1,118 @@
+d995980885d7d099fddab1c9996e182f
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.prevElementSibling = exports.nextElementSibling = exports.getName = exports.hasAttrib = exports.getAttributeValue = exports.getSiblings = exports.getParent = exports.getChildren = void 0;
+
+var emptyArray = [];
+
+
+
+
+
+
+function getChildren(elem) {
+  var _a;
+  return (_a = elem.children) !== null && _a !== void 0 ? _a : emptyArray;
+}
+exports.getChildren = getChildren;
+
+
+
+
+
+
+function getParent(elem) {
+  return elem.parent || null;
+}
+exports.getParent = getParent;
+
+
+
+
+
+
+
+
+
+
+function getSiblings(elem) {
+  var _a, _b;
+  var parent = getParent(elem);
+  if (parent != null)
+  return getChildren(parent);
+  var siblings = [elem];
+  var prev = elem.prev,next = elem.next;
+  while (prev != null) {
+    siblings.unshift(prev);
+    _a = prev, prev = _a.prev;
+  }
+  while (next != null) {
+    siblings.push(next);
+    _b = next, next = _b.next;
+  }
+  return siblings;
+}
+exports.getSiblings = getSiblings;
+
+
+
+
+
+
+
+function getAttributeValue(elem, name) {
+  var _a;
+  return (_a = elem.attribs) === null || _a === void 0 ? void 0 : _a[name];
+}
+exports.getAttributeValue = getAttributeValue;
+
+
+
+
+
+
+
+function hasAttrib(elem, name) {
+  return elem.attribs != null &&
+  Object.prototype.hasOwnProperty.call(elem.attribs, name) &&
+  elem.attribs[name] != null;
+}
+exports.hasAttrib = hasAttrib;
+
+
+
+
+
+
+function getName(elem) {
+  return elem.name;
+}
+exports.getName = getName;
+
+
+
+
+
+
+function nextElementSibling(elem) {
+  var _a;
+  var next = elem.next;
+  while (next !== null && !require("./tagtypes").isTag(next)) {
+    _a = next, next = _a.next;}
+  return next;
+}
+exports.nextElementSibling = nextElementSibling;
+
+
+
+
+
+
+function prevElementSibling(elem) {
+  var _a;
+  var prev = elem.prev;
+  while (prev !== null && !require("./tagtypes").isTag(prev)) {
+    _a = prev, prev = _a.prev;}
+  return prev;
+}
+exports.prevElementSibling = prevElementSibling;

@@ -1,0 +1,78 @@
+12c46979db7bd5fbfec7d8f2087ccea2
+
+
+
+
+
+
+
+
+
+
+var mapTag = '[object Map]',
+setTag = '[object Set]';
+
+
+var objectProto = Object.prototype;
+
+
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function isEmpty(value) {
+  if (value == null) {
+    return true;
+  }
+  if (require('./isArrayLike')(value) && (
+  require('./isArray')(value) || typeof value == 'string' || typeof value.splice == 'function' ||
+  require('./isBuffer')(value) || require('./isTypedArray')(value) || require('./isArguments')(value))) {
+    return !value.length;
+  }
+  var tag = require('./_getTag')(value);
+  if (tag == mapTag || tag == setTag) {
+    return !value.size;
+  }
+  if (require('./_isPrototype')(value)) {
+    return !require('./_baseKeys')(value).length;
+  }
+  for (var key in value) {
+    if (hasOwnProperty.call(value, key)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+module.exports = isEmpty;

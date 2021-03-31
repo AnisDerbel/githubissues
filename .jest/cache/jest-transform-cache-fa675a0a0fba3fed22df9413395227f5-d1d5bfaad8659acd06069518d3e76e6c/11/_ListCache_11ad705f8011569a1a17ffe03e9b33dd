@@ -1,0 +1,33 @@
+cf9ffa00d28b810028fa430c78096abb
+
+
+
+
+
+
+
+
+
+
+
+
+
+function ListCache(entries) {
+  var index = -1,
+  length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+
+ListCache.prototype.clear = require('./_listCacheClear');
+ListCache.prototype['delete'] = require('./_listCacheDelete');
+ListCache.prototype.get = require('./_listCacheGet');
+ListCache.prototype.has = require('./_listCacheHas');
+ListCache.prototype.set = require('./_listCacheSet');
+
+module.exports = ListCache;

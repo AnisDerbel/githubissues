@@ -1,0 +1,26 @@
+f9a4f2f04951d90877c90af90cdcd9b5
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = deprecate;
+
+var _colors = _interopRequireDefault(require("./colors"));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function deprecate(matcherFn, message) {
+  var shouldWarn = true;
+  return function deprecateWrapper(enzymeWrapper) {
+    if (shouldWarn) {
+
+      console.warn(_colors.default.yellow(message));
+      shouldWarn = false;
+    }for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {args[_key - 1] = arguments[_key];}
+
+    return matcherFn.call.apply(matcherFn, [this, enzymeWrapper].concat(args));
+  };
+}
+
+module.exports = exports.default;

@@ -1,0 +1,2 @@
+6783a9c8925b3b9438b6c92d2e35b279
+module.exports = require('./lib/expectSaga/providers');

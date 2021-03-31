@@ -1,0 +1,184 @@
+90606f17372259e30cc01b41266643bd
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _redux = require("redux");
+
+var _reduxSaga = _interopRequireDefault(require("redux-saga"));
+
+var _reduxDevtoolsExtension = require("redux-devtools-extension");
+
+var _appReducer = _interopRequireDefault(require("./appReducer"));
+
+var _sagas = _interopRequireDefault(require("./sagas"));
+
+function cov_yzh17qyo0() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/store.ts";
+  var hash = "109274fb5704ebd8de9f46a35d9d3fd11ef1a536";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/store.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 6,
+          column: 23
+        },
+        end: {
+          line: 6,
+          column: 45
+        }
+      },
+      "1": {
+        start: {
+          line: 8,
+          column: 20
+        },
+        end: {
+          line: 8,
+          column: 36
+        }
+      },
+      "2": {
+        start: {
+          line: 9,
+          column: 0
+        },
+        end: {
+          line: 14,
+          column: 1
+        }
+      },
+      "3": {
+        start: {
+          line: 11,
+          column: 34
+        },
+        end: {
+          line: 12,
+          column: 12
+        }
+      },
+      "4": {
+        start: {
+          line: 13,
+          column: 2
+        },
+        end: {
+          line: 13,
+          column: 46
+        }
+      },
+      "5": {
+        start: {
+          line: 16,
+          column: 14
+        },
+        end: {
+          line: 19,
+          column: 1
+        }
+      },
+      "6": {
+        start: {
+          line: 20,
+          column: 0
+        },
+        end: {
+          line: 20,
+          column: 29
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 9,
+            column: 0
+          },
+          end: {
+            line: 14,
+            column: 1
+          }
+        },
+        type: "if",
+        locations: [{
+          start: {
+            line: 9,
+            column: 0
+          },
+          end: {
+            line: 14,
+            column: 1
+          }
+        }, {
+          start: {
+            line: 9,
+            column: 0
+          },
+          end: {
+            line: 14,
+            column: 1
+          }
+        }],
+        line: 9
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    f: {},
+    b: {
+      "0": [0, 0]
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "109274fb5704ebd8de9f46a35d9d3fd11ef1a536"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    cov_yzh17qyo0 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_yzh17qyo0();
+var sagaMiddleware = (cov_yzh17qyo0().s[0]++, (0, _reduxSaga.default)());
+var middleWares = (cov_yzh17qyo0().s[1]++, [sagaMiddleware]);
+cov_yzh17qyo0().s[2]++;
+
+if (__DEV__) {
+  cov_yzh17qyo0().b[0][0]++;
+  var createFlipperMiddleware = (cov_yzh17qyo0().s[3]++, require('rn-redux-middleware-flipper').default);
+  cov_yzh17qyo0().s[4]++;
+  middleWares.push(createFlipperMiddleware());
+} else {
+  cov_yzh17qyo0().b[0][1]++;
+}
+
+var store = (cov_yzh17qyo0().s[5]++, (0, _redux.createStore)(_appReducer.default, (0, _reduxDevtoolsExtension.composeWithDevTools)(_redux.applyMiddleware.apply(void 0, middleWares))));
+cov_yzh17qyo0().s[6]++;
+sagaMiddleware.run(_sagas.default);
+var _default = store;
+exports.default = _default;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0b3JlLnRzIl0sIm5hbWVzIjpbInNhZ2FNaWRkbGV3YXJlIiwibWlkZGxlV2FyZXMiLCJfX0RFVl9fIiwiY3JlYXRlRmxpcHBlck1pZGRsZXdhcmUiLCJyZXF1aXJlIiwiZGVmYXVsdCIsInB1c2giLCJzdG9yZSIsInJvb3RSZWR1Y2VyIiwiYXBwbHlNaWRkbGV3YXJlIiwicnVuIiwicm9vdFNhZ2EiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7QUFBQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFDQTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFDQSxJQUFNQSxjQUFjLDRCQUFHLHlCQUFILENBQXBCO0FBRUEsSUFBTUMsV0FBVyw0QkFBRyxDQUFDRCxjQUFELENBQUgsQ0FBakI7OztBQUNBLElBQUlFLE9BQUosRUFBYTtBQUFBO0FBRVgsTUFBTUMsdUJBQXVCLDRCQUFHQyxPQUFPLENBQUMsNkJBQUQsQ0FBUCxDQUM3QkMsT0FEMEIsQ0FBN0I7QUFGVztBQUlYSixFQUFBQSxXQUFXLENBQUNLLElBQVosQ0FBaUJILHVCQUF1QixFQUF4QztBQUNELENBTEQ7QUFBQTtBQUFBOztBQU9BLElBQU1JLEtBQUssNEJBQUcsd0JBQ1pDLG1CQURZLEVBRVosaURBQW9CQyxxQ0FBbUJSLFdBQW5CLENBQXBCLENBRlksQ0FBSCxDQUFYOztBQUlBRCxjQUFjLENBQUNVLEdBQWYsQ0FBbUJDLGNBQW5CO2VBRWVKLEsiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge2FwcGx5TWlkZGxld2FyZSwgY3JlYXRlU3RvcmV9IGZyb20gJ3JlZHV4JztcbmltcG9ydCBjcmVhdGVTYWdhTWlkZGxld2FyZSBmcm9tICdyZWR1eC1zYWdhJztcbmltcG9ydCB7Y29tcG9zZVdpdGhEZXZUb29sc30gZnJvbSAncmVkdXgtZGV2dG9vbHMtZXh0ZW5zaW9uJztcbmltcG9ydCByb290UmVkdWNlciBmcm9tICcuL2FwcFJlZHVjZXInO1xuaW1wb3J0IHJvb3RTYWdhIGZyb20gJy4vc2FnYXMnO1xuY29uc3Qgc2FnYU1pZGRsZXdhcmUgPSBjcmVhdGVTYWdhTWlkZGxld2FyZSgpO1xuXG5jb25zdCBtaWRkbGVXYXJlcyA9IFtzYWdhTWlkZGxld2FyZV07XG5pZiAoX19ERVZfXykge1xuICAvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgQHR5cGVzY3JpcHQtZXNsaW50L25vLXZhci1yZXF1aXJlc1xuICBjb25zdCBjcmVhdGVGbGlwcGVyTWlkZGxld2FyZSA9IHJlcXVpcmUoJ3JuLXJlZHV4LW1pZGRsZXdhcmUtZmxpcHBlcicpXG4gICAgLmRlZmF1bHQ7XG4gIG1pZGRsZVdhcmVzLnB1c2goY3JlYXRlRmxpcHBlck1pZGRsZXdhcmUoKSk7XG59XG5cbmNvbnN0IHN0b3JlID0gY3JlYXRlU3RvcmUoXG4gIHJvb3RSZWR1Y2VyLFxuICBjb21wb3NlV2l0aERldlRvb2xzKGFwcGx5TWlkZGxld2FyZSguLi5taWRkbGVXYXJlcykpLFxuKTtcbnNhZ2FNaWRkbGV3YXJlLnJ1bihyb290U2FnYSk7XG5cbmV4cG9ydCBkZWZhdWx0IHN0b3JlO1xuIl19

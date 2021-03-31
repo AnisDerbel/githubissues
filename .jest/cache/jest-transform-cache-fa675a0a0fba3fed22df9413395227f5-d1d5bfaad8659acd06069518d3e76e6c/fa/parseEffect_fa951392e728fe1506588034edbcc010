@@ -1,0 +1,141 @@
+ff09583be2cb9e2d0da8ec2535d08f34
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = parseEffect;
+
+var is = _interopRequireWildcard(require("@redux-saga/is"));
+
+
+
+
+
+
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}
+
+function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}
+
+var createEffectWithNestedEffects = function createEffectWithNestedEffects(type) {return function (effect, extra) {return _extends({
+      type: type,
+      effect: effect },
+    extra, {
+      mapEffects: Array.isArray(effect) ? function (f) {return effect.map(f);} : function (f) {return (0, require("../utils/object").mapValues)(effect, f);} });};};
+
+
+var createAll = createEffectWithNestedEffects(require("../shared/keys").ALL);
+var createRace = createEffectWithNestedEffects(require("../shared/keys").RACE);
+
+function parseEffect(effect) {
+  var parsedEffect;
+
+  switch (true) {
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.take(effect)):
+      return {
+        type: require("../shared/keys").TAKE,
+        effect: parsedEffect,
+        providerKey: 'take' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.put(effect)):
+      return {
+        type: require("../shared/keys").PUT,
+        effect: parsedEffect,
+        providerKey: 'put' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.race(effect)):
+      return createRace(parsedEffect, {
+        providerKey: 'race' });
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.call(effect)):
+      return {
+        type: require("../shared/keys").CALL,
+        effect: parsedEffect,
+        providerKey: 'call' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.cancel(effect)):
+      return {
+        type: require("../shared/keys").CANCEL,
+        effect: parsedEffect,
+        providerKey: 'cancel' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.cancelled(effect)):
+      return {
+        type: require("../shared/keys").CANCELLED,
+        effect: parsedEffect,
+        providerKey: 'cancelled' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.cps(effect)):
+      return {
+        type: require("../shared/keys").CPS,
+        effect: parsedEffect,
+        providerKey: 'cps' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.flush(effect)):
+      return {
+        type: require("../shared/keys").FLUSH,
+        effect: parsedEffect,
+        providerKey: 'flush' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.fork(effect)):
+      return {
+        type: require("../shared/keys").FORK,
+        effect: parsedEffect,
+        providerKey: parsedEffect.detached ? 'spawn' : 'fork' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.getContext(effect)):
+      return {
+        type: require("../shared/keys").GET_CONTEXT,
+        effect: parsedEffect,
+        providerKey: 'getContext' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.join(effect)):
+      return {
+        type: require("../shared/keys").JOIN,
+        effect: parsedEffect,
+        providerKey: 'join' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.select(effect)):
+      return {
+        type: require("../shared/keys").SELECT,
+        effect: parsedEffect,
+        providerKey: 'select' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.setContext(effect)):
+      return {
+        type: require("../shared/keys").SET_CONTEXT,
+        effect: parsedEffect,
+        providerKey: 'setContext' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.actionChannel(effect)):
+      return {
+        type: require("../shared/keys").ACTION_CHANNEL,
+        effect: parsedEffect,
+        providerKey: 'actionChannel' };
+
+
+    case is.notUndef(parsedEffect = require("../utils/asEffect").asEffect.all(effect)):
+      return createAll(parsedEffect);
+
+    default:
+      return {
+        type: require("../shared/keys").NONE };}
+
+
+}

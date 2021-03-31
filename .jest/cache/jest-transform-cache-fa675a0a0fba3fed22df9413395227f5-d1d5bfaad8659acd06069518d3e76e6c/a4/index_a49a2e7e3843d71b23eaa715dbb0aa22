@@ -1,0 +1,700 @@
+2a89276495433667bd53573ba280848f
+"use strict";var _exposableEffects;
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = expectSaga;
+
+
+
+var is = _interopRequireWildcard(require("@redux-saga/is"));
+
+var effects = _interopRequireWildcard(require("redux-saga/effects"));
+
+var _objectAssign = _interopRequireDefault(require("object-assign"));
+
+
+
+var _Map = _interopRequireDefault(require("../utils/Map"));
+
+var _ArraySet = _interopRequireDefault(require("../utils/ArraySet"));
+
+
+
+
+
+var _identity = _interopRequireDefault(require("../utils/identity"));
+
+var _parseEffect = _interopRequireDefault(require("./parseEffect"));
+
+
+
+
+
+var _findDispatchableActionIndex = _interopRequireDefault(require("./findDispatchableActionIndex"));
+
+var _sagaWrapper = _interopRequireWildcard(require("./sagaWrapper"));
+
+var _sagaIdFactory = _interopRequireDefault(require("./sagaIdFactory"));
+
+
+
+
+
+
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}
+
+function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}var
+
+
+
+all =
+
+
+
+
+effects.all,call = effects.call,fork = effects.fork,race = effects.race,spawn = effects.spawn;
+var INIT_ACTION = {
+  type: '@@redux-saga-test-plan/INIT' };
+
+var defaultSagaWrapper = (0, _sagaWrapper.default)();
+
+function extractState(reducer, initialState) {
+  return initialState || reducer(undefined, INIT_ACTION);
+}
+
+function _toJSON(object) {
+  if (Array.isArray(object)) {
+    return object.map(_toJSON);
+  }
+
+  if (typeof object === 'function') {
+    return "@@redux-saga-test-plan/json/function/" + (object.name || '<anonymous>');
+  }
+
+  if (typeof object === 'object' && object !== null) {
+    return (0, require("../utils/object").mapValues)(object, _toJSON);
+  }
+
+  return object;
+}
+
+function lacksSagaWrapper(value) {var _ref =
+
+
+
+  (0, _parseEffect.default)(value),type = _ref.type,effect = _ref.effect;
+  return type !== 'FORK' || !(0, _sagaWrapper.isSagaWrapper)(effect.fn);
+}
+
+var exposableEffects = (_exposableEffects = {}, require("@babel/runtime/helpers/defineProperty")(_exposableEffects,
+require("../shared/keys").TAKE, 'take'), require("@babel/runtime/helpers/defineProperty")(_exposableEffects,
+require("../shared/keys").PUT, 'put'), require("@babel/runtime/helpers/defineProperty")(_exposableEffects,
+require("../shared/keys").RACE, 'race'), require("@babel/runtime/helpers/defineProperty")(_exposableEffects,
+require("../shared/keys").CALL, 'call'), require("@babel/runtime/helpers/defineProperty")(_exposableEffects,
+require("../shared/keys").CPS, 'cps'), require("@babel/runtime/helpers/defineProperty")(_exposableEffects,
+require("../shared/keys").FORK, 'fork'), require("@babel/runtime/helpers/defineProperty")(_exposableEffects,
+require("../shared/keys").GET_CONTEXT, 'getContext'), require("@babel/runtime/helpers/defineProperty")(_exposableEffects,
+require("../shared/keys").SELECT, 'select'), require("@babel/runtime/helpers/defineProperty")(_exposableEffects,
+require("../shared/keys").SET_CONTEXT, 'setContext'), require("@babel/runtime/helpers/defineProperty")(_exposableEffects,
+require("../shared/keys").ACTION_CHANNEL, 'actionChannel'), _exposableEffects);
+
+
+function expectSaga(generator) {var _effectStores;for (var _len = arguments.length, sagaArgs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {sagaArgs[_key - 1] = arguments[_key];}
+  var allEffects = [];
+  var effectStores = (_effectStores = {}, require("@babel/runtime/helpers/defineProperty")(_effectStores,
+  require("../shared/keys").TAKE, new _ArraySet.default()), require("@babel/runtime/helpers/defineProperty")(_effectStores,
+  require("../shared/keys").PUT, new _ArraySet.default()), require("@babel/runtime/helpers/defineProperty")(_effectStores,
+  require("../shared/keys").RACE, new _ArraySet.default()), require("@babel/runtime/helpers/defineProperty")(_effectStores,
+  require("../shared/keys").CALL, new _ArraySet.default()), require("@babel/runtime/helpers/defineProperty")(_effectStores,
+  require("../shared/keys").CPS, new _ArraySet.default()), require("@babel/runtime/helpers/defineProperty")(_effectStores,
+  require("../shared/keys").FORK, new _ArraySet.default()), require("@babel/runtime/helpers/defineProperty")(_effectStores,
+  require("../shared/keys").GET_CONTEXT, new _ArraySet.default()), require("@babel/runtime/helpers/defineProperty")(_effectStores,
+  require("../shared/keys").SET_CONTEXT, new _ArraySet.default()), require("@babel/runtime/helpers/defineProperty")(_effectStores,
+  require("../shared/keys").SELECT, new _ArraySet.default()), require("@babel/runtime/helpers/defineProperty")(_effectStores,
+  require("../shared/keys").ACTION_CHANNEL, new _ArraySet.default()), _effectStores);
+
+  var expectations = [];
+  var ioChannel = (0, require("redux-saga").stdChannel)();
+  var queuedActions = [];
+  var forkedTasks = [];
+  var outstandingForkEffects = new _Map.default();
+  var outstandingActionChannelEffects = new _Map.default();
+  var channelsToPatterns = new _Map.default();
+  var dispatchPromise = Promise.resolve();
+  var nextSagaId = (0, _sagaIdFactory.default)();
+  var stopDirty = false;
+  var negateNextAssertion = false;
+  var isRunning = false;
+  var delayTime = null;
+  var iterator;
+  var mainTask;
+  var mainTaskPromise;
+  var providers;
+  var returnValue;
+  var errorValue;
+  var expectError = false;
+  var storeState;
+
+  function setReturnValue(value) {
+    returnValue = value;
+  }
+
+  function setErrorValue(value) {
+    errorValue = value;
+  }
+
+  function useProvidedValue(value) {
+    function addEffect() {
+
+
+      processEffect({
+        effectId: nextSagaId(),
+        effect: value });
+
+    }
+
+    try {
+      var providedValue = (0, require("./provideValue").provideValue)(providers, value);
+
+      if (providedValue === require("./provideValue").NEXT) {
+        return value;
+      }
+
+      addEffect();
+      return providedValue;
+    } catch (e) {
+      addEffect();
+      throw e;
+    }
+  }
+
+  function refineYieldedValue(value) {
+    var parsedEffect = (0, _parseEffect.default)(value);
+    var localProviders = providers || {};var
+
+    type =
+
+    parsedEffect.type,effect = parsedEffect.effect;
+
+    switch (true) {
+      case type === require("../shared/keys").RACE && !localProviders.race:
+        processEffect({
+          effectId: nextSagaId(),
+          effect: value });
+
+        return race(parsedEffect.mapEffects(refineYieldedValue));
+
+      case type === require("../shared/keys").ALL && !localProviders.all:
+        return all(parsedEffect.mapEffects(refineYieldedValue));
+
+      case type === require("../shared/keys").FORK:
+        {var
+
+          args =
+
+
+
+          effect.args,detached = effect.detached,context = effect.context,fn = effect.fn;
+          var providedValue = useProvidedValue(value);
+          var isProvided = providedValue !== value;
+
+          if (!detached && !isProvided) {
+
+
+            processEffect({
+              effectId: nextSagaId(),
+              effect: value });
+
+            var finalArgs = args;
+            return fork((0, _sagaWrapper.default)(fn.name), fn.apply(context, finalArgs), refineYieldedValue);
+          }
+
+          if (detached && !isProvided) {
+
+
+            processEffect({
+              effectId: nextSagaId(),
+              effect: value });
+
+            return spawn((0, _sagaWrapper.default)(fn.name), fn.apply(context, args), refineYieldedValue);
+          }
+
+          return providedValue;
+        }
+
+      case type === require("../shared/keys").CALL:
+        {
+          var _providedValue = useProvidedValue(value);
+
+          if (_providedValue !== value) {
+            return _providedValue;
+          }
+
+
+
+          processEffect({
+            effectId: nextSagaId(),
+            effect: value });var
+
+
+          _context =
+
+
+          effect.context,_fn = effect.fn,_args = effect.args;
+          var result = _fn.apply(_context, _args);
+
+          if (is.iterator(result)) {
+            return call(defaultSagaWrapper, result, refineYieldedValue);
+          }
+
+          return result;
+        }
+
+
+
+      case is.iterator(value):
+        return useProvidedValue(defaultSagaWrapper(value, refineYieldedValue));
+
+      default:
+        return useProvidedValue(value);}
+
+  }
+
+  function defaultReducer() {var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : storeState;
+    return state;
+  }
+
+  var reducer = defaultReducer;
+
+  function getAllPromises() {
+    return new Promise(function (resolve) {
+      Promise.all([].concat(require("@babel/runtime/helpers/toConsumableArray")(forkedTasks.map(taskPromise)), [mainTaskPromise])).then(function () {
+        if (stopDirty) {
+          stopDirty = false;
+          resolve(getAllPromises());
+        }
+
+        resolve();
+      });
+    });
+  }
+
+  function addForkedTask(task) {
+    stopDirty = true;
+    forkedTasks.push(task);
+  }
+
+  function cancelMainTask(timeout, silenceTimeout, timedOut) {
+    if (!silenceTimeout && timedOut) {
+      (0, require("../utils/logging").warn)("Saga exceeded async timeout of " + timeout + "ms");
+    }
+
+    mainTask.cancel();
+    return mainTaskPromise;
+  }
+
+  function scheduleStop(timeout) {
+    var promise = (0, require("../utils/async").schedule)(getAllPromises).then(function () {return false;});
+    var silenceTimeout = false;
+    var timeoutLength;
+
+    if (typeof timeout === 'number') {
+      timeoutLength = timeout;
+    } else if (typeof timeout === 'object') {
+      silenceTimeout = timeout.silenceTimeout === true;
+
+      if ('timeout' in timeout) {
+        timeoutLength = timeout.timeout;
+      } else {
+        timeoutLength = expectSaga.DEFAULT_TIMEOUT;
+      }
+    }
+
+    if (typeof timeoutLength === 'number') {
+      promise = Promise.race([promise, (0, require("../utils/async").delay)(timeoutLength).then(function () {return true;})]);
+    }
+
+    return promise.then(function (timedOut) {return (0, require("../utils/async").schedule)(cancelMainTask, [timeoutLength, silenceTimeout, timedOut]);});
+  }
+
+  function queueAction(action) {
+    queuedActions.push(action);
+  }
+
+  function notifyListeners(action) {
+    ioChannel.put(action);
+  }
+
+  function dispatch(action) {
+    if (typeof action._delayTime === 'number') {var
+
+      _delayTime =
+      action._delayTime;
+      dispatchPromise.then(function () {return (0, require("../utils/async").delay)(_delayTime);}).then(function () {
+        storeState = reducer(storeState, action);
+        notifyListeners(action);
+      });
+    } else {
+      storeState = reducer(storeState, action);
+      dispatchPromise.then(function () {return notifyListeners(action);});
+    }
+  }
+
+  function associateChannelWithPattern(channel, pattern) {
+    channelsToPatterns.set(channel, pattern);
+  }
+
+  function getDispatchableActions(effect) {
+    var pattern = effect.pattern || channelsToPatterns.get(effect.channel);
+    var index = (0, _findDispatchableActionIndex.default)(queuedActions, pattern);
+
+    if (index > -1) {
+      var actions = queuedActions.splice(0, index + 1);
+      return actions;
+    }
+
+    return [];
+  }
+
+  function processEffect(event) {
+    var parsedEffect = (0, _parseEffect.default)(event.effect);
+
+    if (parsedEffect.type === 'NONE') {
+      return;
+    }
+
+    var effectStore = effectStores[parsedEffect.type];
+
+    if (!effectStore) {
+      return;
+    }
+
+    allEffects.push(event.effect);
+    effectStore.add(event.effect);
+
+    switch (parsedEffect.type) {
+      case require("../shared/keys").FORK:
+        {
+          outstandingForkEffects.set(event.effectId, parsedEffect.effect);
+          break;
+        }
+
+      case require("../shared/keys").TAKE:
+        {
+          var actions = getDispatchableActions(parsedEffect.effect);var _ref2 =
+          (0, require("../utils/array").splitAt)(actions, -1),_ref3 = require("@babel/runtime/helpers/slicedToArray")(_ref2, 2),reducerActions = _ref3[0],_ref3$ = require("@babel/runtime/helpers/slicedToArray")(_ref3[1], 1),sagaAction = _ref3$[0];
+          reducerActions.forEach(function (action) {
+            dispatch(action);
+          });
+
+          if (sagaAction) {
+            dispatch(sagaAction);
+          }
+
+          break;
+        }
+
+      case require("../shared/keys").ACTION_CHANNEL:
+        {
+          outstandingActionChannelEffects.set(event.effectId, parsedEffect.effect);
+          break;
+        }}
+
+
+  }
+
+  function addExpectation(expectation) {
+    expectations.push(expectation);
+  }
+
+  var io = {
+    dispatch: dispatch,
+    channel: ioChannel,
+
+    getState: function getState() {
+      return storeState;
+    },
+
+    sagaMonitor: {
+      effectTriggered: function effectTriggered(event) {
+        processEffect(event);
+      },
+
+      effectResolved: function effectResolved(effectId, value) {
+        var forkEffect = outstandingForkEffects.get(effectId);
+
+        if (forkEffect) {
+          addForkedTask(value);
+          return;
+        }
+
+        var actionChannelEffect = outstandingActionChannelEffects.get(effectId);
+
+        if (actionChannelEffect) {
+          associateChannelWithPattern(value, actionChannelEffect.pattern);
+        }
+      },
+
+      effectRejected: function effectRejected() {},
+
+      effectCancelled: function effectCancelled() {} },
+
+
+    logger: function logger() {} };
+
+  var api = {
+    run: run,
+    silentRun: silentRun,
+    withState: withState,
+    withReducer: withReducer,
+    provide: provide,
+    returns: returns,
+    throws: throws,
+    hasFinalState: hasFinalState,
+    dispatch: apiDispatch,
+    delay: apiDelay,
+
+
+    get not() {
+      negateNextAssertion = true;
+      return api;
+    },
+
+    actionChannel: createEffectTesterFromEffects('actionChannel', require("../shared/keys").ACTION_CHANNEL, require("../utils/asEffect").asEffect.actionChannel),
+    apply: createEffectTesterFromEffects('apply', require("../shared/keys").CALL, require("../utils/asEffect").asEffect.call),
+    call: createEffectTesterFromEffects('call', require("../shared/keys").CALL, require("../utils/asEffect").asEffect.call),
+    cps: createEffectTesterFromEffects('cps', require("../shared/keys").CPS, require("../utils/asEffect").asEffect.cps),
+    fork: createEffectTesterFromEffects('fork', require("../shared/keys").FORK, require("../utils/asEffect").asEffect.fork),
+    getContext: createEffectTesterFromEffects('getContext', require("../shared/keys").GET_CONTEXT, require("../utils/asEffect").asEffect.getContext),
+    put: createEffectTesterFromEffects('put', require("../shared/keys").PUT, require("../utils/asEffect").asEffect.put),
+    putResolve: createEffectTesterFromEffects('putResolve', require("../shared/keys").PUT, require("../utils/asEffect").asEffect.put),
+    race: createEffectTesterFromEffects('race', require("../shared/keys").RACE, require("../utils/asEffect").asEffect.race),
+    select: createEffectTesterFromEffects('select', require("../shared/keys").SELECT, require("../utils/asEffect").asEffect.select),
+    spawn: createEffectTesterFromEffects('spawn', require("../shared/keys").FORK, require("../utils/asEffect").asEffect.fork),
+    setContext: createEffectTesterFromEffects('setContext', require("../shared/keys").SET_CONTEXT, require("../utils/asEffect").asEffect.setContext),
+    take: createEffectTesterFromEffects('take', require("../shared/keys").TAKE, require("../utils/asEffect").asEffect.take),
+    takeMaybe: createEffectTesterFromEffects('takeMaybe', require("../shared/keys").TAKE, require("../utils/asEffect").asEffect.take) };
+
+  api.actionChannel.like = createEffectTester('actionChannel', require("../shared/keys").ACTION_CHANNEL, effects.actionChannel, require("../utils/asEffect").asEffect.actionChannel, true);
+
+  api.actionChannel.pattern = function (pattern) {return api.actionChannel.like({
+      pattern: pattern });};
+
+
+  api.apply.like = createEffectTester('apply', require("../shared/keys").CALL, effects.apply, require("../utils/asEffect").asEffect.call, true);
+
+  api.apply.fn = function (fn) {return api.apply.like({
+      fn: fn });};
+
+
+  api.call.like = createEffectTester('call', require("../shared/keys").CALL, effects.call, require("../utils/asEffect").asEffect.call, true);
+
+  api.call.fn = function (fn) {return api.call.like({
+      fn: fn });};
+
+
+  api.cps.like = createEffectTester('cps', require("../shared/keys").CPS, effects.cps, require("../utils/asEffect").asEffect.cps, true);
+
+  api.cps.fn = function (fn) {return api.cps.like({
+      fn: fn });};
+
+
+  api.fork.like = createEffectTester('fork', require("../shared/keys").FORK, effects.fork, require("../utils/asEffect").asEffect.fork, true);
+
+  api.fork.fn = function (fn) {return api.fork.like({
+      fn: fn });};
+
+
+  api.put.like = createEffectTester('put', require("../shared/keys").PUT, effects.put, require("../utils/asEffect").asEffect.put, true);
+
+  api.put.actionType = function (type) {return api.put.like({
+      action: {
+        type: type } });};
+
+
+
+  api.putResolve.like = createEffectTester('putResolve', require("../shared/keys").PUT, effects.putResolve, require("../utils/asEffect").asEffect.put, true);
+
+  api.putResolve.actionType = function (type) {return api.putResolve.like({
+      action: {
+        type: type } });};
+
+
+
+  api.select.like = createEffectTester('select', require("../shared/keys").SELECT, effects.select, require("../utils/asEffect").asEffect.select, true);
+
+  api.select.selector = function (selector) {return api.select.like({
+      selector: selector });};
+
+
+  api.spawn.like = createEffectTester('spawn', require("../shared/keys").FORK, effects.spawn, require("../utils/asEffect").asEffect.fork, true);
+
+  api.spawn.fn = function (fn) {return api.spawn.like({
+      fn: fn });};
+
+
+  function checkExpectations() {
+    expectations.forEach(function (expectation) {
+      expectation({
+        storeState: storeState,
+        returnValue: returnValue,
+        errorValue: errorValue });
+
+    });
+  }
+
+  function apiDispatch(action) {
+    var dispatchableAction;
+
+    if (typeof delayTime === 'number') {
+      dispatchableAction = (0, _objectAssign.default)({}, action, {
+        _delayTime: delayTime });
+
+      delayTime = null;
+    } else {
+      dispatchableAction = action;
+    }
+
+    if (isRunning) {
+      dispatch(dispatchableAction);
+    } else {
+      queueAction(dispatchableAction);
+    }
+
+    return api;
+  }
+
+  function taskPromise(task) {
+    return task.toPromise();
+  }
+
+  function start() {
+    var sagaWrapper = (0, _sagaWrapper.default)(generator.name);
+    isRunning = true;
+    iterator = generator.apply(void 0, sagaArgs);
+    mainTask = (0, require("redux-saga").runSaga)(io, sagaWrapper, iterator, refineYieldedValue, setReturnValue, setErrorValue);
+    mainTaskPromise = taskPromise(mainTask).then(checkExpectations, function (e) {return !expectError && e || checkExpectations();}).
+
+    catch(_identity.default);
+    return api;
+  }
+
+  function stop(timeout) {
+    return scheduleStop(timeout).then(function (err) {
+      if (err) {
+        throw err;
+      }
+    });
+  }
+
+  function exposeResults() {
+    var finalEffects = Object.keys(exposableEffects).reduce(function (memo, key) {
+      var effectName = exposableEffects[key];
+      var values = effectStores[key].values().filter(lacksSagaWrapper);
+
+      if (values.length > 0) {
+
+        memo[effectName] = effectStores[key].values().filter(lacksSagaWrapper);
+      }
+
+      return memo;
+    }, {});
+    return {
+      storeState: storeState,
+      returnValue: returnValue,
+      effects: finalEffects,
+      allEffects: allEffects,
+      toJSON: function toJSON() {return _toJSON(finalEffects);} };
+
+  }
+
+  function run() {var timeout = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : expectSaga.DEFAULT_TIMEOUT;
+    start();
+    return stop(timeout).then(exposeResults);
+  }
+
+  function silentRun() {var timeout = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : expectSaga.DEFAULT_TIMEOUT;
+    return run({
+      timeout: timeout,
+      silenceTimeout: true });
+
+  }
+
+  function withState(state) {
+    storeState = state;
+    return api;
+  }
+
+  function withReducer(newReducer, initialState) {
+    reducer = newReducer;
+    storeState = extractState(newReducer, initialState);
+    return api;
+  }
+
+  function provide(newProviders) {
+    providers = Array.isArray(newProviders) ? (0, require("./providers/helpers").coalesceProviders)(newProviders) : newProviders;
+    return api;
+  }
+
+  function returns(value) {
+    addExpectation((0, require("./expectations").createReturnExpectation)({
+      value: value,
+      expected: !negateNextAssertion }));
+
+    return api;
+  }
+
+  function throws(type) {
+    expectError = true;
+    addExpectation((0, require("./expectations").createErrorExpectation)({
+      type: type,
+      expected: !negateNextAssertion }));
+
+    return api;
+  }
+
+  function hasFinalState(state) {
+    addExpectation((0, require("./expectations").createStoreStateExpectation)({
+      state: state,
+      expected: !negateNextAssertion }));
+
+    return api;
+  }
+
+  function apiDelay(time) {
+    delayTime = time;
+    return api;
+  }
+
+  function createEffectTester(effectName, storeKey, effectCreator, extractEffect) {var like = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+    return function () {
+      var expectedEffect = like ? arguments.length <= 0 ? undefined : arguments[0] : effectCreator.apply(void 0, arguments);
+      addExpectation((0, require("./expectations").createEffectExpectation)({
+        effectName: effectName,
+        expectedEffect: expectedEffect,
+        storeKey: storeKey,
+        like: like,
+        extractEffect: extractEffect,
+        store: effectStores[storeKey],
+        expected: !negateNextAssertion }));
+
+      negateNextAssertion = false;
+      return api;
+    };
+  }
+
+  function createEffectTesterFromEffects(effectName, storeKey, extractEffect) {
+    return createEffectTester(effectName, storeKey, effects[effectName], extractEffect);
+  }
+
+  return api;
+}
+
+expectSaga.DEFAULT_TIMEOUT = 250;

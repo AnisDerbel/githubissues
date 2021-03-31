@@ -1,0 +1,68 @@
+e60ff3efd72179c61fbbe676f65e2a6c
+
+
+
+
+
+
+
+
+
+
+'use strict';var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports, "__esModule", { value: true });exports.NativeVirtualText = exports.NativeText = void 0;var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
+var _ReactNativeViewAttributes = _interopRequireDefault(require("../Components/View/ReactNativeViewAttributes"));
+var _UIManager = _interopRequireDefault(require("../ReactNative/UIManager"));
+
+var _createReactNativeComponentClass = _interopRequireDefault(require("../Renderer/shims/createReactNativeComponentClass"));function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {(0, _defineProperty2.default)(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+
+
+
+
+
+
+
+
+var NativeText = (0, _createReactNativeComponentClass.default)(
+'RCTText',
+function () {return {
+    validAttributes: _objectSpread(_objectSpread({},
+    _ReactNativeViewAttributes.default.UIView), {}, {
+      isHighlighted: true,
+      numberOfLines: true,
+      ellipsizeMode: true,
+      allowFontScaling: true,
+      maxFontSizeMultiplier: true,
+      disabled: true,
+      selectable: true,
+      selectionColor: true,
+      adjustsFontSizeToFit: true,
+      minimumFontScale: true,
+      textBreakStrategy: true,
+      onTextLayout: true,
+      onInlineViewLayout: true,
+      dataDetectorType: true }),
+
+    directEventTypes: {
+      topTextLayout: {
+        registrationName: 'onTextLayout' },
+
+      topInlineViewLayout: {
+        registrationName: 'onInlineViewLayout' } },
+
+
+    uiViewClassName: 'RCTText' };});exports.NativeText = NativeText;
+
+
+
+var NativeVirtualText =
+_UIManager.default.getViewManagerConfig('RCTVirtualText') == null ?
+NativeText :
+(0, _createReactNativeComponentClass.default)('RCTVirtualText', function () {return {
+    validAttributes: _objectSpread(_objectSpread({},
+    _ReactNativeViewAttributes.default.UIView), {}, {
+      isHighlighted: true,
+      maxFontSizeMultiplier: true }),
+
+    uiViewClassName: 'RCTVirtualText' };});exports.NativeVirtualText = NativeVirtualText;

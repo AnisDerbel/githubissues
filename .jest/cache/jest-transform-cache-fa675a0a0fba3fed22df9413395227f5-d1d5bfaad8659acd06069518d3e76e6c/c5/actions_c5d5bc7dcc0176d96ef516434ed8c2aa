@@ -1,0 +1,418 @@
+330fae41f4584ab60349d69fdf8da7d1
+"use strict";
+
+/* istanbul ignore next */
+function cov_2dlypotq3q() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/actions.ts";
+  var hash = "9a7bf03e37a2c0efc2be98af2d24e9690b3e8fe1";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/actions.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 56
+        }
+      },
+      "2": {
+        start: {
+          line: 5,
+          column: 0
+        },
+        end: {
+          line: 10,
+          column: 83
+        }
+      },
+      "3": {
+        start: {
+          line: 6,
+          column: 4
+        },
+        end: {
+          line: 6,
+          column: 65
+        }
+      },
+      "4": {
+        start: {
+          line: 7,
+          column: 4
+        },
+        end: {
+          line: 7,
+          column: 81
+        }
+      },
+      "5": {
+        start: {
+          line: 8,
+          column: 4
+        },
+        end: {
+          line: 8,
+          column: 67
+        }
+      },
+      "6": {
+        start: {
+          line: 9,
+          column: 4
+        },
+        end: {
+          line: 9,
+          column: 79
+        }
+      },
+      "7": {
+        start: {
+          line: 11,
+          column: 0
+        },
+        end: {
+          line: 27,
+          column: 2
+        }
+      },
+      "8": {
+        start: {
+          line: 12,
+          column: 33
+        },
+        end: {
+          line: 15,
+          column: 5
+        }
+      },
+      "9": {
+        start: {
+          line: 16,
+          column: 40
+        },
+        end: {
+          line: 19,
+          column: 5
+        }
+      },
+      "10": {
+        start: {
+          line: 20,
+          column: 34
+        },
+        end: {
+          line: 23,
+          column: 5
+        }
+      },
+      "11": {
+        start: {
+          line: 24,
+          column: 32
+        },
+        end: {
+          line: 26,
+          column: 5
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 5,
+            column: 1
+          },
+          end: {
+            line: 5,
+            column: 2
+          }
+        },
+        loc: {
+          start: {
+            line: 5,
+            column: 29
+          },
+          end: {
+            line: 10,
+            column: 1
+          }
+        },
+        line: 5
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 12,
+            column: 19
+          },
+          end: {
+            line: 12,
+            column: 20
+          }
+        },
+        loc: {
+          start: {
+            line: 12,
+            column: 33
+          },
+          end: {
+            line: 15,
+            column: 5
+          }
+        },
+        line: 12
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 16,
+            column: 26
+          },
+          end: {
+            line: 16,
+            column: 27
+          }
+        },
+        loc: {
+          start: {
+            line: 16,
+            column: 40
+          },
+          end: {
+            line: 19,
+            column: 5
+          }
+        },
+        line: 16
+      },
+      "3": {
+        name: "(anonymous_3)",
+        decl: {
+          start: {
+            line: 20,
+            column: 20
+          },
+          end: {
+            line: 20,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 20,
+            column: 34
+          },
+          end: {
+            line: 23,
+            column: 5
+          }
+        },
+        line: 20
+      },
+      "4": {
+        name: "(anonymous_4)",
+        decl: {
+          start: {
+            line: 24,
+            column: 25
+          },
+          end: {
+            line: 24,
+            column: 26
+          }
+        },
+        loc: {
+          start: {
+            line: 24,
+            column: 32
+          },
+          end: {
+            line: 26,
+            column: 5
+          }
+        },
+        line: 24
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 10,
+            column: 22
+          },
+          end: {
+            line: 10,
+            column: 81
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 10,
+            column: 22
+          },
+          end: {
+            line: 10,
+            column: 46
+          }
+        }, {
+          start: {
+            line: 10,
+            column: 51
+          },
+          end: {
+            line: 10,
+            column: 80
+          }
+        }],
+        line: 10
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    },
+    b: {
+      "0": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/actions.ts",
+      mappings: ";;;AAGA,IAAY,gBAKX;AALD,WAAY,gBAAgB;IAC1B,4DAAwC,CAAA;IACxC,4EAAwD,CAAA;IACxD,8DAA0C,CAAA;IAC1C,0EAAsD,CAAA;AACxD,CAAC,EALW,gBAAgB,GAAhB,wBAAgB,KAAhB,wBAAgB,QAK3B;AA6BY,QAAA,WAAW,GAAG;IACzB,aAAa,EAAE,CAAC,OAA2B,EAAE,EAAE,CAAC,CAAC;QAC/C,IAAI,EAAE,gBAAgB,CAAC,eAAe;QACtC,OAAO;KACR,CAAC;IACF,oBAAoB,EAAE,CAAC,OAAuB,EAAE,EAAE,CAAC,CAAC;QAClD,IAAI,EAAE,gBAAgB,CAAC,uBAAuB;QAC9C,OAAO;KACR,CAAC;IACF,cAAc,EAAE,CAAC,OAAuB,EAAE,EAAE,CAAC,CAAC;QAC5C,IAAI,EAAE,gBAAgB,CAAC,gBAAgB;QACvC,OAAO;KACR,CAAC;IACF,mBAAmB,EAAE,GAAG,EAAE,CAAC,CAAC;QAC1B,IAAI,EAAE,gBAAgB,CAAC,sBAAsB;KAC9C,CAAC;CACH,CAAC",
+      names: [],
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/actions.ts"],
+      sourcesContent: ["import {Issue} from './reducer';\nimport {Action} from 'redux';\n\nexport enum ERepoActionTypes {\n  GET_REPO_ISSUES = 'REPO.GET_REPO_ISSUES',\n  GET_REPO_ISSUES_SUCCESS = 'REPO.GET_REPO_ISSUES_SUCCESS',\n  SET_CURRENT_PAGE = 'REPO.SET_CURRENT_PAGE',\n  GET_REPO_ISSUES_FAILED = 'REPO.GET_REPO_ISSUES_FAILED',\n}\n\ninterface IssuesResponse {\n  issues: Array<Issue>;\n  hasMoreIssues: boolean;\n  page: number;\n}\ninterface LoadPageIssues {\n  hasMoreIssues: boolean;\n  page: number;\n}\n\ninterface IRepoIssuesPayload {\n  page: number;\n  reset?: boolean;\n}\n\nexport interface IActionWithPayload<T, P> extends Action<T> {\n  payload: P;\n}\n\nexport type TRepoIssuesAction = IActionWithPayload<\n  ERepoActionTypes.GET_REPO_ISSUES,\n  {\n    page: number;\n    reset?: boolean;\n  }\n>;\n\nexport const repoActions = {\n  getRepoIssues: (payload: IRepoIssuesPayload) => ({\n    type: ERepoActionTypes.GET_REPO_ISSUES,\n    payload,\n  }),\n  getRepoIssuesSuccess: (payload: IssuesResponse) => ({\n    type: ERepoActionTypes.GET_REPO_ISSUES_SUCCESS,\n    payload,\n  }),\n  setCurrentPage: (payload: LoadPageIssues) => ({\n    type: ERepoActionTypes.SET_CURRENT_PAGE,\n    payload,\n  }),\n  getRepoIssuesFailed: () => ({\n    type: ERepoActionTypes.GET_REPO_ISSUES_FAILED,\n  }),\n};\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "9a7bf03e37a2c0efc2be98af2d24e9690b3e8fe1"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2dlypotq3q = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_2dlypotq3q();
+cov_2dlypotq3q().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_2dlypotq3q().s[1]++;
+exports.repoActions = exports.ERepoActionTypes = void 0;
+var ERepoActionTypes;
+
+/* istanbul ignore next */
+cov_2dlypotq3q().s[2]++;
+
+(function (ERepoActionTypes) {
+  /* istanbul ignore next */
+  cov_2dlypotq3q().f[0]++;
+  cov_2dlypotq3q().s[3]++;
+  ERepoActionTypes["GET_REPO_ISSUES"] = "REPO.GET_REPO_ISSUES";
+
+  /* istanbul ignore next */
+  cov_2dlypotq3q().s[4]++;
+  ERepoActionTypes["GET_REPO_ISSUES_SUCCESS"] = "REPO.GET_REPO_ISSUES_SUCCESS";
+
+  /* istanbul ignore next */
+  cov_2dlypotq3q().s[5]++;
+  ERepoActionTypes["SET_CURRENT_PAGE"] = "REPO.SET_CURRENT_PAGE";
+
+  /* istanbul ignore next */
+  cov_2dlypotq3q().s[6]++;
+  ERepoActionTypes["GET_REPO_ISSUES_FAILED"] = "REPO.GET_REPO_ISSUES_FAILED";
+})(ERepoActionTypes =
+/* istanbul ignore next */
+(cov_2dlypotq3q().b[0][0]++, exports.ERepoActionTypes) ||
+/* istanbul ignore next */
+(cov_2dlypotq3q().b[0][1]++, exports.ERepoActionTypes = {}));
+
+/* istanbul ignore next */
+cov_2dlypotq3q().s[7]++;
+exports.repoActions = {
+  getRepoIssues: payload => {
+    /* istanbul ignore next */
+    cov_2dlypotq3q().f[1]++;
+    cov_2dlypotq3q().s[8]++;
+    return {
+      type: ERepoActionTypes.GET_REPO_ISSUES,
+      payload
+    };
+  },
+  getRepoIssuesSuccess: payload => {
+    /* istanbul ignore next */
+    cov_2dlypotq3q().f[2]++;
+    cov_2dlypotq3q().s[9]++;
+    return {
+      type: ERepoActionTypes.GET_REPO_ISSUES_SUCCESS,
+      payload
+    };
+  },
+  setCurrentPage: payload => {
+    /* istanbul ignore next */
+    cov_2dlypotq3q().f[3]++;
+    cov_2dlypotq3q().s[10]++;
+    return {
+      type: ERepoActionTypes.SET_CURRENT_PAGE,
+      payload
+    };
+  },
+  getRepoIssuesFailed: () => {
+    /* istanbul ignore next */
+    cov_2dlypotq3q().f[4]++;
+    cov_2dlypotq3q().s[11]++;
+    return {
+      type: ERepoActionTypes.GET_REPO_ISSUES_FAILED
+    };
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L3JlcG8vYWN0aW9ucy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQTBDRTs7Ozs7Ozs7Ozs7Ozs7Ozs7QUF2Q0YsSUFBWSxnQkFBWjs7Ozs7QUFBQSxDQUFBLFVBQVksZ0JBQVosRUFBNEI7QUFBQTtBQUFBO0FBQUE7QUFDMUIsRUFBQSxnQkFBQSxDQUFBLGlCQUFBLENBQUEsR0FBQSxzQkFBQTs7QUFEMEI7QUFBQTtBQUUxQixFQUFBLGdCQUFBLENBQUEseUJBQUEsQ0FBQSxHQUFBLDhCQUFBOztBQUYwQjtBQUFBO0FBRzFCLEVBQUEsZ0JBQUEsQ0FBQSxrQkFBQSxDQUFBLEdBQUEsdUJBQUE7O0FBSDBCO0FBQUE7QUFJMUIsRUFBQSxnQkFBQSxDQUFBLHdCQUFBLENBQUEsR0FBQSw2QkFBQTtBQUNELENBTEQsRUFBWSxnQkFBZ0I7QUFBaEI7QUFBQSw2QkFBQSxPQUFBLENBQUEsZ0JBQUE7QUFBQTtBQUFBLDZCQUFBLE9BQUEsQ0FBQSxnQkFBQSxHQUFnQixFQUFoQixDQUFaOzs7O0FBa0NhLE9BQUEsQ0FBQSxXQUFBLEdBQWM7QUFDekIsRUFBQSxhQUFhLEVBQUcsT0FBRCxJQUFrQztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQy9DLE1BQUEsSUFBSSxFQUFFLGdCQUFnQixDQUFDLGVBRHdCO0FBRS9DLE1BQUE7QUFGK0M7QUFHaEQsR0FKd0I7QUFLekIsRUFBQSxvQkFBb0IsRUFBRyxPQUFELElBQThCO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFDbEQsTUFBQSxJQUFJLEVBQUUsZ0JBQWdCLENBQUMsdUJBRDJCO0FBRWxELE1BQUE7QUFGa0Q7QUFHbkQsR0FSd0I7QUFTekIsRUFBQSxjQUFjLEVBQUcsT0FBRCxJQUE4QjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQzVDLE1BQUEsSUFBSSxFQUFFLGdCQUFnQixDQUFDLGdCQURxQjtBQUU1QyxNQUFBO0FBRjRDO0FBRzdDLEdBWndCO0FBYXpCLEVBQUEsbUJBQW1CLEVBQUUsTUFBTztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQzFCLE1BQUEsSUFBSSxFQUFFLGdCQUFnQixDQUFDO0FBREc7QUFFM0I7QUFmd0IsQ0FBZCIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7SXNzdWV9IGZyb20gJy4vcmVkdWNlcic7XG5pbXBvcnQge0FjdGlvbn0gZnJvbSAncmVkdXgnO1xuXG5leHBvcnQgZW51bSBFUmVwb0FjdGlvblR5cGVzIHtcbiAgR0VUX1JFUE9fSVNTVUVTID0gJ1JFUE8uR0VUX1JFUE9fSVNTVUVTJyxcbiAgR0VUX1JFUE9fSVNTVUVTX1NVQ0NFU1MgPSAnUkVQTy5HRVRfUkVQT19JU1NVRVNfU1VDQ0VTUycsXG4gIFNFVF9DVVJSRU5UX1BBR0UgPSAnUkVQTy5TRVRfQ1VSUkVOVF9QQUdFJyxcbiAgR0VUX1JFUE9fSVNTVUVTX0ZBSUxFRCA9ICdSRVBPLkdFVF9SRVBPX0lTU1VFU19GQUlMRUQnLFxufVxuXG5pbnRlcmZhY2UgSXNzdWVzUmVzcG9uc2Uge1xuICBpc3N1ZXM6IEFycmF5PElzc3VlPjtcbiAgaGFzTW9yZUlzc3VlczogYm9vbGVhbjtcbiAgcGFnZTogbnVtYmVyO1xufVxuaW50ZXJmYWNlIExvYWRQYWdlSXNzdWVzIHtcbiAgaGFzTW9yZUlzc3VlczogYm9vbGVhbjtcbiAgcGFnZTogbnVtYmVyO1xufVxuXG5pbnRlcmZhY2UgSVJlcG9Jc3N1ZXNQYXlsb2FkIHtcbiAgcGFnZTogbnVtYmVyO1xuICByZXNldD86IGJvb2xlYW47XG59XG5cbmV4cG9ydCBpbnRlcmZhY2UgSUFjdGlvbldpdGhQYXlsb2FkPFQsIFA+IGV4dGVuZHMgQWN0aW9uPFQ+IHtcbiAgcGF5bG9hZDogUDtcbn1cblxuZXhwb3J0IHR5cGUgVFJlcG9Jc3N1ZXNBY3Rpb24gPSBJQWN0aW9uV2l0aFBheWxvYWQ8XG4gIEVSZXBvQWN0aW9uVHlwZXMuR0VUX1JFUE9fSVNTVUVTLFxuICB7XG4gICAgcGFnZTogbnVtYmVyO1xuICAgIHJlc2V0PzogYm9vbGVhbjtcbiAgfVxuPjtcblxuZXhwb3J0IGNvbnN0IHJlcG9BY3Rpb25zID0ge1xuICBnZXRSZXBvSXNzdWVzOiAocGF5bG9hZDogSVJlcG9Jc3N1ZXNQYXlsb2FkKSA9PiAoe1xuICAgIHR5cGU6IEVSZXBvQWN0aW9uVHlwZXMuR0VUX1JFUE9fSVNTVUVTLFxuICAgIHBheWxvYWQsXG4gIH0pLFxuICBnZXRSZXBvSXNzdWVzU3VjY2VzczogKHBheWxvYWQ6IElzc3Vlc1Jlc3BvbnNlKSA9PiAoe1xuICAgIHR5cGU6IEVSZXBvQWN0aW9uVHlwZXMuR0VUX1JFUE9fSVNTVUVTX1NVQ0NFU1MsXG4gICAgcGF5bG9hZCxcbiAgfSksXG4gIHNldEN1cnJlbnRQYWdlOiAocGF5bG9hZDogTG9hZFBhZ2VJc3N1ZXMpID0+ICh7XG4gICAgdHlwZTogRVJlcG9BY3Rpb25UeXBlcy5TRVRfQ1VSUkVOVF9QQUdFLFxuICAgIHBheWxvYWQsXG4gIH0pLFxuICBnZXRSZXBvSXNzdWVzRmFpbGVkOiAoKSA9PiAoe1xuICAgIHR5cGU6IEVSZXBvQWN0aW9uVHlwZXMuR0VUX1JFUE9fSVNTVUVTX0ZBSUxFRCxcbiAgfSksXG59O1xuIl19

@@ -1,0 +1,7 @@
+dd1ccaad6a93faeefe058b4beb86d115
+
+var clean = function clean(version, options) {
+  var s = require('./parse')(version.trim().replace(/^[=v]+/, ''), options);
+  return s ? s.version : null;
+};
+module.exports = clean;

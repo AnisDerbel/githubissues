@@ -1,0 +1,288 @@
+fc498e4ff24161c603eae6ddcb0c2429
+var
+
+
+
+
+
+SemVer = function () {"use strict";
+  function SemVer(version, options) {require("@babel/runtime/helpers/classCallCheck")(this, SemVer);
+    options = require('../internal/parse-options')(options);
+
+    if (version instanceof SemVer) {
+      if (version.loose === !!options.loose &&
+      version.includePrerelease === !!options.includePrerelease) {
+        return version;
+      } else {
+        version = version.version;
+      }
+    } else if (typeof version !== 'string') {
+      throw new TypeError("Invalid Version: " + version);
+    }
+
+    if (version.length > require('../internal/constants').MAX_LENGTH) {
+      throw new TypeError("version is longer than " + require('../internal/constants').MAX_LENGTH + " characters");
+
+
+    }
+
+    require('../internal/debug')('SemVer', version, options);
+    this.options = options;
+    this.loose = !!options.loose;
+
+
+    this.includePrerelease = !!options.includePrerelease;
+
+    var m = version.trim().match(options.loose ? require('../internal/re').re[require('../internal/re').t.LOOSE] : require('../internal/re').re[require('../internal/re').t.FULL]);
+
+    if (!m) {
+      throw new TypeError("Invalid Version: " + version);
+    }
+
+    this.raw = version;
+
+
+    this.major = +m[1];
+    this.minor = +m[2];
+    this.patch = +m[3];
+
+    if (this.major > require('../internal/constants').MAX_SAFE_INTEGER || this.major < 0) {
+      throw new TypeError('Invalid major version');
+    }
+
+    if (this.minor > require('../internal/constants').MAX_SAFE_INTEGER || this.minor < 0) {
+      throw new TypeError('Invalid minor version');
+    }
+
+    if (this.patch > require('../internal/constants').MAX_SAFE_INTEGER || this.patch < 0) {
+      throw new TypeError('Invalid patch version');
+    }
+
+
+    if (!m[4]) {
+      this.prerelease = [];
+    } else {
+      this.prerelease = m[4].split('.').map(function (id) {
+        if (/^[0-9]+$/.test(id)) {
+          var num = +id;
+          if (num >= 0 && num < require('../internal/constants').MAX_SAFE_INTEGER) {
+            return num;
+          }
+        }
+        return id;
+      });
+    }
+
+    this.build = m[5] ? m[5].split('.') : [];
+    this.format();
+  }require("@babel/runtime/helpers/createClass")(SemVer, [{ key: "format", value:
+
+    function format() {
+      this.version = this.major + "." + this.minor + "." + this.patch;
+      if (this.prerelease.length) {
+        this.version += "-" + this.prerelease.join('.');
+      }
+      return this.version;
+    } }, { key: "toString", value:
+
+    function toString() {
+      return this.version;
+    } }, { key: "compare", value:
+
+    function compare(other) {
+      require('../internal/debug')('SemVer.compare', this.version, this.options, other);
+      if (!(other instanceof SemVer)) {
+        if (typeof other === 'string' && other === this.version) {
+          return 0;
+        }
+        other = new SemVer(other, this.options);
+      }
+
+      if (other.version === this.version) {
+        return 0;
+      }
+
+      return this.compareMain(other) || this.comparePre(other);
+    } }, { key: "compareMain", value:
+
+    function compareMain(other) {
+      if (!(other instanceof SemVer)) {
+        other = new SemVer(other, this.options);
+      }
+
+      return (
+        require('../internal/identifiers').compareIdentifiers(this.major, other.major) ||
+        require('../internal/identifiers').compareIdentifiers(this.minor, other.minor) ||
+        require('../internal/identifiers').compareIdentifiers(this.patch, other.patch));
+
+    } }, { key: "comparePre", value:
+
+    function comparePre(other) {
+      if (!(other instanceof SemVer)) {
+        other = new SemVer(other, this.options);
+      }
+
+
+      if (this.prerelease.length && !other.prerelease.length) {
+        return -1;
+      } else if (!this.prerelease.length && other.prerelease.length) {
+        return 1;
+      } else if (!this.prerelease.length && !other.prerelease.length) {
+        return 0;
+      }
+
+      var i = 0;
+      do {
+        var a = this.prerelease[i];
+        var b = other.prerelease[i];
+        require('../internal/debug')('prerelease compare', i, a, b);
+        if (a === undefined && b === undefined) {
+          return 0;
+        } else if (b === undefined) {
+          return 1;
+        } else if (a === undefined) {
+          return -1;
+        } else if (a === b) {
+          continue;
+        } else {
+          return require('../internal/identifiers').compareIdentifiers(a, b);
+        }
+      } while (++i);
+    } }, { key: "compareBuild", value:
+
+    function compareBuild(other) {
+      if (!(other instanceof SemVer)) {
+        other = new SemVer(other, this.options);
+      }
+
+      var i = 0;
+      do {
+        var a = this.build[i];
+        var b = other.build[i];
+        require('../internal/debug')('prerelease compare', i, a, b);
+        if (a === undefined && b === undefined) {
+          return 0;
+        } else if (b === undefined) {
+          return 1;
+        } else if (a === undefined) {
+          return -1;
+        } else if (a === b) {
+          continue;
+        } else {
+          return require('../internal/identifiers').compareIdentifiers(a, b);
+        }
+      } while (++i);
+    } }, { key: "inc", value:
+
+
+
+    function inc(release, identifier) {
+      switch (release) {
+        case 'premajor':
+          this.prerelease.length = 0;
+          this.patch = 0;
+          this.minor = 0;
+          this.major++;
+          this.inc('pre', identifier);
+          break;
+        case 'preminor':
+          this.prerelease.length = 0;
+          this.patch = 0;
+          this.minor++;
+          this.inc('pre', identifier);
+          break;
+        case 'prepatch':
+
+
+
+          this.prerelease.length = 0;
+          this.inc('patch', identifier);
+          this.inc('pre', identifier);
+          break;
+
+
+        case 'prerelease':
+          if (this.prerelease.length === 0) {
+            this.inc('patch', identifier);
+          }
+          this.inc('pre', identifier);
+          break;
+
+        case 'major':
+
+
+
+
+          if (
+          this.minor !== 0 ||
+          this.patch !== 0 ||
+          this.prerelease.length === 0)
+          {
+            this.major++;
+          }
+          this.minor = 0;
+          this.patch = 0;
+          this.prerelease = [];
+          break;
+        case 'minor':
+
+
+
+
+          if (this.patch !== 0 || this.prerelease.length === 0) {
+            this.minor++;
+          }
+          this.patch = 0;
+          this.prerelease = [];
+          break;
+        case 'patch':
+
+
+
+
+          if (this.prerelease.length === 0) {
+            this.patch++;
+          }
+          this.prerelease = [];
+          break;
+
+
+        case 'pre':
+          if (this.prerelease.length === 0) {
+            this.prerelease = [0];
+          } else {
+            var i = this.prerelease.length;
+            while (--i >= 0) {
+              if (typeof this.prerelease[i] === 'number') {
+                this.prerelease[i]++;
+                i = -2;
+              }
+            }
+            if (i === -1) {
+
+              this.prerelease.push(0);
+            }
+          }
+          if (identifier) {
+
+
+            if (this.prerelease[0] === identifier) {
+              if (isNaN(this.prerelease[1])) {
+                this.prerelease = [identifier, 0];
+              }
+            } else {
+              this.prerelease = [identifier, 0];
+            }
+          }
+          break;
+
+        default:
+          throw new Error("invalid increment argument: " + release);}
+
+      this.format();
+      this.raw = this.version;
+      return this;
+    } }]);return SemVer;}();
+
+
+module.exports = SemVer;

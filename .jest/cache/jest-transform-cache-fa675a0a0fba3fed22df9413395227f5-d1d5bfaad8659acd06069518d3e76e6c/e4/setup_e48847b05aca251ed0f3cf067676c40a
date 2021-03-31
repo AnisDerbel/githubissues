@@ -1,0 +1,74 @@
+411fe999b5490a00b70e467eea1990e2
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.exposeGlobals = void 0;
+
+
+
+var exposeGlobals = function exposeGlobals() {
+  var dep;
+
+  switch (global.enzymeAdapterDescriptor) {
+    case 'react13':
+      dep = 'enzyme-adapter-react-13';
+      break;
+
+    case 'react14':
+      dep = 'enzyme-adapter-react-14';
+      break;
+
+    case 'react15':
+      dep = 'enzyme-adapter-react-15';
+      break;
+
+    case 'react15.4':
+      dep = 'enzyme-adapter-react-15.4';
+      break;
+
+    case 'react16':
+    default:
+      dep = 'enzyme-adapter-react-16';}
+
+
+  var Adapter;
+
+  try {
+
+    Adapter = require(dep);
+  } catch (e) {
+
+    console.error("\n      Requiring the proper enzyme-adapter during jest-enzyme setup failed.\n      This most likely happens when your application does not properly list the\n      adapter in your devDependencies. Run this line to add the correct adapter:\n\n      > yarn add --dev " +
+
+
+
+
+    dep + "\n\n      or with npm\n      \n      > npm i --save-dev " +
+
+
+
+    dep + "\n      ",
+    e);
+    return;
+  }var _require =
+
+
+
+
+
+
+  require('enzyme'),configure = _require.configure,mount = _require.mount,render = _require.render,shallow = _require.shallow;
+
+
+  configure({
+    adapter: new Adapter() });
+
+  global.shallow = shallow;
+  global.mount = mount;
+  global.render = render;
+  global.React = require('react');
+};
+
+exports.exposeGlobals = exposeGlobals;

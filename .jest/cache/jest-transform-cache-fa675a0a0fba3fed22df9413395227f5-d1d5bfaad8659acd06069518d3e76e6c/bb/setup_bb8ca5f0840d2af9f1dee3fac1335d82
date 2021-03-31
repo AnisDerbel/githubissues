@@ -1,0 +1,14 @@
+803824b486fdc1a8170c13e9a21f33eb
+"use strict";require("react-native-gesture-handler/jestSetup");
+jest.mock('react-native-reanimated', function () {
+  var Reanimated = require('react-native-reanimated/mock');
+
+
+
+  Reanimated.default.call = function () {};
+
+  return Reanimated;
+});
+
+
+jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');

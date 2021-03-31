@@ -1,0 +1,24 @@
+6ed898f0e4ebe6cb065c530bb8a361da
+"use strict";
+
+
+
+exports.__esModule = true;
+exports["default"] = void 0;
+
+var React = require("@babel/runtime/helpers/interopRequireWildcard")(require("react"));
+
+
+
+var FormName = function FormName(_ref) {
+  var children = _ref.children,
+  _reduxForm = _ref._reduxForm;
+  return children({
+    form: _reduxForm && _reduxForm.form,
+    sectionPrefix: _reduxForm && _reduxForm.sectionPrefix });
+
+};
+
+var _default = (0, require("./ReduxFormContext").withReduxForm)(FormName);
+
+exports["default"] = _default;

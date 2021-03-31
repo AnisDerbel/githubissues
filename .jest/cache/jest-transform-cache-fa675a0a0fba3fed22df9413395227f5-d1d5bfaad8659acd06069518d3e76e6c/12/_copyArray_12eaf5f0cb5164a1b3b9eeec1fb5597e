@@ -1,0 +1,21 @@
+2ead39484c7c1d3307fb7016b4592d5e
+
+
+
+
+
+
+
+
+function copyArray(source, array) {
+  var index = -1,
+  length = source.length;
+
+  array || (array = Array(length));
+  while (++index < length) {
+    array[index] = source[index];
+  }
+  return array;
+}
+
+module.exports = copyArray;

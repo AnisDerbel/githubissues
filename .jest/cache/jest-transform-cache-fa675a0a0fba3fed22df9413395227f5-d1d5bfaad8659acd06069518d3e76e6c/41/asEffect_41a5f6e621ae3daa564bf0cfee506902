@@ -1,0 +1,39 @@
+002c92261bcbf6685d21bfbb0f49189c
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.asEffect = void 0;
+
+
+
+
+
+var createAsEffectType = function createAsEffectType(type) {return function (effect) {
+    if (effect && effect[require("@redux-saga/symbols").IO] && effect.type === type) {
+      return effect.payload;
+    }
+
+    return undefined;
+  };};
+
+
+var asEffect = {
+  take: createAsEffectType(require("redux-saga/effects").effectTypes.TAKE),
+  put: createAsEffectType(require("redux-saga/effects").effectTypes.PUT),
+  all: createAsEffectType(require("redux-saga/effects").effectTypes.ALL),
+  race: createAsEffectType(require("redux-saga/effects").effectTypes.RACE),
+  call: createAsEffectType(require("redux-saga/effects").effectTypes.CALL),
+  cps: createAsEffectType(require("redux-saga/effects").effectTypes.CPS),
+  fork: createAsEffectType(require("redux-saga/effects").effectTypes.FORK),
+  join: createAsEffectType(require("redux-saga/effects").effectTypes.JOIN),
+  cancel: createAsEffectType(require("redux-saga/effects").effectTypes.CANCEL),
+  select: createAsEffectType(require("redux-saga/effects").effectTypes.SELECT),
+  actionChannel: createAsEffectType(require("redux-saga/effects").effectTypes.ACTION_CHANNEL),
+  cancelled: createAsEffectType(require("redux-saga/effects").effectTypes.CANCELLED),
+  flush: createAsEffectType(require("redux-saga/effects").effectTypes.FLUSH),
+  getContext: createAsEffectType(require("redux-saga/effects").effectTypes.GET_CONTEXT),
+  setContext: createAsEffectType(require("redux-saga/effects").effectTypes.SET_CONTEXT) };
+
+exports.asEffect = asEffect;

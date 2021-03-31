@@ -1,0 +1,80 @@
+18925fb8636dabd8c9bac71599981da2
+"use strict";function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {require("@babel/runtime/helpers/defineProperty")(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.default = void 0;
+
+var _waitFor = _interopRequireDefault(require("../waitFor"));
+
+
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+function isNodeValid(node) {
+  return typeof node.type === 'string';
+}
+
+function makeAliases(aliases, query) {
+  return aliases.map(function (alias) {return require("@babel/runtime/helpers/defineProperty")({},
+    alias, query);}).
+  reduce(function (acc, query) {return _objectSpread(_objectSpread({}, acc),
+    query);},
+  {});
+}
+
+var makeA11yQuery = function makeA11yQuery(name, queryNames, matcherFn) {return function (instance) {
+    var getBy = function getBy(matcher) {
+      try {
+        return instance.find(function (node) {return isNodeValid(node) && matcherFn(node.props[name], matcher);});
+      } catch (error) {
+        throw new (require("./errors").ErrorWithStack)((0, require("./errors").prepareErrorMessage)(error, name, matcher), getBy);
+      }
+    };
+
+    var getAllBy = function getAllBy(matcher) {
+      var results = instance.findAll(function (node) {return isNodeValid(node) && matcherFn(node.props[name], matcher);});
+
+      if (results.length === 0) {
+        throw new (require("./errors").ErrorWithStack)((0, require("./errors").prepareErrorMessage)(new Error('No instances found'), name, matcher), getAllBy);
+      }
+
+      return results;
+    };
+
+    var queryBy = function queryBy(matcher) {
+      try {
+        return getBy(matcher);
+      } catch (error) {
+        return (0, require("./errors").createQueryByError)(error, queryBy);
+      }
+    };
+
+    var queryAllBy = function queryAllBy(matcher) {
+      try {
+        return getAllBy(matcher);
+      } catch (error) {
+        return [];
+      }
+    };
+
+    var findBy = function findBy(matcher, waitForOptions) {
+      return (0, _waitFor.default)(function () {return getBy(matcher);}, waitForOptions);
+    };
+
+    var findAllBy = function findAllBy(matcher, waitForOptions) {
+      return (0, _waitFor.default)(function () {return getAllBy(matcher);}, waitForOptions);
+    };
+
+    return _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({}, makeAliases(queryNames.getBy, getBy)),
+    makeAliases(queryNames.getAllBy, getAllBy)),
+    makeAliases(queryNames.queryBy, queryBy)),
+    makeAliases(queryNames.queryAllBy, queryAllBy)),
+    makeAliases(queryNames.findBy, findBy)),
+    makeAliases(queryNames.findAllBy, findAllBy));
+
+  };};
+
+var _default = makeA11yQuery;
+exports.default = _default;

@@ -1,0 +1,433 @@
+b37ea4384010483206ec1389612a4bb8
+"use strict";
+
+/* istanbul ignore next */
+function cov_233gtq2n96() {
+  var path = "/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/reducer.ts";
+  var hash = "eef74d3aab658c47ac52e7666e2d5b70bc76c818";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/reducer.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 30
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 18
+        },
+        end: {
+          line: 4,
+          column: 38
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 0
+        },
+        end: {
+          line: 11,
+          column: 2
+        }
+      },
+      "4": {
+        start: {
+          line: 12,
+          column: 20
+        },
+        end: {
+          line: 54,
+          column: 1
+        }
+      },
+      "5": {
+        start: {
+          line: 13,
+          column: 4
+        },
+        end: {
+          line: 53,
+          column: 5
+        }
+      },
+      "6": {
+        start: {
+          line: 15,
+          column: 12
+        },
+        end: {
+          line: 20,
+          column: 14
+        }
+      },
+      "7": {
+        start: {
+          line: 23,
+          column: 12
+        },
+        end: {
+          line: 33,
+          column: 14
+        }
+      },
+      "8": {
+        start: {
+          line: 36,
+          column: 12
+        },
+        end: {
+          line: 42,
+          column: 14
+        }
+      },
+      "9": {
+        start: {
+          line: 45,
+          column: 12
+        },
+        end: {
+          line: 49,
+          column: 14
+        }
+      },
+      "10": {
+        start: {
+          line: 52,
+          column: 12
+        },
+        end: {
+          line: 52,
+          column: 25
+        }
+      },
+      "11": {
+        start: {
+          line: 55,
+          column: 0
+        },
+        end: {
+          line: 55,
+          column: 30
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 12,
+            column: 20
+          },
+          end: {
+            line: 12,
+            column: 21
+          }
+        },
+        loc: {
+          start: {
+            line: 12,
+            column: 62
+          },
+          end: {
+            line: 54,
+            column: 1
+          }
+        },
+        line: 12
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 12,
+            column: 21
+          },
+          end: {
+            line: 12,
+            column: 49
+          }
+        },
+        type: "default-arg",
+        locations: [{
+          start: {
+            line: 12,
+            column: 29
+          },
+          end: {
+            line: 12,
+            column: 49
+          }
+        }],
+        line: 12
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 13,
+            column: 4
+          },
+          end: {
+            line: 53,
+            column: 5
+          }
+        },
+        type: "switch",
+        locations: [{
+          start: {
+            line: 14,
+            column: 8
+          },
+          end: {
+            line: 21,
+            column: 9
+          }
+        }, {
+          start: {
+            line: 22,
+            column: 8
+          },
+          end: {
+            line: 34,
+            column: 9
+          }
+        }, {
+          start: {
+            line: 35,
+            column: 8
+          },
+          end: {
+            line: 43,
+            column: 9
+          }
+        }, {
+          start: {
+            line: 44,
+            column: 8
+          },
+          end: {
+            line: 50,
+            column: 9
+          }
+        }, {
+          start: {
+            line: 51,
+            column: 8
+          },
+          end: {
+            line: 52,
+            column: 25
+          }
+        }],
+        line: 13
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 18,
+            column: 24
+          },
+          end: {
+            line: 18,
+            column: 73
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 18,
+            column: 56
+          },
+          end: {
+            line: 18,
+            column: 58
+          }
+        }, {
+          start: {
+            line: 18,
+            column: 61
+          },
+          end: {
+            line: 18,
+            column: 73
+          }
+        }],
+        line: 18
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {
+      "0": [0],
+      "1": [0, 0, 0, 0, 0],
+      "2": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/reducer.ts",
+      mappings: ";;;AACA,uCAA2C;AA8B9B,QAAA,YAAY,GAAe;IACtC,MAAM,EAAE,EAAE;IACV,SAAS,EAAE,KAAK;IAChB,aAAa,EAAE,KAAK;IACpB,KAAK,EAAE,IAAI;IACX,IAAI,EAAE,CAAC;CACR,CAAC;AAEF,MAAM,WAAW,GAAwB,CACvC,QAAoB,oBAAY,EAChC,MAAiB,EACL,EAAE;IACd,QAAQ,MAAM,CAAC,IAAI,EAAE;QACnB,KAAK,0BAAgB,CAAC,eAAe,CAAC,CAAC;YACrC,OAAO;gBACL,GAAG,KAAK;gBACR,SAAS,EAAE,IAAI;gBACf,MAAM,EAAE,MAAM,CAAC,OAAO,CAAC,KAAK,KAAK,IAAI,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,KAAK,CAAC,MAAM;gBACzD,KAAK,EAAE,IAAI;aACZ,CAAC;SACH;QACD,KAAK,0BAAgB,CAAC,uBAAuB,CAAC,CAAC;YAC7C,OAAO;gBACL,GAAG,KAAK;gBACR,SAAS,EAAE,KAAK;gBAChB,KAAK,EAAE,KAAK;gBACZ,aAAa,EAAE,MAAM,CAAC,OAAO,CAAC,aAAa;gBAC3C,IAAI,EAAE,MAAM,CAAC,OAAO,CAAC,IAAI;gBACzB,MAAM,EAAE;oBACN,GAAG,KAAK,CAAC,MAAM;oBACf,CAAC,MAAM,CAAC,OAAO,CAAC,IAAI,CAAC,EAAE,MAAM,CAAC,OAAO,CAAC,MAAM;iBAC7C;aACF,CAAC;SACH;QACD,KAAK,0BAAgB,CAAC,gBAAgB,CAAC,CAAC;YACtC,OAAO;gBACL,GAAG,KAAK;gBACR,SAAS,EAAE,KAAK;gBAChB,KAAK,EAAE,KAAK;gBACZ,aAAa,EAAE,MAAM,CAAC,OAAO,CAAC,aAAa;gBAC3C,IAAI,EAAE,MAAM,CAAC,OAAO,CAAC,IAAI;aAC1B,CAAC;SACH;QACD,KAAK,0BAAgB,CAAC,sBAAsB,CAAC,CAAC;YAC5C,OAAO;gBACL,GAAG,KAAK;gBACR,SAAS,EAAE,KAAK;gBAChB,KAAK,EAAE,MAAM,CAAC,OAAO;aACtB,CAAC;SACH;QACD;YACE,OAAO,KAAK,CAAC;KAChB;AACH,CAAC,CAAC;AAEF,kBAAe,WAAW,CAAC",
+      names: [],
+      sources: ["/Users/anisderbel/Documents/apcgithubissues/src/redux/repo/reducer.ts"],
+      sourcesContent: ["import {AnyAction, Reducer} from 'redux';\nimport {ERepoActionTypes} from './actions';\n\ninterface PaginatedIssue {\n  [key: number]: Array<Issue>;\n}\nexport type IRepoState = {\n  issues: PaginatedIssue;\n  isLoading: boolean;\n  error: string | boolean | null;\n  hasMoreIssues: boolean;\n  page: number;\n};\nexport interface Label {\n  id: number;\n  name: string;\n  color: string;\n}\n\nexport interface Issue {\n  node_id: string;\n  title: string;\n  labels: Array<Label>;\n  user: {login: string};\n  number: number;\n  created_at: string;\n  state: 'open' | 'closed';\n  html_url: string;\n  comments: number;\n}\n\nexport const initialState: IRepoState = {\n  issues: {},\n  isLoading: false,\n  hasMoreIssues: false,\n  error: null,\n  page: 0,\n};\n\nconst formReducer: Reducer<IRepoState> = (\n  state: IRepoState = initialState,\n  action: AnyAction,\n): IRepoState => {\n  switch (action.type) {\n    case ERepoActionTypes.GET_REPO_ISSUES: {\n      return {\n        ...state,\n        isLoading: true,\n        issues: action.payload.reset === true ? {} : state.issues,\n        error: null,\n      };\n    }\n    case ERepoActionTypes.GET_REPO_ISSUES_SUCCESS: {\n      return {\n        ...state,\n        isLoading: false,\n        error: false,\n        hasMoreIssues: action.payload.hasMoreIssues,\n        page: action.payload.page,\n        issues: {\n          ...state.issues,\n          [action.payload.page]: action.payload.issues,\n        },\n      };\n    }\n    case ERepoActionTypes.SET_CURRENT_PAGE: {\n      return {\n        ...state,\n        isLoading: false,\n        error: false,\n        hasMoreIssues: action.payload.hasMoreIssues,\n        page: action.payload.page,\n      };\n    }\n    case ERepoActionTypes.GET_REPO_ISSUES_FAILED: {\n      return {\n        ...state,\n        isLoading: false,\n        error: action.payload,\n      };\n    }\n    default:\n      return state;\n  }\n};\n\nexport default formReducer;\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "eef74d3aab658c47ac52e7666e2d5b70bc76c818"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_233gtq2n96 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_233gtq2n96();
+cov_233gtq2n96().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_233gtq2n96().s[1]++;
+exports.initialState = void 0;
+const actions_1 =
+/* istanbul ignore next */
+(cov_233gtq2n96().s[2]++, require("./actions"));
+
+/* istanbul ignore next */
+cov_233gtq2n96().s[3]++;
+exports.initialState = {
+  issues: {},
+  isLoading: false,
+  hasMoreIssues: false,
+  error: null,
+  page: 0
+};
+
+/* istanbul ignore next */
+cov_233gtq2n96().s[4]++;
+
+const formReducer = (state =
+/* istanbul ignore next */
+(cov_233gtq2n96().b[0][0]++, exports.initialState), action) => {
+  /* istanbul ignore next */
+  cov_233gtq2n96().f[0]++;
+  cov_233gtq2n96().s[5]++;
+
+  switch (action.type) {
+    case actions_1.ERepoActionTypes.GET_REPO_ISSUES:
+      /* istanbul ignore next */
+      cov_233gtq2n96().b[1][0]++;
+      {
+        /* istanbul ignore next */
+        cov_233gtq2n96().s[6]++;
+        return { ...state,
+          isLoading: true,
+          issues: action.payload.reset === true ?
+          /* istanbul ignore next */
+          (cov_233gtq2n96().b[2][0]++, {}) :
+          /* istanbul ignore next */
+          (cov_233gtq2n96().b[2][1]++, state.issues),
+          error: null
+        };
+      }
+
+    case actions_1.ERepoActionTypes.GET_REPO_ISSUES_SUCCESS:
+      /* istanbul ignore next */
+      cov_233gtq2n96().b[1][1]++;
+      {
+        /* istanbul ignore next */
+        cov_233gtq2n96().s[7]++;
+        return { ...state,
+          isLoading: false,
+          error: false,
+          hasMoreIssues: action.payload.hasMoreIssues,
+          page: action.payload.page,
+          issues: { ...state.issues,
+            [action.payload.page]: action.payload.issues
+          }
+        };
+      }
+
+    case actions_1.ERepoActionTypes.SET_CURRENT_PAGE:
+      /* istanbul ignore next */
+      cov_233gtq2n96().b[1][2]++;
+      {
+        /* istanbul ignore next */
+        cov_233gtq2n96().s[8]++;
+        return { ...state,
+          isLoading: false,
+          error: false,
+          hasMoreIssues: action.payload.hasMoreIssues,
+          page: action.payload.page
+        };
+      }
+
+    case actions_1.ERepoActionTypes.GET_REPO_ISSUES_FAILED:
+      /* istanbul ignore next */
+      cov_233gtq2n96().b[1][3]++;
+      {
+        /* istanbul ignore next */
+        cov_233gtq2n96().s[9]++;
+        return { ...state,
+          isLoading: false,
+          error: action.payload
+        };
+      }
+
+    default:
+      /* istanbul ignore next */
+      cov_233gtq2n96().b[1][4]++;
+      cov_233gtq2n96().s[10]++;
+      return state;
+  }
+};
+
+/* istanbul ignore next */
+cov_233gtq2n96().s[11]++;
+exports.default = formReducer;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hbmlzZGVyYmVsL0RvY3VtZW50cy9hcGNnaXRodWJpc3N1ZXMvc3JjL3JlZHV4L3JlcG8vcmVkdWNlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUNBLE1BQUEsU0FBQTtBQUFBO0FBQUEsMEJBQUEsT0FBQSxDQUFBLFdBQUEsQ0FBQSxDQUFBOzs7O0FBOEJhLE9BQUEsQ0FBQSxZQUFBLEdBQTJCO0FBQ3RDLEVBQUEsTUFBTSxFQUFFLEVBRDhCO0FBRXRDLEVBQUEsU0FBUyxFQUFFLEtBRjJCO0FBR3RDLEVBQUEsYUFBYSxFQUFFLEtBSHVCO0FBSXRDLEVBQUEsS0FBSyxFQUFFLElBSitCO0FBS3RDLEVBQUEsSUFBSSxFQUFFO0FBTGdDLENBQTNCOzs7OztBQVFiLE1BQU0sV0FBVyxHQUF3QixDQUN2QyxLQUFBO0FBQUE7QUFBQSw2QkFBb0IsT0FBQSxDQUFBLFlBQXBCLENBRHVDLEVBRXZDLE1BRnVDLEtBR3pCO0FBQUE7QUFBQTtBQUFBOztBQUNkLFVBQVEsTUFBTSxDQUFDLElBQWY7QUFDRSxTQUFLLFNBQUEsQ0FBQSxnQkFBQSxDQUFpQixlQUF0QjtBQUFBO0FBQUE7QUFBdUM7QUFBQTtBQUFBO0FBQ3JDLGVBQU8sRUFDTCxHQUFHLEtBREU7QUFFTCxVQUFBLFNBQVMsRUFBRSxJQUZOO0FBR0wsVUFBQSxNQUFNLEVBQUUsTUFBTSxDQUFDLE9BQVAsQ0FBZSxLQUFmLEtBQXlCLElBQXpCO0FBQUE7QUFBQSx1Q0FBZ0MsRUFBaEM7QUFBQTtBQUFBLHVDQUFxQyxLQUFLLENBQUMsTUFBM0MsQ0FISDtBQUlMLFVBQUEsS0FBSyxFQUFFO0FBSkYsU0FBUDtBQU1EOztBQUNELFNBQUssU0FBQSxDQUFBLGdCQUFBLENBQWlCLHVCQUF0QjtBQUFBO0FBQUE7QUFBK0M7QUFBQTtBQUFBO0FBQzdDLGVBQU8sRUFDTCxHQUFHLEtBREU7QUFFTCxVQUFBLFNBQVMsRUFBRSxLQUZOO0FBR0wsVUFBQSxLQUFLLEVBQUUsS0FIRjtBQUlMLFVBQUEsYUFBYSxFQUFFLE1BQU0sQ0FBQyxPQUFQLENBQWUsYUFKekI7QUFLTCxVQUFBLElBQUksRUFBRSxNQUFNLENBQUMsT0FBUCxDQUFlLElBTGhCO0FBTUwsVUFBQSxNQUFNLEVBQUUsRUFDTixHQUFHLEtBQUssQ0FBQyxNQURIO0FBRU4sYUFBQyxNQUFNLENBQUMsT0FBUCxDQUFlLElBQWhCLEdBQXVCLE1BQU0sQ0FBQyxPQUFQLENBQWU7QUFGaEM7QUFOSCxTQUFQO0FBV0Q7O0FBQ0QsU0FBSyxTQUFBLENBQUEsZ0JBQUEsQ0FBaUIsZ0JBQXRCO0FBQUE7QUFBQTtBQUF3QztBQUFBO0FBQUE7QUFDdEMsZUFBTyxFQUNMLEdBQUcsS0FERTtBQUVMLFVBQUEsU0FBUyxFQUFFLEtBRk47QUFHTCxVQUFBLEtBQUssRUFBRSxLQUhGO0FBSUwsVUFBQSxhQUFhLEVBQUUsTUFBTSxDQUFDLE9BQVAsQ0FBZSxhQUp6QjtBQUtMLFVBQUEsSUFBSSxFQUFFLE1BQU0sQ0FBQyxPQUFQLENBQWU7QUFMaEIsU0FBUDtBQU9EOztBQUNELFNBQUssU0FBQSxDQUFBLGdCQUFBLENBQWlCLHNCQUF0QjtBQUFBO0FBQUE7QUFBOEM7QUFBQTtBQUFBO0FBQzVDLGVBQU8sRUFDTCxHQUFHLEtBREU7QUFFTCxVQUFBLFNBQVMsRUFBRSxLQUZOO0FBR0wsVUFBQSxLQUFLLEVBQUUsTUFBTSxDQUFDO0FBSFQsU0FBUDtBQUtEOztBQUNEO0FBQUE7QUFBQTtBQUFBO0FBQ0UsYUFBTyxLQUFQO0FBdkNKO0FBeUNELENBN0NEOzs7O0FBK0NBLE9BQUEsQ0FBQSxPQUFBLEdBQWUsV0FBZiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7QW55QWN0aW9uLCBSZWR1Y2VyfSBmcm9tICdyZWR1eCc7XG5pbXBvcnQge0VSZXBvQWN0aW9uVHlwZXN9IGZyb20gJy4vYWN0aW9ucyc7XG5cbmludGVyZmFjZSBQYWdpbmF0ZWRJc3N1ZSB7XG4gIFtrZXk6IG51bWJlcl06IEFycmF5PElzc3VlPjtcbn1cbmV4cG9ydCB0eXBlIElSZXBvU3RhdGUgPSB7XG4gIGlzc3VlczogUGFnaW5hdGVkSXNzdWU7XG4gIGlzTG9hZGluZzogYm9vbGVhbjtcbiAgZXJyb3I6IHN0cmluZyB8IGJvb2xlYW4gfCBudWxsO1xuICBoYXNNb3JlSXNzdWVzOiBib29sZWFuO1xuICBwYWdlOiBudW1iZXI7XG59O1xuZXhwb3J0IGludGVyZmFjZSBMYWJlbCB7XG4gIGlkOiBudW1iZXI7XG4gIG5hbWU6IHN0cmluZztcbiAgY29sb3I6IHN0cmluZztcbn1cblxuZXhwb3J0IGludGVyZmFjZSBJc3N1ZSB7XG4gIG5vZGVfaWQ6IHN0cmluZztcbiAgdGl0bGU6IHN0cmluZztcbiAgbGFiZWxzOiBBcnJheTxMYWJlbD47XG4gIHVzZXI6IHtsb2dpbjogc3RyaW5nfTtcbiAgbnVtYmVyOiBudW1iZXI7XG4gIGNyZWF0ZWRfYXQ6IHN0cmluZztcbiAgc3RhdGU6ICdvcGVuJyB8ICdjbG9zZWQnO1xuICBodG1sX3VybDogc3RyaW5nO1xuICBjb21tZW50czogbnVtYmVyO1xufVxuXG5leHBvcnQgY29uc3QgaW5pdGlhbFN0YXRlOiBJUmVwb1N0YXRlID0ge1xuICBpc3N1ZXM6IHt9LFxuICBpc0xvYWRpbmc6IGZhbHNlLFxuICBoYXNNb3JlSXNzdWVzOiBmYWxzZSxcbiAgZXJyb3I6IG51bGwsXG4gIHBhZ2U6IDAsXG59O1xuXG5jb25zdCBmb3JtUmVkdWNlcjogUmVkdWNlcjxJUmVwb1N0YXRlPiA9IChcbiAgc3RhdGU6IElSZXBvU3RhdGUgPSBpbml0aWFsU3RhdGUsXG4gIGFjdGlvbjogQW55QWN0aW9uLFxuKTogSVJlcG9TdGF0ZSA9PiB7XG4gIHN3aXRjaCAoYWN0aW9uLnR5cGUpIHtcbiAgICBjYXNlIEVSZXBvQWN0aW9uVHlwZXMuR0VUX1JFUE9fSVNTVUVTOiB7XG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgaXNMb2FkaW5nOiB0cnVlLFxuICAgICAgICBpc3N1ZXM6IGFjdGlvbi5wYXlsb2FkLnJlc2V0ID09PSB0cnVlID8ge30gOiBzdGF0ZS5pc3N1ZXMsXG4gICAgICAgIGVycm9yOiBudWxsLFxuICAgICAgfTtcbiAgICB9XG4gICAgY2FzZSBFUmVwb0FjdGlvblR5cGVzLkdFVF9SRVBPX0lTU1VFU19TVUNDRVNTOiB7XG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgaXNMb2FkaW5nOiBmYWxzZSxcbiAgICAgICAgZXJyb3I6IGZhbHNlLFxuICAgICAgICBoYXNNb3JlSXNzdWVzOiBhY3Rpb24ucGF5bG9hZC5oYXNNb3JlSXNzdWVzLFxuICAgICAgICBwYWdlOiBhY3Rpb24ucGF5bG9hZC5wYWdlLFxuICAgICAgICBpc3N1ZXM6IHtcbiAgICAgICAgICAuLi5zdGF0ZS5pc3N1ZXMsXG4gICAgICAgICAgW2FjdGlvbi5wYXlsb2FkLnBhZ2VdOiBhY3Rpb24ucGF5bG9hZC5pc3N1ZXMsXG4gICAgICAgIH0sXG4gICAgICB9O1xuICAgIH1cbiAgICBjYXNlIEVSZXBvQWN0aW9uVHlwZXMuU0VUX0NVUlJFTlRfUEFHRToge1xuICAgICAgcmV0dXJuIHtcbiAgICAgICAgLi4uc3RhdGUsXG4gICAgICAgIGlzTG9hZGluZzogZmFsc2UsXG4gICAgICAgIGVycm9yOiBmYWxzZSxcbiAgICAgICAgaGFzTW9yZUlzc3VlczogYWN0aW9uLnBheWxvYWQuaGFzTW9yZUlzc3VlcyxcbiAgICAgICAgcGFnZTogYWN0aW9uLnBheWxvYWQucGFnZSxcbiAgICAgIH07XG4gICAgfVxuICAgIGNhc2UgRVJlcG9BY3Rpb25UeXBlcy5HRVRfUkVQT19JU1NVRVNfRkFJTEVEOiB7XG4gICAgICByZXR1cm4ge1xuICAgICAgICAuLi5zdGF0ZSxcbiAgICAgICAgaXNMb2FkaW5nOiBmYWxzZSxcbiAgICAgICAgZXJyb3I6IGFjdGlvbi5wYXlsb2FkLFxuICAgICAgfTtcbiAgICB9XG4gICAgZGVmYXVsdDpcbiAgICAgIHJldHVybiBzdGF0ZTtcbiAgfVxufTtcblxuZXhwb3J0IGRlZmF1bHQgZm9ybVJlZHVjZXI7XG4iXX0=

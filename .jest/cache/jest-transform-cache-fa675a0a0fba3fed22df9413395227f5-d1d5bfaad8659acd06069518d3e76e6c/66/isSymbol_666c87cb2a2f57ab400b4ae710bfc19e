@@ -1,0 +1,30 @@
+f7e91d0edf606dae3e09a34776aaace1
+
+
+
+
+var symbolTag = '[object Symbol]';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+  require('./isObjectLike')(value) && require('./_baseGetTag')(value) == symbolTag;
+}
+
+module.exports = isSymbol;

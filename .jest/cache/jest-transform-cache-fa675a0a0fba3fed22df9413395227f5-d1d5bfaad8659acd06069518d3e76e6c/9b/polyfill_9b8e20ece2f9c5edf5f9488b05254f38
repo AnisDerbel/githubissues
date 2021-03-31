@@ -1,0 +1,8 @@
+94aa7010827d273a853bb65c65f152e1
+'use strict';
+
+
+
+module.exports = function getPolyfill() {
+  return typeof Object.fromEntries === 'function' ? Object.fromEntries : require('./implementation');
+};
